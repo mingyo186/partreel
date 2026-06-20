@@ -31,6 +31,8 @@ jobs:
           cp index.json _site/
           cp -r assets _site/
           cp -r library _site/
+          cp -r p _site/
+          cp sitemap.xml robots.txt _site/
           echo "partreel.com" > _site/CNAME
 
       - uses: actions/configure-pages@v5

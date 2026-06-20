@@ -106,6 +106,10 @@ async function selectPart(p) {
   const buy = document.getElementById('buy');
   buy.href = 'https://www.lcsc.com/search?q=' + encodeURIComponent(meta.mpn_pattern || meta.name);
 
+  // 부품 단독 페이지 링크 (SEO 페이지)
+  const permalink = document.getElementById('permalink');
+  if (permalink) permalink.href = `p/${p.id}/`;
+
   // 3D
   const preview = meta.files?.preview;
   if (preview) loadModel(`${p.path}/${preview}`);

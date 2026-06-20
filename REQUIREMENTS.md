@@ -16,6 +16,13 @@
 3. 아직 안 정해진 건 **§12 미결정/오픈 이슈**에 적는다. 결정되면 본문으로 옮긴다.
 4. 프로젝트 작업 시작 전 이 문서를 먼저 읽는다.
 5. **품질 검증 의무 (최우선)**: 모든 구현물, 특히 UI/사이트는 **실제로 실행·렌더해서 눈으로 검증**한다(스크린샷 캡처 등). 추측으로 "됐다"고 보고하지 않는다. **"당연히 동작해야 하는 것이 동작 안 하는" 명백한 버그를 남기지 않는다** — 예: 깨진 다운로드 링크, 안 뜨는 3D 프리뷰, 빈 목록, 눌리지 않는 버튼, 404. 검증 후 발견된 문제는 고친 뒤 보고한다.
+6. **보안 의무 (상시)**: 정적 사이트라 공격면은 작지만 항상 신경 쓴다.
+   - 레포에 **비밀키/토큰/크리덴셜 절대 커밋 금지** (.gitignore로 env류 차단).
+   - **동적 값 렌더 시 HTML 이스케이프**(XSS 방지) — 특히 향후 사용자 기여 데이터.
+   - 외부 스크립트는 **버전 고정 + 신뢰 출처만**(jsdelivr), **CSP**로 출처 제한.
+   - GitHub Actions **최소 권한**(이미 contents:read/pages:write/id-token:write).
+   - **HTTPS 강제**, 계정 **2FA**(GitHub/Cloudflare).
+   - 자세한 체크리스트는 §13.
 
 ---
 
@@ -127,8 +134,11 @@
 - 라이선스: 코드 MIT(`LICENSE`) / 부품 CC-BY-4.0(`library/LICENSE`).
 - **라이브 검증 통과**: HTML/index.json/assets/다운로드(step·kicad_mod) 전부 HTTP 200.
 
+✅ **커스텀 도메인 연결(2026-06-20)**: partreel.com (Cloudflare Registrar 구매) → GitHub Pages 연결 완료.
+- DNS(Cloudflare): `@`·`www` CNAME → mingyo186.github.io (DNS only). A레코드 185.199.108~111.153 정상.
+- http://partreel.com 라이브 확인됨(200). **HTTPS 인증서는 GitHub 자동 발급 대기 중** → 발급되면 `gh api -X PUT repos/mingyo186/partreel/pages -F https_enforced=true` 로 강제 전환 켜기.
+
 **▶ NEXT 후보**:
-1. partreel.com 등록 → Cloudflare로 커스텀 도메인 연결 (현 URL은 github.io 서브경로).
 2. 커넥터 패밀리 확장 (JST-XH/SH, Molex 등) — 생성기 복제.
 3. 수요신호 채굴로 다음 패밀리 우선순위.
 4. SEO: 부품별 메타태그/사이트맵 (검색 트래픽 엔진).
@@ -136,6 +146,17 @@
 원래 목표(참고): "이게 우리 품질이다" 샘플 + **데이터 형식 확정**. (첫 패밀리 JST-PH 확정 사유: 리포배터리 표준, 취미 수요 확실, 2.0mm 피치 × 핀수로 파라메트릭 전수 생성 가능.)
 
 치수 주의: 샘플은 파이프라인/형식 확정이 목적. **공개(publish) 전 JST 데이터시트로 최종 치수 검증 필수**(우리 차별점이 품질이므로).
+
+## 13. 보안 체크리스트
+
+- [x] 레포에 비밀키/토큰 없음 (gh 토큰은 OS keyring, 레포 아님). `.gitignore`로 env류 차단.
+- [x] 생성 사이트(부품 페이지)에서 동적 값 **HTML 이스케이프** (build_site.py `html.escape`).
+- [x] **CSP** 메타: script는 self+jsdelivr만, object-src none, base-uri self.
+- [x] 외부 의존성 three.js **버전 고정**(0.160.0), jsdelivr.
+- [x] GitHub Actions **최소 권한**.
+- [ ] HTTPS 강제(인증서 발급 후 https_enforced=true) — 진행 중.
+- [ ] 계정 2FA 확인 (GitHub/Cloudflare) — 사용자 몫.
+- [ ] (향후) 사용자 기여 부품 받게 되면 입력 검증/샌드박싱 강화. CSP에서 'unsafe-inline' 제거(importmap→해시/nonce).
 
 ## 12. 미결정 / 오픈 이슈
 
