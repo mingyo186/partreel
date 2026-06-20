@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PartReel — 로그인 없는 KiCad 라이브러리</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">◈</span>
+      <span class="brand-name">PartReel</span>
+      <span class="tagline">로그인 없는 KiCad 라이브러리</span>
+    </div>
+    <div class="header-badges">
+      <span class="hbadge ok">가입 불필요</span>
+      <span class="hbadge ok">즉시 다운로드</span>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="sidebar">
+      <div class="searchbox">
+        <input id="q" type="text" placeholder="부품 검색 (예: jst, ph, 4pin)…" autocomplete="off">
+        <div class="result-count"><span id="count">0</span>개 부품</div>
+      </div>
+      <div id="list" class="list"></div>
+    </section>
+
+    <section class="detail">
+      <div id="viewer" class="viewer">
+        <div id="viewer-msg" class="viewer-msg">부품을 선택하세요</div>
+      </div>
+      <div id="info" class="info hidden">
+        <h1 id="part-name"></h1>
+        <p id="part-desc" class="desc"></p>
+
+        <div id="verify-warn" class="warn hidden">
+          ⚠ 치수는 데이터시트 기반 근사치입니다. 사용 전 검증을 권장합니다 (as-is).
+        </div>
+
+        <h2>사양</h2>
+        <table id="specs" class="specs"></table>
+
+        <h2>다운로드 <span class="nologin">· 가입 없이</span></h2>
+        <div id="downloads" class="downloads"></div>
+
+        <h2>구매</h2>
+        <a id="buy" class="buy" href="#" target="_blank" rel="noopener">이 부품 구매처 보기 →</a>
+        <div class="affiliate-note">제휴 링크 (수익은 사이트 운영에 사용)</div>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="assets/app.js"></script>
+</body>
+</html>
