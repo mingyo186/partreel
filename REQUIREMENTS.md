@@ -120,7 +120,18 @@
 - ✅ **전수 생성 완료**: JST-PH 2~16핀 = **15부품 × 5자산 = 75파일**. index.json 15건.
 - ✅ **품질 검증**(규칙 §0-5): 사이트 15개 렌더 / 부품 전환 동작 / 3D 모델 로드(2·6·16핀 확인) / 다운로드 링크 HTTP 200 / verify 경고 사라짐 / 콘솔 에러 0. (스크린샷 도구는 연속 WebGL 애니메이션으로 타임아웃 — DOM/HTTP/eval로 검증, 사이트 버그 아님.)
 
-**▶ NEXT = 배포**: GitHub 레포 생성 + Cloudflare Pages 연결. 필요 결정: ①프로젝트/사이트 이름 ②자체 라이선스(부품 자산용) ③publish dir 정리(generators/docs 비공개화) ④커스텀 도메인.
+✅ **배포 완료(2026-06-20)**: GitHub Pages 라이브.
+- 레포: https://github.com/mingyo186/partreel (public)
+- 라이브 사이트: **https://mingyo186.github.io/partreel/**
+- 배포: `.github/workflows/deploy.yml` (push 시 자동, site+library만 publish). gh 인증=mingyo186.
+- 라이선스: 코드 MIT(`LICENSE`) / 부품 CC-BY-4.0(`library/LICENSE`).
+- **라이브 검증 통과**: HTML/index.json/assets/다운로드(step·kicad_mod) 전부 HTTP 200.
+
+**▶ NEXT 후보**:
+1. partreel.com 등록 → Cloudflare로 커스텀 도메인 연결 (현 URL은 github.io 서브경로).
+2. 커넥터 패밀리 확장 (JST-XH/SH, Molex 등) — 생성기 복제.
+3. 수요신호 채굴로 다음 패밀리 우선순위.
+4. SEO: 부품별 메타태그/사이트맵 (검색 트래픽 엔진).
 
 원래 목표(참고): "이게 우리 품질이다" 샘플 + **데이터 형식 확정**. (첫 패밀리 JST-PH 확정 사유: 리포배터리 표준, 취미 수요 확실, 2.0mm 피치 × 핀수로 파라메트릭 전수 생성 가능.)
 
