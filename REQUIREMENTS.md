@@ -138,10 +138,18 @@
 - DNS(Cloudflare): `@`·`www` CNAME → mingyo186.github.io (DNS only). A레코드 185.199.108~111.153 정상.
 - http://partreel.com 라이브 확인됨(200). **HTTPS 인증서는 GitHub 자동 발급 대기 중** → 발급되면 `gh api -X PUT repos/mingyo186/partreel/pages -F https_enforced=true` 로 강제 전환 켜기.
 
+✅ **SEO 1순위 완료(2026-06-20)**: 부품별 정적 페이지 + 보안.
+- `generators/build_site.py` → `p/<id>/index.html` 15개 (title/meta/canonical/OG/JSON-LD Product) + `sitemap.xml`(16 URL) + `robots.txt`.
+- `assets/part.js` 부품 페이지 3D 뷰어. 홈 SPA에 permalink 추가.
+- 보안: 전 페이지 **CSP** 메타, 동적 값 **HTML 이스케이프**(§13).
+- 라이브 검증 통과: partreel.com/p/jst_ph_4pin/ 등 200, SEO 태그·sitemap·robots·3D·다운로드 정상, 콘솔 에러 0.
+
 **▶ NEXT 후보**:
-2. 커넥터 패밀리 확장 (JST-XH/SH, Molex 등) — 생성기 복제.
-3. 수요신호 채굴로 다음 패밀리 우선순위.
-4. SEO: 부품별 메타태그/사이트맵 (검색 트래픽 엔진).
+1. **HTTPS 강제** — 인증서 발급되면 `gh api -X PUT repos/mingyo186/partreel/pages -F https_enforced=true` (현재 발급 대기).
+2. **Google Search Console** 등록 + sitemap 제출 → 색인 시작 (사용자 Google 계정 필요).
+3. 2순위 다듬기: **모바일 반응형 / About / "KiCad에 넣는 법" 가이드 / favicon**.
+4. 커넥터 패밀리 확장 (JST-XH/SH, Molex 등) — 생성기 복제.
+5. 3D 뷰어 컨트롤(회전 멈춤/리셋).
 
 원래 목표(참고): "이게 우리 품질이다" 샘플 + **데이터 형식 확정**. (첫 패밀리 JST-PH 확정 사유: 리포배터리 표준, 취미 수요 확실, 2.0mm 피치 × 핀수로 파라메트릭 전수 생성 가능.)
 
@@ -154,7 +162,7 @@
 - [x] **CSP** 메타: script는 self+jsdelivr만, object-src none, base-uri self.
 - [x] 외부 의존성 three.js **버전 고정**(0.160.0), jsdelivr.
 - [x] GitHub Actions **최소 권한**.
-- [ ] HTTPS 강제(인증서 발급 후 https_enforced=true) — 진행 중.
+- [x] HTTPS 강제 완료. 인증서 approved + https_enforced=true. https://partreel.com 라이브, http→https 자동전환. (인증서가 처음 멈춰서 커스텀도메인 뺐다 다시 넣어 재발급 트리거함.)
 - [ ] 계정 2FA 확인 (GitHub/Cloudflare) — 사용자 몫.
 - [ ] (향후) 사용자 기여 부품 받게 되면 입력 검증/샌드박싱 강화. CSP에서 'unsafe-inline' 제거(importmap→해시/nonce).
 

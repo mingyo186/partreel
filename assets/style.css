@@ -115,3 +115,32 @@ h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .05em; color: v
 .crumb { color: var(--muted); font-size: 13px; margin-bottom: 14px; }
 .crumb a { color: var(--accent); text-decoration: none; }
 .part-viewer { position: relative; height: 360px; border: 1px solid var(--border); border-radius: 12px; margin: 16px 0; }
+
+/* 문서 페이지 (소개 / 가이드) */
+.doc-page { max-width: 760px; margin: 0 auto; padding: 26px 26px 48px; line-height: 1.65; }
+.doc-page h1 { font-size: 24px; }
+.doc-page h2 { font-size: 14px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); margin-top: 26px; }
+.doc-page ul, .doc-page ol { padding-left: 22px; }
+.doc-page li { margin: 6px 0; }
+.doc-page a { color: var(--accent); }
+.doc-page code { background: var(--panel2); border: 1px solid var(--border); padding: 1px 6px; border-radius: 4px; font-size: 13px; }
+
+/* 푸터 */
+.site-footer { border-top: 1px solid var(--border); padding: 20px 26px; color: var(--muted); font-size: 13px;
+  display: flex; flex-wrap: wrap; gap: 10px 20px; align-items: center; justify-content: space-between; }
+.foot-nav { display: flex; gap: 16px; }
+.site-footer a { color: var(--accent); text-decoration: none; }
+.foot-lic { font-size: 11px; width: 100%; opacity: .8; }
+
+/* 모바일 반응형 */
+@media (max-width: 720px) {
+  .layout { grid-template-columns: 1fr; }
+  .sidebar { border-right: none; border-bottom: 1px solid var(--border); }
+  .list { max-height: 40vh; }
+  .viewer { height: 300px; }
+  .tagline { display: none; }
+  .topbar { flex-wrap: wrap; gap: 8px; }
+  .info { padding: 18px 16px; }
+  .part-page { padding: 18px 16px 40px; }
+  .part-viewer { height: 280px; }
+}
