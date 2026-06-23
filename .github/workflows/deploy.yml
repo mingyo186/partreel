@@ -23,6 +23,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # 교차검증 게이트: KiCad 파일 구조가 깨졌으면 배포 중단 (REQUIREMENTS §5-1)
+      - name: Validate KiCad files
+        run: python3 generators/validate_kicad.py
+
       # publish 정리: 사이트+라이브러리만 공개. generators/docs는 제외.
       - name: Assemble site
         run: |
