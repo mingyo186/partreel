@@ -49,24 +49,26 @@ def check_footprint(text, pins, pitch):
         errs.append("괄호 불균형")
     if not re.match(r'\s*\(footprint\b', text):
         errs.append("루트가 footprint 아님")
-    # 패드: (pad "N" type shape (at X Y ...)
-    pads = re.findall(r'\(pad\s+"(\d+)"[^)]*?\(at\s+([-\d.]+)\s+([-\d.]+)', text)
-    nums = sorted(int(n) for n, _, _ in pads)
-    if len(pads) != pins:
-        errs.append(f"패드 수 {len(pads)} != 핀 수 {pins}")
-    if nums != list(range(1, pins + 1)):
-        errs.append(f"패드 번호 불연속: {nums}")
-    xs = {int(n): float(x) for n, x, _ in pads}
-    if xs.get(1) != 0.0:
-        errs.append(f"1번핀 X != 0 ({xs.get(1)})")
-    for n in nums:
-        expected = (n - 1) * pitch
-        if abs(xs.get(n, -999) - expected) > 1e-6:
-            errs.append(f"{n}번핀 X={xs.get(n)} != 기대 {expected}")
-            break
+    if len(re.findall(r'\(pad\s', text)) < 1:
+        errs.append("패드 없음")
     for layer in ('"F.Cu"', '"F.SilkS"', '"F.CrtYd"', '"F.Fab"'):
         if layer not in text:
             errs.append(f"레이어 {layer} 없음")
+    # 일렬 커넥터(피치 있음)일 때만 행 검사: 패드 수/번호/1번핀 원점/피치
+    if pitch is not None and pins:
+        pads = re.findall(r'\(pad\s+"(\d+)"[^)]*?\(at\s+([-\d.]+)\s+([-\d.]+)', text)
+        nums = sorted(int(n) for n, _, _ in pads)
+        if len(pads) != pins:
+            errs.append(f"패드 수 {len(pads)} != 핀 수 {pins}")
+        if nums != list(range(1, pins + 1)):
+            errs.append(f"패드 번호 불연속: {nums}")
+        xs = {int(n): float(x) for n, x, _ in pads}
+        if xs.get(1) != 0.0:
+            errs.append(f"1번핀 X != 0 ({xs.get(1)})")
+        for n in nums:
+            if abs(xs.get(n, -999) - (n - 1) * pitch) > 1e-6:
+                errs.append(f"{n}번핀 X={xs.get(n)} != 기대 {(n-1)*pitch}")
+                break
     return errs
 
 
@@ -77,8 +79,10 @@ def check_symbol(text, pins):
     if not re.match(r'\s*\(kicad_symbol_lib\b', text):
         errs.append("루트가 kicad_symbol_lib 아님")
     npins = len(re.findall(r'\(pin\s+\w+\s+\w+\s+\(at', text))
-    if npins != pins:
+    if pins and npins != pins:
         errs.append(f"핀 수 {npins} != 기대 {pins}")
+    elif npins < 1:
+        errs.append("핀 없음")
     return errs
 
 
@@ -86,11 +90,12 @@ def main():
     index = json.load(open(os.path.join(ROOT, "index.json"), encoding="utf-8"))
     total_err = 0
     for p in index["parts"]:
-        pins = p["pins"]
         d = os.path.join(ROOT, p["path"])
         fid = p["id"]
         meta = json.load(open(os.path.join(d, "meta.json"), encoding="utf-8"))
-        pitch = meta["parameters"]["pitch_mm"]
+        params = meta.get("parameters", {})
+        pins = params.get("pins")
+        pitch = params.get("pitch_mm")
         mod = open(os.path.join(d, f"{fid}.kicad_mod"), encoding="utf-8").read()
         sym = open(os.path.join(d, f"{fid}.kicad_sym"), encoding="utf-8").read()
         errs = [f"[mod] {e}" for e in check_footprint(mod, pins, pitch)]

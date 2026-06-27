@@ -19,8 +19,8 @@ COL = dict(courtyard="#d24d4d", fab="#6b7280", silk="#e6e9ef",
            pin="#e6e9ef", num="#9aa3b2", name="#e6e9ef", label="#ffffff")
 
 PAD_RE = re.compile(
-    r'\(pad\s+"(\S+)"\s+\w+\s+(\w+)\s+\(at\s+([-\d.]+)\s+([-\d.]+)[^)]*\)\s*'
-    r'\(size\s+([-\d.]+)\s+([-\d.]+)\)\s*\(drill\s+([-\d.]+)\)')
+    r'\(pad\s+(?:"([^"]*)"|(\S+))\s+(\w+)\s+(\w+)\s+\(at\s+([-\d.]+)\s+([-\d.]+)[^)]*?\)\s*'
+    r'\(size\s+([-\d.]+)\s+([-\d.]+)\)(?:\s*\(drill\s+([^)]+)\))?')
 LINE_RE = re.compile(
     r'\(fp_line\s+\(start\s+([-\d.]+)\s+([-\d.]+)\)\s+\(end\s+([-\d.]+)\s+([-\d.]+)\)'
     r'.*?\(width\s+([-\d.]+)\).*?\(layer\s+"([^"]+)"\)')
@@ -42,8 +42,12 @@ def svg_header(minx, miny, w, h, m):
 def render_footprint(text):
     pads, lines = [], []
     for m in PAD_RE.finditer(text):
-        num, shape, x, y, pw, ph, dr = m.groups()
-        pads.append((num, shape, float(x), float(y), float(pw), float(ph), float(dr)))
+        name = m.group(1) if m.group(1) is not None else m.group(2)
+        ptype, shape = m.group(3), m.group(4)
+        x, y = float(m.group(5)), float(m.group(6))
+        pw, ph = float(m.group(7)), float(m.group(8))
+        drill = m.group(9)  # None | "0.75" | "oval 0.6 1.2"
+        pads.append((name, ptype, shape, x, y, pw, ph, drill))
     for m in LINE_RE.finditer(text):
         x1, y1, x2, y2, w, layer = m.groups()
         lines.append((float(x1), float(y1), float(x2), float(y2), float(w), layer))
@@ -51,7 +55,7 @@ def render_footprint(text):
         return None
 
     xs, ys = [], []
-    for _, _, x, y, pw, ph, _ in pads:
+    for _, _, _, x, y, pw, ph, _ in pads:
         xs += [x - pw / 2, x + pw / 2]; ys += [y - ph / 2, y + ph / 2]
     for x1, y1, x2, y2, _, _ in lines:
         xs += [x1, x2]; ys += [y1, y2]
@@ -70,16 +74,26 @@ def render_footprint(text):
         out.append(f'<line x1="{x1:.3f}" y1="{y1:.3f}" x2="{x2:.3f}" y2="{y2:.3f}" '
                    f'stroke="{col}" stroke-width="{max(w,0.08):.3f}" stroke-linecap="round" '
                    f'opacity="{op}"{dash_attr}/>')
-    for num, shape, x, y, pw, ph, dr in pads:
+    for name, ptype, shape, x, y, pw, ph, drill in pads:
+        if ptype == "np_thru_hole":  # 마운팅 홀: 링만
+            out.append(f'<circle cx="{x:.3f}" cy="{y:.3f}" r="{min(pw,ph)/2:.3f}" '
+                       f'fill="none" stroke="{COL["fab"]}" stroke-width="0.1"/>')
+            continue
         rx = (min(pw, ph) / 2 if shape in ("oval", "circle")
               else min(pw, ph) * 0.25 if shape == "roundrect" else 0)
         out.append(f'<rect x="{x - pw/2:.3f}" y="{y - ph/2:.3f}" width="{pw:.3f}" height="{ph:.3f}" '
                    f'rx="{rx:.3f}" fill="{COL["copper"]}"/>')
-        out.append(f'<circle cx="{x:.3f}" cy="{y:.3f}" r="{dr/2:.3f}" fill="{BG}"/>')
-    # 핀1 마커: 패드 아래 빈 공간에 위를 가리키는 삼각형 (선과 안 겹침)
+        if drill:  # THT 드릴 홀
+            d = drill.split()
+            if d[0] == "oval" and len(d) >= 3:
+                out.append(f'<ellipse cx="{x:.3f}" cy="{y:.3f}" rx="{float(d[1])/2:.3f}" '
+                           f'ry="{float(d[2])/2:.3f}" fill="{BG}"/>')
+            else:
+                out.append(f'<circle cx="{x:.3f}" cy="{y:.3f}" r="{float(d[0])/2:.3f}" fill="{BG}"/>')
+    # 핀1 마커: 패드 "1"(일렬 커넥터)일 때만, 패드 아래 빈 공간에 위를 가리키는 삼각형
     p1 = next((pd for pd in pads if pd[0] == "1"), None)
     if p1:
-        _, _, x, y, pw, ph, _ = p1
+        _, _, _, x, y, pw, ph, _ = p1
         tip = y + ph / 2 + 0.45
         base = y + ph / 2 + 1.05
         out.append(f'<polygon points="{x-0.45:.2f},{base:.2f} {x+0.45:.2f},{base:.2f} '
