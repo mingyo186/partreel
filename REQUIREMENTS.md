@@ -89,7 +89,7 @@
 ## 8. 기술 아키텍처
 
 - **생성 엔진**: KiCad(전자, pcbnew/kicad-cli 파이썬 API) + FreeCAD(3D, 헤드리스 파이썬). 둘 다 오픈소스+스크립터블. **생성 자체는 이미 PoC로 검증됨(이전 세션에서 라이브러리 작동 확인).**
-- **풋프린트**: IPC-7351 공식 기반(밀도 Most/Nominal/Least 3종 제공 가능 = 차별점).
+- **풋프린트**: IPC-7351(패드 치수) + **KLC(KiCad Library Convention, klc.kicad.org) 그리기 규격 준수**. silk 0.12mm(패드 0.2mm 비침범), fab 0.10mm 본체+pin1 1mm 모따기, courtyard 0.05mm(커넥터 0.5mm 클리어런스), pin1 마커. (밀도 Most/Nominal/Least 3종 = 향후 차별점.)
 - **중립 포맷 전략**: MVP는 KiCad를 마스터로. 확장 시 자체 중립 JSON 스키마(part.json)→포맷별 렌더러로 일반화.
 - **출력 포맷**: KiCad(.kicad_sym/.kicad_mod) + STEP + STL + GLB(웹 프리뷰). 배치로 전부 사전생성(런타임 변환 없음).
 - **파일 저장**: 이산(나사규격/핀수)=전수 사전생성→정적파일. 연속(임의 길이)=CLI 로컬생성(하이브리드).

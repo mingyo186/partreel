@@ -68,7 +68,8 @@ def render_footprint(text):
         col, op, dash = st
         dash_attr = f' stroke-dasharray="{dash}"' if dash else ""
         out.append(f'<line x1="{x1:.3f}" y1="{y1:.3f}" x2="{x2:.3f}" y2="{y2:.3f}" '
-                   f'stroke="{col}" stroke-width="{max(w,0.08):.3f}" opacity="{op}"{dash_attr}/>')
+                   f'stroke="{col}" stroke-width="{max(w,0.08):.3f}" stroke-linecap="round" '
+                   f'opacity="{op}"{dash_attr}/>')
     for num, shape, x, y, pw, ph, dr in pads:
         rx = (min(pw, ph) / 2 if shape in ("oval", "circle")
               else min(pw, ph) * 0.25 if shape == "roundrect" else 0)

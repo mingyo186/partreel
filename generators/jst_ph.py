@@ -48,6 +48,19 @@ def _rect(box, A, layer, w):
     ]
 
 
+def _cham_rect(box, A, layer, w, ch):
+    """좌상단(핀1) 모따기한 사각 — KLC pin1 마커."""
+    x0, x1 = box["x0"], A + box["x1"]
+    y0, y1 = box["y0"], box["y1"]
+    return [
+        _line(x0 + ch, y0, x1, y0, layer, w),
+        _line(x1, y0, x1, y1, layer, w),
+        _line(x1, y1, x0, y1, layer, w),
+        _line(x0, y1, x0, y0 + ch, layer, w),
+        _line(x0, y0 + ch, x0 + ch, y0, layer, w),
+    ]
+
+
 def gen_footprint(pins, fid):
     A = (pins - 1) * PITCH
     cx = A / 2.0
@@ -62,21 +75,10 @@ def gen_footprint(pins, fid):
            f'  (fp_text value "{fid}" (at {cx:.3f} 4.000) (layer "F.Fab")'
            '\n    (effects (font (size 1 1) (thickness 0.15))))']
 
-    # Fab: 핀1 코너(좌상단) 모따기 사각
-    fx0, fx1 = FAB["x0"], A + FAB["x1"]
-    fy0, fy1 = FAB["y0"], FAB["y1"]
-    ch = 0.8
-    out += [
-        _line(fx0 + ch, fy0, fx1, fy0, "F.Fab", 0.10),
-        _line(fx1, fy0, fx1, fy1, "F.Fab", 0.10),
-        _line(fx1, fy1, fx0, fy1, "F.Fab", 0.10),
-        _line(fx0, fy1, fx0, fy0 + ch, "F.Fab", 0.10),
-        _line(fx0, fy0 + ch, fx0 + ch, fy0, "F.Fab", 0.10),
-    ]
-    # Silk: 외곽 사각 + 핀1 마커(좌상단 바깥 짧은선)
-    out += _rect(SILK, A, "F.SilkS", 0.12)
-    out.append(_line(SILK["x0"], SILK["y0"], SILK["x0"] - 0.6, SILK["y0"], "F.SilkS", 0.12))
-    # Courtyard
+    # KLC: Fab(0.10mm) + Silk(0.12mm) 둘 다 핀1 코너 1mm 모따기로 통일.
+    out += _cham_rect(FAB, A, "F.Fab", 0.10, 1.0)
+    out += _cham_rect(SILK, A, "F.SilkS", 0.12, 1.0)
+    # Courtyard(0.05mm, 커넥터 0.5mm 클리어런스 = CRT 오프셋에 반영됨)
     out += _rect(CRT, A, "F.CrtYd", 0.05)
     # 패드
     for i in range(pins):
