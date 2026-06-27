@@ -12,7 +12,7 @@
 <meta property="og:title" content="JST PH 2-pin (B2B-PH-K) — KiCad 풋프린트·심볼·3D 모델 | PartReel">
 <meta property="og:description" content="JST PH series 2.0mm pitch 2-pin through-hole connector, vertical top entry. Common for LiPo battery and signal connections.">
 <meta property="og:url" content="https://partreel.com/p/jst_ph_2pin/">
-<link rel="stylesheet" href="../../assets/style.css">
+<link rel="stylesheet" href="../../assets/style.css?v=2">
 <script type="importmap">
 { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js", "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/" } }
 </script>
@@ -29,7 +29,16 @@
   <nav class="crumb"><a href="../../">홈</a> / JST PH / JST PH 2-pin (B2B-PH-K)</nav>
   <h1>JST PH 2-pin (B2B-PH-K)</h1>
   <p class="desc">JST PH series 2.0mm pitch 2-pin through-hole connector, vertical top entry. Common for LiPo battery and signal connections.</p>
-  <div id="viewer" class="viewer part-viewer" data-glb="../../library/connector/jst/ph/jst_ph_2pin/jst_ph_2pin.glb"><div class="viewer-msg">3D 로딩 중…</div></div>
+  <div class="view-tabs">
+    <button class="vt active" data-view="3d">3D</button>
+    <button class="vt" data-view="sym">심볼</button>
+    <button class="vt" data-view="fp">풋프린트</button>
+  </div>
+  <div id="viewer" class="viewer part-viewer" data-glb="../../library/connector/jst/ph/jst_ph_2pin/jst_ph_2pin.glb" data-sym="../../library/connector/jst/ph/jst_ph_2pin/jst_ph_2pin.symbol.svg" data-fp="../../library/connector/jst/ph/jst_ph_2pin/jst_ph_2pin.footprint.svg">
+    <div class="viewer-msg">3D 로딩 중…</div>
+    <img id="view-sym" class="view-img" alt="심볼" hidden>
+    <img id="view-fp" class="view-img" alt="풋프린트" hidden>
+  </div>
   <h2>사양</h2>
   <table class="specs"><tr><td>제조사</td><td>JST</td></tr><tr><td>패밀리</td><td>JST PH</td></tr><tr><td>MPN 패턴</td><td>B2B-PH-K-S</td></tr><tr><td>핀 수</td><td>2</td></tr><tr><td>피치</td><td>2.0 mm</td></tr><tr><td>실장</td><td>THT</td></tr><tr><td>방향</td><td>vertical</td></tr></table>
   <h2>다운로드 <span class="nologin">· 가입 없이</span></h2>
@@ -49,6 +58,6 @@
   </nav>
   <div class="foot-lic">코드 MIT · 부품 CC-BY-4.0 · 치수는 데이터시트 기반, 사용 전 검증 권장(as-is)</div>
 </footer>
-<script type="module" src="../../assets/part.js"></script>
+<script type="module" src="../../assets/part.js?v=2"></script>
 </body>
 </html>

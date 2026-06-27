@@ -114,7 +114,17 @@ h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .05em; color: v
 .part-page { max-width: 820px; margin: 0 auto; padding: 24px 26px 48px; }
 .crumb { color: var(--muted); font-size: 13px; margin-bottom: 14px; }
 .crumb a { color: var(--accent); text-decoration: none; }
-.part-viewer { position: relative; height: 360px; border: 1px solid var(--border); border-radius: 12px; margin: 16px 0; }
+.part-viewer { position: relative; height: 360px; border: 1px solid var(--border); border-radius: 12px; margin: 16px 0; overflow: hidden; }
+
+/* 뷰 탭 (3D / 심볼 / 풋프린트) */
+.view-tabs { display: flex; gap: 6px; padding: 8px 12px; border-bottom: 1px solid var(--border); background: var(--panel); }
+.part-page .view-tabs { border: 1px solid var(--border); border-bottom: none; border-radius: 12px 12px 0 0; margin-top: 16px; }
+.part-page .part-viewer { margin-top: 0; border-radius: 0 0 12px 12px; }
+.vt { background: var(--panel2); border: 1px solid var(--border); color: var(--muted); padding: 5px 12px; border-radius: 6px; font-size: 12px; cursor: pointer; }
+.vt:hover { border-color: var(--accent); }
+.vt.active { color: var(--text); border-color: var(--accent); }
+.view-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; padding: 14px; background: radial-gradient(circle at 50% 40%, #1b2030, #0d0f14); }
+.view-img[hidden] { display: none; }
 
 /* 문서 페이지 (소개 / 가이드) */
 .doc-page { max-width: 760px; margin: 0 auto; padding: 26px 26px 48px; line-height: 1.65; }

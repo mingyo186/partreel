@@ -12,7 +12,7 @@
   <meta property="og:title" content="PartReel — 로그인 없는 KiCad 부품 라이브러리">
   <meta property="og:description" content="로그인 없이 바로 받는 KiCad 풋프린트·심볼·3D 모델.">
   <meta property="og:url" content="https://partreel.com/">
-  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/style.css?v=2">
   <script type="importmap">
   {
     "imports": {
@@ -45,8 +45,15 @@
     </section>
 
     <section class="detail">
+      <div class="view-tabs">
+        <button class="vt active" data-view="3d">3D</button>
+        <button class="vt" data-view="sym">심볼</button>
+        <button class="vt" data-view="fp">풋프린트</button>
+      </div>
       <div id="viewer" class="viewer">
         <div id="viewer-msg" class="viewer-msg">부품을 선택하세요</div>
+        <img id="view-sym" class="view-img" alt="심볼" hidden>
+        <img id="view-fp" class="view-img" alt="풋프린트" hidden>
       </div>
       <div id="info" class="info hidden">
         <h1 id="part-name"></h1>
@@ -81,6 +88,6 @@
     <div class="foot-lic">코드 MIT · 부품 CC-BY-4.0 · 치수는 데이터시트 기반, 사용 전 검증 권장(as-is)</div>
   </footer>
 
-  <script type="module" src="assets/app.js"></script>
+  <script type="module" src="assets/app.js?v=2"></script>
 </body>
 </html>

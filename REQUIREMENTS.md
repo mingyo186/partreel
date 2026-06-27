@@ -147,8 +147,10 @@
 
 ✅ **HTTPS 강제 완료** · ✅ **Google Search Console 등록+sitemap 제출+색인 요청 완료**(사용자) · ✅ **2순위 다듬기 완료(2026-06-23)**: 모바일 반응형 / About(/about/) / KiCad 가이드(/guide/kicad/) / favicon / 전 페이지 푸터. build_site.py에 공통 render() 도입. sitemap 18 URL. 라이브 검증 통과.
 
+✅ **뷰 셀렉터 완료(2026-06-23)**: 뷰어에 **[3D | 심볼 | 풋프린트] 탭**. 심볼·풋프린트는 `generators/render_svg.py`가 .kicad_sym/.kicad_mod 파싱→SVG 미리보기 생성(부품당 .symbol.svg/.footprint.svg, meta.files에 등록). 홈 SPA(app.js)+부품 페이지(part.js) 양쪽 적용. **교차검증**: 브라우저 렌더로 SVG 품질 시각 확인 + 탭 전환 eval 검증(양쪽 페이지). 에셋에 `?v=` 캐시버스팅 도입(앞으로 JS/CSS 변경 시 v 올릴 것).
+
 **▶ NEXT 후보**:
-1. **커넥터 패밀리 확장** (JST-XH 2.5mm/JST-SH 1.0mm, Molex 등) — 생성기 복제. 확장 시 build_site 재실행 → sitemap 갱신 → Search Console 재제출.
+1. **커넥터 패밀리 확장** (JST-XH 2.5mm/JST-SH 1.0mm, Molex 등) — 생성기 복제. 확장 시 jst_ph→텍스트, jst_ph_3d→3D, stl_to_glb→GLB, render_svg→SVG, build_site→페이지 순으로 재생성 → sitemap 갱신 → Search Console 재제출.
 2. 3D 뷰어 컨트롤(회전 멈춤/리셋 버튼).
 3. 검색 개선 / 카테고리 필터.
 4. 수요신호 채굴로 다음 패밀리 우선순위.

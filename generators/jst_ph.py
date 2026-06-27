@@ -136,6 +136,8 @@ def gen_meta(pins, fid):
             "symbol": f"{fid}.kicad_sym",
             "model_3d": f"{fid}.step",
             "preview": f"{fid}.glb",
+            "footprint_svg": f"{fid}.footprint.svg",
+            "symbol_svg": f"{fid}.symbol.svg",
         },
         "formats": ["kicad_mod", "kicad_sym", "step", "glb"],
         "datasheet": "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf",

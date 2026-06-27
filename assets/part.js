@@ -1,11 +1,29 @@
-// 부품 단독 페이지용 3D 뷰어. #viewer[data-glb]를 읽어 GLB를 렌더.
+// 부품 단독 페이지: 뷰 탭(3D/심볼/풋프린트) + 3D 뷰어.
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 const el = document.getElementById('viewer');
-const url = el && el.dataset.glb;
+const symEl = document.getElementById('view-sym');
+const fpEl = document.getElementById('view-fp');
+let rendererCanvas = null;
 
+if (el) {
+  if (el.dataset.sym && symEl) symEl.src = el.dataset.sym;
+  if (el.dataset.fp && fpEl) fpEl.src = el.dataset.fp;
+}
+
+function setView(v) {
+  document.querySelectorAll('.view-tabs .vt').forEach((b) => b.classList.toggle('active', b.dataset.view === v));
+  const msg = el && el.querySelector('.viewer-msg');
+  if (symEl) symEl.hidden = v !== 'sym';
+  if (fpEl) fpEl.hidden = v !== 'fp';
+  if (rendererCanvas) rendererCanvas.style.display = v === '3d' ? 'block' : 'none';
+  if (v !== '3d' && msg) msg.style.display = 'none';
+}
+document.querySelectorAll('.view-tabs .vt').forEach((b) => b.addEventListener('click', () => setView(b.dataset.view)));
+
+const url = el && el.dataset.glb;
 if (el && url) {
   const w = el.clientWidth, h = el.clientHeight;
   const scene = new THREE.Scene();
@@ -14,6 +32,7 @@ if (el && url) {
   renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setSize(w, h);
   el.appendChild(renderer.domElement);
+  rendererCanvas = renderer.domElement;
 
   scene.add(new THREE.AmbientLight(0xffffff, 0.7));
   const key = new THREE.DirectionalLight(0xffffff, 1.1); key.position.set(10, 20, 15); scene.add(key);

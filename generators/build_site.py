@@ -59,7 +59,7 @@ def render(prefix, title, desc, canonical, body, head_extra="", scripts=""):
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
 <meta property="og:url" content="{canonical}">
-<link rel="stylesheet" href="{prefix}assets/style.css">
+<link rel="stylesheet" href="{prefix}assets/style.css?v=2">
 {head_extra}
 </head>
 <body>
@@ -87,6 +87,8 @@ def part_page(meta, path):
     params = meta.get("parameters", {})
     files = meta.get("files", {})
     glb = files.get("preview", "")
+    sym_svg = files.get("symbol_svg", "")
+    fp_svg = files.get("footprint_svg", "")
 
     rows = []
     for label, val in [("제조사", manu), ("패밀리", fam), ("MPN 패턴", mpn),
@@ -123,7 +125,16 @@ def part_page(meta, path):
   <nav class="crumb"><a href="{prefix}">홈</a> / {esc(fam)} / {esc(name)}</nav>
   <h1>{esc(name)}</h1>
   <p class="desc">{esc(desc)}</p>
-  <div id="viewer" class="viewer part-viewer" data-glb="{prefix}{path}/{esc(glb)}"><div class="viewer-msg">3D 로딩 중…</div></div>
+  <div class="view-tabs">
+    <button class="vt active" data-view="3d">3D</button>
+    <button class="vt" data-view="sym">심볼</button>
+    <button class="vt" data-view="fp">풋프린트</button>
+  </div>
+  <div id="viewer" class="viewer part-viewer" data-glb="{prefix}{path}/{esc(glb)}" data-sym="{prefix}{path}/{esc(sym_svg)}" data-fp="{prefix}{path}/{esc(fp_svg)}">
+    <div class="viewer-msg">3D 로딩 중…</div>
+    <img id="view-sym" class="view-img" alt="심볼" hidden>
+    <img id="view-fp" class="view-img" alt="풋프린트" hidden>
+  </div>
   <h2>사양</h2>
   <table class="specs">{spec_rows}</table>
   <h2>다운로드 <span class="nologin">· 가입 없이</span></h2>
@@ -134,7 +145,7 @@ def part_page(meta, path):
   <a class="buy" href="https://www.lcsc.com/search?q={esc(mpn)}" target="_blank" rel="noopener">이 부품 구매처 보기 →</a>
   <p class="affiliate-note">제휴 링크 · 부품 라이선스: {esc(lic)}</p>
 </main>"""
-    scripts = f'<script type="module" src="{prefix}assets/part.js"></script>'
+    scripts = f'<script type="module" src="{prefix}assets/part.js?v=2"></script>'
     title = f"{esc(name)} — KiCad 풋프린트·심볼·3D 모델 | PartReel"
     return render(prefix, title, esc(desc_short), f"{DOMAIN}/p/{pid}/", body, head_extra, scripts)
 

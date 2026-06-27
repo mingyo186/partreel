@@ -26,6 +26,7 @@ async function init() {
   parts = data.parts || [];
   renderList(parts);
   setupViewer();
+  setupTabs();
   if (parts.length) selectPart(parts[0]);
 
   document.getElementById('q').addEventListener('input', (e) => {
@@ -113,6 +114,28 @@ async function selectPart(p) {
   // 3D
   const preview = meta.files?.preview;
   if (preview) loadModel(`${p.path}/${preview}`);
+
+  // 뷰 전환용 심볼/풋프린트 SVG
+  const symEl = document.getElementById('view-sym');
+  const fpEl = document.getElementById('view-fp');
+  if (meta.files?.symbol_svg) symEl.src = `${p.path}/${meta.files.symbol_svg}`;
+  if (meta.files?.footprint_svg) fpEl.src = `${p.path}/${meta.files.footprint_svg}`;
+  setView('3d');
+}
+
+function setView(v) {
+  document.querySelectorAll('.view-tabs .vt').forEach((b) => b.classList.toggle('active', b.dataset.view === v));
+  const sym = document.getElementById('view-sym');
+  const fp = document.getElementById('view-fp');
+  const msg = document.getElementById('viewer-msg');
+  if (sym) sym.hidden = v !== 'sym';
+  if (fp) fp.hidden = v !== 'fp';
+  if (view && view.renderer) view.renderer.domElement.style.display = v === '3d' ? 'block' : 'none';
+  if (v !== '3d' && msg) msg.classList.add('hidden');
+}
+
+function setupTabs() {
+  document.querySelectorAll('.view-tabs .vt').forEach((b) => b.addEventListener('click', () => setView(b.dataset.view)));
 }
 
 function fmtToKey(fmt) {
