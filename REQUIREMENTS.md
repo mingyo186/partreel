@@ -170,6 +170,53 @@
 - [ ] 계정 2FA 확인 (GitHub/Cloudflare) — 사용자 몫.
 - [ ] (향후) 사용자 기여 부품 받게 되면 입력 검증/샌드박싱 강화. CSP에서 'unsafe-inline' 제거(importmap→해시/nonce).
 
+## 14. 품질 기준 (부품/패밀리 합격 기준 — publish/`verified:true` 전 모두 충족)
+
+새 패밀리를 추가할 때 이 바를 넘어야 한다. 오늘(2026-06) 잡은 교훈 포함.
+
+### A. 풋프린트 (.kicad_mod) — KLC + IPC-7351
+- 패드 치수는 IPC-7351 / 데이터시트 기반. **KiCad 공식 라이브러리에 동일 부품 있으면 그 치수와 대조 일치.**
+- 1번핀 구분 형상(roundrect/rect), 나머지 oval/circle. drill·pad·pitch 정확.
+- Silk **0.12mm**, 패드와 **≥0.2mm**(패드 위 안 지나감), pin1 모따기.
+- Fab **0.10mm** 본체 외곽 + pin1 모따기.
+- Courtyard **0.05mm 실선**(점선 아님), 커넥터 **0.5mm** 클리어런스.
+- Reference "REF**"(silk) / value(fab).
+
+### B. 심볼 (.kicad_sym)
+- 핀 개수 = 부품 핀수, 번호 1..N 연속, 핀 이름 존재, 본체 사각, Reference 적절(커넥터 J).
+
+### C. 3D (STEP/GLB)
+- STEP: `isValid`, 부피>0, 솔리드 정상. 본체 치수 = 풋프린트 fab와 일치.
+- GLB: 컬러, 웹 경량(수 KB).
+
+### D. SVG 미리보기
+- 풋프린트: 패드+드릴+silk+fab+courtyard(실선)+**pin1 삼각형(빈 공간, 선과 안 겹침)**. 모든 레이어 선이 실제로 그려질 것(패드만 X).
+- 심볼: 본체+핀+번호+이름.
+
+### E. 메타 (meta.json / index.json)
+- 필수 필드 + `files`의 **모든 파일이 실제 존재**(없으면 그 포맷 미표시). datasheet·license·verified.
+
+### F. 검증 (교차검증 — §5/§5-1, 한 방법만 X)
+1. `python generators/validate_kicad.py` → PASS (구조).
+2. `freecadcmd generators/validate_step.py` → PASS (CAD 커널).
+3. **SVG 눈으로 확인**(풋프린트+심볼 각 1개 이상 브라우저 렌더).
+4. 사이트: 부품 렌더 + 뷰 탭 동작 + 다운로드 HTTP 200 + 콘솔 에러 0.
+5. CI 게이트(validate_kicad) green = 배포 통과.
+6. 치수 데이터시트/KiCad공식 대조 후에만 `verified:true`.
+
+### G. 생성 파이프라인 순서 (새 패밀리)
+1. 텍스트 생성기(예: `jst_ph.py`) → 풋프린트/심볼/meta/index
+2. `freecadcmd <family>_3d.py` → STEP/STL
+3. `stl_to_glb.py` → GLB
+4. `render_svg.py` → SVG
+5. `build_site.py` → 페이지/sitemap
+6. F의 검증 → 커밋/배포 → sitemap을 Search Console 재제출
+
+### H. 알려진 함정 (오늘 겪음)
+- **중첩 괄호 정규식**: `(stroke (width X) (type solid))`, `(name "x" (effects ...))` 파싱 시 `[^)]*` 쓰면 깨짐 → 비탐욕 `.*?` 사용.
+- **"서빙됨 ≠ 유효함"**: HTTP 200은 파일 존재만 증명. 파서/CAD커널로 내용 검증 필수.
+- **에셋 캐시**: JS/CSS 변경 시 `?v=` 버전 올릴 것(안 그러면 사용자/브라우저가 옛것 봄).
+
 ## 12. 미결정 / 오픈 이슈
 
 - [x] 프로젝트/사이트 이름 = **PartReel** (2026-06-20). 사유: "reel in(끌어오다)" + 전자부품 릴(reel) 이중의미, 브랜드 충돌 없음, partreel.com 미등록(.com 확보 가능). 후보 PadForge/PartForge/OpenParts 등은 전부 선점됨.
