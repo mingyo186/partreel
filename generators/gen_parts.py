@@ -117,7 +117,90 @@ def _usb_c_symbol(fid):
     return "\n".join(out) + "\n"
 
 
-PARTS = [usb_c_16p]  # 일회성 부품 등록
+# ---- microSD 카드 소켓 (push-push); 패드 위치=Hirose DM3AT 랜드패턴(데이터시트), 외곽선=자체 ----
+def microsd_hc():
+    fid = "microsd_hc"
+    lib_path = "connector/card/microsd_hc"
+    contacts = [("1", 2.775), ("2", 1.675), ("3", 0.575), ("4", -0.525), ("5", -1.625),
+                ("6", -2.725), ("7", -3.825), ("8", -4.925), ("9", -5.875)]  # y=-7.725, 0.7x1.2
+    shells = [(4.325, -7.725, 1, 1.2), (-6.825, -3.425, 1, 1.2), (-6.825, 2.775, 1, 0.8),
+              (-6.825, 6.925, 1, 2.8), (6.675, 7.375, 1.3, 1.9)]  # 쉴드/마운트
+    out = [f'(footprint "{fid}" (version 20221018) (generator opencad-lib)',
+           '  (layer "F.Cu")',
+           '  (descr "microSD card socket (push-push). Pad land pattern per Hirose DM3AT-SF-PEJM5 '
+           'datasheet; body outline original.")',
+           '  (tags "microSD TF card socket push-push")',
+           '  (attr through_hole)',
+           '  (fp_text reference "REF**" (at 0 -9.2) (layer "F.SilkS")'
+           '\n    (effects (font (size 1 1) (thickness 0.15))))',
+           '  (fp_text value "microsd_hc" (at 0 8.9) (layer "F.Fab")'
+           '\n    (effects (font (size 1 1) (thickness 0.15))))']
+    out += _rect_lines([(-6.9, -7.8, 6.9, -7.8), (6.9, -7.8, 6.9, 8.1),
+                        (6.9, 8.1, -6.9, 8.1), (-6.9, 8.1, -6.9, -7.8)], "F.Fab", 0.10)
+    out += _rect_lines([(-7.0, -6.9, 7.0, -6.9), (7.0, -6.9, 7.0, 8.2),
+                        (7.0, 8.2, -7.0, 8.2), (-7.0, 8.2, -7.0, -6.9)], "F.SilkS", 0.12)
+    out += _rect_lines([(-7.4, -8.8, 7.4, -8.8), (7.4, -8.8, 7.4, 8.6),
+                        (7.4, 8.6, -7.4, 8.6), (-7.4, 8.6, -7.4, -8.8)], "F.CrtYd", 0.05)
+    for name, x in contacts:
+        out.append(f'  (pad "{name}" smd rect (at {x} -7.725) (size 0.7 1.2) '
+                   f'(layers "F.Cu" "F.Paste" "F.Mask"))')
+    for x, y, w, h in shells:
+        out.append(f'  (pad "SH" smd rect (at {x} {y}) (size {w} {h}) '
+                   f'(layers "F.Cu" "F.Paste" "F.Mask"))')
+    out.append(')')
+    footprint = "\n".join(out) + "\n"
+
+    names = ["DAT2", "CD/DAT3", "CMD", "VDD", "CLK", "VSS", "DAT0", "DAT1", "DET"]
+    symbol = _left_pin_symbol(fid, [(str(i + 1), names[i]) for i in range(9)], shield="SH")
+    meta = {
+        "id": fid, "name": "microSD Card Socket (push-push)",
+        "category": "connector", "family": "microSD", "manufacturer": "Hirose / Generic",
+        "mpn_pattern": "DM3AT-SF-PEJM5",
+        "description": "microSD / TF card socket, push-push, SMD. Land pattern per Hirose "
+                       "DM3AT-SF-PEJM5 datasheet. SD-bus pinout (DAT/CMD/CLK/VDD/VSS).",
+        "parameters": {"contacts": 9, "mounting": "SMD", "orientation": "horizontal"},
+        "files": {"footprint": f"{fid}.kicad_mod", "symbol": f"{fid}.kicad_sym",
+                  "model_3d": f"{fid}.step", "preview": f"{fid}.glb",
+                  "footprint_svg": f"{fid}.footprint.svg", "symbol_svg": f"{fid}.symbol.svg"},
+        "formats": ["kicad_mod", "kicad_sym", "step", "glb"],
+        "datasheet": "https://www.hirose.com/product/series/DM3",
+        "dimensions_source": "Pad land pattern per Hirose DM3AT datasheet; body outline original.",
+        "verified": True, "license": "CC-BY-4.0", "generated_by": "generators/gen_parts.py",
+        "keywords": ["microsd", "sd", "tf", "card", "socket", "connector"],
+    }
+    return fid, lib_path, footprint, symbol, meta
+
+
+def _left_pin_symbol(fid, pins, shield=None):
+    """좌측 일렬 핀 + (옵션)하단 쉴드 핀 심볼."""
+    GRID, PIN = 2.54, 2.54
+    top = (len(pins) - 1) * GRID / 2.0
+    bl, br = -6.35, 6.35
+    bt = top + 2.54
+    bb = -top - (2.54 if not shield else 5.08)
+    out = ['(kicad_symbol_lib (version 20211014) (generator opencad-lib)',
+           f'  (symbol "{fid}" (in_bom yes) (on_board yes)',
+           f'    (property "Reference" "J" (at 0 {bt + 2:.2f} 0) (effects (font (size 1.27 1.27))))',
+           f'    (property "Value" "{fid}" (at 0 {bb - 2:.2f} 0) (effects (font (size 1.27 1.27))))',
+           '    (property "Footprint" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))',
+           '    (property "Datasheet" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))',
+           f'    (symbol "{fid}_1_1"',
+           f'      (rectangle (start {bl:.2f} {bt:.2f}) (end {br:.2f} {bb:.2f})'
+           '\n        (stroke (width 0.254) (type solid)) (fill (type background)))']
+    for i, (num, name) in enumerate(pins):
+        y = top - i * GRID
+        out.append(f'      (pin passive line (at {bl - PIN:.2f} {y:.2f} 0) (length {PIN})'
+                   f'\n        (name "{name}" (effects (font (size 1.27 1.27))))'
+                   f'\n        (number "{num}" (effects (font (size 1.27 1.27)))))')
+    if shield:
+        out.append(f'      (pin passive line (at 0 {bb - PIN:.2f} 90) (length {PIN})'
+                   '\n        (name "Shield" (effects (font (size 1.27 1.27))))'
+                   f'\n        (number "{shield}" (effects (font (size 1.27 1.27)))))')
+    out += ['    )', '  )', ')']
+    return "\n".join(out) + "\n"
+
+
+PARTS = [usb_c_16p, microsd_hc]  # 일회성 부품 등록
 
 
 def main():

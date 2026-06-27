@@ -90,9 +90,10 @@ def render_footprint(text):
                            f'ry="{float(d[2])/2:.3f}" fill="{BG}"/>')
             else:
                 out.append(f'<circle cx="{x:.3f}" cy="{y:.3f}" r="{float(d[0])/2:.3f}" fill="{BG}"/>')
-    # 핀1 마커: 패드 "1"(일렬 커넥터)일 때만, 패드 아래 빈 공간에 위를 가리키는 삼각형
+    # 핀1 마커: 모든 패드가 같은 Y(순수 일렬 커넥터)이고 패드 "1"이 있을 때만.
     p1 = next((pd for pd in pads if pd[0] == "1"), None)
-    if p1:
+    same_row = len({round(pd[4], 2) for pd in pads}) == 1
+    if p1 and same_row:
         _, _, _, x, y, pw, ph, _ = p1
         tip = y + ph / 2 + 0.45
         base = y + ph / 2 + 1.05

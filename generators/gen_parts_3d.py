@@ -25,4 +25,18 @@ def usb_c_16p():
     print("USB-C 3D done")
 
 
+def microsd_hc():
+    fid = "microsd_hc"
+    d = "%s/connector/card/microsd_hc/%s" % (LIB, fid)
+    body = Part.makeBox(13.8, 15.9, 1.4, App.Vector(-6.9, -7.8, 0))
+    slot = Part.makeBox(12.0, 1.2, 1.0, App.Vector(-6.0, -8.0, 0.3))  # 카드 입구
+    body = body.cut(slot)
+    contacts = Part.makeBox(9.5, 1.2, 0.3, App.Vector(-6.2, -8.3, 0))  # 접점 스트립
+    Part.makeCompound([body, contacts]).exportStep("%s/%s.step" % (d, fid))
+    body.exportStl("%s/%s__housing.stl" % (d, fid))
+    contacts.exportStl("%s/%s__pins.stl" % (d, fid))
+    print("microSD 3D done")
+
+
 usb_c_16p()
+microsd_hc()
