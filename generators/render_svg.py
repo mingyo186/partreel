@@ -22,8 +22,8 @@ PAD_RE = re.compile(
     r'\(pad\s+"(\S+)"\s+\w+\s+(\w+)\s+\(at\s+([-\d.]+)\s+([-\d.]+)[^)]*\)\s*'
     r'\(size\s+([-\d.]+)\s+([-\d.]+)\)\s*\(drill\s+([-\d.]+)\)')
 LINE_RE = re.compile(
-    r'\(fp_line\s+\(start\s+([-\d.]+)\s+([-\d.]+)\)\s+\(end\s+([-\d.]+)\s+([-\d.]+)\)\s+'
-    r'\(stroke\s+\(width\s+([-\d.]+)\)[^)]*\)\s+\(layer\s+"([^"]+)"\)')
+    r'\(fp_line\s+\(start\s+([-\d.]+)\s+([-\d.]+)\)\s+\(end\s+([-\d.]+)\s+([-\d.]+)\)'
+    r'.*?\(width\s+([-\d.]+)\).*?\(layer\s+"([^"]+)"\)')
 RECT_RE = re.compile(
     r'\(rectangle\s+\(start\s+([-\d.]+)\s+([-\d.]+)\)\s+\(end\s+([-\d.]+)\s+([-\d.]+)\)')
 PIN_RE = re.compile(
