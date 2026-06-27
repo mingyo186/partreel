@@ -43,7 +43,7 @@ def balanced(text):
     return depth == 0 and not in_str
 
 
-def check_footprint(text, pins):
+def check_footprint(text, pins, pitch):
     errs = []
     if not balanced(text):
         errs.append("괄호 불균형")
@@ -60,7 +60,7 @@ def check_footprint(text, pins):
     if xs.get(1) != 0.0:
         errs.append(f"1번핀 X != 0 ({xs.get(1)})")
     for n in nums:
-        expected = (n - 1) * PITCH
+        expected = (n - 1) * pitch
         if abs(xs.get(n, -999) - expected) > 1e-6:
             errs.append(f"{n}번핀 X={xs.get(n)} != 기대 {expected}")
             break
@@ -89,9 +89,11 @@ def main():
         pins = p["pins"]
         d = os.path.join(ROOT, p["path"])
         fid = p["id"]
+        meta = json.load(open(os.path.join(d, "meta.json"), encoding="utf-8"))
+        pitch = meta["parameters"]["pitch_mm"]
         mod = open(os.path.join(d, f"{fid}.kicad_mod"), encoding="utf-8").read()
         sym = open(os.path.join(d, f"{fid}.kicad_sym"), encoding="utf-8").read()
-        errs = [f"[mod] {e}" for e in check_footprint(mod, pins)]
+        errs = [f"[mod] {e}" for e in check_footprint(mod, pins, pitch)]
         errs += [f"[sym] {e}" for e in check_symbol(sym, pins)]
         if errs:
             total_err += len(errs)

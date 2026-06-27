@@ -115,7 +115,7 @@
 ## 11. 현재 작업
 
 ✅ **0단계 완료(2026-06-20)**: JST-PH 샘플 3개(2·4·6핀) 전 자산 생성 완료 — 풋프린트/심볼/STEP/GLB/meta.json/index.json. 데이터 형식 확정됨. 3D 치수 검증 통과(X=(n-1)*2+3, Y=4.5, Z=7.5).
-- 생성기: `generators/jst_ph.py`(텍스트), `generators/jst_ph_3d.py`(FreeCAD 헤드리스 STEP/STL), `generators/stl_to_glb.py`(컬러 GLB).
+- 생성기(config 기반 공통): `generators/gen_connectors.py`(텍스트+통합 index), `generators/gen_connectors_3d.py`(FreeCAD STEP/STL), `generators/stl_to_glb.py`(GLB), `generators/render_svg.py`(SVG). 패밀리는 gen_connectors.py의 FAMILIES 설정에 추가.
 - FreeCAD 실행: `"C:\Users\mg_seo\AppData\Local\Programs\FreeCAD 1.1\bin\freecadcmd.exe" <script>` (GUI RPC 불필요 — 헤드리스 배치).
 
 ✅ **1단계 완료(2026-06-20)**: 최소 정적 사이트 구축·검증 완료.
@@ -205,8 +205,8 @@
 6. 치수 데이터시트/KiCad공식 대조 후에만 `verified:true`.
 
 ### G. 생성 파이프라인 순서 (새 패밀리)
-1. 텍스트 생성기(예: `jst_ph.py`) → 풋프린트/심볼/meta/index
-2. `freecadcmd <family>_3d.py` → STEP/STL
+1. `gen_connectors.py` (FAMILIES에 패밀리 config 추가) → 풋프린트/심볼/meta/통합 index
+2. `freecadcmd generators/gen_connectors_3d.py` → STEP/STL
 3. `stl_to_glb.py` → GLB
 4. `render_svg.py` → SVG
 5. `build_site.py` → 페이지/sitemap
