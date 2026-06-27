@@ -58,7 +58,7 @@ def render_footprint(text):
     minx, maxx, miny, maxy = min(xs), max(xs), min(ys), max(ys)
 
     out = [svg_header(minx, miny, maxx - minx, maxy - miny, 1.0)]
-    layer_style = {"F.CrtYd": (COL["courtyard"], "0.5", "0.4 0.4"),
+    layer_style = {"F.CrtYd": (COL["courtyard"], "0.7", None),  # KiCad 코트야드는 실선
                    "F.Fab": (COL["fab"], "0.8", None),
                    "F.SilkS": (COL["silk"], "1", None)}
     for x1, y1, x2, y2, w, layer in lines:
@@ -76,9 +76,14 @@ def render_footprint(text):
         out.append(f'<rect x="{x - pw/2:.3f}" y="{y - ph/2:.3f}" width="{pw:.3f}" height="{ph:.3f}" '
                    f'rx="{rx:.3f}" fill="{COL["copper"]}"/>')
         out.append(f'<circle cx="{x:.3f}" cy="{y:.3f}" r="{dr/2:.3f}" fill="{BG}"/>')
-        if num == "1":
-            out.append(f'<text x="{x:.3f}" y="{y - ph/2 - 0.4:.3f}" fill="{COL["label"]}" '
-                       f'font-size="1.1" text-anchor="middle" font-family="sans-serif">1</text>')
+    # 핀1 마커: 패드 아래 빈 공간에 위를 가리키는 삼각형 (선과 안 겹침)
+    p1 = next((pd for pd in pads if pd[0] == "1"), None)
+    if p1:
+        _, _, x, y, pw, ph, _ = p1
+        tip = y + ph / 2 + 0.45
+        base = y + ph / 2 + 1.05
+        out.append(f'<polygon points="{x-0.45:.2f},{base:.2f} {x+0.45:.2f},{base:.2f} '
+                   f'{x:.2f},{tip:.2f}" fill="{COL["label"]}"/>')
     out.append("</svg>")
     return "".join(out)
 
