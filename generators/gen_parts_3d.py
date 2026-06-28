@@ -38,5 +38,17 @@ def microsd_hc():
     print("microSD 3D done")
 
 
+def esp32_wroom32():
+    fid = "esp32_wroom32"
+    d = "%s/module/espressif/esp32_wroom32/%s" % (LIB, fid)
+    body = Part.makeBox(18, 25.5, 3.1, App.Vector(-9, -15.745, 0))      # 금속 쉴드 모듈
+    pads = Part.makeBox(17, 18.5, 0.2, App.Vector(-8.5, -9.0, -0.0))     # 패드 영역(대표)
+    Part.makeCompound([body, pads]).exportStep("%s/%s.step" % (d, fid))
+    body.exportStl("%s/%s__housing.stl" % (d, fid))
+    pads.exportStl("%s/%s__pins.stl" % (d, fid))
+    print("ESP32 3D done")
+
+
 usb_c_16p()
 microsd_hc()
+esp32_wroom32()

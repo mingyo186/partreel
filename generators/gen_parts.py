@@ -200,7 +200,109 @@ def _left_pin_symbol(fid, pins, shield=None):
     return "\n".join(out) + "\n"
 
 
-PARTS = [usb_c_16p, microsd_hc]  # 일회성 부품 등록
+# ---- ESP32-WROOM-32 모듈; 패드=Espressif/KiCad 공식 랜드패턴, 외곽선=자체 ----
+def esp32_wroom32():
+    fid = "esp32_wroom32"
+    lib_path = "module/espressif/esp32_wroom32"
+    # (name, x, y, rot) — 본체 패드 2x0.9, 써멀 5x5
+    pads = [("39", -1.0, -0.755, 0, 5, 5)]
+    for i in range(14):   # 1-14 좌
+        pads.append((str(i + 1), -8.5, -8.255 + i * 1.27, 0, 2, 0.9))
+    for i in range(10):   # 15-24 하 (90도)
+        pads.append((str(15 + i), -5.715 + i * 1.27, 9.255, 90, 2, 0.9))
+    for i in range(14):   # 25-38 우
+        pads.append((str(25 + i), 8.5, 8.255 - i * 1.27, 0, 2, 0.9))
+
+    out = [f'(footprint "{fid}" (version 20221018) (generator opencad-lib)',
+           '  (layer "F.Cu")',
+           '  (descr "Espressif ESP32-WROOM-32 Wi-Fi+BT module, SMD castellated, 38-pad + thermal. '
+           'Land pattern per Espressif datasheet / KiCad RF_Module; body outline original.")',
+           '  (tags "ESP32 WROOM module wifi bt")',
+           '  (attr through_hole)',
+           '  (fp_text reference "REF**" (at 0 -16.5) (layer "F.SilkS")'
+           '\n    (effects (font (size 1 1) (thickness 0.15))))',
+           '  (fp_text value "esp32_wroom32" (at 0 10.6) (layer "F.Fab")'
+           '\n    (effects (font (size 1 1) (thickness 0.15))))']
+    # Fab 본체 (18 x 25.5)
+    out += _rect_lines([(-9, -15.745, 9, -15.745), (9, -15.745, 9, 9.76),
+                        (9, 9.76, -9, 9.76), (-9, 9.76, -9, -15.745)], "F.Fab", 0.10)
+    # Silk: 안테나 키프아웃 박스(패드 없는 영역) + 1번핀 틱
+    out += _rect_lines([(-9, -15.745, 9, -15.745), (9, -15.745, 9, -9.5),
+                        (9, -9.5, -9, -9.5), (-9, -9.5, -9, -15.745)], "F.SilkS", 0.12)
+    out.append(_line(-9.6, -8.255, -9.6, -7.255, "F.SilkS", 0.12))  # pin1 틱
+    # Courtyard (패드 바깥)
+    out += _rect_lines([(-9.7, -15.9, 9.7, -15.9), (9.7, -15.9, 9.7, 10.3),
+                        (9.7, 10.3, -9.7, 10.3), (-9.7, 10.3, -9.7, -15.9)], "F.CrtYd", 0.05)
+    for name, x, y, rot, w, h in pads:
+        at = f"{x} {y}" + (f" {rot}" if rot else "")
+        out.append(f'  (pad "{name}" smd rect (at {at}) (size {w} {h}) '
+                   f'(layers "F.Cu" "F.Paste" "F.Mask"))')
+    out.append(')')
+    footprint = "\n".join(out) + "\n"
+
+    nm = ["GND", "3V3", "EN", "IO36", "IO39", "IO34", "IO35", "IO32", "IO33", "IO25",
+          "IO26", "IO27", "IO14", "IO12", "GND", "IO13", "IO9", "IO10", "IO11", "IO6",
+          "IO7", "IO8", "IO15", "IO2", "IO0", "IO4", "IO16", "IO17", "IO5", "IO18",
+          "IO19", "NC", "IO21", "RXD0", "TXD0", "IO22", "IO23", "GND"]
+    left = [(str(i + 1), nm[i]) for i in range(19)]
+    right = [(str(i + 1), nm[i]) for i in range(19, 38)]
+    symbol = _lr_symbol(fid, left, right, bottom=[("39", "GND")])
+    meta = {
+        "id": fid, "name": "ESP32-WROOM-32 Module",
+        "category": "module", "family": "ESP32", "manufacturer": "Espressif",
+        "mpn_pattern": "ESP32-WROOM-32",
+        "description": "Espressif ESP32-WROOM-32 Wi-Fi + Bluetooth module, SMD castellated, "
+                       "38 pads + thermal. Land pattern per Espressif datasheet.",
+        "parameters": {"contacts": 39, "mounting": "SMD", "orientation": "horizontal"},
+        "files": {"footprint": f"{fid}.kicad_mod", "symbol": f"{fid}.kicad_sym",
+                  "model_3d": f"{fid}.step", "preview": f"{fid}.glb",
+                  "footprint_svg": f"{fid}.footprint.svg", "symbol_svg": f"{fid}.symbol.svg"},
+        "formats": ["kicad_mod", "kicad_sym", "step", "glb"],
+        "datasheet": "https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32_datasheet_en.pdf",
+        "dimensions_source": "Land pattern per Espressif ESP32-WROOM-32 datasheet; body outline original.",
+        "verified": True, "license": "CC-BY-4.0", "generated_by": "generators/gen_parts.py",
+        "keywords": ["esp32", "wroom", "wroom-32", "module", "wifi", "bluetooth", "espressif"],
+    }
+    return fid, lib_path, footprint, symbol, meta
+
+
+def _lr_symbol(fid, left, right, bottom=None):
+    """좌/우 핀 + (옵션)하단 핀 심볼."""
+    GRID, PIN = 2.54, 2.54
+    n = max(len(left), len(right))
+    top = (n - 1) * GRID / 2.0
+    bl, br = -8.89, 8.89
+    bt = top + 2.54
+    bb = -top - (2.54 + (2.54 * len(bottom) if bottom else 0))
+    out = ['(kicad_symbol_lib (version 20211014) (generator opencad-lib)',
+           f'  (symbol "{fid}" (in_bom yes) (on_board yes)',
+           f'    (property "Reference" "U" (at 0 {bt + 2:.2f} 0) (effects (font (size 1.27 1.27))))',
+           f'    (property "Value" "{fid}" (at 0 {bb - 2:.2f} 0) (effects (font (size 1.27 1.27))))',
+           '    (property "Footprint" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))',
+           '    (property "Datasheet" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))',
+           f'    (symbol "{fid}_1_1"',
+           f'      (rectangle (start {bl:.2f} {bt:.2f}) (end {br:.2f} {bb:.2f})'
+           '\n        (stroke (width 0.254) (type solid)) (fill (type background)))']
+    for i, (num, name) in enumerate(left):
+        y = top - i * GRID
+        out.append(f'      (pin passive line (at {bl - PIN:.2f} {y:.2f} 0) (length {PIN})'
+                   f'\n        (name "{name}" (effects (font (size 1.27 1.27))))'
+                   f'\n        (number "{num}" (effects (font (size 1.27 1.27)))))')
+    for i, (num, name) in enumerate(right):
+        y = top - i * GRID
+        out.append(f'      (pin passive line (at {br + PIN:.2f} {y:.2f} 180) (length {PIN})'
+                   f'\n        (name "{name}" (effects (font (size 1.27 1.27))))'
+                   f'\n        (number "{num}" (effects (font (size 1.27 1.27)))))')
+    for j, (num, name) in enumerate(bottom or []):
+        x = (j - (len(bottom) - 1) / 2.0) * GRID
+        out.append(f'      (pin passive line (at {x:.2f} {bb - PIN:.2f} 90) (length {PIN})'
+                   f'\n        (name "{name}" (effects (font (size 1.27 1.27))))'
+                   f'\n        (number "{num}" (effects (font (size 1.27 1.27)))))')
+    out += ['    )', '  )', ')']
+    return "\n".join(out) + "\n"
+
+
+PARTS = [usb_c_16p, microsd_hc, esp32_wroom32]  # 일회성 부품 등록
 
 
 def main():
