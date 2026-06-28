@@ -30,6 +30,9 @@ def main():
         for key, fn in meta.get("files", {}).items():
             if not os.path.exists(os.path.join(d, fn)):
                 errs.append(f"파일 없음: {fn}")
+        # A2. 부품 페이지 존재 (build_site 누락 방지 — /p/<id>/ 404 방지)
+        if not os.path.exists(os.path.join(ROOT, "p", fid, "index.html")):
+            errs.append("부품 페이지 없음 (build_site.py 실행 필요)")
 
         kmod = _read(d, meta["files"].get("footprint"))
         ksym = _read(d, meta["files"].get("symbol"))
