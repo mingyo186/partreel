@@ -16,7 +16,7 @@ let activeCard = null;
 async function init() {
   let data;
   try {
-    const res = await fetch('index.json');
+    const res = await fetch('index.json?t=' + Date.now());
     if (!res.ok) throw new Error('index.json ' + res.status);
     data = await res.json();
   } catch (e) {
@@ -62,7 +62,7 @@ function setActive(card) {
 async function selectPart(p) {
   let meta;
   try {
-    const res = await fetch(`${p.path}/meta.json`);
+    const res = await fetch(`${p.path}/meta.json?t=` + Date.now());
     if (!res.ok) throw new Error('meta.json ' + res.status);
     meta = await res.json();
   } catch (e) {
