@@ -30,6 +30,9 @@ jobs:
       - name: Check SVG text overlaps
         run: python3 generators/check_overlap.py
 
+      - name: Check render completeness
+        run: python3 generators/check_render.py
+
       # publish 정리: 사이트+라이브러리만 공개. generators/docs는 제외.
       - name: Assemble site
         run: |

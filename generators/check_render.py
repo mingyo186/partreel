@@ -1,0 +1,79 @@
+"""
+렌더 완전성 검사 — 우리가 겪은 버그 클래스를 자동 검출.
+실행: python generators/check_render.py  (실패 시 비0 종료 → CI 게이트)
+
+부품마다:
+  A. meta.files의 모든 파일이 실제 존재 ("버튼은 있는데 파일 없음" 방지)
+  B. 풋프린트 SVG에 <ellipse> 없음 (슬롯은 obround여야 함 — UFO 버그 방지)
+  C. SVG 동판 패드 수 == .kicad_mod 동판 패드 수 (SMD 등 패드 누락 방지)
+  D. SVG 외곽선(line) 수 == .kicad_mod 외곽선 수 (외곽선 안 그려짐 방지)
+  E. 심볼 SVG 핀선 수 == .kicad_sym 핀 수 (핀 누락 방지)
+"""
+import json
+import os
+import re
+import sys
+
+ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), ".."))
+
+
+def main():
+    index = json.load(open(os.path.join(ROOT, "index.json"), encoding="utf-8"))
+    total = 0
+    for p in index["parts"]:
+        d = os.path.join(ROOT, p["path"])
+        fid = p["id"]
+        meta = json.load(open(os.path.join(d, "meta.json"), encoding="utf-8"))
+        errs = []
+
+        # A. 파일 존재
+        for key, fn in meta.get("files", {}).items():
+            if not os.path.exists(os.path.join(d, fn)):
+                errs.append(f"파일 없음: {fn}")
+
+        kmod = _read(d, meta["files"].get("footprint"))
+        ksym = _read(d, meta["files"].get("symbol"))
+        fsvg = _read(d, meta["files"].get("footprint_svg"))
+        ssvg = _read(d, meta["files"].get("symbol_svg"))
+
+        if fsvg is not None and kmod is not None:
+            # B. ellipse 금지
+            if "<ellipse" in fsvg:
+                errs.append("풋프린트 SVG에 <ellipse> 있음 (슬롯은 obround여야)")
+            # C. 동판 패드 수
+            kmod_copper = len(re.findall(r'\(pad\s', kmod)) - len(re.findall(r'np_thru_hole', kmod))
+            svg_copper = fsvg.count('fill="#c79b5c"')
+            if svg_copper != kmod_copper:
+                errs.append(f"동판 패드 SVG={svg_copper} != kicad_mod={kmod_copper}")
+            # D. 외곽선 수
+            kmod_lines = len(re.findall(r'\(fp_line\b[^\n]*\(layer "F\.(?:SilkS|Fab|CrtYd)"\)', kmod))
+            svg_lines = fsvg.count('<line')
+            if svg_lines != kmod_lines:
+                errs.append(f"외곽선 SVG={svg_lines} != kicad_mod={kmod_lines}")
+
+        if ssvg is not None and ksym is not None:
+            # E. 심볼 핀 수
+            ksym_pins = len(re.findall(r'\(pin\s', ksym))
+            ssvg_pins = ssvg.count('<line')
+            if ssvg_pins != ksym_pins:
+                errs.append(f"심볼 핀선 SVG={ssvg_pins} != kicad_sym={ksym_pins}")
+
+        if errs:
+            total += len(errs)
+            print(f"FAIL {fid}:")
+            for e in errs:
+                print(f"   - {e}")
+
+    print(f"\n{'PASS' if total == 0 else 'FAIL'}: {len(index['parts'])} parts, {total} issues")
+    sys.exit(1 if total else 0)
+
+
+def _read(d, fn):
+    if not fn:
+        return None
+    path = os.path.join(d, fn)
+    return open(path, encoding="utf-8").read() if os.path.exists(path) else None
+
+
+if __name__ == "__main__":
+    main()

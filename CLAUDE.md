@@ -14,6 +14,11 @@
 - **"당연히 동작해야 하는데 동작 안 하는" 명백한 버그 금지**: 깨진 다운로드 링크, 안 뜨는 3D, 빈 목록, 눌리지 않는 버튼, 404 등. 발견 시 고친 뒤 보고.
 - **교차검증**: 한 방법만 반복하지 말고 독립적인 다른 방법으로도 검증한다 (HTTP 200 ↔ 파일 파싱/구조 ↔ 시각 렌더 ↔ CAD 커널 isValid ↔ 외부 툴). "받아지는데 안 열리는" 결함은 서빙 검사로 못 잡음. 생성 파일은 `generators/validate_kicad.py`로 구조 검증, STEP은 FreeCAD isValid로 검증.
 
+## 자동 품질 게이트
+
+- 모든 품질 검사는 **`python generators/qa.py`** 한 방으로 실행(validate_kicad + check_overlap + check_render). CI가 push마다 돌려 **실패 시 배포 차단** → 사용자가 매번 눈으로 안 봐도 됨.
+- **새 버그 클래스 발견 시: 1회성으로 고치지 말고, 해당 검사를 qa.py의 스크립트에 추가**해 영구 자동화한다 (REQUIREMENTS §16). 예: 슬롯 obround(<ellipse>금지), 외곽선/패드 수 일치, 글자 겹침.
+
 ## 부품 품질 기준 (확장 시 필수)
 
 새 패밀리 추가/publish 전 **REQUIREMENTS.md §14 품질 기준**을 모두 충족할 것. 요약: 풋프린트 KLC+IPC-7351 / 심볼 핀수·번호 / STEP isValid / SVG 전 레이어 렌더 + pin1 삼각형 / 모든 files 실제 존재 / 교차검증(validate_kicad + validate_step + 시각 + 사이트) 통과 후에만 verified:true. 파이프라인: 텍스트→3D→GLB→SVG→build_site→검증. 함정: 중첩괄호 정규식은 `.*?`, JS/CSS 바꾸면 `?v=` 올리기.
