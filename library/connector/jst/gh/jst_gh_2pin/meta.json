@@ -1,0 +1,42 @@
+{
+  "id": "jst_gh_2pin",
+  "name": "JST GH 2-pin (BM02B-GHS-TBT)",
+  "category": "connector",
+  "family": "JST GH",
+  "manufacturer": "JST",
+  "mpn_pattern": "BM02B-GHS-TBT",
+  "description": "JST GH series 1.25mm pitch 2-pin SMD connector, vertical top entry. Common in drones/RC (Pixhawk) and compact signal links.",
+  "parameters": {
+    "pitch_mm": 1.25,
+    "pins": 2,
+    "mounting": "SMD",
+    "orientation": "vertical"
+  },
+  "files": {
+    "footprint": "jst_gh_2pin.kicad_mod",
+    "symbol": "jst_gh_2pin.kicad_sym",
+    "model_3d": "jst_gh_2pin.step",
+    "preview": "jst_gh_2pin.glb",
+    "footprint_svg": "jst_gh_2pin.footprint.svg",
+    "symbol_svg": "jst_gh_2pin.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "https://www.jst-mfg.com/product/pdf/eng/eGH.pdf",
+  "dimensions_source": "Pad land pattern per KiCad official Connector_JST (datasheet); outline original.",
+  "verified": true,
+  "license": "CC-BY-4.0",
+  "generated_by": "generators/gen_smd_connectors.py",
+  "keywords": [
+    "jst",
+    "gh",
+    "1.25mm",
+    "connector",
+    "smd",
+    "2pin"
+  ]
+}
