@@ -34,7 +34,20 @@ XH = dict(
     pins=list(range(2, 17)),
     pin_sq=0.64, housing_h=6.0, pin_below=3.0, pin_into=2.0,
 )
-FAMILIES = [PH, XH]
+TERM = dict(
+    key="screw_terminal_5_08", name="Screw Terminal 5.08mm", manufacturer="Generic (KF301)",
+    mpn="KF301-5.08-{n}P",
+    desc="5.08mm pitch {n}-pole screw terminal block (KF301-compatible), THT. "
+         "For power and wire-to-board connections.",
+    datasheet="", lib_path="connector/terminal/screw_5_08",
+    pitch=5.08, pad_w=2.5, pad_h=2.5, drill=1.3, pad_shape="circle",
+    fab=dict(x0=-3.0, x1=3.0, y0=-3.2, y1=6.0),
+    silk=dict(x0=-3.1, x1=3.1, y0=-3.3, y1=6.1),
+    crt=dict(x0=-3.5, x1=3.5, y0=-3.7, y1=6.5),
+    pins=list(range(2, 9)),
+    pin_sq=1.0, housing_h=10.0, pin_below=3.0, pin_into=2.0,
+)
+FAMILIES = [PH, XH, TERM]
 
 LIB_ROOT = os.path.join(os.path.dirname(__file__), "..", "library")
 
@@ -64,6 +77,7 @@ def gen_footprint(cfg, n, fid):
     A = (n - 1) * cfg["pitch"]
     cx = A / 2.0
     pw, ph, drill = cfg["pad_w"], cfg["pad_h"], cfg["drill"]
+    shape = cfg.get("pad_shape", "oval")  # 비1번핀 패드 형상 (oval/circle 등)
     ref_y = cfg["silk"]["y0"] - 1.0
     val_y = cfg["silk"]["y1"] + 1.0
     out = [f'(footprint "{fid}" (version 20221018) (generator opencad-lib)',
@@ -86,7 +100,7 @@ def gen_footprint(cfg, n, fid):
             out.append(f'  (pad "1" thru_hole roundrect (at 0 0) (size {pw} {ph})'
                        f' (drill {drill}) (layers "*.Cu" "*.Mask") (roundrect_rratio 0.25))')
         else:
-            out.append(f'  (pad "{num}" thru_hole oval (at {x:.3f} 0) (size {pw} {ph})'
+            out.append(f'  (pad "{num}" thru_hole {shape} (at {x:.3f} 0) (size {pw} {ph})'
                        f' (drill {drill}) (layers "*.Cu" "*.Mask"))')
     out.append(')')
     return "\n".join(out) + "\n"
