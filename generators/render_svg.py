@@ -134,12 +134,26 @@ def render_symbol(text):
         out.append(f'<line x1="{px:.3f}" y1="{py:.3f}" x2="{ex:.3f}" y2="{ey:.3f}" '
                    f'stroke="{COL["pin"]}" stroke-width="0.2"/>')
         out.append(f'<circle cx="{px:.3f}" cy="{py:.3f}" r="0.4" fill="{COL["bodyline"]}"/>')
-        # 핀 번호: 핀선 위, 본체 가까이
-        out.append(f'<text x="{ex - 0.4:.3f}" y="{ey - 0.4:.3f}" fill="{COL["num"]}" '
-                   f'font-size="1.1" text-anchor="end" font-family="sans-serif">{num}</text>')
-        # 핀 이름: 본체 안쪽
-        out.append(f'<text x="{ex + 0.6:.3f}" y="{ey + 0.4:.3f}" fill="{COL["name"]}" '
-                   f'font-size="1.1" text-anchor="start" font-family="sans-serif">{name}</text>')
+        dx, dy = ex - px, ey - py
+        # 이름=본체 안쪽, 번호=핀선 바깥 위. 핀 방향에 맞춰 좌/우/세로 미러링.
+        if abs(dx) >= abs(dy):  # 가로 핀
+            if dx > 0:  # 좌측 핀(오른쪽으로 뻗음): 안쪽=오른쪽
+                nm = (f'<text x="{ex + 0.5:.3f}" y="{ey + 0.35:.3f}" fill="{COL["name"]}" '
+                      f'font-size="1.1" text-anchor="start" font-family="sans-serif">{name}</text>')
+                nu = (f'<text x="{ex - 0.3:.3f}" y="{ey - 0.35:.3f}" fill="{COL["num"]}" '
+                      f'font-size="0.9" text-anchor="end" font-family="sans-serif">{num}</text>')
+            else:  # 우측 핀(왼쪽으로 뻗음): 안쪽=왼쪽
+                nm = (f'<text x="{ex - 0.5:.3f}" y="{ey + 0.35:.3f}" fill="{COL["name"]}" '
+                      f'font-size="1.1" text-anchor="end" font-family="sans-serif">{name}</text>')
+                nu = (f'<text x="{ex + 0.3:.3f}" y="{ey - 0.35:.3f}" fill="{COL["num"]}" '
+                      f'font-size="0.9" text-anchor="start" font-family="sans-serif">{num}</text>')
+        else:  # 세로 핀 (예: 하단 쉴드)
+            nm = (f'<text x="{ex:.3f}" y="{ey - 0.6:.3f}" fill="{COL["name"]}" '
+                  f'font-size="1.1" text-anchor="middle" font-family="sans-serif">{name}</text>')
+            nu = (f'<text x="{ex + 0.6:.3f}" y="{ey + 1.0:.3f}" fill="{COL["num"]}" '
+                  f'font-size="0.9" text-anchor="start" font-family="sans-serif">{num}</text>')
+        out.append(nm)
+        out.append(nu)
     out.append("</svg>")
     return "".join(out)
 

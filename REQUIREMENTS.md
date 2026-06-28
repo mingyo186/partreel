@@ -199,7 +199,7 @@
 ### F. 검증 (교차검증 — §5/§5-1, 한 방법만 X)
 1. `python generators/validate_kicad.py` → PASS (구조).
 2. `freecadcmd generators/validate_step.py` → PASS (CAD 커널).
-3. **SVG 눈으로 확인**(풋프린트+심볼 각 1개 이상 브라우저 렌더).
+3. **SVG 눈으로 확인**(풋프린트+심볼 각 1개 이상 브라우저 렌더) + **글자 겹침 검사 `check_overlap.py`**(텍스트 bbox 충돌 자동 검출 — 스크린샷 불가 시 필수, CI 게이트).
 4. 사이트: 부품 렌더 + 뷰 탭 동작 + 다운로드 HTTP 200 + 콘솔 에러 0.
 5. CI 게이트(validate_kicad) green = 배포 통과.
 6. 치수 데이터시트/KiCad공식 대조 후에만 `verified:true`.
