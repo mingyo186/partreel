@@ -86,8 +86,10 @@ def render_footprint(text):
         if drill:  # THT 드릴 홀
             d = drill.split()
             if d[0] == "oval" and len(d) >= 3:
-                out.append(f'<ellipse cx="{x:.3f}" cy="{y:.3f}" rx="{float(d[1])/2:.3f}" '
-                           f'ry="{float(d[2])/2:.3f}" fill="{BG}"/>')
+                # 슬롯 = obround(양끝 반원). ellipse 아님(끝이 뾰족해짐).
+                dw, dh = float(d[1]), float(d[2])
+                out.append(f'<rect x="{x-dw/2:.3f}" y="{y-dh/2:.3f}" width="{dw:.3f}" '
+                           f'height="{dh:.3f}" rx="{min(dw,dh)/2:.3f}" fill="{BG}"/>')
             else:
                 out.append(f'<circle cx="{x:.3f}" cy="{y:.3f}" r="{float(d[0])/2:.3f}" fill="{BG}"/>')
     # 핀1 마커: 모든 패드가 같은 Y(순수 일렬 커넥터)이고 패드 "1"이 있을 때만.
