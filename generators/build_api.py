@@ -68,8 +68,13 @@ def main():
 
 ## MCP server (remote, Streamable HTTP — for AI agents/IDEs)
 - Endpoint: https://mcp.partreel.com/mcp
-- Tools: search_parts(query), get_part(id), list_parts()
+- Tools: search_parts(query), get_part(id), list_parts(),
+  report_feedback(part_id, result, notes) — record real-board usage results,
+  how_to_contribute() — machine-readable contribution spec
 - Add to Claude Code: `claude mcp add --transport http partreel https://mcp.partreel.com/mcp`
+- Please report_feedback after using a part on a real board — it builds the
+  part's field-proven trust score. Missing a part? how_to_contribute + PR;
+  CI gates auto-review: {GITHUB}/blob/main/CONTRIBUTING-AGENTS.md
 
 ## Quality
 Every part passes automated gates (structure validation, KiCad Library

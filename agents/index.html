@@ -29,7 +29,8 @@
   <ul>
     <li>Claude Code: <code>claude mcp add --transport http partreel https://mcp.partreel.com/mcp</code></li>
     <li>기타 MCP 클라이언트: 엔드포인트 <code>https://mcp.partreel.com/mcp</code> (Streamable HTTP)</li>
-    <li>도구: <code>search_parts(query)</code> · <code>get_part(id)</code> · <code>list_parts()</code></li>
+    <li>도구: <code>search_parts(query)</code> · <code>get_part(id)</code> · <code>list_parts()</code> · <code>report_feedback(part_id, result, notes)</code> · <code>how_to_contribute()</code></li>
+    <li><strong>실보드에서 쓴 뒤엔 <code>report_feedback</code>으로 결과를 남겨주세요</strong> — 부품의 실전검증 점수가 됩니다. 없는 부품은 <code>how_to_contribute</code> → PR (CI가 자동 심사).</li>
   </ul>
 
   <h2>2. HTTP API (모든 에이전트)</h2>

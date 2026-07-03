@@ -40,7 +40,49 @@ const TOOLS = [
     description: "List all parts in the registry (id, name, family, pins).",
     inputSchema: { type: "object", properties: {} },
   },
+  {
+    name: "report_feedback",
+    description:
+      "Report real-world usage feedback for a part (e.g. 'fabricated 5 boards at JLCPCB, footprint fit perfectly' " +
+      "or 'pad 3 misaligned'). Feedback is recorded publicly on GitHub and builds the part's field-proven trust score. " +
+      "Please report after actually using a part — both successes and problems help.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        part_id: { type: "string", description: "Part id, e.g. 'jst_ph_4pin'" },
+        result: { type: "string", enum: ["worked", "problem"], description: "'worked' = used successfully, 'problem' = issue found" },
+        notes: { type: "string", description: "Details: what you built, fab house, what worked or what was wrong (max 1000 chars)" },
+      },
+      required: ["part_id", "result", "notes"],
+    },
+  },
+  {
+    name: "how_to_contribute",
+    description:
+      "Get machine-readable instructions for contributing a new part to the registry " +
+      "(file layout, metadata schema, quality gates, PR process). Use when a part is missing.",
+    inputSchema: { type: "object", properties: {} },
+  },
 ];
+
+const CONTRIBUTE_GUIDE = {
+  summary: "Contribute parts via GitHub PR. CI quality gates auto-review; merge = published to registry.",
+  repo: "https://github.com/mingyo186/partreel",
+  guide: "https://github.com/mingyo186/partreel/blob/main/CONTRIBUTING-AGENTS.md",
+  part_layout: {
+    directory: "library/<category>/<group>/<part_id>/",
+    required_files: ["<part_id>.kicad_mod", "<part_id>.kicad_sym", "<part_id>.step", "<part_id>.glb",
+                     "<part_id>.footprint.svg", "<part_id>.symbol.svg", "meta.json"],
+  },
+  quality_gates: [
+    "validate_kicad.py: s-expression structure, pad count/numbering, pin1 at origin, pitch, required layers",
+    "check_overlap.py: no overlapping text in SVG previews",
+    "check_render.py: file existence, pad/outline counts match source, obround slots, part page",
+    "KLC drawing rules: silk 0.12mm (0.2mm pad clearance), fab 0.10mm + pin1 chamfer, courtyard 0.05mm solid",
+    "dimensions must cite a source (datasheet URL) in meta.dimensions_source",
+  ],
+  license: "Contributions are published under CC-BY-4.0.",
+};
 
 const CORS = {
   "Access-Control-Allow-Origin": "*",
@@ -69,7 +111,41 @@ async function fetchIndex() {
   return r.json();
 }
 
-async function toolCall(name, args) {
+async function toolCall(name, args, env) {
+  if (name === "how_to_contribute") {
+    return CONTRIBUTE_GUIDE;
+  }
+  if (name === "report_feedback") {
+    const partId = String(args?.part_id ?? "").trim();
+    const result = String(args?.result ?? "").trim();
+    const notes = String(args?.notes ?? "").trim().slice(0, 1000);
+    if (!/^[a-z0-9_]+$/.test(partId)) return { error: "valid part_id required" };
+    if (!["worked", "problem"].includes(result)) return { error: "result must be 'worked' or 'problem'" };
+    if (notes.length < 10) return { error: "notes too short — describe what you built and how it went" };
+    if (!env?.GITHUB_TOKEN) return { error: "feedback channel not configured yet — try again later" };
+    // 부품 존재 확인 (임의 이슈 스팸 방지)
+    const pr = await fetch(`${API}/parts/${partId}.json`, { cf: { cacheTtl: 300, cacheEverything: true } });
+    if (!pr.ok) return { error: `unknown part '${partId}' — feedback must reference an existing part` };
+    const mark = result === "worked" ? "✅ worked" : "⚠️ problem";
+    const resp = await fetch("https://api.github.com/repos/mingyo186/partreel/issues", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${env.GITHUB_TOKEN}`,
+        Accept: "application/vnd.github+json",
+        "User-Agent": "partreel-mcp",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        title: `[field-report] ${partId}: ${mark}`,
+        body: `**Part:** [${partId}](https://partreel.com/p/${partId}/)\n**Result:** ${mark}\n\n**Notes:**\n${notes}\n\n---\n*Submitted via MCP (mcp.partreel.com).*`,
+        labels: ["field-report", result === "worked" ? "report-worked" : "report-problem"],
+      }),
+    });
+    if (!resp.ok) return { error: `failed to record feedback (${resp.status})` };
+    const issue = await resp.json();
+    return { recorded: true, issue_url: issue.html_url,
+             thanks: "Feedback recorded — it will contribute to this part's field-proven score." };
+  }
   if (name === "search_parts") {
     const q = String(args?.query ?? "").toLowerCase().trim();
     if (!q) return { error: "query is required" };
@@ -108,7 +184,7 @@ async function toolCall(name, args) {
 }
 
 export default {
-  async fetch(request) {
+  async fetch(request, env) {
     const url = new URL(request.url);
 
     if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: CORS });
@@ -153,7 +229,7 @@ export default {
         case "tools/list":
           return rpcResult(id, { tools: TOOLS });
         case "tools/call": {
-          const out = await toolCall(params?.name, params?.arguments || {});
+          const out = await toolCall(params?.name, params?.arguments || {}, env);
           return rpcResult(id, {
             content: [{ type: "text", text: JSON.stringify(out, null, 2) }],
             isError: Boolean(out && out.error),
