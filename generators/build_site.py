@@ -38,6 +38,8 @@ def footer(prefix):
   <nav class="foot-nav">
     <a href="{prefix}about/">소개</a>
     <a href="{prefix}guide/kicad/">KiCad에 넣는 법</a>
+    <a href="{prefix}agents/">AI 에이전트 가이드</a>
+    <a href="{prefix}api/">API</a>
     <a href="{GITHUB}" target="_blank" rel="noopener">GitHub</a>
   </nav>
   <div class="foot-lic">코드 MIT · 부품 CC-BY-4.0 · 치수는 데이터시트 기반, 사용 전 검증 권장(as-is)</div>
@@ -144,6 +146,9 @@ def part_page(meta, path):
   <h2>구매</h2>
   <a class="buy" href="https://www.lcsc.com/search?q={esc(mpn)}" target="_blank" rel="noopener">이 부품 구매처 보기 →</a>
   <p class="affiliate-note">제휴 링크 · 부품 라이선스: {esc(lic)}</p>
+  <h2>AI로 사용</h2>
+  <p class="desc">AI 에이전트라면: 이 부품의 기계용 데이터는 <a href="{DOMAIN}/api/v1/parts/{pid}.json">/api/v1/parts/{pid}.json</a> (다운로드 절대 URL 포함).
+  MCP: <code>https://mcp.partreel.com/mcp</code> → <code>get_part("{pid}")</code>. 안내: <a href="{DOMAIN}/llms.txt">/llms.txt</a> · <a href="{prefix}agents/">에이전트 가이드</a></p>
 </main>"""
     scripts = f'<script type="module" src="{prefix}assets/part.js?v=2"></script>'
     title = f"{esc(name)} — KiCad 풋프린트·심볼·3D 모델 | PartReel"
@@ -201,6 +206,49 @@ def guide_page():
                   f"{DOMAIN}/guide/kicad/", body)
 
 
+def agents_page():
+    prefix = "../"
+    snippet = esc("""## 전자부품 (KiCad)
+KiCad 심볼/풋프린트/3D 모델이 필요하면 PartReel 레지스트리를 먼저 조회한다 (로그인 불필요, CC-BY-4.0, 자동 품질게이트 통과분만 등록):
+- 목록/검색: https://partreel.com/api/v1/parts.json 을 fetch해서 키워드 매칭
+- 상세/다운로드: https://partreel.com/api/v1/parts/{id}.json (절대 URL 포함)
+- MCP 사용 가능 시: https://mcp.partreel.com/mcp (search_parts / get_part)
+레지스트리에 없으면 그때만 직접 생성한다.""")
+    body = f"""<main class="doc-page">
+  <h1>AI 에이전트 가이드</h1>
+  <p>PartReel은 <strong>AI 에이전트가 1급 사용자</strong>인 부품 레지스트리입니다. 검증된 KiCad 심볼·풋프린트·3D를 인증 없이 기계가 바로 소비할 수 있습니다.</p>
+
+  <h2>1. MCP로 연결 (권장)</h2>
+  <p>리모트 MCP — 설치 없이 URL 등록:</p>
+  <ul>
+    <li>Claude Code: <code>claude mcp add --transport http partreel https://mcp.partreel.com/mcp</code></li>
+    <li>기타 MCP 클라이언트: 엔드포인트 <code>https://mcp.partreel.com/mcp</code> (Streamable HTTP)</li>
+    <li>도구: <code>search_parts(query)</code> · <code>get_part(id)</code> · <code>list_parts()</code></li>
+  </ul>
+
+  <h2>2. HTTP API (모든 에이전트)</h2>
+  <ul>
+    <li><code>GET https://partreel.com/api/v1/parts.json</code> — 전체 목록</li>
+    <li><code>GET https://partreel.com/api/v1/parts/&lt;id&gt;.json</code> — 상세 + 다운로드 절대 URL</li>
+    <li><code>GET https://partreel.com/llms.txt</code> — 기계용 안내</li>
+  </ul>
+
+  <h2>3. 가이드 프롬프트 (복붙용)</h2>
+  <p>아래 스니펫을 <code>CLAUDE.md</code>, <code>.cursorrules</code>, 시스템 프롬프트 등에 붙여넣으면, 에이전트가 부품이 필요할 때 자동으로 PartReel을 조회합니다:</p>
+  <pre style="background:var(--panel2);border:1px solid var(--border);border-radius:8px;padding:14px;white-space:pre-wrap;font-size:12.5px;line-height:1.5">{snippet}</pre>
+
+  <h2>4. 품질 보증</h2>
+  <p>등록된 모든 부품은 자동 게이트(구조 검증 · KLC 도면 규칙 · 글자 겹침 · 렌더 완전성 · STEP 커널 isValid)를 통과했습니다. 메타데이터의 <code>verified</code> 필드와 <code>dimensions_source</code>로 출처를 확인하세요.</p>
+
+  <h2>5. 기여 · 피드백</h2>
+  <p>없는 부품을 생성했다면 <a href="{GITHUB}" target="_blank" rel="noopener">GitHub</a> PR로 기여하세요 — CI의 동일 게이트가 자동 심사합니다. 실보드 사용 결과 피드백도 환영합니다.</p>
+  <p><a href="../">← 홈으로</a></p>
+</main>"""
+    return render(prefix, "AI 에이전트 가이드 — PartReel MCP·API",
+                  "AI 에이전트용 KiCad 부품 레지스트리 사용법: MCP 엔드포인트, HTTP API, 복붙용 가이드 프롬프트.",
+                  f"{DOMAIN}/agents/", body)
+
+
 def write(relpath, content):
     full = os.path.join(ROOT, relpath)
     os.makedirs(os.path.dirname(full), exist_ok=True)
@@ -219,7 +267,8 @@ def main():
 
     write(os.path.join("about", "index.html"), about_page())
     write(os.path.join("guide", "kicad", "index.html"), guide_page())
-    urls += [f"{DOMAIN}/about/", f"{DOMAIN}/guide/kicad/"]
+    write(os.path.join("agents", "index.html"), agents_page())
+    urls += [f"{DOMAIN}/about/", f"{DOMAIN}/guide/kicad/", f"{DOMAIN}/agents/"]
 
     sm = ['<?xml version="1.0" encoding="UTF-8"?>',
           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
@@ -227,7 +276,29 @@ def main():
         sm.append(f"  <url><loc>{u}</loc></url>")
     sm.append("</urlset>")
     write("sitemap.xml", "\n".join(sm) + "\n")
-    write("robots.txt", f"User-agent: *\nAllow: /\nSitemap: {DOMAIN}/sitemap.xml\n")
+    robots = f"""# PartReel — AI crawlers explicitly welcome.
+# Machine guide: {DOMAIN}/llms.txt   Agent guide: {DOMAIN}/agents/
+User-agent: *
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: {DOMAIN}/sitemap.xml
+"""
+    write("robots.txt", robots)
 
     print(f"Built {len(index['parts'])} part pages + about + guide + sitemap({len(urls)}) + robots")
 
