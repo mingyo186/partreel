@@ -8,6 +8,11 @@
 - Part detail: https://partreel.com/api/v1/parts/{id}.json (absolute download URLs inside)
 - Human page per part: https://partreel.com/p/{id}/
 
+## MCP server (remote, Streamable HTTP — for AI agents/IDEs)
+- Endpoint: https://mcp.partreel.com/mcp
+- Tools: search_parts(query), get_part(id), list_parts()
+- Add to Claude Code: `claude mcp add --transport http partreel https://mcp.partreel.com/mcp`
+
 ## Quality
 Every part passes automated gates (structure validation, KiCad Library
 Convention drawing rules, text-overlap check, render completeness, STEP

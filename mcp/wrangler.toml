@@ -1,0 +1,8 @@
+name = "partreel-mcp"
+main = "worker.js"
+compatibility_date = "2026-06-01"
+
+# partreel.com 존이 이 Cloudflare 계정에 있으므로 커스텀 도메인 자동 연결
+routes = [
+  { pattern = "mcp.partreel.com", custom_domain = true }
+]

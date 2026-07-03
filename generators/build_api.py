@@ -66,6 +66,11 @@ def main():
 - Part detail: {DOMAIN}/api/v1/parts/{{id}}.json (absolute download URLs inside)
 - Human page per part: {DOMAIN}/p/{{id}}/
 
+## MCP server (remote, Streamable HTTP — for AI agents/IDEs)
+- Endpoint: https://mcp.partreel.com/mcp
+- Tools: search_parts(query), get_part(id), list_parts()
+- Add to Claude Code: `claude mcp add --transport http partreel https://mcp.partreel.com/mcp`
+
 ## Quality
 Every part passes automated gates (structure validation, KiCad Library
 Convention drawing rules, text-overlap check, render completeness, STEP
@@ -105,6 +110,12 @@ Code MIT. Component assets CC-BY-4.0 (attribution: "PartReel").
     <li><code>GET /api/v1/parts.json</code> — 전체 부품 목록 (id·이름·키워드·상세 API URL)</li>
     <li><code>GET /api/v1/parts/&lt;id&gt;.json</code> — 부품 상세 (파라미터·<strong>다운로드 절대 URL</strong>·데이터시트·검증 상태)</li>
     <li><code>GET /llms.txt</code> — AI 에이전트용 안내</li>
+  </ul>
+  <h2>MCP 서버 (AI 에이전트/IDE용)</h2>
+  <p>리모트 MCP — 설치 없이 URL만 등록: <code>https://mcp.partreel.com/mcp</code></p>
+  <ul>
+    <li>도구: <code>search_parts(query)</code> · <code>get_part(id)</code> · <code>list_parts()</code></li>
+    <li>Claude Code: <code>claude mcp add --transport http partreel https://mcp.partreel.com/mcp</code></li>
   </ul>
   <h2>예시</h2>
   <p><a href="v1/parts.json">/api/v1/parts.json</a> · <a href="v1/parts/usb_c_16p.json">/api/v1/parts/usb_c_16p.json</a></p>
