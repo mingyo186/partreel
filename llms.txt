@@ -1,0 +1,23 @@
+# PartReel — open KiCad component registry (AI-friendly)
+
+> No-login registry of verified KiCad footprints, symbols and 3D models
+> (STEP/GLB). Assets CC-BY-4.0. Built to be consumed by AI agents.
+
+## API (static JSON, no auth, no rate limit)
+- All parts: https://partreel.com/api/v1/parts.json
+- Part detail: https://partreel.com/api/v1/parts/{id}.json (absolute download URLs inside)
+- Human page per part: https://partreel.com/p/{id}/
+
+## Quality
+Every part passes automated gates (structure validation, KiCad Library
+Convention drawing rules, text-overlap check, render completeness, STEP
+kernel isValid). Dimensions derived from manufacturer datasheets / matched
+to KiCad official library where available. `verified: true` in metadata.
+
+## Contributing / feedback
+Agents and humans can contribute parts or report usage feedback via GitHub:
+https://github.com/mingyo186/partreel
+Contributions are auto-reviewed by the same quality gates in CI.
+
+## License
+Code MIT. Component assets CC-BY-4.0 (attribution: "PartReel").
