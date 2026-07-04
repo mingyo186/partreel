@@ -27,10 +27,14 @@ jobs:
         run: |
           FAMILY="${{ github.event.client_payload.family }}"
           PINS="${{ github.event.client_payload.pins }}"
+          VARIANT="${{ github.event.client_payload.variant }}"
           if ! echo "$FAMILY" | grep -qE '^[a-z0-9_]{1,40}$'; then echo "bad family"; exit 1; fi
-          if ! echo "$PINS" | grep -qE '^[0-9]{1,2}$'; then echo "bad pins"; exit 1; fi
+          if [ -n "$PINS" ] && ! echo "$PINS" | grep -qE '^[0-9]{1,2}$'; then echo "bad pins"; exit 1; fi
+          if [ -n "$VARIANT" ] && ! echo "$VARIANT" | grep -qE '^[a-z0-9]{1,12}$'; then echo "bad variant"; exit 1; fi
+          if [ -z "$PINS" ] && [ -z "$VARIANT" ]; then echo "need pins or variant"; exit 1; fi
           echo "family=$FAMILY" >> "$GITHUB_OUTPUT"
           echo "pins=$PINS" >> "$GITHUB_OUTPUT"
+          echo "variant=$VARIANT" >> "$GITHUB_OUTPUT"
 
       # ubuntu 24.04 apt엔 freecad가 없음 → conda-forge로 설치 (REQUIREMENTS §19)
       - name: Install FreeCAD + deps (conda-forge)
@@ -43,6 +47,7 @@ jobs:
         env:
           FAMILY: ${{ steps.req.outputs.family }}
           PINS: ${{ steps.req.outputs.pins }}
+          VARIANT: ${{ steps.req.outputs.variant }}
           FREECADCMD: ./fcenv/bin/freecadcmd
         run: ./fcenv/bin/python generators/generate_one.py
 

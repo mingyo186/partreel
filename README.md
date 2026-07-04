@@ -65,7 +65,7 @@ before manufacturing.
 ## Parts index
 
 <!-- PARTS:BEGIN -->
-Currently **93 parts**, all machine-verified (structure, KLC drawing rules, render completeness, 3D coplanar/merged-pin checks, STEP kernel) with datasheet-cited dimensions.
+Currently **94 parts**, all machine-verified (structure, KLC drawing rules, render completeness, 3D coplanar/merged-pin checks, STEP kernel) with datasheet-cited dimensions.
 
 ### connector (52)
 
@@ -124,7 +124,7 @@ Currently **93 parts**, all machine-verified (structure, KLC drawing rules, rend
 | [USB Type-C Receptacle 16-pin (USB 2.0)](https://partreel.com/p/usb_c_16p/) | `TYPE-C-31-M-12` | HRO / Generic | [usb_c_16p](library/connector/usb/usb_c_16p/usb_c_16p) |
 | [microSD Card Socket (push-push)](https://partreel.com/p/microsd_hc/) | `DM3AT-SF-PEJM5` | Hirose / Generic | [microsd_hc](library/connector/card/microsd_hc/microsd_hc) |
 
-### ic (20)
+### ic (21)
 
 | Part | MPN | Manufacturer | Files |
 |---|---|---|---|
@@ -134,6 +134,7 @@ Currently **93 parts**, all machine-verified (structure, KLC drawing rules, rend
 | [CN3791 MPPT Solar Li-Ion Charger](https://partreel.com/p/cn3791/) | `CN3791` | Consonance | [cn3791](library/ic/power/cn3791/cn3791) |
 | [DRV8825 Stepper Motor Driver](https://partreel.com/p/drv8825/) | `DRV8825PWP` | Texas Instruments | [drv8825](library/ic/driver/drv8825/drv8825) |
 | [HT7333-A Low-Power LDO 3.3V](https://partreel.com/p/ht7333/) | `HT7333-A` | Holtek | [ht7333](library/ic/regulator/ht7333/ht7333) |
+| [HT7350-A Low-Power LDO 5.0V](https://partreel.com/p/ht7350/) | `HT7350-A` | Holtek | [ht7350](library/ic/regulator/ht7350/ht7350) |
 | [HT7833 500mA LDO 3.3V](https://partreel.com/p/ht7833/) | `HT7833` | Holtek | [ht7833](library/ic/regulator/ht7833/ht7833) |
 | [INMP441 I2S MEMS Microphone](https://partreel.com/p/inmp441/) | `INMP441ACEZ-R7` | TDK InvenSense | [inmp441](library/ic/audio/inmp441/inmp441) |
 | [IP5306 Power Bank SoC](https://partreel.com/p/ip5306/) | `IP5306` | Injoinic | [ip5306](library/ic/power/ip5306/ip5306) |

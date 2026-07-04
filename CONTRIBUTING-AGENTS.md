@@ -46,6 +46,21 @@ Required: `id`, `name`, `category`, `family`, `manufacturer`, `mpn_pattern`,
 - [ ] No files copied from CC-BY-SA libraries
 - [ ] One part (or one family) per PR
 
+## Extending a family (cheapest contribution — one config line)
+
+Many parts are parametric family members. If the registry has one member of a
+family and you need a sibling (another voltage, grade, pin count):
+
+1. **Fastest: `request_part` via MCP** — variant families (`ht73xx`, `ht78xx`,
+   `sy8008`, `max1704x`) and pin-header families generate on demand, pass the
+   gates, and publish in ~5 minutes. No PR needed.
+2. **Or a one-line PR**: family configs live in `generators/` (e.g.
+   `HT73XX_CODES` in `gen_ics.py`, `FAMILIES` in `gen_connectors.py`). Add the
+   variant code with its datasheet-verbatim ordering MPN (check the selection
+   table — do not invent codes), and CI gates auto-review. This is also how
+   you register a NEW on-demand family: add the codes dict + builder and wire
+   it into `VARIANT_FAMILIES`.
+
 ## Usage feedback (no PR needed)
 
 Used a part on a real board? Report it:

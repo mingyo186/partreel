@@ -26,32 +26,46 @@ def run(cmd, **kw):
 def main():
     family = os.environ.get("FAMILY", "").strip()
     pins_s = os.environ.get("PINS", "").strip()
-    cfg = get_family(family)
-    if cfg is None:
-        print(f"unknown family: '{family}'")
-        sys.exit(2)
-    try:
-        pins = int(pins_s)
-    except ValueError:
-        print(f"invalid PINS: '{pins_s}'")
-        sys.exit(2)
-    if pins not in cfg["pins"]:
-        print(f"pins {pins} out of allowed range for {family}: {cfg['pins'][0]}..{cfg['pins'][-1]}")
-        sys.exit(2)
-
-    fid = f"{family}_{pins}pin"
-    print(f"Generating on-demand part: {fid}")
-
-    # 1) 텍스트 (풋프린트/심볼/meta)
-    generate(cfg, pins, fid)
-
+    variant = os.environ.get("VARIANT", "").strip().lower()
     py = sys.executable
-    # 2) 인덱스 (이후 단계들이 index 순회)
-    run([py, os.path.join(HERE, "build_index.py")])
-    # 3) 3D
     freecadcmd = os.environ.get("FREECADCMD", "freecadcmd")
-    env = dict(os.environ, PART_FILTER=f"{family}:{pins}")
-    run([freecadcmd, os.path.join(HERE, "gen_connectors_3d.py")], env=env)
+
+    from gen_ics import VARIANT_FAMILIES, build_variant  # noqa: E402
+    if family in VARIANT_FAMILIES:
+        # IC 변형 패밀리 (§21-6ⓐ): env VARIANT=코드 (예: FAMILY=ht73xx VARIANT=7350)
+        if variant not in VARIANT_FAMILIES[family]["codes"]:
+            print(f"unknown variant '{variant}' for {family}: "
+                  f"{VARIANT_FAMILIES[family]['codes']}")
+            sys.exit(2)
+        fid = build_variant(family, variant)
+        print(f"Generating on-demand variant: {fid}")
+        run([py, os.path.join(HERE, "build_index.py")])
+        env = dict(os.environ, IC_VARIANT=f"{family}:{variant}")
+        run([freecadcmd, os.path.join(HERE, "gen_ics_3d.py")], env=env)
+    else:
+        cfg = get_family(family)
+        if cfg is None:
+            print(f"unknown family: '{family}'")
+            sys.exit(2)
+        try:
+            pins = int(pins_s)
+        except ValueError:
+            print(f"invalid PINS: '{pins_s}'")
+            sys.exit(2)
+        if pins not in cfg["pins"]:
+            print(f"pins {pins} out of allowed range for {family}: "
+                  f"{cfg['pins'][0]}..{cfg['pins'][-1]}")
+            sys.exit(2)
+
+        fid = f"{family}_{pins}pin"
+        print(f"Generating on-demand part: {fid}")
+        # 1) 텍스트 (풋프린트/심볼/meta)
+        generate(cfg, pins, fid)
+        # 2) 인덱스 (이후 단계들이 index 순회)
+        run([py, os.path.join(HERE, "build_index.py")])
+        # 3) 3D
+        env = dict(os.environ, PART_FILTER=f"{family}:{pins}")
+        run([freecadcmd, os.path.join(HERE, "gen_connectors_3d.py")], env=env)
     # 4) GLB (STL 있는 부품만 변환하므로 안전)
     run([py, os.path.join(HERE, "stl_to_glb.py")])
     # 5) SVG / 6) 사이트 / 7) API

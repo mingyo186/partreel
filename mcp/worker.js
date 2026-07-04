@@ -61,15 +61,19 @@ const TOOLS = [
     description:
       "Request on-demand generation of a parametric part that isn't in the registry yet. " +
       "The registry generates it (footprint+symbol+3D), runs quality gates, and publishes it within ~5 minutes. " +
-      "Available families: pin_header_254 (2.54mm), pin_header_200 (2.0mm), pin_header_127 (1.27mm) — pins 1-40. " +
+      "Pin-count families (use 'pins'): pin_header_254 (2.54mm), pin_header_200 (2.0mm), pin_header_127 (1.27mm) — pins 1-40. " +
+      "Variant families (use 'variant'): ht73xx (LDO Vout code: 7318,7325,7327,7330,7333,7335,7341,7350), " +
+      "ht78xx (7818,7825,7827,7830,7833,7850), sy8008 (grade a/b/c = 0.6A/1A/1.2A), max1704x (17048,17049). " +
       "Always try get_part / search_parts first.",
     inputSchema: {
       type: "object",
       properties: {
-        family: { type: "string", enum: ["pin_header_254", "pin_header_200", "pin_header_127"] },
-        pins: { type: "integer", minimum: 1, maximum: 40 },
+        family: { type: "string", enum: ["pin_header_254", "pin_header_200", "pin_header_127",
+                                          "ht73xx", "ht78xx", "sy8008", "max1704x"] },
+        pins: { type: "integer", minimum: 1, maximum: 40, description: "for pin_header_* families" },
+        variant: { type: "string", description: "for variant families (e.g. '7350', 'a', '17049')" },
       },
-      required: ["family", "pins"],
+      required: ["family"],
     },
   },
   {
@@ -128,6 +132,12 @@ async function fetchIndex() {
 }
 
 const ONDEMAND_FAMILIES = { pin_header_254: 40, pin_header_200: 40, pin_header_127: 40 };
+const VARIANT_FAMILIES = {
+  ht73xx: { codes: ["7318", "7325", "7327", "7330", "7333", "7335", "7341", "7350"], id: (c) => `ht${c}` },
+  ht78xx: { codes: ["7818", "7825", "7827", "7830", "7833", "7850"], id: (c) => `ht${c}` },
+  sy8008: { codes: ["a", "b", "c"], id: (c) => (c === "b" ? "sy8008" : `sy8008${c}`) },
+  max1704x: { codes: ["17048", "17049"], id: (c) => `max${c}` },
+};
 
 async function toolCall(name, args, env) {
   if (name === "how_to_contribute") {
@@ -135,11 +145,22 @@ async function toolCall(name, args, env) {
   }
   if (name === "request_part") {
     const family = String(args?.family ?? "").trim();
-    const pins = Number(args?.pins);
-    const max = ONDEMAND_FAMILIES[family];
-    if (!max) return { error: `unknown family — available: ${Object.keys(ONDEMAND_FAMILIES).join(", ")}` };
-    if (!Number.isInteger(pins) || pins < 1 || pins > max) return { error: `pins must be an integer 1..${max}` };
-    const id = `${family}_${pins}pin`;
+    const vf = VARIANT_FAMILIES[family];
+    let id, payload;
+    if (vf) {
+      const variant = String(args?.variant ?? "").trim().toLowerCase();
+      if (!vf.codes.includes(variant))
+        return { error: `unknown variant '${variant}' for ${family} — available: ${vf.codes.join(", ")}` };
+      id = vf.id(variant);
+      payload = { family, variant };
+    } else {
+      const pins = Number(args?.pins);
+      const max = ONDEMAND_FAMILIES[family];
+      if (!max) return { error: `unknown family — available: ${[...Object.keys(ONDEMAND_FAMILIES), ...Object.keys(VARIANT_FAMILIES)].join(", ")}` };
+      if (!Number.isInteger(pins) || pins < 1 || pins > max) return { error: `pins must be an integer 1..${max}` };
+      id = `${family}_${pins}pin`;
+      payload = { family, pins };
+    }
     // 이미 있으면 생성 안 함
     const existing = await fetch(`${API}/parts/${id}.json`);
     if (existing.ok) {
@@ -155,7 +176,7 @@ async function toolCall(name, args, env) {
         "User-Agent": "partreel-mcp",
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ event_type: "generate-part", client_payload: { family, pins } }),
+      body: JSON.stringify({ event_type: "generate-part", client_payload: payload }),
     });
     if (resp.status !== 204) return { error: `failed to start generation (${resp.status})` };
     return {

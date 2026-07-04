@@ -408,3 +408,24 @@ display_module("module/display/st7789_module_13/st7789_module_13", "st7789_modul
                27.78, 39.22, 7, -7.62, -17.11,
                [(-11.39, -17.11), (11.39, -17.11), (-11.39, 17.11), (11.39, 17.11)], 2.0,
                (-11.7, -13.28, 11.7, 10.12), (-13.0, -14.61, 13.0, 14.61))
+
+
+# ---------- 온디맨드 변형 3D (§21-6ⓐ): env IC_VARIANT="family:code" ----------
+_V = os.environ.get("IC_VARIANT", "").strip()
+if _V:
+    _fam, _code = _V.split(":", 1)
+    if _fam in ("ht73xx", "ht78xx"):
+        _fid = "ht" + _code
+        sot89("ic/regulator/%s/%s" % (_fid, _fid), _fid)
+    elif _fam == "sy8008":
+        _fid = "sy8008" if _code == "b" else "sy8008" + _code
+        gullwing("ic/regulator/%s/%s" % (_fid, _fid), _fid, 1.6, 2.9, 1.0,
+                 [(-1.4, -0.95), (-1.4, 0), (-1.4, 0.95), (1.4, 0.95), (1.4, -0.95)],
+                 0.4, 0.55)
+    elif _fam == "max1704x":
+        _fid = "max" + _code
+        flatpack("ic/power/%s/%s" % (_fid, _fid), _fid, 1.0, 1.0, 0.75,
+                 [(x, y, 0.3, 0.25) for x in (-0.99, 0.99)
+                  for y in (-0.75, -0.25, 0.25, 0.75)], ep=(0.8, 1.2))
+    else:
+        raise SystemExit("unknown IC_VARIANT family: " + _fam)

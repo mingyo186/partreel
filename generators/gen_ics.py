@@ -374,19 +374,31 @@ def _part_sot23(fid, lib, name, manuf, mpn, ds, dim_src, pins5or6, desc, params,
     return fid, lib, fp, sym, meta
 
 
-def sy8008():
+# Silergy SY8008 등급 변형 (같은 AN 데이터시트: A=0.6A, B=1A, C=1.2A)
+SY8008_GRADES = {"a": ("SY8008AAAC", "0.6A"), "b": ("SY8008BAAC", "1A"),
+                 "c": ("SY8008CAAC", "1.2A")}
+
+
+def _sy8008_grade(g):
+    mpn, amps = SY8008_GRADES[g]
+    fid = "sy8008" if g == "b" else f"sy8008{g}"
     return _part_sot23(
-        "sy8008", "ic/regulator/sy8008", "SY8008B 1A Buck Converter", "Silergy", "SY8008BAAC",
+        fid, f"ic/regulator/{fid}", f"SY8008{g.upper()} {amps} Buck Converter",
+        "Silergy", mpn,
         "https://mangopi.org/_media/sy8008.pdf",
         "Silergy AN_SY8008 Rev 1.0 p.7: SOT23-5 (body 2.8-3.1x1.5-1.7, span 2.7-3.0, pitch "
         "0.95) with recommended land pattern: pads 0.55x0.80, pitch 0.95, rows 2.40 c-c. "
         "Pinout p.2 (verified: 4=IN bottom-right, 5=FB top-right in column layout).",
         ["EN", "GND", "LX", "IN", "FB"],
-        "Silergy SY8008B 1A 1.5MHz synchronous step-down regulator, 2.5-5.5V input, "
-        "0.6V reference, SOT23-5.",
+        f"Silergy SY8008{g.upper()} {amps} 1.5MHz synchronous step-down regulator, "
+        "2.5-5.5V input, 0.6V reference, SOT23-5.",
         {"contacts": 5, "mounting": "SMD", "supply_voltage": "2.5-5.5V",
-         "output_current": "1A", "body_mm": "2.9x1.6x1.1"},
-        ["sy8008", "silergy", "buck", "step-down", "dc-dc", "sot23-5"])
+         "output_current": amps, "body_mm": "2.9x1.6x1.1"},
+        [fid, "silergy", "buck", "step-down", "dc-dc", "sot23-5"])
+
+
+def sy8008():
+    return _sy8008_grade("b")
 
 
 def sy8089():
@@ -471,31 +483,48 @@ def _part_sot89(fid, name, mpn, ds, dim_src, desc, vmax, current, kw):
     return fid, lib, fp, sym, meta
 
 
-def ht7333():
+# Holtek LDO 전압변형 (§21-6ⓐ 온디맨드 변형 패밀리 — 데이터시트 셀렉션 테이블 실존 품번만)
+HT73XX_CODES = {"7318": "1.8V", "7325": "2.5V", "7327": "2.7V", "7330": "3.0V",
+                "7333": "3.3V", "7335": "3.5V", "7341": "4.15V", "7350": "5.0V"}
+HT78XX_CODES = {"7818": "1.8V", "7825": "2.5V", "7827": "2.7V", "7830": "3.0V",
+                "7833": "3.3V", "7850": "5.0V"}
+
+
+def _ht73xx(code):
+    v = HT73XX_CODES[code]
     return _part_sot89(
-        "ht7333", "HT7333-A Low-Power LDO 3.3V", "HT7333-A",
+        f"ht{code}", f"HT{code}-A Low-Power LDO {v}", f"HT{code}-A",
         "https://www.holtek.com/webapi/116711/HT73xxv180.pdf",
         "Holtek HT73xx datasheet Rev 1.80 p.7: SOT-89 body 4.55x2.5, lead pitch 1.5, tab "
         "width 1.35-1.83, overall tab-to-lead 4.17. Land (leads 0.8x1.6 pitch 1.5, tab "
         "2.0x1.6) derived per IPC-7351. Pinout p.2: 1 GND, 2 VIN(tab), 3 VOUT. "
-        "NOTE: HT7333-1 is a different 30V family.",
-        "Holtek HT7333-A ultra-low-power LDO, 3.3V 250mA output, 2.5uA quiescent, "
+        f"Selection table covers HT{code} ({v}). NOTE: HT73xx-1 is a different 30V family.",
+        f"Holtek HT{code}-A ultra-low-power LDO, {v} 250mA output, 2.5uA quiescent, "
         "VIN up to 12V, SOT-89. Battery-project staple.",
         "up to 12V", "250mA",
-        ["ht7333", "holtek", "ldo", "regulator", "3.3v", "low quiescent", "sot-89"])
+        [f"ht{code}", "holtek", "ldo", "regulator", v.lower(), "low quiescent", "sot-89"])
 
 
-def ht7833():
+def _ht78xx(code):
+    v = HT78XX_CODES[code]
     return _part_sot89(
-        "ht7833", "HT7833 500mA LDO 3.3V", "HT7833",
+        f"ht{code}", f"HT{code} 500mA LDO {v}", f"HT{code}",
         "https://www.singsun.com/datasheet/en/HT78XX.pdf",
         "Holtek HT78xx datasheet Rev 1.50 p.8: SOT-89 outline identical to HT73xx "
         "(body 4.55x2.5, pitch 1.5). Land derived per IPC-7351. Pinout p.2: "
-        "1 GND, 2 VIN(tab), 3 VOUT.",
-        "Holtek HT7833 TinyPower LDO, 3.3V 500mA output, 4uA quiescent, VIN up to 8V, "
+        f"1 GND, 2 VIN(tab), 3 VOUT. Selection table covers HT{code} ({v}).",
+        f"Holtek HT{code} TinyPower LDO, {v} 500mA output, 4uA quiescent, VIN up to 8V, "
         "SOT-89.",
         "up to 8V", "500mA",
-        ["ht7833", "holtek", "ldo", "regulator", "3.3v", "500ma", "sot-89"])
+        [f"ht{code}", "holtek", "ldo", "regulator", v.lower(), "500ma", "sot-89"])
+
+
+def ht7333():
+    return _ht73xx("7333")
+
+
+def ht7833():
+    return _ht78xx("7833")
 
 
 def tp5100():
@@ -917,30 +946,40 @@ def mlx90614():
     return fid, lib, fp, sym, meta
 
 
-def max17048():
-    fid, lib = "max17048", "ic/power/max17048"
+MAX1704X_CODES = {"17048": "1-cell", "17049": "2-cell"}
+
+
+def _max1704x(code):
+    cells = MAX1704X_CODES[code]
+    fid, lib = f"max{code}", f"ic/power/max{code}"
     pads = two_row_pads(8, 0.5, 1.98, 0.70, 0.30)
-    fp = _fp_two_row(fid, "Maxim MAX17048 LiPo fuel gauge, TDFN-8 2x2x0.75 (T822+3). Land "
+    fp = _fp_two_row(fid, f"Maxim MAX{code} LiPo fuel gauge, TDFN-8 2x2x0.75 (T822+3). Land "
                           "per official 90-0065: pads 0.30x0.70 pitch 0.5 rows 1.98 c-c, "
-                          "EP 0.8x1.38.", "MAX17048 fuel gauge TDFN", pads, (1.0, 1.0),
+                          "EP 0.8x1.38.", f"MAX{code} fuel gauge TDFN", pads, (1.0, 1.0),
                      ep=("9", 0.8, 1.38))
     nm = ["CTG", "CELL", "VDD", "GND", "ALRT", "QSTRT", "SCL", "SDA"]
     sym = _lr_symbol(fid, [(str(i + 1), nm[i]) for i in range(4)],
                      [(str(i + 5), nm[i + 4]) for i in range(4)],
                      bottom=[("9", "EP/GND")])
-    meta = _meta(fid, "MAX17048 LiPo Fuel Gauge", "ic", "power", "Maxim Integrated",
-                 "MAX17048G+T10",
-                 "Maxim MAX17048 1-cell Li-ion fuel gauge with ModelGauge, I2C 0x36 fixed, "
-                 "2.5-4.5V, TDFN-8 2x2 (EP=GND). The battery-percentage chip on modern "
-                 "ESP32 dev boards.",
+    tail = (" CELL pin senses the 2-cell stack." if code == "17049" else
+            " The battery-percentage chip on modern ESP32 dev boards.")
+    meta = _meta(fid, f"MAX{code} LiPo Fuel Gauge ({cells})", "ic", "power",
+                 "Maxim Integrated", f"MAX{code}G+T10",
+                 f"Maxim MAX{code} {cells} Li-ion fuel gauge with ModelGauge, I2C 0x36 "
+                 "fixed, 2.5-4.5V, TDFN-8 2x2 (EP=GND)." + tail,
                  {"contacts": 9, "mounting": "SMD", "supply_voltage": "2.5-4.5V",
                   "interface": "I2C", "i2c_address": "0x36", "body_mm": "2.0x2.0x0.75"},
                  "https://cdn.sparkfun.com/assets/5/2/7/6/6/MAX17048-MAX17049.pdf",
                  "Maxim 19-6171 Rev7 + official outline 21-0168 RevM (TDFN 2x2, pitch 0.5, "
                  "EP 0.8x1.2) + official land 90-0065 RevE (pads 0.30x0.70, rows 1.98 c-c "
-                 "vector-verified, EP land 0.8x1.38). Pinout p.6.",
-                 ["max17048", "maxim", "fuel gauge", "lipo", "battery", "i2c", "tdfn"])
+                 "vector-verified, EP land 0.8x1.38). Pinout p.6 (datasheet covers both "
+                 "MAX17048/MAX17049).",
+                 [fid, "maxim", "fuel gauge", "lipo", "battery", "i2c", "tdfn"])
     return fid, lib, fp, sym, meta
+
+
+def max17048():
+    return _max1704x("17048")
 
 
 def sgp40():
@@ -1337,6 +1376,34 @@ def esp32_devkitc_v4():
                  "6.04. Pin order verbatim from the official board pinout.",
                  ["esp32", "devkitc", "devboard", "wroom-32", "espressif", "development"])
     return fid, lib, fp, sym, meta
+
+
+# ---------- 온디맨드 변형 패밀리 (§21-6ⓐ: 변형은 봇/요청이 만든다) ----------
+
+VARIANT_FAMILIES = {
+    "ht73xx": {"codes": sorted(HT73XX_CODES), "build": _ht73xx},
+    "ht78xx": {"codes": sorted(HT78XX_CODES), "build": _ht78xx},
+    "sy8008": {"codes": sorted(SY8008_GRADES), "build": _sy8008_grade},
+    "max1704x": {"codes": sorted(MAX1704X_CODES), "build": _max1704x},
+}
+
+
+def write_part(t):
+    fid, lib_path, footprint, symbol, meta = t
+    d = os.path.normpath(os.path.join(LIB_ROOT, lib_path, fid))
+    os.makedirs(d, exist_ok=True)
+    open(os.path.join(d, f"{fid}.kicad_mod"), "w", encoding="utf-8").write(footprint)
+    open(os.path.join(d, f"{fid}.kicad_sym"), "w", encoding="utf-8").write(symbol)
+    json.dump(meta, open(os.path.join(d, "meta.json"), "w", encoding="utf-8"),
+              indent=2, ensure_ascii=False)
+    return fid
+
+
+def build_variant(family, code):
+    fam = VARIANT_FAMILIES.get(family)
+    if fam is None or code not in fam["codes"]:
+        raise ValueError(f"unknown variant {family}:{code}")
+    return write_part(fam["build"](code))
 
 
 PARTS = [qmc5883l, hmc5883l, adxl345, ip5306, tp5100, cn3791, mp1584, sy8008, sy8089,
