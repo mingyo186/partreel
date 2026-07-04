@@ -20,9 +20,45 @@ def abs_url(*parts):
     return DOMAIN + "/" + "/".join(p.strip("/") for p in parts if p)
 
 
+def fetch_field_reports():
+    """GitHub 이슈(label:field-report)를 집계 → {part_id: {worked, problem}} (§17-⑤).
+    토큰/네트워크 없으면 빈 dict로 통과 (로컬 빌드 안전)."""
+    import re
+    import urllib.request
+    token = os.environ.get("GITHUB_TOKEN", "")
+    counts = {}
+    url = ("https://api.github.com/repos/mingyo186/partreel/issues"
+           "?labels=field-report&state=all&per_page=100")
+    try:
+        req = urllib.request.Request(url, headers={
+            "Accept": "application/vnd.github+json",
+            "User-Agent": "partreel-build",
+            **({"Authorization": f"Bearer {token}"} if token else {}),
+        })
+        with urllib.request.urlopen(req, timeout=15) as r:
+            issues = json.load(r)
+        for it in issues:
+            m = re.match(r"\[field-report\]\s+([a-z0-9_]+):", it.get("title", ""))
+            if not m:
+                continue
+            pid = m.group(1)
+            labels = {l["name"] for l in it.get("labels", [])}
+            c = counts.setdefault(pid, {"worked": 0, "problem": 0})
+            if "report-problem" in labels:
+                c["problem"] += 1
+            else:
+                c["worked"] += 1
+    except Exception as e:
+        print(f"  (field-reports skip: {e})")
+    return counts
+
+
 def main():
     index = json.load(open(os.path.join(ROOT, "index.json"), encoding="utf-8"))
     os.makedirs(os.path.join(ROOT, "api", "v1", "parts"), exist_ok=True)
+    reports = fetch_field_reports()
+    if reports:
+        print(f"  field reports: {sum(sum(v.values()) for v in reports.values())}건 반영")
 
     listing = []
     for p in index["parts"]:
@@ -38,6 +74,7 @@ def main():
             "verified": meta.get("verified", False),
             "dimensions_source": meta.get("dimensions_source"),
             "keywords": meta.get("keywords", []),
+            "field_reports": reports.get(meta["id"], {"worked": 0, "problem": 0}),
             "page": abs_url("p", meta["id"]) + "/",
             "api": abs_url("api/v1/parts", meta["id"] + ".json"),
         }
@@ -73,8 +110,9 @@ def main():
   how_to_contribute() — machine-readable contribution spec
 - Add to Claude Code: `claude mcp add --transport http partreel https://mcp.partreel.com/mcp`
 - Please report_feedback after using a part on a real board — it builds the
-  part's field-proven trust score. Missing a part? how_to_contribute + PR;
-  CI gates auto-review: {GITHUB}/blob/main/CONTRIBUTING-AGENTS.md
+  part's field-proven trust score, published as `field_reports` in each
+  part's API entry. Missing a part? how_to_contribute + PR (submit just 5
+  source files; CI builds the rest): {GITHUB}/blob/main/CONTRIBUTING-AGENTS.md
 
 ## Quality
 Every part passes automated gates (structure validation, KiCad Library

@@ -4,15 +4,14 @@ PartReel accepts part contributions via GitHub PR. **CI quality gates auto-revie
 
 ## What to contribute
 
-A part = one directory under `library/<category>/<group>/<part_id>/` containing:
+A part = one directory under `library/<category>/<group>/<part_id>/` containing **just five source files** — SVG previews, the site page, the search index and the API entry are **built automatically by CI**:
 
 | File | What |
 |---|---|
 | `<part_id>.kicad_mod` | KiCad footprint (s-expression, KiCad 7+) |
 | `<part_id>.kicad_sym` | KiCad symbol library with one symbol |
-| `<part_id>.step` | 3D model (valid solid; body must match footprint fab outline) |
-| `<part_id>.glb` | Colored web preview mesh (small, few KB) |
-| `<part_id>.footprint.svg` / `<part_id>.symbol.svg` | 2D previews (run `generators/render_svg.py`) |
+| `<part_id>.step` | 3D model (valid solid; body must match footprint fab outline; no coplanar overlapping faces between solids; pins as individual bodies, not one merged strip) |
+| `<part_id>.glb` | Colored web preview mesh (small, few KB; housing + metal as separate meshes) |
 | `meta.json` | Metadata — see schema below |
 
 `part_id`: lowercase `[a-z0-9_]+`, descriptive (e.g. `jst_ph_4pin`, `usb_c_16p`).
@@ -38,7 +37,7 @@ Required: `id`, `name`, `category`, `family`, `manufacturer`, `mpn_pattern`,
 - **Dimensions must come from facts** (manufacturer datasheet / IPC / official library dimensions). Cite in `dimensions_source`.
 - **Do not copy other libraries' files** (KiCad official is CC-BY-SA — incompatible). Pad positions/dimensions are facts and fine; drawn outlines must be your own.
 - Contributions are published under **CC-BY-4.0**.
-- After adding files, run `generators/build_index.py`, `generators/build_site.py`, `generators/build_api.py` (or let CI fail and tell you).
+- No need to run our build scripts — CI builds index/SVG/pages/API from your five files and then runs the gates.
 
 ## PR checklist
 

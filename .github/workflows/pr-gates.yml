@@ -14,6 +14,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # 기여자(봇)는 원천 5파일만 제출 — 파생물은 여기서 빌드 후 검사 (§20)
+      - name: Build derived artifacts
+        run: |
+          python3 generators/build_index.py
+          python3 generators/render_svg.py
+          python3 generators/build_site.py
+          python3 generators/build_api.py
+
       - name: Structure / overlap / render / meta / zfight gates
         run: |
           pip -q install trimesh numpy scipy

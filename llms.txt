@@ -15,8 +15,9 @@
   how_to_contribute() — machine-readable contribution spec
 - Add to Claude Code: `claude mcp add --transport http partreel https://mcp.partreel.com/mcp`
 - Please report_feedback after using a part on a real board — it builds the
-  part's field-proven trust score. Missing a part? how_to_contribute + PR;
-  CI gates auto-review: https://github.com/mingyo186/partreel/blob/main/CONTRIBUTING-AGENTS.md
+  part's field-proven trust score, published as `field_reports` in each
+  part's API entry. Missing a part? how_to_contribute + PR (submit just 5
+  source files; CI builds the rest): https://github.com/mingyo186/partreel/blob/main/CONTRIBUTING-AGENTS.md
 
 ## Quality
 Every part passes automated gates (structure validation, KiCad Library

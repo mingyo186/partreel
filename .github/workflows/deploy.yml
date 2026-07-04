@@ -23,6 +23,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # 파생물 자동 빌드 (§20): 기여자는 원천 5파일만 내면 됨. index/svg/pages/api는 CI가 생성.
+      # field_reports 집계도 이때 API에 반영 (GITHUB_TOKEN으로 이슈 조회).
+      - name: Build derived artifacts
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python3 generators/build_index.py
+          python3 generators/render_svg.py
+          python3 generators/build_site.py
+          python3 generators/build_api.py
+
       # 교차검증 게이트: KiCad 파일 구조가 깨졌으면 배포 중단 (REQUIREMENTS §5-1)
       - name: Validate KiCad files
         run: python3 generators/validate_kicad.py
