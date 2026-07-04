@@ -70,11 +70,32 @@ def microsd_hc():
 def esp32_wroom32():
     fid = "esp32_wroom32"
     d = "%s/module/espressif/esp32_wroom32/%s" % (LIB, fid)
-    body = Part.makeBox(18, 25.5, 3.1, App.Vector(-9, -15.745, 0))      # 금속 쉴드 모듈
-    pads = Part.makeBox(17, 18.5, 0.2, App.Vector(-8.5, -9.0, -0.0))     # 패드 영역(대표)
-    Part.makeCompound([body, pads]).exportStep("%s/%s.step" % (d, fid))
-    body.exportStl("%s/%s__housing.stl" % (d, fid))
-    pads.exportStl("%s/%s__pins.stl" % (d, fid))
+    # 3부위: PCB(다크) + 금속 쉴드캔(안테나 영역 비움) + 가장자리 캐스텔레이티드 패드(금)
+    # 치수 = 풋프린트 fab (18 x 25.505), 총높이 3.1 (Espressif 데이터시트)
+    pcb = Part.makeBox(18, 25.505, 0.8, App.Vector(-9, -15.745, 0))
+    # 쉴드캔: 부품 영역만 (y -9.4..8.8 — 안테나 구간 y<-9.5는 PCB 노출)
+    shield = Part.makeBox(17.4, 18.2, 2.3, App.Vector(-8.7, -9.4, 0.8))
+    try:
+        vedges = [e for e in shield.Edges if abs(e.Vertexes[0].Z - e.Vertexes[1].Z) > 0.1]
+        shield = shield.makeFillet(0.4, vedges)
+    except Exception:
+        pass
+    # 캐스텔레이티드 패드: 풋프린트 패드 좌표 그대로 (좌 14 / 우 14 / 하 10)
+    pads = []
+    for i in range(14):
+        y = -8.255 + i * 1.27
+        pads.append(Part.makeBox(0.7, 0.9, 0.8, App.Vector(-9.05, y - 0.45, 0)))
+        pads.append(Part.makeBox(0.7, 0.9, 0.8, App.Vector(8.35, y - 0.45, 0)))
+    for i in range(10):
+        x = -5.715 + i * 1.27
+        pads.append(Part.makeBox(0.9, 0.7, 0.8, App.Vector(x - 0.45, 9.105, 0)))
+    gold = pads[0]
+    for p in pads[1:]:
+        gold = gold.fuse(p)
+    Part.makeCompound([shield, gold, pcb]).exportStep("%s/%s.step" % (d, fid))
+    shield.exportStl("%s/%s__housing.stl" % (d, fid))
+    gold.exportStl("%s/%s__pins.stl" % (d, fid))
+    pcb.exportStl("%s/%s__extra.stl" % (d, fid))
     print("ESP32 3D done")
 
 
