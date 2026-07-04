@@ -59,15 +59,47 @@ def build(cfg, n):
             pin_shapes.append(Part.makeBox(ps, ps, below + above,
                                            App.Vector(x - ps / 2, -ps / 2, -below)))
     else:
-        # 쉬라우드형 커넥터: 박스 + 상부 캐비티 + 짧은 핀
+        # 쉬라우드형 커넥터 (JST류): 리얼리즘 패스 적용 (§14-C)
         housing = Part.makeBox(L, W, HZ, App.Vector(x0, y0, 0))
+        # 1) 수직 4모서리 필렛 (네모반듯함 제거)
+        try:
+            vedges = [e for e in housing.Edges
+                      if abs(e.Vertexes[0].Z - e.Vertexes[1].Z) > 0.1]
+            housing = housing.makeFillet(min(0.35, W * 0.08), vedges)
+        except Exception:
+            pass
+        # 2) 상부 캐비티
         cav = Part.makeBox(L - 1.6, W - 1.6, HZ - 1.0, App.Vector(x0 + 0.8, y0 + 0.8, 1.0))
         housing = housing.cut(cav)
+        # 3) 전면(y1쪽) 하부 와이드 개구부 — JST 특유의 낮은 앞벽
+        try:
+            win = Part.makeBox(L - 2.4, 1.2, HZ * 0.45,
+                               App.Vector(x0 + 1.2, y1 - 1.0, HZ * 0.45))
+            housing = housing.cut(win)
+        except Exception:
+            pass
+        # 4) 포지션별 전면 세로 슬롯 (걸쇠/가이드 홈 느낌)
+        try:
+            for i in range(n):
+                x = i * pitch
+                slot = Part.makeBox(0.7, 1.2, 2.2, App.Vector(x - 0.35, y1 - 1.0, HZ - 2.2))
+                housing = housing.cut(slot)
+        except Exception:
+            pass
+        # 5) 핀: 끝단 모따기(테이퍼)로 실핀 느낌
         pin_shapes = []
         for i in range(n):
             x = i * pitch
-            pin_shapes.append(Part.makeBox(ps, ps, below + above,
-                                           App.Vector(x - ps / 2, -ps / 2, -below)))
+            pin = Part.makeBox(ps, ps, below + above,
+                               App.Vector(x - ps / 2, -ps / 2, -below))
+            try:
+                tip_edges = [e for e in pin.Edges
+                             if abs(e.Vertexes[0].Z + below) < 0.01
+                             and abs(e.Vertexes[1].Z + below) < 0.01]
+                pin = pin.makeChamfer(ps * 0.3, tip_edges)
+            except Exception:
+                pass
+            pin_shapes.append(pin)
 
     pins_solid = pin_shapes[0]
     for p in pin_shapes[1:]:
