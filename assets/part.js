@@ -47,6 +47,8 @@ if (el && url) {
 
   new GLTFLoader().load(url, (gltf) => {
     const model = gltf.scene;
+    model.rotation.x = -Math.PI / 2;  // CAD Z-up -> viewer Y-up (부품 바로 세우기)
+    model.updateMatrixWorld(true);
     const box = new THREE.Box3().setFromObject(model);
     const center = box.getCenter(new THREE.Vector3());
     const size = box.getSize(new THREE.Vector3());

@@ -32,7 +32,7 @@ XH = dict(
     silk=dict(x0=-2.56, x1=2.56, y0=-2.46, y1=3.51),
     crt=dict(x0=-2.95, x1=2.95, y0=-2.85, y1=3.90),
     pins=list(range(2, 17)),
-    pin_sq=0.64, housing_h=6.0, pin_below=3.0, pin_into=2.0,
+    pin_sq=0.64, housing_h=7.0, pin_below=3.0, pin_into=2.0,  # 높이 7.0 = XH 데이터시트
 )
 TERM = dict(
     key="screw_terminal_5_08", name="Screw Terminal 5.08mm", manufacturer="Generic (KF301)",

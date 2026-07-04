@@ -71,11 +71,14 @@ def build(cfg, n):
         # 2) 상부 캐비티
         cav = Part.makeBox(L - 1.6, W - 1.6, HZ - 1.0, App.Vector(x0 + 0.8, y0 + 0.8, 1.0))
         housing = housing.cut(cav)
-        # 3) 낮은 앞벽 — 실물 JST처럼 앞벽 상부를 통째로 제거 (위가 열림, 떠있는 띠 없음)
+        # 3) 양 끝벽 상단 U자 홈 — JST XH 데이터시트 측면도의 그 슬롯.
+        #    (4면 벽은 풀높이 유지 — 앞벽 낮추는 건 실물과 다름, 도면 대조로 정정됨)
         try:
-            win = Part.makeBox(L - 2.4, 2.0, HZ,
-                               App.Vector(x0 + 1.2, y1 - 1.4, HZ * 0.42))
-            housing = housing.cut(win)
+            yc = (y0 + y1) / 2.0
+            nw, nd = 2.0, HZ * 0.5  # 홈 폭 ~2mm, 깊이 = 높이의 절반 (도면 비율)
+            for nx in (x0 - 0.05, x1 - 0.95):
+                notch = Part.makeBox(1.0, nw, nd + 0.1, App.Vector(nx, yc - nw / 2, HZ - nd))
+                housing = housing.cut(notch)
         except Exception:
             pass
         # 5) 핀: 끝단 모따기(테이퍼)로 실핀 느낌
