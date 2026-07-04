@@ -1,0 +1,24 @@
+name: "Field report — it worked"
+description: "Report that a PartReel part worked on a real board (builds the part's trust score)"
+title: "[field-report] PART_ID: worked"
+labels: ["field-report", "report-worked"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks! Replace `PART_ID` in the title with the part id (e.g. `aht20`).
+        This report is aggregated into the part's public `field_reports` trust score.
+  - type: input
+    id: part
+    attributes:
+      label: Part id
+      placeholder: "aht20"
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: What did you build? (board, fab, assembly)
+      placeholder: "2-layer JLCPCB board, reflow; footprint and 3D matched the part perfectly."
+    validations:
+      required: false

@@ -82,3 +82,21 @@ if (el && url) {
     renderer.render(scene, camera);
   })();
 }
+
+// Field-report 배지: 부품 API에서 field_reports 읽어 >0일 때만 표시 (§17-⑤)
+(async () => {
+  const badge = document.getElementById('field-badge');
+  if (!badge) return;
+  try {
+    const pid = location.pathname.split('/').filter(Boolean).pop();
+    const r = await fetch(`/api/v1/parts/${pid}.json${CB}`);
+    if (!r.ok) return;
+    const fr = (await r.json()).field_reports || {};
+    const ok = fr.worked | 0, bad = fr.problem | 0;
+    if (ok + bad > 0) {
+      badge.textContent = `✅ field-verified on real boards: ${ok}` +
+        (bad ? ` · ⚠️ problems reported: ${bad}` : '');
+      badge.hidden = false;
+    }
+  } catch (e) { /* 배지는 장식 — 실패해도 조용히 */ }
+})();

@@ -147,11 +147,18 @@ def part_page(meta, path):
   <h2>Buy</h2>
   <a class="buy" href="https://www.lcsc.com/search?q={esc(mpn)}" target="_blank" rel="noopener">Find this part at distributors →</a>
   <p class="affiliate-note">Affiliate link · Part license: {esc(lic)}</p>
+  <h2>Field reports</h2>
+  <p id="field-badge" class="desc" hidden></p>
+  <p class="desc">Used this part on a real board? One click, no sign-up beyond GitHub:
+    <a class="dl" href="{GITHUB}/issues/new?template=field_report_worked.yml&title=%5Bfield-report%5D%20{pid}%3A%20worked" target="_blank" rel="noopener">✅ It worked</a>
+    <a class="dl" href="{GITHUB}/issues/new?template=field_report_problem.yml&title=%5Bfield-report%5D%20{pid}%3A%20problem" target="_blank" rel="noopener">⚠️ Report a problem</a>
+    <span class="affiliate-note" style="display:block">Reports feed this part's public trust score (AI agents: use <code>report_feedback</code> via MCP).</span>
+  </p>
   <h2>For AI agents</h2>
   <p class="desc">Machine-readable data for this part: <a href="{DOMAIN}/api/v1/parts/{pid}.json">/api/v1/parts/{pid}.json</a> (absolute download URLs).
   MCP: <code>{MCP_URL}</code> → <code>get_part("{pid}")</code>. See <a href="{DOMAIN}/llms.txt">/llms.txt</a> · <a href="{prefix}agents/">agent guide</a></p>
 </main>"""
-    scripts = f'<script type="module" src="{prefix}assets/part.js?v=6"></script>'
+    scripts = f'<script type="module" src="{prefix}assets/part.js?v=7"></script>'
     title = f"{esc(name)} — KiCad footprint, symbol & 3D model | PartReel"
     return render(prefix, title, esc(desc_short), f"{DOMAIN}/p/{pid}/", body, head_extra, scripts)
 

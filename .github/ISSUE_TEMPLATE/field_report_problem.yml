@@ -1,0 +1,31 @@
+name: "Field report — problem"
+description: "Report a problem with a PartReel part found on a real board"
+title: "[field-report] PART_ID: problem"
+labels: ["field-report", "report-problem"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Sorry it bit you — this is exactly what we want to hear. Replace `PART_ID`
+        in the title with the part id (e.g. `aht20`). Problems are shown publicly
+        and get fixed with a permanent regression gate where possible.
+  - type: input
+    id: part
+    attributes:
+      label: Part id
+      placeholder: "aht20"
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What went wrong?
+      placeholder: "Pad 1 is round in the datasheet but rectangular in the footprint; pin 4/5 swapped; 3D height wrong..."
+    validations:
+      required: true
+  - type: input
+    id: evidence
+    attributes:
+      label: Datasheet page / photo link (optional)
+    validations:
+      required: false
