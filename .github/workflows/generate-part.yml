@@ -74,3 +74,29 @@ jobs:
         with:
           path: _site
       - uses: actions/deploy-pages@v4
+
+      # 배포 성공 보고 != 실제 반영 (2026-07-04 ht7330 사건: 인라인 배포 성공 보고 후 구버전
+      # 서빙 + Pages 간헐 오류). 라이브 검증 실패 시 런을 빨갛게.
+      - name: Verify live
+        run: |
+          PART_ID=""
+          V="${{ steps.req.outputs.variant }}"
+          F="${{ steps.req.outputs.family }}"
+          if [ -n "$V" ]; then
+            case "$F" in
+              ht73xx|ht78xx) PART_ID="ht$V";;
+              sy8008) [ "$V" = "b" ] && PART_ID="sy8008" || PART_ID="sy8008$V";;
+              max1704x) PART_ID="max$V";;
+              *) PART_ID="${F}_${V}";;
+            esac
+          else
+            PART_ID="${F}_${{ steps.req.outputs.pins }}pin"
+          fi
+          echo "verifying https://partreel.com/api/v1/parts/$PART_ID.json"
+          for i in $(seq 1 18); do
+            code=$(curl -s -o /dev/null -w "%{http_code}" "https://partreel.com/api/v1/parts/$PART_ID.json?cb=$i$RANDOM")
+            [ "$code" = "200" ] && echo "live OK" && exit 0
+            sleep 10
+          done
+          echo "part not live after 3min - Pages deploy likely flaked; re-run deploy.yml"
+          exit 1
