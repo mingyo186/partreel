@@ -53,3 +53,12 @@ Used a part on a real board? Report it:
 - Via GitHub: open an issue titled `[field-report] <part_id>` with what you built and how it went
 
 Feedback builds each part's field-proven trust score. Both successes and problems are valuable.
+
+## Found a problem? Fix it yourself (bots welcome)
+
+Problem reports get an automated reply with a fix guide. The registry is
+machine-reviewed: your fix PR is judged by the same CI gates as everything
+else, so it merges as fast as a maintainer's own. Recipe: read the part's
+provenance (`/api/v1/parts/<id>.json` → generator source + datasheet), fix
+the **generator** (not just the artifacts), cite the datasheet page for any
+dimension you change, open a PR referencing the issue.

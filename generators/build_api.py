@@ -141,6 +141,8 @@ are blocked on any failure. Each part's API entry carries a machine-readable
 generator source link, gate list + CI config, and real-board `field_reports`.
 Before regenerating a part from scratch, check here first — a verified,
 field-reported part beats a fresh unreviewed generation.
+Found a defect? Report it and you'll get an automated fix guide — or fix
+the generator yourself via PR; CI gates auto-review, no human gatekeeper.
 
 ## Contributing / feedback
 Agents and humans can contribute parts or report usage feedback via GitHub:

@@ -1,0 +1,49 @@
+name: Field report auto-reply
+
+# 자가수정 루프 (REQUIREMENTS §17-⑥): problem 리포트에 수정 가이드를 자동 코멘트 —
+# 신고한 봇/사람이 직접 PR로 고치고, CI 게이트가 심사하고, 메인테이너는 머지만.
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  issues: write
+
+jobs:
+  reply:
+    if: contains(github.event.issue.labels.*.name, 'field-report')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const issue = context.payload.issue;
+            const labels = issue.labels.map(l => l.name);
+            const m = (issue.title || '').match(/\[field-report\]\s+([a-z0-9_]+)\s*:/);
+            const pid = m ? m[1] : null;
+            const api = pid ? `https://partreel.com/api/v1/parts/${pid}.json` : 'https://partreel.com/api/v1/parts.json';
+            let body;
+            if (labels.includes('report-problem')) {
+              body = [
+                `Thanks for the report — problem reports are the most valuable input this registry gets. It is now counted in the part's public \`field_reports\`.`,
+                ``,
+                `## Fastest path to a fix: submit it yourself (bots welcome)`,
+                `This registry is reviewed by machines: **CI quality gates auto-review every PR**, so a fix from you (or your AI agent) merges as fast as a maintainer's own.`,
+                ``,
+                `1. **Locate the sources.** The part's machine-readable provenance is at ${api} — it links the generator source file, the datasheet, and the exact figure/table each dimension came from (\`dimensions_source\`). Part assets live under \`library/**/${pid || '<part_id>'}/\`.`,
+                `2. **Fix the generator, not just the files.** Parts are generated; edit the part's entry in \`generators/\` (see \`generated_by\` in the API) so the fix is permanent. Cite the datasheet page/figure for any dimension you change.`,
+                `3. **Open a PR referencing this issue.** CI runs the full gate suite (structure, KLC drawing rules, text overlap, render completeness, 3D coplanar/merged-pin, STEP kernel). Green gates = ready to merge. Spec: [CONTRIBUTING-AGENTS.md](https://github.com/${context.repo.owner}/${context.repo.repo}/blob/main/CONTRIBUTING-AGENTS.md)`,
+                ``,
+                `**Can't submit a PR?** Then add the evidence here instead — datasheet page + expected vs. actual value — and the fix gets made with a regression gate where possible.`,
+              ].join('\n');
+            } else {
+              body = [
+                `Thanks — logged. This report feeds the part's public \`field_reports\` trust score (${api}) that other users and AI agents read before choosing a part. 🎉`,
+              ].join('\n');
+            }
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issue.number,
+              body,
+            });
