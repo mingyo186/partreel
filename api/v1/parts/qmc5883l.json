@@ -1,0 +1,51 @@
+{
+  "id": "qmc5883l",
+  "name": "QMC5883L 3-Axis Magnetometer",
+  "category": "sensor",
+  "family": "magnetometer",
+  "manufacturer": "QST",
+  "mpn_pattern": "QMC5883L",
+  "description": "QST QMC5883L 3-axis magnetic sensor (compass), I2C address 0x0D, LGA-16 3x3x0.9mm. Land pattern per manufacturer datasheet. S1 must tie to VDDIO; C1 reservoir capacitor required.",
+  "parameters": {
+    "contacts": 16,
+    "mounting": "SMD",
+    "interface": "I2C",
+    "i2c_address": "0x0D",
+    "supply_voltage": "2.16-3.6V",
+    "body_mm": "3.0x3.0x0.9"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/sensor/qst/qmc5883l/qmc5883l/qmc5883l.kicad_mod",
+    "symbol": "https://partreel.com/library/sensor/qst/qmc5883l/qmc5883l/qmc5883l.kicad_sym",
+    "model_3d": "https://partreel.com/library/sensor/qst/qmc5883l/qmc5883l/qmc5883l.step",
+    "preview": "https://partreel.com/library/sensor/qst/qmc5883l/qmc5883l/qmc5883l.glb",
+    "footprint_svg": "https://partreel.com/library/sensor/qst/qmc5883l/qmc5883l/qmc5883l.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/sensor/qst/qmc5883l/qmc5883l/qmc5883l.symbol.svg"
+  },
+  "datasheet": "https://nettigo.pl/attachments/440",
+  "license": "CC-BY-4.0",
+  "verified": true,
+  "dimensions_source": "QST QMC5883L datasheet 1.0: §3.2 LGA-16 3x3x0.9, Fig.7 recommended land pattern (16 pads 0.325x0.25, pitch 0.5, radial centers +/-1.2625), Table 5 pinout.",
+  "keywords": [
+    "qmc5883l",
+    "qst",
+    "magnetometer",
+    "compass",
+    "3-axis",
+    "i2c",
+    "gy-271",
+    "lga"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "page": "https://partreel.com/p/qmc5883l/",
+  "api": "https://partreel.com/api/v1/parts/qmc5883l.json"
+}

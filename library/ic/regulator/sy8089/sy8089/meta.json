@@ -1,0 +1,44 @@
+{
+  "id": "sy8089",
+  "name": "SY8089A 2A Buck Converter",
+  "category": "ic",
+  "family": "regulator",
+  "manufacturer": "Silergy",
+  "mpn_pattern": "SY8089AAAC",
+  "description": "Silergy SY8089A 2A (3A peak) 1MHz synchronous step-down regulator, 2.7-5.5V input, 0.6V reference, SOT23-5.",
+  "parameters": {
+    "contacts": 5,
+    "mounting": "SMD",
+    "supply_voltage": "2.7-5.5V",
+    "output_current": "2A",
+    "body_mm": "2.9x1.6x1.1"
+  },
+  "files": {
+    "footprint": "sy8089.kicad_mod",
+    "symbol": "sy8089.kicad_sym",
+    "model_3d": "sy8089.step",
+    "preview": "sy8089.glb",
+    "footprint_svg": "sy8089.footprint.svg",
+    "symbol_svg": "sy8089.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "https://www.olimex.com/Products/Components/IC/SY8009A/resources/SY8089AAAC.pdf",
+  "dimensions_source": "Silergy AN_SY8089A Rev 0.9A p.9: SOT23-5 outline + recommended land pattern (pads 0.55x0.80, pitch 0.95, rows 2.40 c-c). Pinout p.2.",
+  "verified": true,
+  "license": "CC-BY-4.0",
+  "generated_by": "generators/gen_ics.py",
+  "keywords": [
+    "sy8089",
+    "silergy",
+    "buck",
+    "step-down",
+    "dc-dc",
+    "sot23-5",
+    "esp32 power"
+  ]
+}

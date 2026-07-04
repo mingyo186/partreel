@@ -1,0 +1,46 @@
+{
+  "id": "adxl345",
+  "name": "ADXL345 3-Axis Accelerometer",
+  "category": "sensor",
+  "family": "accelerometer",
+  "manufacturer": "Analog Devices",
+  "mpn_pattern": "ADXL345BCCZ",
+  "description": "Analog Devices ADXL345 3-axis digital accelerometer, SPI/I2C (0x1D or 0x53), LGA-14 3x5x0.95mm. Land pattern per ADI datasheet. CS and ALT_ADDR must not float.",
+  "parameters": {
+    "contacts": 14,
+    "mounting": "SMD",
+    "interface": "SPI/I2C",
+    "i2c_address": "0x1D/0x53",
+    "supply_voltage": "2.0-3.6V",
+    "body_mm": "3.0x5.0x0.95"
+  },
+  "files": {
+    "footprint": "adxl345.kicad_mod",
+    "symbol": "adxl345.kicad_sym",
+    "model_3d": "adxl345.step",
+    "preview": "adxl345.glb",
+    "footprint_svg": "adxl345.footprint.svg",
+    "symbol_svg": "adxl345.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "https://components101.com/sites/default/files/component_datasheet/ADXL345-Datasheet.pdf",
+  "dimensions_source": "ADI ADXL345 datasheet Rev E: Fig.61 package CC-14-1 (3x5x0.95), Fig.59 recommended land pattern (pads 1.145x0.55, pitch 0.8, columns c-c 2.195, center pads span 5.34 outer), Table 5 pinout.",
+  "verified": true,
+  "license": "CC-BY-4.0",
+  "generated_by": "generators/gen_ics.py",
+  "keywords": [
+    "adxl345",
+    "accelerometer",
+    "3-axis",
+    "spi",
+    "i2c",
+    "adi",
+    "gy-291",
+    "lga"
+  ]
+}

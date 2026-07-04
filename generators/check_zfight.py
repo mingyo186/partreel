@@ -67,10 +67,18 @@ def check_merged_pins(glb_path, expected):
     if not expected or expected < 2:
         return None
     scene = trimesh.load(glb_path)
-    geoms = list(scene.geometry.values())
-    if len(geoms) < 2:
-        return None
-    bodies = len(geoms[1].split(only_watertight=False))
+    # 금속 메시는 이름("pins")으로 식별; 옛 GLB(이름 없음)는 두 번째 메시 폴백
+    metal = None
+    for name, g in scene.geometry.items():
+        if "pins" in name.lower():
+            metal = g
+            break
+    if metal is None:
+        geoms = list(scene.geometry.values())
+        if len(geoms) < 2:
+            return None
+        metal = geoms[1]
+    bodies = len(metal.split(only_watertight=False))
     if bodies == 1:
         return f"금속 메시가 한 덩어리 (접점 {expected}개인데 개별 표현 아님)"
     return None

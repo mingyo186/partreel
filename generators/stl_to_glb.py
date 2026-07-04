@@ -18,22 +18,27 @@ for p in index["parts"]:
     d = os.path.join(ROOT, p["path"])
     hp = os.path.join(d, f"{fid}__housing.stl")
     pp = os.path.join(d, f"{fid}__pins.stl")
-    if not (os.path.exists(hp) and os.path.exists(pp)):
+    ep = os.path.join(d, f"{fid}__extra.stl")
+    if not os.path.exists(pp):
         print("skip (no stl):", fid)
         continue
-    h = trimesh.load(hp, force="mesh")
+    # 하우징은 옵션 (IC류 = 다크 몸체 __extra + 금핀 __pins 두 메시).
+    # 메시 이름을 GLB에 박아 check_zfight가 이름으로 금속 메시를 찾게 한다.
+    scene = trimesh.Scene()
+    if os.path.exists(hp):
+        h = trimesh.load(hp, force="mesh")
+        h.visual.face_colors = HOUSING_COLOR
+        scene.add_geometry(h, geom_name="housing")
+        os.remove(hp)
     pn = trimesh.load(pp, force="mesh")
-    h.visual.face_colors = HOUSING_COLOR
     pn.visual.face_colors = PIN_COLOR
-    meshes = [h, pn]
-    ep = os.path.join(d, f"{fid}__extra.stl")
+    scene.add_geometry(pn, geom_name="pins")
+    os.remove(pp)
     if os.path.exists(ep):
         ex = trimesh.load(ep, force="mesh")
         ex.visual.face_colors = EXTRA_COLOR
-        meshes.append(ex)
+        scene.add_geometry(ex, geom_name="extra")
         os.remove(ep)
-    trimesh.Scene(meshes).export(os.path.join(d, f"{fid}.glb"))
-    os.remove(hp)
-    os.remove(pp)
+    scene.export(os.path.join(d, f"{fid}.glb"))
     n += 1
 print("glb generated:", n)

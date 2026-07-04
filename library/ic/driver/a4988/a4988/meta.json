@@ -1,0 +1,43 @@
+{
+  "id": "a4988",
+  "name": "A4988 Microstepping Motor Driver",
+  "category": "ic",
+  "family": "driver",
+  "manufacturer": "Allegro MicroSystems",
+  "mpn_pattern": "A4988SETTR-T",
+  "description": "Allegro A4988 DMOS microstepping driver with translator, up to 2A / 35V, 1/16 microstepping, QFN-28 5x5mm (ET). GND pins tie via exposed PAD ground plane.",
+  "parameters": {
+    "contacts": 29,
+    "mounting": "SMD",
+    "supply_voltage": "8-35V",
+    "output_current": "2A",
+    "body_mm": "5.0x5.0x0.9"
+  },
+  "files": {
+    "footprint": "a4988.kicad_mod",
+    "symbol": "a4988.kicad_sym",
+    "model_3d": "a4988.step",
+    "preview": "a4988.glb",
+    "footprint_svg": "a4988.footprint.svg",
+    "symbol_svg": "a4988.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "https://www.allegromicro.com/-/media/files/datasheets/a4988-datasheet.pdf",
+  "dimensions_source": "Allegro A4988 datasheet p.19: QFN-28 ET 5x5x0.9, pitch 0.5, EP 3.15; PCB Layout Reference View (QFN50P500X500X100-29V1M): pads 0.30x1.15, outer span 4.80. Pinout p.18 (verified: 1-7 left, 8-14 bottom, 15-21 right, 22-28 top, CCW).",
+  "verified": true,
+  "license": "CC-BY-4.0",
+  "generated_by": "generators/gen_ics.py",
+  "keywords": [
+    "a4988",
+    "allegro",
+    "stepper",
+    "driver",
+    "microstepping",
+    "qfn-28"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "id": "drv8825",
+  "name": "DRV8825 Stepper Motor Driver",
+  "category": "ic",
+  "family": "driver",
+  "manufacturer": "Texas Instruments",
+  "mpn_pattern": "DRV8825PWP",
+  "description": "TI DRV8825 stepper motor driver, up to 2.5A / 45V, 1/32 microstepping, HTSSOP-28 with PowerPAD (PPAD = GND, must be soldered).",
+  "parameters": {
+    "contacts": 29,
+    "mounting": "SMD",
+    "supply_voltage": "8.2-45V",
+    "output_current": "2.5A",
+    "body_mm": "9.7x4.4x1.2"
+  },
+  "files": {
+    "footprint": "drv8825.kicad_mod",
+    "symbol": "drv8825.kicad_sym",
+    "model_3d": "drv8825.step",
+    "preview": "drv8825.glb",
+    "footprint_svg": "drv8825.footprint.svg",
+    "symbol_svg": "drv8825.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "https://www.ti.com/lit/ds/symlink/drv8825.pdf",
+  "dimensions_source": "TI DRV8825 datasheet SLVSA73F: PWP0028C outline (9.7x4.4, span 6.4, pitch 0.65, thermal pad 4.48-5.18x2.4-3.1) + TI recommended land pattern (0.45x1.5 pads, columns 5.8 c-c, thermal 3.1x5.18). Pinout p.3.",
+  "verified": true,
+  "license": "CC-BY-4.0",
+  "generated_by": "generators/gen_ics.py",
+  "keywords": [
+    "drv8825",
+    "ti",
+    "stepper",
+    "driver",
+    "microstepping",
+    "htssop-28"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "id": "tp5100",
+  "name": "TP5100 1/2-Cell Switching Charger",
+  "category": "ic",
+  "family": "power",
+  "manufacturer": "NanJing TopPower",
+  "mpn_pattern": "TP5100",
+  "description": "TopPower TP5100 switch-mode Li-ion charger, single-cell 4.2V or 2-cell 8.4V (CS pin select), 0.1-2A, VIN 4.5-12V, QFN16 4x4mm (EP = heatsink, ground only).",
+  "parameters": {
+    "contacts": 17,
+    "mounting": "SMD",
+    "supply_voltage": "4.5-12V",
+    "body_mm": "4.0x4.0x0.9"
+  },
+  "files": {
+    "footprint": "tp5100.kicad_mod",
+    "symbol": "tp5100.kicad_sym",
+    "model_3d": "tp5100.step",
+    "preview": "tp5100.glb",
+    "footprint_svg": "tp5100.footprint.svg",
+    "symbol_svg": "tp5100.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "https://www.toppwr.com/uploadfile/file/20240913/66e3a293b3c42.pdf",
+  "dimensions_source": "TopPower TP5100 datasheet REV_2.4 p.16: QFN16 4x4x0.8-0.9, pitch 0.65, pad 0.25-0.35 x 0.45-0.65, EP 2.0-2.2 sq. Land pads 0.35x0.85 centers +/-1.775 + EP 2.1 derived per IPC-7351. Pinout p.4/p.8-9.",
+  "verified": true,
+  "license": "CC-BY-4.0",
+  "generated_by": "generators/gen_ics.py",
+  "keywords": [
+    "tp5100",
+    "toppower",
+    "charger",
+    "li-ion",
+    "2-cell",
+    "8.4v",
+    "qfn"
+  ]
+}

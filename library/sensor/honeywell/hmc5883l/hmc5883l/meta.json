@@ -1,0 +1,46 @@
+{
+  "id": "hmc5883l",
+  "name": "HMC5883L 3-Axis Magnetometer",
+  "category": "sensor",
+  "family": "magnetometer",
+  "manufacturer": "Honeywell",
+  "mpn_pattern": "HMC5883L",
+  "description": "Honeywell HMC5883L 3-axis magnetic sensor (compass), I2C address 0x1E, LGA-16 3x3x0.9mm. Land pattern per manufacturer datasheet. S1 must tie to VDDIO; C1 reservoir capacitor required.",
+  "parameters": {
+    "contacts": 16,
+    "mounting": "SMD",
+    "interface": "I2C",
+    "i2c_address": "0x1E",
+    "supply_voltage": "2.16-3.6V",
+    "body_mm": "3.0x3.0x0.9"
+  },
+  "files": {
+    "footprint": "hmc5883l.kicad_mod",
+    "symbol": "hmc5883l.kicad_sym",
+    "model_3d": "hmc5883l.step",
+    "preview": "hmc5883l.glb",
+    "footprint_svg": "hmc5883l.footprint.svg",
+    "symbol_svg": "hmc5883l.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "https://cdn-shop.adafruit.com/datasheets/HMC5883L_3-Axis_Digital_Compass_IC.pdf",
+  "dimensions_source": "Honeywell HMC5883L datasheet Rev E: p.4 LCC-16 3x3x0.9, p.5 recommended land pattern (16 pads 0.45x0.30, pitch 0.5, radial centers +/-1.275), Table 1 pinout.",
+  "verified": true,
+  "license": "CC-BY-4.0",
+  "generated_by": "generators/gen_ics.py",
+  "keywords": [
+    "hmc5883l",
+    "honeywell",
+    "magnetometer",
+    "compass",
+    "3-axis",
+    "i2c",
+    "gy-273",
+    "lcc"
+  ]
+}

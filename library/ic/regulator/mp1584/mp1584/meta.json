@@ -1,0 +1,44 @@
+{
+  "id": "mp1584",
+  "name": "MP1584EN 3A Buck Converter",
+  "category": "ic",
+  "family": "regulator",
+  "manufacturer": "MPS",
+  "mpn_pattern": "MP1584EN",
+  "description": "MPS MP1584EN 3A 1.5MHz step-down converter, 4.5-28V input, SOIC-8E with exposed pad (EP = GND, same net as pin 5). NOTE: MPS marks MP1584 NRND (successor MP2338) but it remains ubiquitous on buck modules.",
+  "parameters": {
+    "contacts": 8,
+    "mounting": "SMD",
+    "supply_voltage": "4.5-28V",
+    "output_current": "3A",
+    "body_mm": "4.9x3.9x1.6"
+  },
+  "files": {
+    "footprint": "mp1584.kicad_mod",
+    "symbol": "mp1584.kicad_sym",
+    "model_3d": "mp1584.step",
+    "preview": "mp1584.glb",
+    "footprint_svg": "mp1584.footprint.svg",
+    "symbol_svg": "mp1584.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "https://datasheet4u.com/pdf/1471577/MP1584.pdf",
+  "dimensions_source": "MPS MP1584 datasheet Rev 1.0 p.17: SOIC8E package (4.9x3.9, EP 3.3x2.41) with explicit recommended land pattern (8 pads 0.61x1.60, pitch 1.27, rows 5.40 c-c, EP land 3.51x2.62).",
+  "verified": true,
+  "license": "CC-BY-4.0",
+  "generated_by": "generators/gen_ics.py",
+  "keywords": [
+    "mp1584",
+    "mps",
+    "buck",
+    "step-down",
+    "dc-dc",
+    "regulator",
+    "soic-8"
+  ]
+}

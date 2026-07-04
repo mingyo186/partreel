@@ -1,0 +1,44 @@
+{
+  "id": "ip5306",
+  "name": "IP5306 Power Bank SoC",
+  "category": "ic",
+  "family": "power",
+  "manufacturer": "Injoinic",
+  "mpn_pattern": "IP5306",
+  "description": "Injoinic IP5306 fully-integrated power bank system-on-chip: 2.1A charger + 2.4A 5V boost output + battery indicator LEDs + key control, eSOP8 (EP = GND).",
+  "parameters": {
+    "contacts": 9,
+    "mounting": "SMD",
+    "supply_voltage": "4.75-5.5V",
+    "battery": "3.0-4.4V",
+    "body_mm": "4.9x3.9x1.65"
+  },
+  "files": {
+    "footprint": "ip5306.kicad_mod",
+    "symbol": "ip5306.kicad_sym",
+    "model_3d": "ip5306.step",
+    "preview": "ip5306.glb",
+    "footprint_svg": "ip5306.footprint.svg",
+    "symbol_svg": "ip5306.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "https://datasheet.lcsc.com/datasheet/pdf/309666add984eaea02a8f06d99102496.pdf",
+  "dimensions_source": "Injoinic IP5306 datasheet V1.10 p.10: eSOP8 4.9x3.9 span 6.0 pitch 1.27, EP 2.09 sq. No recommended land pattern - pads derived per IPC-7351 (matches MP1584 SOIC8E recommendation for identical outline); EP land 2.1x2.1.",
+  "verified": true,
+  "license": "CC-BY-4.0",
+  "generated_by": "generators/gen_ics.py",
+  "keywords": [
+    "ip5306",
+    "injoinic",
+    "power bank",
+    "charger",
+    "boost",
+    "battery",
+    "esop-8"
+  ]
+}

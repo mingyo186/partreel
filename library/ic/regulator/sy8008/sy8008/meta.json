@@ -1,0 +1,43 @@
+{
+  "id": "sy8008",
+  "name": "SY8008B 1A Buck Converter",
+  "category": "ic",
+  "family": "regulator",
+  "manufacturer": "Silergy",
+  "mpn_pattern": "SY8008BAAC",
+  "description": "Silergy SY8008B 1A 1.5MHz synchronous step-down regulator, 2.5-5.5V input, 0.6V reference, SOT23-5.",
+  "parameters": {
+    "contacts": 5,
+    "mounting": "SMD",
+    "supply_voltage": "2.5-5.5V",
+    "output_current": "1A",
+    "body_mm": "2.9x1.6x1.1"
+  },
+  "files": {
+    "footprint": "sy8008.kicad_mod",
+    "symbol": "sy8008.kicad_sym",
+    "model_3d": "sy8008.step",
+    "preview": "sy8008.glb",
+    "footprint_svg": "sy8008.footprint.svg",
+    "symbol_svg": "sy8008.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "https://mangopi.org/_media/sy8008.pdf",
+  "dimensions_source": "Silergy AN_SY8008 Rev 1.0 p.7: SOT23-5 (body 2.8-3.1x1.5-1.7, span 2.7-3.0, pitch 0.95) with recommended land pattern: pads 0.55x0.80, pitch 0.95, rows 2.40 c-c. Pinout p.2 (verified: 4=IN bottom-right, 5=FB top-right in column layout).",
+  "verified": true,
+  "license": "CC-BY-4.0",
+  "generated_by": "generators/gen_ics.py",
+  "keywords": [
+    "sy8008",
+    "silergy",
+    "buck",
+    "step-down",
+    "dc-dc",
+    "sot23-5"
+  ]
+}
