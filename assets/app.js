@@ -118,15 +118,16 @@ async function selectPart(p) {
   const permalink = document.getElementById('permalink');
   if (permalink) permalink.href = `p/${p.id}/`;
 
-  // 3D
+  // 3D / SVG — 배포 후 낡은 캐시가 보이지 않게 캐시버스팅 (파일이 작아 비용 미미)
+  const cb = `?t=${Date.now()}`;
   const preview = meta.files?.preview;
-  if (preview) loadModel(`${p.path}/${preview}`);
+  if (preview) loadModel(`${p.path}/${preview}${cb}`);
 
   // 뷰 전환용 심볼/풋프린트 SVG
   const symEl = document.getElementById('view-sym');
   const fpEl = document.getElementById('view-fp');
-  if (meta.files?.symbol_svg) symEl.src = `${p.path}/${meta.files.symbol_svg}`;
-  if (meta.files?.footprint_svg) fpEl.src = `${p.path}/${meta.files.footprint_svg}`;
+  if (meta.files?.symbol_svg) symEl.src = `${p.path}/${meta.files.symbol_svg}${cb}`;
+  if (meta.files?.footprint_svg) fpEl.src = `${p.path}/${meta.files.footprint_svg}${cb}`;
   setView('3d');
 }
 

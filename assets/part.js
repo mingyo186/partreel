@@ -8,9 +8,10 @@ const symEl = document.getElementById('view-sym');
 const fpEl = document.getElementById('view-fp');
 let rendererCanvas = null;
 
+const CB = `?t=${Date.now()}`;  // 배포 후 낡은 캐시 방지
 if (el) {
-  if (el.dataset.sym && symEl) symEl.src = el.dataset.sym;
-  if (el.dataset.fp && fpEl) fpEl.src = el.dataset.fp;
+  if (el.dataset.sym && symEl) symEl.src = el.dataset.sym + CB;
+  if (el.dataset.fp && fpEl) fpEl.src = el.dataset.fp + CB;
 }
 
 function setView(v) {
@@ -23,7 +24,7 @@ function setView(v) {
 }
 document.querySelectorAll('.view-tabs .vt').forEach((b) => b.addEventListener('click', () => setView(b.dataset.view)));
 
-const url = el && el.dataset.glb;
+const url = el && el.dataset.glb ? el.dataset.glb + CB : null;
 if (el && url) {
   const w = el.clientWidth, h = el.clientHeight;
   const scene = new THREE.Scene();
