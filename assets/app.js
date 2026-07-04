@@ -161,9 +161,10 @@ function setupViewer() {
   renderer.setSize(w, h);
   el.appendChild(renderer.domElement);
 
-  scene.add(new THREE.AmbientLight(0xffffff, 0.7));
-  const key = new THREE.DirectionalLight(0xffffff, 1.1); key.position.set(10, 20, 15); scene.add(key);
-  const fill = new THREE.DirectionalLight(0xffffff, 0.5); fill.position.set(-15, 5, -10); scene.add(fill);
+  scene.add(new THREE.AmbientLight(0xffffff, 0.9));
+  scene.add(new THREE.HemisphereLight(0xffffff, 0x666677, 0.8));
+  const key = new THREE.DirectionalLight(0xffffff, 1.2); key.position.set(10, 20, 15); scene.add(key);
+  const fill = new THREE.DirectionalLight(0xffffff, 0.6); fill.position.set(-15, 5, -10); scene.add(fill);
 
   const controls = new OrbitControls(camera, renderer.domElement);
   controls.enableDamping = true;
@@ -200,6 +201,13 @@ function loadModel(url) {
     const model = gltf.scene;
     model.rotation.x = -Math.PI / 2;  // CAD Z-up -> viewer Y-up (부품 바로 세우기)
     model.updateMatrixWorld(true);
+    // GLB 기본 재질이 금속성(metallic)이라 환경맵 없인 어둡게 렌더됨 → 보정
+    model.traverse((o) => {
+      if (o.isMesh && o.material) {
+        o.material.metalness = 0.15;
+        o.material.roughness = 0.55;
+      }
+    });
     // 중심 정렬 + 카메라 핏
     const box = new THREE.Box3().setFromObject(model);
     const center = box.getCenter(new THREE.Vector3());

@@ -15,7 +15,8 @@ GH = dict(
     datasheet="https://www.jst-mfg.com/product/pdf/eng/eGH.pdf",
     lib_path="connector/jst/gh", pitch=1.25, pins=list(range(2, 13)),
     sig=(0.6, 1.7), sig_y=1.95, mp=(1.0, 2.8), mp_y=-1.4, mp_out=1.85,
-    body_h=3.4,
+    # 3D 본체: 공식 fab 외곽 y -2.5..1.75 (깊이 4.25) · 높이 4.05(DigiKey insulation height)
+    body_h=4.05, body_y0=-2.5, body_y1=1.75,
 )
 FAMILIES = [GH]
 

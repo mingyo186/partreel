@@ -17,8 +17,9 @@ def build(cfg, n):
     p = cfg["pitch"]
     R = (n - 1) * p
     x0, x1 = -2.5, R + 2.5
-    L, W, H = x1 - x0, 5.0, cfg["body_h"]
-    housing = Part.makeBox(L, W, H, App.Vector(x0, -2.5, 0))
+    y0, y1 = cfg.get("body_y0", -2.5), cfg.get("body_y1", 1.75)  # 공식 fab 외곽
+    L, W, H = x1 - x0, y1 - y0, cfg["body_h"]
+    housing = Part.makeBox(L, W, H, App.Vector(x0, y0, 0))
     # 수직 모서리 필렛
     try:
         vedges = [e for e in housing.Edges if abs(e.Vertexes[0].Z - e.Vertexes[1].Z) > 0.1]
@@ -26,21 +27,24 @@ def build(cfg, n):
     except Exception:
         pass
     # 상부 캐비티
-    cav = Part.makeBox(L - 1.6, W - 2.0, H - 1.0, App.Vector(x0 + 0.8, -1.5, 1.0))
+    cav = Part.makeBox(L - 1.6, W - 1.6, H - 1.0, App.Vector(x0 + 0.8, y0 + 0.8, 1.0))
     housing = housing.cut(cav)
-    # 전면 중앙 래치 창 (GH 암커넥터 걸쇠가 걸리는 곳)
+    # 전면 중앙 래치 창
     try:
         ww = max(R * 0.5, 1.2)
-        win = Part.makeBox(ww, 1.2, 1.4, App.Vector(R / 2 - ww / 2, 1.6, H - 1.4))
+        win = Part.makeBox(ww, 1.0, 1.4, App.Vector(R / 2 - ww / 2, y1 - 0.9, H - 1.4))
         housing = housing.cut(win)
     except Exception:
         pass
-    # 금속부(금색 메시): 개별 SMD 리드 발 + 양끝 마운팅 탭
+    # 금속부(금색): SMD 리드 — 하우징 앞(y1)에서 패드 끝(2.8)까지 노출 + 전면 위로 꺾임
     metal = []
     for i in range(n):
         x = i * p
-        metal.append(Part.makeBox(0.3, 1.6, 0.3, App.Vector(x - 0.15, 1.2, 0)))
-    for mx in (x0 - 0.35, x1 - 0.65):  # 마운팅 탭 (하우징 양끝 밖으로 살짝)
+        metal.append(Part.makeBox(0.3, 2.8 - (y1 - 0.6), 0.15,
+                                  App.Vector(x - 0.15, y1 - 0.6, 0)))      # 수평 발 (노출 1.05)
+        metal.append(Part.makeBox(0.3, 0.15, 1.2,
+                                  App.Vector(x - 0.15, y1, 0)))            # 전면 상향 꺾임
+    for mx in (x0 - 0.35, x1 - 0.65):  # 마운팅 탭 (뒤쪽, 하우징 밖 0.3)
         metal.append(Part.makeBox(1.0, 2.8, 1.6, App.Vector(mx, -2.8, 0)))
     pins = metal[0]
     for m in metal[1:]:
