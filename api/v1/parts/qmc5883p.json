@@ -1,0 +1,71 @@
+{
+  "id": "qmc5883p",
+  "name": "QMC5883P 3-Axis Magnetometer",
+  "category": "sensor",
+  "family": "magnetometer",
+  "manufacturer": "QST",
+  "mpn_pattern": "QMC5883P",
+  "description": "QST QMC5883P 3-axis magnetic sensor - the chip on NEW GY-271 boards, I2C address 0x2C, LGA-16 3x3x0.9mm. NOT register- or pinout-compatible with QMC5883L (only 6 active pads: SCK/VDD/GND/C1/GND/SDA). C1 4.7uF reservoir capacitor required.",
+  "parameters": {
+    "contacts": 16,
+    "mounting": "SMD",
+    "interface": "I2C",
+    "i2c_address": "0x2C",
+    "supply_voltage": "2.5-3.6V",
+    "body_mm": "3.0x3.0x0.9"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/sensor/qst/qmc5883p/qmc5883p/qmc5883p.kicad_mod",
+    "symbol": "https://partreel.com/library/sensor/qst/qmc5883p/qmc5883p/qmc5883p.kicad_sym",
+    "model_3d": "https://partreel.com/library/sensor/qst/qmc5883p/qmc5883p/qmc5883p.step",
+    "preview": "https://partreel.com/library/sensor/qst/qmc5883p/qmc5883p/qmc5883p.glb",
+    "footprint_svg": "https://partreel.com/library/sensor/qst/qmc5883p/qmc5883p/qmc5883p.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/sensor/qst/qmc5883p/qmc5883p/qmc5883p.symbol.svg"
+  },
+  "datasheet": "https://www.qstcorp.com/upload/pdf/202202/%EF%BC%88%E5%B7%B2%E4%BC%A0%EF%BC%8913-52-19%20QMC5883P%20Datasheet%20Rev.C(1).pdf",
+  "license": "CC-BY-4.0",
+  "verified": true,
+  "dimensions_source": "QST QMC5883P datasheet Rev.C: p.6 LGA-16 3x3x0.9 (pitch 0.5, pad 0.325x0.25); Fig.7 recommended footprint pixel-measured (pads 0.40x0.25, per-side span 1.5 c-c, rows 2.60 c-c, pad outer edges flush with body). Table 5 pinout.",
+  "keywords": [
+    "qmc5883p",
+    "qst",
+    "magnetometer",
+    "compass",
+    "i2c",
+    "gy-271",
+    "lga"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "QST QMC5883P datasheet Rev.C: p.6 LGA-16 3x3x0.9 (pitch 0.5, pad 0.325x0.25); Fig.7 recommended footprint pixel-measured (pads 0.40x0.25, per-side span 1.5 c-c, rows 2.60 c-c, pad outer edges flush with body). Table 5 pinout.",
+    "datasheet": "https://www.qstcorp.com/upload/pdf/202202/%EF%BC%88%E5%B7%B2%E4%BC%A0%EF%BC%8913-52-19%20QMC5883P%20Datasheet%20Rev.C(1).pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/gen_ics.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    }
+  },
+  "page": "https://partreel.com/p/qmc5883p/",
+  "api": "https://partreel.com/api/v1/parts/qmc5883p.json"
+}

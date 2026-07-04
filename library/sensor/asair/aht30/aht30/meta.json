@@ -1,0 +1,47 @@
+{
+  "id": "aht30",
+  "name": "AHT30 Humidity and Temperature Sensor",
+  "category": "sensor",
+  "family": "AHT2x",
+  "manufacturer": "Aosong (ASAIR)",
+  "mpn_pattern": "AHT30",
+  "description": "ASAIR AHT30 calibrated digital humidity and temperature sensor (AHT20 successor), I2C (address 0x38), SMD 3x3x1.0mm. Footprint identical to AHT20 (verified against the AHT30 datasheet Fig.8).",
+  "parameters": {
+    "contacts": 6,
+    "mounting": "SMD",
+    "interface": "I2C",
+    "i2c_address": "0x38",
+    "supply_voltage": "2.2-5.5V",
+    "body_mm": "3.0x3.0x1.0"
+  },
+  "files": {
+    "footprint": "aht30.kicad_mod",
+    "symbol": "aht30.kicad_sym",
+    "model_3d": "aht30.step",
+    "preview": "aht30.glb",
+    "footprint_svg": "aht30.footprint.svg",
+    "symbol_svg": "aht30.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "https://asairsensors.com/product/aht30-integrated-temperature-and-humidity-sensor/",
+  "dimensions_source": "ASAIR AHT30 datasheet (Apr 2023): Fig.1 package 3x3x1.0 (pads 0.55x0.4, cols 2.0, rows 1.0), Fig.8 recommended land (6 pads 0.8x0.5, cols 2.0 c-c geometry-verified) - identical to AHT20, dimension for dimension. Table 5 pinout.",
+  "verified": true,
+  "license": "CC-BY-4.0",
+  "generated_by": "generators/gen_parts.py",
+  "keywords": [
+    "aht30",
+    "asair",
+    "aosong",
+    "humidity",
+    "temperature",
+    "sensor",
+    "i2c",
+    "lga",
+    "3x3mm"
+  ]
+}

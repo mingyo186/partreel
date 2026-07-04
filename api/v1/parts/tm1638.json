@@ -1,0 +1,68 @@
+{
+  "id": "tm1638",
+  "name": "TM1638 LED Driver with Key Scan",
+  "category": "ic",
+  "family": "driver",
+  "manufacturer": "Titan Micro",
+  "mpn_pattern": "TM1638",
+  "description": "Titan Micro TM1638 LED display driver (10 segments x 8 grids) with 8x3 key scan, 3-wire serial (STB/CLK/DIO), 5V, SOP-28. The chip on LED&KEY modules.",
+  "parameters": {
+    "contacts": 28,
+    "mounting": "SMD",
+    "supply_voltage": "5V",
+    "body_mm": "17.93x7.52x2.34"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/ic/driver/tm1638/tm1638/tm1638.kicad_mod",
+    "symbol": "https://partreel.com/library/ic/driver/tm1638/tm1638/tm1638.kicad_sym",
+    "model_3d": "https://partreel.com/library/ic/driver/tm1638/tm1638/tm1638.step",
+    "preview": "https://partreel.com/library/ic/driver/tm1638/tm1638/tm1638.glb",
+    "footprint_svg": "https://partreel.com/library/ic/driver/tm1638/tm1638/tm1638.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/ic/driver/tm1638/tm1638/tm1638.symbol.svg"
+  },
+  "datasheet": "https://www.handsontec.com/dataspecs/display/TM1638.pdf",
+  "license": "CC-BY-4.0",
+  "verified": true,
+  "dimensions_source": "Titan Micro TM1638 datasheet p.18: SOP28 body 17.93x7.52, overall span 9.9-10.5, pitch 1.27, lead 0.41. Pads 0.7x1.9 rows 9.2 c-c per IPC-7351. Pinout p.1.",
+  "keywords": [
+    "tm1638",
+    "led",
+    "driver",
+    "keyscan",
+    "7-segment",
+    "sop-28"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "Titan Micro TM1638 datasheet p.18: SOP28 body 17.93x7.52, overall span 9.9-10.5, pitch 1.27, lead 0.41. Pads 0.7x1.9 rows 9.2 c-c per IPC-7351. Pinout p.1.",
+    "datasheet": "https://www.handsontec.com/dataspecs/display/TM1638.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/gen_ics.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    }
+  },
+  "page": "https://partreel.com/p/tm1638/",
+  "api": "https://partreel.com/api/v1/parts/tm1638.json"
+}

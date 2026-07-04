@@ -1,7 +1,7 @@
 {
   "registry": "PartReel",
   "version": 1,
-  "count": 202,
+  "count": 217,
   "docs": "https://partreel.com/api/",
   "license_assets": "CC-BY-4.0",
   "parts": [
@@ -2040,6 +2040,25 @@
       "pins": 20
     },
     {
+      "id": "tm1638",
+      "name": "TM1638 LED Driver with Key Scan",
+      "category": "ic",
+      "family": "driver",
+      "manufacturer": "Titan Micro",
+      "keywords": [
+        "tm1638",
+        "led",
+        "driver",
+        "keyscan",
+        "7-segment",
+        "sop-28"
+      ],
+      "verified": true,
+      "page": "https://partreel.com/p/tm1638/",
+      "api": "https://partreel.com/api/v1/parts/tm1638.json",
+      "pins": 28
+    },
+    {
       "id": "w25q64jv",
       "name": "W25Q64JV 64Mbit SPI Flash (SOIC-8 208mil)",
       "category": "ic",
@@ -2102,7 +2121,7 @@
     },
     {
       "id": "max17048",
-      "name": "MAX17048 LiPo Fuel Gauge",
+      "name": "MAX17048 LiPo Fuel Gauge (1-cell)",
       "category": "ic",
       "family": "power",
       "manufacturer": "Maxim Integrated",
@@ -2119,6 +2138,25 @@
       "page": "https://partreel.com/p/max17048/",
       "api": "https://partreel.com/api/v1/parts/max17048.json",
       "pins": 9
+    },
+    {
+      "id": "tp4054",
+      "name": "TP4054 500mA Li-Ion Charger",
+      "category": "ic",
+      "family": "power",
+      "manufacturer": "TopPower/UTD",
+      "keywords": [
+        "tp4054",
+        "charger",
+        "li-ion",
+        "lipo",
+        "battery",
+        "sot23-5"
+      ],
+      "verified": true,
+      "page": "https://partreel.com/p/tp4054/",
+      "api": "https://partreel.com/api/v1/parts/tp4054.json",
+      "pins": 5
     },
     {
       "id": "tp5100",
@@ -2376,6 +2414,44 @@
       "page": "https://partreel.com/p/ttp223/",
       "api": "https://partreel.com/api/v1/parts/ttp223.json",
       "pins": 6
+    },
+    {
+      "id": "ttp224",
+      "name": "TTP224N-BSB 4-Key Touch IC",
+      "category": "ic",
+      "family": "touch",
+      "manufacturer": "Tontek",
+      "keywords": [
+        "ttp224",
+        "tontek",
+        "touch",
+        "capacitive",
+        "4-key",
+        "ssop-16"
+      ],
+      "verified": true,
+      "page": "https://partreel.com/p/ttp224/",
+      "api": "https://partreel.com/api/v1/parts/ttp224.json",
+      "pins": 16
+    },
+    {
+      "id": "ttp226",
+      "name": "TTP226-809SN 8-Key Touch IC",
+      "category": "ic",
+      "family": "touch",
+      "manufacturer": "Tontek",
+      "keywords": [
+        "ttp226",
+        "tontek",
+        "touch",
+        "capacitive",
+        "8-key",
+        "ssop-28"
+      ],
+      "verified": true,
+      "page": "https://partreel.com/p/ttp226/",
+      "api": "https://partreel.com/api/v1/parts/ttp226.json",
+      "pins": 28
     },
     {
       "id": "ttp229",
@@ -3089,6 +3165,142 @@
       "pins": 10
     },
     {
+      "id": "mc01506",
+      "name": "1.5\" OLED Module (128x128, I2C, MC01506)",
+      "category": "module",
+      "family": "display",
+      "manufacturer": "Generic (lcdwiki)",
+      "keywords": [
+        "sh1107",
+        "oled",
+        "1.5",
+        "128x128",
+        "i2c",
+        "module"
+      ],
+      "verified": true,
+      "page": "https://partreel.com/p/mc01506/",
+      "api": "https://partreel.com/api/v1/parts/mc01506.json",
+      "pins": 4
+    },
+    {
+      "id": "mc091gx",
+      "name": "0.91\" SSD1306 I2C OLED Module (128x32, MC091GX)",
+      "category": "module",
+      "family": "display",
+      "manufacturer": "Generic (lcdwiki)",
+      "keywords": [
+        "ssd1306",
+        "oled",
+        "0.91",
+        "128x32",
+        "i2c",
+        "module"
+      ],
+      "verified": true,
+      "page": "https://partreel.com/p/mc091gx/",
+      "api": "https://partreel.com/api/v1/parts/mc091gx.json",
+      "pins": 4
+    },
+    {
+      "id": "msp0961",
+      "name": "0.96\" ST7735S IPS Module (80x160, SPI, MSP0961)",
+      "category": "module",
+      "family": "display",
+      "manufacturer": "Generic (lcdwiki)",
+      "keywords": [
+        "st7735",
+        "ips",
+        "0.96",
+        "80x160",
+        "spi",
+        "module"
+      ],
+      "verified": true,
+      "page": "https://partreel.com/p/msp0961/",
+      "api": "https://partreel.com/api/v1/parts/msp0961.json",
+      "pins": 8
+    },
+    {
+      "id": "msp1541",
+      "name": "1.54\" ST7789 IPS Module (240x240, SPI, MSP1541)",
+      "category": "module",
+      "family": "display",
+      "manufacturer": "Generic (lcdwiki)",
+      "keywords": [
+        "st7789",
+        "ips",
+        "1.54",
+        "240x240",
+        "spi",
+        "module"
+      ],
+      "verified": true,
+      "page": "https://partreel.com/p/msp1541/",
+      "api": "https://partreel.com/api/v1/parts/msp1541.json",
+      "pins": 8
+    },
+    {
+      "id": "msp1803",
+      "name": "1.8\" ST7735 TFT Module (128x160, SPI, MSP1803)",
+      "category": "module",
+      "family": "display",
+      "manufacturer": "Generic (lcdwiki)",
+      "keywords": [
+        "st7735",
+        "tft",
+        "1.8",
+        "128x160",
+        "spi",
+        "sd",
+        "module"
+      ],
+      "verified": true,
+      "page": "https://partreel.com/p/msp1803/",
+      "api": "https://partreel.com/api/v1/parts/msp1803.json",
+      "pins": 12
+    },
+    {
+      "id": "msp2008",
+      "name": "2.0\" ST7789V IPS Module (240x320, SPI, MSP2008)",
+      "category": "module",
+      "family": "display",
+      "manufacturer": "Generic (lcdwiki)",
+      "keywords": [
+        "st7789",
+        "ips",
+        "2.0",
+        "240x320",
+        "spi",
+        "module"
+      ],
+      "verified": true,
+      "page": "https://partreel.com/p/msp2008/",
+      "api": "https://partreel.com/api/v1/parts/msp2008.json",
+      "pins": 8
+    },
+    {
+      "id": "msp2807",
+      "name": "2.8\" ILI9341 TFT Module (240x320, SPI+Touch+SD, MSP2807)",
+      "category": "module",
+      "family": "display",
+      "manufacturer": "Generic (lcdwiki)",
+      "keywords": [
+        "ili9341",
+        "tft",
+        "2.8",
+        "240x320",
+        "spi",
+        "touch",
+        "sd",
+        "module"
+      ],
+      "verified": true,
+      "page": "https://partreel.com/p/msp2807/",
+      "api": "https://partreel.com/api/v1/parts/msp2807.json",
+      "pins": 18
+    },
+    {
       "id": "sh1106_module_13",
       "name": "1.3\" SH1106 I2C OLED Module (128x64)",
       "category": "module",
@@ -3290,6 +3502,28 @@
       "verified": true,
       "page": "https://partreel.com/p/aht21/",
       "api": "https://partreel.com/api/v1/parts/aht21.json",
+      "pins": 6
+    },
+    {
+      "id": "aht30",
+      "name": "AHT30 Humidity and Temperature Sensor",
+      "category": "sensor",
+      "family": "AHT2x",
+      "manufacturer": "Aosong (ASAIR)",
+      "keywords": [
+        "aht30",
+        "asair",
+        "aosong",
+        "humidity",
+        "temperature",
+        "sensor",
+        "i2c",
+        "lga",
+        "3x3mm"
+      ],
+      "verified": true,
+      "page": "https://partreel.com/p/aht30/",
+      "api": "https://partreel.com/api/v1/parts/aht30.json",
       "pins": 6
     },
     {
@@ -3676,6 +3910,45 @@
       "pins": 7
     },
     {
+      "id": "aht25",
+      "name": "AHT25 Humidity and Temperature Sensor Module",
+      "category": "sensor",
+      "family": "humidity",
+      "manufacturer": "Aosong (ASAIR)",
+      "keywords": [
+        "aht25",
+        "asair",
+        "humidity",
+        "temperature",
+        "i2c",
+        "module"
+      ],
+      "verified": true,
+      "page": "https://partreel.com/p/aht25/",
+      "api": "https://partreel.com/api/v1/parts/aht25.json",
+      "pins": 4
+    },
+    {
+      "id": "dht20",
+      "name": "DHT20 Temperature & Humidity Sensor (DHT Housing)",
+      "category": "sensor",
+      "family": "humidity",
+      "manufacturer": "Aosong (ASAIR)",
+      "keywords": [
+        "dht20",
+        "asair",
+        "aht20",
+        "humidity",
+        "temperature",
+        "i2c",
+        "dht22"
+      ],
+      "verified": true,
+      "page": "https://partreel.com/p/dht20/",
+      "api": "https://partreel.com/api/v1/parts/dht20.json",
+      "pins": 4
+    },
+    {
       "id": "hmc5883l",
       "name": "HMC5883L 3-Axis Magnetometer",
       "category": "sensor",
@@ -3715,6 +3988,26 @@
       "verified": true,
       "page": "https://partreel.com/p/qmc5883l/",
       "api": "https://partreel.com/api/v1/parts/qmc5883l.json",
+      "pins": 16
+    },
+    {
+      "id": "qmc5883p",
+      "name": "QMC5883P 3-Axis Magnetometer",
+      "category": "sensor",
+      "family": "magnetometer",
+      "manufacturer": "QST",
+      "keywords": [
+        "qmc5883p",
+        "qst",
+        "magnetometer",
+        "compass",
+        "i2c",
+        "gy-271",
+        "lga"
+      ],
+      "verified": true,
+      "page": "https://partreel.com/p/qmc5883p/",
+      "api": "https://partreel.com/api/v1/parts/qmc5883p.json",
       "pins": 16
     },
     {

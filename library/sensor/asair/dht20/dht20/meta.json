@@ -1,0 +1,45 @@
+{
+  "id": "dht20",
+  "name": "DHT20 Temperature & Humidity Sensor (DHT Housing)",
+  "category": "sensor",
+  "family": "humidity",
+  "manufacturer": "Aosong (ASAIR)",
+  "mpn_pattern": "DHT20",
+  "description": "ASAIR DHT20 - the AHT20 die in a classic DHT-style 4-pin housing. I2C interface (address 0x38), 2.2-5.5V. Drop-in mechanical replacement for DHT11/DHT22 boards but NOT protocol-compatible (I2C, not 1-wire).",
+  "parameters": {
+    "contacts": 4,
+    "mounting": "THT",
+    "interface": "I2C",
+    "i2c_address": "0x38",
+    "supply_voltage": "2.2-5.5V",
+    "body_mm": "12.6x5.8x16.1"
+  },
+  "files": {
+    "footprint": "dht20.kicad_mod",
+    "symbol": "dht20.kicad_sym",
+    "model_3d": "dht20.step",
+    "preview": "dht20.glb",
+    "footprint_svg": "dht20.footprint.svg",
+    "symbol_svg": "dht20.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "https://aqicn.org/air/sensor/spec/asair-dht20.pdf",
+  "dimensions_source": "ASAIR DHT20 datasheet V1.0 Fig.13: housing 12.6x16.1x5.8, 4 pins in line pitch 2.54 (span 7.62), pin 0.5x0.3 length 7.2, pin row 2.55 from front face. Table 5 pinout (1 VDD, 2 SDA, 3 GND, 4 SCL).",
+  "verified": true,
+  "license": "CC-BY-4.0",
+  "generated_by": "generators/gen_ics.py",
+  "keywords": [
+    "dht20",
+    "asair",
+    "aht20",
+    "humidity",
+    "temperature",
+    "i2c",
+    "dht22"
+  ]
+}

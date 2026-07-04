@@ -1,0 +1,69 @@
+{
+  "id": "msp1803",
+  "name": "1.8\" ST7735 TFT Module (128x160, SPI, MSP1803)",
+  "category": "module",
+  "family": "display",
+  "manufacturer": "Generic (lcdwiki)",
+  "mpn_pattern": "MSP1803",
+  "description": "Generic 1.8 inch 128x160 TFT module (ST7735, lcdwiki MSP1803), SPI 8-pin main header + 4-pin SD header, 34.5x58mm board, four 3.2mm holes. Main header pin1=VCC is on the RIGHT in front view (vendor drawing is back-view).",
+  "parameters": {
+    "contacts": 12,
+    "mounting": "THT header",
+    "interface": "SPI",
+    "board_mm": "34.5x58.0"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/module/display/msp1803/msp1803/msp1803.kicad_mod",
+    "symbol": "https://partreel.com/library/module/display/msp1803/msp1803/msp1803.kicad_sym",
+    "model_3d": "https://partreel.com/library/module/display/msp1803/msp1803/msp1803.step",
+    "preview": "https://partreel.com/library/module/display/msp1803/msp1803/msp1803.glb",
+    "footprint_svg": "https://partreel.com/library/module/display/msp1803/msp1803/msp1803.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/module/display/msp1803/msp1803/msp1803.symbol.svg"
+  },
+  "datasheet": "https://www.lcdwiki.com/1.8inch_SPI_Module_ST7735S_SKU:MSP1803",
+  "license": "CC-BY-4.0",
+  "verified": true,
+  "dimensions_source": "lcdwiki MSP1803 back-view drawing (pixel-verified): board 34.5x58, holes D3.2 at 3.0 insets (28.5x52), J2 8-pin 2.54 bottom (row 2.5, centered, back-view L-R VCC GND CS RESET AO SDA SCK LED - mirrored for front), J4 SD 4-pin top centered. Glass dims not in drawing (footprint-complete).",
+  "keywords": [
+    "st7735",
+    "tft",
+    "1.8",
+    "128x160",
+    "spi",
+    "sd",
+    "module"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "lcdwiki MSP1803 back-view drawing (pixel-verified): board 34.5x58, holes D3.2 at 3.0 insets (28.5x52), J2 8-pin 2.54 bottom (row 2.5, centered, back-view L-R VCC GND CS RESET AO SDA SCK LED - mirrored for front), J4 SD 4-pin top centered. Glass dims not in drawing (footprint-complete).",
+    "datasheet": "https://www.lcdwiki.com/1.8inch_SPI_Module_ST7735S_SKU:MSP1803",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/gen_ics.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    }
+  },
+  "page": "https://partreel.com/p/msp1803/",
+  "api": "https://partreel.com/api/v1/parts/msp1803.json"
+}

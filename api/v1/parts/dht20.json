@@ -1,0 +1,71 @@
+{
+  "id": "dht20",
+  "name": "DHT20 Temperature & Humidity Sensor (DHT Housing)",
+  "category": "sensor",
+  "family": "humidity",
+  "manufacturer": "Aosong (ASAIR)",
+  "mpn_pattern": "DHT20",
+  "description": "ASAIR DHT20 - the AHT20 die in a classic DHT-style 4-pin housing. I2C interface (address 0x38), 2.2-5.5V. Drop-in mechanical replacement for DHT11/DHT22 boards but NOT protocol-compatible (I2C, not 1-wire).",
+  "parameters": {
+    "contacts": 4,
+    "mounting": "THT",
+    "interface": "I2C",
+    "i2c_address": "0x38",
+    "supply_voltage": "2.2-5.5V",
+    "body_mm": "12.6x5.8x16.1"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/sensor/asair/dht20/dht20/dht20.kicad_mod",
+    "symbol": "https://partreel.com/library/sensor/asair/dht20/dht20/dht20.kicad_sym",
+    "model_3d": "https://partreel.com/library/sensor/asair/dht20/dht20/dht20.step",
+    "preview": "https://partreel.com/library/sensor/asair/dht20/dht20/dht20.glb",
+    "footprint_svg": "https://partreel.com/library/sensor/asair/dht20/dht20/dht20.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/sensor/asair/dht20/dht20/dht20.symbol.svg"
+  },
+  "datasheet": "https://aqicn.org/air/sensor/spec/asair-dht20.pdf",
+  "license": "CC-BY-4.0",
+  "verified": true,
+  "dimensions_source": "ASAIR DHT20 datasheet V1.0 Fig.13: housing 12.6x16.1x5.8, 4 pins in line pitch 2.54 (span 7.62), pin 0.5x0.3 length 7.2, pin row 2.55 from front face. Table 5 pinout (1 VDD, 2 SDA, 3 GND, 4 SCL).",
+  "keywords": [
+    "dht20",
+    "asair",
+    "aht20",
+    "humidity",
+    "temperature",
+    "i2c",
+    "dht22"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "ASAIR DHT20 datasheet V1.0 Fig.13: housing 12.6x16.1x5.8, 4 pins in line pitch 2.54 (span 7.62), pin 0.5x0.3 length 7.2, pin row 2.55 from front face. Table 5 pinout (1 VDD, 2 SDA, 3 GND, 4 SCL).",
+    "datasheet": "https://aqicn.org/air/sensor/spec/asair-dht20.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/gen_ics.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    }
+  },
+  "page": "https://partreel.com/p/dht20/",
+  "api": "https://partreel.com/api/v1/parts/dht20.json"
+}

@@ -107,9 +107,8 @@ def esp32_wroom32():
     print("ESP32 3D done")
 
 
-def aht20():
-    fid = "aht20"
-    d = "%s/sensor/asair/aht20/%s" % (LIB, fid)
+def aht20(fid="aht20"):
+    d = "%s/sensor/asair/%s/%s" % (LIB, fid, fid)
     # ASAIR AHT20 데이터시트 Fig.1: 본체 3x3x1.0, 금속 리드 2.8, 상면 타원 벤트홀 1.1x0.7
     # 기판(다크): 3x3, z 0..0.25
     substrate = Part.makeBox(3.0, 3.0, 0.25, App.Vector(-1.5, -1.5, 0))
@@ -212,5 +211,6 @@ usb_c_16p()
 microsd_hc()
 esp32_wroom32()
 aht20()
+aht20("aht30")  # AHT30 = AHT20 지오메트리 동일 (도면 확정)
 aht21()
 aht10()

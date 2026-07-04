@@ -1,0 +1,44 @@
+{
+  "id": "aht25",
+  "name": "AHT25 Humidity and Temperature Sensor Module",
+  "category": "sensor",
+  "family": "humidity",
+  "manufacturer": "Aosong (ASAIR)",
+  "mpn_pattern": "AHT25",
+  "description": "ASAIR AHT25 humidity/temperature sensor - a small dumbbell-shaped PCB module with 4 gold-finger solder tabs (not a molded IC). I2C 0x38, 2.2-5.5V.",
+  "parameters": {
+    "contacts": 4,
+    "mounting": "SMD",
+    "interface": "I2C",
+    "i2c_address": "0x38",
+    "supply_voltage": "2.2-5.5V",
+    "body_mm": "17.7x6x2"
+  },
+  "files": {
+    "footprint": "aht25.kicad_mod",
+    "symbol": "aht25.kicad_sym",
+    "model_3d": "aht25.step",
+    "preview": "aht25.glb",
+    "footprint_svg": "aht25.footprint.svg",
+    "symbol_svg": "aht25.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "https://www.aosong.com/userfiles/files/media/Data%20Sheet%20AHT25%20A2.pdf",
+  "dimensions_source": "ASAIR AHT25 datasheet V1.0 Fig.12: overall 17.7 long, head 5x9, tail 6 wide, 4 gold fingers pitch 1.27 exposed 3mm (0.4x0.4 section). Pinout printed on Fig.12: 1 VDD, 2 SDA, 3 GND, 4 SCL.",
+  "verified": true,
+  "license": "CC-BY-4.0",
+  "generated_by": "generators/gen_ics.py",
+  "keywords": [
+    "aht25",
+    "asair",
+    "humidity",
+    "temperature",
+    "i2c",
+    "module"
+  ]
+}

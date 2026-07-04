@@ -1,0 +1,70 @@
+{
+  "id": "msp2807",
+  "name": "2.8\" ILI9341 TFT Module (240x320, SPI+Touch+SD, MSP2807)",
+  "category": "module",
+  "family": "display",
+  "manufacturer": "Generic (lcdwiki)",
+  "mpn_pattern": "MSP2807",
+  "description": "Classic 2.8 inch 240x320 TFT module (ILI9341V + resistive touch + microSD, lcdwiki MSP2807), 14-pin SPI/touch header + 4-pin SD header, 50x86mm board, four 3.2mm holes.",
+  "parameters": {
+    "contacts": 18,
+    "mounting": "THT header",
+    "interface": "SPI",
+    "board_mm": "50.0x86.0"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/module/display/msp2807/msp2807/msp2807.kicad_mod",
+    "symbol": "https://partreel.com/library/module/display/msp2807/msp2807/msp2807.kicad_sym",
+    "model_3d": "https://partreel.com/library/module/display/msp2807/msp2807/msp2807.step",
+    "preview": "https://partreel.com/library/module/display/msp2807/msp2807/msp2807.glb",
+    "footprint_svg": "https://partreel.com/library/module/display/msp2807/msp2807/msp2807.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/module/display/msp2807/msp2807/msp2807.symbol.svg"
+  },
+  "datasheet": "https://www.lcdwiki.com/2.8inch_SPI_Module_ILI9341_SKU:MSP2807",
+  "license": "CC-BY-4.0",
+  "verified": true,
+  "dimensions_source": "lcdwiki MSP2807 factory outline V1.0 (2024-04-11): board 50x86 t1.6, holes D3.2/pad4.7 (top 3.0/3.0, pitch 44x76.08), J2 14-pin 2.54 bottom row 2.0 (pin1 8.49 from left), J4 SD 4-pin top centered, touch glass 50x69.2, AA 43.2x57.6 (top 9.3). Official lib has only the 2.4-inch CR2013 sibling.",
+  "keywords": [
+    "ili9341",
+    "tft",
+    "2.8",
+    "240x320",
+    "spi",
+    "touch",
+    "sd",
+    "module"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "lcdwiki MSP2807 factory outline V1.0 (2024-04-11): board 50x86 t1.6, holes D3.2/pad4.7 (top 3.0/3.0, pitch 44x76.08), J2 14-pin 2.54 bottom row 2.0 (pin1 8.49 from left), J4 SD 4-pin top centered, touch glass 50x69.2, AA 43.2x57.6 (top 9.3). Official lib has only the 2.4-inch CR2013 sibling.",
+    "datasheet": "https://www.lcdwiki.com/2.8inch_SPI_Module_ILI9341_SKU:MSP2807",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/gen_ics.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    }
+  },
+  "page": "https://partreel.com/p/msp2807/",
+  "api": "https://partreel.com/api/v1/parts/msp2807.json"
+}

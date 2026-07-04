@@ -503,7 +503,26 @@ def aht10():
     return fid, lib_path, footprint, symbol, meta
 
 
-PARTS = [usb_c_16p, microsd_hc, esp32_wroom32, aht20, aht21, aht10]  # 일회성 부품 등록
+# ---- AHT30 (AHT20 후속) — 풋프린트 AHT20과 완전 동일 확정 (batch4 도면 대조) ----
+def aht30():
+    fid, lib_path, fp, sym, meta = aht20()
+    fp = fp.replace('"aht20"', '"aht30"').replace("AHT20", "AHT30")
+    sym = sym.replace('"aht20"', '"aht30"')
+    meta = json.loads(json.dumps(meta).replace("aht20", "aht30").replace("AHT20", "AHT30"))
+    meta["name"] = "AHT30 Humidity and Temperature Sensor"
+    meta["mpn_pattern"] = "AHT30"
+    meta["description"] = ("ASAIR AHT30 calibrated digital humidity and temperature sensor "
+                           "(AHT20 successor), I2C (address 0x38), SMD 3x3x1.0mm. Footprint "
+                           "identical to AHT20 (verified against the AHT30 datasheet Fig.8).")
+    meta["datasheet"] = "https://asairsensors.com/product/aht30-integrated-temperature-and-humidity-sensor/"
+    meta["dimensions_source"] = ("ASAIR AHT30 datasheet (Apr 2023): Fig.1 package 3x3x1.0 "
+                                 "(pads 0.55x0.4, cols 2.0, rows 1.0), Fig.8 recommended land "
+                                 "(6 pads 0.8x0.5, cols 2.0 c-c geometry-verified) - identical "
+                                 "to AHT20, dimension for dimension. Table 5 pinout.")
+    return "aht30", "sensor/asair/aht30", fp, sym, meta
+
+
+PARTS = [usb_c_16p, microsd_hc, esp32_wroom32, aht20, aht21, aht10, aht30]  # 일회성 부품 등록
 
 
 def main():

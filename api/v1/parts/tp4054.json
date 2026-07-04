@@ -1,0 +1,69 @@
+{
+  "id": "tp4054",
+  "name": "TP4054 500mA Li-Ion Charger",
+  "category": "ic",
+  "family": "power",
+  "manufacturer": "TopPower/UTD",
+  "mpn_pattern": "TP4054",
+  "description": "TP4054 single-cell Li-ion linear charger, 4.2V CV, up to 500mA (Ichg=1000V/Rprog), VCC 4.25-6.5V, SOT23-5. The tiny-charger staple.",
+  "parameters": {
+    "contacts": 5,
+    "mounting": "SMD",
+    "supply_voltage": "4.25-6.5V",
+    "output_current": "up to 500mA",
+    "body_mm": "2.9x1.6x1.15"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/ic/power/tp4054/tp4054/tp4054.kicad_mod",
+    "symbol": "https://partreel.com/library/ic/power/tp4054/tp4054/tp4054.kicad_sym",
+    "model_3d": "https://partreel.com/library/ic/power/tp4054/tp4054/tp4054.step",
+    "preview": "https://partreel.com/library/ic/power/tp4054/tp4054/tp4054.glb",
+    "footprint_svg": "https://partreel.com/library/ic/power/tp4054/tp4054/tp4054.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/ic/power/tp4054/tp4054/tp4054.symbol.svg"
+  },
+  "datasheet": "https://media.digikey.com/pdf/Data%20Sheets/UTD%20Semi%20PDFs/TP4054.pdf",
+  "license": "CC-BY-4.0",
+  "verified": true,
+  "dimensions_source": "TP4054 datasheet p.11: SOT23-5L body 2.92x1.6, span 2.8, pitch 0.95. Land pads 0.55x0.8 rows 2.4 c-c (same package class as Silergy recommendation). Pinout p.3: bottom 1 ~CHRG, 2 GND, 3 BAT; top 5 PROG, 4 VCC.",
+  "keywords": [
+    "tp4054",
+    "charger",
+    "li-ion",
+    "lipo",
+    "battery",
+    "sot23-5"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "TP4054 datasheet p.11: SOT23-5L body 2.92x1.6, span 2.8, pitch 0.95. Land pads 0.55x0.8 rows 2.4 c-c (same package class as Silergy recommendation). Pinout p.3: bottom 1 ~CHRG, 2 GND, 3 BAT; top 5 PROG, 4 VCC.",
+    "datasheet": "https://media.digikey.com/pdf/Data%20Sheets/UTD%20Semi%20PDFs/TP4054.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/gen_ics.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    }
+  },
+  "page": "https://partreel.com/p/tp4054/",
+  "api": "https://partreel.com/api/v1/parts/tp4054.json"
+}

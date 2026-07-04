@@ -65,7 +65,7 @@ before manufacturing.
 ## Parts index
 
 <!-- PARTS:BEGIN -->
-Currently **202 parts**, all machine-verified (structure, KLC drawing rules, render completeness, 3D coplanar/merged-pin checks, STEP kernel) with datasheet-cited dimensions.
+Currently **217 parts**, all machine-verified (structure, KLC drawing rules, render completeness, 3D coplanar/merged-pin checks, STEP kernel) with datasheet-cited dimensions.
 
 ### connector (110)
 
@@ -182,7 +182,7 @@ Currently **202 parts**, all machine-verified (structure, KLC drawing rules, ren
 | [microSD_Friction (SparkFun)](https://partreel.com/p/sparkfun_microsd_friction/) | `microSD_Friction` | SparkFun Electronics | [sparkfun_microsd_friction](library/connector/sparkfun/sparkfun_microsd_friction) |
 | [microSD_PushPush (SparkFun)](https://partreel.com/p/sparkfun_microsd_pushpush/) | `microSD_PushPush` | SparkFun Electronics | [sparkfun_microsd_pushpush](library/connector/sparkfun/sparkfun_microsd_pushpush) |
 
-### ic (22)
+### ic (26)
 
 | Part | MPN | Manufacturer | Files |
 |---|---|---|---|
@@ -197,26 +197,37 @@ Currently **202 parts**, all machine-verified (structure, KLC drawing rules, ren
 | [HT7833 500mA LDO 3.3V](https://partreel.com/p/ht7833/) | `HT7833` | Holtek | [ht7833](library/ic/regulator/ht7833/ht7833) |
 | [INMP441 I2S MEMS Microphone](https://partreel.com/p/inmp441/) | `INMP441ACEZ-R7` | TDK InvenSense | [inmp441](library/ic/audio/inmp441/inmp441) |
 | [IP5306 Power Bank SoC](https://partreel.com/p/ip5306/) | `IP5306` | Injoinic | [ip5306](library/ic/power/ip5306/ip5306) |
-| [MAX17048 LiPo Fuel Gauge](https://partreel.com/p/max17048/) | `MAX17048G+T10` | Maxim Integrated | [max17048](library/ic/power/max17048/max17048) |
+| [MAX17048 LiPo Fuel Gauge (1-cell)](https://partreel.com/p/max17048/) | `MAX17048G+T10` | Maxim Integrated | [max17048](library/ic/power/max17048/max17048) |
 | [MAX6675 Thermocouple-to-Digital Converter](https://partreel.com/p/max6675/) | `MAX6675ISA` | Maxim Integrated | [max6675](library/ic/sensor_if/max6675/max6675) |
 | [MP1584EN 3A Buck Converter](https://partreel.com/p/mp1584/) | `MP1584EN` | MPS | [mp1584](library/ic/regulator/mp1584/mp1584) |
 | [SY8008B 1A Buck Converter](https://partreel.com/p/sy8008/) | `SY8008BAAC` | Silergy | [sy8008](library/ic/regulator/sy8008/sy8008) |
 | [SY8089A 2A Buck Converter](https://partreel.com/p/sy8089/) | `SY8089AAAC` | Silergy | [sy8089](library/ic/regulator/sy8089/sy8089) |
 | [TM1637 LED Display Driver](https://partreel.com/p/tm1637/) | `TM1637` | Titan Micro | [tm1637](library/ic/driver/tm1637/tm1637) |
+| [TM1638 LED Driver with Key Scan](https://partreel.com/p/tm1638/) | `TM1638` | Titan Micro | [tm1638](library/ic/driver/tm1638/tm1638) |
+| [TP4054 500mA Li-Ion Charger](https://partreel.com/p/tp4054/) | `TP4054` | TopPower/UTD | [tp4054](library/ic/power/tp4054/tp4054) |
 | [TP5100 1/2-Cell Switching Charger](https://partreel.com/p/tp5100/) | `TP5100` | NanJing TopPower | [tp5100](library/ic/power/tp5100/tp5100) |
 | [TTP223-BA6 Touch Key IC](https://partreel.com/p/ttp223/) | `TTP223-BA6` | Tontek | [ttp223](library/ic/touch/ttp223/ttp223) |
+| [TTP224N-BSB 4-Key Touch IC](https://partreel.com/p/ttp224/) | `TTP224N-BSB` | Tontek | [ttp224](library/ic/touch/ttp224/ttp224) |
+| [TTP226-809SN 8-Key Touch IC](https://partreel.com/p/ttp226/) | `TTP226-809SN` | Tontek | [ttp226](library/ic/touch/ttp226/ttp226) |
 | [TTP229-BSF 16-Key Touch IC](https://partreel.com/p/ttp229/) | `TTP229-BSF` | Tontek | [ttp229](library/ic/touch/ttp229/ttp229) |
 | [W25Q64JV 64Mbit SPI Flash (SOIC-8 208mil)](https://partreel.com/p/w25q64jv/) | `W25Q64JVSSIQ` | Winbond | [w25q64jv](library/ic/memory/w25q64jv/w25q64jv) |
 | [XL6009 4A Boost Converter](https://partreel.com/p/xl6009/) | `XL6009E1` | XLSEMI | [xl6009](library/ic/regulator/xl6009/xl6009) |
 
-### module (42)
+### module (49)
 
 | Part | MPN | Manufacturer | Files |
 |---|---|---|---|
+| [0.91" SSD1306 I2C OLED Module (128x32, MC091GX)](https://partreel.com/p/mc091gx/) | `MC091GX` | Generic (lcdwiki) | [mc091gx](library/module/display/mc091gx/mc091gx) |
 | [0.96" SSD1306 I2C OLED Module (128x64)](https://partreel.com/p/ssd1306_module_096/) | `MC096VX` | Generic (LCDwiki MC096VX) | [ssd1306_module_096](library/module/display/ssd1306_module_096/ssd1306_module_096) |
+| [0.96" ST7735S IPS Module (80x160, SPI, MSP0961)](https://partreel.com/p/msp0961/) | `MSP0961` | Generic (lcdwiki) | [msp0961](library/module/display/msp0961/msp0961) |
 | [1.28" GC9A01 Round LCD Module (240x240, SPI)](https://partreel.com/p/gc9a01_module_128/) | `MSP1281` | Generic (lcdwiki MSP1281) | [gc9a01_module_128](library/module/display/gc9a01_module_128/gc9a01_module_128) |
 | [1.3" SH1106 I2C OLED Module (128x64)](https://partreel.com/p/sh1106_module_13/) | `MC130VX` | Generic (LCDwiki MC130VX) | [sh1106_module_13](library/module/display/sh1106_module_13/sh1106_module_13) |
 | [1.3" ST7789 IPS TFT Module (240x240, SPI)](https://partreel.com/p/st7789_module_13/) | `MSP1308` | Generic (LCDwiki MSP1308) | [st7789_module_13](library/module/display/st7789_module_13/st7789_module_13) |
+| [1.5" OLED Module (128x128, I2C, MC01506)](https://partreel.com/p/mc01506/) | `MC01506` | Generic (lcdwiki) | [mc01506](library/module/display/mc01506/mc01506) |
+| [1.54" ST7789 IPS Module (240x240, SPI, MSP1541)](https://partreel.com/p/msp1541/) | `MSP1541` | Generic (lcdwiki) | [msp1541](library/module/display/msp1541/msp1541) |
+| [1.8" ST7735 TFT Module (128x160, SPI, MSP1803)](https://partreel.com/p/msp1803/) | `MSP1803` | Generic (lcdwiki) | [msp1803](library/module/display/msp1803/msp1803) |
+| [2.0" ST7789V IPS Module (240x320, SPI, MSP2008)](https://partreel.com/p/msp2008/) | `MSP2008` | Generic (lcdwiki) | [msp2008](library/module/display/msp2008/msp2008) |
+| [2.8" ILI9341 TFT Module (240x320, SPI+Touch+SD, MSP2807)](https://partreel.com/p/msp2807/) | `MSP2807` | Generic (lcdwiki) | [msp2807](library/module/display/msp2807/msp2807) |
 | [DAN-F10N (SparkFun)](https://partreel.com/p/sparkfun_dan_f10n/) | `DAN-F10N` | SparkFun Electronics | [sparkfun_dan_f10n](library/module/sparkfun/sparkfun_dan_f10n) |
 | [DFPlayer Mini MP3 Player Module](https://partreel.com/p/dfplayer_mini/) | `DFR0299` | DFRobot | [dfplayer_mini](library/module/audio/dfplayer_mini/dfplayer_mini) |
 | [ESP32-C5-WROOM-1 (SparkFun)](https://partreel.com/p/sparkfun_esp32_c5_wroom_1/) | `ESP32-C5-WROOM-1` | SparkFun Electronics | [sparkfun_esp32_c5_wroom_1](library/module/sparkfun/sparkfun_esp32_c5_wroom_1) |
@@ -256,7 +267,7 @@ Currently **202 parts**, all machine-verified (structure, KLC drawing rules, ren
 | [ZED-X20P (SparkFun)](https://partreel.com/p/sparkfun_zed_x20p/) | `ZED-X20P` | SparkFun Electronics | [sparkfun_zed_x20p](library/module/sparkfun/sparkfun_zed_x20p) |
 | [mosaic-G5_P3 (SparkFun)](https://partreel.com/p/sparkfun_mosaic_g5_p3/) | `mosaic-G5_P3` | SparkFun Electronics | [sparkfun_mosaic_g5_p3](library/module/sparkfun/sparkfun_mosaic_g5_p3) |
 
-### sensor (28)
+### sensor (32)
 
 | Part | MPN | Manufacturer | Files |
 |---|---|---|---|
@@ -264,8 +275,11 @@ Currently **202 parts**, all machine-verified (structure, KLC drawing rules, ren
 | [AHT10 Temperature and Humidity Sensor](https://partreel.com/p/aht10/) | `AHT10` | Aosong (ASAIR) | [aht10](library/sensor/asair/aht10/aht10) |
 | [AHT20 Humidity and Temperature Sensor](https://partreel.com/p/aht20/) | `AHT20` | Aosong (ASAIR) | [aht20](library/sensor/asair/aht20/aht20) |
 | [AHT21 Humidity and Temperature Sensor](https://partreel.com/p/aht21/) | `AHT21` | Aosong (ASAIR) | [aht21](library/sensor/asair/aht21/aht21) |
+| [AHT25 Humidity and Temperature Sensor Module](https://partreel.com/p/aht25/) | `AHT25` | Aosong (ASAIR) | [aht25](library/sensor/asair/aht25/aht25) |
+| [AHT30 Humidity and Temperature Sensor](https://partreel.com/p/aht30/) | `AHT30` | Aosong (ASAIR) | [aht30](library/sensor/asair/aht30/aht30) |
 | [CAP1203 (SparkFun)](https://partreel.com/p/sparkfun_cap1203/) | `CAP1203` | SparkFun Electronics | [sparkfun_cap1203](library/sensor/sparkfun/sparkfun_cap1203) |
 | [CY8CMBR3102 (SparkFun)](https://partreel.com/p/sparkfun_cy8cmbr3102/) | `CY8CMBR3102` | SparkFun Electronics | [sparkfun_cy8cmbr3102](library/sensor/sparkfun/sparkfun_cy8cmbr3102) |
+| [DHT20 Temperature & Humidity Sensor (DHT Housing)](https://partreel.com/p/dht20/) | `DHT20` | Aosong (ASAIR) | [dht20](library/sensor/asair/dht20/dht20) |
 | [FPC235x (SparkFun)](https://partreel.com/p/sparkfun_fpc235x/) | `FPC235x` | SparkFun Electronics | [sparkfun_fpc235x](library/sensor/sparkfun/sparkfun_fpc235x) |
 | [HMC5883L 3-Axis Magnetometer](https://partreel.com/p/hmc5883l/) | `HMC5883L` | Honeywell | [hmc5883l](library/sensor/honeywell/hmc5883l/hmc5883l) |
 | [HMC6343 (SparkFun)](https://partreel.com/p/sparkfun_hmc6343/) | `HMC6343` | SparkFun Electronics | [sparkfun_hmc6343](library/sensor/sparkfun/sparkfun_hmc6343) |
@@ -278,6 +292,7 @@ Currently **202 parts**, all machine-verified (structure, KLC drawing rules, ren
 | [MPU-6050 (SparkFun)](https://partreel.com/p/sparkfun_mpu_6050/) | `MPU-6050` | SparkFun Electronics | [sparkfun_mpu_6050](library/sensor/sparkfun/sparkfun_mpu_6050) |
 | [MS8607-02BA (SparkFun)](https://partreel.com/p/sparkfun_ms8607_02ba/) | `MS8607-02BA` | SparkFun Electronics | [sparkfun_ms8607_02ba](library/sensor/sparkfun/sparkfun_ms8607_02ba) |
 | [QMC5883L 3-Axis Magnetometer](https://partreel.com/p/qmc5883l/) | `QMC5883L` | QST | [qmc5883l](library/sensor/qst/qmc5883l/qmc5883l) |
+| [QMC5883P 3-Axis Magnetometer](https://partreel.com/p/qmc5883p/) | `QMC5883P` | QST | [qmc5883p](library/sensor/qst/qmc5883p/qmc5883p) |
 | [SCD41 (SparkFun)](https://partreel.com/p/sparkfun_scd41/) | `SCD41` | SparkFun Electronics | [sparkfun_scd41](library/sensor/sparkfun/sparkfun_scd41) |
 | [SGP40 VOC Air Quality Sensor](https://partreel.com/p/sgp40/) | `SGP40-D-R4` | Sensirion | [sgp40](library/sensor/sensirion/sgp40/sgp40) |
 | [SHT40 (SparkFun)](https://partreel.com/p/sparkfun_sht40/) | `SHT40` | SparkFun Electronics | [sparkfun_sht40](library/sensor/sparkfun/sparkfun_sht40) |

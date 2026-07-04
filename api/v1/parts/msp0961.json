@@ -1,0 +1,68 @@
+{
+  "id": "msp0961",
+  "name": "0.96\" ST7735S IPS Module (80x160, SPI, MSP0961)",
+  "category": "module",
+  "family": "display",
+  "manufacturer": "Generic (lcdwiki)",
+  "mpn_pattern": "MSP0961",
+  "description": "Generic 0.96 inch 80x160 IPS TFT module (ST7735S, lcdwiki MSP0961), SPI 8-pin header (GND VCC SCL SDA RES DC CS BLK), 30x24mm board, four 2.0mm holes.",
+  "parameters": {
+    "contacts": 8,
+    "mounting": "THT header",
+    "interface": "SPI",
+    "board_mm": "30.0x24.04"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/module/display/msp0961/msp0961/msp0961.kicad_mod",
+    "symbol": "https://partreel.com/library/module/display/msp0961/msp0961/msp0961.kicad_sym",
+    "model_3d": "https://partreel.com/library/module/display/msp0961/msp0961/msp0961.step",
+    "preview": "https://partreel.com/library/module/display/msp0961/msp0961/msp0961.glb",
+    "footprint_svg": "https://partreel.com/library/module/display/msp0961/msp0961/msp0961.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/module/display/msp0961/msp0961/msp0961.symbol.svg"
+  },
+  "datasheet": "https://www.lcdwiki.com/0.96inch_IPS_Module",
+  "license": "CC-BY-4.0",
+  "verified": true,
+  "dimensions_source": "lcdwiki MSP0961 drawing+manual: board 30x24.04, holes D2.0/pad3.5 at 2.6 insets (24.8x18.8), 8-pin 2.54 header row 1.44 from top (pin1 6.11 from left), AA 21.7x10.8 (3.7 from left, 6.6 from top).",
+  "keywords": [
+    "st7735",
+    "ips",
+    "0.96",
+    "80x160",
+    "spi",
+    "module"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "lcdwiki MSP0961 drawing+manual: board 30x24.04, holes D2.0/pad3.5 at 2.6 insets (24.8x18.8), 8-pin 2.54 header row 1.44 from top (pin1 6.11 from left), AA 21.7x10.8 (3.7 from left, 6.6 from top).",
+    "datasheet": "https://www.lcdwiki.com/0.96inch_IPS_Module",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/gen_ics.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    }
+  },
+  "page": "https://partreel.com/p/msp0961/",
+  "api": "https://partreel.com/api/v1/parts/msp0961.json"
+}

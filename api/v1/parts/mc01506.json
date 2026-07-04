@@ -1,0 +1,68 @@
+{
+  "id": "mc01506",
+  "name": "1.5\" OLED Module (128x128, I2C, MC01506)",
+  "category": "module",
+  "family": "display",
+  "manufacturer": "Generic (lcdwiki)",
+  "mpn_pattern": "MC01506",
+  "description": "Generic 1.5 inch 128x128 OLED module (SH1107-class controller per lcdwiki; lcdwiki MC01506), I2C 4-pin header (GND VCC SCL SDA), 34x47mm board, four 2.2mm holes.",
+  "parameters": {
+    "contacts": 4,
+    "mounting": "THT header",
+    "interface": "I2C",
+    "board_mm": "34.0x47.0"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/module/display/mc01506/mc01506/mc01506.kicad_mod",
+    "symbol": "https://partreel.com/library/module/display/mc01506/mc01506/mc01506.kicad_sym",
+    "model_3d": "https://partreel.com/library/module/display/mc01506/mc01506/mc01506.step",
+    "preview": "https://partreel.com/library/module/display/mc01506/mc01506/mc01506.glb",
+    "footprint_svg": "https://partreel.com/library/module/display/mc01506/mc01506/mc01506.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/module/display/mc01506/mc01506/mc01506.symbol.svg"
+  },
+  "datasheet": "https://www.lcdwiki.com/1.5inch_OLED_Module_SKU:MC01506",
+  "license": "CC-BY-4.0",
+  "verified": true,
+  "dimensions_source": "lcdwiki MC01506 size drawing: board 34x47 t1.2, holes D2.2 at 2.5 insets (29x42), 4-pin 2.54 header top centered (pin1 13.19 from left, row ~2.5), glass 33.9x37.3 (top 4.85), AA 26.855 sq (top 7.25).",
+  "keywords": [
+    "sh1107",
+    "oled",
+    "1.5",
+    "128x128",
+    "i2c",
+    "module"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "lcdwiki MC01506 size drawing: board 34x47 t1.2, holes D2.2 at 2.5 insets (29x42), 4-pin 2.54 header top centered (pin1 13.19 from left, row ~2.5), glass 33.9x37.3 (top 4.85), AA 26.855 sq (top 7.25).",
+    "datasheet": "https://www.lcdwiki.com/1.5inch_OLED_Module_SKU:MC01506",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/gen_ics.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    }
+  },
+  "page": "https://partreel.com/p/mc01506/",
+  "api": "https://partreel.com/api/v1/parts/mc01506.json"
+}

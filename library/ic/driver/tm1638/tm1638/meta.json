@@ -1,0 +1,42 @@
+{
+  "id": "tm1638",
+  "name": "TM1638 LED Driver with Key Scan",
+  "category": "ic",
+  "family": "driver",
+  "manufacturer": "Titan Micro",
+  "mpn_pattern": "TM1638",
+  "description": "Titan Micro TM1638 LED display driver (10 segments x 8 grids) with 8x3 key scan, 3-wire serial (STB/CLK/DIO), 5V, SOP-28. The chip on LED&KEY modules.",
+  "parameters": {
+    "contacts": 28,
+    "mounting": "SMD",
+    "supply_voltage": "5V",
+    "body_mm": "17.93x7.52x2.34"
+  },
+  "files": {
+    "footprint": "tm1638.kicad_mod",
+    "symbol": "tm1638.kicad_sym",
+    "model_3d": "tm1638.step",
+    "preview": "tm1638.glb",
+    "footprint_svg": "tm1638.footprint.svg",
+    "symbol_svg": "tm1638.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "https://www.handsontec.com/dataspecs/display/TM1638.pdf",
+  "dimensions_source": "Titan Micro TM1638 datasheet p.18: SOP28 body 17.93x7.52, overall span 9.9-10.5, pitch 1.27, lead 0.41. Pads 0.7x1.9 rows 9.2 c-c per IPC-7351. Pinout p.1.",
+  "verified": true,
+  "license": "CC-BY-4.0",
+  "generated_by": "generators/gen_ics.py",
+  "keywords": [
+    "tm1638",
+    "led",
+    "driver",
+    "keyscan",
+    "7-segment",
+    "sop-28"
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "id": "mc091gx",
+  "name": "0.91\" SSD1306 I2C OLED Module (128x32, MC091GX)",
+  "category": "module",
+  "family": "display",
+  "manufacturer": "Generic (lcdwiki)",
+  "mpn_pattern": "MC091GX",
+  "description": "Generic 0.91 inch 128x32 I2C OLED module (SSD1306, lcdwiki MC091GX), 4-pin header (GND VCC SCL SDA), 38x12mm board, no mounting holes. NOTE: different board from the official library ER_OLEDM0.91 bare glass.",
+  "parameters": {
+    "contacts": 4,
+    "mounting": "THT header",
+    "interface": "I2C",
+    "board_mm": "38.0x12.0"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/module/display/mc091gx/mc091gx/mc091gx.kicad_mod",
+    "symbol": "https://partreel.com/library/module/display/mc091gx/mc091gx/mc091gx.kicad_sym",
+    "model_3d": "https://partreel.com/library/module/display/mc091gx/mc091gx/mc091gx.step",
+    "preview": "https://partreel.com/library/module/display/mc091gx/mc091gx/mc091gx.glb",
+    "footprint_svg": "https://partreel.com/library/module/display/mc091gx/mc091gx/mc091gx.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/module/display/mc091gx/mc091gx/mc091gx.symbol.svg"
+  },
+  "datasheet": "https://www.lcdwiki.com/res/MC091GX/0.91inch_IIC_OLED_Module_MC091GX_User_Manual_EN.pdf",
+  "license": "CC-BY-4.0",
+  "verified": true,
+  "dimensions_source": "lcdwiki MC091GX drawing+manual: board 38x12, 4-pin 2.54 header on short edge (column 1.5 inset, end pins 2.19 from long edges), glass 30x11.5 (5.0 from header edge), AA 22.38x5.58 at 7.10.",
+  "keywords": [
+    "ssd1306",
+    "oled",
+    "0.91",
+    "128x32",
+    "i2c",
+    "module"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "lcdwiki MC091GX drawing+manual: board 38x12, 4-pin 2.54 header on short edge (column 1.5 inset, end pins 2.19 from long edges), glass 30x11.5 (5.0 from header edge), AA 22.38x5.58 at 7.10.",
+    "datasheet": "https://www.lcdwiki.com/res/MC091GX/0.91inch_IIC_OLED_Module_MC091GX_User_Manual_EN.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/gen_ics.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    }
+  },
+  "page": "https://partreel.com/p/mc091gx/",
+  "api": "https://partreel.com/api/v1/parts/mc091gx.json"
+}

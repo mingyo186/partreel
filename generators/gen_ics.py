@@ -1378,6 +1378,376 @@ def esp32_devkitc_v4():
     return fid, lib, fp, sym, meta
 
 
+# ================= 배치 4차 (§21-6ⓑ 새 종류) =================
+
+def qmc5883p():
+    fid, lib = "qmc5883p", "sensor/qst/qmc5883p"
+    # 랜드(권장 Fig7, 픽셀 실측): 16패드 0.40x0.25, 피치 0.5, 반대행 c-c 2.60
+    pads = quad_pads(4, 0.5, 2.60, 0.40, 0.25)
+    fp = _fp_quad(fid, "QST QMC5883P 3-axis magnetometer, LGA-16 3x3x0.9. Land per "
+                       "datasheet Fig.7 (pixel-measured): 16 pads 0.40x0.25, pitch 0.5, "
+                       "rows 2.60 c-c. PINOUT DIFFERS FROM QMC5883L (6 active pads only).",
+                  "QMC5883P magnetometer compass I2C", pads, 1.5)
+    nm = {1: "SCK", 2: "VDD", 9: "GND", 10: "C1", 11: "GND", 16: "SDA"}
+    left = [(str(i), nm.get(i, "NC")) for i in range(1, 9)]
+    right = [(str(i), nm.get(i, "NC")) for i in range(9, 17)]
+    sym = _lr_symbol(fid, left, right)
+    meta = _meta(fid, "QMC5883P 3-Axis Magnetometer", "sensor", "magnetometer",
+                 "QST", "QMC5883P",
+                 "QST QMC5883P 3-axis magnetic sensor - the chip on NEW GY-271 boards, "
+                 "I2C address 0x2C, LGA-16 3x3x0.9mm. NOT register- or pinout-compatible "
+                 "with QMC5883L (only 6 active pads: SCK/VDD/GND/C1/GND/SDA). C1 4.7uF "
+                 "reservoir capacitor required.",
+                 {"contacts": 16, "mounting": "SMD", "interface": "I2C",
+                  "i2c_address": "0x2C", "supply_voltage": "2.5-3.6V",
+                  "body_mm": "3.0x3.0x0.9"},
+                 "https://www.qstcorp.com/upload/pdf/202202/%EF%BC%88%E5%B7%B2%E4%BC%A0%EF%BC%8913-52-19%20QMC5883P%20Datasheet%20Rev.C(1).pdf",
+                 "QST QMC5883P datasheet Rev.C: p.6 LGA-16 3x3x0.9 (pitch 0.5, pad "
+                 "0.325x0.25); Fig.7 recommended footprint pixel-measured (pads 0.40x0.25, "
+                 "per-side span 1.5 c-c, rows 2.60 c-c, pad outer edges flush with body). "
+                 "Table 5 pinout.",
+                 ["qmc5883p", "qst", "magnetometer", "compass", "i2c", "gy-271", "lga"])
+    return fid, lib, fp, sym, meta
+
+
+def dht20():
+    fid, lib = "dht20", "sensor/asair/dht20"
+    out = _fp_open(fid, "ASAIR DHT20 temperature/humidity sensor in DHT-style 4-pin THT "
+                        "housing (12.6x5.8 base, 16.1 tall). Pins in line, 2.54 pitch, "
+                        "span 7.62. AHT20 die, I2C 0x38 (not DHT22 1-wire protocol!).",
+                   "DHT20 temperature humidity I2C DHT housing", -4.6, 4.6,
+                   attr="through_hole")
+    out += _fab_body(-6.3, -2.55, 6.3, 3.25, 1.0)
+    out += _rect_lines([(-6.41, -2.66, 6.41, -2.66), (6.41, -2.66, 6.41, 3.36),
+                        (6.41, 3.36, -6.41, 3.36), (-6.41, 3.36, -6.41, -2.66)],
+                       "F.SilkS", 0.12)
+    out.append(_line(-4.5, -3.0, -3.1, -3.0, "F.SilkS", 0.12))
+    out += _court(-6.55, -2.8, 6.55, 3.5)
+    for i, n in enumerate(["VDD", "SDA", "GND", "SCL"]):
+        out.append(_tht(str(i + 1), -3.81 + i * 2.54, 0, 1.6, 0.9,
+                        "rect" if i == 0 else "circle"))
+    out.append(')')
+    fp = "\n".join(out) + "\n"
+    sym = _lr_symbol(fid, [("1", "VDD"), ("2", "SDA"), ("3", "GND"), ("4", "SCL")], [])
+    meta = _meta(fid, "DHT20 Temperature & Humidity Sensor (DHT Housing)", "sensor",
+                 "humidity", "Aosong (ASAIR)", "DHT20",
+                 "ASAIR DHT20 - the AHT20 die in a classic DHT-style 4-pin housing. "
+                 "I2C interface (address 0x38), 2.2-5.5V. Drop-in mechanical replacement "
+                 "for DHT11/DHT22 boards but NOT protocol-compatible (I2C, not 1-wire).",
+                 {"contacts": 4, "mounting": "THT", "interface": "I2C",
+                  "i2c_address": "0x38", "supply_voltage": "2.2-5.5V",
+                  "body_mm": "12.6x5.8x16.1"},
+                 "https://aqicn.org/air/sensor/spec/asair-dht20.pdf",
+                 "ASAIR DHT20 datasheet V1.0 Fig.13: housing 12.6x16.1x5.8, 4 pins in "
+                 "line pitch 2.54 (span 7.62), pin 0.5x0.3 length 7.2, pin row 2.55 from "
+                 "front face. Table 5 pinout (1 VDD, 2 SDA, 3 GND, 4 SCL).",
+                 ["dht20", "asair", "aht20", "humidity", "temperature", "i2c", "dht22"])
+    return fid, lib, fp, sym, meta
+
+
+def aht25():
+    fid, lib = "aht25", "sensor/asair/aht25"
+    out = _fp_open(fid, "ASAIR AHT25 humidity/temperature sensor - dumbbell PCB module "
+                        "17.7mm long with 4 gold-finger solder tabs (pitch 1.27, exposed "
+                        "3mm). Pads 0.8x3.4 SMD.",
+                   "AHT25 humidity temperature sensor module I2C", -10.6, 10.6)
+    out += _rect_lines([(-2.5, -8.85, 2.5, -8.85), (2.5, -8.85, 2.5, 0.15),
+                        (2.5, 0.15, 3.0, 0.15), (3.0, 0.15, 3.0, 8.85),
+                        (3.0, 8.85, -3.0, 8.85), (-3.0, 8.85, -3.0, 0.15),
+                        (-3.0, 0.15, -2.5, 0.15), (-2.5, 0.15, -2.5, -8.85)], "F.Fab", 0.10)
+    out += _rect_lines([(-3.11, -8.96, 3.11, -8.96), (-3.11, 4.5, -3.11, -8.96),
+                        (3.11, 4.5, 3.11, -8.96)], "F.SilkS", 0.12)
+    out.append(_line(-2.5, 9.3, -1.4, 9.3, "F.SilkS", 0.12))
+    out += _court(-3.25, -9.1, 3.25, 9.1)
+    for i, n in enumerate(["VDD", "SDA", "GND", "SCL"]):
+        out.append(_smd(str(i + 1), -1.905 + i * 1.27, 7.15, 0.8, 3.4))
+    out.append(')')
+    fp = "\n".join(out) + "\n"
+    sym = _lr_symbol(fid, [("1", "VDD"), ("2", "SDA"), ("3", "GND"), ("4", "SCL")], [])
+    meta = _meta(fid, "AHT25 Humidity and Temperature Sensor Module", "sensor", "humidity",
+                 "Aosong (ASAIR)", "AHT25",
+                 "ASAIR AHT25 humidity/temperature sensor - a small dumbbell-shaped PCB "
+                 "module with 4 gold-finger solder tabs (not a molded IC). I2C 0x38, "
+                 "2.2-5.5V.",
+                 {"contacts": 4, "mounting": "SMD", "interface": "I2C",
+                  "i2c_address": "0x38", "supply_voltage": "2.2-5.5V",
+                  "body_mm": "17.7x6x2"},
+                 "https://www.aosong.com/userfiles/files/media/Data%20Sheet%20AHT25%20A2.pdf",
+                 "ASAIR AHT25 datasheet V1.0 Fig.12: overall 17.7 long, head 5x9, tail "
+                 "6 wide, 4 gold fingers pitch 1.27 exposed 3mm (0.4x0.4 section). "
+                 "Pinout printed on Fig.12: 1 VDD, 2 SDA, 3 GND, 4 SCL.",
+                 ["aht25", "asair", "humidity", "temperature", "i2c", "module"])
+    return fid, lib, fp, sym, meta
+
+
+def tp4054():
+    return _part_sot23(
+        "tp4054", "ic/power/tp4054", "TP4054 500mA Li-Ion Charger", "TopPower/UTD",
+        "TP4054",
+        "https://media.digikey.com/pdf/Data%20Sheets/UTD%20Semi%20PDFs/TP4054.pdf",
+        "TP4054 datasheet p.11: SOT23-5L body 2.92x1.6, span 2.8, pitch 0.95. Land pads "
+        "0.55x0.8 rows 2.4 c-c (same package class as Silergy recommendation). Pinout "
+        "p.3: bottom 1 ~CHRG, 2 GND, 3 BAT; top 5 PROG, 4 VCC.",
+        ["~CHRG", "GND", "BAT", "VCC", "PROG"],
+        "TP4054 single-cell Li-ion linear charger, 4.2V CV, up to 500mA "
+        "(Ichg=1000V/Rprog), VCC 4.25-6.5V, SOT23-5. The tiny-charger staple.",
+        {"contacts": 5, "mounting": "SMD", "supply_voltage": "4.25-6.5V",
+         "output_current": "up to 500mA", "body_mm": "2.9x1.6x1.15"},
+        ["tp4054", "charger", "li-ion", "lipo", "battery", "sot23-5"])
+
+
+def tm1638():
+    fid, lib = "tm1638", "ic/driver/tm1638"
+    pads = two_row_pads(28, 1.27, 9.2, 1.9, 0.7)
+    fp = _fp_two_row(fid, "Titan Micro TM1638 LED driver with keyscan, SOP-28 (body "
+                          "17.93x7.52, span 10.2, pitch 1.27). Pads 0.7x1.9 rows 9.2 c-c "
+                          "per IPC-7351.", "TM1638 LED driver keyscan SOP-28",
+                     pads, (3.76, 8.965))
+    L = ["K1", "K2", "K3", "VDD", "SEG1/KS1", "SEG2/KS2", "SEG3/KS3", "SEG4/KS4",
+         "SEG5/KS5", "SEG6/KS6", "SEG7/KS7", "SEG8/KS8", "SEG9", "SEG10"]
+    R = ["VDD", "GRID8", "GRID7", "GND", "GRID6", "GRID5", "GRID4", "GRID3", "GRID2",
+         "GRID1", "GND", "DIO", "CLK", "STB"]
+    sym = _lr_symbol(fid, [(str(i + 1), L[i]) for i in range(14)],
+                     [(str(i + 15), R[i]) for i in range(14)])
+    meta = _meta(fid, "TM1638 LED Driver with Key Scan", "ic", "driver",
+                 "Titan Micro", "TM1638",
+                 "Titan Micro TM1638 LED display driver (10 segments x 8 grids) with "
+                 "8x3 key scan, 3-wire serial (STB/CLK/DIO), 5V, SOP-28. The chip on "
+                 "LED&KEY modules.",
+                 {"contacts": 28, "mounting": "SMD", "supply_voltage": "5V",
+                  "body_mm": "17.93x7.52x2.34"},
+                 "https://www.handsontec.com/dataspecs/display/TM1638.pdf",
+                 "Titan Micro TM1638 datasheet p.18: SOP28 body 17.93x7.52, overall span "
+                 "9.9-10.5, pitch 1.27, lead 0.41. Pads 0.7x1.9 rows 9.2 c-c per "
+                 "IPC-7351. Pinout p.1.",
+                 ["tm1638", "led", "driver", "keyscan", "7-segment", "sop-28"])
+    return fid, lib, fp, sym, meta
+
+
+def ttp224():
+    fid, lib = "ttp224", "ic/touch/ttp224"
+    pads = two_row_pads(16, 0.635, 5.4, 1.5, 0.4)
+    fp = _fp_two_row(fid, "Tontek TTP224N-BSB 4-key touch IC, SSOP-16 150mil MO-137(AB) "
+                          "(body 4.9x3.91, span 5.99, pitch 0.635). Pads 0.4x1.5 rows "
+                          "5.4 c-c per IPC-7351.", "TTP224 touch 4-key SSOP-16",
+                     pads, (1.955, 2.45))
+    nm = ["TP0", "TP1", "TP2", "TP3", "AHLB", "VDD", "TOG", "LPMB",
+          "MOT0", "VSS", "OD", "SM", "TPQ3", "TPQ2", "TPQ1", "TPQ0"]
+    sym = _lr_symbol(fid, [(str(i + 1), nm[i]) for i in range(8)],
+                     [(str(i + 9), nm[i + 8]) for i in range(8)])
+    meta = _meta(fid, "TTP224N-BSB 4-Key Touch IC", "ic", "touch", "Tontek",
+                 "TTP224N-BSB",
+                 "Tontek TTP224N 4-key capacitive touch detector with direct outputs "
+                 "(TPQ0-3), option straps for output mode, 2.4-5.5V, SSOP-16.",
+                 {"contacts": 16, "mounting": "SMD", "supply_voltage": "2.4-5.5V",
+                  "body_mm": "4.9x3.91x1.63"},
+                 "https://www.lcsc.com/product-detail/Touch-Screen-Controller-ICs_TTP224N-BSB_C90399.html",
+                 "Tontek TTP224N-BSB datasheet Ver3.1 p.8: SSOP-16 MO-137(AB) body "
+                 "4.9x3.91, span 5.99, pitch 0.635. Pads 0.4x1.5 rows 5.4 c-c per "
+                 "IPC-7351. Pinout p.3 (CCW from pin-1 dot).",
+                 ["ttp224", "tontek", "touch", "capacitive", "4-key", "ssop-16"])
+    return fid, lib, fp, sym, meta
+
+
+def ttp226():
+    fid, lib = "ttp226", "ic/touch/ttp226"
+    pads = two_row_pads(28, 0.635, 5.4, 1.5, 0.4)
+    fp = _fp_two_row(fid, "Tontek TTP226-809SN 8-key touch IC, SSOP-28 150mil MO-137(AF) "
+                          "- same package as TTP229. Pads 0.4x1.5 rows 5.4 c-c per "
+                          "IPC-7351.", "TTP226 touch 8-key SSOP-28", pads, (1.955, 4.955))
+    nm = ["OSC2/TOPAD", "I7", "I6", "I5", "I4", "I3", "I2", "I1", "I0", "OSC1", "VSS",
+          "VDD", "OPS1", "OPS0", "AHL", "Q0", "Q1", "Q2", "Q3", "Q4", "Q5", "Q6", "Q7",
+          "DV", "SLSE1", "SLSE2", "SLSE3", "SLSE4"]
+    sym = _lr_symbol(fid, [(str(i + 1), nm[i]) for i in range(14)],
+                     [(str(i + 15), nm[i + 14]) for i in range(14)])
+    meta = _meta(fid, "TTP226-809SN 8-Key Touch IC", "ic", "touch", "Tontek",
+                 "TTP226-809SN",
+                 "Tontek TTP226 8-key capacitive touch detector with direct outputs "
+                 "(Q0-7), 2.4-5.5V, SSOP-28.",
+                 {"contacts": 28, "mounting": "SMD", "supply_voltage": "2.4-5.5V",
+                  "body_mm": "9.91x3.91x1.63"},
+                 "https://www.lcsc.com/product-detail/Touch-Screen-Controller-ICs_TTP226-809SN_C183531.html",
+                 "Tontek TTP226-809SN datasheet Ver1.0 p.13: SSOP-28 MO-137(AF) - "
+                 "dimension-identical to TTP229 package. Pads 0.4x1.5 rows 5.4 c-c per "
+                 "IPC-7351. Pinout p.14.",
+                 ["ttp226", "tontek", "touch", "capacitive", "8-key", "ssop-28"])
+    return fid, lib, fp, sym, meta
+
+
+def _disp_board(fid, title, mpn, iface, tags, bw, bh, holes, hole_d, header, fab_rects,
+                desc, ds, dim_src, kw, chamfer=1.5, extra_headers=()):
+    hx, hy = bw / 2, bh / 2
+    out = _fp_open(fid, desc, tags, -(hy + 1.5), hy + 1.5, attr="through_hole")
+    out += _fab_body(-hx, -hy, hx, hy, chamfer)
+    for (x0, y0, x1, y1) in fab_rects:
+        out += _rect_lines([(x0, y0, x1, y0), (x1, y0, x1, y1),
+                            (x1, y1, x0, y1), (x0, y1, x0, y0)], "F.Fab", 0.10)
+    out += _rect_lines([(-hx - 0.11, -hy - 0.11, hx + 0.11, -hy - 0.11),
+                        (hx + 0.11, -hy - 0.11, hx + 0.11, hy + 0.11),
+                        (hx + 0.11, hy + 0.11, -hx - 0.11, hy + 0.11),
+                        (-hx - 0.11, hy + 0.11, -hx - 0.11, -hy - 0.11)], "F.SilkS", 0.12)
+    n1, pins = header
+    p1 = pins[0]
+    out.append(_line(p1[1] - 0.6, p1[2] - 1.55, p1[1] + 0.6, p1[2] - 1.55, "F.SilkS", 0.12))
+    out += _court(-hx - 0.25, -hy - 0.25, hx + 0.25, hy + 0.25)
+    num = n1
+    for name, x, y in pins:
+        out.append(_tht(str(num), x, y, 1.7, 1.0, "rect" if num == n1 else "circle"))
+        num += 1
+    for (start, gpins) in extra_headers:
+        num = start
+        for name, x, y in gpins:
+            out.append(_tht(str(num), x, y, 1.7, 1.0, "circle"))
+            num += 1
+    for x, y in holes:
+        out.append(_npth(x, y, hole_d))
+    out.append(')')
+    fp = "\n".join(out) + "\n"
+    left = [(str(n1 + i), pins[i][0]) for i in range(len(pins))]
+    right = []
+    for (start, gpins) in extra_headers:
+        right += [(str(start + i), gpins[i][0]) for i in range(len(gpins))]
+    sym = _lr_symbol(fid, left, right)
+    contacts = len(pins) + sum(len(g) for _, g in extra_headers)
+    meta = _meta(fid, title, "module", "display", "Generic (lcdwiki)", mpn, desc,
+                 {"contacts": contacts, "mounting": "THT header", "interface": iface,
+                  "board_mm": str(bw) + "x" + str(bh)},
+                 ds, dim_src, kw)
+    return fid, "module/display/" + fid, fp, sym, meta
+
+
+def mc091gx():
+    pins = [("GND", -17.5, -3.81), ("VCC", -17.5, -1.27), ("SCL", -17.5, 1.27),
+            ("SDA", -17.5, 3.81)]
+    return _disp_board(
+        "mc091gx", '0.91" SSD1306 I2C OLED Module (128x32, MC091GX)', "MC091GX", "I2C",
+        "SSD1306 OLED 0.91 128x32 module I2C", 38.0, 12.0, [], 2.0, (1, pins),
+        [(-11.9, -2.79, 10.48, 2.79)],
+        "Generic 0.91 inch 128x32 I2C OLED module (SSD1306, lcdwiki MC091GX), 4-pin "
+        "header (GND VCC SCL SDA), 38x12mm board, no mounting holes. NOTE: different "
+        "board from the official library ER_OLEDM0.91 bare glass.",
+        "https://www.lcdwiki.com/res/MC091GX/0.91inch_IIC_OLED_Module_MC091GX_User_Manual_EN.pdf",
+        "lcdwiki MC091GX drawing+manual: board 38x12, 4-pin 2.54 header on short edge "
+        "(column 1.5 inset, end pins 2.19 from long edges), glass 30x11.5 (5.0 from "
+        "header edge), AA 22.38x5.58 at 7.10.",
+        ["ssd1306", "oled", "0.91", "128x32", "i2c", "module"])
+
+
+def msp0961():
+    pins = [(n, -8.89 + i * 2.54, -10.58) for i, n in
+            enumerate(["GND", "VCC", "SCL", "SDA", "RES", "DC", "CS", "BLK"])]
+    return _disp_board(
+        "msp0961", '0.96" ST7735S IPS Module (80x160, SPI, MSP0961)', "MSP0961", "SPI",
+        "ST7735 IPS 0.96 80x160 SPI module", 30.0, 24.04,
+        [(-12.4, -9.4), (12.4, -9.4), (-12.4, 9.4), (12.4, 9.4)], 2.0,
+        (1, pins), [(-11.3, -5.42, 10.4, 5.38)],
+        "Generic 0.96 inch 80x160 IPS TFT module (ST7735S, lcdwiki MSP0961), SPI 8-pin "
+        "header (GND VCC SCL SDA RES DC CS BLK), 30x24mm board, four 2.0mm holes.",
+        "https://www.lcdwiki.com/0.96inch_IPS_Module",
+        "lcdwiki MSP0961 drawing+manual: board 30x24.04, holes D2.0/pad3.5 at 2.6 "
+        "insets (24.8x18.8), 8-pin 2.54 header row 1.44 from top (pin1 6.11 from left), "
+        "AA 21.7x10.8 (3.7 from left, 6.6 from top).",
+        ["st7735", "ips", "0.96", "80x160", "spi", "module"])
+
+
+def msp1541():
+    pins = [(n, -8.89 + i * 2.54, -20.36) for i, n in
+            enumerate(["GND", "VCC", "SCL", "SDA", "RES", "DC", "CS", "BLK"])]
+    return _disp_board(
+        "msp1541", '1.54" ST7789 IPS Module (240x240, SPI, MSP1541)', "MSP1541", "SPI",
+        "ST7789 IPS 1.54 240x240 SPI module", 32.0, 43.72,
+        [(-13.86, -19.36), (13.86, -19.36), (-13.86, 19.36), (13.86, 19.36)], 2.0,
+        (1, pins), [(-13.86, -15.41, 13.86, 12.31)],
+        "Generic 1.54 inch 240x240 IPS TFT module (ST7789, lcdwiki MSP1541), SPI 8-pin "
+        "header (GND VCC SCL SDA RES DC CS BLK), 32x43.7mm board, four 2.0mm holes.",
+        "https://www.lcdwiki.com/1.54inch_IPS_Module",
+        "lcdwiki MSP1541 drawing+manual: board 32x43.72, holes D2.0 (x +/-13.86, y "
+        "+/-19.36), 8-pin 2.54 header row 1.5 from top (pin1 7.11 from left), glass "
+        "31.52x35.1, AA 27.72 sq centered (top 6.45).",
+        ["st7789", "ips", "1.54", "240x240", "spi", "module"])
+
+
+def msp1803():
+    j2 = [("VCC", 8.89, 26.5), ("GND", 6.35, 26.5), ("CS", 3.81, 26.5),
+          ("RESET", 1.27, 26.5), ("AO", -1.27, 26.5), ("SDA", -3.81, 26.5),
+          ("SCK", -6.35, 26.5), ("LED", -8.89, 26.5)]
+    j4 = [("SD_CS", 3.81, -26.5), ("SD_MOSI", 1.27, -26.5),
+          ("SD_MISO", -1.27, -26.5), ("SD_SCK", -3.81, -26.5)]
+    return _disp_board(
+        "msp1803", '1.8" ST7735 TFT Module (128x160, SPI, MSP1803)', "MSP1803", "SPI",
+        "ST7735 TFT 1.8 128x160 SPI module SD", 34.5, 58.0,
+        [(-14.25, -26.0), (14.25, -26.0), (-14.25, 26.0), (14.25, 26.0)], 3.2,
+        (1, j2), [],
+        "Generic 1.8 inch 128x160 TFT module (ST7735, lcdwiki MSP1803), SPI 8-pin main "
+        "header + 4-pin SD header, 34.5x58mm board, four 3.2mm holes. Main header "
+        "pin1=VCC is on the RIGHT in front view (vendor drawing is back-view).",
+        "https://www.lcdwiki.com/1.8inch_SPI_Module_ST7735S_SKU:MSP1803",
+        "lcdwiki MSP1803 back-view drawing (pixel-verified): board 34.5x58, holes D3.2 "
+        "at 3.0 insets (28.5x52), J2 8-pin 2.54 bottom (row 2.5, centered, back-view "
+        "L-R VCC GND CS RESET AO SDA SCK LED - mirrored for front), J4 SD 4-pin top "
+        "centered. Glass dims not in drawing (footprint-complete).",
+        ["st7735", "tft", "1.8", "128x160", "spi", "sd", "module"],
+        extra_headers=[(9, j4)])
+
+
+def msp2008():
+    pins = [(n, -8.89 + i * 2.54, -29.06) for i, n in
+            enumerate(["GND", "VCC", "SCL", "SDA", "RES", "DC", "CS", "BLK"])]
+    return _disp_board(
+        "msp2008", '2.0" ST7789V IPS Module (240x320, SPI, MSP2008)', "MSP2008", "SPI",
+        "ST7789V IPS 2.0 240x320 SPI module", 36.48, 61.12,
+        [(-15.74, -28.06), (15.74, -28.06), (-15.74, 28.4), (15.74, 28.4)], 2.0,
+        (1, pins), [(-15.3, -23.1, 15.3, 17.7)],
+        "Generic 2.0 inch 240x320 IPS TFT module (ST7789V, lcdwiki MSP2008-class), SPI "
+        "8-pin header (GND VCC SCL SDA RES DC CS BLK), 36.5x61mm board, four 2.0mm holes.",
+        "https://www.lcdwiki.com/2.0inch_IPS_Module",
+        "lcdwiki 2.0inch IPS drawing (pixel-verified): board 36.48x61.12, holes D2.0 "
+        "(top 2.5/2.5 insets; bottom 2.5 sides, 2.16 bottom), 8-pin 2.54 header row 1.5 "
+        "(pin1 9.35 from left), glass 36x51.8, AA 30.6x40.8 (top 7.46).",
+        ["st7789", "ips", "2.0", "240x320", "spi", "module"])
+
+
+def mc01506():
+    pins = [(n, -3.81 + i * 2.54, -21.0) for i, n in
+            enumerate(["GND", "VCC", "SCL", "SDA"])]
+    return _disp_board(
+        "mc01506", '1.5" OLED Module (128x128, I2C, MC01506)', "MC01506", "I2C",
+        "OLED 1.5 128x128 I2C module", 34.0, 47.0,
+        [(-14.5, -21.0), (14.5, -21.0), (-14.5, 21.0), (14.5, 21.0)], 2.2,
+        (1, pins), [(-13.43, -16.25, 13.43, 10.6)],
+        "Generic 1.5 inch 128x128 OLED module (SH1107-class controller per lcdwiki; "
+        "lcdwiki MC01506), I2C 4-pin header (GND VCC SCL SDA), 34x47mm board, four "
+        "2.2mm holes.",
+        "https://www.lcdwiki.com/1.5inch_OLED_Module_SKU:MC01506",
+        "lcdwiki MC01506 size drawing: board 34x47 t1.2, holes D2.2 at 2.5 insets "
+        "(29x42), 4-pin 2.54 header top centered (pin1 13.19 from left, row ~2.5), "
+        "glass 33.9x37.3 (top 4.85), AA 26.855 sq (top 7.25).",
+        ["sh1107", "oled", "1.5", "128x128", "i2c", "module"])
+
+
+def msp2807():
+    j2 = [(n, -16.51 + i * 2.54, 41.0) for i, n in enumerate(
+        ["VCC", "GND", "CS", "RESET", "DC", "SDI(MOSI)", "SCK", "LED", "SDO(MISO)",
+         "T_CLK", "T_CS", "T_DIN", "T_DO", "T_IRQ"])]
+    j4 = [("SD_CS", -3.81, -40.0), ("SD_MOSI", -1.27, -40.0),
+          ("SD_MISO", 1.27, -40.0), ("SD_SCK", 3.81, -40.0)]
+    return _disp_board(
+        "msp2807", '2.8" ILI9341 TFT Module (240x320, SPI+Touch+SD, MSP2807)', "MSP2807",
+        "SPI", "ILI9341 TFT 2.8 240x320 SPI touch SD module", 50.0, 86.0,
+        [(-22.0, -40.0), (22.0, -40.0), (-22.0, 36.08), (22.0, 36.08)], 3.2,
+        (1, j2), [(-21.6, -33.7, 21.6, 23.9)],
+        "Classic 2.8 inch 240x320 TFT module (ILI9341V + resistive touch + microSD, "
+        "lcdwiki MSP2807), 14-pin SPI/touch header + 4-pin SD header, 50x86mm board, "
+        "four 3.2mm holes.",
+        "https://www.lcdwiki.com/2.8inch_SPI_Module_ILI9341_SKU:MSP2807",
+        "lcdwiki MSP2807 factory outline V1.0 (2024-04-11): board 50x86 t1.6, holes "
+        "D3.2/pad4.7 (top 3.0/3.0, pitch 44x76.08), J2 14-pin 2.54 bottom row 2.0 "
+        "(pin1 8.49 from left), J4 SD 4-pin top centered, touch glass 50x69.2, AA "
+        "43.2x57.6 (top 9.3). Official lib has only the 2.4-inch CR2013 sibling.",
+        ["ili9341", "tft", "2.8", "240x320", "spi", "touch", "sd", "module"],
+        extra_headers=[(15, j4)])
+
+
 # ---------- 온디맨드 변형 패밀리 (§21-6ⓐ: 변형은 봇/요청이 만든다) ----------
 
 VARIANT_FAMILIES = {
@@ -1411,7 +1781,9 @@ PARTS = [qmc5883l, hmc5883l, adxl345, ip5306, tp5100, cn3791, mp1584, sy8008, sy
          ssd1306_module_096, sh1106_module_13, st7789_module_13,
          max6675, as5600, tm1637, inmp441, bh1750, xl6009, mlx90614, max17048, sgp40,
          veml7700, hc_sr04, dfplayer_mini, hc05, sim800l, max7219_matrix_module,
-         gc9a01_module_128, ld2410c, esp32_devkitc_v4]
+         gc9a01_module_128, ld2410c, esp32_devkitc_v4,
+         qmc5883p, dht20, aht25, tp4054, tm1638, ttp224, ttp226,
+         mc091gx, msp0961, msp1541, msp1803, msp2008, mc01506, msp2807]
 
 
 def main():

@@ -1,6 +1,6 @@
 {
   "generated_by": "opencad-lib",
-  "count": 202,
+  "count": 217,
   "parts": [
     {
       "id": "jst_gh_10pin",
@@ -2607,6 +2607,30 @@
       ]
     },
     {
+      "id": "tm1638",
+      "name": "TM1638 LED Driver with Key Scan",
+      "category": "ic",
+      "family": "driver",
+      "manufacturer": "Titan Micro",
+      "pins": 28,
+      "path": "library/ic/driver/tm1638/tm1638",
+      "formats": [
+        "kicad_mod",
+        "kicad_sym",
+        "step",
+        "glb"
+      ],
+      "verified": true,
+      "keywords": [
+        "tm1638",
+        "led",
+        "driver",
+        "keyscan",
+        "7-segment",
+        "sop-28"
+      ]
+    },
+    {
       "id": "w25q64jv",
       "name": "W25Q64JV 64Mbit SPI Flash (SOIC-8 208mil)",
       "category": "ic",
@@ -2684,7 +2708,7 @@
     },
     {
       "id": "max17048",
-      "name": "MAX17048 LiPo Fuel Gauge",
+      "name": "MAX17048 LiPo Fuel Gauge (1-cell)",
       "category": "ic",
       "family": "power",
       "manufacturer": "Maxim Integrated",
@@ -2705,6 +2729,30 @@
         "battery",
         "i2c",
         "tdfn"
+      ]
+    },
+    {
+      "id": "tp4054",
+      "name": "TP4054 500mA Li-Ion Charger",
+      "category": "ic",
+      "family": "power",
+      "manufacturer": "TopPower/UTD",
+      "pins": 5,
+      "path": "library/ic/power/tp4054/tp4054",
+      "formats": [
+        "kicad_mod",
+        "kicad_sym",
+        "step",
+        "glb"
+      ],
+      "verified": true,
+      "keywords": [
+        "tp4054",
+        "charger",
+        "li-ion",
+        "lipo",
+        "battery",
+        "sot23-5"
       ]
     },
     {
@@ -3027,6 +3075,54 @@
         "capacitive",
         "key",
         "sot-23-6"
+      ]
+    },
+    {
+      "id": "ttp224",
+      "name": "TTP224N-BSB 4-Key Touch IC",
+      "category": "ic",
+      "family": "touch",
+      "manufacturer": "Tontek",
+      "pins": 16,
+      "path": "library/ic/touch/ttp224/ttp224",
+      "formats": [
+        "kicad_mod",
+        "kicad_sym",
+        "step",
+        "glb"
+      ],
+      "verified": true,
+      "keywords": [
+        "ttp224",
+        "tontek",
+        "touch",
+        "capacitive",
+        "4-key",
+        "ssop-16"
+      ]
+    },
+    {
+      "id": "ttp226",
+      "name": "TTP226-809SN 8-Key Touch IC",
+      "category": "ic",
+      "family": "touch",
+      "manufacturer": "Tontek",
+      "pins": 28,
+      "path": "library/ic/touch/ttp226/ttp226",
+      "formats": [
+        "kicad_mod",
+        "kicad_sym",
+        "step",
+        "glb"
+      ],
+      "verified": true,
+      "keywords": [
+        "ttp226",
+        "tontek",
+        "touch",
+        "capacitive",
+        "8-key",
+        "ssop-28"
       ]
     },
     {
@@ -3921,6 +4017,177 @@
       ]
     },
     {
+      "id": "mc01506",
+      "name": "1.5\" OLED Module (128x128, I2C, MC01506)",
+      "category": "module",
+      "family": "display",
+      "manufacturer": "Generic (lcdwiki)",
+      "pins": 4,
+      "path": "library/module/display/mc01506/mc01506",
+      "formats": [
+        "kicad_mod",
+        "kicad_sym",
+        "step",
+        "glb"
+      ],
+      "verified": true,
+      "keywords": [
+        "sh1107",
+        "oled",
+        "1.5",
+        "128x128",
+        "i2c",
+        "module"
+      ]
+    },
+    {
+      "id": "mc091gx",
+      "name": "0.91\" SSD1306 I2C OLED Module (128x32, MC091GX)",
+      "category": "module",
+      "family": "display",
+      "manufacturer": "Generic (lcdwiki)",
+      "pins": 4,
+      "path": "library/module/display/mc091gx/mc091gx",
+      "formats": [
+        "kicad_mod",
+        "kicad_sym",
+        "step",
+        "glb"
+      ],
+      "verified": true,
+      "keywords": [
+        "ssd1306",
+        "oled",
+        "0.91",
+        "128x32",
+        "i2c",
+        "module"
+      ]
+    },
+    {
+      "id": "msp0961",
+      "name": "0.96\" ST7735S IPS Module (80x160, SPI, MSP0961)",
+      "category": "module",
+      "family": "display",
+      "manufacturer": "Generic (lcdwiki)",
+      "pins": 8,
+      "path": "library/module/display/msp0961/msp0961",
+      "formats": [
+        "kicad_mod",
+        "kicad_sym",
+        "step",
+        "glb"
+      ],
+      "verified": true,
+      "keywords": [
+        "st7735",
+        "ips",
+        "0.96",
+        "80x160",
+        "spi",
+        "module"
+      ]
+    },
+    {
+      "id": "msp1541",
+      "name": "1.54\" ST7789 IPS Module (240x240, SPI, MSP1541)",
+      "category": "module",
+      "family": "display",
+      "manufacturer": "Generic (lcdwiki)",
+      "pins": 8,
+      "path": "library/module/display/msp1541/msp1541",
+      "formats": [
+        "kicad_mod",
+        "kicad_sym",
+        "step",
+        "glb"
+      ],
+      "verified": true,
+      "keywords": [
+        "st7789",
+        "ips",
+        "1.54",
+        "240x240",
+        "spi",
+        "module"
+      ]
+    },
+    {
+      "id": "msp1803",
+      "name": "1.8\" ST7735 TFT Module (128x160, SPI, MSP1803)",
+      "category": "module",
+      "family": "display",
+      "manufacturer": "Generic (lcdwiki)",
+      "pins": 12,
+      "path": "library/module/display/msp1803/msp1803",
+      "formats": [
+        "kicad_mod",
+        "kicad_sym",
+        "step",
+        "glb"
+      ],
+      "verified": true,
+      "keywords": [
+        "st7735",
+        "tft",
+        "1.8",
+        "128x160",
+        "spi",
+        "sd",
+        "module"
+      ]
+    },
+    {
+      "id": "msp2008",
+      "name": "2.0\" ST7789V IPS Module (240x320, SPI, MSP2008)",
+      "category": "module",
+      "family": "display",
+      "manufacturer": "Generic (lcdwiki)",
+      "pins": 8,
+      "path": "library/module/display/msp2008/msp2008",
+      "formats": [
+        "kicad_mod",
+        "kicad_sym",
+        "step",
+        "glb"
+      ],
+      "verified": true,
+      "keywords": [
+        "st7789",
+        "ips",
+        "2.0",
+        "240x320",
+        "spi",
+        "module"
+      ]
+    },
+    {
+      "id": "msp2807",
+      "name": "2.8\" ILI9341 TFT Module (240x320, SPI+Touch+SD, MSP2807)",
+      "category": "module",
+      "family": "display",
+      "manufacturer": "Generic (lcdwiki)",
+      "pins": 18,
+      "path": "library/module/display/msp2807/msp2807",
+      "formats": [
+        "kicad_mod",
+        "kicad_sym",
+        "step",
+        "glb"
+      ],
+      "verified": true,
+      "keywords": [
+        "ili9341",
+        "tft",
+        "2.8",
+        "240x320",
+        "spi",
+        "touch",
+        "sd",
+        "module"
+      ]
+    },
+    {
       "id": "sh1106_module_13",
       "name": "1.3\" SH1106 I2C OLED Module (128x64)",
       "category": "module",
@@ -4164,6 +4431,33 @@
       "verified": true,
       "keywords": [
         "aht21",
+        "asair",
+        "aosong",
+        "humidity",
+        "temperature",
+        "sensor",
+        "i2c",
+        "lga",
+        "3x3mm"
+      ]
+    },
+    {
+      "id": "aht30",
+      "name": "AHT30 Humidity and Temperature Sensor",
+      "category": "sensor",
+      "family": "AHT2x",
+      "manufacturer": "Aosong (ASAIR)",
+      "pins": 6,
+      "path": "library/sensor/asair/aht30/aht30",
+      "formats": [
+        "kicad_mod",
+        "kicad_sym",
+        "step",
+        "glb"
+      ],
+      "verified": true,
+      "keywords": [
+        "aht30",
         "asair",
         "aosong",
         "humidity",
@@ -4663,6 +4957,55 @@
       ]
     },
     {
+      "id": "aht25",
+      "name": "AHT25 Humidity and Temperature Sensor Module",
+      "category": "sensor",
+      "family": "humidity",
+      "manufacturer": "Aosong (ASAIR)",
+      "pins": 4,
+      "path": "library/sensor/asair/aht25/aht25",
+      "formats": [
+        "kicad_mod",
+        "kicad_sym",
+        "step",
+        "glb"
+      ],
+      "verified": true,
+      "keywords": [
+        "aht25",
+        "asair",
+        "humidity",
+        "temperature",
+        "i2c",
+        "module"
+      ]
+    },
+    {
+      "id": "dht20",
+      "name": "DHT20 Temperature & Humidity Sensor (DHT Housing)",
+      "category": "sensor",
+      "family": "humidity",
+      "manufacturer": "Aosong (ASAIR)",
+      "pins": 4,
+      "path": "library/sensor/asair/dht20/dht20",
+      "formats": [
+        "kicad_mod",
+        "kicad_sym",
+        "step",
+        "glb"
+      ],
+      "verified": true,
+      "keywords": [
+        "dht20",
+        "asair",
+        "aht20",
+        "humidity",
+        "temperature",
+        "i2c",
+        "dht22"
+      ]
+    },
+    {
       "id": "hmc5883l",
       "name": "HMC5883L 3-Axis Magnetometer",
       "category": "sensor",
@@ -4709,6 +5052,31 @@
         "magnetometer",
         "compass",
         "3-axis",
+        "i2c",
+        "gy-271",
+        "lga"
+      ]
+    },
+    {
+      "id": "qmc5883p",
+      "name": "QMC5883P 3-Axis Magnetometer",
+      "category": "sensor",
+      "family": "magnetometer",
+      "manufacturer": "QST",
+      "pins": 16,
+      "path": "library/sensor/qst/qmc5883p/qmc5883p",
+      "formats": [
+        "kicad_mod",
+        "kicad_sym",
+        "step",
+        "glb"
+      ],
+      "verified": true,
+      "keywords": [
+        "qmc5883p",
+        "qst",
+        "magnetometer",
+        "compass",
         "i2c",
         "gy-271",
         "lga"

@@ -1,0 +1,68 @@
+{
+  "id": "msp2008",
+  "name": "2.0\" ST7789V IPS Module (240x320, SPI, MSP2008)",
+  "category": "module",
+  "family": "display",
+  "manufacturer": "Generic (lcdwiki)",
+  "mpn_pattern": "MSP2008",
+  "description": "Generic 2.0 inch 240x320 IPS TFT module (ST7789V, lcdwiki MSP2008-class), SPI 8-pin header (GND VCC SCL SDA RES DC CS BLK), 36.5x61mm board, four 2.0mm holes.",
+  "parameters": {
+    "contacts": 8,
+    "mounting": "THT header",
+    "interface": "SPI",
+    "board_mm": "36.48x61.12"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/module/display/msp2008/msp2008/msp2008.kicad_mod",
+    "symbol": "https://partreel.com/library/module/display/msp2008/msp2008/msp2008.kicad_sym",
+    "model_3d": "https://partreel.com/library/module/display/msp2008/msp2008/msp2008.step",
+    "preview": "https://partreel.com/library/module/display/msp2008/msp2008/msp2008.glb",
+    "footprint_svg": "https://partreel.com/library/module/display/msp2008/msp2008/msp2008.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/module/display/msp2008/msp2008/msp2008.symbol.svg"
+  },
+  "datasheet": "https://www.lcdwiki.com/2.0inch_IPS_Module",
+  "license": "CC-BY-4.0",
+  "verified": true,
+  "dimensions_source": "lcdwiki 2.0inch IPS drawing (pixel-verified): board 36.48x61.12, holes D2.0 (top 2.5/2.5 insets; bottom 2.5 sides, 2.16 bottom), 8-pin 2.54 header row 1.5 (pin1 9.35 from left), glass 36x51.8, AA 30.6x40.8 (top 7.46).",
+  "keywords": [
+    "st7789",
+    "ips",
+    "2.0",
+    "240x320",
+    "spi",
+    "module"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "lcdwiki 2.0inch IPS drawing (pixel-verified): board 36.48x61.12, holes D2.0 (top 2.5/2.5 insets; bottom 2.5 sides, 2.16 bottom), 8-pin 2.54 header row 1.5 (pin1 9.35 from left), glass 36x51.8, AA 30.6x40.8 (top 7.46).",
+    "datasheet": "https://www.lcdwiki.com/2.0inch_IPS_Module",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/gen_ics.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    }
+  },
+  "page": "https://partreel.com/p/msp2008/",
+  "api": "https://partreel.com/api/v1/parts/msp2008.json"
+}

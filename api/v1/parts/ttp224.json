@@ -1,0 +1,68 @@
+{
+  "id": "ttp224",
+  "name": "TTP224N-BSB 4-Key Touch IC",
+  "category": "ic",
+  "family": "touch",
+  "manufacturer": "Tontek",
+  "mpn_pattern": "TTP224N-BSB",
+  "description": "Tontek TTP224N 4-key capacitive touch detector with direct outputs (TPQ0-3), option straps for output mode, 2.4-5.5V, SSOP-16.",
+  "parameters": {
+    "contacts": 16,
+    "mounting": "SMD",
+    "supply_voltage": "2.4-5.5V",
+    "body_mm": "4.9x3.91x1.63"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/ic/touch/ttp224/ttp224/ttp224.kicad_mod",
+    "symbol": "https://partreel.com/library/ic/touch/ttp224/ttp224/ttp224.kicad_sym",
+    "model_3d": "https://partreel.com/library/ic/touch/ttp224/ttp224/ttp224.step",
+    "preview": "https://partreel.com/library/ic/touch/ttp224/ttp224/ttp224.glb",
+    "footprint_svg": "https://partreel.com/library/ic/touch/ttp224/ttp224/ttp224.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/ic/touch/ttp224/ttp224/ttp224.symbol.svg"
+  },
+  "datasheet": "https://www.lcsc.com/product-detail/Touch-Screen-Controller-ICs_TTP224N-BSB_C90399.html",
+  "license": "CC-BY-4.0",
+  "verified": true,
+  "dimensions_source": "Tontek TTP224N-BSB datasheet Ver3.1 p.8: SSOP-16 MO-137(AB) body 4.9x3.91, span 5.99, pitch 0.635. Pads 0.4x1.5 rows 5.4 c-c per IPC-7351. Pinout p.3 (CCW from pin-1 dot).",
+  "keywords": [
+    "ttp224",
+    "tontek",
+    "touch",
+    "capacitive",
+    "4-key",
+    "ssop-16"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "Tontek TTP224N-BSB datasheet Ver3.1 p.8: SSOP-16 MO-137(AB) body 4.9x3.91, span 5.99, pitch 0.635. Pads 0.4x1.5 rows 5.4 c-c per IPC-7351. Pinout p.3 (CCW from pin-1 dot).",
+    "datasheet": "https://www.lcsc.com/product-detail/Touch-Screen-Controller-ICs_TTP224N-BSB_C90399.html",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/gen_ics.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    }
+  },
+  "page": "https://partreel.com/p/ttp224/",
+  "api": "https://partreel.com/api/v1/parts/ttp224.json"
+}

@@ -410,6 +410,103 @@ display_module("module/display/st7789_module_13/st7789_module_13", "st7789_modul
                (-11.7, -13.28, 11.7, 10.12), (-13.0, -14.61, 13.0, 14.61))
 
 
+
+# ================= 배치 4차 3D =================
+
+# 칩 (기존 빌더 재사용)
+flatpack("sensor/qst/qmc5883p/qmc5883p", "qmc5883p", 1.5, 1.5, 0.9,
+         quad_xy(4, 0.5, 2.75, 0.325, 0.25))
+gullwing("ic/power/tp4054/tp4054", "tp4054", 1.6, 2.9, 1.1,
+         [(-1.4, -0.95), (-1.4, 0), (-1.4, 0.95), (1.4, 0.95), (1.4, -0.95)], 0.4, 0.55)
+gullwing("ic/driver/tm1638/tm1638", "tm1638", 7.52, 17.93, 2.2,
+         two_row_xy(28, 1.27, 8.4), 0.41, 1.0)
+gullwing("ic/touch/ttp224/ttp224", "ttp224", 3.91, 4.9, 1.5,
+         two_row_xy(16, 0.635, 4.95), 0.25, 1.0)
+gullwing("ic/touch/ttp226/ttp226", "ttp226", 3.91, 9.91, 1.5,
+         two_row_xy(28, 0.635, 4.95), 0.25, 1.0)
+
+
+def dht20_3d():
+    fid = "dht20"
+    d = "%s/sensor/asair/dht20/%s" % (LIB, fid)
+    body = Part.makeBox(12.6, 5.8, 16.1, App.Vector(-6.3, -2.55, 0.1))
+    try:
+        ve = [e for e in body.Edges if abs(e.Vertexes[0].Z - e.Vertexes[1].Z) > 0.1]
+        body = body.makeFillet(0.6, ve)
+    except Exception:
+        pass
+    # 전면 그릴 슬롯 4개
+    for i in range(4):
+        slot = Part.makeBox(1.6, 1.0, 9.0, App.Vector(-4.9 + i * 2.6, -3.05, 4.0))
+        body = body.cut(slot)
+    pins = [Part.makeBox(0.5, 0.3, 3.2, App.Vector(-3.81 + i * 2.54 - 0.25, -0.15, -3.0))
+            for i in range(4)]
+    _export(d, fid, None, _fuse(pins), body)
+    print(fid, "3D done")
+
+
+def aht25_3d():
+    fid = "aht25"
+    d = "%s/sensor/asair/aht25/%s" % (LIB, fid)
+    head = Part.makeBox(5.0, 9.0, 1.6, App.Vector(-2.5, -8.85, 0.1))
+    tail = Part.makeBox(6.0, 8.7, 1.6, App.Vector(-3.0, 0.15, 0.1))
+    cap = Part.makeBox(3.6, 3.6, 0.5, App.Vector(-1.8, -6.6, 1.7))
+    dark = _fuse([head, tail, cap])
+    fingers = [Part.makeBox(0.5, 3.0, 0.12, App.Vector(-1.905 + i * 1.27 - 0.25, 5.7, 0))
+               for i in range(4)]
+    _export(d, fid, None, _fuse(fingers), dark)
+    print(fid, "3D done")
+
+
+def flat_disp_3d(path, fid, bw, bh, pins_xy, holes, hole_d, glass, aa, t=1.6):
+    """눕는 디스플레이 보드: PCB(다크) + 글라스(다크) + AA(화이트) + 핀 아래로."""
+    d = "%s/%s" % (LIB, path)
+    pcb = Part.makeBox(bw, bh, t, App.Vector(-bw / 2, -bh / 2, 0))
+    for hx, hy in holes:
+        pcb = pcb.cut(Part.makeCylinder(hole_d / 2, t + 1, App.Vector(hx, hy, -0.5)))
+    gx0, gy0, gx1, gy1 = glass
+    g = Part.makeBox(gx1 - gx0, gy1 - gy0, 1.6, App.Vector(gx0, gy0, t))
+    dark = pcb.fuse(g)
+    ax0, ay0, ax1, ay1 = aa
+    inlay = Part.makeBox(ax1 - ax0, ay1 - ay0, 0.25, App.Vector(ax0, ay0, t + 1.45))  # 글라스 위 0.1 돌출 (깊이버퍼 줄무늬 방지)
+    pins = [Part.makeBox(0.64, 0.64, 3.0 + t + 0.5,
+                         App.Vector(x - 0.32, y - 0.32, -3.0)) for x, y in pins_xy]
+    _export(d, fid, inlay, _fuse(pins), dark)
+    print(fid, "3D done")
+
+
+dht20_3d()
+aht25_3d()
+flat_disp_3d("module/display/mc091gx/mc091gx", "mc091gx", 38, 12,
+             [(-17.5, -3.81 + i * 2.54) for i in range(4)], [], 2.0,
+             (-14, -5.75, 16, 5.75), (-11.9, -2.79, 10.48, 2.79))
+flat_disp_3d("module/display/msp0961/msp0961", "msp0961", 30, 24.04,
+             [(-8.89 + i * 2.54, -10.58) for i in range(8)],
+             [(-12.4, -9.4), (12.4, -9.4), (-12.4, 9.4), (12.4, 9.4)], 2.0,
+             (-13.89, -6.77, 13.89, 6.73), (-11.3, -5.42, 10.4, 5.38))
+flat_disp_3d("module/display/msp1541/msp1541", "msp1541", 32, 43.72,
+             [(-8.89 + i * 2.54, -20.36) for i in range(8)],
+             [(-13.86, -19.36), (13.86, -19.36), (-13.86, 19.36), (13.86, 19.36)], 2.0,
+             (-15.76, -17.55, 15.76, 17.55), (-13.86, -15.41, 13.86, 12.31))
+flat_disp_3d("module/display/msp1803/msp1803", "msp1803", 34.5, 58,
+             [(8.89 - i * 2.54, 26.5) for i in range(8)] +
+             [(3.81 - i * 2.54, -26.5) for i in range(4)],
+             [(-14.25, -26.0), (14.25, -26.0), (-14.25, 26.0), (14.25, 26.0)], 3.2,
+             (-15.5, -23.0, 15.5, 20.0), (-14.0, -20.5, 14.0, 15.0))
+flat_disp_3d("module/display/msp2008/msp2008", "msp2008", 36.48, 61.12,
+             [(-8.89 + i * 2.54, -29.06) for i in range(8)],
+             [(-15.74, -28.06), (15.74, -28.06), (-15.74, 28.4), (15.74, 28.4)], 2.0,
+             (-18, -25.9, 18, 25.9), (-15.3, -23.1, 15.3, 17.7))
+flat_disp_3d("module/display/mc01506/mc01506", "mc01506", 34, 47,
+             [(-3.81 + i * 2.54, -21.0) for i in range(4)],
+             [(-14.5, -21.0), (14.5, -21.0), (-14.5, 21.0), (14.5, 21.0)], 2.2,
+             (-16.95, -18.65, 16.95, 18.65), (-13.43, -16.25, 13.43, 10.6))
+flat_disp_3d("module/display/msp2807/msp2807", "msp2807", 50, 86,
+             [(-16.51 + i * 2.54, 41.0) for i in range(14)] +
+             [(-3.81 + i * 2.54, -40.0) for i in range(4)],
+             [(-22.0, -40.0), (22.0, -40.0), (-22.0, 36.08), (22.0, 36.08)], 3.2,
+             (-25, -36.6, 25, 32.6), (-21.6, -33.7, 21.6, 23.9))
+
 # ---------- 온디맨드 변형 3D (§21-6ⓐ): env IC_VARIANT="family:code" ----------
 _V = os.environ.get("IC_VARIANT", "").strip()
 if _V:
