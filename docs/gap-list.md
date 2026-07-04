@@ -66,7 +66,14 @@ WM8960·ES8311·TPA3116D2(오디오) / MLX90614 / TCS34725 / VS1053B / ENS160(**
   TP4056/CH224K/TMC2209/PCA9685/SCD40/W5500/SX1262/FUSB302/MPR121/TB6612 등.
 - 약한 갭: NEO-6M(핀호환 NEO-M8N 심볼+제네릭 풋프린트 존재), A3144(EOL, 후속 A1104 존재).
 
-### 배치 3차 최종 확정 18종 (함정 검증 완료 2026-07-04, master 클론 e111716be + git grep 이중)
+### ✅ 배치 3차 완료 (18종 라이브 2026-07-04) / ✅ 배치 4차 완료 (15종 라이브 2026-07-05)
+배치4: qmc5883p·dht20·aht25·aht30·tp4054·tm1638·ttp224·ttp226 + 디스플레이 7종
+(mc091gx·msp0961·msp1541·msp1803·msp2008·mc01506·msp2807; msp1443 도면불충분 드롭).
+### ✅ SparkFun 수입 파일럿 완료 (107종 라이브 2026-07-05, §21-6ⓒ) — 217부품
+차기(배치5 후보, 함정검증 진행중): 컬러OLED(SSD1331/1351)·epaper(SSD1680/WeAct)·오디오
+(WM8960/ES8311/TPA3116D2)·VS1053B·ICM-42688-P·BNO085·TCS34725·CST816S·E22·GX12/16 재확인.
+
+### (기록) 배치 3차 최종 확정 18종 (함정 검증 완료 2026-07-04, master 클론 e111716be + git grep 이중)
 모듈 8: hc_sr04, dfplayer_mini, hc05, sim800l, max7219_matrix_module, gc9a01_module_128,
 ld2410c, esp32_devkitc_v4 (espressif 공식 도면 존재)
 칩 10: max6675, inmp441, xl6009, tm1637, bh1750, as5600, max17048, veml7700, mlx90614, sgp40
