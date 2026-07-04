@@ -71,19 +71,11 @@ def build(cfg, n):
         # 2) 상부 캐비티
         cav = Part.makeBox(L - 1.6, W - 1.6, HZ - 1.0, App.Vector(x0 + 0.8, y0 + 0.8, 1.0))
         housing = housing.cut(cav)
-        # 3) 전면(y1쪽) 하부 와이드 개구부 — JST 특유의 낮은 앞벽
+        # 3) 낮은 앞벽 — 실물 JST처럼 앞벽 상부를 통째로 제거 (위가 열림, 떠있는 띠 없음)
         try:
-            win = Part.makeBox(L - 2.4, 1.2, HZ * 0.45,
-                               App.Vector(x0 + 1.2, y1 - 1.0, HZ * 0.45))
+            win = Part.makeBox(L - 2.4, 2.0, HZ,
+                               App.Vector(x0 + 1.2, y1 - 1.4, HZ * 0.42))
             housing = housing.cut(win)
-        except Exception:
-            pass
-        # 4) 포지션별 전면 세로 슬롯 (걸쇠/가이드 홈 느낌)
-        try:
-            for i in range(n):
-                x = i * pitch
-                slot = Part.makeBox(0.7, 1.2, 2.2, App.Vector(x - 0.35, y1 - 1.0, HZ - 2.2))
-                housing = housing.cut(slot)
         except Exception:
             pass
         # 5) 핀: 끝단 모따기(테이퍼)로 실핀 느낌
