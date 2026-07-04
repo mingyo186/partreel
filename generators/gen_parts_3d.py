@@ -12,10 +12,22 @@ LIB = (os.path.dirname(os.path.abspath(__file__)) + "/../library").replace("\\",
 def usb_c_16p():
     fid = "usb_c_16p"
     d = "%s/connector/usb/usb_c_16p/%s" % (LIB, fid)
-    # 금속 셸: 풋프린트 fab 범위(8.94 x 7.3) x 높이 3.16
+    # 금속 셸: 풋프린트 fab 범위(8.94 x 7.3) x 높이 3.16 — 스타디움 단면(양옆 라운드)
     shell = Part.makeBox(8.94, 7.3, 3.16, App.Vector(-4.47, -3.65, 0))
-    # 전면(+Y) 입구 컷
-    cav = Part.makeBox(7.6, 3.2, 2.2, App.Vector(-3.8, 1.0, 0.5))
+    try:
+        yedges = [e for e in shell.Edges
+                  if abs(e.Vertexes[0].Y - e.Vertexes[1].Y) > 0.1]
+        shell = shell.makeFillet(1.45, yedges)  # 좌우 끝 라운드 (실물 셸 단면)
+    except Exception:
+        pass
+    # 전면(+Y) 삽입구: 라운드 입구
+    cav = Part.makeBox(7.4, 4.5, 2.3, App.Vector(-3.7, -0.6, 0.43))
+    try:
+        cedges = [e for e in cav.Edges
+                  if abs(e.Vertexes[0].Y - e.Vertexes[1].Y) > 0.1]
+        cav = cav.makeFillet(1.0, cedges)
+    except Exception:
+        pass
     shell = shell.cut(cav)
     # SMD 접점 스트립 (대표)
     contacts = Part.makeBox(7.0, 0.8, 0.4, App.Vector(-3.5, -4.45, 0))
