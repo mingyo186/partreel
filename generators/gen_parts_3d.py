@@ -29,11 +29,28 @@ def usb_c_16p():
     except Exception:
         pass
     shell = shell.cut(cav)
-    # SMD 접점 스트립 (대표)
-    contacts = Part.makeBox(7.0, 0.8, 0.4, App.Vector(-3.5, -4.45, 0))
-    Part.makeCompound([shell, contacts]).exportStep("%s/%s.step" % (d, fid))
+    # 혓바닥(tongue): 삽입구 안 중앙 플레이트 — 실물 내부 구조
+    tongue = Part.makeBox(6.4, 6.3, 0.7, App.Vector(-3.2, -3.4, 1.23))  # 입구 0.75mm 안까지 (실물 리세스)
+    try:
+        tedges = [e for e in tongue.Edges
+                  if abs(e.Vertexes[0].Y - e.Vertexes[1].Y) > 0.1]
+        tongue = tongue.makeFillet(0.3, tedges)
+    except Exception:
+        pass
+    # SMD 리드: 실제 패드 X좌표대로 16개 개별 발 (통짜 스트립 아님)
+    smd_x = [(-0.25, 0.3), (1.75, 0.3), (1.25, 0.3), (0.75, 0.3), (0.25, 0.3),
+             (-0.75, 0.3), (-1.25, 0.3), (-1.75, 0.3), (3.25, 0.6), (2.45, 0.6),
+             (-2.45, 0.6), (-3.25, 0.6)]
+    feet = []
+    for x, w in smd_x:
+        feet.append(Part.makeBox(w * 0.8, 0.9, 0.15, App.Vector(x - w * 0.4, -4.5, 0)))
+    contacts = feet[0]
+    for f in feet[1:]:
+        contacts = contacts.fuse(f)
+    Part.makeCompound([shell, contacts, tongue]).exportStep("%s/%s.step" % (d, fid))
     shell.exportStl("%s/%s__housing.stl" % (d, fid))
     contacts.exportStl("%s/%s__pins.stl" % (d, fid))
+    tongue.exportStl("%s/%s__extra.stl" % (d, fid))
     print("USB-C 3D done")
 
 

@@ -9,6 +9,7 @@ import trimesh
 ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), ".."))
 HOUSING_COLOR = [235, 235, 238, 255]  # 화이트/내추럴
 PIN_COLOR = [212, 175, 55, 255]       # 골드
+EXTRA_COLOR = [45, 45, 52, 255]       # 다크 (혓바닥/PCB 등 제3 부위, __extra.stl)
 
 index = json.load(open(os.path.join(ROOT, "index.json"), encoding="utf-8"))
 n = 0
@@ -24,7 +25,14 @@ for p in index["parts"]:
     pn = trimesh.load(pp, force="mesh")
     h.visual.face_colors = HOUSING_COLOR
     pn.visual.face_colors = PIN_COLOR
-    trimesh.Scene([h, pn]).export(os.path.join(d, f"{fid}.glb"))
+    meshes = [h, pn]
+    ep = os.path.join(d, f"{fid}__extra.stl")
+    if os.path.exists(ep):
+        ex = trimesh.load(ep, force="mesh")
+        ex.visual.face_colors = EXTRA_COLOR
+        meshes.append(ex)
+        os.remove(ep)
+    trimesh.Scene(meshes).export(os.path.join(d, f"{fid}.glb"))
     os.remove(hp)
     os.remove(pp)
     n += 1
