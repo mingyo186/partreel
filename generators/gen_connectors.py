@@ -39,11 +39,14 @@ TERM = dict(
     mpn="KF301-5.08-{n}P",
     desc="5.08mm pitch {n}-pole screw terminal block (KF301-compatible), THT. "
          "For power and wire-to-board connections.",
-    datasheet="", lib_path="connector/terminal/screw_5_08",
-    pitch=5.08, pad_w=2.5, pad_h=2.5, drill=1.3, pad_shape="circle",
-    fab=dict(x0=-3.0, x1=3.0, y0=-3.2, y1=6.0),
-    silk=dict(x0=-3.1, x1=3.1, y0=-3.3, y1=6.1),
-    crt=dict(x0=-3.5, x1=3.5, y0=-3.7, y1=6.5),
+    datasheet="https://datasheet.lcsc.com/lcsc/1811141810_Cixi-Kefa-Rongda-KF301-5-0-2P_C8465.pdf",
+    dimensions_source="Pad land pattern matches KiCad official TerminalBlock_bornier P5.08mm "
+                      "(pad 3.0, drill 1.52). Body/3D representative of KF301-type blocks.",
+    lib_path="connector/terminal/screw_5_08",
+    pitch=5.08, pad_w=3.0, pad_h=3.0, drill=1.52, pad_shape="circle",
+    fab=dict(x0=-2.46, x1=2.46, y0=-3.75, y1=3.75),
+    silk=dict(x0=-2.56, x1=2.56, y0=-3.85, y1=3.85),
+    crt=dict(x0=-2.96, x1=2.96, y0=-4.25, y1=4.25),
     pins=list(range(2, 9)),
     style="terminal", pin_sq=1.0, housing_h=10.0, pin_below=3.0, pin_into=2.0,
 )
@@ -57,6 +60,8 @@ def _pin_header(pitch_key, pitch, pad, drill, half_body, half_silk, half_crt, pi
         desc=f"{pitch}mm pitch 1x{{n}} male pin header, THT vertical. "
              "Dimensions match the official KiCad Connector_PinHeader library.",
         datasheet="https://en.wikipedia.org/wiki/Pin_header",
+        dimensions_source=f"Footprint matches KiCad official Connector_PinHeader_{pitch:.2f}mm "
+                          "(pad/drill/body identical). 3D representative.",
         lib_path=f"connector/header/p{pitch_key}", pitch=pitch,
         pad_w=pad, pad_h=pad, drill=drill,
         fab=dict(x0=-half_body, x1=half_body, y0=-half_body, y1=half_body),
@@ -183,7 +188,9 @@ def gen_meta(cfg, n, fid):
         },
         "formats": ["kicad_mod", "kicad_sym", "step", "glb"],
         "datasheet": cfg["datasheet"],
-        "dimensions_source": "Footprint matches KiCad official Connector_JST (datasheet-derived). 3D representative.",
+        "dimensions_source": cfg.get(
+            "dimensions_source",
+            "Footprint matches KiCad official Connector_JST (datasheet-derived). 3D representative."),
         "verified": True, "license": "CC-BY-4.0", "generated_by": "generators/gen_connectors.py",
         "keywords": [cfg["key"].split("_")[0], cfg["key"].split("_")[1], f"{cfg['pitch']}mm",
                      "connector", f"{n}pin"],

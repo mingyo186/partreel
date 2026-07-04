@@ -36,6 +36,13 @@ def main():
         # A3. API 상세 존재 (build_api 누락 방지 — /api/v1/parts/<id>.json 404 방지)
         if not os.path.exists(os.path.join(ROOT, "api", "v1", "parts", f"{fid}.json")):
             errs.append("API 상세 없음 (build_api.py 실행 필요)")
+        # A4. 메타 완결성 — 기여물 포함 전부: 출처·데이터시트·라이선스 필수 (§14-E)
+        if not str(meta.get("datasheet", "")).startswith("http"):
+            errs.append("datasheet URL 없음")
+        if len(str(meta.get("dimensions_source", ""))) < 10:
+            errs.append("dimensions_source 없음 (치수 출처 필수)")
+        if meta.get("license") != "CC-BY-4.0":
+            errs.append(f"license != CC-BY-4.0 ({meta.get('license')})")
 
         kmod = _read(d, meta["files"].get("footprint"))
         ksym = _read(d, meta["files"].get("symbol"))

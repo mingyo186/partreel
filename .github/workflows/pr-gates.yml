@@ -1,0 +1,29 @@
+name: PR quality gates (contributions)
+
+# 외부 기여(봇/사람 PR)도 동일한 품질 게이트로 자동 심사 (REQUIREMENTS §17/§14).
+# 게이트 green = 등록 자격. 머지는 메인테이너(또는 추후 자동머지).
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  gates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Structure / overlap / render / meta gates
+        run: |
+          python3 generators/validate_kicad.py
+          python3 generators/check_overlap.py
+          python3 generators/check_render.py
+
+      - name: Install FreeCAD (conda-forge) for STEP kernel check
+        run: |
+          curl -Ls https://micro.mamba.pm/api/micromamba/linux-64/latest | tar -xj bin/micromamba
+          ./bin/micromamba create -y -q -p ./fcenv -c conda-forge freecad python=3.11 > /dev/null
+
+      - name: STEP kernel gate (isValid / volume)
+        run: ./fcenv/bin/freecadcmd generators/validate_step.py
