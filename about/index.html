@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://cdn.jsdelivr.net; object-src 'none'; base-uri 'self'">
-<title>PartReel 소개 — 로그인 없는 오픈 KiCad 라이브러리</title>
-<meta name="description" content="PartReel은 로그인 없이 받는 오픈 KiCad 부품 라이브러리입니다. 데이터시트 치수로 생성한 검증 가능한 풋프린트·심볼·3D 모델.">
+<title>About PartReel — open, no-login KiCad library</title>
+<meta name="description" content="PartReel is an open KiCad component registry: datasheet-derived footprints, symbols and 3D models, no sign-up, quality-gated, AI-native.">
 <link rel="canonical" href="https://partreel.com/about/">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <meta property="og:type" content="website">
-<meta property="og:title" content="PartReel 소개 — 로그인 없는 오픈 KiCad 라이브러리">
-<meta property="og:description" content="PartReel은 로그인 없이 받는 오픈 KiCad 부품 라이브러리입니다. 데이터시트 치수로 생성한 검증 가능한 풋프린트·심볼·3D 모델.">
+<meta property="og:title" content="About PartReel — open, no-login KiCad library">
+<meta property="og:description" content="PartReel is an open KiCad component registry: datasheet-derived footprints, symbols and 3D models, no sign-up, quality-gated, AI-native.">
 <meta property="og:url" content="https://partreel.com/about/">
 <link rel="stylesheet" href="../assets/style.css?v=2">
 
@@ -18,33 +18,34 @@
 <body>
 <header class="topbar">
   <a class="brand" href="../" style="text-decoration:none;color:inherit"><span class="logo">◈</span><span class="brand-name">PartReel</span></a>
-  <div class="header-badges"><span class="hbadge ok">가입 불필요</span><span class="hbadge ok">즉시 다운로드</span></div>
+  <div class="header-badges"><span class="hbadge ok">No sign-up</span><span class="hbadge ok">Instant download</span></div>
 </header>
 <main class="doc-page">
-  <h1>PartReel 소개</h1>
-  <p>PartReel은 <strong>로그인 없이</strong> 바로 받는 오픈 KiCad 부품 라이브러리입니다. 데이터시트 치수로 생성한 심볼·풋프린트·3D 모델을 가입 절차 없이 즉시 다운로드할 수 있습니다.</p>
-  <h2>왜 다른가</h2>
+  <h1>About PartReel</h1>
+  <p>PartReel is an open KiCad component registry you can use <strong>without signing up</strong>. Symbols, footprints and 3D models are generated from datasheet dimensions and downloadable instantly — by humans and by AI agents.</p>
+  <h2>Why it's different</h2>
   <ul>
-    <li><strong>로그인 0</strong> — 검색해서 바로 다운로드. 가입·이메일 인증 없음.</li>
-    <li><strong>검증 가능한 품질</strong> — 데이터시트 치수로 결정론적 생성. 풋프린트는 KiCad 공식 라이브러리 치수와 일치하도록 만듭니다.</li>
-    <li><strong>오픈</strong> — 코드는 MIT, 부품 자산은 CC-BY-4.0. 전부 git으로 버전관리됩니다.</li>
+    <li><strong>No login</strong> — search, click, download. No account, no email gate.</li>
+    <li><strong>Verifiable quality</strong> — parts are generated deterministically from dimensions and must pass automated quality gates (structure validation, KiCad Library Convention drawing rules, render-completeness, STEP kernel checks). Footprints are matched against the official KiCad library where one exists.</li>
+    <li><strong>Open</strong> — code is MIT, part assets are CC-BY-4.0, everything is versioned in git.</li>
+    <li><strong>AI-native</strong> — a public JSON API and a remote MCP server let agents search, fetch, report field feedback and contribute parts.</li>
   </ul>
-  <h2>어떻게 만드나</h2>
-  <p>패키지 치수(피치·핀 수 등)를 파라메트릭 생성기에 넣어 심볼·풋프린트·3D(STEP/GLB)를 한 번에 생성합니다. 같은 패밀리는 숫자만 바꿔 전수 생성하므로, 흔하지만 라이브러리에 빠져있던 부품까지 빠르게 채울 수 있습니다.</p>
-  <h2>라이선스 · 면책</h2>
-  <p>코드 MIT / 부품 자산 CC-BY-4.0(출처 표기). 치수는 공개된 제조사 데이터시트 기반이며 as-is로 제공됩니다. 중요한 풋프린트는 제조 전 데이터시트와 대조 검증을 권장합니다.</p>
-  <p><a href="../">← 홈으로</a></p>
+  <h2>How parts are made</h2>
+  <p>Package dimensions (pitch, pin count, pad sizes) feed parametric generators that emit the symbol, footprint and 3D model (STEP/GLB) together. One family config produces the whole pin-count range at consistent quality.</p>
+  <h2>License &amp; disclaimer</h2>
+  <p>Code MIT / part assets CC-BY-4.0 (attribution: "PartReel"). Dimensions are derived from public manufacturer datasheets and provided as-is — verify critical footprints against the datasheet before manufacturing.</p>
+  <p><a href="../">← Home</a></p>
 </main>
 <footer class="site-footer">
-  <div class="foot-brand">PartReel · 로그인 없는 오픈 KiCad 라이브러리</div>
+  <div class="foot-brand">PartReel · open KiCad component registry, no login</div>
   <nav class="foot-nav">
-    <a href="../about/">소개</a>
-    <a href="../guide/kicad/">KiCad에 넣는 법</a>
-    <a href="../agents/">AI 에이전트 가이드</a>
+    <a href="../about/">About</a>
+    <a href="../guide/kicad/">Use in KiCad</a>
+    <a href="../agents/">AI Agents</a>
     <a href="../api/">API</a>
     <a href="https://github.com/mingyo186/partreel" target="_blank" rel="noopener">GitHub</a>
   </nav>
-  <div class="foot-lic">코드 MIT · 부품 CC-BY-4.0 · 치수는 데이터시트 기반, 사용 전 검증 권장(as-is)</div>
+  <div class="foot-lic">Code MIT · Parts CC-BY-4.0 · Dimensions derived from datasheets; verify before manufacturing (as-is).</div>
 </footer>
 
 </body>

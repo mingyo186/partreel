@@ -3,10 +3,10 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 const FORMAT_LABELS = {
-  kicad_mod: 'KiCad 풋프린트',
-  kicad_sym: 'KiCad 심볼',
+  kicad_mod: 'KiCad footprint',
+  kicad_sym: 'KiCad symbol',
   step: '3D STEP',
-  glb: '3D 프리뷰',
+  glb: '3D preview',
 };
 
 let parts = [];
@@ -20,7 +20,7 @@ async function init() {
     if (!res.ok) throw new Error('index.json ' + res.status);
     data = await res.json();
   } catch (e) {
-    document.getElementById('viewer-msg').textContent = 'index.json 로드 실패: ' + e.message;
+    document.getElementById('viewer-msg').textContent = 'Failed to load index.json: ' + e.message;
     return;
   }
   parts = data.parts || [];
@@ -66,7 +66,7 @@ async function selectPart(p) {
     if (!res.ok) throw new Error('meta.json ' + res.status);
     meta = await res.json();
   } catch (e) {
-    document.getElementById('viewer-msg').textContent = 'meta 로드 실패: ' + e.message;
+    document.getElementById('viewer-msg').textContent = 'Failed to load part metadata: ' + e.message;
     return;
   }
 
@@ -79,13 +79,13 @@ async function selectPart(p) {
   // specs
   const specs = document.getElementById('specs');
   const rows = [
-    ['제조사', meta.manufacturer],
-    ['패밀리', meta.family],
-    ['MPN 패턴', meta.mpn_pattern],
-    ['핀 수', meta.parameters?.pins],
-    ['피치', meta.parameters?.pitch_mm != null ? meta.parameters.pitch_mm + ' mm' : null],
-    ['실장', meta.parameters?.mounting],
-    ['방향', meta.parameters?.orientation],
+    ['Manufacturer', meta.manufacturer],
+    ['Family', meta.family],
+    ['MPN pattern', meta.mpn_pattern],
+    ['Pins', meta.parameters?.pins ?? meta.parameters?.contacts],
+    ['Pitch', meta.parameters?.pitch_mm != null ? meta.parameters.pitch_mm + ' mm' : null],
+    ['Mounting', meta.parameters?.mounting],
+    ['Orientation', meta.parameters?.orientation],
   ].filter((r) => r[1] != null && r[1] !== '');
   specs.innerHTML = rows.map((r) => `<tr><td>${r[0]}</td><td>${r[1]}</td></tr>`).join('');
 
@@ -192,7 +192,7 @@ function loadModel(url) {
   if (!view) return;
   const msg = document.getElementById('viewer-msg');
   msg.classList.remove('hidden');
-  msg.textContent = '3D 로딩 중…';
+  msg.textContent = 'Loading 3D…';
 
   if (view.model) { view.scene.remove(view.model); view.model = null; }
 
@@ -216,7 +216,7 @@ function loadModel(url) {
     msg.classList.add('hidden');
   }, undefined, (err) => {
     msg.classList.remove('hidden');
-    msg.textContent = '3D 로드 실패: ' + (err?.message || url);
+    msg.textContent = 'Failed to load 3D: ' + (err?.message || url);
   });
 }
 

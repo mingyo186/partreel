@@ -58,7 +58,7 @@ if (el && url) {
     controls.target.set(0, 0, 0);
     controls.update();
     if (msg) msg.style.display = 'none';
-  }, undefined, () => { if (msg) msg.textContent = '3D 로드 실패'; });
+  }, undefined, () => { if (msg) msg.textContent = 'Failed to load 3D'; });
 
   window.addEventListener('resize', () => {
     const w2 = el.clientWidth, h2 = el.clientHeight;

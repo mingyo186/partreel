@@ -1,15 +1,15 @@
 """
-SEO/콘텐츠용 정적 페이지 생성기.
-실행: python generators/build_site.py
+Static page generator (SEO/content). English-first (REQUIREMENTS §18: global chokepoints).
+Run: python generators/build_site.py
 
-생성물:
-  - p/<id>/index.html      부품별 페이지 15개 (SEO: title/meta/canonical/OG/JSON-LD + 3D)
-  - about/index.html       소개 페이지
-  - guide/kicad/index.html "KiCad에 넣는 법" 가이드
-  - sitemap.xml, robots.txt
+Outputs:
+  p/<id>/index.html      per-part SEO pages (title/meta/canonical/OG/JSON-LD + 3D/symbol/footprint tabs)
+  about/index.html       about page
+  guide/kicad/index.html "How to use in KiCad" guide
+  agents/index.html      AI agent guide (MCP/API + paste-in prompt)
+  sitemap.xml, robots.txt
 
-공통: render()가 head(CSP·favicon·OG) + 헤더 + 푸터를 감싼다.
-보안(REQUIREMENTS §6/§13): 동적 값 html.escape, CSP 메타.
+Security (REQUIREMENTS §6/§13): dynamic values html.escape'd, CSP meta on every page.
 """
 
 import json
@@ -19,8 +19,9 @@ import html
 ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), ".."))
 DOMAIN = "https://partreel.com"
 GITHUB = "https://github.com/mingyo186/partreel"
+MCP_URL = "https://mcp.partreel.com/mcp"
 
-FMT_LABEL = {"kicad_mod": "KiCad 풋프린트", "kicad_sym": "KiCad 심볼", "step": "3D STEP", "glb": "3D 프리뷰"}
+FMT_LABEL = {"kicad_mod": "KiCad footprint", "kicad_sym": "KiCad symbol", "step": "3D STEP", "glb": "3D preview"}
 FMT_KEY = {"glb": "preview", "step": "model_3d", "kicad_mod": "footprint", "kicad_sym": "symbol"}
 
 CSP = ("default-src 'self'; script-src 'self' https://cdn.jsdelivr.net 'unsafe-inline'; "
@@ -34,21 +35,21 @@ def esc(s):
 
 def footer(prefix):
     return f"""<footer class="site-footer">
-  <div class="foot-brand">PartReel · 로그인 없는 오픈 KiCad 라이브러리</div>
+  <div class="foot-brand">PartReel · open KiCad component registry, no login</div>
   <nav class="foot-nav">
-    <a href="{prefix}about/">소개</a>
-    <a href="{prefix}guide/kicad/">KiCad에 넣는 법</a>
-    <a href="{prefix}agents/">AI 에이전트 가이드</a>
+    <a href="{prefix}about/">About</a>
+    <a href="{prefix}guide/kicad/">Use in KiCad</a>
+    <a href="{prefix}agents/">AI Agents</a>
     <a href="{prefix}api/">API</a>
     <a href="{GITHUB}" target="_blank" rel="noopener">GitHub</a>
   </nav>
-  <div class="foot-lic">코드 MIT · 부품 CC-BY-4.0 · 치수는 데이터시트 기반, 사용 전 검증 권장(as-is)</div>
+  <div class="foot-lic">Code MIT · Parts CC-BY-4.0 · Dimensions derived from datasheets; verify before manufacturing (as-is).</div>
 </footer>"""
 
 
 def render(prefix, title, desc, canonical, body, head_extra="", scripts=""):
     return f"""<!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -67,7 +68,7 @@ def render(prefix, title, desc, canonical, body, head_extra="", scripts=""):
 <body>
 <header class="topbar">
   <a class="brand" href="{prefix}" style="text-decoration:none;color:inherit"><span class="logo">◈</span><span class="brand-name">PartReel</span></a>
-  <div class="header-badges"><span class="hbadge ok">가입 불필요</span><span class="hbadge ok">즉시 다운로드</span></div>
+  <div class="header-badges"><span class="hbadge ok">No sign-up</span><span class="hbadge ok">Instant download</span></div>
 </header>
 {body}
 {footer(prefix)}
@@ -93,10 +94,10 @@ def part_page(meta, path):
     fp_svg = files.get("footprint_svg", "")
 
     rows = []
-    for label, val in [("제조사", manu), ("패밀리", fam), ("MPN 패턴", mpn),
-                       ("핀 수", params.get("pins")),
-                       ("피치", f"{params.get('pitch_mm')} mm" if params.get("pitch_mm") is not None else None),
-                       ("실장", params.get("mounting")), ("방향", params.get("orientation"))]:
+    for label, val in [("Manufacturer", manu), ("Family", fam), ("MPN pattern", mpn),
+                       ("Pins", params.get("pins") or params.get("contacts")),
+                       ("Pitch", f"{params.get('pitch_mm')} mm" if params.get("pitch_mm") is not None else None),
+                       ("Mounting", params.get("mounting")), ("Orientation", params.get("orientation"))]:
         if val not in (None, ""):
             rows.append(f"<tr><td>{esc(label)}</td><td>{esc(val)}</td></tr>")
     spec_rows = "".join(rows)
@@ -112,7 +113,7 @@ def part_page(meta, path):
 
     jsonld = json.dumps({
         "@context": "https://schema.org", "@type": "Product", "name": name,
-        "description": desc, "category": "Electronic Connector",
+        "description": desc, "category": "Electronic Component",
         "brand": {"@type": "Brand", "name": manu}, "mpn": mpn,
     }, ensure_ascii=False)
 
@@ -124,129 +125,133 @@ def part_page(meta, path):
         f'<script type="application/ld+json">\n{jsonld}\n</script>'
     )
     body = f"""<main class="part-page">
-  <nav class="crumb"><a href="{prefix}">홈</a> / {esc(fam)} / {esc(name)}</nav>
+  <nav class="crumb"><a href="{prefix}">Home</a> / {esc(fam)} / {esc(name)}</nav>
   <h1>{esc(name)}</h1>
   <p class="desc">{esc(desc)}</p>
   <div class="view-tabs">
     <button class="vt active" data-view="3d">3D</button>
-    <button class="vt" data-view="sym">심볼</button>
-    <button class="vt" data-view="fp">풋프린트</button>
+    <button class="vt" data-view="sym">Symbol</button>
+    <button class="vt" data-view="fp">Footprint</button>
   </div>
   <div id="viewer" class="viewer part-viewer" data-glb="{prefix}{path}/{esc(glb)}" data-sym="{prefix}{path}/{esc(sym_svg)}" data-fp="{prefix}{path}/{esc(fp_svg)}">
-    <div class="viewer-msg">3D 로딩 중…</div>
-    <img id="view-sym" class="view-img" alt="심볼" hidden>
-    <img id="view-fp" class="view-img" alt="풋프린트" hidden>
+    <div class="viewer-msg">Loading 3D…</div>
+    <img id="view-sym" class="view-img" alt="Schematic symbol" hidden>
+    <img id="view-fp" class="view-img" alt="PCB footprint" hidden>
   </div>
-  <h2>사양</h2>
+  <h2>Specifications</h2>
   <table class="specs">{spec_rows}</table>
-  <h2>다운로드 <span class="nologin">· 가입 없이</span></h2>
+  <h2>Downloads <span class="nologin">· no sign-up</span></h2>
   <div class="downloads">{downloads}</div>
-  <h2>데이터시트</h2>
-  <a class="dl" href="{esc(ds)}" target="_blank" rel="noopener">제조사 데이터시트 (JST)</a>
-  <h2>구매</h2>
-  <a class="buy" href="https://www.lcsc.com/search?q={esc(mpn)}" target="_blank" rel="noopener">이 부품 구매처 보기 →</a>
-  <p class="affiliate-note">제휴 링크 · 부품 라이선스: {esc(lic)}</p>
-  <h2>AI로 사용</h2>
-  <p class="desc">AI 에이전트라면: 이 부품의 기계용 데이터는 <a href="{DOMAIN}/api/v1/parts/{pid}.json">/api/v1/parts/{pid}.json</a> (다운로드 절대 URL 포함).
-  MCP: <code>https://mcp.partreel.com/mcp</code> → <code>get_part("{pid}")</code>. 안내: <a href="{DOMAIN}/llms.txt">/llms.txt</a> · <a href="{prefix}agents/">에이전트 가이드</a></p>
+  <h2>Datasheet</h2>
+  <a class="dl" href="{esc(ds)}" target="_blank" rel="noopener">Manufacturer datasheet</a>
+  <h2>Buy</h2>
+  <a class="buy" href="https://www.lcsc.com/search?q={esc(mpn)}" target="_blank" rel="noopener">Find this part at distributors →</a>
+  <p class="affiliate-note">Affiliate link · Part license: {esc(lic)}</p>
+  <h2>For AI agents</h2>
+  <p class="desc">Machine-readable data for this part: <a href="{DOMAIN}/api/v1/parts/{pid}.json">/api/v1/parts/{pid}.json</a> (absolute download URLs).
+  MCP: <code>{MCP_URL}</code> → <code>get_part("{pid}")</code>. See <a href="{DOMAIN}/llms.txt">/llms.txt</a> · <a href="{prefix}agents/">agent guide</a></p>
 </main>"""
-    scripts = f'<script type="module" src="{prefix}assets/part.js?v=2"></script>'
-    title = f"{esc(name)} — KiCad 풋프린트·심볼·3D 모델 | PartReel"
+    scripts = f'<script type="module" src="{prefix}assets/part.js?v=3"></script>'
+    title = f"{esc(name)} — KiCad footprint, symbol & 3D model | PartReel"
     return render(prefix, title, esc(desc_short), f"{DOMAIN}/p/{pid}/", body, head_extra, scripts)
 
 
 def about_page():
     prefix = "../"
     body = """<main class="doc-page">
-  <h1>PartReel 소개</h1>
-  <p>PartReel은 <strong>로그인 없이</strong> 바로 받는 오픈 KiCad 부품 라이브러리입니다. 데이터시트 치수로 생성한 심볼·풋프린트·3D 모델을 가입 절차 없이 즉시 다운로드할 수 있습니다.</p>
-  <h2>왜 다른가</h2>
+  <h1>About PartReel</h1>
+  <p>PartReel is an open KiCad component registry you can use <strong>without signing up</strong>. Symbols, footprints and 3D models are generated from datasheet dimensions and downloadable instantly — by humans and by AI agents.</p>
+  <h2>Why it's different</h2>
   <ul>
-    <li><strong>로그인 0</strong> — 검색해서 바로 다운로드. 가입·이메일 인증 없음.</li>
-    <li><strong>검증 가능한 품질</strong> — 데이터시트 치수로 결정론적 생성. 풋프린트는 KiCad 공식 라이브러리 치수와 일치하도록 만듭니다.</li>
-    <li><strong>오픈</strong> — 코드는 MIT, 부품 자산은 CC-BY-4.0. 전부 git으로 버전관리됩니다.</li>
+    <li><strong>No login</strong> — search, click, download. No account, no email gate.</li>
+    <li><strong>Verifiable quality</strong> — parts are generated deterministically from dimensions and must pass automated quality gates (structure validation, KiCad Library Convention drawing rules, render-completeness, STEP kernel checks). Footprints are matched against the official KiCad library where one exists.</li>
+    <li><strong>Open</strong> — code is MIT, part assets are CC-BY-4.0, everything is versioned in git.</li>
+    <li><strong>AI-native</strong> — a public JSON API and a remote MCP server let agents search, fetch, report field feedback and contribute parts.</li>
   </ul>
-  <h2>어떻게 만드나</h2>
-  <p>패키지 치수(피치·핀 수 등)를 파라메트릭 생성기에 넣어 심볼·풋프린트·3D(STEP/GLB)를 한 번에 생성합니다. 같은 패밀리는 숫자만 바꿔 전수 생성하므로, 흔하지만 라이브러리에 빠져있던 부품까지 빠르게 채울 수 있습니다.</p>
-  <h2>라이선스 · 면책</h2>
-  <p>코드 MIT / 부품 자산 CC-BY-4.0(출처 표기). 치수는 공개된 제조사 데이터시트 기반이며 as-is로 제공됩니다. 중요한 풋프린트는 제조 전 데이터시트와 대조 검증을 권장합니다.</p>
-  <p><a href="../">← 홈으로</a></p>
+  <h2>How parts are made</h2>
+  <p>Package dimensions (pitch, pin count, pad sizes) feed parametric generators that emit the symbol, footprint and 3D model (STEP/GLB) together. One family config produces the whole pin-count range at consistent quality.</p>
+  <h2>License &amp; disclaimer</h2>
+  <p>Code MIT / part assets CC-BY-4.0 (attribution: "PartReel"). Dimensions are derived from public manufacturer datasheets and provided as-is — verify critical footprints against the datasheet before manufacturing.</p>
+  <p><a href="../">← Home</a></p>
 </main>"""
-    return render(prefix, "PartReel 소개 — 로그인 없는 오픈 KiCad 라이브러리",
-                  "PartReel은 로그인 없이 받는 오픈 KiCad 부품 라이브러리입니다. 데이터시트 치수로 생성한 검증 가능한 풋프린트·심볼·3D 모델.",
+    return render(prefix, "About PartReel — open, no-login KiCad library",
+                  "PartReel is an open KiCad component registry: datasheet-derived footprints, symbols and 3D models, no sign-up, quality-gated, AI-native.",
                   f"{DOMAIN}/about/", body)
 
 
 def guide_page():
     prefix = "../../"
     body = """<main class="doc-page">
-  <h1>KiCad에 넣는 법</h1>
-  <p>PartReel에서 받은 파일을 KiCad에 추가하는 방법입니다.</p>
-  <h2>1. 심볼 (.kicad_sym)</h2>
+  <h1>How to use PartReel files in KiCad</h1>
+  <p>Downloaded files from PartReel? Here is how to add them to KiCad.</p>
+  <h2>1. Symbol (.kicad_sym)</h2>
   <ol>
     <li>KiCad → <strong>Preferences → Manage Symbol Libraries</strong></li>
-    <li>Global 또는 Project 탭에서 <strong>+</strong> → 받은 <code>.kicad_sym</code> 파일 선택</li>
-    <li>스키매틱 에디터에서 심볼 배치 시 사용</li>
+    <li>In the Global or Project tab click <strong>+</strong> → select the downloaded <code>.kicad_sym</code> file</li>
+    <li>Place the symbol from the schematic editor</li>
   </ol>
-  <h2>2. 풋프린트 (.kicad_mod)</h2>
+  <h2>2. Footprint (.kicad_mod)</h2>
   <ol>
-    <li><code>.kicad_mod</code> 파일을 <code>MyLib.pretty</code> 폴더 안에 넣습니다 (풋프린트는 <code>.pretty</code> 폴더 단위로 관리)</li>
-    <li><strong>Preferences → Manage Footprint Libraries</strong> → <strong>+</strong> → 그 <code>.pretty</code> 폴더 추가</li>
+    <li>Put the <code>.kicad_mod</code> file inside a folder named like <code>MyLib.pretty</code> (KiCad manages footprints per <code>.pretty</code> folder)</li>
+    <li><strong>Preferences → Manage Footprint Libraries</strong> → <strong>+</strong> → add that <code>.pretty</code> folder</li>
   </ol>
-  <h2>3. 3D 모델 (.step)</h2>
+  <h2>3. 3D model (.step)</h2>
   <ol>
-    <li>풋프린트 에디터에서 풋프린트 열기 → <strong>Footprint Properties → 3D Models</strong></li>
-    <li>받은 <code>.step</code> 파일 경로 지정</li>
+    <li>Open the footprint in the footprint editor → <strong>Footprint Properties → 3D Models</strong></li>
+    <li>Point it at the downloaded <code>.step</code> file</li>
   </ol>
-  <p>웹의 3D 미리보기는 <code>.glb</code>(표시 전용)이며, KiCad에는 <code>.step</code>을 사용하세요.</p>
-  <p><a href="../../">← 홈으로</a></p>
+  <p>The web preview uses <code>.glb</code> (display only); use <code>.step</code> in KiCad.</p>
+  <p><a href="../../">← Home</a></p>
 </main>"""
-    return render(prefix, "KiCad에 부품 라이브러리 넣는 법 | PartReel",
-                  "KiCad에 심볼(.kicad_sym)·풋프린트(.kicad_mod)·3D(.step)를 추가하는 단계별 가이드.",
+    return render(prefix, "How to add downloaded libraries to KiCad | PartReel",
+                  "Step-by-step: add downloaded symbols (.kicad_sym), footprints (.kicad_mod) and 3D models (.step) to KiCad.",
                   f"{DOMAIN}/guide/kicad/", body)
 
 
 def agents_page():
     prefix = "../"
-    snippet = esc("""## 전자부품 (KiCad)
-KiCad 심볼/풋프린트/3D 모델이 필요하면 PartReel 레지스트리를 먼저 조회한다 (로그인 불필요, CC-BY-4.0, 자동 품질게이트 통과분만 등록):
-- 목록/검색: https://partreel.com/api/v1/parts.json 을 fetch해서 키워드 매칭
-- 상세/다운로드: https://partreel.com/api/v1/parts/{id}.json (절대 URL 포함)
-- MCP 사용 가능 시: https://mcp.partreel.com/mcp (search_parts / get_part)
-레지스트리에 없으면 그때만 직접 생성한다.""")
+    snippet = esc("""## Electronic components (KiCad)
+When you need KiCad symbols/footprints/3D models, query the PartReel registry first
+(no login, CC-BY-4.0, only quality-gated parts are listed):
+- Search/list: fetch https://partreel.com/api/v1/parts.json and match keywords
+- Detail/downloads: https://partreel.com/api/v1/parts/{id}.json (absolute URLs)
+- If MCP is available: https://mcp.partreel.com/mcp (search_parts / get_part)
+- After using a part on a real board, report the result via report_feedback.
+Only generate a part yourself if the registry doesn't have it — then consider
+contributing it back (how_to_contribute).""")
     body = f"""<main class="doc-page">
-  <h1>AI 에이전트 가이드</h1>
-  <p>PartReel은 <strong>AI 에이전트가 1급 사용자</strong>인 부품 레지스트리입니다. 검증된 KiCad 심볼·풋프린트·3D를 인증 없이 기계가 바로 소비할 수 있습니다.</p>
+  <h1>AI Agent Guide</h1>
+  <p>PartReel treats <strong>AI agents as first-class users</strong>. Verified KiCad symbols, footprints and 3D models are machine-consumable with no auth.</p>
 
-  <h2>1. MCP로 연결 (권장)</h2>
-  <p>리모트 MCP — 설치 없이 URL 등록:</p>
+  <h2>1. Connect via MCP (recommended)</h2>
+  <p>Remote MCP — nothing to install, just register the URL:</p>
   <ul>
-    <li>Claude Code: <code>claude mcp add --transport http partreel https://mcp.partreel.com/mcp</code></li>
-    <li>기타 MCP 클라이언트: 엔드포인트 <code>https://mcp.partreel.com/mcp</code> (Streamable HTTP)</li>
-    <li>도구: <code>search_parts(query)</code> · <code>get_part(id)</code> · <code>list_parts()</code> · <code>report_feedback(part_id, result, notes)</code> · <code>how_to_contribute()</code></li>
-    <li><strong>실보드에서 쓴 뒤엔 <code>report_feedback</code>으로 결과를 남겨주세요</strong> — 부품의 실전검증 점수가 됩니다. 없는 부품은 <code>how_to_contribute</code> → PR (CI가 자동 심사).</li>
+    <li>Claude Code: <code>claude mcp add --transport http partreel {MCP_URL}</code></li>
+    <li>Any MCP client: endpoint <code>{MCP_URL}</code> (Streamable HTTP)</li>
+    <li>Tools: <code>search_parts(query)</code> · <code>get_part(id)</code> · <code>list_parts()</code> · <code>report_feedback(part_id, result, notes)</code> · <code>how_to_contribute()</code></li>
+    <li><strong>Please call <code>report_feedback</code> after using a part on a real board</strong> — it builds the part's field-proven trust score. Missing a part? <code>how_to_contribute</code> → PR (CI gates auto-review).</li>
   </ul>
 
-  <h2>2. HTTP API (모든 에이전트)</h2>
+  <h2>2. HTTP API (any agent)</h2>
   <ul>
-    <li><code>GET https://partreel.com/api/v1/parts.json</code> — 전체 목록</li>
-    <li><code>GET https://partreel.com/api/v1/parts/&lt;id&gt;.json</code> — 상세 + 다운로드 절대 URL</li>
-    <li><code>GET https://partreel.com/llms.txt</code> — 기계용 안내</li>
+    <li><code>GET https://partreel.com/api/v1/parts.json</code> — full list</li>
+    <li><code>GET https://partreel.com/api/v1/parts/&lt;id&gt;.json</code> — detail + absolute download URLs</li>
+    <li><code>GET https://partreel.com/llms.txt</code> — machine guide</li>
   </ul>
 
-  <h2>3. 가이드 프롬프트 (복붙용)</h2>
-  <p>아래 스니펫을 <code>CLAUDE.md</code>, <code>.cursorrules</code>, 시스템 프롬프트 등에 붙여넣으면, 에이전트가 부품이 필요할 때 자동으로 PartReel을 조회합니다:</p>
+  <h2>3. Paste-in prompt</h2>
+  <p>Paste this into <code>CLAUDE.md</code>, <code>.cursorrules</code> or your system prompt so your agent uses PartReel automatically:</p>
   <pre style="background:var(--panel2);border:1px solid var(--border);border-radius:8px;padding:14px;white-space:pre-wrap;font-size:12.5px;line-height:1.5">{snippet}</pre>
 
-  <h2>4. 품질 보증</h2>
-  <p>등록된 모든 부품은 자동 게이트(구조 검증 · KLC 도면 규칙 · 글자 겹침 · 렌더 완전성 · STEP 커널 isValid)를 통과했습니다. 메타데이터의 <code>verified</code> 필드와 <code>dimensions_source</code>로 출처를 확인하세요.</p>
+  <h2>4. Quality guarantees</h2>
+  <p>Every listed part passed automated gates: structure validation, KiCad Library Convention drawing rules, text-overlap and render-completeness checks, STEP kernel isValid. Check <code>verified</code> and <code>dimensions_source</code> in the metadata.</p>
 
-  <h2>5. 기여 · 피드백</h2>
-  <p>없는 부품을 생성했다면 <a href="{GITHUB}" target="_blank" rel="noopener">GitHub</a> PR로 기여하세요 — CI의 동일 게이트가 자동 심사합니다. 실보드 사용 결과 피드백도 환영합니다.</p>
-  <p><a href="../">← 홈으로</a></p>
+  <h2>5. Contribute &amp; feedback</h2>
+  <p>Generated a part the registry lacks? Contribute via <a href="{GITHUB}" target="_blank" rel="noopener">GitHub</a> PR — the same CI gates auto-review it. Spec: <a href="{GITHUB}/blob/main/CONTRIBUTING-AGENTS.md" target="_blank" rel="noopener">CONTRIBUTING-AGENTS.md</a>. Field reports (successes and problems) are welcome via <code>report_feedback</code>.</p>
+  <p><a href="../">← Home</a></p>
 </main>"""
-    return render(prefix, "AI 에이전트 가이드 — PartReel MCP·API",
-                  "AI 에이전트용 KiCad 부품 레지스트리 사용법: MCP 엔드포인트, HTTP API, 복붙용 가이드 프롬프트.",
+    return render(prefix, "AI Agent Guide — PartReel MCP & API",
+                  "How AI agents use the PartReel KiCad registry: MCP endpoint, HTTP API, paste-in guide prompt, feedback and contribution.",
                   f"{DOMAIN}/agents/", body)
 
 
@@ -277,6 +282,7 @@ def main():
         sm.append(f"  <url><loc>{u}</loc></url>")
     sm.append("</urlset>")
     write("sitemap.xml", "\n".join(sm) + "\n")
+
     robots = f"""# PartReel — AI crawlers explicitly welcome.
 # Machine guide: {DOMAIN}/llms.txt   Agent guide: {DOMAIN}/agents/
 User-agent: *
@@ -301,7 +307,7 @@ Sitemap: {DOMAIN}/sitemap.xml
 """
     write("robots.txt", robots)
 
-    print(f"Built {len(index['parts'])} part pages + about + guide + sitemap({len(urls)}) + robots")
+    print(f"Built {len(index['parts'])} part pages + about + guide + agents + sitemap({len(urls)}) + robots [EN]")
 
 
 if __name__ == "__main__":

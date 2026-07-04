@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://cdn.jsdelivr.net; object-src 'none'; base-uri 'self'">
-  <title>PartReel — 로그인 없는 KiCad 부품 라이브러리 (풋프린트·심볼·3D)</title>
-  <meta name="description" content="로그인 없이 바로 받는 KiCad 부품 라이브러리. 데이터시트 치수로 생성한 풋프린트·심볼·3D 모델. JST PH 커넥터 등.">
+  <title>PartReel — Free KiCad footprints, symbols & 3D models. No login.</title>
+  <meta name="description" content="Open KiCad component registry: datasheet-derived footprints, symbols and 3D models (STEP/GLB). No sign-up, instant download, quality-gated. Built for humans and AI agents.">
   <link rel="canonical" href="https://partreel.com/">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="PartReel — 로그인 없는 KiCad 부품 라이브러리">
-  <meta property="og:description" content="로그인 없이 바로 받는 KiCad 풋프린트·심볼·3D 모델.">
+  <meta property="og:title" content="PartReel — free KiCad footprints, symbols & 3D models">
+  <meta property="og:description" content="No-login KiCad component registry. Quality-gated parts, instant downloads, AI-native API/MCP.">
   <meta property="og:url" content="https://partreel.com/">
   <link rel="stylesheet" href="assets/style.css?v=2">
   <script type="importmap">
@@ -27,19 +27,19 @@
     <div class="brand">
       <span class="logo">◈</span>
       <span class="brand-name">PartReel</span>
-      <span class="tagline">로그인 없는 KiCad 라이브러리</span>
+      <span class="tagline">no-login KiCad component registry</span>
     </div>
     <div class="header-badges">
-      <span class="hbadge ok">가입 불필요</span>
-      <span class="hbadge ok">즉시 다운로드</span>
+      <span class="hbadge ok">No sign-up</span>
+      <span class="hbadge ok">Instant download</span>
     </div>
   </header>
 
   <main class="layout">
     <section class="sidebar">
       <div class="searchbox">
-        <input id="q" type="text" placeholder="부품 검색 (예: jst, ph, 4pin)…" autocomplete="off">
-        <div class="result-count"><span id="count">0</span>개 부품</div>
+        <input id="q" type="text" placeholder="Search parts (e.g. jst, usb-c, 4pin)…" autocomplete="off">
+        <div class="result-count"><span id="count">0</span> parts</div>
       </div>
       <div id="list" class="list"></div>
     </section>
@@ -47,49 +47,49 @@
     <section class="detail">
       <div class="view-tabs">
         <button class="vt active" data-view="3d">3D</button>
-        <button class="vt" data-view="sym">심볼</button>
-        <button class="vt" data-view="fp">풋프린트</button>
+        <button class="vt" data-view="sym">Symbol</button>
+        <button class="vt" data-view="fp">Footprint</button>
       </div>
       <div id="viewer" class="viewer">
-        <div id="viewer-msg" class="viewer-msg">부품을 선택하세요</div>
-        <img id="view-sym" class="view-img" alt="심볼" hidden>
-        <img id="view-fp" class="view-img" alt="풋프린트" hidden>
+        <div id="viewer-msg" class="viewer-msg">Select a part</div>
+        <img id="view-sym" class="view-img" alt="Schematic symbol" hidden>
+        <img id="view-fp" class="view-img" alt="PCB footprint" hidden>
       </div>
       <div id="info" class="info hidden">
         <h1 id="part-name"></h1>
         <p id="part-desc" class="desc"></p>
 
         <div id="verify-warn" class="warn hidden">
-          ⚠ 치수는 데이터시트 기반 근사치입니다. 사용 전 검증을 권장합니다 (as-is).
+          ⚠ Dimensions are datasheet-derived approximations. Verify before manufacturing (as-is).
         </div>
 
-        <h2>사양</h2>
+        <h2>Specifications</h2>
         <table id="specs" class="specs"></table>
 
-        <h2>다운로드 <span class="nologin">· 가입 없이</span></h2>
+        <h2>Downloads <span class="nologin">· no sign-up</span></h2>
         <div id="downloads" class="downloads"></div>
 
-        <h2>구매</h2>
-        <a id="buy" class="buy" href="#" target="_blank" rel="noopener">이 부품 구매처 보기 →</a>
-        <div class="affiliate-note">제휴 링크 (수익은 사이트 운영에 사용)</div>
+        <h2>Buy</h2>
+        <a id="buy" class="buy" href="#" target="_blank" rel="noopener">Find this part at distributors →</a>
+        <div class="affiliate-note">Affiliate link (supports the site)</div>
 
-        <p style="margin-top:18px"><a id="permalink" href="#" style="color:var(--accent);font-size:13px;text-decoration:none">🔗 이 부품 단독 페이지 (공유용)</a></p>
+        <p style="margin-top:18px"><a id="permalink" href="#" style="color:var(--accent);font-size:13px;text-decoration:none">🔗 Permalink for this part (shareable)</a></p>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="foot-brand">PartReel · 로그인 없는 오픈 KiCad 라이브러리</div>
+    <div class="foot-brand">PartReel · open KiCad component registry, no login</div>
     <nav class="foot-nav">
-      <a href="about/">소개</a>
-      <a href="guide/kicad/">KiCad에 넣는 법</a>
-      <a href="agents/">AI 에이전트 가이드</a>
+      <a href="about/">About</a>
+      <a href="guide/kicad/">Use in KiCad</a>
+      <a href="agents/">AI Agents</a>
       <a href="api/">API</a>
       <a href="https://github.com/mingyo186/partreel" target="_blank" rel="noopener">GitHub</a>
     </nav>
-    <div class="foot-lic">코드 MIT · 부품 CC-BY-4.0 · 치수는 데이터시트 기반, 사용 전 검증 권장(as-is)</div>
+    <div class="foot-lic">Code MIT · Parts CC-BY-4.0 · Dimensions derived from datasheets; verify before manufacturing (as-is).</div>
   </footer>
 
-  <script type="module" src="assets/app.js?v=3"></script>
+  <script type="module" src="assets/app.js?v=4"></script>
 </body>
 </html>

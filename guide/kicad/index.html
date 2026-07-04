@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://cdn.jsdelivr.net; object-src 'none'; base-uri 'self'">
-<title>KiCad에 부품 라이브러리 넣는 법 | PartReel</title>
-<meta name="description" content="KiCad에 심볼(.kicad_sym)·풋프린트(.kicad_mod)·3D(.step)를 추가하는 단계별 가이드.">
+<title>How to add downloaded libraries to KiCad | PartReel</title>
+<meta name="description" content="Step-by-step: add downloaded symbols (.kicad_sym), footprints (.kicad_mod) and 3D models (.step) to KiCad.">
 <link rel="canonical" href="https://partreel.com/guide/kicad/">
 <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
 <meta property="og:type" content="website">
-<meta property="og:title" content="KiCad에 부품 라이브러리 넣는 법 | PartReel">
-<meta property="og:description" content="KiCad에 심볼(.kicad_sym)·풋프린트(.kicad_mod)·3D(.step)를 추가하는 단계별 가이드.">
+<meta property="og:title" content="How to add downloaded libraries to KiCad | PartReel">
+<meta property="og:description" content="Step-by-step: add downloaded symbols (.kicad_sym), footprints (.kicad_mod) and 3D models (.step) to KiCad.">
 <meta property="og:url" content="https://partreel.com/guide/kicad/">
 <link rel="stylesheet" href="../../assets/style.css?v=2">
 
@@ -18,40 +18,40 @@
 <body>
 <header class="topbar">
   <a class="brand" href="../../" style="text-decoration:none;color:inherit"><span class="logo">◈</span><span class="brand-name">PartReel</span></a>
-  <div class="header-badges"><span class="hbadge ok">가입 불필요</span><span class="hbadge ok">즉시 다운로드</span></div>
+  <div class="header-badges"><span class="hbadge ok">No sign-up</span><span class="hbadge ok">Instant download</span></div>
 </header>
 <main class="doc-page">
-  <h1>KiCad에 넣는 법</h1>
-  <p>PartReel에서 받은 파일을 KiCad에 추가하는 방법입니다.</p>
-  <h2>1. 심볼 (.kicad_sym)</h2>
+  <h1>How to use PartReel files in KiCad</h1>
+  <p>Downloaded files from PartReel? Here is how to add them to KiCad.</p>
+  <h2>1. Symbol (.kicad_sym)</h2>
   <ol>
     <li>KiCad → <strong>Preferences → Manage Symbol Libraries</strong></li>
-    <li>Global 또는 Project 탭에서 <strong>+</strong> → 받은 <code>.kicad_sym</code> 파일 선택</li>
-    <li>스키매틱 에디터에서 심볼 배치 시 사용</li>
+    <li>In the Global or Project tab click <strong>+</strong> → select the downloaded <code>.kicad_sym</code> file</li>
+    <li>Place the symbol from the schematic editor</li>
   </ol>
-  <h2>2. 풋프린트 (.kicad_mod)</h2>
+  <h2>2. Footprint (.kicad_mod)</h2>
   <ol>
-    <li><code>.kicad_mod</code> 파일을 <code>MyLib.pretty</code> 폴더 안에 넣습니다 (풋프린트는 <code>.pretty</code> 폴더 단위로 관리)</li>
-    <li><strong>Preferences → Manage Footprint Libraries</strong> → <strong>+</strong> → 그 <code>.pretty</code> 폴더 추가</li>
+    <li>Put the <code>.kicad_mod</code> file inside a folder named like <code>MyLib.pretty</code> (KiCad manages footprints per <code>.pretty</code> folder)</li>
+    <li><strong>Preferences → Manage Footprint Libraries</strong> → <strong>+</strong> → add that <code>.pretty</code> folder</li>
   </ol>
-  <h2>3. 3D 모델 (.step)</h2>
+  <h2>3. 3D model (.step)</h2>
   <ol>
-    <li>풋프린트 에디터에서 풋프린트 열기 → <strong>Footprint Properties → 3D Models</strong></li>
-    <li>받은 <code>.step</code> 파일 경로 지정</li>
+    <li>Open the footprint in the footprint editor → <strong>Footprint Properties → 3D Models</strong></li>
+    <li>Point it at the downloaded <code>.step</code> file</li>
   </ol>
-  <p>웹의 3D 미리보기는 <code>.glb</code>(표시 전용)이며, KiCad에는 <code>.step</code>을 사용하세요.</p>
-  <p><a href="../../">← 홈으로</a></p>
+  <p>The web preview uses <code>.glb</code> (display only); use <code>.step</code> in KiCad.</p>
+  <p><a href="../../">← Home</a></p>
 </main>
 <footer class="site-footer">
-  <div class="foot-brand">PartReel · 로그인 없는 오픈 KiCad 라이브러리</div>
+  <div class="foot-brand">PartReel · open KiCad component registry, no login</div>
   <nav class="foot-nav">
-    <a href="../../about/">소개</a>
-    <a href="../../guide/kicad/">KiCad에 넣는 법</a>
-    <a href="../../agents/">AI 에이전트 가이드</a>
+    <a href="../../about/">About</a>
+    <a href="../../guide/kicad/">Use in KiCad</a>
+    <a href="../../agents/">AI Agents</a>
     <a href="../../api/">API</a>
     <a href="https://github.com/mingyo186/partreel" target="_blank" rel="noopener">GitHub</a>
   </nav>
-  <div class="foot-lic">코드 MIT · 부품 CC-BY-4.0 · 치수는 데이터시트 기반, 사용 전 검증 권장(as-is)</div>
+  <div class="foot-lic">Code MIT · Parts CC-BY-4.0 · Dimensions derived from datasheets; verify before manufacturing (as-is).</div>
 </footer>
 
 </body>
