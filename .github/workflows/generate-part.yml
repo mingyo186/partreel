@@ -31,18 +31,19 @@ jobs:
           echo "family=$FAMILY" >> "$GITHUB_OUTPUT"
           echo "pins=$PINS" >> "$GITHUB_OUTPUT"
 
-      - name: Install FreeCAD + deps
+      # ubuntu 24.04 apt엔 freecad가 없음 → conda-forge로 설치 (REQUIREMENTS §19)
+      - name: Install FreeCAD + deps (conda-forge)
         run: |
-          sudo apt-get update -q
-          sudo apt-get install -y -q freecad > /dev/null
-          pip -q install trimesh numpy
+          curl -Ls https://micro.mamba.pm/api/micromamba/linux-64/latest | tar -xj bin/micromamba
+          ./bin/micromamba create -y -q -p ./fcenv -c conda-forge freecad python=3.11 trimesh numpy > /dev/null
+          ./fcenv/bin/freecadcmd --version
 
       - name: Generate part (gated)
         env:
           FAMILY: ${{ steps.req.outputs.family }}
           PINS: ${{ steps.req.outputs.pins }}
-          FREECADCMD: freecadcmd
-        run: python generators/generate_one.py
+          FREECADCMD: ./fcenv/bin/freecadcmd
+        run: ./fcenv/bin/python generators/generate_one.py
 
       - name: Commit to main
         run: |
