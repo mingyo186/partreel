@@ -1,0 +1,47 @@
+{
+  "id": "aht21",
+  "name": "AHT21 Humidity and Temperature Sensor",
+  "category": "sensor",
+  "family": "AHT2x",
+  "manufacturer": "Aosong (ASAIR)",
+  "mpn_pattern": "AHT21",
+  "description": "ASAIR AHT21 calibrated digital humidity and temperature sensor, I2C (address 0x38), SMD LGA-6 package 3x3x0.8mm. Land pattern per manufacturer datasheet (identical to AHT20; 0.2mm lower body).",
+  "parameters": {
+    "contacts": 6,
+    "mounting": "SMD",
+    "interface": "I2C",
+    "i2c_address": "0x38",
+    "supply_voltage": "2.2-5.5V",
+    "body_mm": "3.0x3.0x0.8"
+  },
+  "files": {
+    "footprint": "aht21.kicad_mod",
+    "symbol": "aht21.kicad_sym",
+    "model_3d": "aht21.step",
+    "preview": "aht21.glb",
+    "footprint_svg": "aht21.footprint.svg",
+    "symbol_svg": "aht21.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "https://asairsensors.com/wp-content/uploads/2021/09/Data-Sheet-AHT21-Humidity-and-Temperature-Sensor-ASAIR-V1.0.03.pdf",
+  "dimensions_source": "ASAIR AHT21 datasheet V1.0 (May 2021): Fig.1 package 3x3x0.8mm with 1.0mm square sensor window, Fig.8 recommended land pattern (6 pads 0.8x0.5, col spacing 2.0, row pitch 1.0), Table 5 pinout.",
+  "verified": true,
+  "license": "CC-BY-4.0",
+  "generated_by": "generators/gen_parts.py",
+  "keywords": [
+    "aht21",
+    "asair",
+    "aosong",
+    "humidity",
+    "temperature",
+    "sensor",
+    "i2c",
+    "lga",
+    "3x3mm"
+  ]
+}

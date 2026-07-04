@@ -1,0 +1,52 @@
+{
+  "id": "aht10",
+  "name": "AHT10 Temperature and Humidity Sensor",
+  "category": "sensor",
+  "family": "AHT1x",
+  "manufacturer": "Aosong (ASAIR)",
+  "mpn_pattern": "AHT10",
+  "description": "ASAIR AHT10 calibrated digital temperature and humidity sensor, I2C (address 0x38), SMD LGA-6 package 4x5x1.6mm. Land pattern per manufacturer technical manual. Note: 1.8-3.6V supply; single device per I2C bus.",
+  "parameters": {
+    "contacts": 6,
+    "mounting": "SMD",
+    "interface": "I2C",
+    "i2c_address": "0x38",
+    "supply_voltage": "1.8-3.6V",
+    "body_mm": "4.0x5.0x1.6"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/sensor/asair/aht10/aht10/aht10.kicad_mod",
+    "symbol": "https://partreel.com/library/sensor/asair/aht10/aht10/aht10.kicad_sym",
+    "model_3d": "https://partreel.com/library/sensor/asair/aht10/aht10/aht10.step",
+    "preview": "https://partreel.com/library/sensor/asair/aht10/aht10/aht10.glb",
+    "footprint_svg": "https://partreel.com/library/sensor/asair/aht10/aht10/aht10.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/sensor/asair/aht10/aht10/aht10.symbol.svg"
+  },
+  "datasheet": "https://components101.com/sites/default/files/component_datasheet/AHT10.pdf",
+  "license": "CC-BY-4.0",
+  "verified": true,
+  "dimensions_source": "ASAIR AHT10 Technical Manual: Fig.1 package 4x5x1.6mm (sensor pads 0.8 sq, col 2.7, row 1.27), Fig.8 recommended land pattern (PCB pads 1.27x1.0, col spacing 3.2, row pitch 1.27), Table 5 pinout (ADR/SDA/SCL|VDD/GND/NC).",
+  "keywords": [
+    "aht10",
+    "asair",
+    "aosong",
+    "humidity",
+    "temperature",
+    "sensor",
+    "i2c",
+    "lga",
+    "4x5mm"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "page": "https://partreel.com/p/aht10/",
+  "api": "https://partreel.com/api/v1/parts/aht10.json"
+}

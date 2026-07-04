@@ -373,7 +373,130 @@ def aht20():
     return fid, lib_path, footprint, symbol, meta
 
 
-PARTS = [usb_c_16p, microsd_hc, esp32_wroom32, aht20]  # 일회성 부품 등록
+# ---- AHT21 온습도 센서; 치수=ASAIR AHT21 데이터시트 V1.0 (핀·랜드패턴 AHT20과 동일, 높이 0.8) ----
+def aht21():
+    fid = "aht21"
+    lib_path = "sensor/asair/aht21"
+    pads = [("1", -1.0, -1.0), ("2", -1.0, 0.0), ("3", -1.0, 1.0),
+            ("4", 1.0, 1.0), ("5", 1.0, 0.0), ("6", 1.0, -1.0)]
+    out = [f'(footprint "{fid}" (version 20221018) (generator opencad-lib)',
+           '  (layer "F.Cu")',
+           '  (descr "ASAIR AHT21 humidity and temperature sensor, I2C, SMD LGA-6 3x3x0.8mm. '
+           'Land pattern per ASAIR AHT21 datasheet Fig.8 (pads 0.8x0.5, col spacing 2.0, row pitch 1.0).")',
+           '  (tags "AHT21 humidity temperature sensor I2C ASAIR")',
+           '  (attr smd)',
+           '  (fp_text reference "REF**" (at 0 -2.6) (layer "F.SilkS")'
+           '\n    (effects (font (size 1 1) (thickness 0.15))))',
+           f'  (fp_text value "{fid}" (at 0 2.6) (layer "F.Fab")'
+           '\n    (effects (font (size 1 1) (thickness 0.15))))']
+    out += _rect_lines([(-0.5, -1.5, 1.5, -1.5), (1.5, -1.5, 1.5, 1.5),
+                        (1.5, 1.5, -1.5, 1.5), (-1.5, 1.5, -1.5, -0.5),
+                        (-1.5, -0.5, -0.5, -1.5)], "F.Fab", 0.10)
+    out += _rect_lines([(-1.66, -1.66, 1.66, -1.66), (1.66, -1.66, 1.66, 1.66),
+                        (1.66, 1.66, -1.66, 1.66), (-1.66, 1.66, -1.66, -1.66)], "F.SilkS", 0.12)
+    out.append(_line(-1.9, -1.25, -1.9, -0.75, "F.SilkS", 0.12))  # pin1 틱
+    out += _rect_lines([(-1.75, -1.75, 1.75, -1.75), (1.75, -1.75, 1.75, 1.75),
+                        (1.75, 1.75, -1.75, 1.75), (-1.75, 1.75, -1.75, -1.75)], "F.CrtYd", 0.05)
+    for name, x, y in pads:
+        out.append(f'  (pad "{name}" smd rect (at {x} {y}) (size 0.8 0.5) '
+                   f'(layers "F.Cu" "F.Paste" "F.Mask"))')
+    out.append(')')
+    footprint = "\n".join(out) + "\n"
+
+    symbol = _lr_symbol(fid, left=[("1", "NC"), ("2", "VDD"), ("3", "SCL")],
+                        right=[("6", "NC"), ("5", "GND"), ("4", "SDA")])
+    meta = {
+        "id": fid, "name": "AHT21 Humidity and Temperature Sensor",
+        "category": "sensor", "family": "AHT2x", "manufacturer": "Aosong (ASAIR)",
+        "mpn_pattern": "AHT21",
+        "description": "ASAIR AHT21 calibrated digital humidity and temperature sensor, I2C (address 0x38), "
+                       "SMD LGA-6 package 3x3x0.8mm. Land pattern per manufacturer datasheet "
+                       "(identical to AHT20; 0.2mm lower body).",
+        "parameters": {"contacts": 6, "mounting": "SMD", "interface": "I2C",
+                       "i2c_address": "0x38", "supply_voltage": "2.2-5.5V",
+                       "body_mm": "3.0x3.0x0.8"},
+        "files": {"footprint": f"{fid}.kicad_mod", "symbol": f"{fid}.kicad_sym",
+                  "model_3d": f"{fid}.step", "preview": f"{fid}.glb",
+                  "footprint_svg": f"{fid}.footprint.svg", "symbol_svg": f"{fid}.symbol.svg"},
+        "formats": ["kicad_mod", "kicad_sym", "step", "glb"],
+        "datasheet": "https://asairsensors.com/wp-content/uploads/2021/09/"
+                     "Data-Sheet-AHT21-Humidity-and-Temperature-Sensor-ASAIR-V1.0.03.pdf",
+        "dimensions_source": "ASAIR AHT21 datasheet V1.0 (May 2021): Fig.1 package 3x3x0.8mm with 1.0mm "
+                             "square sensor window, Fig.8 recommended land pattern (6 pads 0.8x0.5, "
+                             "col spacing 2.0, row pitch 1.0), Table 5 pinout.",
+        "verified": True, "license": "CC-BY-4.0", "generated_by": "generators/gen_parts.py",
+        "keywords": ["aht21", "asair", "aosong", "humidity", "temperature", "sensor", "i2c", "lga", "3x3mm"],
+    }
+    return fid, lib_path, footprint, symbol, meta
+
+
+# ---- AHT10 온습도 센서; 치수=ASAIR AHT10 Technical Manual Fig.1/Fig.8 (4x5x1.6, 핀맵 상이) ----
+def aht10():
+    fid = "aht10"
+    lib_path = "sensor/asair/aht10"
+    # Fig.8 권장 랜드패턴: PCB 패드 1.27x1.0, 열 중심간격 3.2, 행 피치 1.27
+    # (센서 패드 0.8 정방/열 2.7 — 내측선 일치 규칙과 기하 일치 확인)
+    # 핀배치 Table 5 (탑뷰): 좌 1 ADR/2 SDA/3 SCL, 우 6 NC/5 GND/4 VDD
+    pads = [("1", -1.6, -1.27), ("2", -1.6, 0.0), ("3", -1.6, 1.27),
+            ("4", 1.6, 1.27), ("5", 1.6, 0.0), ("6", 1.6, -1.27)]
+    # 본체 4x5: 상단 패드행 중심이 상변에서 1.0 → y -2.27..+2.73
+    y0, y1 = -2.27, 2.73
+
+    out = [f'(footprint "{fid}" (version 20221018) (generator opencad-lib)',
+           '  (layer "F.Cu")',
+           '  (descr "ASAIR AHT10 temperature and humidity sensor, I2C, SMD LGA-6 4x5x1.6mm. '
+           'Land pattern per ASAIR AHT10 Technical Manual Fig.8 (pads 1.27x1.0, col spacing 3.2, row pitch 1.27).")',
+           '  (tags "AHT10 humidity temperature sensor I2C ASAIR")',
+           '  (attr smd)',
+           '  (fp_text reference "REF**" (at 0 -3.4) (layer "F.SilkS")'
+           '\n    (effects (font (size 1 1) (thickness 0.15))))',
+           f'  (fp_text value "{fid}" (at 0 3.8) (layer "F.Fab")'
+           '\n    (effects (font (size 1 1) (thickness 0.15))))']
+    # Fab 본체 4x5 + 1번핀 챔퍼(1mm, 좌상)
+    out += _rect_lines([(-1.0, y0, 2.0, y0), (2.0, y0, 2.0, y1),
+                        (2.0, y1, -2.0, y1), (-2.0, y1, -2.0, y0 + 1.0),
+                        (-2.0, y0 + 1.0, -1.0, y0)], "F.Fab", 0.10)
+    # Silk: 패드가 본체 옆으로 튀어나오므로(x±2.235) 상/하 수평선만 + 1번핀 틱
+    out += _rect_lines([(-2.0, y0 - 0.12, 2.0, y0 - 0.12),
+                        (-2.0, y1 + 0.12, 2.0, y1 + 0.12)], "F.SilkS", 0.12)
+    out.append(_line(-2.6, -1.52, -2.6, -1.02, "F.SilkS", 0.12))  # pin1 틱
+    # Courtyard (패드 x±2.235, 본체 y 기준 +0.25)
+    out += _rect_lines([(-2.49, y0 - 0.25, 2.49, y0 - 0.25), (2.49, y0 - 0.25, 2.49, y1 + 0.25),
+                        (2.49, y1 + 0.25, -2.49, y1 + 0.25), (-2.49, y1 + 0.25, -2.49, y0 - 0.25)],
+                       "F.CrtYd", 0.05)
+    for name, x, y in pads:
+        out.append(f'  (pad "{name}" smd rect (at {x} {y}) (size 1.27 1.0) '
+                   f'(layers "F.Cu" "F.Paste" "F.Mask"))')
+    out.append(')')
+    footprint = "\n".join(out) + "\n"
+
+    symbol = _lr_symbol(fid, left=[("1", "ADR"), ("2", "SDA"), ("3", "SCL")],
+                        right=[("6", "NC"), ("5", "GND"), ("4", "VDD")])
+    meta = {
+        "id": fid, "name": "AHT10 Temperature and Humidity Sensor",
+        "category": "sensor", "family": "AHT1x", "manufacturer": "Aosong (ASAIR)",
+        "mpn_pattern": "AHT10",
+        "description": "ASAIR AHT10 calibrated digital temperature and humidity sensor, I2C (address 0x38), "
+                       "SMD LGA-6 package 4x5x1.6mm. Land pattern per manufacturer technical manual. "
+                       "Note: 1.8-3.6V supply; single device per I2C bus.",
+        "parameters": {"contacts": 6, "mounting": "SMD", "interface": "I2C",
+                       "i2c_address": "0x38", "supply_voltage": "1.8-3.6V",
+                       "body_mm": "4.0x5.0x1.6"},
+        "files": {"footprint": f"{fid}.kicad_mod", "symbol": f"{fid}.kicad_sym",
+                  "model_3d": f"{fid}.step", "preview": f"{fid}.glb",
+                  "footprint_svg": f"{fid}.footprint.svg", "symbol_svg": f"{fid}.symbol.svg"},
+        "formats": ["kicad_mod", "kicad_sym", "step", "glb"],
+        "datasheet": "https://components101.com/sites/default/files/component_datasheet/AHT10.pdf",
+        "dimensions_source": "ASAIR AHT10 Technical Manual: Fig.1 package 4x5x1.6mm (sensor pads 0.8 sq, "
+                             "col 2.7, row 1.27), Fig.8 recommended land pattern (PCB pads 1.27x1.0, "
+                             "col spacing 3.2, row pitch 1.27), Table 5 pinout (ADR/SDA/SCL|VDD/GND/NC).",
+        "verified": True, "license": "CC-BY-4.0", "generated_by": "generators/gen_parts.py",
+        "keywords": ["aht10", "asair", "aosong", "humidity", "temperature", "sensor", "i2c", "lga", "4x5mm"],
+    }
+    return fid, lib_path, footprint, symbol, meta
+
+
+PARTS = [usb_c_16p, microsd_hc, esp32_wroom32, aht20, aht21, aht10]  # 일회성 부품 등록
 
 
 def main():

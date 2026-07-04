@@ -143,7 +143,74 @@ def aht20():
     print("AHT20 3D done")
 
 
+def aht21():
+    fid = "aht21"
+    d = "%s/sensor/asair/aht21/%s" % (LIB, fid)
+    # AHT21 데이터시트 Fig.1: 단일 다크 바디 3x3x0.8, 상면 1.0mm 사각(라운드) 센서창
+    body = Part.makeBox(3.0, 3.0, 0.8, App.Vector(-1.5, -1.5, 0))
+    try:
+        vedges = [e for e in body.Edges if abs(e.Vertexes[0].Z - e.Vertexes[1].Z) > 0.1]
+        body = body.makeFillet(0.15, vedges)
+    except Exception:
+        pass
+    # 센서창 포켓 1.0x1.0 깊이 0.15, 핀1쪽(상단) 치우침 (Fig.1: 0.95 오프셋)
+    win = Part.makeBox(1.0, 1.0, 0.3, App.Vector(-0.5, -1.15, 0.65))
+    try:
+        wv = [e for e in win.Edges if abs(e.Vertexes[0].Z - e.Vertexes[1].Z) > 0.1]
+        win = win.makeFillet(0.25, wv)
+    except Exception:
+        pass
+    body = body.cut(win)
+    # 센서창 인서트(밝은 면): 포켓보다 0.02 작게 + 바닥 0.02 매립 (공면 회피)
+    inlay = Part.makeBox(0.96, 0.96, 0.1, App.Vector(-0.48, -1.13, 0.63))
+    try:
+        iv = [e for e in inlay.Edges if abs(e.Vertexes[0].Z - e.Vertexes[1].Z) > 0.05]
+        inlay = inlay.makeFillet(0.22, iv)
+    except Exception:
+        pass
+    pads = []
+    for x, y in [(-1.0, -1.0), (-1.0, 0.0), (-1.0, 1.0), (1.0, 1.0), (1.0, 0.0), (1.0, -1.0)]:
+        pads.append(Part.makeBox(0.55, 0.4, 0.07, App.Vector(x - 0.275, y - 0.2, -0.02)))
+    gold = pads[0]
+    for p in pads[1:]:
+        gold = gold.fuse(p)
+    Part.makeCompound([inlay, gold, body]).exportStep("%s/%s.step" % (d, fid))
+    inlay.exportStl("%s/%s__housing.stl" % (d, fid))
+    gold.exportStl("%s/%s__pins.stl" % (d, fid))
+    body.exportStl("%s/%s__extra.stl" % (d, fid))
+    print("AHT21 3D done")
+
+
+def aht10():
+    fid = "aht10"
+    d = "%s/sensor/asair/aht10/%s" % (LIB, fid)
+    # AHT10 매뉴얼 Fig.1: 다크 베이스 4x5 + 흰색 라운드 바디, 총높이 1.6, 상면 원형 홀(핀1쪽)
+    base = Part.makeBox(4.0, 5.0, 0.3, App.Vector(-2.0, -2.27, 0))
+    body = Part.makeBox(3.7, 4.7, 1.3, App.Vector(-1.85, -2.12, 0.3))
+    try:
+        vedges = [e for e in body.Edges if abs(e.Vertexes[0].Z - e.Vertexes[1].Z) > 0.1]
+        body = body.makeFillet(0.5, vedges)
+    except Exception:
+        pass
+    hole = Part.makeCylinder(0.35, 0.4, App.Vector(-1.0, -1.4, 1.3))
+    body = body.cut(hole)
+    # 센서 패드 0.8 정방 (열 2.7 → x±1.35), 베이스에 0.05 매립
+    pads = []
+    for x, y in [(-1.35, -1.27), (-1.35, 0.0), (-1.35, 1.27), (1.35, 1.27), (1.35, 0.0), (1.35, -1.27)]:
+        pads.append(Part.makeBox(0.8, 0.8, 0.07, App.Vector(x - 0.4, y - 0.4, -0.02)))
+    gold = pads[0]
+    for p in pads[1:]:
+        gold = gold.fuse(p)
+    Part.makeCompound([body, gold, base]).exportStep("%s/%s.step" % (d, fid))
+    body.exportStl("%s/%s__housing.stl" % (d, fid))
+    gold.exportStl("%s/%s__pins.stl" % (d, fid))
+    base.exportStl("%s/%s__extra.stl" % (d, fid))
+    print("AHT10 3D done")
+
+
 usb_c_16p()
 microsd_hc()
 esp32_wroom32()
 aht20()
+aht21()
+aht10()
