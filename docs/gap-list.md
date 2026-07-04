@@ -66,13 +66,18 @@ WM8960·ES8311·TPA3116D2(오디오) / MLX90614 / TCS34725 / VS1053B / ENS160(**
   TP4056/CH224K/TMC2209/PCA9685/SCD40/W5500/SX1262/FUSB302/MPR121/TB6612 등.
 - 약한 갭: NEO-6M(핀호환 NEO-M8N 심볼+제네릭 풋프린트 존재), A3144(EOL, 후속 A1104 존재).
 
-### 배치 3차 선정 (20종 목표 — 데이터시트 확보 여부로 최종 확정)
+### 배치 3차 최종 확정 18종 (함정 검증 완료 2026-07-04, master 클론 e111716be + git grep 이중)
 모듈 8: hc_sr04, dfplayer_mini, hc05, sim800l, max7219_matrix_module, gc9a01_module_128,
 ld2410c, esp32_devkitc_v4 (espressif 공식 도면 존재)
-칩 12: max6675, inmp441, xl6009, ds3231sn, tm1637, bh1750, as5600, max17048, veml7700,
-mlx90614, ens160, sgp40
-보류→차기: esp32_c3_supermini(클론 도면 편차), ssd1331/1351, epaper, 오디오 3종, vs1053b,
-icm42688, bno085, tcs34725, cst816s, e22
+칩 10: max6675, inmp441, xl6009, tm1637, bh1750, as5600, max17048, veml7700, mlx90614, sgp40
+(SGP40은 풋프린트 MR만 존재, 심볼 갭 유지)
+
+**함정 검증이 추가로 걸러낸 것**: DS3231SN → 공식 "DS3231M" 파일이 실은 클래식 16핀 DS3231
+(SOIC-16W/크리스탈 — **파일명 오기 함정 신종**, 진짜 MEMS판은 DS3231MZ) / INA3221 →
+Power_Management 존재(형제 INA219는 Sensor_Energy — 가족 분산 배치) / ENS160 → 활성 MR !5448.
+
+보류→차기: esp32_c3_supermini(클론 도면 편차), ssd1331/1351, epaper, 오디오 3종(WM8960/ES8311/
+TPA3116D2), vs1053b, icm42688, bno085, tcs34725, cst816s, e22, ens160(MR 폐기되면 부활)
 
 ## 착수 규칙
 
