@@ -20,7 +20,7 @@ PH = dict(
     silk=dict(x0=-2.06, x1=2.06, y0=-1.81, y1=2.91),
     crt=dict(x0=-2.45, x1=2.45, y0=-2.20, y1=3.30),
     pins=list(range(2, 17)),
-    pin_sq=0.5, housing_h=6.0, pin_below=3.0, pin_into=2.0,
+    pin_sq=0.5, housing_h=6.0, pin_below=3.0, pin_into=3.0,  # 핀 보드 위 3.0 (하우징 6.0의 절반)
 )
 XH = dict(
     key="jst_xh", name="JST XH", manufacturer="JST", mpn="B{n}B-XH-A",
@@ -32,7 +32,7 @@ XH = dict(
     silk=dict(x0=-2.56, x1=2.56, y0=-2.46, y1=3.51),
     crt=dict(x0=-2.95, x1=2.95, y0=-2.85, y1=3.90),
     pins=list(range(2, 17)),
-    pin_sq=0.64, housing_h=7.0, pin_below=3.0, pin_into=2.0,  # 높이 7.0 = XH 데이터시트
+    pin_sq=0.64, housing_h=7.0, pin_below=3.0, pin_into=3.4,  # 높이 7.0·핀 위 3.4 = XH 데이터시트 (3.4)
 )
 TERM = dict(
     key="screw_terminal_5_08", name="Screw Terminal 5.08mm", manufacturer="Generic (KF301)",
