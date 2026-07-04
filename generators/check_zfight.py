@@ -62,20 +62,42 @@ def check_part(glb_path):
     return issues
 
 
+def check_merged_pins(glb_path, expected):
+    """핀 뭉침 검출: 금속(2번째) 메시가 접점 2개 이상인데 연결체 1개면 = 통짜 스트립."""
+    if not expected or expected < 2:
+        return None
+    scene = trimesh.load(glb_path)
+    geoms = list(scene.geometry.values())
+    if len(geoms) < 2:
+        return None
+    bodies = len(geoms[1].split(only_watertight=False))
+    if bodies == 1:
+        return f"금속 메시가 한 덩어리 (접점 {expected}개인데 개별 표현 아님)"
+    return None
+
+
 def main():
     index = json.load(open(os.path.join(ROOT, "index.json"), encoding="utf-8"))
+    meta_pins = {}
+    for p in index["parts"]:
+        m = json.load(open(os.path.join(ROOT, p["path"], "meta.json"), encoding="utf-8"))
+        prm = m.get("parameters", {})
+        meta_pins[p["id"]] = prm.get("pins") or prm.get("contacts")
     total = 0
     for p in index["parts"]:
         glb = os.path.join(ROOT, p["path"], f"{p['id']}.glb")
         if not os.path.exists(glb):
             continue
         issues = check_part(glb)
+        merged = check_merged_pins(glb, meta_pins.get(p["id"]))
+        if merged:
+            issues.append(merged)
         if issues:
             total += len(issues)
-            print(f"ZFIGHT {p['id']}:")
+            print(f"FAIL {p['id']}:")
             for i in issues:
                 print(f"   - {i}")
-    print(f"\n{'PASS' if total == 0 else 'FAIL'}: {len(index['parts'])} parts, {total} coplanar overlaps")
+    print(f"\n{'PASS' if total == 0 else 'FAIL'}: {len(index['parts'])} parts, {total} 3D issues (coplanar/merged-pins)")
     sys.exit(1 if total else 0)
 
 

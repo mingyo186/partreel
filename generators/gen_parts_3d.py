@@ -62,7 +62,12 @@ def microsd_hc():
     body = Part.makeBox(13.8, 15.9, 1.35, App.Vector(-6.9, -7.8, 0.05))
     slot = Part.makeBox(12.0, 1.2, 1.0, App.Vector(-6.0, -8.0, 0.35))  # 카드 입구 (접점 윗면 0.3과 공면 회피)
     body = body.cut(slot)
-    contacts = Part.makeBox(9.5, 1.2, 0.3, App.Vector(-6.2, -8.3, 0))  # 접점 스트립
+    # 접점: 통짜 스트립이 아니라 풋프린트 X좌표 그대로 9개 개별 핑거
+    xs = [2.775, 1.675, 0.575, -0.525, -1.625, -2.725, -3.825, -4.925, -5.875]
+    fingers = [Part.makeBox(0.6, 1.2, 0.3, App.Vector(x - 0.3, -8.3, 0)) for x in xs]
+    contacts = fingers[0]
+    for f in fingers[1:]:
+        contacts = contacts.fuse(f)
     Part.makeCompound([body, contacts]).exportStep("%s/%s.step" % (d, fid))
     body.exportStl("%s/%s__housing.stl" % (d, fid))
     contacts.exportStl("%s/%s__pins.stl" % (d, fid))
