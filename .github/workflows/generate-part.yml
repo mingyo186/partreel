@@ -35,7 +35,7 @@ jobs:
       - name: Install FreeCAD + deps (conda-forge)
         run: |
           curl -Ls https://micro.mamba.pm/api/micromamba/linux-64/latest | tar -xj bin/micromamba
-          ./bin/micromamba create -y -q -p ./fcenv -c conda-forge freecad python=3.11 trimesh numpy > /dev/null
+          ./bin/micromamba create -y -q -p ./fcenv -c conda-forge freecad python=3.11 trimesh numpy scipy > /dev/null
           ./fcenv/bin/freecadcmd --version
 
       - name: Generate part (gated)
