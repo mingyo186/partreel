@@ -188,6 +188,7 @@
 ### C. 3D (STEP/GLB)
 - STEP: `isValid`, 부피>0, 솔리드 정상. 본체 치수 = 풋프린트 fab와 일치.
 - GLB: 컬러, 웹 경량(수 KB).
+- **형상 사실성(2026-07 추가, 스크류터미널 제네릭 사건)**: 게이트는 "유효한 솔리드"만 잡고 "그 부품답게 생겼나"는 못 잡음 → **새 패밀리/새 3D 스타일은 대표 1개를 반드시 시각 확인** (`python generators/render_check.py <id>` → iso/top/front 3뷰 PNG). 부품 특징 형상(터미널=나사리세스+전선구, 헤더=긴 핀, 쉬라우드=캐비티)이 보여야 함. 스타일: gen_connectors_3d의 style 필드(shrouded 기본/header/terminal).
 
 ### D. SVG 미리보기
 - 풋프린트: 패드+드릴+silk+fab+courtyard(실선)+**pin1 삼각형(빈 공간, 선과 안 겹침)**. 모든 레이어 선이 실제로 그려질 것(패드만 X).

@@ -36,6 +36,28 @@ def build(cfg, n):
             x = i * pitch
             pin_shapes.append(Part.makeBox(ps, ps, below + above,
                                            App.Vector(x - ps / 2, -ps / 2, -below)))
+    elif cfg.get("style") == "terminal":
+        # 스크류 터미널: 통짜 블록 + 극마다 상면 나사 리세스 + 전면 전선 삽입구
+        housing = Part.makeBox(L, W, HZ, App.Vector(x0, y0, 0))
+        screw_r = min(pitch * 0.32, 1.8)
+        wire_r = min(pitch * 0.28, 1.6)
+        for i in range(n):
+            x = i * pitch
+            # 상면 나사 리세스 (수직 원통 컷, 뒤쪽 열)
+            screw = Part.makeCylinder(screw_r, 3.0,
+                                      App.Vector(x, y0 + W * 0.35, HZ - 2.5),
+                                      App.Vector(0, 0, 1))
+            housing = housing.cut(screw)
+            # 전면 전선 삽입구 (수평 원통 컷, 중간 높이)
+            wire = Part.makeCylinder(wire_r, W * 0.55,
+                                     App.Vector(x, y1 + 0.1, HZ * 0.35),
+                                     App.Vector(0, -1, 0))
+            housing = housing.cut(wire)
+        pin_shapes = []
+        for i in range(n):
+            x = i * pitch
+            pin_shapes.append(Part.makeBox(ps, ps, below + above,
+                                           App.Vector(x - ps / 2, -ps / 2, -below)))
     else:
         # 쉬라우드형 커넥터: 박스 + 상부 캐비티 + 짧은 핀
         housing = Part.makeBox(L, W, HZ, App.Vector(x0, y0, 0))
@@ -65,13 +87,15 @@ def emit(cfg, n):
 def main():
     flt = os.environ.get("PART_FILTER", "").strip()
     if flt:
-        key, pins = flt.rsplit(":", 1)
+        key, pins = flt.rsplit(":", 1) if ":" in flt else (flt, "*")
         cfg = next((c for c in FAMILIES + ONDEMAND if c["key"] == key), None)
         if cfg is None:
             print("PART_FILTER: unknown family", key)
             raise SystemExit(1)
-        emit(cfg, int(pins))
-        print("STEP+STL generated: 1 part (%s_%spin)" % (key, pins))
+        targets = cfg["pins"] if pins == "*" else [int(pins)]
+        for p in targets:
+            emit(cfg, p)
+        print("STEP+STL generated: %d part(s) (%s)" % (len(targets), key))
         return
     cnt = 0
     for cfg in FAMILIES:

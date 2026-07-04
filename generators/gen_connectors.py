@@ -45,7 +45,7 @@ TERM = dict(
     silk=dict(x0=-3.1, x1=3.1, y0=-3.3, y1=6.1),
     crt=dict(x0=-3.5, x1=3.5, y0=-3.7, y1=6.5),
     pins=list(range(2, 9)),
-    pin_sq=1.0, housing_h=10.0, pin_below=3.0, pin_into=2.0,
+    style="terminal", pin_sq=1.0, housing_h=10.0, pin_below=3.0, pin_into=2.0,
 )
 FAMILIES = [PH, XH, TERM]
 
