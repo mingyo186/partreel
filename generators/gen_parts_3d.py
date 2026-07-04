@@ -43,7 +43,8 @@ def usb_c_16p():
              (-2.45, 0.6), (-3.25, 0.6)]
     feet = []
     for x, w in smd_x:
-        feet.append(Part.makeBox(w * 0.8, 0.9, 0.15, App.Vector(x - w * 0.4, -4.5, 0)))
+        # y -4.5..-3.7: 셸(y>=-3.65)과 XY 비겹침 → 공면 z-fight 방지 (check_zfight)
+        feet.append(Part.makeBox(w * 0.8, 0.8, 0.15, App.Vector(x - w * 0.4, -4.5, 0)))
     contacts = feet[0]
     for f in feet[1:]:
         contacts = contacts.fuse(f)
@@ -57,8 +58,9 @@ def usb_c_16p():
 def microsd_hc():
     fid = "microsd_hc"
     d = "%s/connector/card/microsd_hc/%s" % (LIB, fid)
-    body = Part.makeBox(13.8, 15.9, 1.4, App.Vector(-6.9, -7.8, 0))
-    slot = Part.makeBox(12.0, 1.2, 1.0, App.Vector(-6.0, -8.0, 0.3))  # 카드 입구
+    # 바디 z0=0.05 standoff — 접점 밑면과 공면 z-fight 방지 (check_zfight)
+    body = Part.makeBox(13.8, 15.9, 1.35, App.Vector(-6.9, -7.8, 0.05))
+    slot = Part.makeBox(12.0, 1.2, 1.0, App.Vector(-6.0, -8.0, 0.35))  # 카드 입구 (접점 윗면 0.3과 공면 회피)
     body = body.cut(slot)
     contacts = Part.makeBox(9.5, 1.2, 0.3, App.Vector(-6.2, -8.3, 0))  # 접점 스트립
     Part.makeCompound([body, contacts]).exportStep("%s/%s.step" % (d, fid))
@@ -81,14 +83,15 @@ def esp32_wroom32():
     except Exception:
         pass
     # 캐스텔레이티드 패드: 풋프린트 패드 좌표 그대로 (좌 14 / 우 14 / 하 10)
+    # 패드는 PCB 상·하면을 0.02씩 감싸게 (공면 z-fight 방지 + 실물 캐스텔레이션 랩)
     pads = []
     for i in range(14):
         y = -8.255 + i * 1.27
-        pads.append(Part.makeBox(0.7, 0.9, 0.8, App.Vector(-9.05, y - 0.45, 0)))
-        pads.append(Part.makeBox(0.7, 0.9, 0.8, App.Vector(8.35, y - 0.45, 0)))
+        pads.append(Part.makeBox(0.7, 0.9, 0.84, App.Vector(-9.05, y - 0.45, -0.02)))
+        pads.append(Part.makeBox(0.7, 0.9, 0.84, App.Vector(8.35, y - 0.45, -0.02)))
     for i in range(10):
         x = -5.715 + i * 1.27
-        pads.append(Part.makeBox(0.9, 0.7, 0.8, App.Vector(x - 0.45, 9.105, 0)))
+        pads.append(Part.makeBox(0.9, 0.7, 0.84, App.Vector(x - 0.45, 9.105, -0.02)))
     gold = pads[0]
     for p in pads[1:]:
         gold = gold.fuse(p)

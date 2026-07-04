@@ -13,7 +13,7 @@ import subprocess
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-CHECKS = ["validate_kicad.py", "check_overlap.py", "check_render.py"]
+CHECKS = ["validate_kicad.py", "check_overlap.py", "check_render.py", "check_zfight.py"]
 
 failed = []
 for c in CHECKS:

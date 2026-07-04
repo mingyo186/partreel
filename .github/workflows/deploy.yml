@@ -33,6 +33,11 @@ jobs:
       - name: Check render completeness
         run: python3 generators/check_render.py
 
+      - name: Check coplanar z-fighting in 3D
+        run: |
+          pip -q install trimesh numpy scipy
+          python3 generators/check_zfight.py
+
       # publish 정리: 사이트+라이브러리만 공개. generators/docs는 제외.
       - name: Assemble site
         run: |

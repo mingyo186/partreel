@@ -14,11 +14,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Structure / overlap / render / meta gates
+      - name: Structure / overlap / render / meta / zfight gates
         run: |
+          pip -q install trimesh numpy scipy
           python3 generators/validate_kicad.py
           python3 generators/check_overlap.py
           python3 generators/check_render.py
+          python3 generators/check_zfight.py
 
       - name: Install FreeCAD (conda-forge) for STEP kernel check
         run: |
