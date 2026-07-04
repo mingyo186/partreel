@@ -1,0 +1,53 @@
+{
+  "id": "sparkfun_stc31",
+  "name": "STC31 (SparkFun)",
+  "category": "sensor",
+  "family": "SparkFun Sensor",
+  "manufacturer": "SparkFun Electronics",
+  "mpn_pattern": "STC31",
+  "description": "The STC3x sensor family is Sensirion’s series of Gas Concentration sensors designed for high-volume applications. The STC3x utilizes a revolutionized thermal conductivity measurement principle, which results in superior repeatability and long-term stability. This make the STC31 a perfect choice for applications where reliability is key. Imported from the SparkFun KiCad library (CC-BY-4.0, attribution: SparkFun Electronics); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 13,
+    "mounting": "SMD"
+  },
+  "files": {
+    "footprint": "sparkfun_stc31.kicad_mod",
+    "symbol": "sparkfun_stc31.kicad_sym",
+    "model_3d": "sparkfun_stc31.step",
+    "preview": "sparkfun_stc31.glb",
+    "footprint_svg": "sparkfun_stc31.footprint.svg",
+    "symbol_svg": "sparkfun_stc31.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "https://sensirion.com/media/documents/7B1D0EA7/61652CD0/Sensirion_Thermal_Conductivity_Datasheet_STC31_D1_1.pdf",
+  "dimensions_source": "SparkFun-KiCad-Libraries@2423e36aead9 (SparkFun-Sensor.pretty/STC31.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "license": "CC-BY-4.0",
+  "generated_by": "generators/import_sparkfun.py",
+  "keywords": [
+    "sparkfun",
+    "CO2",
+    "Sensor"
+  ],
+  "import": {
+    "source_repo": "https://github.com/sparkfun/SparkFun-KiCad-Libraries",
+    "source_commit": "2423e36aead98c5756ae09366e0388ff21a82808",
+    "source_files": {
+      "symbol": "symbols/SparkFun-Sensor.kicad_sym#STC31",
+      "footprint": "footprints/SparkFun-Sensor.pretty/STC31.kicad_mod",
+      "model": "3dmodels/Sensor.3dshapes/STC31.step"
+    },
+    "attribution": "SparkFun Electronics (CC-BY-4.0)",
+    "sparkfun_prod_id": "IC-16076",
+    "modifications": [
+      "extracted single symbol from library",
+      "rewrote 3D model path to per-part relative"
+    ]
+  }
+}

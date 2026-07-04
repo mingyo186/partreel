@@ -1,0 +1,59 @@
+{
+  "id": "sparkfun_esp32_wroom",
+  "name": "ESP32-WROOM (SparkFun)",
+  "category": "module",
+  "family": "SparkFun RF",
+  "manufacturer": "SparkFun Electronics",
+  "mpn_pattern": "ESP32-WROOM",
+  "description": "ESP32-WROOM Imported from the SparkFun KiCad library (CC-BY-4.0, attribution: SparkFun Electronics); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 47,
+    "mounting": "SMD"
+  },
+  "files": {
+    "footprint": "sparkfun_esp32_wroom.kicad_mod",
+    "symbol": "sparkfun_esp32_wroom.kicad_sym",
+    "model_3d": "sparkfun_esp32_wroom.step",
+    "preview": "sparkfun_esp32_wroom.glb",
+    "footprint_svg": "sparkfun_esp32_wroom.footprint.svg",
+    "symbol_svg": "sparkfun_esp32_wroom.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "https://www.mouser.com/datasheet/2/891/esp32_wroom_32e_esp32_wroom_32ue_datasheet_en-1855879.pdf",
+  "dimensions_source": "SparkFun-KiCad-Libraries@2423e36aead9 (SparkFun-RF.pretty/ESP32-WROOM-32D-DFM_Paste.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "license": "CC-BY-4.0",
+  "generated_by": "generators/import_sparkfun.py",
+  "keywords": [
+    "sparkfun",
+    "SparkFun",
+    "RF",
+    "Radio",
+    "Bluetooth",
+    "BT",
+    "ESP",
+    "ESP32",
+    "Espressif"
+  ],
+  "import": {
+    "source_repo": "https://github.com/sparkfun/SparkFun-KiCad-Libraries",
+    "source_commit": "2423e36aead98c5756ae09366e0388ff21a82808",
+    "source_files": {
+      "symbol": "symbols/SparkFun-RF.kicad_sym#ESP32-WROOM",
+      "footprint": "footprints/SparkFun-RF.pretty/ESP32-WROOM-32D-DFM_Paste.kicad_mod",
+      "model": "3dmodels/RF.3dshapes/ESP32-WROOM-32D.step"
+    },
+    "attribution": "SparkFun Electronics (CC-BY-4.0)",
+    "sparkfun_prod_id": "IC-15676",
+    "modifications": [
+      "extracted single symbol from library",
+      "rewrote 3D model path to per-part relative"
+    ]
+  }
+}

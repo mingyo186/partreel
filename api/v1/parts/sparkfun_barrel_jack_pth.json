@@ -1,0 +1,84 @@
+{
+  "id": "sparkfun_barrel_jack_pth",
+  "name": "Barrel_Jack_PTH (SparkFun)",
+  "category": "connector",
+  "family": "SparkFun Connector",
+  "manufacturer": "SparkFun Electronics",
+  "mpn_pattern": "Barrel_Jack_PTH",
+  "description": "DC Barrel Jack with an internal switch Imported from the SparkFun KiCad library (CC-BY-4.0, attribution: SparkFun Electronics); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 3,
+    "mounting": "THT"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/connector/sparkfun/sparkfun_barrel_jack_pth/sparkfun_barrel_jack_pth.kicad_mod",
+    "symbol": "https://partreel.com/library/connector/sparkfun/sparkfun_barrel_jack_pth/sparkfun_barrel_jack_pth.kicad_sym",
+    "model_3d": "https://partreel.com/library/connector/sparkfun/sparkfun_barrel_jack_pth/sparkfun_barrel_jack_pth.step",
+    "preview": "https://partreel.com/library/connector/sparkfun/sparkfun_barrel_jack_pth/sparkfun_barrel_jack_pth.glb",
+    "footprint_svg": "https://partreel.com/library/connector/sparkfun/sparkfun_barrel_jack_pth/sparkfun_barrel_jack_pth.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/connector/sparkfun/sparkfun_barrel_jack_pth/sparkfun_barrel_jack_pth.symbol.svg"
+  },
+  "datasheet": "https://www.sparkfun.com/datasheets/Prototyping/Barrel-Connector-PJ-202A.pdf",
+  "license": "CC-BY-4.0",
+  "verified": true,
+  "dimensions_source": "SparkFun-KiCad-Libraries@2423e36aead9 (SparkFun-Connector.pretty/Barrel_Jack_PTH.kicad_mod)",
+  "keywords": [
+    "sparkfun",
+    "SparkFun",
+    "DC",
+    "power",
+    "barrel",
+    "jack",
+    "connector"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "SparkFun-KiCad-Libraries@2423e36aead9 (SparkFun-Connector.pretty/Barrel_Jack_PTH.kicad_mod)",
+    "datasheet": "https://www.sparkfun.com/datasheets/Prototyping/Barrel-Connector-PJ-202A.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_sparkfun.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/sparkfun/SparkFun-KiCad-Libraries",
+      "source_commit": "2423e36aead98c5756ae09366e0388ff21a82808",
+      "source_files": {
+        "symbol": "symbols/SparkFun-Connector.kicad_sym#Barrel_Jack_PTH",
+        "footprint": "footprints/SparkFun-Connector.pretty/Barrel_Jack_PTH.kicad_mod",
+        "model": "3dmodels/Connector.3dshapes/Power_Jack_PTH.step"
+      },
+      "attribution": "SparkFun Electronics (CC-BY-4.0)",
+      "sparkfun_prod_id": "CONN-08197",
+      "modifications": [
+        "extracted single symbol from library",
+        "rewrote 3D model path to per-part relative",
+        "auto-added courtyard (pads+fab bbox +0.25mm, IPC-7351)"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/sparkfun_barrel_jack_pth/",
+  "api": "https://partreel.com/api/v1/parts/sparkfun_barrel_jack_pth.json"
+}

@@ -1,0 +1,59 @@
+{
+  "id": "sparkfun_rm2",
+  "name": "RM2 (SparkFun)",
+  "category": "module",
+  "family": "SparkFun RF",
+  "manufacturer": "SparkFun Electronics",
+  "mpn_pattern": "RM2",
+  "description": "Radio module from Raspberry Pi using the CYW43 supporting WiFi and Bluetooth/BLE Imported from the SparkFun KiCad library (CC-BY-4.0, attribution: SparkFun Electronics); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 21,
+    "mounting": "SMD"
+  },
+  "files": {
+    "footprint": "sparkfun_rm2.kicad_mod",
+    "symbol": "sparkfun_rm2.kicad_sym",
+    "model_3d": "sparkfun_rm2.step",
+    "preview": "sparkfun_rm2.glb",
+    "footprint_svg": "sparkfun_rm2.footprint.svg",
+    "symbol_svg": "sparkfun_rm2.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "https://github.com/sparkfun/SparkFun-KiCad-Libraries/blob/2423e36aead9/symbols/SparkFun-RF.kicad_sym",
+  "dimensions_source": "SparkFun-KiCad-Libraries@2423e36aead9 (SparkFun-RF.pretty/RM2.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "license": "CC-BY-4.0",
+  "generated_by": "generators/import_sparkfun.py",
+  "keywords": [
+    "sparkfun",
+    "SparkFun",
+    "Raspberry",
+    "Pi",
+    "RPi",
+    "RM2",
+    "WiFi",
+    "Bluetooth",
+    "BLE"
+  ],
+  "import": {
+    "source_repo": "https://github.com/sparkfun/SparkFun-KiCad-Libraries",
+    "source_commit": "2423e36aead98c5756ae09366e0388ff21a82808",
+    "source_files": {
+      "symbol": "symbols/SparkFun-RF.kicad_sym#RM2",
+      "footprint": "footprints/SparkFun-RF.pretty/RM2.kicad_mod",
+      "model": "3dmodels/RF.3dshapes/RM2.step"
+    },
+    "attribution": "SparkFun Electronics (CC-BY-4.0)",
+    "sparkfun_prod_id": "IC-21607",
+    "modifications": [
+      "extracted single symbol from library",
+      "rewrote 3D model path to per-part relative"
+    ]
+  }
+}

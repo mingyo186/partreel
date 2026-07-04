@@ -1,0 +1,85 @@
+{
+  "id": "sparkfun_zed_f9p",
+  "name": "ZED-F9P (SparkFun)",
+  "category": "module",
+  "family": "SparkFun GNSS",
+  "manufacturer": "SparkFun Electronics",
+  "mpn_pattern": "ZED-F9P",
+  "description": "u-blox Dual-Band RTK GNSS Receiver Imported from the SparkFun KiCad library (CC-BY-4.0, attribution: SparkFun Electronics); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 102,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/module/sparkfun/sparkfun_zed_f9p/sparkfun_zed_f9p.kicad_mod",
+    "symbol": "https://partreel.com/library/module/sparkfun/sparkfun_zed_f9p/sparkfun_zed_f9p.kicad_sym",
+    "model_3d": "https://partreel.com/library/module/sparkfun/sparkfun_zed_f9p/sparkfun_zed_f9p.step",
+    "preview": "https://partreel.com/library/module/sparkfun/sparkfun_zed_f9p/sparkfun_zed_f9p.glb",
+    "footprint_svg": "https://partreel.com/library/module/sparkfun/sparkfun_zed_f9p/sparkfun_zed_f9p.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/module/sparkfun/sparkfun_zed_f9p/sparkfun_zed_f9p.symbol.svg"
+  },
+  "datasheet": "https://cdn.sparkfun.com/assets/f/8/d/6/d/ZED-F9P-02B_DataSheet_UBX-21023276.pdf",
+  "license": "CC-BY-4.0",
+  "verified": true,
+  "dimensions_source": "SparkFun-KiCad-Libraries@2423e36aead9 (SparkFun-GNSS.pretty/ZED-F9P_F9T_F9R_X20P.kicad_mod)",
+  "keywords": [
+    "sparkfun",
+    "SparkFun",
+    "u-blox",
+    "ZED",
+    "F9P",
+    "RTK",
+    "GNSS",
+    "dual",
+    "band"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "SparkFun-KiCad-Libraries@2423e36aead9 (SparkFun-GNSS.pretty/ZED-F9P_F9T_F9R_X20P.kicad_mod)",
+    "datasheet": "https://cdn.sparkfun.com/assets/f/8/d/6/d/ZED-F9P-02B_DataSheet_UBX-21023276.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_sparkfun.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/sparkfun/SparkFun-KiCad-Libraries",
+      "source_commit": "2423e36aead98c5756ae09366e0388ff21a82808",
+      "source_files": {
+        "symbol": "symbols/SparkFun-GNSS.kicad_sym#ZED-F9P",
+        "footprint": "footprints/SparkFun-GNSS.pretty/ZED-F9P_F9T_F9R_X20P.kicad_mod",
+        "model": "3dmodels/GNSS.3dshapes/zed-f9p.step"
+      },
+      "attribution": "SparkFun Electronics (CC-BY-4.0)",
+      "sparkfun_prod_id": "IC-16923",
+      "modifications": [
+        "extracted single symbol from library",
+        "rewrote 3D model path to per-part relative"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/sparkfun_zed_f9p/",
+  "api": "https://partreel.com/api/v1/parts/sparkfun_zed_f9p.json"
+}

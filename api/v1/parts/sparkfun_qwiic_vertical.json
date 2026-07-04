@@ -1,0 +1,79 @@
+{
+  "id": "sparkfun_qwiic_vertical",
+  "name": "Qwiic_Vertical (SparkFun)",
+  "category": "connector",
+  "family": "SparkFun Connector",
+  "manufacturer": "SparkFun Electronics",
+  "mpn_pattern": "Qwiic_Vertical",
+  "description": "4 pin JST 1mm polarized connector for I2C Imported from the SparkFun KiCad library (CC-BY-4.0, attribution: SparkFun Electronics); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 6,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/connector/sparkfun/sparkfun_qwiic_vertical/sparkfun_qwiic_vertical.kicad_mod",
+    "symbol": "https://partreel.com/library/connector/sparkfun/sparkfun_qwiic_vertical/sparkfun_qwiic_vertical.kicad_sym",
+    "model_3d": "https://partreel.com/library/connector/sparkfun/sparkfun_qwiic_vertical/sparkfun_qwiic_vertical.step",
+    "preview": "https://partreel.com/library/connector/sparkfun/sparkfun_qwiic_vertical/sparkfun_qwiic_vertical.glb",
+    "footprint_svg": "https://partreel.com/library/connector/sparkfun/sparkfun_qwiic_vertical/sparkfun_qwiic_vertical.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/connector/sparkfun/sparkfun_qwiic_vertical/sparkfun_qwiic_vertical.symbol.svg"
+  },
+  "datasheet": "https://www.jst-mfg.com/product/pdf/eng/eSH.pdf",
+  "license": "CC-BY-4.0",
+  "verified": true,
+  "dimensions_source": "SparkFun-KiCad-Libraries@2423e36aead9 (SparkFun-Connector.pretty/JST_1x04_P1.0mm_Vertical_SMD.kicad_mod)",
+  "keywords": [
+    "sparkfun",
+    "SparkFun",
+    "connector"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "SparkFun-KiCad-Libraries@2423e36aead9 (SparkFun-Connector.pretty/JST_1x04_P1.0mm_Vertical_SMD.kicad_mod)",
+    "datasheet": "https://www.jst-mfg.com/product/pdf/eng/eSH.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_sparkfun.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/sparkfun/SparkFun-KiCad-Libraries",
+      "source_commit": "2423e36aead98c5756ae09366e0388ff21a82808",
+      "source_files": {
+        "symbol": "symbols/SparkFun-Connector.kicad_sym#Qwiic_Vertical",
+        "footprint": "footprints/SparkFun-Connector.pretty/JST_1x04_P1.0mm_Vertical_SMD.kicad_mod",
+        "model": "3dmodels/Connector.3dshapes/Qwiic-Vertical.step"
+      },
+      "attribution": "SparkFun Electronics (CC-BY-4.0)",
+      "sparkfun_prod_id": "CONN-14483",
+      "modifications": [
+        "extracted single symbol from library",
+        "rewrote 3D model path to per-part relative"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/sparkfun_qwiic_vertical/",
+  "api": "https://partreel.com/api/v1/parts/sparkfun_qwiic_vertical.json"
+}

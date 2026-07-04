@@ -1,0 +1,53 @@
+{
+  "id": "sparkfun_mpr121qr2",
+  "name": "MPR121QR2 (SparkFun)",
+  "category": "sensor",
+  "family": "SparkFun Sensor",
+  "manufacturer": "SparkFun Electronics",
+  "mpn_pattern": "MPR121QR2",
+  "description": "The MPR121 is the second generation sensor controller after the release of the MPR03x series devices Imported from the SparkFun KiCad library (CC-BY-4.0, attribution: SparkFun Electronics); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 20,
+    "mounting": "SMD"
+  },
+  "files": {
+    "footprint": "sparkfun_mpr121qr2.kicad_mod",
+    "symbol": "sparkfun_mpr121qr2.kicad_sym",
+    "model_3d": "sparkfun_mpr121qr2.step",
+    "preview": "sparkfun_mpr121qr2.glb",
+    "footprint_svg": "sparkfun_mpr121qr2.footprint.svg",
+    "symbol_svg": "sparkfun_mpr121qr2.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "https://www.nxp.com/docs/en/data-sheet/MPR121.pdf",
+  "dimensions_source": "SparkFun-KiCad-Libraries@2423e36aead9 (SparkFun-Semiconductor-Standard.pretty/QFN-20_3x3mm_P0.4mm.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "license": "CC-BY-4.0",
+  "generated_by": "generators/import_sparkfun.py",
+  "keywords": [
+    "sparkfun",
+    "Capacitive",
+    "Sensor"
+  ],
+  "import": {
+    "source_repo": "https://github.com/sparkfun/SparkFun-KiCad-Libraries",
+    "source_commit": "2423e36aead98c5756ae09366e0388ff21a82808",
+    "source_files": {
+      "symbol": "symbols/SparkFun-Sensor.kicad_sym#MPR121QR2",
+      "footprint": "footprints/SparkFun-Semiconductor-Standard.pretty/QFN-20_3x3mm_P0.4mm.kicad_mod",
+      "model": "3dmodels/Semiconductor-Standard.3dshapes/QFN-20_3x3mm_P0.5mm.step"
+    },
+    "attribution": "SparkFun Electronics (CC-BY-4.0)",
+    "sparkfun_prod_id": "IC-09490",
+    "modifications": [
+      "extracted single symbol from library",
+      "rewrote 3D model path to per-part relative"
+    ]
+  }
+}

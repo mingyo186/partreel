@@ -1,0 +1,77 @@
+{
+  "id": "sparkfun_cy8cmbr3102",
+  "name": "CY8CMBR3102 (SparkFun)",
+  "category": "sensor",
+  "family": "SparkFun Sensor",
+  "manufacturer": "SparkFun Electronics",
+  "mpn_pattern": "CY8CMBR3102",
+  "description": "Capacitive Touch Sensor Imported from the SparkFun KiCad library (CC-BY-4.0, attribution: SparkFun Electronics); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 8,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/sensor/sparkfun/sparkfun_cy8cmbr3102/sparkfun_cy8cmbr3102.kicad_mod",
+    "symbol": "https://partreel.com/library/sensor/sparkfun/sparkfun_cy8cmbr3102/sparkfun_cy8cmbr3102.kicad_sym",
+    "model_3d": "https://partreel.com/library/sensor/sparkfun/sparkfun_cy8cmbr3102/sparkfun_cy8cmbr3102.step",
+    "preview": "https://partreel.com/library/sensor/sparkfun/sparkfun_cy8cmbr3102/sparkfun_cy8cmbr3102.glb",
+    "footprint_svg": "https://partreel.com/library/sensor/sparkfun/sparkfun_cy8cmbr3102/sparkfun_cy8cmbr3102.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/sensor/sparkfun/sparkfun_cy8cmbr3102/sparkfun_cy8cmbr3102.symbol.svg"
+  },
+  "datasheet": "https://www.infineon.com/assets/row/public/documents/30/49/infineon-cy8cmbr3002-cy8cmbr3102-cy8cmbr3106s-cy8cmbr3108-cy8cmbr3110-cy8cmbr3116-datasheet-en.pdf",
+  "license": "CC-BY-4.0",
+  "verified": true,
+  "dimensions_source": "SparkFun-KiCad-Libraries@2423e36aead9 (SparkFun-Semiconductor-Standard.pretty/SO-8.kicad_mod)",
+  "keywords": [
+    "sparkfun"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "SparkFun-KiCad-Libraries@2423e36aead9 (SparkFun-Semiconductor-Standard.pretty/SO-8.kicad_mod)",
+    "datasheet": "https://www.infineon.com/assets/row/public/documents/30/49/infineon-cy8cmbr3002-cy8cmbr3102-cy8cmbr3106s-cy8cmbr3108-cy8cmbr3110-cy8cmbr3116-datasheet-en.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_sparkfun.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/sparkfun/SparkFun-KiCad-Libraries",
+      "source_commit": "2423e36aead98c5756ae09366e0388ff21a82808",
+      "source_files": {
+        "symbol": "symbols/SparkFun-Sensor.kicad_sym#CY8CMBR3102",
+        "footprint": "footprints/SparkFun-Semiconductor-Standard.pretty/SO-8.kicad_mod",
+        "model": "3dmodels/Semiconductor-Standard.3dshapes/SO-8_3.9x4.9mm_P1.27mm.step"
+      },
+      "attribution": "SparkFun Electronics (CC-BY-4.0)",
+      "sparkfun_prod_id": "IC-27515",
+      "modifications": [
+        "extracted single symbol from library",
+        "rewrote 3D model path to per-part relative"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/sparkfun_cy8cmbr3102/",
+  "api": "https://partreel.com/api/v1/parts/sparkfun_cy8cmbr3102.json"
+}

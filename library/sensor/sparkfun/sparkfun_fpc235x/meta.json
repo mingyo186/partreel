@@ -1,0 +1,54 @@
+{
+  "id": "sparkfun_fpc235x",
+  "name": "FPC235x (SparkFun)",
+  "category": "sensor",
+  "family": "SparkFun Sensor",
+  "manufacturer": "SparkFun Electronics",
+  "mpn_pattern": "FPC235x",
+  "description": "FPC2530 Allkey Pro 100026223‎ Fingerprint Sensor Imported from the SparkFun KiCad library (CC-BY-4.0, attribution: SparkFun Electronics); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 47,
+    "mounting": "SMD"
+  },
+  "files": {
+    "footprint": "sparkfun_fpc235x.kicad_mod",
+    "symbol": "sparkfun_fpc235x.kicad_sym",
+    "model_3d": "sparkfun_fpc235x.step",
+    "preview": "sparkfun_fpc235x.glb",
+    "footprint_svg": "sparkfun_fpc235x.footprint.svg",
+    "symbol_svg": "sparkfun_fpc235x.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/6585/SPC27317-5%20FPC2530.pdf",
+  "dimensions_source": "SparkFun-KiCad-Libraries@2423e36aead9 (SparkFun-Sensor.pretty/FPC253x.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "license": "CC-BY-4.0",
+  "generated_by": "generators/import_sparkfun.py",
+  "keywords": [
+    "sparkfun",
+    "SparkFun",
+    "Fingerprint",
+    "Sensor"
+  ],
+  "import": {
+    "source_repo": "https://github.com/sparkfun/SparkFun-KiCad-Libraries",
+    "source_commit": "2423e36aead98c5756ae09366e0388ff21a82808",
+    "source_files": {
+      "symbol": "symbols/SparkFun-Sensor.kicad_sym#FPC235x",
+      "footprint": "footprints/SparkFun-Sensor.pretty/FPC253x.kicad_mod",
+      "model": "3dmodels/Sensor.3dshapes/FPC2530.step"
+    },
+    "attribution": "SparkFun Electronics (CC-BY-4.0)",
+    "sparkfun_prod_id": "IC-26955",
+    "modifications": [
+      "extracted single symbol from library",
+      "rewrote 3D model path to per-part relative"
+    ]
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "id": "sparkfun_saw_filter_1575mhz",
+  "name": "SAW_Filter_1575MHz (SparkFun)",
+  "category": "module",
+  "family": "SparkFun RF",
+  "manufacturer": "SparkFun Electronics",
+  "mpn_pattern": "SAW_Filter_1575MHz",
+  "description": "Murata 1575.42/1602MHz SAW filter, SMD 1109 Imported from the SparkFun KiCad library (CC-BY-4.0, attribution: SparkFun Electronics); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 5,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/module/sparkfun/sparkfun_saw_filter_1575mhz/sparkfun_saw_filter_1575mhz.kicad_mod",
+    "symbol": "https://partreel.com/library/module/sparkfun/sparkfun_saw_filter_1575mhz/sparkfun_saw_filter_1575mhz.kicad_sym",
+    "model_3d": "https://partreel.com/library/module/sparkfun/sparkfun_saw_filter_1575mhz/sparkfun_saw_filter_1575mhz.step",
+    "preview": "https://partreel.com/library/module/sparkfun/sparkfun_saw_filter_1575mhz/sparkfun_saw_filter_1575mhz.glb",
+    "footprint_svg": "https://partreel.com/library/module/sparkfun/sparkfun_saw_filter_1575mhz/sparkfun_saw_filter_1575mhz.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/module/sparkfun/sparkfun_saw_filter_1575mhz/sparkfun_saw_filter_1575mhz.symbol.svg"
+  },
+  "datasheet": "https://www.murata.com/en/products/productdata/8797683712030/DS-SAFFB1G56KB0F0A.pdf",
+  "license": "CC-BY-4.0",
+  "verified": true,
+  "dimensions_source": "SparkFun-KiCad-Libraries@2423e36aead9 (SparkFun-RF.pretty/Filter_1109-5_1.1x0.9mm.kicad_mod)",
+  "keywords": [
+    "sparkfun",
+    "SparkFun",
+    "SAW",
+    "filter",
+    "GNSS",
+    "GPS",
+    "GLONAS",
+    "BeiDou"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "SparkFun-KiCad-Libraries@2423e36aead9 (SparkFun-RF.pretty/Filter_1109-5_1.1x0.9mm.kicad_mod)",
+    "datasheet": "https://www.murata.com/en/products/productdata/8797683712030/DS-SAFFB1G56KB0F0A.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_sparkfun.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/sparkfun/SparkFun-KiCad-Libraries",
+      "source_commit": "2423e36aead98c5756ae09366e0388ff21a82808",
+      "source_files": {
+        "symbol": "symbols/SparkFun-RF.kicad_sym#SAW_Filter_1575MHz",
+        "footprint": "footprints/SparkFun-RF.pretty/Filter_1109-5_1.1x0.9mm.kicad_mod",
+        "model": "3dmodels/RF.3dshapes/Filter_1109-5_1.1x0.9mm.step"
+      },
+      "attribution": "SparkFun Electronics (CC-BY-4.0)",
+      "sparkfun_prod_id": "IC-27031",
+      "modifications": [
+        "extracted single symbol from library",
+        "rewrote 3D model path to per-part relative"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/sparkfun_saw_filter_1575mhz/",
+  "api": "https://partreel.com/api/v1/parts/sparkfun_saw_filter_1575mhz.json"
+}

@@ -1,0 +1,58 @@
+{
+  "id": "sparkfun_usb_c_receptacle",
+  "name": "USB_C_Receptacle (SparkFun)",
+  "category": "connector",
+  "family": "SparkFun Connector",
+  "manufacturer": "SparkFun Electronics",
+  "mpn_pattern": "USB_C_Receptacle",
+  "description": "USB 2.0-only Type-C Receptacle connector Imported from the SparkFun KiCad library (CC-BY-4.0, attribution: SparkFun Electronics); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 14,
+    "mounting": "SMD+THT"
+  },
+  "files": {
+    "footprint": "sparkfun_usb_c_receptacle.kicad_mod",
+    "symbol": "sparkfun_usb_c_receptacle.kicad_sym",
+    "model_3d": "sparkfun_usb_c_receptacle.step",
+    "preview": "sparkfun_usb_c_receptacle.glb",
+    "footprint_svg": "sparkfun_usb_c_receptacle.footprint.svg",
+    "symbol_svg": "sparkfun_usb_c_receptacle.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "https://www.usb.org/sites/default/files/documents/usb_type-c.zip",
+  "dimensions_source": "SparkFun-KiCad-Libraries@2423e36aead9 (SparkFun-Connector.pretty/USB-C_16.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "license": "CC-BY-4.0",
+  "generated_by": "generators/import_sparkfun.py",
+  "keywords": [
+    "sparkfun",
+    "SparkFun",
+    "usb",
+    "universal",
+    "serial",
+    "bus",
+    "type-C",
+    "USB2.0"
+  ],
+  "import": {
+    "source_repo": "https://github.com/sparkfun/SparkFun-KiCad-Libraries",
+    "source_commit": "2423e36aead98c5756ae09366e0388ff21a82808",
+    "source_files": {
+      "symbol": "symbols/SparkFun-Connector.kicad_sym#USB_C_Receptacle",
+      "footprint": "footprints/SparkFun-Connector.pretty/USB-C_16.kicad_mod",
+      "model": "3dmodels/Connector.3dshapes/USB-C_16.step"
+    },
+    "attribution": "SparkFun Electronics (CC-BY-4.0)",
+    "sparkfun_prod_id": "CONN-14122",
+    "modifications": [
+      "extracted single symbol from library",
+      "rewrote 3D model path to per-part relative"
+    ]
+  }
+}

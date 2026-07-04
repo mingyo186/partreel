@@ -1,0 +1,84 @@
+{
+  "id": "sparkfun_lg580p",
+  "name": "LG580P (SparkFun)",
+  "category": "module",
+  "family": "SparkFun GNSS",
+  "manufacturer": "SparkFun Electronics",
+  "mpn_pattern": "LG580P",
+  "description": "Quectel Quadband GNSS Receiver with Heading Imported from the SparkFun KiCad library (CC-BY-4.0, attribution: SparkFun Electronics); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 49,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/module/sparkfun/sparkfun_lg580p/sparkfun_lg580p.kicad_mod",
+    "symbol": "https://partreel.com/library/module/sparkfun/sparkfun_lg580p/sparkfun_lg580p.kicad_sym",
+    "model_3d": "https://partreel.com/library/module/sparkfun/sparkfun_lg580p/sparkfun_lg580p.step",
+    "preview": "https://partreel.com/library/module/sparkfun/sparkfun_lg580p/sparkfun_lg580p.glb",
+    "footprint_svg": "https://partreel.com/library/module/sparkfun/sparkfun_lg580p/sparkfun_lg580p.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/module/sparkfun/sparkfun_lg580p/sparkfun_lg580p.symbol.svg"
+  },
+  "datasheet": "https://cdn.sparkfun.com/assets/1/8/d/6/6/Quectel_LG580P_03__Hardware_Design_V1.0.0_Preliminary_20241012.pdf",
+  "license": "CC-BY-4.0",
+  "verified": true,
+  "dimensions_source": "SparkFun-KiCad-Libraries@2423e36aead9 (SparkFun-GNSS.pretty/Quectel_LG580P.kicad_mod)",
+  "keywords": [
+    "sparkfun",
+    "SparkFun",
+    "GNSS",
+    "GPS",
+    "RTK",
+    "Receiver",
+    "with",
+    "Heading"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "SparkFun-KiCad-Libraries@2423e36aead9 (SparkFun-GNSS.pretty/Quectel_LG580P.kicad_mod)",
+    "datasheet": "https://cdn.sparkfun.com/assets/1/8/d/6/6/Quectel_LG580P_03__Hardware_Design_V1.0.0_Preliminary_20241012.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_sparkfun.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/sparkfun/SparkFun-KiCad-Libraries",
+      "source_commit": "2423e36aead98c5756ae09366e0388ff21a82808",
+      "source_files": {
+        "symbol": "symbols/SparkFun-GNSS.kicad_sym#LG580P",
+        "footprint": "footprints/SparkFun-GNSS.pretty/Quectel_LG580P.kicad_mod",
+        "model": "3dmodels/GNSS.3dshapes/Quectel_LG580P.step"
+      },
+      "attribution": "SparkFun Electronics (CC-BY-4.0)",
+      "sparkfun_prod_id": "GPS-25039",
+      "modifications": [
+        "extracted single symbol from library",
+        "rewrote 3D model path to per-part relative"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/sparkfun_lg580p/",
+  "api": "https://partreel.com/api/v1/parts/sparkfun_lg580p.json"
+}

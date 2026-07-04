@@ -1,0 +1,67 @@
+{
+  "id": "sparkfun_sam_m8q",
+  "name": "SAM-M8Q (SparkFun)",
+  "category": "module",
+  "family": "SparkFun GNSS",
+  "manufacturer": "SparkFun Electronics",
+  "mpn_pattern": "SAM-M8Q",
+  "description": "GPS ublox M8 variant Imported from the SparkFun KiCad library (CC-BY-4.0, attribution: SparkFun Electronics); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 20,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/module/sparkfun/sparkfun_sam_m8q/sparkfun_sam_m8q.kicad_mod",
+    "symbol": "https://partreel.com/library/module/sparkfun/sparkfun_sam_m8q/sparkfun_sam_m8q.kicad_sym",
+    "model_3d": "https://partreel.com/library/module/sparkfun/sparkfun_sam_m8q/sparkfun_sam_m8q.step",
+    "preview": "https://partreel.com/library/module/sparkfun/sparkfun_sam_m8q/sparkfun_sam_m8q.glb",
+    "footprint_svg": "https://partreel.com/library/module/sparkfun/sparkfun_sam_m8q/sparkfun_sam_m8q.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/module/sparkfun/sparkfun_sam_m8q/sparkfun_sam_m8q.symbol.svg"
+  },
+  "datasheet": "https://www.u-blox.com/sites/default/files/SAM-M8Q_DataSheet_%28UBX-16012619%29.pdf",
+  "license": "CC-BY-4.0",
+  "verified": true,
+  "dimensions_source": "SparkFun-KiCad-Libraries@2423e36aead9 (SparkFun-GNSS.pretty/u-blox_SAM-M8Q.kicad_mod)",
+  "keywords": [
+    "sparkfun",
+    "SparkFun",
+    "GNSS",
+    "GPS",
+    "module",
+    "with",
+    "antenna"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "SparkFun-KiCad-Libraries@2423e36aead9 (SparkFun-GNSS.pretty/u-blox_SAM-M8Q.kicad_mod)",
+    "datasheet": "https://www.u-blox.com/sites/default/files/SAM-M8Q_DataSheet_%28UBX-16012619%29.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_sparkfun.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    }
+  },
+  "page": "https://partreel.com/p/sparkfun_sam_m8q/",
+  "api": "https://partreel.com/api/v1/parts/sparkfun_sam_m8q.json"
+}

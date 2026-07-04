@@ -1,0 +1,84 @@
+{
+  "id": "sparkfun_usb_c_receptacle",
+  "name": "USB_C_Receptacle (SparkFun)",
+  "category": "connector",
+  "family": "SparkFun Connector",
+  "manufacturer": "SparkFun Electronics",
+  "mpn_pattern": "USB_C_Receptacle",
+  "description": "USB 2.0-only Type-C Receptacle connector Imported from the SparkFun KiCad library (CC-BY-4.0, attribution: SparkFun Electronics); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 14,
+    "mounting": "SMD+THT"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/connector/sparkfun/sparkfun_usb_c_receptacle/sparkfun_usb_c_receptacle.kicad_mod",
+    "symbol": "https://partreel.com/library/connector/sparkfun/sparkfun_usb_c_receptacle/sparkfun_usb_c_receptacle.kicad_sym",
+    "model_3d": "https://partreel.com/library/connector/sparkfun/sparkfun_usb_c_receptacle/sparkfun_usb_c_receptacle.step",
+    "preview": "https://partreel.com/library/connector/sparkfun/sparkfun_usb_c_receptacle/sparkfun_usb_c_receptacle.glb",
+    "footprint_svg": "https://partreel.com/library/connector/sparkfun/sparkfun_usb_c_receptacle/sparkfun_usb_c_receptacle.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/connector/sparkfun/sparkfun_usb_c_receptacle/sparkfun_usb_c_receptacle.symbol.svg"
+  },
+  "datasheet": "https://www.usb.org/sites/default/files/documents/usb_type-c.zip",
+  "license": "CC-BY-4.0",
+  "verified": true,
+  "dimensions_source": "SparkFun-KiCad-Libraries@2423e36aead9 (SparkFun-Connector.pretty/USB-C_16.kicad_mod)",
+  "keywords": [
+    "sparkfun",
+    "SparkFun",
+    "usb",
+    "universal",
+    "serial",
+    "bus",
+    "type-C",
+    "USB2.0"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "SparkFun-KiCad-Libraries@2423e36aead9 (SparkFun-Connector.pretty/USB-C_16.kicad_mod)",
+    "datasheet": "https://www.usb.org/sites/default/files/documents/usb_type-c.zip",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_sparkfun.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/sparkfun/SparkFun-KiCad-Libraries",
+      "source_commit": "2423e36aead98c5756ae09366e0388ff21a82808",
+      "source_files": {
+        "symbol": "symbols/SparkFun-Connector.kicad_sym#USB_C_Receptacle",
+        "footprint": "footprints/SparkFun-Connector.pretty/USB-C_16.kicad_mod",
+        "model": "3dmodels/Connector.3dshapes/USB-C_16.step"
+      },
+      "attribution": "SparkFun Electronics (CC-BY-4.0)",
+      "sparkfun_prod_id": "CONN-14122",
+      "modifications": [
+        "extracted single symbol from library",
+        "rewrote 3D model path to per-part relative"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/sparkfun_usb_c_receptacle/",
+  "api": "https://partreel.com/api/v1/parts/sparkfun_usb_c_receptacle.json"
+}

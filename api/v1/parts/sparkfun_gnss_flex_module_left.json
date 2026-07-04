@@ -1,0 +1,82 @@
+{
+  "id": "sparkfun_gnss_flex_module_left",
+  "name": "GNSS_Flex_Module_Left (SparkFun)",
+  "category": "module",
+  "family": "SparkFun GNSS",
+  "manufacturer": "SparkFun Electronics",
+  "mpn_pattern": "GNSS_Flex_Module_Left",
+  "description": "2x10 2.0mm Socket with pegs used to connect to Flex carrier header pins Imported from the SparkFun KiCad library (CC-BY-4.0, attribution: SparkFun Electronics); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 20,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/module/sparkfun/sparkfun_gnss_flex_module_left/sparkfun_gnss_flex_module_left.kicad_mod",
+    "symbol": "https://partreel.com/library/module/sparkfun/sparkfun_gnss_flex_module_left/sparkfun_gnss_flex_module_left.kicad_sym",
+    "model_3d": "https://partreel.com/library/module/sparkfun/sparkfun_gnss_flex_module_left/sparkfun_gnss_flex_module_left.step",
+    "preview": "https://partreel.com/library/module/sparkfun/sparkfun_gnss_flex_module_left/sparkfun_gnss_flex_module_left.glb",
+    "footprint_svg": "https://partreel.com/library/module/sparkfun/sparkfun_gnss_flex_module_left/sparkfun_gnss_flex_module_left.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/module/sparkfun/sparkfun_gnss_flex_module_left/sparkfun_gnss_flex_module_left.symbol.svg"
+  },
+  "datasheet": "http://www.4uconnector.com/online/object/4udrawing/22815.pdf",
+  "license": "CC-BY-4.0",
+  "verified": true,
+  "dimensions_source": "SparkFun-KiCad-Libraries@2423e36aead9 (SparkFun-Connector.pretty/2x10_P2.0mm_Socket_Vertical_SMD_Pegs.kicad_mod)",
+  "keywords": [
+    "sparkfun",
+    "SparkFun",
+    "GNSS",
+    "Flex",
+    "Module",
+    "connector"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "SparkFun-KiCad-Libraries@2423e36aead9 (SparkFun-Connector.pretty/2x10_P2.0mm_Socket_Vertical_SMD_Pegs.kicad_mod)",
+    "datasheet": "http://www.4uconnector.com/online/object/4udrawing/22815.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_sparkfun.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/sparkfun/SparkFun-KiCad-Libraries",
+      "source_commit": "2423e36aead98c5756ae09366e0388ff21a82808",
+      "source_files": {
+        "symbol": "symbols/SparkFun-GNSS.kicad_sym#GNSS_Flex_Module_Left",
+        "footprint": "footprints/SparkFun-Connector.pretty/2x10_P2.0mm_Socket_Vertical_SMD_Pegs.kicad_mod",
+        "model": "3dmodels/Connector.3dshapes/2x10_2.0mm_Socket_SMD_Pegs-1.0mm_22815.step"
+      },
+      "attribution": "SparkFun Electronics (CC-BY-4.0)",
+      "sparkfun_prod_id": "CONN-25206",
+      "modifications": [
+        "extracted single symbol from library",
+        "rewrote 3D model path to per-part relative"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/sparkfun_gnss_flex_module_left/",
+  "api": "https://partreel.com/api/v1/parts/sparkfun_gnss_flex_module_left.json"
+}

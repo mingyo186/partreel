@@ -1,0 +1,58 @@
+{
+  "id": "sparkfun_scd41",
+  "name": "SCD41 (SparkFun)",
+  "category": "sensor",
+  "family": "SparkFun Sensor",
+  "manufacturer": "SparkFun Electronics",
+  "mpn_pattern": "SCD41",
+  "description": "Photoacoustic CO2 Sensor Imported from the SparkFun KiCad library (CC-BY-4.0, attribution: SparkFun Electronics); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 21,
+    "mounting": "SMD"
+  },
+  "files": {
+    "footprint": "sparkfun_scd41.kicad_mod",
+    "symbol": "sparkfun_scd41.kicad_sym",
+    "model_3d": "sparkfun_scd41.step",
+    "preview": "sparkfun_scd41.glb",
+    "footprint_svg": "sparkfun_scd41.footprint.svg",
+    "symbol_svg": "sparkfun_scd41.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "https://cdn.sparkfun.com/assets/d/4/9/a/d/Sensirion_CO2_Sensors_SCD4x_Datasheet.pdf",
+  "dimensions_source": "SparkFun-KiCad-Libraries@2423e36aead9 (SparkFun-Sensor.pretty/SCD4X.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "license": "CC-BY-4.0",
+  "generated_by": "generators/import_sparkfun.py",
+  "keywords": [
+    "sparkfun",
+    "SparkFun",
+    "I2C",
+    "±(40",
+    "ppm",
+    "+",
+    "5",
+    "%)"
+  ],
+  "import": {
+    "source_repo": "https://github.com/sparkfun/SparkFun-KiCad-Libraries",
+    "source_commit": "2423e36aead98c5756ae09366e0388ff21a82808",
+    "source_files": {
+      "symbol": "symbols/SparkFun-Sensor.kicad_sym#SCD41",
+      "footprint": "footprints/SparkFun-Sensor.pretty/SCD4X.kicad_mod",
+      "model": "3dmodels/Sensor.3dshapes/SCD4x.step"
+    },
+    "attribution": "SparkFun Electronics (CC-BY-4.0)",
+    "sparkfun_prod_id": "IC-16053",
+    "modifications": [
+      "extracted single symbol from library",
+      "rewrote 3D model path to per-part relative"
+    ]
+  }
+}

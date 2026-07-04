@@ -1,0 +1,54 @@
+{
+  "id": "sparkfun_p23m",
+  "name": "P23M (SparkFun)",
+  "category": "module",
+  "family": "SparkFun GNSS",
+  "manufacturer": "SparkFun Electronics",
+  "mpn_pattern": "P23M",
+  "description": "Tri-band high percision RTK GNSS receiver with HAS capabilities Imported from the SparkFun KiCad library (CC-BY-4.0, attribution: SparkFun Electronics); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 25,
+    "mounting": "SMD"
+  },
+  "files": {
+    "footprint": "sparkfun_p23m.kicad_mod",
+    "symbol": "sparkfun_p23m.kicad_sym",
+    "model_3d": "sparkfun_p23m.step",
+    "preview": "sparkfun_p23m.glb",
+    "footprint_svg": "sparkfun_p23m.footprint.svg",
+    "symbol_svg": "sparkfun_p23m.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "https://cdn.sparkfun.com/assets/9/d/a/7/3/P23M_Datasheet_1.3.pdf",
+  "dimensions_source": "SparkFun-KiCad-Libraries@2423e36aead9 (SparkFun-GNSS.pretty/P23M.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "license": "CC-BY-4.0",
+  "generated_by": "generators/import_sparkfun.py",
+  "keywords": [
+    "sparkfun",
+    "SparkFun",
+    "GNSS",
+    "Receiver"
+  ],
+  "import": {
+    "source_repo": "https://github.com/sparkfun/SparkFun-KiCad-Libraries",
+    "source_commit": "2423e36aead98c5756ae09366e0388ff21a82808",
+    "source_files": {
+      "symbol": "symbols/SparkFun-GNSS.kicad_sym#P23M",
+      "footprint": "footprints/SparkFun-GNSS.pretty/P23M.kicad_mod",
+      "model": "3dmodels/GNSS.3dshapes/P23M.step"
+    },
+    "attribution": "SparkFun Electronics (CC-BY-4.0)",
+    "sparkfun_prod_id": "IC-28074",
+    "modifications": [
+      "extracted single symbol from library",
+      "rewrote 3D model path to per-part relative"
+    ]
+  }
+}

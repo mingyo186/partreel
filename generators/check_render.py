@@ -66,7 +66,8 @@ def main():
 
         if ssvg is not None and ksym is not None:
             # E. 심볼 핀 수
-            ksym_pins = len(re.findall(r'\(pin\s', ksym))
+            _pins_all = re.findall(r'\(pin\s+\w+\s+\w+\s+\(at[^)]*\)\s*\(length\s+[-\d.]+\)((?:\s|hide|\(hide\s+yes\))*)\(', ksym)
+            ksym_pins = sum(1 for f in _pins_all if 'hide' not in f)
             ssvg_pins = ssvg.count('<line')
             if ssvg_pins != ksym_pins:
                 errs.append(f"심볼 핀선 SVG={ssvg_pins} != kicad_sym={ksym_pins}")

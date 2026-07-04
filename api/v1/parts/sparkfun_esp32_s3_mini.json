@@ -1,0 +1,85 @@
+{
+  "id": "sparkfun_esp32_s3_mini",
+  "name": "ESP32-S3-MINI (SparkFun)",
+  "category": "module",
+  "family": "SparkFun RF",
+  "manufacturer": "SparkFun Electronics",
+  "mpn_pattern": "ESP32-S3-MINI",
+  "description": "ESP32-S3-MINI Imported from the SparkFun KiCad library (CC-BY-4.0, attribution: SparkFun Electronics); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 65,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/module/sparkfun/sparkfun_esp32_s3_mini/sparkfun_esp32_s3_mini.kicad_mod",
+    "symbol": "https://partreel.com/library/module/sparkfun/sparkfun_esp32_s3_mini/sparkfun_esp32_s3_mini.kicad_sym",
+    "model_3d": "https://partreel.com/library/module/sparkfun/sparkfun_esp32_s3_mini/sparkfun_esp32_s3_mini.step",
+    "preview": "https://partreel.com/library/module/sparkfun/sparkfun_esp32_s3_mini/sparkfun_esp32_s3_mini.glb",
+    "footprint_svg": "https://partreel.com/library/module/sparkfun/sparkfun_esp32_s3_mini/sparkfun_esp32_s3_mini.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/module/sparkfun/sparkfun_esp32_s3_mini/sparkfun_esp32_s3_mini.symbol.svg"
+  },
+  "datasheet": "https://www.espressif.com/sites/default/files/documentation/esp32-s3-mini-1_mini-1u_datasheet_en.pdf",
+  "license": "CC-BY-4.0",
+  "verified": true,
+  "dimensions_source": "SparkFun-KiCad-Libraries@2423e36aead9 (SparkFun-RF.pretty/ESP32-MINI.kicad_mod)",
+  "keywords": [
+    "sparkfun",
+    "SparkFun",
+    "RF",
+    "Radio",
+    "Bluetooth",
+    "BT",
+    "ESP",
+    "ESP32",
+    "Espressif"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "SparkFun-KiCad-Libraries@2423e36aead9 (SparkFun-RF.pretty/ESP32-MINI.kicad_mod)",
+    "datasheet": "https://www.espressif.com/sites/default/files/documentation/esp32-s3-mini-1_mini-1u_datasheet_en.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_sparkfun.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/sparkfun/SparkFun-KiCad-Libraries",
+      "source_commit": "2423e36aead98c5756ae09366e0388ff21a82808",
+      "source_files": {
+        "symbol": "symbols/SparkFun-RF.kicad_sym#ESP32-S3-MINI",
+        "footprint": "footprints/SparkFun-RF.pretty/ESP32-MINI.kicad_mod",
+        "model": "3dmodels/RF.3dshapes/ESP32-MINI.step"
+      },
+      "attribution": "SparkFun Electronics (CC-BY-4.0)",
+      "sparkfun_prod_id": "IC-20979",
+      "modifications": [
+        "extracted single symbol from library",
+        "rewrote 3D model path to per-part relative"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/sparkfun_esp32_s3_mini/",
+  "api": "https://partreel.com/api/v1/parts/sparkfun_esp32_s3_mini.json"
+}

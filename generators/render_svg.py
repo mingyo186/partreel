@@ -28,7 +28,7 @@ RECT_RE = re.compile(
     r'\(rectangle\s+\(start\s+([-\d.]+)\s+([-\d.]+)\)\s+\(end\s+([-\d.]+)\s+([-\d.]+)\)')
 PIN_RE = re.compile(
     r'\(pin\s+\w+\s+\w+\s+\(at\s+([-\d.]+)\s+([-\d.]+)\s+(\d+)\)\s+\(length\s+([-\d.]+)\)'
-    r'.*?\(name\s+"([^"]+)".*?\(number\s+"([^"]+)"', re.S)
+    r'((?:\s|hide|\(hide\s+yes\))*)\(name\s+"([^"]+)".*?\(number\s+"([^"]+)"', re.S)
 
 
 def svg_header(minx, miny, w, h, m):
@@ -118,7 +118,9 @@ def render_symbol(text):
     xs = [rx1, rx2]; ys = [ty(ry1), ty(ry2)]
     pin_data = []
     for m in pins:
-        px, py, ang, length, name, num = m.groups()
+        px, py, ang, length, flags, name, num = m.groups()
+        if "hide" in flags:  # 스택/숨김 핀 (벤더 파워핀 관례) — KiCad와 동일하게 미표시
+            continue
         px, py, ang, length = float(px), float(py), int(ang), float(length)
         # ang 0 = +x 방향으로 핀이 뻗음(본체 쪽). 연결점은 (px,py).
         ex = px + (length if ang == 0 else -length if ang == 180 else 0)

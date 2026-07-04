@@ -1,0 +1,81 @@
+{
+  "id": "sparkfun_lg290p",
+  "name": "LG290P (SparkFun)",
+  "category": "module",
+  "family": "SparkFun GNSS",
+  "manufacturer": "SparkFun Electronics",
+  "mpn_pattern": "LG290P",
+  "description": "Quectel Quadband GNSS Receiver Imported from the SparkFun KiCad library (CC-BY-4.0, attribution: SparkFun Electronics); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 25,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/module/sparkfun/sparkfun_lg290p/sparkfun_lg290p.kicad_mod",
+    "symbol": "https://partreel.com/library/module/sparkfun/sparkfun_lg290p/sparkfun_lg290p.kicad_sym",
+    "model_3d": "https://partreel.com/library/module/sparkfun/sparkfun_lg290p/sparkfun_lg290p.step",
+    "preview": "https://partreel.com/library/module/sparkfun/sparkfun_lg290p/sparkfun_lg290p.glb",
+    "footprint_svg": "https://partreel.com/library/module/sparkfun/sparkfun_lg290p/sparkfun_lg290p.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/module/sparkfun/sparkfun_lg290p/sparkfun_lg290p.symbol.svg"
+  },
+  "datasheet": "https://cdn.sparkfun.com/assets/4/1/a/7/e/Quectel_LG290P_03__Hardware_Design_V1.0.pdf",
+  "license": "CC-BY-4.0",
+  "verified": true,
+  "dimensions_source": "SparkFun-KiCad-Libraries@2423e36aead9 (SparkFun-GNSS.pretty/Quectel_LG290P.kicad_mod)",
+  "keywords": [
+    "sparkfun",
+    "SparkFun",
+    "GNSS",
+    "GPS",
+    "Receiver"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "SparkFun-KiCad-Libraries@2423e36aead9 (SparkFun-GNSS.pretty/Quectel_LG290P.kicad_mod)",
+    "datasheet": "https://cdn.sparkfun.com/assets/4/1/a/7/e/Quectel_LG290P_03__Hardware_Design_V1.0.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_sparkfun.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/sparkfun/SparkFun-KiCad-Libraries",
+      "source_commit": "2423e36aead98c5756ae09366e0388ff21a82808",
+      "source_files": {
+        "symbol": "symbols/SparkFun-GNSS.kicad_sym#LG290P",
+        "footprint": "footprints/SparkFun-GNSS.pretty/Quectel_LG290P.kicad_mod",
+        "model": "3dmodels/GNSS.3dshapes/Quectel_LG290P.step"
+      },
+      "attribution": "SparkFun Electronics (CC-BY-4.0)",
+      "sparkfun_prod_id": "GPS-23025",
+      "modifications": [
+        "extracted single symbol from library",
+        "rewrote 3D model path to per-part relative"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/sparkfun_lg290p/",
+  "api": "https://partreel.com/api/v1/parts/sparkfun_lg290p.json"
+}

@@ -1,0 +1,57 @@
+{
+  "id": "sparkfun_cap1203",
+  "name": "CAP1203 (SparkFun)",
+  "category": "sensor",
+  "family": "SparkFun Sensor",
+  "manufacturer": "SparkFun Electronics",
+  "mpn_pattern": "CAP1203",
+  "description": "3-Channel Capacitive Touch Sensor Imported from the SparkFun KiCad library (CC-BY-4.0, attribution: SparkFun Electronics); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 8,
+    "mounting": "SMD"
+  },
+  "files": {
+    "footprint": "sparkfun_cap1203.kicad_mod",
+    "symbol": "sparkfun_cap1203.kicad_sym",
+    "model_3d": "sparkfun_cap1203.step",
+    "preview": "sparkfun_cap1203.glb",
+    "footprint_svg": "sparkfun_cap1203.footprint.svg",
+    "symbol_svg": "sparkfun_cap1203.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "https://ww1.microchip.com/downloads/en/DeviceDoc/00001572B.pdf",
+  "dimensions_source": "SparkFun-KiCad-Libraries@2423e36aead9 (SparkFun-Semiconductor-Standard.pretty/SO-8.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "license": "CC-BY-4.0",
+  "generated_by": "generators/import_sparkfun.py",
+  "keywords": [
+    "sparkfun",
+    "SparkFun",
+    "Capacitive",
+    "Touch",
+    "Sensor",
+    "I2C",
+    "CAP1203"
+  ],
+  "import": {
+    "source_repo": "https://github.com/sparkfun/SparkFun-KiCad-Libraries",
+    "source_commit": "2423e36aead98c5756ae09366e0388ff21a82808",
+    "source_files": {
+      "symbol": "symbols/SparkFun-Sensor.kicad_sym#CAP1203",
+      "footprint": "footprints/SparkFun-Semiconductor-Standard.pretty/SO-8.kicad_mod",
+      "model": "3dmodels/Semiconductor-Standard.3dshapes/SO-8_3.9x4.9mm_P1.27mm.step"
+    },
+    "attribution": "SparkFun Electronics (CC-BY-4.0)",
+    "sparkfun_prod_id": "IC-14356",
+    "modifications": [
+      "extracted single symbol from library",
+      "rewrote 3D model path to per-part relative"
+    ]
+  }
+}

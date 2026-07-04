@@ -1,0 +1,55 @@
+{
+  "id": "sparkfun_microsd_pushpush",
+  "name": "microSD_PushPush (SparkFun)",
+  "category": "connector",
+  "family": "SparkFun Connector",
+  "manufacturer": "SparkFun Electronics",
+  "mpn_pattern": "microSD_PushPush",
+  "description": "Micro SD socket External Pin Imported from the SparkFun KiCad library (CC-BY-4.0, attribution: SparkFun Electronics); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 13,
+    "mounting": "SMD"
+  },
+  "files": {
+    "footprint": "sparkfun_microsd_pushpush.kicad_mod",
+    "symbol": "sparkfun_microsd_pushpush.kicad_sym",
+    "model_3d": "sparkfun_microsd_pushpush.step",
+    "preview": "sparkfun_microsd_pushpush.glb",
+    "footprint_svg": "sparkfun_microsd_pushpush.footprint.svg",
+    "symbol_svg": "sparkfun_microsd_pushpush.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "https://cdn.sparkfun.com/assets/a/d/6/0/8/microSD_Datasheet_msd-1-a.pdf",
+  "dimensions_source": "SparkFun-KiCad-Libraries@2423e36aead9 (SparkFun-Connector.pretty/microSD_External_Pin.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "license": "CC-BY-4.0",
+  "generated_by": "generators/import_sparkfun.py",
+  "keywords": [
+    "sparkfun",
+    "SparkFun",
+    "connector",
+    "SD",
+    "microsd"
+  ],
+  "import": {
+    "source_repo": "https://github.com/sparkfun/SparkFun-KiCad-Libraries",
+    "source_commit": "2423e36aead98c5756ae09366e0388ff21a82808",
+    "source_files": {
+      "symbol": "symbols/SparkFun-Connector.kicad_sym#microSD_PushPush",
+      "footprint": "footprints/SparkFun-Connector.pretty/microSD_External_Pin.kicad_mod",
+      "model": "3dmodels/Connector.3dshapes/microSD_External_Pin.step"
+    },
+    "attribution": "SparkFun Electronics (CC-BY-4.0)",
+    "sparkfun_prod_id": "CONN-16110",
+    "modifications": [
+      "extracted single symbol from library",
+      "rewrote 3D model path to per-part relative"
+    ]
+  }
+}

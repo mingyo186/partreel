@@ -1,0 +1,56 @@
+{
+  "id": "sparkfun_vcnl4040",
+  "name": "VCNL4040 (SparkFun)",
+  "category": "sensor",
+  "family": "SparkFun Sensor",
+  "manufacturer": "SparkFun Electronics",
+  "mpn_pattern": "VCNL4040",
+  "description": "Vishay VCNL4040 Human Presence sensor Imported from the SparkFun KiCad library (CC-BY-4.0, attribution: SparkFun Electronics); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 8,
+    "mounting": "SMD"
+  },
+  "files": {
+    "footprint": "sparkfun_vcnl4040.kicad_mod",
+    "symbol": "sparkfun_vcnl4040.kicad_sym",
+    "model_3d": "sparkfun_vcnl4040.step",
+    "preview": "sparkfun_vcnl4040.glb",
+    "footprint_svg": "sparkfun_vcnl4040.footprint.svg",
+    "symbol_svg": "sparkfun_vcnl4040.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "https://www.vishay.com/docs/84274/vcnl4040.pdf",
+  "dimensions_source": "SparkFun-KiCad-Libraries@2423e36aead9 (SparkFun-Sensor.pretty/VCNL4040.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "license": "CC-BY-4.0",
+  "generated_by": "generators/import_sparkfun.py",
+  "keywords": [
+    "sparkfun",
+    "SparkFun",
+    "distance",
+    "presence",
+    "sensor"
+  ],
+  "import": {
+    "source_repo": "https://github.com/sparkfun/SparkFun-KiCad-Libraries",
+    "source_commit": "2423e36aead98c5756ae09366e0388ff21a82808",
+    "source_files": {
+      "symbol": "symbols/SparkFun-Sensor.kicad_sym#VCNL4040",
+      "footprint": "footprints/SparkFun-Sensor.pretty/VCNL4040.kicad_mod",
+      "model": "3dmodels/Sensor.3dshapes/VCNL4040.step"
+    },
+    "attribution": "SparkFun Electronics (CC-BY-4.0)",
+    "sparkfun_prod_id": null,
+    "modifications": [
+      "extracted single symbol from library",
+      "rewrote 3D model path to per-part relative",
+      "auto-added courtyard (pads+fab bbox +0.25mm, IPC-7351)"
+    ]
+  }
+}

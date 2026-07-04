@@ -1,0 +1,85 @@
+{
+  "id": "sparkfun_sht40",
+  "name": "SHT40 (SparkFun)",
+  "category": "sensor",
+  "family": "SparkFun Sensor",
+  "manufacturer": "SparkFun Electronics",
+  "mpn_pattern": "SHT40",
+  "description": "Digital Humidity and Temperature Sensor, ±1%RH, ±0.1°C, I2C, 1.08-3.6V, 16bit, DFN-4 Imported from the SparkFun KiCad library (CC-BY-4.0, attribution: SparkFun Electronics); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 4,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/sensor/sparkfun/sparkfun_sht40/sparkfun_sht40.kicad_mod",
+    "symbol": "https://partreel.com/library/sensor/sparkfun/sparkfun_sht40/sparkfun_sht40.kicad_sym",
+    "model_3d": "https://partreel.com/library/sensor/sparkfun/sparkfun_sht40/sparkfun_sht40.step",
+    "preview": "https://partreel.com/library/sensor/sparkfun/sparkfun_sht40/sparkfun_sht40.glb",
+    "footprint_svg": "https://partreel.com/library/sensor/sparkfun/sparkfun_sht40/sparkfun_sht40.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/sensor/sparkfun/sparkfun_sht40/sparkfun_sht40.symbol.svg"
+  },
+  "datasheet": "https://sensirion.com/media/documents/33FD6951/624C4357/Datasheet_SHT4x.pdf",
+  "license": "CC-BY-4.0",
+  "verified": true,
+  "dimensions_source": "SparkFun-KiCad-Libraries@2423e36aead9 (SparkFun-Sensor.pretty/Sensirion_DFN-4_1.5x1.5mm_P0.8mm_SHT4x_NoCentralPad.kicad_mod)",
+  "keywords": [
+    "sparkfun",
+    "Sensirion",
+    "environment",
+    "environmental",
+    "measurement",
+    "digital",
+    "SHT40",
+    "SHT41",
+    "SHT45"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "SparkFun-KiCad-Libraries@2423e36aead9 (SparkFun-Sensor.pretty/Sensirion_DFN-4_1.5x1.5mm_P0.8mm_SHT4x_NoCentralPad.kicad_mod)",
+    "datasheet": "https://sensirion.com/media/documents/33FD6951/624C4357/Datasheet_SHT4x.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_sparkfun.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/sparkfun/SparkFun-KiCad-Libraries",
+      "source_commit": "2423e36aead98c5756ae09366e0388ff21a82808",
+      "source_files": {
+        "symbol": "symbols/SparkFun-Sensor.kicad_sym#SHT40",
+        "footprint": "footprints/SparkFun-Sensor.pretty/Sensirion_DFN-4_1.5x1.5mm_P0.8mm_SHT4x_NoCentralPad.kicad_mod",
+        "model": "3dmodels/Sensor.3dshapes/SHT40.step"
+      },
+      "attribution": "SparkFun Electronics (CC-BY-4.0)",
+      "sparkfun_prod_id": "IC-...",
+      "modifications": [
+        "extracted single symbol from library",
+        "rewrote 3D model path to per-part relative"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/sparkfun_sht40/",
+  "api": "https://partreel.com/api/v1/parts/sparkfun_sht40.json"
+}

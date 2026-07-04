@@ -1,0 +1,57 @@
+{
+  "id": "sparkfun_hmc6343",
+  "name": "HMC6343 (SparkFun)",
+  "category": "sensor",
+  "family": "SparkFun Sensor",
+  "manufacturer": "SparkFun Electronics",
+  "mpn_pattern": "HMC6343",
+  "description": "HMC6343 is a fully integrated compass module that includes firmware for heading computation and calibration for magnetic distortions Imported from the SparkFun KiCad library (CC-BY-4.0, attribution: SparkFun Electronics); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 36,
+    "mounting": "SMD"
+  },
+  "files": {
+    "footprint": "sparkfun_hmc6343.kicad_mod",
+    "symbol": "sparkfun_hmc6343.kicad_sym",
+    "model_3d": "sparkfun_hmc6343.step",
+    "preview": "sparkfun_hmc6343.glb",
+    "footprint_svg": "sparkfun_hmc6343.footprint.svg",
+    "symbol_svg": "sparkfun_hmc6343.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/694/HMC6343.pdf",
+  "dimensions_source": "SparkFun-KiCad-Libraries@2423e36aead9 (SparkFun-Sensor.pretty/LCC-36.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "license": "CC-BY-4.0",
+  "generated_by": "generators/import_sparkfun.py",
+  "keywords": [
+    "sparkfun",
+    "SparkFun",
+    "Digital",
+    "Compass",
+    "Qwiic",
+    "three-axis",
+    "MEMS"
+  ],
+  "import": {
+    "source_repo": "https://github.com/sparkfun/SparkFun-KiCad-Libraries",
+    "source_commit": "2423e36aead98c5756ae09366e0388ff21a82808",
+    "source_files": {
+      "symbol": "symbols/SparkFun-Sensor.kicad_sym#HMC6343",
+      "footprint": "footprints/SparkFun-Sensor.pretty/LCC-36.kicad_mod",
+      "model": "3dmodels/Sensor.3dshapes/HMC6343_HNW_LCC36.step"
+    },
+    "attribution": "SparkFun Electronics (CC-BY-4.0)",
+    "sparkfun_prod_id": "IC-12117",
+    "modifications": [
+      "extracted single symbol from library",
+      "rewrote 3D model path to per-part relative"
+    ]
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "id": "sparkfun_lis3dh",
+  "name": "LIS3DH (SparkFun)",
+  "category": "sensor",
+  "family": "SparkFun Sensor",
+  "manufacturer": "SparkFun Electronics",
+  "mpn_pattern": "LIS3DH",
+  "description": "The LIS3DH has dynamically user-selectable full scales of ±2g/±4g/±8g/±16g and is capable of measuring accelerations with output data rates from 1 Hz to 5.3 kHz. Imported from the SparkFun KiCad library (CC-BY-4.0, attribution: SparkFun Electronics); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 16,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/sensor/sparkfun/sparkfun_lis3dh/sparkfun_lis3dh.kicad_mod",
+    "symbol": "https://partreel.com/library/sensor/sparkfun/sparkfun_lis3dh/sparkfun_lis3dh.kicad_sym",
+    "model_3d": "https://partreel.com/library/sensor/sparkfun/sparkfun_lis3dh/sparkfun_lis3dh.step",
+    "preview": "https://partreel.com/library/sensor/sparkfun/sparkfun_lis3dh/sparkfun_lis3dh.glb",
+    "footprint_svg": "https://partreel.com/library/sensor/sparkfun/sparkfun_lis3dh/sparkfun_lis3dh.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/sensor/sparkfun/sparkfun_lis3dh/sparkfun_lis3dh.symbol.svg"
+  },
+  "datasheet": "https://www.st.com/en/mems-and-sensors/lis3dh.html",
+  "license": "CC-BY-4.0",
+  "verified": true,
+  "dimensions_source": "SparkFun-KiCad-Libraries@2423e36aead9 (SparkFun-Sensor.pretty/ST_LGA-16_3x3mm_P0.5mm_5x3.kicad_mod)",
+  "keywords": [
+    "sparkfun",
+    "SparkFun",
+    "Accelerometer",
+    "Triple-Axis",
+    "Temperature"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "SparkFun-KiCad-Libraries@2423e36aead9 (SparkFun-Sensor.pretty/ST_LGA-16_3x3mm_P0.5mm_5x3.kicad_mod)",
+    "datasheet": "https://www.st.com/en/mems-and-sensors/lis3dh.html",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_sparkfun.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/sparkfun/SparkFun-KiCad-Libraries",
+      "source_commit": "2423e36aead98c5756ae09366e0388ff21a82808",
+      "source_files": {
+        "symbol": "symbols/SparkFun-Sensor.kicad_sym#LIS3DH",
+        "footprint": "footprints/SparkFun-Sensor.pretty/ST_LGA-16_3x3mm_P0.5mm_5x3.kicad_mod",
+        "model": "3dmodels/Semiconductor-Standard.3dshapes/LGA-16_3x3x1mm.step"
+      },
+      "attribution": "SparkFun Electronics (CC-BY-4.0)",
+      "sparkfun_prod_id": "IC-13419",
+      "modifications": [
+        "extracted single symbol from library",
+        "rewrote 3D model path to per-part relative"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/sparkfun_lis3dh/",
+  "api": "https://partreel.com/api/v1/parts/sparkfun_lis3dh.json"
+}

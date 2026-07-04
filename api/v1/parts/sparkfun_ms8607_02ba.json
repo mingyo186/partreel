@@ -1,0 +1,82 @@
+{
+  "id": "sparkfun_ms8607_02ba",
+  "name": "MS8607-02BA (SparkFun)",
+  "category": "sensor",
+  "family": "SparkFun Sensor",
+  "manufacturer": "SparkFun Electronics",
+  "mpn_pattern": "MS8607-02BA",
+  "description": "The MS8607 is a low power digital sensor providing 3 environmental physical measurements all-in-one: pressure, humidity and temperature (PHT). Imported from the SparkFun KiCad library (CC-BY-4.0, attribution: SparkFun Electronics); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 8,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/sensor/sparkfun/sparkfun_ms8607_02ba/sparkfun_ms8607_02ba.kicad_mod",
+    "symbol": "https://partreel.com/library/sensor/sparkfun/sparkfun_ms8607_02ba/sparkfun_ms8607_02ba.kicad_sym",
+    "model_3d": "https://partreel.com/library/sensor/sparkfun/sparkfun_ms8607_02ba/sparkfun_ms8607_02ba.step",
+    "preview": "https://partreel.com/library/sensor/sparkfun/sparkfun_ms8607_02ba/sparkfun_ms8607_02ba.glb",
+    "footprint_svg": "https://partreel.com/library/sensor/sparkfun/sparkfun_ms8607_02ba/sparkfun_ms8607_02ba.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/sensor/sparkfun/sparkfun_ms8607_02ba/sparkfun_ms8607_02ba.symbol.svg"
+  },
+  "datasheet": "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=MS8607-02BA01&DocType=Data%20Sheet&DocLang=English&DocFormat=pdf&PartCntxt=CAT-BLPS0018",
+  "license": "CC-BY-4.0",
+  "verified": true,
+  "dimensions_source": "SparkFun-KiCad-Libraries@2423e36aead9 (SparkFun-Semiconductor-Standard.pretty/LGA-8_3x5mm_P1.25mm.kicad_mod)",
+  "keywords": [
+    "sparkfun",
+    "SparkFun",
+    "Pressure",
+    "Temperrature",
+    "Humidity",
+    "I2C"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "SparkFun-KiCad-Libraries@2423e36aead9 (SparkFun-Semiconductor-Standard.pretty/LGA-8_3x5mm_P1.25mm.kicad_mod)",
+    "datasheet": "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=MS8607-02BA01&DocType=Data%20Sheet&DocLang=English&DocFormat=pdf&PartCntxt=CAT-BLPS0018",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_sparkfun.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/sparkfun/SparkFun-KiCad-Libraries",
+      "source_commit": "2423e36aead98c5756ae09366e0388ff21a82808",
+      "source_files": {
+        "symbol": "symbols/SparkFun-Sensor.kicad_sym#MS8607-02BA",
+        "footprint": "footprints/SparkFun-Semiconductor-Standard.pretty/LGA-8_3x5mm_P1.25mm.kicad_mod",
+        "model": "3dmodels/Semiconductor-Standard.3dshapes/LGA-8_3x5mm_P1.25mm.step"
+      },
+      "attribution": "SparkFun Electronics (CC-BY-4.0)",
+      "sparkfun_prod_id": "IC-15048",
+      "modifications": [
+        "extracted single symbol from library",
+        "rewrote 3D model path to per-part relative"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/sparkfun_ms8607_02ba/",
+  "api": "https://partreel.com/api/v1/parts/sparkfun_ms8607_02ba.json"
+}

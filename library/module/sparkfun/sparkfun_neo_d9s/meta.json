@@ -1,0 +1,59 @@
+{
+  "id": "sparkfun_neo_d9s",
+  "name": "NEO-D9S (SparkFun)",
+  "category": "module",
+  "family": "SparkFun GNSS",
+  "manufacturer": "SparkFun Electronics",
+  "mpn_pattern": "NEO-D9S",
+  "description": "u-blox GNSS Receiver L-Band Imported from the SparkFun KiCad library (CC-BY-4.0, attribution: SparkFun Electronics); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 24,
+    "mounting": "SMD"
+  },
+  "files": {
+    "footprint": "sparkfun_neo_d9s.kicad_mod",
+    "symbol": "sparkfun_neo_d9s.kicad_sym",
+    "model_3d": "sparkfun_neo_d9s.step",
+    "preview": "sparkfun_neo_d9s.glb",
+    "footprint_svg": "sparkfun_neo_d9s.footprint.svg",
+    "symbol_svg": "sparkfun_neo_d9s.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "https://cdn.sparkfun.com/assets/learn_tutorials/2/3/5/2/NEO-D9S-00B_DataSheet_UBX-18012996.pdf",
+  "dimensions_source": "SparkFun-KiCad-Libraries@2423e36aead9 (SparkFun-GNSS.pretty/NEO-M9N_M8T_M8U_D9S_F9P_F10N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "license": "CC-BY-4.0",
+  "generated_by": "generators/import_sparkfun.py",
+  "keywords": [
+    "sparkfun",
+    "SparkFun",
+    "NEO-D9S",
+    "GNSS",
+    "correction",
+    "service",
+    "L",
+    "band",
+    "L-band"
+  ],
+  "import": {
+    "source_repo": "https://github.com/sparkfun/SparkFun-KiCad-Libraries",
+    "source_commit": "2423e36aead98c5756ae09366e0388ff21a82808",
+    "source_files": {
+      "symbol": "symbols/SparkFun-GNSS.kicad_sym#NEO-D9S",
+      "footprint": "footprints/SparkFun-GNSS.pretty/NEO-M9N_M8T_M8U_D9S_F9P_F10N.kicad_mod",
+      "model": "3dmodels/GNSS.3dshapes/NEO.step"
+    },
+    "attribution": "SparkFun Electronics (CC-BY-4.0)",
+    "sparkfun_prod_id": "IC-16579",
+    "modifications": [
+      "extracted single symbol from library",
+      "rewrote 3D model path to per-part relative"
+    ]
+  }
+}

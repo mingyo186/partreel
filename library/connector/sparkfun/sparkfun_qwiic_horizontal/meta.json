@@ -1,0 +1,53 @@
+{
+  "id": "sparkfun_qwiic_horizontal",
+  "name": "Qwiic_Horizontal (SparkFun)",
+  "category": "connector",
+  "family": "SparkFun Connector",
+  "manufacturer": "SparkFun Electronics",
+  "mpn_pattern": "Qwiic_Horizontal",
+  "description": "4 pin JST 1mm polarized connector for I2C Imported from the SparkFun KiCad library (CC-BY-4.0, attribution: SparkFun Electronics); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 6,
+    "mounting": "SMD"
+  },
+  "files": {
+    "footprint": "sparkfun_qwiic_horizontal.kicad_mod",
+    "symbol": "sparkfun_qwiic_horizontal.kicad_sym",
+    "model_3d": "sparkfun_qwiic_horizontal.step",
+    "preview": "sparkfun_qwiic_horizontal.glb",
+    "footprint_svg": "sparkfun_qwiic_horizontal.footprint.svg",
+    "symbol_svg": "sparkfun_qwiic_horizontal.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "https://www.jst-mfg.com/product/pdf/eng/eSH.pdf",
+  "dimensions_source": "SparkFun-KiCad-Libraries@2423e36aead9 (SparkFun-Connector.pretty/JST_1x04_P1.0mm_Horizontal_SMD.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "license": "CC-BY-4.0",
+  "generated_by": "generators/import_sparkfun.py",
+  "keywords": [
+    "sparkfun",
+    "SparkFun",
+    "connector"
+  ],
+  "import": {
+    "source_repo": "https://github.com/sparkfun/SparkFun-KiCad-Libraries",
+    "source_commit": "2423e36aead98c5756ae09366e0388ff21a82808",
+    "source_files": {
+      "symbol": "symbols/SparkFun-Connector.kicad_sym#Qwiic_Horizontal",
+      "footprint": "footprints/SparkFun-Connector.pretty/JST_1x04_P1.0mm_Horizontal_SMD.kicad_mod",
+      "model": "3dmodels/Connector.3dshapes/Qwiic-Horizontal.step"
+    },
+    "attribution": "SparkFun Electronics (CC-BY-4.0)",
+    "sparkfun_prod_id": "CONN-13694",
+    "modifications": [
+      "extracted single symbol from library",
+      "rewrote 3D model path to per-part relative"
+    ]
+  }
+}

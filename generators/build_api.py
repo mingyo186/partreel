@@ -94,6 +94,8 @@ def main():
                     "ci_config": f"{GITHUB}/blob/main/.github/workflows/deploy.yml",
                 },
                 "field_reports": reports.get(meta["id"], {"worked": 0, "problem": 0}),
+                **({"origin": meta["origin"], "import": meta.get("import")}
+                   if meta.get("origin") == "imported" else {}),
             },
             "page": abs_url("p", meta["id"]) + "/",
             "api": abs_url("api/v1/parts", meta["id"] + ".json"),

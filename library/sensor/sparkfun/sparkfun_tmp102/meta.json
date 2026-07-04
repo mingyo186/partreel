@@ -1,0 +1,57 @@
+{
+  "id": "sparkfun_tmp102",
+  "name": "TMP102 (SparkFun)",
+  "category": "sensor",
+  "family": "SparkFun Sensor",
+  "manufacturer": "SparkFun Electronics",
+  "mpn_pattern": "TMP102",
+  "description": "Digital Temperature Sensor, ±3°C, low-Power, SMBus, 12 bit, Two-Wire Serial Interface, SOT-563 Imported from the SparkFun KiCad library (CC-BY-4.0, attribution: SparkFun Electronics); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 6,
+    "mounting": "SMD"
+  },
+  "files": {
+    "footprint": "sparkfun_tmp102.kicad_mod",
+    "symbol": "sparkfun_tmp102.kicad_sym",
+    "model_3d": "sparkfun_tmp102.step",
+    "preview": "sparkfun_tmp102.glb",
+    "footprint_svg": "sparkfun_tmp102.footprint.svg",
+    "symbol_svg": "sparkfun_tmp102.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "https://www.ti.com/lit/ds/symlink/tmp102.pdf",
+  "dimensions_source": "SparkFun-KiCad-Libraries@2423e36aead9 (SparkFun-Semiconductor-Standard.pretty/SOT-563.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "license": "CC-BY-4.0",
+  "generated_by": "generators/import_sparkfun.py",
+  "keywords": [
+    "sparkfun",
+    "SparkFun",
+    "digital",
+    "temperature",
+    "sensor",
+    "i2c",
+    "smbus"
+  ],
+  "import": {
+    "source_repo": "https://github.com/sparkfun/SparkFun-KiCad-Libraries",
+    "source_commit": "2423e36aead98c5756ae09366e0388ff21a82808",
+    "source_files": {
+      "symbol": "symbols/SparkFun-Sensor.kicad_sym#TMP102",
+      "footprint": "footprints/SparkFun-Semiconductor-Standard.pretty/SOT-563.kicad_mod",
+      "model": "3dmodels/Semiconductor-Standard.3dshapes/SOT-563.step"
+    },
+    "attribution": "SparkFun Electronics (CC-BY-4.0)",
+    "sparkfun_prod_id": "IC-09303",
+    "modifications": [
+      "extracted single symbol from library",
+      "rewrote 3D model path to per-part relative"
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "sparkfun_hx711",
+  "name": "HX711 (SparkFun)",
+  "category": "sensor",
+  "family": "SparkFun Sensor",
+  "manufacturer": "SparkFun Electronics",
+  "mpn_pattern": "HX711",
+  "description": "24-Bit Analog-to-Digital Converter (ADC) for Weight Scales Imported from the SparkFun KiCad library (CC-BY-4.0, attribution: SparkFun Electronics); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 16,
+    "mounting": "SMD"
+  },
+  "files": {
+    "footprint": "sparkfun_hx711.kicad_mod",
+    "symbol": "sparkfun_hx711.kicad_sym",
+    "model_3d": "sparkfun_hx711.step",
+    "preview": "sparkfun_hx711.glb",
+    "footprint_svg": "sparkfun_hx711.footprint.svg",
+    "symbol_svg": "sparkfun_hx711.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "https://cdn.sparkfun.com/datasheets/Sensors/ForceFlex/hx711_english.pdf",
+  "dimensions_source": "SparkFun-KiCad-Libraries@2423e36aead9 (SparkFun-Semiconductor-Standard.pretty/SO-16.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "license": "CC-BY-4.0",
+  "generated_by": "generators/import_sparkfun.py",
+  "keywords": [
+    "sparkfun",
+    "SparkFun",
+    "Load",
+    "cell",
+    "amplifier"
+  ],
+  "import": {
+    "source_repo": "https://github.com/sparkfun/SparkFun-KiCad-Libraries",
+    "source_commit": "2423e36aead98c5756ae09366e0388ff21a82808",
+    "source_files": {
+      "symbol": "symbols/SparkFun-Sensor.kicad_sym#HX711",
+      "footprint": "footprints/SparkFun-Semiconductor-Standard.pretty/SO-16.kicad_mod",
+      "model": "3dmodels/Semiconductor-Standard.3dshapes/SO-16_3.9x9.9mm_P1.27mm.step"
+    },
+    "attribution": "SparkFun Electronics (CC-BY-4.0)",
+    "sparkfun_prod_id": "IC-12445",
+    "modifications": [
+      "extracted single symbol from library",
+      "rewrote 3D model path to per-part relative"
+    ]
+  }
+}

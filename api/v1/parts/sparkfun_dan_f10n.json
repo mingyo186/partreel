@@ -1,0 +1,82 @@
+{
+  "id": "sparkfun_dan_f10n",
+  "name": "DAN-F10N (SparkFun)",
+  "category": "module",
+  "family": "SparkFun GNSS",
+  "manufacturer": "SparkFun Electronics",
+  "mpn_pattern": "DAN-F10N",
+  "description": "u-blox Dualband L1/L5 GNSS Receiver Imported from the SparkFun KiCad library (CC-BY-4.0, attribution: SparkFun Electronics); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 57,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/module/sparkfun/sparkfun_dan_f10n/sparkfun_dan_f10n.kicad_mod",
+    "symbol": "https://partreel.com/library/module/sparkfun/sparkfun_dan_f10n/sparkfun_dan_f10n.kicad_sym",
+    "model_3d": "https://partreel.com/library/module/sparkfun/sparkfun_dan_f10n/sparkfun_dan_f10n.step",
+    "preview": "https://partreel.com/library/module/sparkfun/sparkfun_dan_f10n/sparkfun_dan_f10n.glb",
+    "footprint_svg": "https://partreel.com/library/module/sparkfun/sparkfun_dan_f10n/sparkfun_dan_f10n.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/module/sparkfun/sparkfun_dan_f10n/sparkfun_dan_f10n.symbol.svg"
+  },
+  "datasheet": "https://github.com/sparkfun/SparkFun-KiCad-Libraries/blob/2423e36aead9/symbols/SparkFun-GNSS.kicad_sym",
+  "license": "CC-BY-4.0",
+  "verified": true,
+  "dimensions_source": "SparkFun-KiCad-Libraries@2423e36aead9 (SparkFun-GNSS.pretty/u-blox_DAN-F10N.kicad_mod)",
+  "keywords": [
+    "sparkfun",
+    "SparkFun",
+    "GNSS",
+    "GPS",
+    "L1/L5",
+    "Receiver"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "SparkFun-KiCad-Libraries@2423e36aead9 (SparkFun-GNSS.pretty/u-blox_DAN-F10N.kicad_mod)",
+    "datasheet": "https://github.com/sparkfun/SparkFun-KiCad-Libraries/blob/2423e36aead9/symbols/SparkFun-GNSS.kicad_sym",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_sparkfun.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/sparkfun/SparkFun-KiCad-Libraries",
+      "source_commit": "2423e36aead98c5756ae09366e0388ff21a82808",
+      "source_files": {
+        "symbol": "symbols/SparkFun-GNSS.kicad_sym#DAN-F10N",
+        "footprint": "footprints/SparkFun-GNSS.pretty/u-blox_DAN-F10N.kicad_mod",
+        "model": "3dmodels/GNSS.3dshapes/u-blox_DAN-F10N.step"
+      },
+      "attribution": "SparkFun Electronics (CC-BY-4.0)",
+      "sparkfun_prod_id": "IC-25933",
+      "modifications": [
+        "extracted single symbol from library",
+        "rewrote 3D model path to per-part relative"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/sparkfun_dan_f10n/",
+  "api": "https://partreel.com/api/v1/parts/sparkfun_dan_f10n.json"
+}
