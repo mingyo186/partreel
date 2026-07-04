@@ -465,8 +465,14 @@ def aht10():
                         (2.49, y1 + 0.25, -2.49, y1 + 0.25), (-2.49, y1 + 0.25, -2.49, y0 - 0.25)],
                        "F.CrtYd", 0.05)
     for name, x, y in pads:
-        out.append(f'  (pad "{name}" smd rect (at {x} {y}) (size 1.27 1.0) '
-                   f'(layers "F.Cu" "F.Paste" "F.Mask"))')
+        # 1번 패드는 원형 (Fig.1: 패키지 1번 패드가 원형; 본문 "PCB 패드 내측은 I/O 패드
+        # 모양 일치 + 원형 마스크 오프닝" 규칙 → Ø1.0 = Fig.8 패드 높이)
+        if name == "1":
+            out.append(f'  (pad "1" smd circle (at {x} {y}) (size 1.0 1.0) '
+                       f'(layers "F.Cu" "F.Paste" "F.Mask"))')
+        else:
+            out.append(f'  (pad "{name}" smd rect (at {x} {y}) (size 1.27 1.0) '
+                       f'(layers "F.Cu" "F.Paste" "F.Mask"))')
     out.append(')')
     footprint = "\n".join(out) + "\n"
 
@@ -487,9 +493,10 @@ def aht10():
                   "footprint_svg": f"{fid}.footprint.svg", "symbol_svg": f"{fid}.symbol.svg"},
         "formats": ["kicad_mod", "kicad_sym", "step", "glb"],
         "datasheet": "https://components101.com/sites/default/files/component_datasheet/AHT10.pdf",
-        "dimensions_source": "ASAIR AHT10 Technical Manual: Fig.1 package 4x5x1.6mm (sensor pads 0.8 sq, "
-                             "col 2.7, row 1.27), Fig.8 recommended land pattern (PCB pads 1.27x1.0, "
-                             "col spacing 3.2, row pitch 1.27), Table 5 pinout (ADR/SDA/SCL|VDD/GND/NC).",
+        "dimensions_source": "ASAIR AHT10 Technical Manual: Fig.1 package 4x5x1.6mm (pad 1 round, pads 2-6 "
+                             "0.8 sq, col 2.7, row 1.27), Fig.8 recommended land pattern (PCB pads 1.27x1.0, "
+                             "col spacing 3.2, row pitch 1.27; pad 1 circle D1.0 per round-pad shape-match "
+                             "rule in 2.1), Table 5 pinout (ADR/SDA/SCL|VDD/GND/NC).",
         "verified": True, "license": "CC-BY-4.0", "generated_by": "generators/gen_parts.py",
         "keywords": ["aht10", "asair", "aosong", "humidity", "temperature", "sensor", "i2c", "lga", "4x5mm"],
     }
