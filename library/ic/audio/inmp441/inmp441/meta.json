@@ -1,0 +1,44 @@
+{
+  "id": "inmp441",
+  "name": "INMP441 I2S MEMS Microphone",
+  "category": "ic",
+  "family": "audio",
+  "manufacturer": "TDK InvenSense",
+  "mpn_pattern": "INMP441ACEZ-R7",
+  "description": "TDK InvenSense INMP441 omnidirectional bottom-port MEMS microphone with 24-bit I2S output, 1.8-3.3V. The default ESP32 I2S mic. Footprint includes the required PCB sound hole (0.8mm NPTH) under the port ring - keep solder paste off the hole.",
+  "parameters": {
+    "contacts": 9,
+    "mounting": "SMD",
+    "supply_voltage": "1.8-3.3V",
+    "interface": "I2S",
+    "body_mm": "4.72x3.76x0.98"
+  },
+  "files": {
+    "footprint": "inmp441.kicad_mod",
+    "symbol": "inmp441.kicad_sym",
+    "model_3d": "inmp441.step",
+    "preview": "inmp441.glb",
+    "footprint_svg": "inmp441.footprint.svg",
+    "symbol_svg": "inmp441.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "https://www.farnell.com/datasheets/1824785.pdf",
+  "dimensions_source": "TDK DS-INMP441-00 Rev1.0: Fig.16 LGA_CAV 4.72x3.76x0.98; Fig.14 recommended land (1:1): 8 pads 0.4x0.6, columns 2.66 c-c, pitch 1.05, port ring ID0.96/OD1.56, PCB hole 0.5-1.0. Pinout Fig.3 (bottom view, mirrored for footprint).",
+  "verified": true,
+  "license": "CC-BY-4.0",
+  "generated_by": "generators/gen_ics.py",
+  "keywords": [
+    "inmp441",
+    "invensense",
+    "mems",
+    "microphone",
+    "i2s",
+    "esp32",
+    "audio"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": "sim800l",
+  "name": "SIM800L GSM/GPRS Module (Red Breakout)",
+  "category": "module",
+  "family": "rf",
+  "manufacturer": "SIMCom (generic breakout)",
+  "mpn_pattern": "SIM800L",
+  "description": "SIM800L quad-band GSM/GPRS module on the common red coreboard, 3.4-4.4V (2A bursts!), UART, u.FL + solder antenna pads, micro-SIM on back. Do not confuse with the larger blue SIM800L EVB v2.0.",
+  "parameters": {
+    "contacts": 12,
+    "mounting": "THT",
+    "supply_voltage": "3.4-4.4V",
+    "board_mm": "24.9x22.7"
+  },
+  "files": {
+    "footprint": "sim800l.kicad_mod",
+    "symbol": "sim800l.kicad_sym",
+    "model_3d": "sim800l.step",
+    "preview": "sim800l.glb",
+    "footprint_svg": "sim800l.footprint.svg",
+    "symbol_svg": "sim800l.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "https://www.haoyuelectronics.com/Attachment/SIM800L/SIM800L_Coreboard.jpg",
+  "dimensions_source": "HAOYU coreboard photos, pitch-calibrated: board 24.9x22.7, 2x6 pins 2.54 pitch, columns 20.0 c-c (off-grid), first pin 5.7 below top edge. Pin names verbatim from silkscreen (NET has square pad).",
+  "verified": true,
+  "license": "CC-BY-4.0",
+  "generated_by": "generators/gen_ics.py",
+  "keywords": [
+    "sim800l",
+    "gsm",
+    "gprs",
+    "sms",
+    "module",
+    "simcom"
+  ]
+}

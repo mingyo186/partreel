@@ -1,0 +1,68 @@
+{
+  "id": "hc_sr04",
+  "name": "HC-SR04 Ultrasonic Distance Sensor Module",
+  "category": "module",
+  "family": "sensor",
+  "manufacturer": "Generic",
+  "mpn_pattern": "HC-SR04",
+  "description": "Classic HC-SR04 ultrasonic ranging module (2-400cm), 5V, 4-pin header (VCC Trig Echo GND). Footprint is the module board with mounting holes; HC-SR04P (3.3-5.5V) and RCWL clones are mechanically identical. Some units have only 2 diagonal mounting holes.",
+  "parameters": {
+    "contacts": 4,
+    "mounting": "THT header",
+    "supply_voltage": "5V",
+    "board_mm": "45x20"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/module/sensor/hc_sr04/hc_sr04/hc_sr04.kicad_mod",
+    "symbol": "https://partreel.com/library/module/sensor/hc_sr04/hc_sr04/hc_sr04.kicad_sym",
+    "model_3d": "https://partreel.com/library/module/sensor/hc_sr04/hc_sr04/hc_sr04.step",
+    "preview": "https://partreel.com/library/module/sensor/hc_sr04/hc_sr04/hc_sr04.glb",
+    "footprint_svg": "https://partreel.com/library/module/sensor/hc_sr04/hc_sr04/hc_sr04.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/module/sensor/hc_sr04/hc_sr04/hc_sr04.symbol.svg"
+  },
+  "datasheet": "https://cdn.sparkfun.com/datasheets/Sensors/Proximity/HCSR04.pdf",
+  "license": "CC-BY-4.0",
+  "verified": true,
+  "dimensions_source": "Elecfreaks HC-SR04 datasheet (45x20x15) + Cytron manual drawing (4 holes, 40mm spacing) + calibrated photo measurement: holes D2.0 at 2.5 corner insets (40.0x15.0 grid), transducers D16 at 27.0 c-c, header 2.54 pitch centered 2.0 above bottom edge.",
+  "keywords": [
+    "hc-sr04",
+    "ultrasonic",
+    "distance",
+    "sonar",
+    "module",
+    "arduino"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "Elecfreaks HC-SR04 datasheet (45x20x15) + Cytron manual drawing (4 holes, 40mm spacing) + calibrated photo measurement: holes D2.0 at 2.5 corner insets (40.0x15.0 grid), transducers D16 at 27.0 c-c, header 2.54 pitch centered 2.0 above bottom edge.",
+    "datasheet": "https://cdn.sparkfun.com/datasheets/Sensors/Proximity/HCSR04.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/gen_ics.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    }
+  },
+  "page": "https://partreel.com/p/hc_sr04/",
+  "api": "https://partreel.com/api/v1/parts/hc_sr04.json"
+}

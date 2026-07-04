@@ -1,0 +1,70 @@
+{
+  "id": "veml7700",
+  "name": "VEML7700 Ambient Light Sensor",
+  "category": "sensor",
+  "family": "optical",
+  "manufacturer": "Vishay",
+  "mpn_pattern": "VEML7700-TR",
+  "description": "Vishay VEML7700 high-accuracy 16-bit ambient light sensor, 0-140klx, I2C 0x10 fixed, 2.5-3.6V, transparent side-view SMD package.",
+  "parameters": {
+    "contacts": 4,
+    "mounting": "SMD",
+    "supply_voltage": "2.5-3.6V",
+    "interface": "I2C",
+    "i2c_address": "0x10",
+    "body_mm": "6.8x2.35x3.0"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/sensor/vishay/veml7700/veml7700/veml7700.kicad_mod",
+    "symbol": "https://partreel.com/library/sensor/vishay/veml7700/veml7700/veml7700.kicad_sym",
+    "model_3d": "https://partreel.com/library/sensor/vishay/veml7700/veml7700/veml7700.step",
+    "preview": "https://partreel.com/library/sensor/vishay/veml7700/veml7700/veml7700.glb",
+    "footprint_svg": "https://partreel.com/library/sensor/vishay/veml7700/veml7700/veml7700.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/sensor/vishay/veml7700/veml7700/veml7700.symbol.svg"
+  },
+  "datasheet": "https://www.vishay.com/docs/84286/veml7700.pdf",
+  "license": "CC-BY-4.0",
+  "verified": true,
+  "dimensions_source": "Vishay VEML7700 datasheet Rev1.8 p.10: package 6.8(6.6 body)x3.0x2.35, 4 leads 0.5 wide pitch 1.27; proposed pad layout (side view mount): pads 0.7x1.4 pitch 1.27. Pinout p.1.",
+  "keywords": [
+    "veml7700",
+    "vishay",
+    "light",
+    "lux",
+    "ambient",
+    "i2c"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "Vishay VEML7700 datasheet Rev1.8 p.10: package 6.8(6.6 body)x3.0x2.35, 4 leads 0.5 wide pitch 1.27; proposed pad layout (side view mount): pads 0.7x1.4 pitch 1.27. Pinout p.1.",
+    "datasheet": "https://www.vishay.com/docs/84286/veml7700.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/gen_ics.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    }
+  },
+  "page": "https://partreel.com/p/veml7700/",
+  "api": "https://partreel.com/api/v1/parts/veml7700.json"
+}

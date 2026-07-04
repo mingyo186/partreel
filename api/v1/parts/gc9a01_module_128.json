@@ -1,0 +1,70 @@
+{
+  "id": "gc9a01_module_128",
+  "name": "1.28\" GC9A01 Round LCD Module (240x240, SPI)",
+  "category": "module",
+  "family": "display",
+  "manufacturer": "Generic (lcdwiki MSP1281)",
+  "mpn_pattern": "MSP1281",
+  "description": "Common 1.28 inch round IPS LCD module with GC9A01 controller, 240x240, SPI 8-pin header (BLK CS DC RES SDA SCL VCC GND), round PCB D38 with 23mm bottom tab. Smartwatch-project staple; pairs with CST816S touch variants. Verify against your vendor - clones vary.",
+  "parameters": {
+    "contacts": 8,
+    "mounting": "THT header",
+    "interface": "SPI",
+    "supply_voltage": "3.3V",
+    "board_mm": "D38.03x45.8"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/module/display/gc9a01_module_128/gc9a01_module_128/gc9a01_module_128.kicad_mod",
+    "symbol": "https://partreel.com/library/module/display/gc9a01_module_128/gc9a01_module_128/gc9a01_module_128.kicad_sym",
+    "model_3d": "https://partreel.com/library/module/display/gc9a01_module_128/gc9a01_module_128/gc9a01_module_128.step",
+    "preview": "https://partreel.com/library/module/display/gc9a01_module_128/gc9a01_module_128/gc9a01_module_128.glb",
+    "footprint_svg": "https://partreel.com/library/module/display/gc9a01_module_128/gc9a01_module_128/gc9a01_module_128.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/module/display/gc9a01_module_128/gc9a01_module_128/gc9a01_module_128.symbol.svg"
+  },
+  "datasheet": "https://www.lcdwiki.com/res/MSP1281/MSP1281_Size.pdf",
+  "license": "CC-BY-4.0",
+  "verified": true,
+  "dimensions_source": "lcdwiki MSP1281 size drawing: round D38.03 + tab 23.0 wide, overall 45.8; 8-pin 2.54 header (span 17.78, row 1.47 above bottom); 2x D2.0 holes 19.4 c-c at 5.82 above bottom; active area D32.4 concentric.",
+  "keywords": [
+    "gc9a01",
+    "round lcd",
+    "1.28",
+    "240x240",
+    "spi",
+    "module",
+    "smartwatch"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "lcdwiki MSP1281 size drawing: round D38.03 + tab 23.0 wide, overall 45.8; 8-pin 2.54 header (span 17.78, row 1.47 above bottom); 2x D2.0 holes 19.4 c-c at 5.82 above bottom; active area D32.4 concentric.",
+    "datasheet": "https://www.lcdwiki.com/res/MSP1281/MSP1281_Size.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/gen_ics.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    }
+  },
+  "page": "https://partreel.com/p/gc9a01_module_128/",
+  "api": "https://partreel.com/api/v1/parts/gc9a01_module_128.json"
+}

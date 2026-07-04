@@ -1,0 +1,43 @@
+{
+  "id": "max6675",
+  "name": "MAX6675 Thermocouple-to-Digital Converter",
+  "category": "ic",
+  "family": "sensor_if",
+  "manufacturer": "Maxim Integrated",
+  "mpn_pattern": "MAX6675ISA",
+  "description": "Maxim MAX6675 cold-junction-compensated K-thermocouple to digital converter, 12-bit SPI read-only, 3.0-5.5V, SOIC-8. The entry-level thermocouple interface on K-type breakouts (MAX31855 is 3.3V-only, not a drop-in).",
+  "parameters": {
+    "contacts": 8,
+    "mounting": "SMD",
+    "supply_voltage": "3.0-5.5V",
+    "interface": "SPI",
+    "body_mm": "4.9x3.9x1.55"
+  },
+  "files": {
+    "footprint": "max6675.kicad_mod",
+    "symbol": "max6675.kicad_sym",
+    "model_3d": "max6675.step",
+    "preview": "max6675.glb",
+    "footprint_svg": "max6675.footprint.svg",
+    "symbol_svg": "max6675.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "https://cdn-shop.adafruit.com/datasheets/MAX6675.pdf",
+  "dimensions_source": "Maxim MAX6675 datasheet 19-2235 p.8: SOIC .150 (MS012-A) body 4.9x3.9, span 6.0, pitch 1.27. Land pads 0.61x1.6 rows 5.4 c-c per IPC-7351. Pinout p.1.",
+  "verified": true,
+  "license": "CC-BY-4.0",
+  "generated_by": "generators/gen_ics.py",
+  "keywords": [
+    "max6675",
+    "thermocouple",
+    "k-type",
+    "spi",
+    "temperature",
+    "soic-8"
+  ]
+}

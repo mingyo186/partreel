@@ -1,0 +1,68 @@
+{
+  "id": "sim800l",
+  "name": "SIM800L GSM/GPRS Module (Red Breakout)",
+  "category": "module",
+  "family": "rf",
+  "manufacturer": "SIMCom (generic breakout)",
+  "mpn_pattern": "SIM800L",
+  "description": "SIM800L quad-band GSM/GPRS module on the common red coreboard, 3.4-4.4V (2A bursts!), UART, u.FL + solder antenna pads, micro-SIM on back. Do not confuse with the larger blue SIM800L EVB v2.0.",
+  "parameters": {
+    "contacts": 12,
+    "mounting": "THT",
+    "supply_voltage": "3.4-4.4V",
+    "board_mm": "24.9x22.7"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/module/rf/sim800l/sim800l/sim800l.kicad_mod",
+    "symbol": "https://partreel.com/library/module/rf/sim800l/sim800l/sim800l.kicad_sym",
+    "model_3d": "https://partreel.com/library/module/rf/sim800l/sim800l/sim800l.step",
+    "preview": "https://partreel.com/library/module/rf/sim800l/sim800l/sim800l.glb",
+    "footprint_svg": "https://partreel.com/library/module/rf/sim800l/sim800l/sim800l.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/module/rf/sim800l/sim800l/sim800l.symbol.svg"
+  },
+  "datasheet": "https://www.haoyuelectronics.com/Attachment/SIM800L/SIM800L_Coreboard.jpg",
+  "license": "CC-BY-4.0",
+  "verified": true,
+  "dimensions_source": "HAOYU coreboard photos, pitch-calibrated: board 24.9x22.7, 2x6 pins 2.54 pitch, columns 20.0 c-c (off-grid), first pin 5.7 below top edge. Pin names verbatim from silkscreen (NET has square pad).",
+  "keywords": [
+    "sim800l",
+    "gsm",
+    "gprs",
+    "sms",
+    "module",
+    "simcom"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "HAOYU coreboard photos, pitch-calibrated: board 24.9x22.7, 2x6 pins 2.54 pitch, columns 20.0 c-c (off-grid), first pin 5.7 below top edge. Pin names verbatim from silkscreen (NET has square pad).",
+    "datasheet": "https://www.haoyuelectronics.com/Attachment/SIM800L/SIM800L_Coreboard.jpg",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/gen_ics.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    }
+  },
+  "page": "https://partreel.com/p/sim800l/",
+  "api": "https://partreel.com/api/v1/parts/sim800l.json"
+}

@@ -1,0 +1,71 @@
+{
+  "id": "max17048",
+  "name": "MAX17048 LiPo Fuel Gauge",
+  "category": "ic",
+  "family": "power",
+  "manufacturer": "Maxim Integrated",
+  "mpn_pattern": "MAX17048G+T10",
+  "description": "Maxim MAX17048 1-cell Li-ion fuel gauge with ModelGauge, I2C 0x36 fixed, 2.5-4.5V, TDFN-8 2x2 (EP=GND). The battery-percentage chip on modern ESP32 dev boards.",
+  "parameters": {
+    "contacts": 9,
+    "mounting": "SMD",
+    "supply_voltage": "2.5-4.5V",
+    "interface": "I2C",
+    "i2c_address": "0x36",
+    "body_mm": "2.0x2.0x0.75"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/ic/power/max17048/max17048/max17048.kicad_mod",
+    "symbol": "https://partreel.com/library/ic/power/max17048/max17048/max17048.kicad_sym",
+    "model_3d": "https://partreel.com/library/ic/power/max17048/max17048/max17048.step",
+    "preview": "https://partreel.com/library/ic/power/max17048/max17048/max17048.glb",
+    "footprint_svg": "https://partreel.com/library/ic/power/max17048/max17048/max17048.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/ic/power/max17048/max17048/max17048.symbol.svg"
+  },
+  "datasheet": "https://cdn.sparkfun.com/assets/5/2/7/6/6/MAX17048-MAX17049.pdf",
+  "license": "CC-BY-4.0",
+  "verified": true,
+  "dimensions_source": "Maxim 19-6171 Rev7 + official outline 21-0168 RevM (TDFN 2x2, pitch 0.5, EP 0.8x1.2) + official land 90-0065 RevE (pads 0.30x0.70, rows 1.98 c-c vector-verified, EP land 0.8x1.38). Pinout p.6.",
+  "keywords": [
+    "max17048",
+    "maxim",
+    "fuel gauge",
+    "lipo",
+    "battery",
+    "i2c",
+    "tdfn"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "Maxim 19-6171 Rev7 + official outline 21-0168 RevM (TDFN 2x2, pitch 0.5, EP 0.8x1.2) + official land 90-0065 RevE (pads 0.30x0.70, rows 1.98 c-c vector-verified, EP land 0.8x1.38). Pinout p.6.",
+    "datasheet": "https://cdn.sparkfun.com/assets/5/2/7/6/6/MAX17048-MAX17049.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/gen_ics.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    }
+  },
+  "page": "https://partreel.com/p/max17048/",
+  "api": "https://partreel.com/api/v1/parts/max17048.json"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "xl6009",
+  "name": "XL6009 4A Boost Converter",
+  "category": "ic",
+  "family": "regulator",
+  "manufacturer": "XLSEMI",
+  "mpn_pattern": "XL6009E1",
+  "description": "XLSEMI XL6009 400kHz 4A step-up (boost) DC-DC converter, 5-32V input, TO-263-5. WARNING: the metal tab is the SW switch node, not GND - do not pour ground under it.",
+  "parameters": {
+    "contacts": 5,
+    "mounting": "SMD",
+    "supply_voltage": "5-32V",
+    "body_mm": "8.64x10.16x4.55"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/ic/regulator/xl6009/xl6009/xl6009.kicad_mod",
+    "symbol": "https://partreel.com/library/ic/regulator/xl6009/xl6009/xl6009.kicad_sym",
+    "model_3d": "https://partreel.com/library/ic/regulator/xl6009/xl6009/xl6009.step",
+    "preview": "https://partreel.com/library/ic/regulator/xl6009/xl6009/xl6009.glb",
+    "footprint_svg": "https://partreel.com/library/ic/regulator/xl6009/xl6009/xl6009.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/ic/regulator/xl6009/xl6009/xl6009.symbol.svg"
+  },
+  "datasheet": "https://components101.com/sites/default/files/component_datasheet/XL6009-Datasheet_0.pdf",
+  "license": "CC-BY-4.0",
+  "verified": true,
+  "dimensions_source": "XLSEMI XL6009 datasheet Rev1.1 p.8: TO263-5L body 8.64x10.16x4.55, overall 14.35 incl leads, pitch 1.7, lead 0.84, tab ext 1.27. Land derived per IPC (leads 1.05x2.8, tab 10.4x7.0). Pinout p.2 (tab=SW).",
+  "keywords": [
+    "xl6009",
+    "xlsemi",
+    "boost",
+    "step-up",
+    "dc-dc",
+    "to-263"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "XLSEMI XL6009 datasheet Rev1.1 p.8: TO263-5L body 8.64x10.16x4.55, overall 14.35 incl leads, pitch 1.7, lead 0.84, tab ext 1.27. Land derived per IPC (leads 1.05x2.8, tab 10.4x7.0). Pinout p.2 (tab=SW).",
+    "datasheet": "https://components101.com/sites/default/files/component_datasheet/XL6009-Datasheet_0.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/gen_ics.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    }
+  },
+  "page": "https://partreel.com/p/xl6009/",
+  "api": "https://partreel.com/api/v1/parts/xl6009.json"
+}

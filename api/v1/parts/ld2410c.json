@@ -1,0 +1,69 @@
+{
+  "id": "ld2410c",
+  "name": "HLK-LD2410C 24GHz mmWave Presence Radar",
+  "category": "module",
+  "family": "sensor",
+  "manufacturer": "Hi-Link",
+  "mpn_pattern": "HLK-LD2410C",
+  "description": "Hi-Link LD2410C 24GHz FMCW radar for human presence detection, UART + presence OUT pin (3.3V logic), 5-12V supply (5V advised, 200mA). ESPHome/Home Assistant staple. Antenna side must face the room.",
+  "parameters": {
+    "contacts": 5,
+    "mounting": "THT",
+    "supply_voltage": "5-12V",
+    "board_mm": "22x16"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/module/sensor/ld2410c/ld2410c/ld2410c.kicad_mod",
+    "symbol": "https://partreel.com/library/module/sensor/ld2410c/ld2410c/ld2410c.kicad_sym",
+    "model_3d": "https://partreel.com/library/module/sensor/ld2410c/ld2410c/ld2410c.step",
+    "preview": "https://partreel.com/library/module/sensor/ld2410c/ld2410c/ld2410c.glb",
+    "footprint_svg": "https://partreel.com/library/module/sensor/ld2410c/ld2410c/ld2410c.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/module/sensor/ld2410c/ld2410c/ld2410c.symbol.svg"
+  },
+  "datasheet": "https://d.hlktech.net/download/HLK-LD2410C/1/",
+  "license": "CC-BY-4.0",
+  "verified": true,
+  "dimensions_source": "Hi-Link HLK-LD2410C datasheet V1.00 pp.6-8: board 22x16, 5 pin holes D0.9 at 2.54 pitch (verbatim: 'pin spacing is 2.54mm'), row ~2.54 from edge, centered. Pin order TX RX OUT GND VCC per silkscreen/table.",
+  "keywords": [
+    "ld2410",
+    "mmwave",
+    "radar",
+    "presence",
+    "human sensor",
+    "hi-link",
+    "esphome"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "Hi-Link HLK-LD2410C datasheet V1.00 pp.6-8: board 22x16, 5 pin holes D0.9 at 2.54 pitch (verbatim: 'pin spacing is 2.54mm'), row ~2.54 from edge, centered. Pin order TX RX OUT GND VCC per silkscreen/table.",
+    "datasheet": "https://d.hlktech.net/download/HLK-LD2410C/1/",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/gen_ics.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    }
+  },
+  "page": "https://partreel.com/p/ld2410c/",
+  "api": "https://partreel.com/api/v1/parts/ld2410c.json"
+}

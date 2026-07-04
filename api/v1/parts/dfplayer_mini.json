@@ -1,0 +1,68 @@
+{
+  "id": "dfplayer_mini",
+  "name": "DFPlayer Mini MP3 Player Module",
+  "category": "module",
+  "family": "audio",
+  "manufacturer": "DFRobot",
+  "mpn_pattern": "DFR0299",
+  "description": "DFRobot DFPlayer Mini serial MP3 player module with microSD slot and 3W amp, 3.2-5V, UART control. Clones (MP3-TF-16P) share the identical footprint. Row spacing is 18.03mm per the official drawing.",
+  "parameters": {
+    "contacts": 16,
+    "mounting": "THT",
+    "supply_voltage": "3.2-5V",
+    "board_mm": "20.32x20.32"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/module/audio/dfplayer_mini/dfplayer_mini/dfplayer_mini.kicad_mod",
+    "symbol": "https://partreel.com/library/module/audio/dfplayer_mini/dfplayer_mini/dfplayer_mini.kicad_sym",
+    "model_3d": "https://partreel.com/library/module/audio/dfplayer_mini/dfplayer_mini/dfplayer_mini.step",
+    "preview": "https://partreel.com/library/module/audio/dfplayer_mini/dfplayer_mini/dfplayer_mini.glb",
+    "footprint_svg": "https://partreel.com/library/module/audio/dfplayer_mini/dfplayer_mini/dfplayer_mini.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/module/audio/dfplayer_mini/dfplayer_mini/dfplayer_mini.symbol.svg"
+  },
+  "datasheet": "https://wiki.dfrobot.com/DFPlayer_Mini_SKU_DFR0299",
+  "license": "CC-BY-4.0",
+  "verified": true,
+  "dimensions_source": "DFRobot DFR0299 official dimension drawing v1.1: board 20.32x20.32, 16 pins 2.54 pitch, columns 18.03 c-c, pin1 1.27 below top edge. Pin names per official wiki pinout.",
+  "keywords": [
+    "dfplayer",
+    "mp3",
+    "audio",
+    "module",
+    "dfrobot",
+    "microsd"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "DFRobot DFR0299 official dimension drawing v1.1: board 20.32x20.32, 16 pins 2.54 pitch, columns 18.03 c-c, pin1 1.27 below top edge. Pin names per official wiki pinout.",
+    "datasheet": "https://wiki.dfrobot.com/DFPlayer_Mini_SKU_DFR0299",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/gen_ics.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    }
+  },
+  "page": "https://partreel.com/p/dfplayer_mini/",
+  "api": "https://partreel.com/api/v1/parts/dfplayer_mini.json"
+}

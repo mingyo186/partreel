@@ -1,0 +1,68 @@
+{
+  "id": "hc05",
+  "name": "HC-05 Bluetooth Module (ZS-040)",
+  "category": "module",
+  "family": "rf",
+  "manufacturer": "Generic (ZS-040)",
+  "mpn_pattern": "HC-05",
+  "description": "HC-05 bluetooth serial (SPP) module on the common ZS-040 carrier board, 3.6-6V supply / 3.3V logic, 6-pin right-angle header. HC-06 ships on the same board (4 of 6 pins used).",
+  "parameters": {
+    "contacts": 6,
+    "mounting": "THT",
+    "supply_voltage": "3.6-6V",
+    "board_mm": "37x16"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/module/rf/hc05/hc05/hc05.kicad_mod",
+    "symbol": "https://partreel.com/library/module/rf/hc05/hc05/hc05.kicad_sym",
+    "model_3d": "https://partreel.com/library/module/rf/hc05/hc05/hc05.step",
+    "preview": "https://partreel.com/library/module/rf/hc05/hc05/hc05.glb",
+    "footprint_svg": "https://partreel.com/library/module/rf/hc05/hc05/hc05.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/module/rf/hc05/hc05/hc05.symbol.svg"
+  },
+  "datasheet": "https://protosupplies.com/product/hc-05-bluetooth-module/",
+  "license": "CC-BY-4.0",
+  "verified": true,
+  "dimensions_source": "ZS-040 carrier: 37x16 board (ProtoSupplies measured), 6-pin 2.54 right-angle header inset 2.0 from edge, group centered; daughterboard 27x13. Pin names verbatim from board silkscreen.",
+  "keywords": [
+    "hc-05",
+    "hc-06",
+    "bluetooth",
+    "serial",
+    "module",
+    "zs-040"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "ZS-040 carrier: 37x16 board (ProtoSupplies measured), 6-pin 2.54 right-angle header inset 2.0 from edge, group centered; daughterboard 27x13. Pin names verbatim from board silkscreen.",
+    "datasheet": "https://protosupplies.com/product/hc-05-bluetooth-module/",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/gen_ics.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    }
+  },
+  "page": "https://partreel.com/p/hc05/",
+  "api": "https://partreel.com/api/v1/parts/hc05.json"
+}

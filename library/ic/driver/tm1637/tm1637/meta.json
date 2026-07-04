@@ -1,0 +1,42 @@
+{
+  "id": "tm1637",
+  "name": "TM1637 LED Display Driver",
+  "category": "ic",
+  "family": "driver",
+  "manufacturer": "Titan Micro",
+  "mpn_pattern": "TM1637",
+  "description": "Titan Micro TM1637 6-digit LED display driver with keyscan, proprietary 2-wire interface (CLK/DIO, not I2C), 4.5-5.5V, SOP-20. The chip behind ubiquitous 4-digit clock display modules.",
+  "parameters": {
+    "contacts": 20,
+    "mounting": "SMD",
+    "supply_voltage": "4.5-5.5V",
+    "body_mm": "12.7x7.65x2.35"
+  },
+  "files": {
+    "footprint": "tm1637.kicad_mod",
+    "symbol": "tm1637.kicad_sym",
+    "model_3d": "tm1637.step",
+    "preview": "tm1637.glb",
+    "footprint_svg": "tm1637.footprint.svg",
+    "symbol_svg": "tm1637.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/datasheet/unit/digi_clock/TM1637.pdf",
+  "dimensions_source": "Titan Micro TM1637 datasheet V2.4 p.12: SOP20 body 12.7x7.65, span 10.45, pitch 1.27, foot 0.8. Land pads 0.6x1.9 rows 9.6 c-c per IPC-7351. Pinout p.2 (10=GRID6..15=GRID1 reversed order per datasheet).",
+  "verified": true,
+  "license": "CC-BY-4.0",
+  "generated_by": "generators/gen_ics.py",
+  "keywords": [
+    "tm1637",
+    "led",
+    "display",
+    "driver",
+    "7-segment",
+    "sop-20"
+  ]
+}

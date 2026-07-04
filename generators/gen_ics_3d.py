@@ -188,6 +188,213 @@ flatpack("ic/driver/a4988/a4988", "a4988", 2.5, 2.5, 0.9,
 sot89("ic/regulator/ht7333/ht7333", "ht7333")
 sot89("ic/regulator/ht7833/ht7833", "ht7833")
 
+# ================= 배치 3차 =================
+
+# 걸윙 칩
+gullwing("ic/sensor_if/max6675/max6675", "max6675", 3.9, 4.9, 1.5,
+         two_row_xy(8, 1.27, 4.95), 0.42, 1.05)
+gullwing("ic/sensor_if/as5600/as5600", "as5600", 3.9, 4.9, 1.5,
+         two_row_xy(8, 1.27, 4.95), 0.42, 1.05)
+gullwing("ic/driver/tm1637/tm1637", "tm1637", 7.65, 12.7, 2.2,
+         two_row_xy(20, 1.27, 8.6), 0.4, 1.4)
+def bh1750_3d():
+    """WSOF6I: 리드가 상/하(y) 짧은변 — 커스텀 (풋프린트 방향 일치)."""
+    fid = "bh1750"
+    d = "%s/ic/sensor_if/bh1750/%s" % (LIB, fid)
+    body = Part.makeBox(1.6, 3.0, 0.6, App.Vector(-0.775, -1.5, 0.1))
+    body = _pin1_dot(body, -0.4, 0.9, 0.7)
+    feet = []
+    for x in (-0.525, -0.025, 0.475):
+        for sy in (1, -1):
+            feet.append(Part.makeBox(0.22, 0.32, 0.12,
+                                     App.Vector(x - 0.11, sy * 1.5 - (0.3 if sy > 0 else 0.02), 0)))
+    _export(d, fid, None, _fuse(feet), body)
+    print(fid, "3D done")
+
+
+bh1750_3d()
+
+# 플랫팩
+flatpack("ic/audio/inmp441/inmp441", "inmp441", 1.88, 2.36, 0.98,
+         [(1.33, y, 0.4, 0.6) for y in (1.575, 0.525, -0.525, -1.575)] +
+         [(-1.33, y, 0.4, 0.6) for y in (-1.575, -0.525, 0.525, 1.575)] +
+         [(0, -1.575, 1.0, 1.0)])
+flatpack("ic/power/max17048/max17048", "max17048", 1.0, 1.0, 0.75,
+         [(x, y, 0.3, 0.25) for x in (-0.99, 0.99) for y in (-0.75, -0.25, 0.25, 0.75)],
+         ep=(0.8, 1.2))
+flatpack("sensor/sensirion/sgp40/sgp40", "sgp40", 1.22, 1.22, 0.85,
+         [(x, y, 0.35, 0.4) for x in (-1.05, 1.05) for y in (-0.8, 0, 0.8)],
+         ep=(1.25, 1.64))
+
+
+def xl6009_3d():
+    fid = "xl6009"
+    d = "%s/ic/regulator/xl6009/%s" % (LIB, fid)
+    # TO-263-5: 몸체 + 탭(y-) + 리드 5(y+)
+    body = Part.makeBox(10.16, 8.64, 4.4, App.Vector(-5.08, -4.32, 0.15))
+    try:
+        ve = [e for e in body.Edges if abs(e.Vertexes[0].Z - e.Vertexes[1].Z) > 0.05]
+        body = body.makeFillet(0.2, ve)
+    except Exception:
+        pass
+    gold = [Part.makeBox(9.6, 1.3, 1.27, App.Vector(-4.8, -5.59, 0))]  # 탭
+    for i in range(5):
+        x = -3.4 + i * 1.7
+        gold.append(Part.makeBox(0.84, 4.4, 0.5, App.Vector(x - 0.42, 4.34, 0)))
+    _export(d, fid, None, _fuse(gold), body)
+    print(fid, "3D done")
+
+
+def mlx90614_3d():
+    fid = "mlx90614"
+    d = "%s/sensor/melexis/mlx90614/%s" % (LIB, fid)
+    can = Part.makeCylinder(4.56, 0.9, App.Vector(0, 0, 0.05))       # 플랜지
+    can = can.fuse(Part.makeCylinder(4.1, 4.05, App.Vector(0, 0, 0.05)))  # 캡
+    win = Part.makeCylinder(2.8, 0.3, App.Vector(0, 0, 3.95))
+    can = can.cut(win)
+    r = 5.08 / 2 * 0.7071068
+    pins = [Part.makeCylinder(0.225, 3.0, App.Vector(x, y, -2.95))
+            for x in (-r, r) for y in (-r, r)]
+    dark = Part.makeCylinder(2.7, 0.12, App.Vector(0, 0, 3.9))  # 윈도우(다크)
+    Part.makeCompound([can, _fuse(pins), dark]).exportStep("%s/%s.step" % (d, fid))
+    can.exportStl("%s/%s__housing.stl" % (d, fid))
+    _fuse(pins).exportStl("%s/%s__pins.stl" % (d, fid))
+    dark.exportStl("%s/%s__extra.stl" % (d, fid))
+    print(fid, "3D done")
+
+
+def veml7700_3d():
+    fid = "veml7700"
+    d = "%s/sensor/vishay/veml7700/%s" % (LIB, fid)
+    body = Part.makeBox(6.6, 2.35, 2.9, App.Vector(-3.3, -1.175, 0.1))
+    feet = [Part.makeBox(0.5, 1.0, 0.12, App.Vector(-1.905 + i * 1.27 - 0.25, 0.3, 0))
+            for i in range(4)]
+    _export(d, fid, body, _fuse(feet), None)  # 투명 패키지 → 밝은 색
+    print(fid, "3D done")
+
+
+def _pcb_module(path, fid, parts_housing, parts_gold, parts_dark):
+    d = "%s/%s" % (LIB, path)
+    h = _fuse(parts_housing) if parts_housing else None
+    _export(d, fid, h, _fuse(parts_gold), _fuse(parts_dark))
+    print(fid, "3D done")
+
+
+def hc_sr04_3d():
+    pcb = Part.makeBox(45, 20, 1.6, App.Vector(-22.5, -10, 0))
+    cans = []
+    for cx in (-13.5, 13.5):
+        c = Part.makeCylinder(8.0, 12, App.Vector(cx, 0, 1.6))
+        c = c.cut(Part.makeCylinder(6.5, 1.5, App.Vector(cx, 0, 12.6)))
+        cans.append(c)
+    xtal = Part.makeBox(10, 4, 3.5, App.Vector(-5, 5.2, 1.6))
+    pins = [Part.makeBox(0.64, 0.64, 6, App.Vector(-3.81 + i * 2.54 - 0.32, 7.68, -4.0))
+            for i in range(4)]
+    hdr = Part.makeBox(10.16, 2.54, 2.54, App.Vector(-5.08, 6.73, -2.54))
+    _pcb_module("module/sensor/hc_sr04/hc_sr04", "hc_sr04",
+                cans + [xtal], pins, [pcb, hdr])
+
+
+def dfplayer_3d():
+    pcb = Part.makeBox(20.32, 20.32, 1.2, App.Vector(-10.16, -10.16, 0))
+    sd = Part.makeBox(14.9, 15.2, 2.0, App.Vector(-7.45, -5.06, 1.2))
+    pins = []
+    for i in range(8):
+        pins.append(Part.makeBox(0.64, 0.64, 4.7, App.Vector(-9.335, -8.89 + i * 2.54 - 0.32, -3.0)))
+        pins.append(Part.makeBox(0.64, 0.64, 4.7, App.Vector(8.695, -8.89 + i * 2.54 - 0.32, -3.0)))
+    _pcb_module("module/audio/dfplayer_mini/dfplayer_mini", "dfplayer_mini",
+                [sd], pins, [pcb])
+
+
+def hc05_3d():
+    pcb = Part.makeBox(37, 16, 1.6, App.Vector(-18.5, -8, 0))
+    daughter = Part.makeBox(27, 13, 1.2, App.Vector(-10.5, -6.5, 3.0))
+    standoff = Part.makeBox(20, 10, 1.4, App.Vector(-6, -5, 1.6))
+    btn = Part.makeBox(3, 2, 1.5, App.Vector(-14, 4.5, 1.6))
+    pins = [Part.makeBox(0.64, 0.64, 8, App.Vector(-16.82, -6.35 + i * 2.54 - 0.32, -1.5))
+            for i in range(6)]
+    _pcb_module("module/rf/hc05/hc05", "hc05",
+                [btn], pins, [pcb, daughter, standoff])
+
+
+def sim800l_3d():
+    pcb = Part.makeBox(24.9, 22.7, 1.2, App.Vector(-12.45, -11.35, 0))
+    can = Part.makeBox(17.8, 15.8, 2.4, App.Vector(-8.9, -7.4, 1.2))
+    ufl = Part.makeCylinder(1.5, 1.6, App.Vector(-9.3, -9.3, 1.2))
+    pins = []
+    for i in range(6):
+        pins.append(Part.makeBox(0.64, 0.64, 4.7, App.Vector(-10.32, -5.65 + i * 2.54 - 0.32, -3.0)))
+        pins.append(Part.makeBox(0.64, 0.64, 4.7, App.Vector(9.68, -5.65 + i * 2.54 - 0.32, -3.0)))
+    _pcb_module("module/rf/sim800l/sim800l", "sim800l",
+                [can, ufl], pins, [pcb])
+
+
+def max7219_module_3d():
+    pcb = Part.makeBox(32, 32, 1.2, App.Vector(-16, -16, 0))
+    matrix = Part.makeBox(32, 32, 6.5, App.Vector(-16, -16, 3.0))
+    try:
+        ve = [e for e in matrix.Edges if abs(e.Vertexes[0].Z - e.Vertexes[1].Z) > 0.05]
+        matrix = matrix.makeFillet(0.5, ve)
+    except Exception:
+        pass
+    pins = []
+    for i in range(5):
+        pins.append(Part.makeBox(0.64, 0.64, 6, App.Vector(-15.05, -5.08 + i * 2.54 - 0.32, -3.0)))
+        pins.append(Part.makeBox(0.64, 0.64, 6, App.Vector(14.41, -5.08 + i * 2.54 - 0.32, -3.0)))
+    _pcb_module("module/display/max7219_matrix_module/max7219_matrix_module",
+                "max7219_matrix_module", [], pins, [pcb, matrix])
+
+
+def gc9a01_3d():
+    cy = -3.9
+    pcb = Part.makeCylinder(19.0, 1.6, App.Vector(0, cy, 0))
+    tab = Part.makeBox(23, 12, 1.6, App.Vector(-11.5, 10.9, 0))
+    glass = Part.makeCylinder(17.8, 1.8, App.Vector(0, cy, 1.6))
+    aa = Part.makeCylinder(16.2, 0.1, App.Vector(0, cy, 3.32))  # 활성영역(white)
+    pins = [Part.makeBox(0.64, 0.64, 4.2, App.Vector(-8.89 + i * 2.54 - 0.32, 21.11, -3.0))
+            for i in range(8)]
+    _pcb_module("module/display/gc9a01_module_128/gc9a01_module_128",
+                "gc9a01_module_128", [aa], pins, [pcb, tab, glass])
+
+
+def ld2410c_3d():
+    pcb = Part.makeBox(22, 16, 1.0, App.Vector(-11, -8, 0))
+    ic = Part.makeBox(5, 5, 0.9, App.Vector(-2.5, 2.0, 1.0))
+    patches = [Part.makeBox(5.5, 5.5, 0.06, App.Vector(x - 2.75, -6.5, 1.0))
+               for x in (-5.5, 5.5)]
+    pins = [Part.makeBox(0.5, 0.5, 4.2, App.Vector(-5.08 + i * 2.54 - 0.25, -5.71, -3.0))
+            for i in range(5)]
+    _pcb_module("module/sensor/ld2410c/ld2410c", "ld2410c",
+                [], pins + patches, [pcb, ic])
+
+
+def devkitc_3d():
+    pcb = Part.makeBox(27.94, 48.26, 1.6, App.Vector(-13.97, -24.13, 0))
+    wroom_pcb = Part.makeBox(18, 25.5, 0.8, App.Vector(-9, -30.17, 1.6))
+    shield = Part.makeBox(17.4, 18.2, 2.3, App.Vector(-8.7, -22.5, 2.4))
+    usb = Part.makeBox(8, 5.6, 2.8, App.Vector(-4, 19.5, 1.6))
+    btns = [Part.makeBox(3.5, 3.5, 1.8, App.Vector(x - 1.75, 20.0, 1.6))
+            for x in (-10.5, 10.5)]
+    pins = []
+    for i in range(19):
+        pins.append(Part.makeBox(0.64, 0.64, 8.5, App.Vector(-13.02, -22.86 + i * 2.54 - 0.32, -6.4)))
+        pins.append(Part.makeBox(0.64, 0.64, 8.5, App.Vector(12.38, -22.86 + i * 2.54 - 0.32, -6.4)))
+    _pcb_module("module/devboard/esp32_devkitc_v4/esp32_devkitc_v4",
+                "esp32_devkitc_v4", [shield, usb], pins, [pcb, wroom_pcb] + btns)
+
+
+xl6009_3d()
+mlx90614_3d()
+veml7700_3d()
+hc_sr04_3d()
+dfplayer_3d()
+hc05_3d()
+sim800l_3d()
+max7219_module_3d()
+gc9a01_3d()
+ld2410c_3d()
+devkitc_3d()
+
 # 디스플레이 모듈
 display_module("module/display/ssd1306_module_096/ssd1306_module_096", "ssd1306_module_096",
                27.3, 27.8, 4, -3.81, -12.4,

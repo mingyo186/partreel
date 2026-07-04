@@ -1,0 +1,71 @@
+{
+  "id": "sgp40",
+  "name": "SGP40 VOC Air Quality Sensor",
+  "category": "sensor",
+  "family": "gas",
+  "manufacturer": "Sensirion",
+  "mpn_pattern": "SGP40-D-R4",
+  "description": "Sensirion SGP40 digital VOC sensor for air quality, I2C 0x59, 1.7-3.6V (VDD and VDDH must share one supply), DFN-6 with sensing opening on top (do not cover). Die pad = GND, soldering recommended.",
+  "parameters": {
+    "contacts": 7,
+    "mounting": "SMD",
+    "supply_voltage": "1.7-3.6V",
+    "interface": "I2C",
+    "i2c_address": "0x59",
+    "body_mm": "2.44x2.44x0.85"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/sensor/sensirion/sgp40/sgp40/sgp40.kicad_mod",
+    "symbol": "https://partreel.com/library/sensor/sensirion/sgp40/sgp40/sgp40.kicad_sym",
+    "model_3d": "https://partreel.com/library/sensor/sensirion/sgp40/sgp40/sgp40.step",
+    "preview": "https://partreel.com/library/sensor/sensirion/sgp40/sgp40/sgp40.glb",
+    "footprint_svg": "https://partreel.com/library/sensor/sensirion/sgp40/sgp40/sgp40.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/sensor/sensirion/sgp40/sgp40/sgp40.symbol.svg"
+  },
+  "datasheet": "https://sensirion.com/media/documents/296373BB/6203C5DF/Sensirion_Gas_Sensors_Datasheet_SGP40.pdf",
+  "license": "CC-BY-4.0",
+  "verified": true,
+  "dimensions_source": "Sensirion SGP40 datasheet v1.2: Fig.13 DFN-6 2.44x2.44x0.85 (pitch 0.8, terminal 0.4x0.35, die pad 1.25x1.64); Fig.14 recommended land (pads 0.4x0.55, centers 2.3 c-c - geometry-verified vs center pad clearance, center 1.25x1.7). Pinout Table 6 p.7.",
+  "keywords": [
+    "sgp40",
+    "sensirion",
+    "voc",
+    "gas",
+    "air quality",
+    "i2c",
+    "dfn"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "Sensirion SGP40 datasheet v1.2: Fig.13 DFN-6 2.44x2.44x0.85 (pitch 0.8, terminal 0.4x0.35, die pad 1.25x1.64); Fig.14 recommended land (pads 0.4x0.55, centers 2.3 c-c - geometry-verified vs center pad clearance, center 1.25x1.7). Pinout Table 6 p.7.",
+    "datasheet": "https://sensirion.com/media/documents/296373BB/6203C5DF/Sensirion_Gas_Sensors_Datasheet_SGP40.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/gen_ics.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    }
+  },
+  "page": "https://partreel.com/p/sgp40/",
+  "api": "https://partreel.com/api/v1/parts/sgp40.json"
+}

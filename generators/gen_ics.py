@@ -697,9 +697,654 @@ def st7789_module_13():
     return fid, lib, fp, sym, meta
 
 
+# ================= 배치 3차 (§21-4 라운드2, 18종) =================
+
+def _soic8(fid, lib, name, manuf, mpn, ds, dim_src, pins, desc, params, kw):
+    """협폭 SOIC-8 (MAX6675/AS5600): MP1584 권장 기하 재사용 (0.61x1.6, c-c 5.4)."""
+    pads = two_row_pads(8, 1.27, 5.4, 1.6, 0.61)
+    fp = _fp_two_row(fid, f"{name}. SOIC-8 narrow (4.9x3.9); pads 0.61x1.6 rows 5.4 c-c "
+                          "per IPC-7351.", mpn, pads, (1.95, 2.45))
+    sym = _lr_symbol(fid, [(str(i + 1), pins[i]) for i in range(4)],
+                     [(str(i + 5), pins[i + 4]) for i in range(4)])
+    return fid, lib, fp, sym, _meta(fid, name, "ic", lib.split("/")[1], manuf, mpn,
+                                    desc, params, ds, dim_src, kw)
+
+
+def max6675():
+    return _soic8(
+        "max6675", "ic/sensor_if/max6675", "MAX6675 Thermocouple-to-Digital Converter",
+        "Maxim Integrated", "MAX6675ISA",
+        "https://cdn-shop.adafruit.com/datasheets/MAX6675.pdf",
+        "Maxim MAX6675 datasheet 19-2235 p.8: SOIC .150 (MS012-A) body 4.9x3.9, span 6.0, "
+        "pitch 1.27. Land pads 0.61x1.6 rows 5.4 c-c per IPC-7351. Pinout p.1.",
+        ["GND", "T-", "T+", "VCC", "SCK", "~CS", "SO", "N.C."],
+        "Maxim MAX6675 cold-junction-compensated K-thermocouple to digital converter, "
+        "12-bit SPI read-only, 3.0-5.5V, SOIC-8. The entry-level thermocouple interface "
+        "on K-type breakouts (MAX31855 is 3.3V-only, not a drop-in).",
+        {"contacts": 8, "mounting": "SMD", "supply_voltage": "3.0-5.5V",
+         "interface": "SPI", "body_mm": "4.9x3.9x1.55"},
+        ["max6675", "thermocouple", "k-type", "spi", "temperature", "soic-8"])
+
+
+def as5600():
+    return _soic8(
+        "as5600", "ic/sensor_if/as5600", "AS5600 Magnetic Angle Sensor",
+        "ams-OSRAM", "AS5600-ASOT",
+        "https://look.ams-osram.com/m/7059eac7531a86fd/original/AS5600-DS000365.pdf",
+        "ams AS5600 datasheet v1-06 Fig.42: SOIC-8 (MS-012) body 4.9x3.9, span 6.0, pitch "
+        "1.27. Land pads 0.61x1.6 rows 5.4 c-c per IPC-7351. Pinout Fig.3/4.",
+        ["VDD5V", "VDD3V3", "OUT", "GND", "PGO", "SDA", "SCL", "DIR"],
+        "ams AS5600 12-bit contactless magnetic rotary position sensor (on-axis), I2C "
+        "0x36 + analog/PWM out, 3.3V or 5V mode, SOIC-8. SimpleFOC/robotics encoder staple.",
+        {"contacts": 8, "mounting": "SMD", "supply_voltage": "3.0-3.6V or 4.5-5.5V",
+         "interface": "I2C", "i2c_address": "0x36", "body_mm": "4.9x3.9x1.75"},
+        ["as5600", "ams", "magnetic", "encoder", "rotary", "angle", "i2c", "soic-8"])
+
+
+def tm1637():
+    fid, lib = "tm1637", "ic/driver/tm1637"
+    pads = two_row_pads(20, 1.27, 9.6, 1.9, 0.6)
+    fp = _fp_two_row(fid, "Titan Micro TM1637 LED display driver, SOP-20 (body 12.7x7.65, "
+                          "span 10.45, pitch 1.27). Pads 0.6x1.9 rows 9.6 c-c per IPC-7351.",
+                     "TM1637 LED driver SOP-20", pads, (3.825, 6.35))
+    nm = ["GND", "SG1", "SG2", "SG3", "SG4", "SG5", "SG6", "SG7", "SG8", "GRID6",
+          "GRID5", "GRID4", "GRID3", "GRID2", "GRID1", "VDD", "DIO", "CLK", "K1", "K2"]
+    sym = _lr_symbol(fid, [(str(i + 1), nm[i]) for i in range(10)],
+                     [(str(i + 11), nm[i + 10]) for i in range(10)])
+    meta = _meta(fid, "TM1637 LED Display Driver", "ic", "driver", "Titan Micro", "TM1637",
+                 "Titan Micro TM1637 6-digit LED display driver with keyscan, proprietary "
+                 "2-wire interface (CLK/DIO, not I2C), 4.5-5.5V, SOP-20. The chip behind "
+                 "ubiquitous 4-digit clock display modules.",
+                 {"contacts": 20, "mounting": "SMD", "supply_voltage": "4.5-5.5V",
+                  "body_mm": "12.7x7.65x2.35"},
+                 "https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/datasheet/unit/digi_clock/TM1637.pdf",
+                 "Titan Micro TM1637 datasheet V2.4 p.12: SOP20 body 12.7x7.65, span 10.45, "
+                 "pitch 1.27, foot 0.8. Land pads 0.6x1.9 rows 9.6 c-c per IPC-7351. "
+                 "Pinout p.2 (10=GRID6..15=GRID1 reversed order per datasheet).",
+                 ["tm1637", "led", "display", "driver", "7-segment", "sop-20"])
+    return fid, lib, fp, sym, meta
+
+
+def inmp441():
+    fid, lib = "inmp441", "ic/audio/inmp441"
+    # 랜드 p17 Fig14 (1:1 필수): 열 2개 c-c 2.66, 세로피치 1.05, 패드 0.6x0.4.
+    # 바텀뷰 미러(탑뷰): 우열 아래→위 1-4, 좌열 위→아래 6-9, 5=포트링(핀4/6 행, 중앙)
+    ys = [1.575, 0.525, -0.525, -1.575]
+    pads = [(str(i + 1), 1.33, ys[i], 0.6, 0.4) for i in range(4)]
+    pads += [(str(6 + i), -1.33, -ys[3 - i] * -1, 0.6, 0.4) for i in range(4)]
+    # 좌열 6,7,8,9 = y -1.575,-0.525,0.525,1.575
+    pads = [(str(i + 1), 1.33, ys[i], 0.6, 0.4) for i in range(4)] + \
+           [(str(6 + i), -1.33, [-1.575, -0.525, 0.525, 1.575][i], 0.6, 0.4) for i in range(4)]
+    out = _fp_open(fid, "TDK InvenSense INMP441 I2S MEMS microphone, bottom-port LGA_CAV "
+                        "4.72x3.76x0.98. Land pattern per datasheet Fig.14 (MANDATORY 1:1 - "
+                        "do not oversize): 8 pads 0.4x0.6, port ring pad D1.56 with PCB "
+                        "sound hole (0.5-1.0mm) at ring center.",
+                   "INMP441 I2S MEMS microphone bottom port", -3.3, 3.3)
+    out += _fab_body(-1.88, -2.36, 1.88, 2.36, 0.8)
+    out += _silk_box((2.14, 2.62), 1.575 - 0.25, 1.575 + 0.25, 2.5)  # pin1 우측 → 틱 x>0
+    out += _court(-2.13, -2.61, 2.13, 2.61)
+    for name, x, y, w, h in pads:
+        out.append(_smd(name, x, y, w, h))
+    out.append(_smd("5", 0, -1.575, 1.56, 1.56, shape="circle"))  # 포트 링 (GND)
+    out.append(_npth(0, -1.575, 0.8))  # PCB 사운드홀
+    out.append(')')
+    fp = "\n".join(out) + "\n"
+    sym = _lr_symbol(fid, [("1", "SCK"), ("2", "SD"), ("3", "WS"), ("4", "L/R"), ("5", "GND")],
+                     [("6", "GND"), ("7", "VDD"), ("8", "CHIPEN"), ("9", "GND")])
+    meta = _meta(fid, "INMP441 I2S MEMS Microphone", "ic", "audio",
+                 "TDK InvenSense", "INMP441ACEZ-R7",
+                 "TDK InvenSense INMP441 omnidirectional bottom-port MEMS microphone with "
+                 "24-bit I2S output, 1.8-3.3V. The default ESP32 I2S mic. Footprint "
+                 "includes the required PCB sound hole (0.8mm NPTH) under the port ring - "
+                 "keep solder paste off the hole.",
+                 {"contacts": 9, "mounting": "SMD", "supply_voltage": "1.8-3.3V",
+                  "interface": "I2S", "body_mm": "4.72x3.76x0.98"},
+                 "https://www.farnell.com/datasheets/1824785.pdf",
+                 "TDK DS-INMP441-00 Rev1.0: Fig.16 LGA_CAV 4.72x3.76x0.98; Fig.14 "
+                 "recommended land (1:1): 8 pads 0.4x0.6, columns 2.66 c-c, pitch 1.05, "
+                 "port ring ID0.96/OD1.56, PCB hole 0.5-1.0. Pinout Fig.3 (bottom view, "
+                 "mirrored for footprint).",
+                 ["inmp441", "invensense", "mems", "microphone", "i2s", "esp32", "audio"])
+    return fid, lib, fp, sym, meta
+
+
+def bh1750():
+    fid, lib = "bh1750", "ic/sensor_if/bh1750"
+    # WSOF6I: 하단행 1,2,3(좌→우, 그리드 중심 오프셋 0.025), 상단행 6,5,4(좌→우)
+    xs = [-0.525, -0.025, 0.475]
+    out = _fp_open(fid, "Rohm BH1750FVI ambient light sensor, WSOF6I 1.6x3.0x0.75. Pads "
+                        "0.3x0.8 at rows +/-1.5 (pin row offset 0.025 per drawing). "
+                        "CAUTION: exposed center back pad must have NO copper/paste.",
+                   "BH1750 light sensor lux I2C WSOF6I", -2.6, 2.6)
+    out += _fab_body(-0.775, -1.5, 0.825, 1.5, 0.4)
+    out += _rect_lines([(-0.95, -1.05, -0.95, 1.05), (1.0, -1.05, 1.0, 1.05)], "F.SilkS", 0.12)
+    out.append(_line(-0.9, 1.75, -0.5, 1.75, "F.SilkS", 0.12))  # pin1 틱 (하단좌)
+    out += _court(-1.05, -2.15, 1.1, 2.15)
+    for i, x in enumerate(xs):
+        out.append(_smd(str(i + 1), x, 1.5, 0.3, 0.8))
+    for i, x in enumerate(xs):
+        out.append(_smd(str(6 - i), x, -1.5, 0.3, 0.8))
+    out.append(')')
+    fp = "\n".join(out) + "\n"
+    sym = _lr_symbol(fid, [("1", "VCC"), ("2", "ADDR"), ("3", "GND")],
+                     [("4", "SDA"), ("5", "DVI"), ("6", "SCL")])
+    meta = _meta(fid, "BH1750FVI Ambient Light Sensor", "ic", "sensor_if",
+                 "Rohm", "BH1750FVI-TR",
+                 "Rohm BH1750FVI digital 16-bit ambient light sensor (1-65535 lx), I2C "
+                 "(ADDR H=0x5C / L=0x23), 2.4-3.6V, WSOF6I. DVI pin needs 1uS low reset "
+                 "after power-up. Exposed back pad: leave unconnected (no copper).",
+                 {"contacts": 6, "mounting": "SMD", "supply_voltage": "2.4-3.6V",
+                  "interface": "I2C", "i2c_address": "0x23/0x5C", "body_mm": "1.6x3.0x0.75"},
+                 "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/1811081611_ROHM-Semicon-BH1750FVI-TR_C78960.pdf",
+                 "Rohm BH1750FVI Technical Note Rev.D p.14: WSOF6I 1.6x3.0x0.75, 6 leads "
+                 "pitch 0.5 (row offset 0.025), foot 0.3. Pads 0.3x0.8 derived per IPC-7351; "
+                 "center back pad no-connect per p.16 caution 10. Pinout p.13 + package "
+                 "drawing numbering (bottom row 1-3, top row 6-4).",
+                 ["bh1750", "rohm", "light", "lux", "ambient", "i2c", "gy-302"])
+    return fid, lib, fp, sym, meta
+
+
+def xl6009():
+    fid, lib = "xl6009", "ic/regulator/xl6009"
+    out = _fp_open(fid, "XLSEMI XL6009 4A boost converter, TO-263-5 (body 8.64x10.16, "
+                        "pitch 1.7). Lead pads 1.05x2.8, tab pad 10.4x7.0. "
+                        "CAUTION: tab is SW (switch node), NOT ground.",
+                   "XL6009 boost step-up TO-263", -9.2, 9.2)
+    out += _fab_body(-5.08, -4.32, 5.08, 4.32, 1.0)
+    out += _rect_lines([(-5.19, -4.32, -5.19, 4.32), (5.19, -4.32, 5.19, 4.32)], "F.SilkS", 0.12)
+    out.append(_line(-4.3, 8.8, -3.7, 8.8, "F.SilkS", 0.12))  # pin1 틱
+    out += _court(-5.45, -5.55, 5.45, 8.85)
+    for i in range(5):
+        out.append(_smd(str(i + 1), -3.4 + i * 1.7, 7.2, 1.05, 2.8))
+    out.append(_smd("3", 0, -1.8, 10.4, 7.0))  # 탭 = SW = 핀3
+    out.append(')')
+    fp = "\n".join(out) + "\n"
+    sym = _lr_symbol(fid, [("4", "VIN"), ("2", "EN"), ("1", "GND")],
+                     [("3", "SW"), ("5", "FB")])
+    meta = _meta(fid, "XL6009 4A Boost Converter", "ic", "regulator", "XLSEMI", "XL6009E1",
+                 "XLSEMI XL6009 400kHz 4A step-up (boost) DC-DC converter, 5-32V input, "
+                 "TO-263-5. WARNING: the metal tab is the SW switch node, not GND - do "
+                 "not pour ground under it.",
+                 {"contacts": 5, "mounting": "SMD", "supply_voltage": "5-32V",
+                  "body_mm": "8.64x10.16x4.55"},
+                 "https://components101.com/sites/default/files/component_datasheet/XL6009-Datasheet_0.pdf",
+                 "XLSEMI XL6009 datasheet Rev1.1 p.8: TO263-5L body 8.64x10.16x4.55, "
+                 "overall 14.35 incl leads, pitch 1.7, lead 0.84, tab ext 1.27. Land "
+                 "derived per IPC (leads 1.05x2.8, tab 10.4x7.0). Pinout p.2 (tab=SW).",
+                 ["xl6009", "xlsemi", "boost", "step-up", "dc-dc", "to-263"])
+    return fid, lib, fp, sym, meta
+
+
+def mlx90614():
+    fid, lib = "mlx90614", "sensor/melexis/mlx90614"
+    # TO-39: 리드 4 Ø0.45 @ 리드서클 Ø5.08 (탑뷰: 1 좌상, 2 좌하, 3 우하, 4 우상, 탭 상단)
+    r = 5.08 / 2 * 0.7071068
+    pos = [("1", -r, -r), ("2", -r, r), ("3", r, r), ("4", r, -r)]
+    out = _fp_open(fid, "Melexis MLX90614 IR thermometer, TO-39 can (flange D9.12, leads "
+                        "D0.45 on D5.08 circle). THT drill 0.8, pad D1.4. Tab at top "
+                        "(between pins 4 and 1). Can must only connect via VSS.",
+                   "MLX90614 IR thermometer contactless TO-39", -6.2, 6.2, attr="through_hole")
+    import math
+    R = 9.12 / 2
+    pts = [(R * math.cos(a * math.pi / 8), R * math.sin(a * math.pi / 8)) for a in range(17)]
+    for i in range(16):
+        out.append(_line(pts[i][0], pts[i][1], pts[i + 1][0], pts[i + 1][1], "F.Fab", 0.10))
+    Rs = R + 0.15
+    pts = [(Rs * math.cos(a * math.pi / 8), Rs * math.sin(a * math.pi / 8)) for a in range(17)]
+    for i in range(16):
+        out.append(_line(pts[i][0], pts[i][1], pts[i + 1][0], pts[i + 1][1], "F.SilkS", 0.12))
+    out.append(_line(-0.4, -5.3, 0.4, -5.3, "F.SilkS", 0.12))  # 탭 마커 (상단)
+    out += _court(-4.87, -5.5, 4.87, 4.87)
+    for name, x, y in pos:
+        shape = "rect" if name == "1" else "circle"
+        out.append(_tht(name, x, y, 1.4, 0.8, shape))
+    out.append(')')
+    fp = "\n".join(out) + "\n"
+    sym = _lr_symbol(fid, [("3", "VDD"), ("4", "VSS")], [("1", "SCL/Vz"), ("2", "SDA/PWM")])
+    meta = _meta(fid, "MLX90614 IR Thermometer (TO-39)", "sensor", "temperature",
+                 "Melexis", "MLX90614ESF-BAA",
+                 "Melexis MLX90614 contactless infrared thermometer, SMBus (default 0x5A) "
+                 "or PWM output, factory-calibrated, TO-39 metal can. GY-906 module chip. "
+                 "Metal can: no electrical connection except via VSS.",
+                 {"contacts": 4, "mounting": "THT", "supply_voltage": "3.0V (BAA) / 5V (Axx)",
+                  "interface": "SMBus", "body_mm": "D9.12x4.1"},
+                 "https://www.melexis.com/-/media/files/documents/datasheets/mlx90614-datasheet-melexis.pdf",
+                 "Melexis MLX90614 datasheet Rev021 p.47 Fig.41 (xxA can): flange D9.12, "
+                 "height 4.1, 4 leads D0.45 on D5.08 circle at 90deg, tab at 45deg between "
+                 "pins 4-1. Pinout Table 2/Fig.1 p.6 (bottom view, mirrored for footprint).",
+                 ["mlx90614", "melexis", "infrared", "thermometer", "contactless", "smbus",
+                  "gy-906", "to-39"])
+    return fid, lib, fp, sym, meta
+
+
+def max17048():
+    fid, lib = "max17048", "ic/power/max17048"
+    pads = two_row_pads(8, 0.5, 1.98, 0.70, 0.30)
+    fp = _fp_two_row(fid, "Maxim MAX17048 LiPo fuel gauge, TDFN-8 2x2x0.75 (T822+3). Land "
+                          "per official 90-0065: pads 0.30x0.70 pitch 0.5 rows 1.98 c-c, "
+                          "EP 0.8x1.38.", "MAX17048 fuel gauge TDFN", pads, (1.0, 1.0),
+                     ep=("9", 0.8, 1.38))
+    nm = ["CTG", "CELL", "VDD", "GND", "ALRT", "QSTRT", "SCL", "SDA"]
+    sym = _lr_symbol(fid, [(str(i + 1), nm[i]) for i in range(4)],
+                     [(str(i + 5), nm[i + 4]) for i in range(4)],
+                     bottom=[("9", "EP/GND")])
+    meta = _meta(fid, "MAX17048 LiPo Fuel Gauge", "ic", "power", "Maxim Integrated",
+                 "MAX17048G+T10",
+                 "Maxim MAX17048 1-cell Li-ion fuel gauge with ModelGauge, I2C 0x36 fixed, "
+                 "2.5-4.5V, TDFN-8 2x2 (EP=GND). The battery-percentage chip on modern "
+                 "ESP32 dev boards.",
+                 {"contacts": 9, "mounting": "SMD", "supply_voltage": "2.5-4.5V",
+                  "interface": "I2C", "i2c_address": "0x36", "body_mm": "2.0x2.0x0.75"},
+                 "https://cdn.sparkfun.com/assets/5/2/7/6/6/MAX17048-MAX17049.pdf",
+                 "Maxim 19-6171 Rev7 + official outline 21-0168 RevM (TDFN 2x2, pitch 0.5, "
+                 "EP 0.8x1.2) + official land 90-0065 RevE (pads 0.30x0.70, rows 1.98 c-c "
+                 "vector-verified, EP land 0.8x1.38). Pinout p.6.",
+                 ["max17048", "maxim", "fuel gauge", "lipo", "battery", "i2c", "tdfn"])
+    return fid, lib, fp, sym, meta
+
+
+def sgp40():
+    fid, lib = "sgp40", "sensor/sensirion/sgp40"
+    # Fig.14의 2.3은 중심간 스팬 (외측으로 읽으면 센터패드와 0.025 겹침 = 불가능 설계;
+    # 중심간이면 간극 0.25 정합 — A4988과 동일 함정)
+    pads = two_row_pads(6, 0.8, 2.3, 0.55, 0.4)
+    fp = _fp_two_row(fid, "Sensirion SGP40 VOC sensor, DFN-6 2.44x2.44x0.85. Land per "
+                          "datasheet Fig.14: pads 0.4x0.55 pitch 0.8, centers 2.3 c-c, "
+                          "center die pad 1.25x1.7 (GND, solder recommended).",
+                     "SGP40 VOC gas sensor DFN", pads, (1.22, 1.22), ep=("7", 1.25, 1.7))
+    sym = _lr_symbol(fid, [("1", "VDD"), ("2", "VSS"), ("3", "SDA")],
+                     [("4", "n/a(GND)"), ("5", "VDDH"), ("6", "SCL")],
+                     bottom=[("7", "DIE/GND")])
+    meta = _meta(fid, "SGP40 VOC Air Quality Sensor", "sensor", "gas", "Sensirion",
+                 "SGP40-D-R4",
+                 "Sensirion SGP40 digital VOC sensor for air quality, I2C 0x59, 1.7-3.6V "
+                 "(VDD and VDDH must share one supply), DFN-6 with sensing opening on top "
+                 "(do not cover). Die pad = GND, soldering recommended.",
+                 {"contacts": 7, "mounting": "SMD", "supply_voltage": "1.7-3.6V",
+                  "interface": "I2C", "i2c_address": "0x59", "body_mm": "2.44x2.44x0.85"},
+                 "https://sensirion.com/media/documents/296373BB/6203C5DF/Sensirion_Gas_Sensors_Datasheet_SGP40.pdf",
+                 "Sensirion SGP40 datasheet v1.2: Fig.13 DFN-6 2.44x2.44x0.85 (pitch 0.8, "
+                 "terminal 0.4x0.35, die pad 1.25x1.64); Fig.14 recommended land (pads "
+                 "0.4x0.55, centers 2.3 c-c - geometry-verified vs center pad clearance, "
+                 "center 1.25x1.7). Pinout Table 6 p.7.",
+                 ["sgp40", "sensirion", "voc", "gas", "air quality", "i2c", "dfn"])
+    return fid, lib, fp, sym, meta
+
+
+def veml7700():
+    fid, lib = "veml7700", "sensor/vishay/veml7700"
+    out = _fp_open(fid, "Vishay VEML7700 ambient light sensor, side-view 6.8x2.35x3.0 SMD. "
+                        "Land per datasheet p.10 (-TR side view): 4 pads 0.7x1.4 pitch 1.27.",
+                   "VEML7700 ambient light sensor lux I2C", -2.6, 2.6)
+    out += _fab_body(-3.4, -1.175, 3.4, 1.175, 0.8)
+    out += _rect_lines([(-3.51, -1.29, 3.51, -1.29)], "F.SilkS", 0.12)
+    out.append(_line(-2.3, 1.6, -1.5, 1.6, "F.SilkS", 0.12))  # pin1 틱
+    out += _court(-3.65, -1.42, 3.65, 1.55)
+    for i in range(4):
+        out.append(_smd(str(i + 1), -1.905 + i * 1.27, 0.6, 0.7, 1.4))
+    out.append(')')
+    fp = "\n".join(out) + "\n"
+    sym = _lr_symbol(fid, [("1", "SCL"), ("2", "VDD")], [("3", "GND"), ("4", "SDA")])
+    meta = _meta(fid, "VEML7700 Ambient Light Sensor", "sensor", "optical", "Vishay",
+                 "VEML7700-TR",
+                 "Vishay VEML7700 high-accuracy 16-bit ambient light sensor, 0-140klx, "
+                 "I2C 0x10 fixed, 2.5-3.6V, transparent side-view SMD package.",
+                 {"contacts": 4, "mounting": "SMD", "supply_voltage": "2.5-3.6V",
+                  "interface": "I2C", "i2c_address": "0x10", "body_mm": "6.8x2.35x3.0"},
+                 "https://www.vishay.com/docs/84286/veml7700.pdf",
+                 "Vishay VEML7700 datasheet Rev1.8 p.10: package 6.8(6.6 body)x3.0x2.35, "
+                 "4 leads 0.5 wide pitch 1.27; proposed pad layout (side view mount): "
+                 "pads 0.7x1.4 pitch 1.27. Pinout p.1.",
+                 ["veml7700", "vishay", "light", "lux", "ambient", "i2c"])
+    return fid, lib, fp, sym, meta
+
+
+# ---------- 배치3 모듈 (THT 보드) ----------
+
+def _tht_row(names, x0, y, pitch, horiz=True, start=1, dia=1.7, drill=1.0):
+    out = []
+    for i, _ in enumerate(names):
+        x = x0 + i * pitch if horiz else x0
+        yy = y if horiz else y + i * pitch
+        shape = "rect" if (start + i) == 1 else "circle"
+        out.append(_tht(str(start + i), x, yy, dia, drill, shape))
+    return out
+
+
+def hc_sr04():
+    fid, lib = "hc_sr04", "module/sensor/hc_sr04"
+    import math
+    out = _fp_open(fid, "HC-SR04 ultrasonic distance sensor module, 45x20mm board, two "
+                        "D16 transducers (27.0 c-c), 4-pin right-angle header at bottom "
+                        "edge. 4x D2.0 mounting holes 40x15 grid (2-hole variants exist). "
+                        "Dimensions per Elecfreaks/Cytron drawings + photo measurement.",
+                   "HC-SR04 ultrasonic sensor module", -11.5, 11.5, attr="through_hole")
+    out += _fab_body(-22.5, -10, 22.5, 10, 1.5)
+    for cx in (-13.5, 13.5):
+        R = 8.0
+        pts = [(cx + R * math.cos(a * math.pi / 8), R * math.sin(a * math.pi / 8))
+               for a in range(17)]
+        for i in range(16):
+            out.append(_line(pts[i][0], pts[i][1], pts[i + 1][0], pts[i + 1][1], "F.Fab", 0.10))
+    out += _rect_lines([(-22.61, -10.11, 22.61, -10.11), (22.61, -10.11, 22.61, 10.11),
+                        (22.61, 10.11, -22.61, 10.11), (-22.61, 10.11, -22.61, -10.11)],
+                       "F.SilkS", 0.12)
+    out.append(_line(-5.2, 9.6, -4.4, 9.6, "F.SilkS", 0.12))  # pin1(VCC) 틱
+    out += _court(-22.75, -10.25, 22.75, 10.25)
+    out += _tht_row(["VCC", "Trig", "Echo", "GND"], -3.81, 8.0, 2.54)
+    for hx, hy in ((-20, -7.5), (20, -7.5), (-20, 7.5), (20, 7.5)):
+        out.append(_npth(hx, hy, 2.0))
+    out.append(')')
+    fp = "\n".join(out) + "\n"
+    sym = _lr_symbol(fid, [("1", "VCC"), ("2", "Trig"), ("3", "Echo"), ("4", "GND")], [])
+    meta = _meta(fid, "HC-SR04 Ultrasonic Distance Sensor Module", "module", "sensor",
+                 "Generic", "HC-SR04",
+                 "Classic HC-SR04 ultrasonic ranging module (2-400cm), 5V, 4-pin header "
+                 "(VCC Trig Echo GND). Footprint is the module board with mounting holes; "
+                 "HC-SR04P (3.3-5.5V) and RCWL clones are mechanically identical. Some "
+                 "units have only 2 diagonal mounting holes.",
+                 {"contacts": 4, "mounting": "THT header", "supply_voltage": "5V",
+                  "board_mm": "45x20"},
+                 "https://cdn.sparkfun.com/datasheets/Sensors/Proximity/HCSR04.pdf",
+                 "Elecfreaks HC-SR04 datasheet (45x20x15) + Cytron manual drawing (4 holes, "
+                 "40mm spacing) + calibrated photo measurement: holes D2.0 at 2.5 corner "
+                 "insets (40.0x15.0 grid), transducers D16 at 27.0 c-c, header 2.54 pitch "
+                 "centered 2.0 above bottom edge.",
+                 ["hc-sr04", "ultrasonic", "distance", "sonar", "module", "arduino"])
+    return fid, lib, fp, sym, meta
+
+
+def dfplayer_mini():
+    fid, lib = "dfplayer_mini", "module/audio/dfplayer_mini"
+    out = _fp_open(fid, "DFRobot DFPlayer Mini MP3 module (DFR0299), 20.32x20.32mm, 16 pins "
+                        "2.54 pitch, row spacing 18.03mm (official drawing - NOT 17.78).",
+                   "DFPlayer Mini MP3 module DFR0299", -11.7, 11.7, attr="through_hole")
+    out += _fab_body(-10.16, -10.16, 10.16, 10.16, 1.5)
+    out += _rect_lines([(-10.27, -10.27, 10.27, -10.27), (10.27, -10.27, 10.27, 10.27),
+                        (10.27, 10.27, -10.27, 10.27), (-10.27, 10.27, -10.27, -10.27)],
+                       "F.SilkS", 0.12)
+    out.append(_line(-11.0, -9.14, -11.0, -8.64, "F.SilkS", 0.12))  # pin1 틱
+    out += _court(-10.41, -10.41, 10.41, 10.41)
+    L = ["VCC", "RX", "TX", "DAC_R", "DAC_L", "SPK_1", "GND", "SPK_2"]
+    R = ["IO_1", "GND", "IO_2", "ADKEY_1", "ADKEY_2", "USB+", "USB-", "BUSY"]
+    for i in range(8):
+        out.append(_tht(str(i + 1), -9.015, -8.89 + i * 2.54, 1.7, 1.0,
+                        "rect" if i == 0 else "circle"))
+    for i in range(8):
+        out.append(_tht(str(9 + i), 9.015, 8.89 - i * 2.54, 1.7, 1.0, "circle"))
+    out.append(')')
+    fp = "\n".join(out) + "\n"
+    sym = _lr_symbol(fid, [(str(i + 1), L[i]) for i in range(8)],
+                     [(str(16 - i), R[7 - i]) for i in range(8)])
+    meta = _meta(fid, "DFPlayer Mini MP3 Player Module", "module", "audio",
+                 "DFRobot", "DFR0299",
+                 "DFRobot DFPlayer Mini serial MP3 player module with microSD slot and "
+                 "3W amp, 3.2-5V, UART control. Clones (MP3-TF-16P) share the identical "
+                 "footprint. Row spacing is 18.03mm per the official drawing.",
+                 {"contacts": 16, "mounting": "THT", "supply_voltage": "3.2-5V",
+                  "board_mm": "20.32x20.32"},
+                 "https://wiki.dfrobot.com/DFPlayer_Mini_SKU_DFR0299",
+                 "DFRobot DFR0299 official dimension drawing v1.1: board 20.32x20.32, "
+                 "16 pins 2.54 pitch, columns 18.03 c-c, pin1 1.27 below top edge. Pin "
+                 "names per official wiki pinout.",
+                 ["dfplayer", "mp3", "audio", "module", "dfrobot", "microsd"])
+    return fid, lib, fp, sym, meta
+
+
+def hc05():
+    fid, lib = "hc05", "module/rf/hc05"
+    nm = ["STATE", "RXD", "TXD", "GND", "VCC", "EN"]
+    out = _fp_open(fid, "HC-05 bluetooth module on ZS-040 carrier, 37x16mm, 6-pin "
+                        "right-angle header (STATE RXD TXD GND VCC EN). Also fits HC-06 "
+                        "(same board). Dimensions per ProtoSupplies measurement, "
+                        "pitch-calibrated photos.",
+                   "HC-05 HC-06 bluetooth module ZS-040", -9.5, 9.5, attr="through_hole")
+    out += _fab_body(-18.5, -8, 18.5, 8, 1.5)
+    out += _rect_lines([(-18.61, -8.11, 18.61, -8.11), (18.61, -8.11, 18.61, 8.11),
+                        (18.61, 8.11, -18.61, 8.11), (-18.61, 8.11, -18.61, -8.11)],
+                       "F.SilkS", 0.12)
+    out.append(_line(-17.6, -7.0, -17.6, -6.4, "F.SilkS", 0.12))  # pin1 틱
+    out += _court(-18.75, -8.25, 18.75, 8.25)
+    for i in range(6):
+        out.append(_tht(str(i + 1), -16.5, -6.35 + i * 2.54, 1.7, 1.0,
+                        "rect" if i == 0 else "circle"))
+    out.append(')')
+    fp = "\n".join(out) + "\n"
+    sym = _lr_symbol(fid, [(str(i + 1), nm[i]) for i in range(6)], [])
+    meta = _meta(fid, "HC-05 Bluetooth Module (ZS-040)", "module", "rf",
+                 "Generic (ZS-040)", "HC-05",
+                 "HC-05 bluetooth serial (SPP) module on the common ZS-040 carrier board, "
+                 "3.6-6V supply / 3.3V logic, 6-pin right-angle header. HC-06 ships on "
+                 "the same board (4 of 6 pins used).",
+                 {"contacts": 6, "mounting": "THT", "supply_voltage": "3.6-6V",
+                  "board_mm": "37x16"},
+                 "https://protosupplies.com/product/hc-05-bluetooth-module/",
+                 "ZS-040 carrier: 37x16 board (ProtoSupplies measured), 6-pin 2.54 "
+                 "right-angle header inset 2.0 from edge, group centered; daughterboard "
+                 "27x13. Pin names verbatim from board silkscreen.",
+                 ["hc-05", "hc-06", "bluetooth", "serial", "module", "zs-040"])
+    return fid, lib, fp, sym, meta
+
+
+def sim800l():
+    fid, lib = "sim800l", "module/rf/sim800l"
+    L = ["NET", "VCC", "RST", "RXD", "TXD", "GND"]
+    R = ["RING", "DTR", "MIC+", "MIC-", "SPK+", "SPK-"]
+    out = _fp_open(fid, "SIM800L GSM breakout (red coreboard), 24.9x22.7mm, 2x6 pins 2.54 "
+                        "pitch columns 20.0 c-c. NOT the blue SIM800L EVB v2.0 (different "
+                        "board). Photo-measured, 2.54-pitch calibrated.",
+                   "SIM800L GSM GPRS module breakout", -13.2, 13.2, attr="through_hole")
+    out += _fab_body(-12.45, -11.35, 12.45, 11.35, 1.5)
+    out += _rect_lines([(-12.56, -11.46, 12.56, -11.46), (12.56, -11.46, 12.56, 11.46),
+                        (12.56, 11.46, -12.56, 11.46), (-12.56, 11.46, -12.56, -11.46)],
+                       "F.SilkS", 0.12)
+    out.append(_line(-11.4, -5.9, -11.4, -5.4, "F.SilkS", 0.12))  # pin1(NET) 틱
+    out += _court(-12.7, -11.6, 12.7, 11.6)
+    for i in range(6):
+        out.append(_tht(str(i + 1), -10.0, -5.65 + i * 2.54, 1.7, 1.0,
+                        "rect" if i == 0 else "circle"))
+    for i in range(6):
+        out.append(_tht(str(7 + i), 10.0, -5.65 + i * 2.54, 1.7, 1.0, "circle"))
+    out.append(')')
+    fp = "\n".join(out) + "\n"
+    sym = _lr_symbol(fid, [(str(i + 1), L[i]) for i in range(6)],
+                     [(str(7 + i), R[i]) for i in range(6)])
+    meta = _meta(fid, "SIM800L GSM/GPRS Module (Red Breakout)", "module", "rf",
+                 "SIMCom (generic breakout)", "SIM800L",
+                 "SIM800L quad-band GSM/GPRS module on the common red coreboard, 3.4-4.4V "
+                 "(2A bursts!), UART, u.FL + solder antenna pads, micro-SIM on back. "
+                 "Do not confuse with the larger blue SIM800L EVB v2.0.",
+                 {"contacts": 12, "mounting": "THT", "supply_voltage": "3.4-4.4V",
+                  "board_mm": "24.9x22.7"},
+                 "https://www.haoyuelectronics.com/Attachment/SIM800L/SIM800L_Coreboard.jpg",
+                 "HAOYU coreboard photos, pitch-calibrated: board 24.9x22.7, 2x6 pins "
+                 "2.54 pitch, columns 20.0 c-c (off-grid), first pin 5.7 below top edge. "
+                 "Pin names verbatim from silkscreen (NET has square pad).",
+                 ["sim800l", "gsm", "gprs", "sms", "module", "simcom"])
+    return fid, lib, fp, sym, meta
+
+
+def max7219_matrix_module():
+    fid, lib = "max7219_matrix_module", "module/display/max7219_matrix_module"
+    IN = ["VCC", "GND", "DIN", "CS", "CLK"]
+    OUT = ["VCC", "GND", "DOUT", "CS", "CLK"]
+    out = _fp_open(fid, "MAX7219 8x8 LED matrix module (FC-16, cascadable), 32x32mm, 5-pin "
+                        "headers on both edges (IN left, OUT right), 4x M3 holes 26x20 grid.",
+                   "MAX7219 8x8 LED matrix module FC-16", -17.5, 17.5, attr="through_hole")
+    out += _fab_body(-16, -16, 16, 16, 1.5)
+    out += _rect_lines([(-16.11, -16.11, 16.11, -16.11), (16.11, -16.11, 16.11, 16.11),
+                        (16.11, 16.11, -16.11, 16.11), (-16.11, 16.11, -16.11, -16.11)],
+                       "F.SilkS", 0.12)
+    out.append(_line(-15.9, -5.6, -15.4, -5.6, "F.SilkS", 0.12))  # pin1 틱
+    out += _court(-16.25, -16.25, 16.25, 16.25)
+    for i in range(5):
+        out.append(_tht(str(i + 1), -14.73, -5.08 + i * 2.54, 1.7, 1.0,
+                        "rect" if i == 0 else "circle"))
+    for i in range(5):
+        out.append(_tht(str(6 + i), 14.73, -5.08 + i * 2.54, 1.7, 1.0, "circle"))
+    for hx, hy in ((-13, -10), (13, -10), (-13, 10), (13, 10)):
+        out.append(_npth(hx, hy, 3.0))
+    out.append(')')
+    fp = "\n".join(out) + "\n"
+    sym = _lr_symbol(fid, [(str(i + 1), IN[i]) for i in range(5)],
+                     [(str(6 + i), OUT[i]) for i in range(5)])
+    meta = _meta(fid, "MAX7219 8x8 LED Matrix Module (FC-16)", "module", "display",
+                 "Generic (FC-16)", "FC-16 MAX7219",
+                 "Cascadable 8x8 LED dot matrix module driven by MAX7219, SPI-like 3-wire, "
+                 "5V, IN/OUT headers for daisy-chaining, 32x32mm. The bare MAX7219 chip is "
+                 "in the official KiCad library; this is the module board.",
+                 {"contacts": 10, "mounting": "THT", "supply_voltage": "5V",
+                  "board_mm": "32x32"},
+                 "https://components101.com/sites/default/files/component_datasheet/MAX7219%208x8%20LED%20Matrix%20Module%20Datasheet.pdf",
+                 "Components101 FC-16 module datasheet p.9 dimension drawing: 32x32 board, "
+                 "4x D3.0 holes 26x20 grid centered; 5-pin 2.54 headers both edges, group "
+                 "centered (span 10.16), inset 1.27 (photo-estimated 1.0-1.3). Pin order "
+                 "verified: VCC GND DIN/DOUT CS CLK.",
+                 ["max7219", "led matrix", "8x8", "module", "fc-16", "cascadable"])
+    return fid, lib, fp, sym, meta
+
+
+def gc9a01_module_128():
+    fid, lib = "gc9a01_module_128", "module/display/gc9a01_module_128"
+    import math
+    nm = ["BLK", "CS", "DC", "RES", "SDA", "SCL", "VCC", "GND"]
+    cy = -3.9  # 원 중심 (전고 45.8, 하단 탭)
+    out = _fp_open(fid, "GC9A01 1.28 inch round LCD module (240x240 IPS, SPI), round PCB "
+                        "D38 + 23mm bottom tab (45.8 overall), 8-pin header. Dimensions "
+                        "per lcdwiki MSP1281 vendor drawing. 7-pin variants drop BLK.",
+                   "GC9A01 round LCD 1.28 240x240 SPI module", -25.5, 25.5,
+                   attr="through_hole")
+    R = 19.0
+    pts = [(R * math.cos(a * math.pi / 12), cy + R * math.sin(a * math.pi / 12))
+           for a in range(25)]
+    for i in range(24):
+        out.append(_line(pts[i][0], pts[i][1], pts[i + 1][0], pts[i + 1][1], "F.Fab", 0.10))
+    out += _rect_lines([(-11.5, 11.4, -11.5, 22.9), (-11.5, 22.9, 11.5, 22.9),
+                        (11.5, 22.9, 11.5, 11.4)], "F.Fab", 0.10)  # 탭
+    Ra = 16.2
+    pts = [(Ra * math.cos(a * math.pi / 12), cy + Ra * math.sin(a * math.pi / 12))
+           for a in range(25)]
+    for i in range(24):
+        out.append(_line(pts[i][0], pts[i][1], pts[i + 1][0], pts[i + 1][1], "F.Fab", 0.10))
+    Rs = 19.15
+    pts = [(Rs * math.cos(a * math.pi / 12), cy + Rs * math.sin(a * math.pi / 12))
+           for a in range(25)]
+    for i in range(24):
+        out.append(_line(pts[i][0], pts[i][1], pts[i + 1][0], pts[i + 1][1], "F.SilkS", 0.12))
+    out.append(_line(-9.7, 23.3, -8.1, 23.3, "F.SilkS", 0.12))  # pin1(BLK) 틱
+    out += _court(-19.25, -23.15, 19.25, 23.15)
+    for i in range(8):
+        out.append(_tht(str(i + 1), -8.89 + i * 2.54, 21.43, 1.7, 1.0,
+                        "rect" if i == 0 else "circle"))
+    for hx in (-9.7, 9.7):
+        out.append(_npth(hx, 17.08, 2.0))
+    out.append(')')
+    fp = "\n".join(out) + "\n"
+    sym = _lr_symbol(fid, [(str(i + 1), nm[i]) for i in range(8)], [])
+    meta = _meta(fid, "1.28\" GC9A01 Round LCD Module (240x240, SPI)", "module", "display",
+                 "Generic (lcdwiki MSP1281)", "MSP1281",
+                 "Common 1.28 inch round IPS LCD module with GC9A01 controller, 240x240, "
+                 "SPI 8-pin header (BLK CS DC RES SDA SCL VCC GND), round PCB D38 with "
+                 "23mm bottom tab. Smartwatch-project staple; pairs with CST816S touch "
+                 "variants. Verify against your vendor - clones vary.",
+                 {"contacts": 8, "mounting": "THT header", "interface": "SPI",
+                  "supply_voltage": "3.3V", "board_mm": "D38.03x45.8"},
+                 "https://www.lcdwiki.com/res/MSP1281/MSP1281_Size.pdf",
+                 "lcdwiki MSP1281 size drawing: round D38.03 + tab 23.0 wide, overall "
+                 "45.8; 8-pin 2.54 header (span 17.78, row 1.47 above bottom); 2x D2.0 "
+                 "holes 19.4 c-c at 5.82 above bottom; active area D32.4 concentric.",
+                 ["gc9a01", "round lcd", "1.28", "240x240", "spi", "module", "smartwatch"])
+    return fid, lib, fp, sym, meta
+
+
+def ld2410c():
+    fid, lib = "ld2410c", "module/sensor/ld2410c"
+    nm = ["TX", "RX", "OUT", "GND", "VCC"]
+    out = _fp_open(fid, "Hi-Link HLK-LD2410C 24GHz mmWave human presence radar module, "
+                        "22x16mm, 5-pin 2.54 header (TX RX OUT GND VCC - official "
+                        "datasheet; the 1.27 pitch applies to LD2410/B, not C). Keep the "
+                        "antenna face unobstructed.",
+                   "LD2410C mmWave radar presence sensor module", -9.5, 9.5,
+                   attr="through_hole")
+    out += _fab_body(-11, -8, 11, 8, 1.5)
+    out += _rect_lines([(-11.11, -8.11, 11.11, -8.11), (11.11, -8.11, 11.11, 8.11),
+                        (11.11, 8.11, -11.11, 8.11), (-11.11, 8.11, -11.11, -8.11)],
+                       "F.SilkS", 0.12)
+    out.append(_line(-5.8, -6.5, -5.8, -5.9, "F.SilkS", 0.12))  # pin1(TX) 틱
+    out += _court(-11.25, -8.25, 11.25, 8.25)
+    for i in range(5):
+        out.append(_tht(str(i + 1), -5.08 + i * 2.54, -5.46, 1.6, 0.9,
+                        "rect" if i == 0 else "circle"))
+    out.append(')')
+    fp = "\n".join(out) + "\n"
+    sym = _lr_symbol(fid, [(str(i + 1), nm[i]) for i in range(5)], [])
+    meta = _meta(fid, "HLK-LD2410C 24GHz mmWave Presence Radar", "module", "sensor",
+                 "Hi-Link", "HLK-LD2410C",
+                 "Hi-Link LD2410C 24GHz FMCW radar for human presence detection, UART + "
+                 "presence OUT pin (3.3V logic), 5-12V supply (5V advised, 200mA). "
+                 "ESPHome/Home Assistant staple. Antenna side must face the room.",
+                 {"contacts": 5, "mounting": "THT", "supply_voltage": "5-12V",
+                  "board_mm": "22x16"},
+                 "https://d.hlktech.net/download/HLK-LD2410C/1/",
+                 "Hi-Link HLK-LD2410C datasheet V1.00 pp.6-8: board 22x16, 5 pin holes "
+                 "D0.9 at 2.54 pitch (verbatim: 'pin spacing is 2.54mm'), row ~2.54 from "
+                 "edge, centered. Pin order TX RX OUT GND VCC per silkscreen/table.",
+                 ["ld2410", "mmwave", "radar", "presence", "human sensor", "hi-link",
+                  "esphome"])
+    return fid, lib, fp, sym, meta
+
+
+def esp32_devkitc_v4():
+    fid, lib = "esp32_devkitc_v4", "module/devboard/esp32_devkitc_v4"
+    L = ["3V3", "EN", "VP", "VN", "IO34", "IO35", "IO32", "IO33", "IO25", "IO26", "IO27",
+         "IO14", "IO12", "GND", "IO13", "D2", "D3", "CMD", "5V"]
+    R = ["GND", "IO23", "IO22", "TX", "RX", "IO21", "GND", "IO19", "IO18", "IO5", "IO17",
+         "IO16", "IO4", "IO0", "IO2", "IO15", "D1", "D0", "CLK"]
+    out = _fp_open(fid, "Espressif ESP32-DevKitC V4 development board, 48.26x27.94mm "
+                        "(54.3 incl. antenna overhang), 2x19 pins 2.54 pitch rows 25.4 "
+                        "c-c. Dimensions from the official Espressif drawing.",
+                   "ESP32 DevKitC V4 devboard WROOM-32", -27.5, 27.5, attr="through_hole")
+    out += _fab_body(-13.97, -24.13, 13.97, 24.13, 2.0)
+    out += _rect_lines([(-9, -30.17, 9, -30.17), (9, -30.17, 9, -24.13),
+                        (-9, -30.17, -9, -24.13)], "F.Fab", 0.10)  # WROOM 안테나 오버행
+    out += _rect_lines([(-4, 20.13, 4, 20.13), (4, 20.13, 4, 24.6),
+                        (-4, 20.13, -4, 24.6)], "F.Fab", 0.10)     # Micro-USB
+    out += _rect_lines([(-14.08, -24.24, 14.08, -24.24), (14.08, -24.24, 14.08, 24.24),
+                        (14.08, 24.24, -14.08, 24.24), (-14.08, 24.24, -14.08, -24.24)],
+                       "F.SilkS", 0.12)
+    out.append(_line(-13.4, -23.15, -13.4, -22.55, "F.SilkS", 0.12))  # pin1(3V3) 틱
+    out += _court(-14.22, -30.3, 14.22, 24.85)
+    for i in range(19):
+        out.append(_tht(str(i + 1), -12.7, -22.86 + i * 2.54, 1.7, 1.0,
+                        "rect" if i == 0 else "circle"))
+    for i in range(19):
+        out.append(_tht(str(20 + i), 12.7, -22.86 + i * 2.54, 1.7, 1.0, "circle"))
+    out.append(')')
+    fp = "\n".join(out) + "\n"
+    sym = _lr_symbol(fid, [(str(i + 1), L[i]) for i in range(19)],
+                     [(str(20 + i), R[i]) for i in range(19)])
+    meta = _meta(fid, "ESP32-DevKitC V4 Development Board", "module", "devboard",
+                 "Espressif", "ESP32-DevKitC-32E",
+                 "Espressif ESP32-DevKitC V4 dev board (ESP32-WROOM-32E), 38-pin 2.54 "
+                 "headers at 25.4mm row spacing - drop it onto a carrier PCB with two "
+                 "1x19 sockets. WROOM antenna overhangs the board edge by 6mm: keep that "
+                 "zone copper-free.",
+                 {"contacts": 38, "mounting": "THT", "supply_voltage": "5V (USB) / 3.3V",
+                  "board_mm": "48.26x27.94"},
+                 "https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32/esp32-devkitc/user_guide.html",
+                 "Espressif official ESP32-DevKitC V4 dimension drawing: board 48.26x27.94, "
+                 "rows 25.40 c-c, pitch 2.54, end pins 1.29 from USB edge, WROOM overhang "
+                 "6.04. Pin order verbatim from the official board pinout.",
+                 ["esp32", "devkitc", "devboard", "wroom-32", "espressif", "development"])
+    return fid, lib, fp, sym, meta
+
+
 PARTS = [qmc5883l, hmc5883l, adxl345, ip5306, tp5100, cn3791, mp1584, sy8008, sy8089,
          ht7333, ht7833, ttp223, ttp229, w25q64jv, drv8825, a4988,
-         ssd1306_module_096, sh1106_module_13, st7789_module_13]
+         ssd1306_module_096, sh1106_module_13, st7789_module_13,
+         max6675, as5600, tm1637, inmp441, bh1750, xl6009, mlx90614, max17048, sgp40,
+         veml7700, hc_sr04, dfplayer_mini, hc05, sim800l, max7219_matrix_module,
+         gc9a01_module_128, ld2410c, esp32_devkitc_v4]
 
 
 def main():

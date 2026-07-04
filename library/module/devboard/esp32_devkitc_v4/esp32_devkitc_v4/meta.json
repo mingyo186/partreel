@@ -1,0 +1,42 @@
+{
+  "id": "esp32_devkitc_v4",
+  "name": "ESP32-DevKitC V4 Development Board",
+  "category": "module",
+  "family": "devboard",
+  "manufacturer": "Espressif",
+  "mpn_pattern": "ESP32-DevKitC-32E",
+  "description": "Espressif ESP32-DevKitC V4 dev board (ESP32-WROOM-32E), 38-pin 2.54 headers at 25.4mm row spacing - drop it onto a carrier PCB with two 1x19 sockets. WROOM antenna overhangs the board edge by 6mm: keep that zone copper-free.",
+  "parameters": {
+    "contacts": 38,
+    "mounting": "THT",
+    "supply_voltage": "5V (USB) / 3.3V",
+    "board_mm": "48.26x27.94"
+  },
+  "files": {
+    "footprint": "esp32_devkitc_v4.kicad_mod",
+    "symbol": "esp32_devkitc_v4.kicad_sym",
+    "model_3d": "esp32_devkitc_v4.step",
+    "preview": "esp32_devkitc_v4.glb",
+    "footprint_svg": "esp32_devkitc_v4.footprint.svg",
+    "symbol_svg": "esp32_devkitc_v4.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32/esp32-devkitc/user_guide.html",
+  "dimensions_source": "Espressif official ESP32-DevKitC V4 dimension drawing: board 48.26x27.94, rows 25.40 c-c, pitch 2.54, end pins 1.29 from USB edge, WROOM overhang 6.04. Pin order verbatim from the official board pinout.",
+  "verified": true,
+  "license": "CC-BY-4.0",
+  "generated_by": "generators/gen_ics.py",
+  "keywords": [
+    "esp32",
+    "devkitc",
+    "devboard",
+    "wroom-32",
+    "espressif",
+    "development"
+  ]
+}

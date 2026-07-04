@@ -1,0 +1,43 @@
+{
+  "id": "ld2410c",
+  "name": "HLK-LD2410C 24GHz mmWave Presence Radar",
+  "category": "module",
+  "family": "sensor",
+  "manufacturer": "Hi-Link",
+  "mpn_pattern": "HLK-LD2410C",
+  "description": "Hi-Link LD2410C 24GHz FMCW radar for human presence detection, UART + presence OUT pin (3.3V logic), 5-12V supply (5V advised, 200mA). ESPHome/Home Assistant staple. Antenna side must face the room.",
+  "parameters": {
+    "contacts": 5,
+    "mounting": "THT",
+    "supply_voltage": "5-12V",
+    "board_mm": "22x16"
+  },
+  "files": {
+    "footprint": "ld2410c.kicad_mod",
+    "symbol": "ld2410c.kicad_sym",
+    "model_3d": "ld2410c.step",
+    "preview": "ld2410c.glb",
+    "footprint_svg": "ld2410c.footprint.svg",
+    "symbol_svg": "ld2410c.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "https://d.hlktech.net/download/HLK-LD2410C/1/",
+  "dimensions_source": "Hi-Link HLK-LD2410C datasheet V1.00 pp.6-8: board 22x16, 5 pin holes D0.9 at 2.54 pitch (verbatim: 'pin spacing is 2.54mm'), row ~2.54 from edge, centered. Pin order TX RX OUT GND VCC per silkscreen/table.",
+  "verified": true,
+  "license": "CC-BY-4.0",
+  "generated_by": "generators/gen_ics.py",
+  "keywords": [
+    "ld2410",
+    "mmwave",
+    "radar",
+    "presence",
+    "human sensor",
+    "hi-link",
+    "esphome"
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "id": "inmp441",
+  "name": "INMP441 I2S MEMS Microphone",
+  "category": "ic",
+  "family": "audio",
+  "manufacturer": "TDK InvenSense",
+  "mpn_pattern": "INMP441ACEZ-R7",
+  "description": "TDK InvenSense INMP441 omnidirectional bottom-port MEMS microphone with 24-bit I2S output, 1.8-3.3V. The default ESP32 I2S mic. Footprint includes the required PCB sound hole (0.8mm NPTH) under the port ring - keep solder paste off the hole.",
+  "parameters": {
+    "contacts": 9,
+    "mounting": "SMD",
+    "supply_voltage": "1.8-3.3V",
+    "interface": "I2S",
+    "body_mm": "4.72x3.76x0.98"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/ic/audio/inmp441/inmp441/inmp441.kicad_mod",
+    "symbol": "https://partreel.com/library/ic/audio/inmp441/inmp441/inmp441.kicad_sym",
+    "model_3d": "https://partreel.com/library/ic/audio/inmp441/inmp441/inmp441.step",
+    "preview": "https://partreel.com/library/ic/audio/inmp441/inmp441/inmp441.glb",
+    "footprint_svg": "https://partreel.com/library/ic/audio/inmp441/inmp441/inmp441.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/ic/audio/inmp441/inmp441/inmp441.symbol.svg"
+  },
+  "datasheet": "https://www.farnell.com/datasheets/1824785.pdf",
+  "license": "CC-BY-4.0",
+  "verified": true,
+  "dimensions_source": "TDK DS-INMP441-00 Rev1.0: Fig.16 LGA_CAV 4.72x3.76x0.98; Fig.14 recommended land (1:1): 8 pads 0.4x0.6, columns 2.66 c-c, pitch 1.05, port ring ID0.96/OD1.56, PCB hole 0.5-1.0. Pinout Fig.3 (bottom view, mirrored for footprint).",
+  "keywords": [
+    "inmp441",
+    "invensense",
+    "mems",
+    "microphone",
+    "i2s",
+    "esp32",
+    "audio"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "TDK DS-INMP441-00 Rev1.0: Fig.16 LGA_CAV 4.72x3.76x0.98; Fig.14 recommended land (1:1): 8 pads 0.4x0.6, columns 2.66 c-c, pitch 1.05, port ring ID0.96/OD1.56, PCB hole 0.5-1.0. Pinout Fig.3 (bottom view, mirrored for footprint).",
+    "datasheet": "https://www.farnell.com/datasheets/1824785.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/gen_ics.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    }
+  },
+  "page": "https://partreel.com/p/inmp441/",
+  "api": "https://partreel.com/api/v1/parts/inmp441.json"
+}

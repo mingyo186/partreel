@@ -1,0 +1,68 @@
+{
+  "id": "max7219_matrix_module",
+  "name": "MAX7219 8x8 LED Matrix Module (FC-16)",
+  "category": "module",
+  "family": "display",
+  "manufacturer": "Generic (FC-16)",
+  "mpn_pattern": "FC-16 MAX7219",
+  "description": "Cascadable 8x8 LED dot matrix module driven by MAX7219, SPI-like 3-wire, 5V, IN/OUT headers for daisy-chaining, 32x32mm. The bare MAX7219 chip is in the official KiCad library; this is the module board.",
+  "parameters": {
+    "contacts": 10,
+    "mounting": "THT",
+    "supply_voltage": "5V",
+    "board_mm": "32x32"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/module/display/max7219_matrix_module/max7219_matrix_module/max7219_matrix_module.kicad_mod",
+    "symbol": "https://partreel.com/library/module/display/max7219_matrix_module/max7219_matrix_module/max7219_matrix_module.kicad_sym",
+    "model_3d": "https://partreel.com/library/module/display/max7219_matrix_module/max7219_matrix_module/max7219_matrix_module.step",
+    "preview": "https://partreel.com/library/module/display/max7219_matrix_module/max7219_matrix_module/max7219_matrix_module.glb",
+    "footprint_svg": "https://partreel.com/library/module/display/max7219_matrix_module/max7219_matrix_module/max7219_matrix_module.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/module/display/max7219_matrix_module/max7219_matrix_module/max7219_matrix_module.symbol.svg"
+  },
+  "datasheet": "https://components101.com/sites/default/files/component_datasheet/MAX7219%208x8%20LED%20Matrix%20Module%20Datasheet.pdf",
+  "license": "CC-BY-4.0",
+  "verified": true,
+  "dimensions_source": "Components101 FC-16 module datasheet p.9 dimension drawing: 32x32 board, 4x D3.0 holes 26x20 grid centered; 5-pin 2.54 headers both edges, group centered (span 10.16), inset 1.27 (photo-estimated 1.0-1.3). Pin order verified: VCC GND DIN/DOUT CS CLK.",
+  "keywords": [
+    "max7219",
+    "led matrix",
+    "8x8",
+    "module",
+    "fc-16",
+    "cascadable"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "Components101 FC-16 module datasheet p.9 dimension drawing: 32x32 board, 4x D3.0 holes 26x20 grid centered; 5-pin 2.54 headers both edges, group centered (span 10.16), inset 1.27 (photo-estimated 1.0-1.3). Pin order verified: VCC GND DIN/DOUT CS CLK.",
+    "datasheet": "https://components101.com/sites/default/files/component_datasheet/MAX7219%208x8%20LED%20Matrix%20Module%20Datasheet.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/gen_ics.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    }
+  },
+  "page": "https://partreel.com/p/max7219_matrix_module/",
+  "api": "https://partreel.com/api/v1/parts/max7219_matrix_module.json"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "esp32_devkitc_v4",
+  "name": "ESP32-DevKitC V4 Development Board",
+  "category": "module",
+  "family": "devboard",
+  "manufacturer": "Espressif",
+  "mpn_pattern": "ESP32-DevKitC-32E",
+  "description": "Espressif ESP32-DevKitC V4 dev board (ESP32-WROOM-32E), 38-pin 2.54 headers at 25.4mm row spacing - drop it onto a carrier PCB with two 1x19 sockets. WROOM antenna overhangs the board edge by 6mm: keep that zone copper-free.",
+  "parameters": {
+    "contacts": 38,
+    "mounting": "THT",
+    "supply_voltage": "5V (USB) / 3.3V",
+    "board_mm": "48.26x27.94"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/module/devboard/esp32_devkitc_v4/esp32_devkitc_v4/esp32_devkitc_v4.kicad_mod",
+    "symbol": "https://partreel.com/library/module/devboard/esp32_devkitc_v4/esp32_devkitc_v4/esp32_devkitc_v4.kicad_sym",
+    "model_3d": "https://partreel.com/library/module/devboard/esp32_devkitc_v4/esp32_devkitc_v4/esp32_devkitc_v4.step",
+    "preview": "https://partreel.com/library/module/devboard/esp32_devkitc_v4/esp32_devkitc_v4/esp32_devkitc_v4.glb",
+    "footprint_svg": "https://partreel.com/library/module/devboard/esp32_devkitc_v4/esp32_devkitc_v4/esp32_devkitc_v4.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/module/devboard/esp32_devkitc_v4/esp32_devkitc_v4/esp32_devkitc_v4.symbol.svg"
+  },
+  "datasheet": "https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32/esp32-devkitc/user_guide.html",
+  "license": "CC-BY-4.0",
+  "verified": true,
+  "dimensions_source": "Espressif official ESP32-DevKitC V4 dimension drawing: board 48.26x27.94, rows 25.40 c-c, pitch 2.54, end pins 1.29 from USB edge, WROOM overhang 6.04. Pin order verbatim from the official board pinout.",
+  "keywords": [
+    "esp32",
+    "devkitc",
+    "devboard",
+    "wroom-32",
+    "espressif",
+    "development"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "Espressif official ESP32-DevKitC V4 dimension drawing: board 48.26x27.94, rows 25.40 c-c, pitch 2.54, end pins 1.29 from USB edge, WROOM overhang 6.04. Pin order verbatim from the official board pinout.",
+    "datasheet": "https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32/esp32-devkitc/user_guide.html",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/gen_ics.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    }
+  },
+  "page": "https://partreel.com/p/esp32_devkitc_v4/",
+  "api": "https://partreel.com/api/v1/parts/esp32_devkitc_v4.json"
+}

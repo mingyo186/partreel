@@ -1,0 +1,72 @@
+{
+  "id": "as5600",
+  "name": "AS5600 Magnetic Angle Sensor",
+  "category": "ic",
+  "family": "sensor_if",
+  "manufacturer": "ams-OSRAM",
+  "mpn_pattern": "AS5600-ASOT",
+  "description": "ams AS5600 12-bit contactless magnetic rotary position sensor (on-axis), I2C 0x36 + analog/PWM out, 3.3V or 5V mode, SOIC-8. SimpleFOC/robotics encoder staple.",
+  "parameters": {
+    "contacts": 8,
+    "mounting": "SMD",
+    "supply_voltage": "3.0-3.6V or 4.5-5.5V",
+    "interface": "I2C",
+    "i2c_address": "0x36",
+    "body_mm": "4.9x3.9x1.75"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/ic/sensor_if/as5600/as5600/as5600.kicad_mod",
+    "symbol": "https://partreel.com/library/ic/sensor_if/as5600/as5600/as5600.kicad_sym",
+    "model_3d": "https://partreel.com/library/ic/sensor_if/as5600/as5600/as5600.step",
+    "preview": "https://partreel.com/library/ic/sensor_if/as5600/as5600/as5600.glb",
+    "footprint_svg": "https://partreel.com/library/ic/sensor_if/as5600/as5600/as5600.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/ic/sensor_if/as5600/as5600/as5600.symbol.svg"
+  },
+  "datasheet": "https://look.ams-osram.com/m/7059eac7531a86fd/original/AS5600-DS000365.pdf",
+  "license": "CC-BY-4.0",
+  "verified": true,
+  "dimensions_source": "ams AS5600 datasheet v1-06 Fig.42: SOIC-8 (MS-012) body 4.9x3.9, span 6.0, pitch 1.27. Land pads 0.61x1.6 rows 5.4 c-c per IPC-7351. Pinout Fig.3/4.",
+  "keywords": [
+    "as5600",
+    "ams",
+    "magnetic",
+    "encoder",
+    "rotary",
+    "angle",
+    "i2c",
+    "soic-8"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "ams AS5600 datasheet v1-06 Fig.42: SOIC-8 (MS-012) body 4.9x3.9, span 6.0, pitch 1.27. Land pads 0.61x1.6 rows 5.4 c-c per IPC-7351. Pinout Fig.3/4.",
+    "datasheet": "https://look.ams-osram.com/m/7059eac7531a86fd/original/AS5600-DS000365.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/gen_ics.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    }
+  },
+  "page": "https://partreel.com/p/as5600/",
+  "api": "https://partreel.com/api/v1/parts/as5600.json"
+}

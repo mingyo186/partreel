@@ -1,0 +1,71 @@
+{
+  "id": "mlx90614",
+  "name": "MLX90614 IR Thermometer (TO-39)",
+  "category": "sensor",
+  "family": "temperature",
+  "manufacturer": "Melexis",
+  "mpn_pattern": "MLX90614ESF-BAA",
+  "description": "Melexis MLX90614 contactless infrared thermometer, SMBus (default 0x5A) or PWM output, factory-calibrated, TO-39 metal can. GY-906 module chip. Metal can: no electrical connection except via VSS.",
+  "parameters": {
+    "contacts": 4,
+    "mounting": "THT",
+    "supply_voltage": "3.0V (BAA) / 5V (Axx)",
+    "interface": "SMBus",
+    "body_mm": "D9.12x4.1"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/sensor/melexis/mlx90614/mlx90614/mlx90614.kicad_mod",
+    "symbol": "https://partreel.com/library/sensor/melexis/mlx90614/mlx90614/mlx90614.kicad_sym",
+    "model_3d": "https://partreel.com/library/sensor/melexis/mlx90614/mlx90614/mlx90614.step",
+    "preview": "https://partreel.com/library/sensor/melexis/mlx90614/mlx90614/mlx90614.glb",
+    "footprint_svg": "https://partreel.com/library/sensor/melexis/mlx90614/mlx90614/mlx90614.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/sensor/melexis/mlx90614/mlx90614/mlx90614.symbol.svg"
+  },
+  "datasheet": "https://www.melexis.com/-/media/files/documents/datasheets/mlx90614-datasheet-melexis.pdf",
+  "license": "CC-BY-4.0",
+  "verified": true,
+  "dimensions_source": "Melexis MLX90614 datasheet Rev021 p.47 Fig.41 (xxA can): flange D9.12, height 4.1, 4 leads D0.45 on D5.08 circle at 90deg, tab at 45deg between pins 4-1. Pinout Table 2/Fig.1 p.6 (bottom view, mirrored for footprint).",
+  "keywords": [
+    "mlx90614",
+    "melexis",
+    "infrared",
+    "thermometer",
+    "contactless",
+    "smbus",
+    "gy-906",
+    "to-39"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "Melexis MLX90614 datasheet Rev021 p.47 Fig.41 (xxA can): flange D9.12, height 4.1, 4 leads D0.45 on D5.08 circle at 90deg, tab at 45deg between pins 4-1. Pinout Table 2/Fig.1 p.6 (bottom view, mirrored for footprint).",
+    "datasheet": "https://www.melexis.com/-/media/files/documents/datasheets/mlx90614-datasheet-melexis.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/gen_ics.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    }
+  },
+  "page": "https://partreel.com/p/mlx90614/",
+  "api": "https://partreel.com/api/v1/parts/mlx90614.json"
+}

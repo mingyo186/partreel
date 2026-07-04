@@ -1,0 +1,45 @@
+{
+  "id": "mlx90614",
+  "name": "MLX90614 IR Thermometer (TO-39)",
+  "category": "sensor",
+  "family": "temperature",
+  "manufacturer": "Melexis",
+  "mpn_pattern": "MLX90614ESF-BAA",
+  "description": "Melexis MLX90614 contactless infrared thermometer, SMBus (default 0x5A) or PWM output, factory-calibrated, TO-39 metal can. GY-906 module chip. Metal can: no electrical connection except via VSS.",
+  "parameters": {
+    "contacts": 4,
+    "mounting": "THT",
+    "supply_voltage": "3.0V (BAA) / 5V (Axx)",
+    "interface": "SMBus",
+    "body_mm": "D9.12x4.1"
+  },
+  "files": {
+    "footprint": "mlx90614.kicad_mod",
+    "symbol": "mlx90614.kicad_sym",
+    "model_3d": "mlx90614.step",
+    "preview": "mlx90614.glb",
+    "footprint_svg": "mlx90614.footprint.svg",
+    "symbol_svg": "mlx90614.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "https://www.melexis.com/-/media/files/documents/datasheets/mlx90614-datasheet-melexis.pdf",
+  "dimensions_source": "Melexis MLX90614 datasheet Rev021 p.47 Fig.41 (xxA can): flange D9.12, height 4.1, 4 leads D0.45 on D5.08 circle at 90deg, tab at 45deg between pins 4-1. Pinout Table 2/Fig.1 p.6 (bottom view, mirrored for footprint).",
+  "verified": true,
+  "license": "CC-BY-4.0",
+  "generated_by": "generators/gen_ics.py",
+  "keywords": [
+    "mlx90614",
+    "melexis",
+    "infrared",
+    "thermometer",
+    "contactless",
+    "smbus",
+    "gy-906",
+    "to-39"
+  ]
+}

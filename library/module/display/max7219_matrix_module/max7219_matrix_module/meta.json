@@ -1,0 +1,42 @@
+{
+  "id": "max7219_matrix_module",
+  "name": "MAX7219 8x8 LED Matrix Module (FC-16)",
+  "category": "module",
+  "family": "display",
+  "manufacturer": "Generic (FC-16)",
+  "mpn_pattern": "FC-16 MAX7219",
+  "description": "Cascadable 8x8 LED dot matrix module driven by MAX7219, SPI-like 3-wire, 5V, IN/OUT headers for daisy-chaining, 32x32mm. The bare MAX7219 chip is in the official KiCad library; this is the module board.",
+  "parameters": {
+    "contacts": 10,
+    "mounting": "THT",
+    "supply_voltage": "5V",
+    "board_mm": "32x32"
+  },
+  "files": {
+    "footprint": "max7219_matrix_module.kicad_mod",
+    "symbol": "max7219_matrix_module.kicad_sym",
+    "model_3d": "max7219_matrix_module.step",
+    "preview": "max7219_matrix_module.glb",
+    "footprint_svg": "max7219_matrix_module.footprint.svg",
+    "symbol_svg": "max7219_matrix_module.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "https://components101.com/sites/default/files/component_datasheet/MAX7219%208x8%20LED%20Matrix%20Module%20Datasheet.pdf",
+  "dimensions_source": "Components101 FC-16 module datasheet p.9 dimension drawing: 32x32 board, 4x D3.0 holes 26x20 grid centered; 5-pin 2.54 headers both edges, group centered (span 10.16), inset 1.27 (photo-estimated 1.0-1.3). Pin order verified: VCC GND DIN/DOUT CS CLK.",
+  "verified": true,
+  "license": "CC-BY-4.0",
+  "generated_by": "generators/gen_ics.py",
+  "keywords": [
+    "max7219",
+    "led matrix",
+    "8x8",
+    "module",
+    "fc-16",
+    "cascadable"
+  ]
+}

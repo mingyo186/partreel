@@ -1,0 +1,42 @@
+{
+  "id": "hc05",
+  "name": "HC-05 Bluetooth Module (ZS-040)",
+  "category": "module",
+  "family": "rf",
+  "manufacturer": "Generic (ZS-040)",
+  "mpn_pattern": "HC-05",
+  "description": "HC-05 bluetooth serial (SPP) module on the common ZS-040 carrier board, 3.6-6V supply / 3.3V logic, 6-pin right-angle header. HC-06 ships on the same board (4 of 6 pins used).",
+  "parameters": {
+    "contacts": 6,
+    "mounting": "THT",
+    "supply_voltage": "3.6-6V",
+    "board_mm": "37x16"
+  },
+  "files": {
+    "footprint": "hc05.kicad_mod",
+    "symbol": "hc05.kicad_sym",
+    "model_3d": "hc05.step",
+    "preview": "hc05.glb",
+    "footprint_svg": "hc05.footprint.svg",
+    "symbol_svg": "hc05.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "https://protosupplies.com/product/hc-05-bluetooth-module/",
+  "dimensions_source": "ZS-040 carrier: 37x16 board (ProtoSupplies measured), 6-pin 2.54 right-angle header inset 2.0 from edge, group centered; daughterboard 27x13. Pin names verbatim from board silkscreen.",
+  "verified": true,
+  "license": "CC-BY-4.0",
+  "generated_by": "generators/gen_ics.py",
+  "keywords": [
+    "hc-05",
+    "hc-06",
+    "bluetooth",
+    "serial",
+    "module",
+    "zs-040"
+  ]
+}
