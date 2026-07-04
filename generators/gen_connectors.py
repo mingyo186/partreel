@@ -170,7 +170,8 @@ def gen_meta(cfg, n, fid):
     mpn = cfg["mpn"].format(n=n)
     return {
         "id": fid,
-        "name": f"{cfg['name']} {n}-pin ({mpn.rsplit('-', 1)[0] if '-' in mpn else mpn})",
+        # MPN은 데이터시트의 실제 품번 그대로 — 잘라내기/가공 금지 (§14-E)
+        "name": f"{cfg['name']} {n}-pin ({mpn})",
         "category": "connector", "family": cfg["name"], "manufacturer": cfg["manufacturer"],
         "mpn_pattern": mpn,
         "description": cfg["desc"].format(n=n),

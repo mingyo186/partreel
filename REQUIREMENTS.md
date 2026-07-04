@@ -197,6 +197,7 @@
 
 ### E. 메타 (meta.json / index.json)
 - 필수 필드 + `files`의 **모든 파일이 실제 존재**(없으면 그 포맷 미표시). datasheet·license·verified.
+- **MPN은 데이터시트에 실존하는 주문 가능 품번 그대로** (2026-07, "B4B-XH" 사건 — 표시용으로 접미사를 잘라 비실존 품번을 만들었음). 축약·가공·추측 금지. 이름에도 전체 MPN 표기.
 
 ### F. 검증 (교차검증 — §5/§5-1, 한 방법만 X)
 1. `python generators/validate_kicad.py` → PASS (구조).
