@@ -43,6 +43,8 @@ def fetch_field_reports():
                 continue
             pid = m.group(1)
             labels = {l["name"] for l in it.get("labels", [])}
+            if "invalid" in labels:  # 메인테이너가 무효 처리한 리포트는 집계 제외
+                continue
             c = counts.setdefault(pid, {"worked": 0, "problem": 0})
             if "report-problem" in labels:
                 c["problem"] += 1
