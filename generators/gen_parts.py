@@ -123,7 +123,9 @@ def microsd_hc():
     lib_path = "connector/card/microsd_hc"
     contacts = [("1", 2.775), ("2", 1.675), ("3", 0.575), ("4", -0.525), ("5", -1.625),
                 ("6", -2.725), ("7", -3.825), ("8", -4.925), ("9", -5.875)]  # y=-7.725, 0.7x1.2
-    shells = [(4.325, -7.725, 1, 1.2), (-6.825, -3.425, 1, 1.2), (-6.825, 2.775, 1, 0.8),
+    # 카드감지 스위치 제2단자 = 공식 pad 10 (쉴드 아님! — 전수감사에서 발견·정정)
+    det_a = (-6.825, 2.775, 1, 0.8)
+    shells = [(4.325, -7.725, 1, 1.2), (-6.825, -3.425, 1, 1.2),
               (-6.825, 6.925, 1, 2.8), (6.675, 7.375, 1.3, 1.9)]  # 쉴드/마운트
     out = [f'(footprint "{fid}" (version 20221018) (generator opencad-lib)',
            '  (layer "F.Cu")',
@@ -144,21 +146,25 @@ def microsd_hc():
     for name, x in contacts:
         out.append(f'  (pad "{name}" smd rect (at {x} -7.725) (size 0.7 1.2) '
                    f'(layers "F.Cu" "F.Paste" "F.Mask"))')
+    dx, dy, dw, dh = det_a
+    out.append(f'  (pad "10" smd rect (at {dx} {dy}) (size {dw} {dh}) '
+               f'(layers "F.Cu" "F.Paste" "F.Mask"))')
     for x, y, w, h in shells:
         out.append(f'  (pad "SH" smd rect (at {x} {y}) (size {w} {h}) '
                    f'(layers "F.Cu" "F.Paste" "F.Mask"))')
     out.append(')')
     footprint = "\n".join(out) + "\n"
 
-    names = ["DAT2", "CD/DAT3", "CMD", "VDD", "CLK", "VSS", "DAT0", "DAT1", "DET"]
-    symbol = _left_pin_symbol(fid, [(str(i + 1), names[i]) for i in range(9)], shield="SH")
+    # 핀명 = KiCad 공식 Micro_SD_Card_Det2 (Hirose DM3AT 대응 심볼) 그대로
+    names = ["DAT2", "DAT3/CD", "CMD", "VDD", "CLK", "VSS", "DAT0", "DAT1", "DET_B", "DET_A"]
+    symbol = _left_pin_symbol(fid, [(str(i + 1), names[i]) for i in range(10)], shield="SH")
     meta = {
         "id": fid, "name": "microSD Card Socket (push-push)",
         "category": "connector", "family": "microSD", "manufacturer": "Hirose / Generic",
         "mpn_pattern": "DM3AT-SF-PEJM5",
         "description": "microSD / TF card socket, push-push, SMD. Land pattern per Hirose "
                        "DM3AT-SF-PEJM5 datasheet. SD-bus pinout (DAT/CMD/CLK/VDD/VSS).",
-        "parameters": {"contacts": 9, "mounting": "SMD", "orientation": "horizontal"},
+        "parameters": {"contacts": 10, "mounting": "SMD", "orientation": "horizontal"},
         "files": {"footprint": f"{fid}.kicad_mod", "symbol": f"{fid}.kicad_sym",
                   "model_3d": f"{fid}.step", "preview": f"{fid}.glb",
                   "footprint_svg": f"{fid}.footprint.svg", "symbol_svg": f"{fid}.symbol.svg"},
@@ -240,10 +246,12 @@ def esp32_wroom32():
     out.append(')')
     footprint = "\n".join(out) + "\n"
 
-    nm = ["GND", "3V3", "EN", "IO36", "IO39", "IO34", "IO35", "IO32", "IO33", "IO25",
-          "IO26", "IO27", "IO14", "IO12", "GND", "IO13", "IO9", "IO10", "IO11", "IO6",
-          "IO7", "IO8", "IO15", "IO2", "IO0", "IO4", "IO16", "IO17", "IO5", "IO18",
-          "IO19", "NC", "IO21", "RXD0", "TXD0", "IO22", "IO23", "GND"]
+    # 핀명 = Espressif ESP32-WROOM-32 데이터시트 표기 그대로 (전수감사에서 정정:
+    # SENSOR_VP/VN, 플래시핀 SHD/SD2 계열, RXD0/IO3·TXD0/IO1 별칭 포함)
+    nm = ["GND", "3V3", "EN", "SENSOR_VP", "SENSOR_VN", "IO34", "IO35", "IO32", "IO33", "IO25",
+          "IO26", "IO27", "IO14", "IO12", "GND", "IO13", "SHD/SD2", "SWP/SD3", "SCS/CMD", "SCK/CLK",
+          "SDO/SD0", "SDI/SD1", "IO15", "IO2", "IO0", "IO4", "IO16", "IO17", "IO5", "IO18",
+          "IO19", "NC", "IO21", "RXD0/IO3", "TXD0/IO1", "IO22", "IO23", "GND"]
     left = [(str(i + 1), nm[i]) for i in range(19)]
     right = [(str(i + 1), nm[i]) for i in range(19, 38)]
     symbol = _lr_symbol(fid, left, right, bottom=[("39", "GND")])
