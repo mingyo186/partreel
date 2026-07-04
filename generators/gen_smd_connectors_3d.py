@@ -19,7 +19,9 @@ def build(cfg, n):
     x0, x1 = -2.5, R + 2.5
     y0, y1 = cfg.get("body_y0", -2.5), cfg.get("body_y1", 1.75)  # 공식 fab 외곽
     L, W, H = x1 - x0, y1 - y0, cfg["body_h"]
-    housing = Part.makeBox(L, W, H, App.Vector(x0, y0, 0))
+    # standoff: 리드 두께(0.15)만큼 하우징을 띄움 — 리드 밑면과 공면(z-fighting) 방지 (§14-C)
+    Z0 = 0.12
+    housing = Part.makeBox(L, W, H - Z0, App.Vector(x0, y0, Z0))
     # 수직 모서리 필렛
     try:
         vedges = [e for e in housing.Edges if abs(e.Vertexes[0].Z - e.Vertexes[1].Z) > 0.1]
@@ -42,8 +44,8 @@ def build(cfg, n):
         x = i * p
         metal.append(Part.makeBox(0.3, 2.8 - (y1 - 0.6), 0.15,
                                   App.Vector(x - 0.15, y1 - 0.6, 0)))      # 수평 발 (노출 1.05)
-        metal.append(Part.makeBox(0.3, 0.15, 1.2,
-                                  App.Vector(x - 0.15, y1, 0)))            # 전면 상향 꺾임
+        metal.append(Part.makeBox(0.3, 0.2, 1.2,
+                                  App.Vector(x - 0.15, y1 - 0.05, 0)))     # 전면 상향 꺾임 (공면 방지 0.05 겹침)
     for mx in (x0 - 0.35, x1 - 0.65):  # 마운팅 탭 (뒤쪽, 하우징 밖 0.3)
         metal.append(Part.makeBox(1.0, 2.8, 1.6, App.Vector(mx, -2.8, 0)))
     pins = metal[0]
