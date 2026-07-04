@@ -11,21 +11,30 @@ import re
 import subprocess
 import sys
 
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+
 ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), ".."))
 TOL = 0.02  # mm
 
-# 우리 부품 → 공식 파일 (1:1 대응이 존재하는 것 전부)
-MAPPING = {
-    "jst_ph_4pin": "Connector_JST.pretty/JST_PH_B4B-PH-K_1x04_P2.00mm_Vertical.kicad_mod",
-    "jst_xh_4pin": "Connector_JST.pretty/JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical.kicad_mod",
-    "jst_gh_4pin": "Connector_JST.pretty/JST_GH_BM04B-GHS-TBT_1x04-1MP_P1.25mm_Vertical.kicad_mod",
-    "pin_header_254_4pin": "Connector_PinHeader_2.54mm.pretty/PinHeader_1x04_P2.54mm_Vertical.kicad_mod",
-    "pin_header_254_7pin": "Connector_PinHeader_2.54mm.pretty/PinHeader_1x07_P2.54mm_Vertical.kicad_mod",
-    "screw_terminal_5_08_2pin": "TerminalBlock.pretty/TerminalBlock_bornier-2_P5.08mm.kicad_mod",
-    "usb_c_16p": "Connector_USB.pretty/USB_C_Receptacle_HRO_TYPE-C-31-M-12.kicad_mod",
-    "microsd_hc": "Connector_Card.pretty/microSD_HC_Hirose_DM3AT-SF-PEJM5.kicad_mod",
-    "esp32_wroom32": "RF_Module.pretty/ESP32-WROOM-32.kicad_mod",
-}
+def build_mapping():
+    """전 부품 → 공식 파일 (핀 수별 1:1). 공식에 없는 조합은 fetch 404로 SKIP 처리."""
+    m = {}
+    for n in range(2, 17):
+        m[f"jst_ph_{n}pin"] = f"Connector_JST.pretty/JST_PH_B{n}B-PH-K_1x{n:02d}_P2.00mm_Vertical.kicad_mod"
+        m[f"jst_xh_{n}pin"] = f"Connector_JST.pretty/JST_XH_B{n}B-XH-A_1x{n:02d}_P2.50mm_Vertical.kicad_mod"
+    for n in range(2, 13):
+        m[f"jst_gh_{n}pin"] = f"Connector_JST.pretty/JST_GH_BM{n:02d}B-GHS-TBT_1x{n:02d}-1MP_P1.25mm_Vertical.kicad_mod"
+    for n in range(1, 41):
+        m[f"pin_header_254_{n}pin"] = f"Connector_PinHeader_2.54mm.pretty/PinHeader_1x{n:02d}_P2.54mm_Vertical.kicad_mod"
+        m[f"pin_header_200_{n}pin"] = f"Connector_PinHeader_2.00mm.pretty/PinHeader_1x{n:02d}_P2.00mm_Vertical.kicad_mod"
+        m[f"pin_header_127_{n}pin"] = f"Connector_PinHeader_1.27mm.pretty/PinHeader_1x{n:02d}_P1.27mm_Vertical.kicad_mod"
+    for n in range(2, 9):
+        m[f"screw_terminal_5_08_{n}pin"] = f"TerminalBlock.pretty/TerminalBlock_bornier-{n}_P5.08mm.kicad_mod"
+    m["usb_c_16p"] = "Connector_USB.pretty/USB_C_Receptacle_HRO_TYPE-C-31-M-12.kicad_mod"
+    m["microsd_hc"] = "Connector_Card.pretty/microSD_HC_Hirose_DM3AT-SF-PEJM5.kicad_mod"
+    m["esp32_wroom32"] = "RF_Module.pretty/ESP32-WROOM-32.kicad_mod"
+    return m
 
 PAD_RE = re.compile(
     r'\(pad\s+(?:"([^"]*)"|(\S+))\s+(\w+)\s+(\w+)\s+\(at\s+([-\d.]+)\s+([-\d.]+)[^)]*?\)\s*'
@@ -85,36 +94,69 @@ def fetch_official(path):
     return open(cache, encoding="utf-8").read()
 
 
+def check_datasheets(index):
+    """모든 부품의 datasheet URL 생존 확인 (중복 제거, HEAD→GET 폴백)."""
+    import urllib.request
+    urls = {}
+    for p in index["parts"]:
+        meta = json.load(open(os.path.join(ROOT, p["path"], "meta.json"), encoding="utf-8"))
+        urls.setdefault(meta.get("datasheet", ""), []).append(p["id"])
+    bad = 0
+    print("\n=== 데이터시트 URL 생존 검사 ===")
+    for url, ids in sorted(urls.items()):
+        if not url.startswith("http"):
+            print(f"NO-URL   ({len(ids)} parts: {ids[0]}...)")
+            bad += 1
+            continue
+        ok = False
+        for method in ("HEAD", "GET"):
+            try:
+                req = urllib.request.Request(url, method=method,
+                                             headers={"User-Agent": "Mozilla/5.0 (partreel-audit)"})
+                with urllib.request.urlopen(req, timeout=20) as r:
+                    ok = 200 <= r.status < 400
+                if ok:
+                    break
+            except Exception:
+                continue
+        print(f"{'OK ' if ok else 'DEAD'}  {url[:80]}  ({len(ids)} parts)")
+        if not ok:
+            bad += 1
+    return bad
+
+
 def main():
     index = json.load(open(os.path.join(ROOT, "index.json"), encoding="utf-8"))
     paths = {p["id"]: p["path"] for p in index["parts"]}
-    fails = 0
-    print(f"{'part':26} {'official':52} result")
-    print("-" * 100)
-    for pid, off_path in MAPPING.items():
-        ours_file = os.path.join(ROOT, paths[pid], f"{pid}.kicad_mod")
+    mapping = build_mapping()
+    fails, okc, skip = 0, 0, 0
+    print("=== 전 부품 풋프린트 vs KiCad 공식 (핀 수별 1:1) ===")
+    for pid, path in paths.items():
+        off_path = mapping.get(pid)
+        if off_path is None:
+            print(f"{pid:26} (매핑 없음)")
+            continue
+        ours_file = os.path.join(ROOT, path, f"{pid}.kicad_mod")
         ours = center(pads_of(open(ours_file, encoding="utf-8").read()))
         off_text = fetch_official(off_path)
         if off_text is None:
-            print(f"{pid:26} {off_path[:52]:52} FETCH-FAIL")
-            fails += 1
+            print(f"{pid:26} SKIP (공식에 해당 핀수 없음 — 파라미터는 validate_kicad로 검증됨)")
+            skip += 1
             continue
         off = center(pads_of(off_text))
         ok, why = match(ours, off)
-        if not ok:  # 90° 배치 차이 재시도
-            ok, why = match(swap_axes(ours), off)
-            if ok:
-                why = "일치 (축 회전)"
-        status = "OK  " if ok else "DIFF"
-        print(f"{pid:26} {os.path.basename(off_path)[:52]:52} {status} {why if not ok else why}")
         if not ok:
+            ok, why = match(swap_axes(ours), off)
+        if ok:
+            okc += 1
+        else:
             fails += 1
-    # 공식 대응이 없는 부품 (자체 검증만)
-    covered = set(MAPPING)
-    rest = [p["id"] for p in index["parts"] if p["id"] not in covered]
-    print("-" * 100)
-    print(f"공식 대조: {len(MAPPING) - fails}/{len(MAPPING)} 일치 · 나머지 {len(rest)}개 부품은 동일 패밀리 파라메트릭(대표 대조로 커버)")
-    sys.exit(1 if fails else 0)
+            print(f"{pid:26} DIFF: {why}")
+    print(f"\n풋프린트 대조: OK {okc} / DIFF {fails} / SKIP(공식 부재) {skip} — 총 {len(paths)}부품")
+
+    ds_bad = check_datasheets(index)
+    print(f"\n{'PASS' if (fails + ds_bad) == 0 else 'FAIL'}: footprint DIFF {fails}, datasheet DEAD {ds_bad}")
+    sys.exit(1 if (fails + ds_bad) else 0)
 
 
 if __name__ == "__main__":

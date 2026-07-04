@@ -33,6 +33,8 @@ XH = dict(
     crt=dict(x0=-2.95, x1=2.95, y0=-2.85, y1=3.90),
     pins=list(range(2, 17)),
     pin_sq=0.64, housing_h=7.0, pin_below=3.0, pin_into=3.4,  # 높이 7.0·핀 위 3.4 = XH 데이터시트 (3.4)
+    # 데이터시트가 2회로용 도면을 따로 둠("<3 circuits or more>"의 반대편): 2핀만 홀 φ1.0/패드 1.7x2.0
+    overrides={2: dict(pad_h=2.0, drill=1.0)},
 )
 TERM = dict(
     key="screw_terminal_5_08", name="Screw Terminal 5.08mm", manufacturer="Generic (KF301)",
@@ -113,7 +115,10 @@ def _cham_rect(box, A, layer, w, ch):
 def gen_footprint(cfg, n, fid):
     A = (n - 1) * cfg["pitch"]
     cx = A / 2.0
-    pw, ph, drill = cfg["pad_w"], cfg["pad_h"], cfg["drill"]
+    ov = cfg.get("overrides", {}).get(n, {})  # 핀수별 데이터시트 차이 반영 (예: XH 2핀)
+    pw = ov.get("pad_w", cfg["pad_w"])
+    ph = ov.get("pad_h", cfg["pad_h"])
+    drill = ov.get("drill", cfg["drill"])
     shape = cfg.get("pad_shape", "oval")  # 비1번핀 패드 형상 (oval/circle 등)
     ref_y = cfg["silk"]["y0"] - 1.0
     val_y = cfg["silk"]["y1"] + 1.0
