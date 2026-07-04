@@ -107,6 +107,43 @@ def esp32_wroom32():
     print("ESP32 3D done")
 
 
+def aht20():
+    fid = "aht20"
+    d = "%s/sensor/asair/aht20/%s" % (LIB, fid)
+    # ASAIR AHT20 데이터시트 Fig.1: 본체 3x3x1.0, 금속 리드 2.8, 상면 타원 벤트홀 1.1x0.7
+    # 기판(다크): 3x3, z 0..0.25
+    substrate = Part.makeBox(3.0, 3.0, 0.25, App.Vector(-1.5, -1.5, 0))
+    # 금속 리드(하우징): 2.8x2.8, z 0.25..1.0, 수직 모서리 라운드
+    lid = Part.makeBox(2.8, 2.8, 0.75, App.Vector(-1.4, -1.4, 0.25))
+    try:
+        vedges = [e for e in lid.Edges if abs(e.Vertexes[0].Z - e.Vertexes[1].Z) > 0.1]
+        lid = lid.makeFillet(0.25, vedges)
+    except Exception:
+        pass
+    # 벤트홀: 스타디움 포켓 1.1x0.7 깊이 0.2, 상단(핀1쪽) 에지 근처
+    vent = Part.makeBox(1.1, 0.7, 0.4, App.Vector(-0.55, -1.1, 0.8))
+    try:
+        vv = [e for e in vent.Edges if abs(e.Vertexes[0].Z - e.Vertexes[1].Z) > 0.1]
+        vent = vent.makeFillet(0.3, vv)
+    except Exception:
+        pass
+    lid = lid.cut(vent)
+    # I/O 패드(금): 본체 패드 0.55x0.4 6개, 풋프린트 좌표 그대로.
+    # 기판에 0.05 매립 + 바닥 -0.02 (공면 z-fight 방지, ESP32 패턴)
+    pads = []
+    for x, y in [(-1.0, -1.0), (-1.0, 0.0), (-1.0, 1.0), (1.0, 1.0), (1.0, 0.0), (1.0, -1.0)]:
+        pads.append(Part.makeBox(0.55, 0.4, 0.07, App.Vector(x - 0.275, y - 0.2, -0.02)))
+    gold = pads[0]
+    for p in pads[1:]:
+        gold = gold.fuse(p)
+    Part.makeCompound([lid, gold, substrate]).exportStep("%s/%s.step" % (d, fid))
+    lid.exportStl("%s/%s__housing.stl" % (d, fid))
+    gold.exportStl("%s/%s__pins.stl" % (d, fid))
+    substrate.exportStl("%s/%s__extra.stl" % (d, fid))
+    print("AHT20 3D done")
+
+
 usb_c_16p()
 microsd_hc()
 esp32_wroom32()
+aht20()

@@ -310,7 +310,70 @@ def _lr_symbol(fid, left, right, bottom=None):
     return "\n".join(out) + "\n"
 
 
-PARTS = [usb_c_16p, microsd_hc, esp32_wroom32]  # 일회성 부품 등록
+# ---- AHT20 온습도 센서 (ASAIR); 치수=ASAIR AHT20 데이터시트 V1.0 Fig.1/Fig.8 ----
+def aht20():
+    fid = "aht20"
+    lib_path = "sensor/asair/aht20"
+    # Fig.8 권장 랜드패턴: 패드 0.8x0.5, 열 중심간격 2.0, 행 피치 1.0 (센터 패드 없음 —
+    # Fig.1 바텀뷰/Fig.8 모두 6패드만). 핀배치 Table 5 (탑뷰): 좌 1 NC/2 VDD/3 SCL, 우 6 NC/5 GND/4 SDA
+    pads = [("1", -1.0, -1.0), ("2", -1.0, 0.0), ("3", -1.0, 1.0),
+            ("4", 1.0, 1.0), ("5", 1.0, 0.0), ("6", 1.0, -1.0)]
+
+    out = [f'(footprint "{fid}" (version 20221018) (generator opencad-lib)',
+           '  (layer "F.Cu")',
+           '  (descr "ASAIR AHT20 humidity and temperature sensor, I2C, SMD LGA-6 3x3x1.0mm. '
+           'Land pattern per ASAIR AHT20 datasheet Fig.8 (pads 0.8x0.5, col spacing 2.0, row pitch 1.0).")',
+           '  (tags "AHT20 humidity temperature sensor I2C ASAIR")',
+           '  (attr smd)',
+           '  (fp_text reference "REF**" (at 0 -2.6) (layer "F.SilkS")'
+           '\n    (effects (font (size 1 1) (thickness 0.15))))',
+           f'  (fp_text value "{fid}" (at 0 2.6) (layer "F.Fab")'
+           '\n    (effects (font (size 1 1) (thickness 0.15))))']
+    # Fab 본체 3x3 + 1번핀 챔퍼(1mm, 좌상)
+    out += _rect_lines([(-0.5, -1.5, 1.5, -1.5), (1.5, -1.5, 1.5, 1.5),
+                        (1.5, 1.5, -1.5, 1.5), (-1.5, 1.5, -1.5, -0.5),
+                        (-1.5, -0.5, -0.5, -1.5)], "F.Fab", 0.10)
+    # Silk 외곽 (패드 에지 x1.4에서 0.2 이상 이격) + 1번핀 틱
+    out += _rect_lines([(-1.66, -1.66, 1.66, -1.66), (1.66, -1.66, 1.66, 1.66),
+                        (1.66, 1.66, -1.66, 1.66), (-1.66, 1.66, -1.66, -1.66)], "F.SilkS", 0.12)
+    out.append(_line(-1.9, -1.25, -1.9, -0.75, "F.SilkS", 0.12))  # pin1 틱
+    # Courtyard (본체+0.25)
+    out += _rect_lines([(-1.75, -1.75, 1.75, -1.75), (1.75, -1.75, 1.75, 1.75),
+                        (1.75, 1.75, -1.75, 1.75), (-1.75, 1.75, -1.75, -1.75)], "F.CrtYd", 0.05)
+    for name, x, y in pads:
+        out.append(f'  (pad "{name}" smd rect (at {x} {y}) (size 0.8 0.5) '
+                   f'(layers "F.Cu" "F.Paste" "F.Mask"))')
+    out.append(')')
+    footprint = "\n".join(out) + "\n"
+
+    # 심볼: 데이터시트 Table 5 그대로 (탑뷰 좌 1/2/3 위→아래, 우 6/5/4 위→아래)
+    symbol = _lr_symbol(fid, left=[("1", "NC"), ("2", "VDD"), ("3", "SCL")],
+                        right=[("6", "NC"), ("5", "GND"), ("4", "SDA")])
+    meta = {
+        "id": fid, "name": "AHT20 Humidity and Temperature Sensor",
+        "category": "sensor", "family": "AHT2x", "manufacturer": "Aosong (ASAIR)",
+        "mpn_pattern": "AHT20",
+        "description": "ASAIR AHT20 calibrated digital humidity and temperature sensor, I2C (address 0x38), "
+                       "SMD LGA-6 package 3x3x1.0mm. Land pattern per manufacturer datasheet.",
+        "parameters": {"contacts": 6, "mounting": "SMD", "interface": "I2C",
+                       "i2c_address": "0x38", "supply_voltage": "2.2-5.5V",
+                       "body_mm": "3.0x3.0x1.0"},
+        "files": {"footprint": f"{fid}.kicad_mod", "symbol": f"{fid}.kicad_sym",
+                  "model_3d": f"{fid}.step", "preview": f"{fid}.glb",
+                  "footprint_svg": f"{fid}.footprint.svg", "symbol_svg": f"{fid}.symbol.svg"},
+        "formats": ["kicad_mod", "kicad_sym", "step", "glb"],
+        "datasheet": "https://asairsensors.com/wp-content/uploads/2021/09/"
+                     "Data-Sheet-AHT20-Humidity-and-Temperature-Sensor-ASAIR-V1.0.03.pdf",
+        "dimensions_source": "ASAIR AHT20 datasheet V1.0 (May 2021): Fig.1 package 3x3x1.0mm (lid 2.8), "
+                             "Fig.8 recommended land pattern (6 pads 0.8x0.5, col spacing 2.0, row pitch 1.0), "
+                             "Table 5 pinout.",
+        "verified": True, "license": "CC-BY-4.0", "generated_by": "generators/gen_parts.py",
+        "keywords": ["aht20", "asair", "aosong", "humidity", "temperature", "sensor", "i2c", "lga", "3x3mm"],
+    }
+    return fid, lib_path, footprint, symbol, meta
+
+
+PARTS = [usb_c_16p, microsd_hc, esp32_wroom32, aht20]  # 일회성 부품 등록
 
 
 def main():
