@@ -44,6 +44,27 @@
     "worked": 0,
     "problem": 0
   },
+  "provenance": {
+    "dimensions_source": "Injoinic IP5306 datasheet V1.10 p.10: eSOP8 4.9x3.9 span 6.0 pitch 1.27, EP 2.09 sq. No recommended land pattern - pads derived per IPC-7351 (matches MP1584 SOIC8E recommendation for identical outline); EP land 2.1x2.1.",
+    "datasheet": "https://datasheet.lcsc.com/datasheet/pdf/309666add984eaea02a8f06d99102496.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/gen_ics.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    }
+  },
   "page": "https://partreel.com/p/ip5306/",
   "api": "https://partreel.com/api/v1/parts/ip5306.json"
 }

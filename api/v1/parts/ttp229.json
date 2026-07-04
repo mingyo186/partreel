@@ -43,6 +43,27 @@
     "worked": 0,
     "problem": 0
   },
+  "provenance": {
+    "dimensions_source": "Tontek TTP229-BSF datasheet V1.1 p.15: SSOP-28 MO-137(AF) body 9.91x3.91, span 5.99, pitch 0.635. Land pads 0.4x1.5 rows 5.4 c-c derived per IPC-7351. Pinout p.2-4.",
+    "datasheet": "https://www.tontek.com.tw/uploads/product/97/TTP229-BSF_V1.1_EN.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/gen_ics.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    }
+  },
   "page": "https://partreel.com/p/ttp229/",
   "api": "https://partreel.com/api/v1/parts/ttp229.json"
 }

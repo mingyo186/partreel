@@ -45,6 +45,27 @@
     "worked": 0,
     "problem": 0
   },
+  "provenance": {
+    "dimensions_source": "LCDwiki MC096VX dimension drawing (MC096-015): board 27.3x27.8, holes D2.0/pad 3.5 at 2.0 from edges, 4-pin 2.54 header (pin1 VCC at 9.84 from left), active area 21.74x10.86.",
+    "datasheet": "https://www.lcdwiki.com/0.96inch_OLED_Module_(IIC-4P_SKU:MC096VX)",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/gen_ics.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    }
+  },
   "page": "https://partreel.com/p/ssd1306_module_096/",
   "api": "https://partreel.com/api/v1/parts/ssd1306_module_096.json"
 }

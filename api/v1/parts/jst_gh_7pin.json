@@ -42,6 +42,27 @@
     "worked": 0,
     "problem": 0
   },
+  "provenance": {
+    "dimensions_source": "Pad land pattern per KiCad official Connector_JST (datasheet); outline original.",
+    "datasheet": "https://www.jst-mfg.com/product/pdf/eng/eGH.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/gen_smd_connectors.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    }
+  },
   "page": "https://partreel.com/p/jst_gh_7pin/",
   "api": "https://partreel.com/api/v1/parts/jst_gh_7pin.json"
 }

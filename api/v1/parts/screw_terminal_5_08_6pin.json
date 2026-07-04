@@ -41,6 +41,27 @@
     "worked": 0,
     "problem": 0
   },
+  "provenance": {
+    "dimensions_source": "Pad land pattern matches KiCad official TerminalBlock_bornier P5.08mm (pad 3.0, drill 1.52). Body/3D representative of KF301-type blocks.",
+    "datasheet": "https://datasheet.lcsc.com/lcsc/1811141810_Cixi-Kefa-Rongda-KF301-5-0-2P_C8465.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/gen_connectors.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    }
+  },
   "page": "https://partreel.com/p/screw_terminal_5_08_6pin/",
   "api": "https://partreel.com/api/v1/parts/screw_terminal_5_08_6pin.json"
 }

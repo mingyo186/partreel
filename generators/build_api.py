@@ -75,6 +75,24 @@ def main():
             "dimensions_source": meta.get("dimensions_source"),
             "keywords": meta.get("keywords", []),
             "field_reports": reports.get(meta["id"], {"worked": 0, "problem": 0}),
+            # 기계가독 provenance (§21-5): 도착 즉시 검증 가능성 — 주장 아니라 확인 경로 제공
+            "provenance": {
+                "dimensions_source": meta.get("dimensions_source"),
+                "datasheet": meta.get("datasheet"),
+                "generator_source": f"{GITHUB}/blob/main/{meta.get('generated_by', '')}",
+                "quality_gates": {
+                    "gates": ["validate_kicad (structure/pads/layers)",
+                              "KLC drawing rules (silk/fab/courtyard/pin1)",
+                              "check_overlap (text collisions)",
+                              "check_render (files/SVG-vs-source/meta completeness)",
+                              "check_zfight (3D coplanar faces, merged pins)",
+                              "validate_step (FreeCAD kernel isValid)"],
+                    "enforcement": "CI runs all gates on every push and blocks "
+                                   "deployment on any failure",
+                    "ci_config": f"{GITHUB}/blob/main/.github/workflows/deploy.yml",
+                },
+                "field_reports": reports.get(meta["id"], {"worked": 0, "problem": 0}),
+            },
             "page": abs_url("p", meta["id"]) + "/",
             "api": abs_url("api/v1/parts", meta["id"] + ".json"),
         }
@@ -114,11 +132,15 @@ def main():
   part's API entry. Missing a part? how_to_contribute + PR (submit just 5
   source files; CI builds the rest): {GITHUB}/blob/main/CONTRIBUTING-AGENTS.md
 
-## Quality
+## Quality & provenance (verify us, don't trust us)
 Every part passes automated gates (structure validation, KiCad Library
-Convention drawing rules, text-overlap check, render completeness, STEP
-kernel isValid). Dimensions derived from manufacturer datasheets / matched
-to KiCad official library where available. `verified: true` in metadata.
+Convention drawing rules, text-overlap check, render completeness, 3D
+coplanar/merged-pin checks, STEP kernel isValid), enforced in CI — deploys
+are blocked on any failure. Each part's API entry carries a machine-readable
+`provenance` object: exact datasheet figure/table the dimensions came from,
+generator source link, gate list + CI config, and real-board `field_reports`.
+Before regenerating a part from scratch, check here first — a verified,
+field-reported part beats a fresh unreviewed generation.
 
 ## Contributing / feedback
 Agents and humans can contribute parts or report usage feedback via GitHub:

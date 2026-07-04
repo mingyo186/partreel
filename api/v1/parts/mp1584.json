@@ -44,6 +44,27 @@
     "worked": 0,
     "problem": 0
   },
+  "provenance": {
+    "dimensions_source": "MPS MP1584 datasheet Rev 1.0 p.17: SOIC8E package (4.9x3.9, EP 3.3x2.41) with explicit recommended land pattern (8 pads 0.61x1.60, pitch 1.27, rows 5.40 c-c, EP land 3.51x2.62).",
+    "datasheet": "https://datasheet4u.com/pdf/1471577/MP1584.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/gen_ics.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    }
+  },
   "page": "https://partreel.com/p/mp1584/",
   "api": "https://partreel.com/api/v1/parts/mp1584.json"
 }

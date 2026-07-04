@@ -43,6 +43,27 @@
     "worked": 0,
     "problem": 0
   },
+  "provenance": {
+    "dimensions_source": "TI DRV8825 datasheet SLVSA73F: PWP0028C outline (9.7x4.4, span 6.4, pitch 0.65, thermal pad 4.48-5.18x2.4-3.1) + TI recommended land pattern (0.45x1.5 pads, columns 5.8 c-c, thermal 3.1x5.18). Pinout p.3.",
+    "datasheet": "https://www.ti.com/lit/ds/symlink/drv8825.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/gen_ics.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    }
+  },
   "page": "https://partreel.com/p/drv8825/",
   "api": "https://partreel.com/api/v1/parts/drv8825.json"
 }

@@ -44,6 +44,27 @@
     "worked": 0,
     "problem": 0
   },
+  "provenance": {
+    "dimensions_source": "Silergy AN_SY8089A Rev 0.9A p.9: SOT23-5 outline + recommended land pattern (pads 0.55x0.80, pitch 0.95, rows 2.40 c-c). Pinout p.2.",
+    "datasheet": "https://www.olimex.com/Products/Components/IC/SY8009A/resources/SY8089AAAC.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/gen_ics.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    }
+  },
   "page": "https://partreel.com/p/sy8089/",
   "api": "https://partreel.com/api/v1/parts/sy8089.json"
 }

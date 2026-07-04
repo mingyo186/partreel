@@ -43,6 +43,27 @@
     "worked": 0,
     "problem": 0
   },
+  "provenance": {
+    "dimensions_source": "Allegro A4988 datasheet p.19: QFN-28 ET 5x5x0.9, pitch 0.5, EP 3.15; PCB Layout Reference View (QFN50P500X500X100-29V1M): pads 0.30x1.15, outer span 4.80. Pinout p.18 (verified: 1-7 left, 8-14 bottom, 15-21 right, 22-28 top, CCW).",
+    "datasheet": "https://www.allegromicro.com/-/media/files/datasheets/a4988-datasheet.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/gen_ics.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    }
+  },
   "page": "https://partreel.com/p/a4988/",
   "api": "https://partreel.com/api/v1/parts/a4988.json"
 }

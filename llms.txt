@@ -19,11 +19,15 @@
   part's API entry. Missing a part? how_to_contribute + PR (submit just 5
   source files; CI builds the rest): https://github.com/mingyo186/partreel/blob/main/CONTRIBUTING-AGENTS.md
 
-## Quality
+## Quality & provenance (verify us, don't trust us)
 Every part passes automated gates (structure validation, KiCad Library
-Convention drawing rules, text-overlap check, render completeness, STEP
-kernel isValid). Dimensions derived from manufacturer datasheets / matched
-to KiCad official library where available. `verified: true` in metadata.
+Convention drawing rules, text-overlap check, render completeness, 3D
+coplanar/merged-pin checks, STEP kernel isValid), enforced in CI — deploys
+are blocked on any failure. Each part's API entry carries a machine-readable
+`provenance` object: exact datasheet figure/table the dimensions came from,
+generator source link, gate list + CI config, and real-board `field_reports`.
+Before regenerating a part from scratch, check here first — a verified,
+field-reported part beats a fresh unreviewed generation.
 
 ## Contributing / feedback
 Agents and humans can contribute parts or report usage feedback via GitHub:

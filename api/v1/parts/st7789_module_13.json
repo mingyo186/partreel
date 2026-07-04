@@ -45,6 +45,27 @@
     "worked": 0,
     "problem": 0
   },
+  "provenance": {
+    "dimensions_source": "LCDwiki MSP1308 size drawing: board 27.78x39.22, holes D2.0 at 2.5 from all edges, 7-pin 2.54 header (pin1 GND at 6.27 from left; 6.27x2+6x2.54=27.78 checks), active area 23.4x23.4.",
+    "datasheet": "https://www.lcdwiki.com/1.3inch_IPS_Module",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/gen_ics.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    }
+  },
   "page": "https://partreel.com/p/st7789_module_13/",
   "api": "https://partreel.com/api/v1/parts/st7789_module_13.json"
 }
