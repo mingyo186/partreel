@@ -49,6 +49,38 @@ TERM = dict(
 )
 FAMILIES = [PH, XH, TERM]
 
+
+def _pin_header(pitch_key, pitch, pad, drill, half_body, half_silk, half_crt, pin_sq):
+    return dict(
+        key=f"pin_header_{pitch_key}", name=f"Pin Header {pitch}mm", manufacturer="Generic",
+        mpn="PinHeader_1x{n:02d}_P%.2fmm" % pitch,
+        desc=f"{pitch}mm pitch 1x{{n}} male pin header, THT vertical. "
+             "Dimensions match the official KiCad Connector_PinHeader library.",
+        datasheet="https://en.wikipedia.org/wiki/Pin_header",
+        lib_path=f"connector/header/p{pitch_key}", pitch=pitch,
+        pad_w=pad, pad_h=pad, drill=drill,
+        fab=dict(x0=-half_body, x1=half_body, y0=-half_body, y1=half_body),
+        silk=dict(x0=-half_silk, x1=half_silk, y0=-half_silk, y1=half_silk),
+        crt=dict(x0=-half_crt, x1=half_crt, y0=-half_crt, y1=half_crt),
+        pins=list(range(1, 41)),
+        style="header", pin_sq=pin_sq, housing_h=2.5, pin_below=3.0, pin_into=6.0,
+    )
+
+
+# 온디맨드 전용 패밀리 (사전 대량생성 안 함 — 요청 시 generate_one.py가 생성, REQUIREMENTS §19)
+ONDEMAND = [
+    _pin_header("254", 2.54, 1.7, 1.0, 1.27, 1.33, 1.8, 0.64),
+    _pin_header("200", 2.00, 1.35, 0.8, 1.0, 1.06, 1.5, 0.5),
+    _pin_header("127", 1.27, 1.0, 0.65, 1.05, 1.11, 1.5, 0.4),
+]
+
+
+def get_family(key):
+    for cfg in FAMILIES + ONDEMAND:
+        if cfg["key"] == key:
+            return cfg
+    return None
+
 LIB_ROOT = os.path.join(os.path.dirname(__file__), "..", "library")
 
 

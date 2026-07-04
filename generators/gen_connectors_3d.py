@@ -1,15 +1,17 @@
 """
 커넥터 패밀리 3D 생성기 (FreeCAD 헤드리스, config 공용).
 실행: freecadcmd generators/gen_connectors_3d.py
+  - 기본: FAMILIES 전체 배치 생성
+  - env PART_FILTER="<family_key>:<pins>" 지정 시 해당 1개만 (ONDEMAND 포함, §19)
 
-gen_connectors.FAMILIES 설정을 그대로 써서 패밀리별 STEP/STL 생성.
 하우징 치수 = 풋프린트 fab 박스 (REQUIREMENTS §14 C: 본체=fab 일치).
+style="header"면 낮은 베이스 + 위로 솟은 핀 (핀헤더).
 """
 
 import sys
 import os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from gen_connectors import FAMILIES  # noqa: E402
+from gen_connectors import FAMILIES, ONDEMAND  # noqa: E402
 
 import FreeCAD as App  # noqa: E402
 import Part  # noqa: E402
@@ -24,30 +26,57 @@ def build(cfg, n):
     x0, x1 = fab["x0"], A + fab["x1"]
     y0, y1 = fab["y0"], fab["y1"]
     L, W, HZ = x1 - x0, y1 - y0, cfg["housing_h"]
-    housing = Part.makeBox(L, W, HZ, App.Vector(x0, y0, 0))
-    cav = Part.makeBox(L - 1.6, W - 1.6, HZ - 1.0, App.Vector(x0 + 0.8, y0 + 0.8, 1.0))
-    housing = housing.cut(cav)
-    ps, below, into = cfg["pin_sq"], cfg["pin_below"], cfg["pin_into"]
-    pin_shapes = []
-    for i in range(n):
-        x = i * pitch
-        pin_shapes.append(Part.makeBox(ps, ps, below + into, App.Vector(x - ps / 2, -ps / 2, -below)))
+    ps, below, above = cfg["pin_sq"], cfg["pin_below"], cfg["pin_into"]
+
+    if cfg.get("style") == "header":
+        # 핀헤더: 낮은 플라스틱 베이스 + 관통 핀(아래 below, 위 above)
+        housing = Part.makeBox(L, W, HZ, App.Vector(x0, y0, 0))
+        pin_shapes = []
+        for i in range(n):
+            x = i * pitch
+            pin_shapes.append(Part.makeBox(ps, ps, below + above,
+                                           App.Vector(x - ps / 2, -ps / 2, -below)))
+    else:
+        # 쉬라우드형 커넥터: 박스 + 상부 캐비티 + 짧은 핀
+        housing = Part.makeBox(L, W, HZ, App.Vector(x0, y0, 0))
+        cav = Part.makeBox(L - 1.6, W - 1.6, HZ - 1.0, App.Vector(x0 + 0.8, y0 + 0.8, 1.0))
+        housing = housing.cut(cav)
+        pin_shapes = []
+        for i in range(n):
+            x = i * pitch
+            pin_shapes.append(Part.makeBox(ps, ps, below + above,
+                                           App.Vector(x - ps / 2, -ps / 2, -below)))
+
     pins_solid = pin_shapes[0]
     for p in pin_shapes[1:]:
         pins_solid = pins_solid.fuse(p)
     return housing, pins_solid
 
 
+def emit(cfg, n):
+    fid = "%s_%dpin" % (cfg["key"], n)
+    d = "%s/%s/%s" % (LIB, cfg["lib_path"], fid)
+    housing, pins_solid = build(cfg, n)
+    Part.makeCompound([housing, pins_solid]).exportStep("%s/%s.step" % (d, fid))
+    housing.exportStl("%s/%s__housing.stl" % (d, fid))
+    pins_solid.exportStl("%s/%s__pins.stl" % (d, fid))
+
+
 def main():
+    flt = os.environ.get("PART_FILTER", "").strip()
+    if flt:
+        key, pins = flt.rsplit(":", 1)
+        cfg = next((c for c in FAMILIES + ONDEMAND if c["key"] == key), None)
+        if cfg is None:
+            print("PART_FILTER: unknown family", key)
+            raise SystemExit(1)
+        emit(cfg, int(pins))
+        print("STEP+STL generated: 1 part (%s_%spin)" % (key, pins))
+        return
     cnt = 0
     for cfg in FAMILIES:
         for n in cfg["pins"]:
-            fid = "%s_%dpin" % (cfg["key"], n)
-            d = "%s/%s/%s" % (LIB, cfg["lib_path"], fid)
-            housing, pins_solid = build(cfg, n)
-            Part.makeCompound([housing, pins_solid]).exportStep("%s/%s.step" % (d, fid))
-            housing.exportStl("%s/%s__housing.stl" % (d, fid))
-            pins_solid.exportStl("%s/%s__pins.stl" % (d, fid))
+            emit(cfg, n)
             cnt += 1
     print("STEP+STL generated:", cnt, "parts")
 

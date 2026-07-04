@@ -1,0 +1,69 @@
+name: Generate part on demand
+
+on:
+  repository_dispatch:
+    types: [generate-part]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: generate-part
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate request
+        id: req
+        run: |
+          FAMILY="${{ github.event.client_payload.family }}"
+          PINS="${{ github.event.client_payload.pins }}"
+          if ! echo "$FAMILY" | grep -qE '^[a-z0-9_]{1,40}$'; then echo "bad family"; exit 1; fi
+          if ! echo "$PINS" | grep -qE '^[0-9]{1,2}$'; then echo "bad pins"; exit 1; fi
+          echo "family=$FAMILY" >> "$GITHUB_OUTPUT"
+          echo "pins=$PINS" >> "$GITHUB_OUTPUT"
+
+      - name: Install FreeCAD + deps
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y -q freecad > /dev/null
+          pip -q install trimesh numpy
+
+      - name: Generate part (gated)
+        env:
+          FAMILY: ${{ steps.req.outputs.family }}
+          PINS: ${{ steps.req.outputs.pins }}
+          FREECADCMD: freecadcmd
+        run: python generators/generate_one.py
+
+      - name: Commit to main
+        run: |
+          git config user.name "partreel-bot"
+          git config user.email "actions@github.com"
+          git add -A
+          git diff --cached --quiet && echo "nothing new" || git commit -m "On-demand part: ${{ steps.req.outputs.family }}_${{ steps.req.outputs.pins }}pin (requested via MCP)"
+          git pull --rebase origin main
+          git push origin main
+
+      # GITHUB_TOKEN 푸시는 deploy.yml을 트리거하지 않으므로 여기서 인라인 배포 (REQUIREMENTS §19)
+      - name: Assemble site
+        run: |
+          mkdir -p _site
+          cp index.html index.json _site/
+          cp -r assets library p about guide agents api _site/
+          cp sitemap.xml robots.txt favicon.svg llms.txt _site/
+          echo "partreel.com" > _site/CNAME
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - uses: actions/deploy-pages@v4

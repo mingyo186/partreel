@@ -57,6 +57,22 @@ const TOOLS = [
     },
   },
   {
+    name: "request_part",
+    description:
+      "Request on-demand generation of a parametric part that isn't in the registry yet. " +
+      "The registry generates it (footprint+symbol+3D), runs quality gates, and publishes it within ~5 minutes. " +
+      "Available families: pin_header_254 (2.54mm), pin_header_200 (2.0mm), pin_header_127 (1.27mm) — pins 1-40. " +
+      "Always try get_part / search_parts first.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        family: { type: "string", enum: ["pin_header_254", "pin_header_200", "pin_header_127"] },
+        pins: { type: "integer", minimum: 1, maximum: 40 },
+      },
+      required: ["family", "pins"],
+    },
+  },
+  {
     name: "how_to_contribute",
     description:
       "Get machine-readable instructions for contributing a new part to the registry " +
@@ -111,9 +127,44 @@ async function fetchIndex() {
   return r.json();
 }
 
+const ONDEMAND_FAMILIES = { pin_header_254: 40, pin_header_200: 40, pin_header_127: 40 };
+
 async function toolCall(name, args, env) {
   if (name === "how_to_contribute") {
     return CONTRIBUTE_GUIDE;
+  }
+  if (name === "request_part") {
+    const family = String(args?.family ?? "").trim();
+    const pins = Number(args?.pins);
+    const max = ONDEMAND_FAMILIES[family];
+    if (!max) return { error: `unknown family — available: ${Object.keys(ONDEMAND_FAMILIES).join(", ")}` };
+    if (!Number.isInteger(pins) || pins < 1 || pins > max) return { error: `pins must be an integer 1..${max}` };
+    const id = `${family}_${pins}pin`;
+    // 이미 있으면 생성 안 함
+    const existing = await fetch(`${API}/parts/${id}.json`);
+    if (existing.ok) {
+      return { already_exists: true, id, detail: `${API}/parts/${id}.json`,
+               note: "Part already in registry — use get_part." };
+    }
+    if (!env?.GITHUB_TOKEN) return { error: "generation channel not configured yet — try again later" };
+    const resp = await fetch("https://api.github.com/repos/mingyo186/partreel/dispatches", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${env.GITHUB_TOKEN}`,
+        Accept: "application/vnd.github+json",
+        "User-Agent": "partreel-mcp",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ event_type: "generate-part", client_payload: { family, pins } }),
+    });
+    if (resp.status !== 204) return { error: `failed to start generation (${resp.status})` };
+    return {
+      generation_started: true, id,
+      expected_detail: `${API}/parts/${id}.json`,
+      expected_page: `https://partreel.com/p/${id}/`,
+      eta: "~5 minutes (generation + quality gates + deploy)",
+      note: "Poll expected_detail until it returns 200, then use the download URLs inside.",
+    };
   }
   if (name === "report_feedback") {
     const partId = String(args?.part_id ?? "").trim();
