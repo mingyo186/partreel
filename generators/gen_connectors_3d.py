@@ -37,25 +37,34 @@ def build(cfg, n):
             pin_shapes.append(Part.makeBox(ps, ps, below + above,
                                            App.Vector(x - ps / 2, -ps / 2, -below)))
     elif cfg.get("style") == "terminal":
-        # 스크류 터미널: 통짜 블록 + 극마다 상면 나사 리세스 + 전면 전선 삽입구
+        # 스크류 터미널 (KF301 도면 프로파일): 앞-위 경사 단차 + 나사머리(금속) + 사각 전선구
         housing = Part.makeBox(L, W, HZ, App.Vector(x0, y0, 0))
+        # 1) 전면 상단 45° 경사 (특유의 쐐기 프로파일)
+        try:
+            slope = 3.2
+            edges = [e for e in housing.Edges
+                     if abs(e.Vertexes[0].Z - HZ) < 0.01 and abs(e.Vertexes[1].Z - HZ) < 0.01
+                     and abs(e.Vertexes[0].Y - y1) < 0.01 and abs(e.Vertexes[1].Y - y1) < 0.01]
+            housing = housing.makeChamfer(slope, edges)
+        except Exception:
+            pass
         screw_r = min(pitch * 0.32, 1.8)
-        wire_r = min(pitch * 0.28, 1.6)
-        for i in range(n):
-            x = i * pitch
-            # 상면 나사 리세스 (수직 원통 컷, 뒤쪽 열)
-            screw = Part.makeCylinder(screw_r, 3.0,
-                                      App.Vector(x, y0 + W * 0.35, HZ - 2.5),
-                                      App.Vector(0, 0, 1))
-            housing = housing.cut(screw)
-            # 전면 전선 삽입구 (수평 원통 컷, 중간 높이)
-            wire = Part.makeCylinder(wire_r, W * 0.55,
-                                     App.Vector(x, y1 + 0.1, HZ * 0.35),
-                                     App.Vector(0, -1, 0))
-            housing = housing.cut(wire)
+        sy = (y0 + (y1 - 3.2)) / 2.0  # 남은 상면(경사 뒤쪽) 중앙
         pin_shapes = []
         for i in range(n):
             x = i * pitch
+            # 2) 상면 나사 리세스 (수직)
+            screw_hole = Part.makeCylinder(screw_r, 3.0,
+                                           App.Vector(x, sy, HZ - 2.5), App.Vector(0, 0, 1))
+            housing = housing.cut(screw_hole)
+            # 3) 전면 사각 전선 삽입구 (하단)
+            wire = Part.makeBox(min(pitch * 0.55, 2.8), 2.2, min(pitch * 0.55, 2.8),
+                                App.Vector(x - min(pitch * 0.55, 2.8) / 2, y1 - 2.0, 1.2))
+            housing = housing.cut(wire)
+            # 4) 리세스 안 금속 나사머리 (보이는 금속 — pins 메시로)
+            head = Part.makeCylinder(screw_r - 0.2, 0.9,
+                                     App.Vector(x, sy, HZ - 2.45), App.Vector(0, 0, 1))
+            pin_shapes.append(head)
             pin_shapes.append(Part.makeBox(ps, ps, below + above,
                                            App.Vector(x - ps / 2, -ps / 2, -below)))
     else:
