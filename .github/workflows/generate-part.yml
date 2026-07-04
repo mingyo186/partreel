@@ -9,8 +9,9 @@ permissions:
   pages: write
   id-token: write
 
+# deploy.yml과 같은 그룹으로 직렬화 — Pages 배포 레이스 방지 (52/53 경합 사건)
 concurrency:
-  group: generate-part
+  group: pages
   cancel-in-progress: false
 
 jobs:
