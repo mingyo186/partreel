@@ -103,6 +103,13 @@ async function selectPart(p) {
     dl.appendChild(a);
   });
 
+  // datasheet (단독 페이지와 동일하게 SPA에도 표시)
+  const dsA = document.getElementById('datasheet');
+  const dsH = document.getElementById('datasheet-h');
+  const hasDs = typeof meta.datasheet === 'string' && meta.datasheet.startsWith('http');
+  if (dsA) { dsA.href = hasDs ? meta.datasheet : '#'; dsA.style.display = hasDs ? '' : 'none'; }
+  if (dsH) dsH.style.display = hasDs ? '' : 'none';
+
   // buy (affiliate placeholder)
   const buy = document.getElementById('buy');
   buy.href = 'https://www.lcsc.com/search?q=' + encodeURIComponent(meta.mpn_pattern || meta.name);
