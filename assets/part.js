@@ -14,16 +14,48 @@ for (const e of [symEl, fpEl]) {
   if (e && e.tagName === 'IMG' && e.dataset.src) e.src = e.dataset.src;
 }
 
+
+// 심볼/풋프린트 확대: 휠=줌(커서 중심), 드래그=이동, 더블클릭=리셋
+function makeZoomable(container, getTarget) {
+  let s = 1, tx = 0, ty = 0, pan = null;
+  const apply = () => { const t = getTarget(); if (t) { t.style.transform = `translate(${tx}px,${ty}px) scale(${s})`; t.style.cursor = s > 1 ? 'grab' : 'zoom-in'; } };
+  const reset = () => { s = 1; tx = 0; ty = 0; apply(); };
+  container.addEventListener('wheel', (e) => {
+    const t = getTarget(); if (!t) return;
+    e.preventDefault();
+    const r = container.getBoundingClientRect();
+    const mx = e.clientX - r.left, my = e.clientY - r.top;
+    const ns = Math.min(30, Math.max(1, s * Math.exp(-e.deltaY * 0.0015)));
+    const k = ns / s;
+    tx = mx - k * (mx - tx); ty = my - k * (my - ty); s = ns;
+    if (s === 1) { tx = 0; ty = 0; }
+    apply();
+  }, { passive: false });
+  container.addEventListener('pointerdown', (e) => {
+    if (!getTarget() || s === 1) return;
+    pan = { x: e.clientX - tx, y: e.clientY - ty };
+    container.setPointerCapture(e.pointerId);
+  });
+  container.addEventListener('pointermove', (e) => { if (!pan) return; tx = e.clientX - pan.x; ty = e.clientY - pan.y; apply(); });
+  container.addEventListener('pointerup', () => { pan = null; });
+  container.addEventListener('dblclick', () => { if (getTarget()) reset(); });
+  return reset;
+}
+
+let zoomReset = null;
+
 function setView(v) {
   document.querySelectorAll('.view-tabs .vt').forEach((b) => b.classList.toggle('active', b.dataset.view === v));
   const msg = el && el.querySelector('.viewer-msg');
+  if (zoomReset) zoomReset();
   if (symEl) symEl.hidden = v !== 'sym';
   if (fpEl) fpEl.hidden = v !== 'fp';
   if (rendererCanvas) rendererCanvas.style.display = v === '3d' ? 'block' : 'none';
   if (v !== '3d' && msg) msg.style.display = 'none';
 }
 document.querySelectorAll('.view-tabs .vt').forEach((b) => b.addEventListener('click', () => setView(b.dataset.view)));
-if (el && el.dataset.default && el.dataset.default !== '3d') setView(el.dataset.default);  // verified-2D 기본탭
+if (el && el.dataset.default && el.dataset.default !== '3d') setView(el.dataset.default);
+if (el) zoomReset = makeZoomable(el, () => (symEl && !symEl.hidden) ? symEl : ((fpEl && !fpEl.hidden) ? fpEl : null));  // verified-2D 기본탭
 
 const url = el && el.dataset.glb ? el.dataset.glb + CB : null;
 if (el && url) {

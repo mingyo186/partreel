@@ -144,16 +144,56 @@ async function selectPart(p) {
   setView(preview ? '3d' : 'sym');
 }
 
+
+// 심볼/풋프린트 확대: 휠=줌(커서 중심), 드래그=이동, 더블클릭=리셋
+function makeZoomable(container, getTarget) {
+  let s = 1, tx = 0, ty = 0, pan = null;
+  const apply = () => { const t = getTarget(); if (t) { t.style.transform = `translate(${tx}px,${ty}px) scale(${s})`; t.style.cursor = s > 1 ? 'grab' : 'zoom-in'; } };
+  const reset = () => { s = 1; tx = 0; ty = 0; apply(); };
+  container.addEventListener('wheel', (e) => {
+    const t = getTarget(); if (!t) return;
+    e.preventDefault();
+    const r = container.getBoundingClientRect();
+    const mx = e.clientX - r.left, my = e.clientY - r.top;
+    const ns = Math.min(30, Math.max(1, s * Math.exp(-e.deltaY * 0.0015)));
+    const k = ns / s;
+    tx = mx - k * (mx - tx); ty = my - k * (my - ty); s = ns;
+    if (s === 1) { tx = 0; ty = 0; }
+    apply();
+  }, { passive: false });
+  container.addEventListener('pointerdown', (e) => {
+    if (!getTarget() || s === 1) return;
+    pan = { x: e.clientX - tx, y: e.clientY - ty };
+    container.setPointerCapture(e.pointerId);
+  });
+  container.addEventListener('pointermove', (e) => { if (!pan) return; tx = e.clientX - pan.x; ty = e.clientY - pan.y; apply(); });
+  container.addEventListener('pointerup', () => { pan = null; });
+  container.addEventListener('dblclick', () => { if (getTarget()) reset(); });
+  return reset;
+}
+
+let zoomReset = null;
+
 function setView(v) {
   document.querySelectorAll('.view-tabs .vt').forEach((b) => b.classList.toggle('active', b.dataset.view === v));
   const sym = document.getElementById('view-sym');
   const fp = document.getElementById('view-fp');
   const msg = document.getElementById('viewer-msg');
+  if (zoomReset) zoomReset();
   if (sym) sym.hidden = v !== 'sym';
   if (fp) fp.hidden = v !== 'fp';
   if (view && view.renderer) view.renderer.domElement.style.display = v === '3d' ? 'block' : 'none';
   if (v !== '3d' && msg) msg.classList.add('hidden');
 }
+
+(() => {
+  const c = document.getElementById('viewer');
+  if (c) zoomReset = makeZoomable(c, () => {
+    const sym = document.getElementById('view-sym');
+    const fp = document.getElementById('view-fp');
+    return (sym && !sym.hidden) ? sym : ((fp && !fp.hidden) ? fp : null);
+  });
+})();
 
 function setupTabs() {
   document.querySelectorAll('.view-tabs .vt').forEach((b) => b.addEventListener('click', () => setView(b.dataset.view)));
