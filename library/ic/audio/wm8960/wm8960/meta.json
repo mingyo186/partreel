@@ -1,0 +1,45 @@
+{
+  "id": "wm8960",
+  "name": "WM8960 Stereo Audio Codec",
+  "category": "ic",
+  "family": "audio",
+  "manufacturer": "Cirrus Logic (Wolfson)",
+  "mpn_pattern": "WM8960CGEFL/RV",
+  "description": "Cirrus/Wolfson WM8960 stereo CODEC with 1W class-D speaker drivers and headphone amp, I2S audio + 2-wire control (write-only, addr 0x1A), QFN-32 5x5. Raspberry Pi / ESP32 audio HAT staple. EP = analogue GND.",
+  "parameters": {
+    "contacts": 33,
+    "mounting": "SMD",
+    "interface": "I2S + I2C(0x1A)",
+    "supply_voltage": "1.71-3.6V (SPKVDD to 5.5V)",
+    "body_mm": "5.0x5.0x0.9"
+  },
+  "files": {
+    "footprint": "wm8960.kicad_mod",
+    "symbol": "wm8960.kicad_sym",
+    "model_3d": "wm8960.step",
+    "preview": "wm8960.glb",
+    "footprint_svg": "wm8960.footprint.svg",
+    "symbol_svg": "wm8960.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "https://wiki.geekworm.com/images/5/58/WM8960-Datasheet.pdf",
+  "dimensions_source": "Wolfson WM8960 datasheet (QFN-32 DM033.D / MO-220 VHHD-5): body 5x5x0.9, pitch 0.5, lead 0.25x0.4, EP 3.45 sq. Land pads 0.28x0.7 centers 4.7 c-c derived per IPC-7351 (EP clearance 0.275). Pinout p.6 (CCW from pin-1).",
+  "verified": true,
+  "license": "CC-BY-4.0",
+  "generated_by": "generators/gen_ics.py",
+  "keywords": [
+    "wm8960",
+    "wolfson",
+    "cirrus",
+    "codec",
+    "audio",
+    "i2s",
+    "class-d",
+    "qfn"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "id": "vs1053b",
+  "name": "VS1053B MP3/Ogg Audio Codec",
+  "category": "ic",
+  "family": "audio",
+  "manufacturer": "VLSI Solution",
+  "mpn_pattern": "VS1053B-L",
+  "description": "VLSI VS1053B MP3/Ogg Vorbis/AAC/WMA/MIDI audio codec with headphone driver, SPI control/data, LQFP-48. The Adafruit Music Maker chip. GBUF must never be grounded; CVDD 1.8V core.",
+  "parameters": {
+    "contacts": 48,
+    "mounting": "SMD",
+    "interface": "SPI",
+    "supply_voltage": "IOVDD 1.8-3.6V / AVDD 2.8V / CVDD 1.8V",
+    "body_mm": "7.0x7.0x1.5"
+  },
+  "files": {
+    "footprint": "vs1053b.kicad_mod",
+    "symbol": "vs1053b.kicad_sym",
+    "model_3d": "vs1053b.step",
+    "preview": "vs1053b.glb",
+    "footprint_svg": "vs1053b.footprint.svg",
+    "symbol_svg": "vs1053b.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "https://www.vlsi.fi/fileadmin/datasheets/vs1053.pdf",
+  "dimensions_source": "VLSI VS1053B datasheet v1.33 + official LQFP-48 outline DG4966 rev M (body 7.0 sq, overall 9.0, pitch 0.5, foot 0.6). Land pads 0.3x1.5 centers 8.5 c-c per IPC-7351. Pinout ch.6 (CCW).",
+  "verified": true,
+  "license": "CC-BY-4.0",
+  "generated_by": "generators/gen_ics.py",
+  "keywords": [
+    "vs1053",
+    "vlsi",
+    "mp3",
+    "ogg",
+    "codec",
+    "audio",
+    "spi",
+    "lqfp"
+  ]
+}

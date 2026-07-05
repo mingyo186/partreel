@@ -1,0 +1,73 @@
+{
+  "id": "icm42688",
+  "name": "ICM-42688-P 6-Axis IMU",
+  "category": "sensor",
+  "family": "motion",
+  "manufacturer": "TDK InvenSense",
+  "mpn_pattern": "ICM-42688-P",
+  "description": "TDK InvenSense ICM-42688-P 6-axis gyroscope+accelerometer - the standard modern FPV flight-controller IMU (Betaflight/ArduPilot). SPI 24MHz / I2C 0x68-0x69 / I3C, 1.71-3.6V, LGA-14 2.5x3. Pin 7 RESV must connect to GND.",
+  "parameters": {
+    "contacts": 14,
+    "mounting": "SMD",
+    "interface": "SPI/I2C/I3C",
+    "i2c_address": "0x68/0x69",
+    "supply_voltage": "1.71-3.6V",
+    "body_mm": "2.5x3.0x0.91"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/sensor/tdk/icm42688/icm42688/icm42688.kicad_mod",
+    "symbol": "https://partreel.com/library/sensor/tdk/icm42688/icm42688/icm42688.kicad_sym",
+    "model_3d": "https://partreel.com/library/sensor/tdk/icm42688/icm42688/icm42688.step",
+    "preview": "https://partreel.com/library/sensor/tdk/icm42688/icm42688/icm42688.glb",
+    "footprint_svg": "https://partreel.com/library/sensor/tdk/icm42688/icm42688/icm42688.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/sensor/tdk/icm42688/icm42688/icm42688.symbol.svg"
+  },
+  "datasheet": "https://www.cdiweb.com/datasheets/invensense/ds-000347-icm-42688-p-v1.2.pdf",
+  "license": "CC-BY-4.0",
+  "verified": true,
+  "dimensions_source": "TDK DS-000347 v1.2: LGA-14 2.5x3.0x0.91, terminals 0.25x0.475 pitch 0.5, 4-pin columns centers +/-0.9125, 3-pin rows +/-1.1625 (cross-checked vs body/edge-gap arithmetic). Pads 1:1 +0.1 toe. Pinout Table 9.",
+  "keywords": [
+    "icm-42688",
+    "icm42688",
+    "imu",
+    "gyroscope",
+    "accelerometer",
+    "fpv",
+    "betaflight",
+    "spi",
+    "tdk"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "TDK DS-000347 v1.2: LGA-14 2.5x3.0x0.91, terminals 0.25x0.475 pitch 0.5, 4-pin columns centers +/-0.9125, 3-pin rows +/-1.1625 (cross-checked vs body/edge-gap arithmetic). Pads 1:1 +0.1 toe. Pinout Table 9.",
+    "datasheet": "https://www.cdiweb.com/datasheets/invensense/ds-000347-icm-42688-p-v1.2.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/gen_ics.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    }
+  },
+  "page": "https://partreel.com/p/icm42688/",
+  "api": "https://partreel.com/api/v1/parts/icm42688.json"
+}

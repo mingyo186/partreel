@@ -507,6 +507,29 @@ flat_disp_3d("module/display/msp2807/msp2807", "msp2807", 50, 86,
              [(-22.0, -40.0), (22.0, -40.0), (-22.0, 36.08), (22.0, 36.08)], 3.2,
              (-25, -36.6, 25, 32.6), (-21.6, -33.7, 21.6, 23.9))
 
+
+# ================= 배치 5차 칩 3D =================
+flatpack("ic/audio/wm8960/wm8960", "wm8960", 2.5, 2.5, 0.9,
+         quad_xy(8, 0.5, 4.6, 0.4, 0.25), ep=(3.45, 3.45))
+flatpack("ic/audio/es8311/es8311", "es8311", 1.5, 1.5, 0.55,
+         quad_xy(5, 0.4, 2.7, 0.3, 0.2), ep=(1.7, 1.7))
+flatpack("ic/touch/cst816s/cst816s", "cst816s", 1.5, 1.5, 0.55,
+         quad_xy(5, 0.4, 2.7, 0.3, 0.2), ep=(1.7, 1.7))
+flatpack("ic/audio/vs1053b/vs1053b", "vs1053b", 3.5, 3.5, 1.5,
+         quad_xy(12, 0.5, 8.4, 1.4, 0.25))  # LQFP: 발이 몸체 밖 링
+icm_pads = [(-0.9125, -0.75 + i * 0.5, 0.475, 0.25) for i in range(4)]
+icm_pads += [(-0.5 + i * 0.5, 1.1625, 0.25, 0.475) for i in range(3)]
+icm_pads += [(0.9125, 0.75 - i * 0.5, 0.475, 0.25) for i in range(4)]
+icm_pads += [(0.5 - i * 0.5, -1.1625, 0.25, 0.475) for i in range(3)]
+flatpack("sensor/tdk/icm42688/icm42688", "icm42688", 1.25, 1.5, 0.91, icm_pads)
+bno_pads = [(-2.25 + i * 0.5, -1.5625, 0.25, 0.475) for i in range(10)]
+bno_pads += [(-2.3125, -0.75 + i * 0.5, 0.375, 0.25) for i in range(4)]
+bno_pads += [(-2.25 + i * 0.5, 1.5625, 0.25, 0.475) for i in range(10)]
+bno_pads += [(2.3125, 0.75 - i * 0.5, 0.375, 0.25) for i in range(4)]
+flatpack("sensor/ceva/bno085/bno085", "bno085", 2.6, 1.9, 1.18, bno_pads)
+flatpack("sensor/ams/tcs34725/tcs34725", "tcs34725", 1.0, 1.2, 0.65,
+         [(x, -0.65 + i * 0.65, 0.75, 0.3) for x in (-0.75, 0.75) for i in range(3)])
+
 # ---------- 온디맨드 변형 3D (§21-6ⓐ): env IC_VARIANT="family:code" ----------
 _V = os.environ.get("IC_VARIANT", "").strip()
 if _V:

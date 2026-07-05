@@ -1,0 +1,70 @@
+{
+  "id": "es8311",
+  "name": "ES8311 Mono Audio Codec",
+  "category": "ic",
+  "family": "audio",
+  "manufacturer": "Everest Semi",
+  "mpn_pattern": "ES8311",
+  "description": "Everest ES8311 low-power mono audio codec - Espressif's reference codec (ESP32-S3-Box, Korvo, most ESP32 voice kits). I2S/PCM + I2C (0x18/0x19 via CE), 1.6-3.6V, QFN-20 3x3.",
+  "parameters": {
+    "contacts": 21,
+    "mounting": "SMD",
+    "interface": "I2S + I2C(0x18/0x19)",
+    "supply_voltage": "1.6-3.6V",
+    "body_mm": "3.0x3.0x0.55"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/ic/audio/es8311/es8311/es8311.kicad_mod",
+    "symbol": "https://partreel.com/library/ic/audio/es8311/es8311/es8311.kicad_sym",
+    "model_3d": "https://partreel.com/library/ic/audio/es8311/es8311/es8311.step",
+    "preview": "https://partreel.com/library/ic/audio/es8311/es8311/es8311.glb",
+    "footprint_svg": "https://partreel.com/library/ic/audio/es8311/es8311/es8311.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/ic/audio/es8311/es8311/es8311.symbol.svg"
+  },
+  "datasheet": "http://www.everest-semi.com/pdf/ES8311%20PB.pdf",
+  "license": "CC-BY-4.0",
+  "verified": true,
+  "dimensions_source": "Everest ES8311 datasheet Rev 17.0: QFN-20 3x3x0.55 pitch 0.4, EP 1.7; recommended land p.14 (pads 0.22x0.7 centers 2.9 c-c geometry-verified, center 1.8 sq). Pinout p.3 (CCW).",
+  "keywords": [
+    "es8311",
+    "everest",
+    "codec",
+    "audio",
+    "i2s",
+    "esp32",
+    "qfn"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "Everest ES8311 datasheet Rev 17.0: QFN-20 3x3x0.55 pitch 0.4, EP 1.7; recommended land p.14 (pads 0.22x0.7 centers 2.9 c-c geometry-verified, center 1.8 sq). Pinout p.3 (CCW).",
+    "datasheet": "http://www.everest-semi.com/pdf/ES8311%20PB.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/gen_ics.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    }
+  },
+  "page": "https://partreel.com/p/es8311/",
+  "api": "https://partreel.com/api/v1/parts/es8311.json"
+}

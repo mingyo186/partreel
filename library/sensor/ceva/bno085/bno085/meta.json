@@ -1,0 +1,47 @@
+{
+  "id": "bno085",
+  "name": "BNO085 9-DOF Sensor Fusion IMU",
+  "category": "sensor",
+  "family": "motion",
+  "manufacturer": "CEVA (Hillcrest Labs)",
+  "mpn_pattern": "BNO085",
+  "description": "CEVA BNO085 9-DOF IMU with on-chip sensor fusion (quaternion output) - Adafruit/SparkFun flagship IMU. Host interface selected by PS1/PS0: I2C 0x4A/0x4B, SPI, or UART. VDD 2.4-3.6V, LGA-28 5.2x3.8. Needs 32.768kHz crystal or CLKSEL strap.",
+  "parameters": {
+    "contacts": 28,
+    "mounting": "SMD",
+    "interface": "I2C/SPI/UART",
+    "i2c_address": "0x4A/0x4B",
+    "supply_voltage": "2.4-3.6V",
+    "body_mm": "5.2x3.8x1.18"
+  },
+  "files": {
+    "footprint": "bno085.kicad_mod",
+    "symbol": "bno085.kicad_sym",
+    "model_3d": "bno085.step",
+    "preview": "bno085.glb",
+    "footprint_svg": "bno085.footprint.svg",
+    "symbol_svg": "bno085.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "https://www.ceva-ip.com/wp-content/uploads/BNO080_085-Datasheet.pdf",
+  "dimensions_source": "CEVA BNO08X datasheet v1.17: Fig.7-1 LGA-28 5.2x3.8 (pads 0.25x0.475 x20 + 0.375x0.25 x8, pitch 0.5, bottom-view CW numbering mirrored for footprint - verified by direct drawing read); Fig.7-2 recommended land (0.675x0.25 rows flush 3.8, 0.575x0.25 cols flush 5.2 - outer-edge spans, vector-verified). Pinout Table 1-2.",
+  "verified": true,
+  "license": "CC-BY-4.0",
+  "generated_by": "generators/gen_ics.py",
+  "keywords": [
+    "bno085",
+    "bno080",
+    "ceva",
+    "hillcrest",
+    "imu",
+    "9-dof",
+    "fusion",
+    "quaternion",
+    "lga"
+  ]
+}

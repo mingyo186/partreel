@@ -1748,6 +1748,251 @@ def msp2807():
         extra_headers=[(15, j4)])
 
 
+# ================= 배치 5차 칩 (§21-6ⓑ) =================
+
+def wm8960():
+    fid, lib = "wm8960", "ic/audio/wm8960"
+    pads = quad_pads(8, 0.5, 4.7, 0.7, 0.28)
+    fp = _fp_quad(fid, "Cirrus/Wolfson WM8960 stereo codec with class-D speaker driver, "
+                       "QFN-32 5x5x0.9 (pitch 0.5, EP 3.45 = analogue ground). Land pads "
+                       "0.28x0.7 centers 4.7 c-c per IPC-7351.",
+                  "WM8960 audio codec I2S class-D", pads, 2.5, ep=("33", 3.45, 3.45))
+    nm = ["MICBIAS", "LINPUT3/JD2", "LINPUT2", "LINPUT1", "RINPUT1", "RINPUT2",
+          "RINPUT3/JD3", "DCVDD", "DGND", "DBVDD", "MCLK", "BCLK", "DACLRC", "DACDAT",
+          "ADCLRC/GPIO1", "ADCDAT", "SCLK", "SDIN", "SPK_RN", "SPKGND2", "SPKVDD2",
+          "SPK_RP", "SPK_LN", "SPKGND1", "SPK_LP", "SPKVDD1", "VMID", "AGND", "HP_R",
+          "OUT3", "HP_L", "AVDD"]
+    sym = _lr_symbol(fid, [(str(i + 1), nm[i]) for i in range(16)],
+                     [(str(i + 17), nm[i + 16]) for i in range(16)],
+                     bottom=[("33", "EP/AGND")])
+    meta = _meta(fid, "WM8960 Stereo Audio Codec", "ic", "audio",
+                 "Cirrus Logic (Wolfson)", "WM8960CGEFL/RV",
+                 "Cirrus/Wolfson WM8960 stereo CODEC with 1W class-D speaker drivers and "
+                 "headphone amp, I2S audio + 2-wire control (write-only, addr 0x1A), "
+                 "QFN-32 5x5. Raspberry Pi / ESP32 audio HAT staple. EP = analogue GND.",
+                 {"contacts": 33, "mounting": "SMD", "interface": "I2S + I2C(0x1A)",
+                  "supply_voltage": "1.71-3.6V (SPKVDD to 5.5V)", "body_mm": "5.0x5.0x0.9"},
+                 "https://wiki.geekworm.com/images/5/58/WM8960-Datasheet.pdf",
+                 "Wolfson WM8960 datasheet (QFN-32 DM033.D / MO-220 VHHD-5): body 5x5x0.9, "
+                 "pitch 0.5, lead 0.25x0.4, EP 3.45 sq. Land pads 0.28x0.7 centers 4.7 c-c "
+                 "derived per IPC-7351 (EP clearance 0.275). Pinout p.6 (CCW from pin-1).",
+                 ["wm8960", "wolfson", "cirrus", "codec", "audio", "i2s", "class-d", "qfn"])
+    return fid, lib, fp, sym, meta
+
+
+def _qfn20_3x3(fid, lib, name, manuf, mpn, ds, dim_src, nm, ep_name, desc, params, kw):
+    """ES8311/CST816S 공용: QFN-20 3x3 P0.4 (ES8311 권장 랜드)."""
+    pads = quad_pads(5, 0.4, 2.9, 0.7, 0.22)
+    fp = _fp_quad(fid, f"{name}. QFN-20 3x3x0.55 (pitch 0.4). Land per ES8311 datasheet "
+                       "p.14 pattern (same mechanical family): pads 0.22x0.7 centers 2.9 "
+                       "c-c, center pad 1.8 sq, EP clearance 0.2.",
+                  mpn, pads, 1.5, ep=("21", 1.8, 1.8))
+    sym = _lr_symbol(fid, [(str(i + 1), nm[i]) for i in range(10)],
+                     [(str(i + 11), nm[i + 10]) for i in range(10)],
+                     bottom=[("21", ep_name)])
+    meta = _meta(fid, name, "ic", lib.split("/")[1], manuf, mpn, desc, params, ds,
+                 dim_src, kw)
+    return fid, lib, fp, sym, meta
+
+
+def es8311():
+    return _qfn20_3x3(
+        "es8311", "ic/audio/es8311", "ES8311 Mono Audio Codec", "Everest Semi", "ES8311",
+        "http://www.everest-semi.com/pdf/ES8311%20PB.pdf",
+        "Everest ES8311 datasheet Rev 17.0: QFN-20 3x3x0.55 pitch 0.4, EP 1.7; "
+        "recommended land p.14 (pads 0.22x0.7 centers 2.9 c-c geometry-verified, center "
+        "1.8 sq). Pinout p.3 (CCW).",
+        ["CCLK", "MCLK", "PVDD", "DVDD", "DGND", "SCLK/DMIC_SCL", "ASDOUT", "LRCK",
+         "DSDIN", "AGND", "AVDD", "OUTP", "OUTN", "DACVREF", "ADCVREF", "VMID", "MIC1N",
+         "MIC1P/DMIC_SDA", "CDATA", "CE"],
+        "EP/GND",
+        "Everest ES8311 low-power mono audio codec - Espressif's reference codec "
+        "(ESP32-S3-Box, Korvo, most ESP32 voice kits). I2S/PCM + I2C (0x18/0x19 via CE), "
+        "1.6-3.6V, QFN-20 3x3.",
+        {"contacts": 21, "mounting": "SMD", "interface": "I2S + I2C(0x18/0x19)",
+         "supply_voltage": "1.6-3.6V", "body_mm": "3.0x3.0x0.55"},
+        ["es8311", "everest", "codec", "audio", "i2s", "esp32", "qfn"])
+
+
+def cst816s():
+    return _qfn20_3x3(
+        "cst816s", "ic/touch/cst816s", "CST816S Capacitive Touch Controller",
+        "Hynitron", "CST816S",
+        "https://www.waveshare.com/w/upload/5/51/CST816S_Datasheet_EN.pdf",
+        "Hynitron CST816S datasheet V1.4: QFN-20 3x3x0.55 pitch 0.4, EP 1.7 (GND). "
+        "No vendor land pattern - ES8311's recommended QFN-20 3x3 P0.4 pattern reused "
+        "(dimensionally identical package). Pinout p.4 (CCW).",
+        ["CMOD0", "S1L", "S2L", "S3L", "S4L", "S5L", "S6L", "S7R", "S8R", "S9R",
+         "S10R", "S11R", "S12R", "S13R", "CMOD1/S14", "VDDA", "RST", "SCL", "SDA", "IRQ"],
+        "EP/GND",
+        "Hynitron CST816S self-capacitance touch controller - the touch chip paired "
+        "with GC9A01 round LCDs in smartwatch projects. I2C 0x15, 2.7-3.6V, QFN-20 3x3. "
+        "CMOD needs 1-5.6nF C0G cap.",
+        {"contacts": 21, "mounting": "SMD", "interface": "I2C", "i2c_address": "0x15",
+         "supply_voltage": "2.7-3.6V", "body_mm": "3.0x3.0x0.55"},
+        ["cst816s", "hynitron", "touch", "capacitive", "smartwatch", "gc9a01", "qfn"])
+
+
+def vs1053b():
+    fid, lib = "vs1053b", "ic/audio/vs1053b"
+    pads = quad_pads(12, 0.5, 8.5, 1.5, 0.3)
+    fp = _fp_quad(fid, "VLSI VS1053B MP3/Ogg/AAC codec, LQFP-48 7x7 (overall 9.0 incl "
+                       "leads, pitch 0.5). Land pads 0.3x1.5 centers 8.5 c-c per IPC-7351 "
+                       "(foot centers 4.2, body clearance ok).",
+                  "VS1053B MP3 codec LQFP-48", pads, 3.5)
+    nm = ["MICP/LINE1", "MICN", "XRESET", "DGND0", "CVDD0", "IOVDD0", "CVDD1", "DREQ",
+          "GPIO2/DCLK", "GPIO3/SDATA", "GPIO6/I2S_SCLK", "GPIO7/I2S_SDATA",
+          "XDCS/BSYNC", "IOVDD1", "VCO", "DGND1", "XTALO", "XTALI", "IOVDD2", "DGND2",
+          "DGND3", "DGND4", "XCS", "CVDD2",
+          "GPIO5/I2S_MCLK", "RX", "TX", "SCLK", "SI", "SO", "CVDD3", "XTEST", "GPIO0",
+          "GPIO1", "GND", "GPIO4/I2S_LROUT",
+          "AGND0", "AVDD0", "RIGHT", "AGND1", "AGND2", "GBUF", "AVDD1", "RCAP", "AVDD2",
+          "LEFT", "AGND3", "LINE2"]
+    sym = _lr_symbol(fid, [(str(i + 1), nm[i]) for i in range(24)],
+                     [(str(i + 25), nm[i + 24]) for i in range(24)])
+    meta = _meta(fid, "VS1053B MP3/Ogg Audio Codec", "ic", "audio",
+                 "VLSI Solution", "VS1053B-L",
+                 "VLSI VS1053B MP3/Ogg Vorbis/AAC/WMA/MIDI audio codec with headphone "
+                 "driver, SPI control/data, LQFP-48. The Adafruit Music Maker chip. "
+                 "GBUF must never be grounded; CVDD 1.8V core.",
+                 {"contacts": 48, "mounting": "SMD", "interface": "SPI",
+                  "supply_voltage": "IOVDD 1.8-3.6V / AVDD 2.8V / CVDD 1.8V",
+                  "body_mm": "7.0x7.0x1.5"},
+                 "https://www.vlsi.fi/fileadmin/datasheets/vs1053.pdf",
+                 "VLSI VS1053B datasheet v1.33 + official LQFP-48 outline DG4966 rev M "
+                 "(body 7.0 sq, overall 9.0, pitch 0.5, foot 0.6). Land pads 0.3x1.5 "
+                 "centers 8.5 c-c per IPC-7351. Pinout ch.6 (CCW).",
+                 ["vs1053", "vlsi", "mp3", "ogg", "codec", "audio", "spi", "lqfp"])
+    return fid, lib, fp, sym, meta
+
+
+def icm42688():
+    fid, lib = "icm42688", "sensor/tdk/icm42688"
+    # LGA-14 2.5(x)x3.0(y): 좌열 4 (x-0.9125), 하행 3 (y+1.1625), 우열 4, 상행 3
+    pads = []
+    for i in range(4):
+        pads.append((str(i + 1), -0.9125, -0.75 + i * 0.5, 0.6, 0.3))
+    for i in range(3):
+        pads.append((str(5 + i), -0.5 + i * 0.5, 1.1625, 0.3, 0.6))
+    for i in range(4):
+        pads.append((str(8 + i), 0.9125, 0.75 - i * 0.5, 0.6, 0.3))
+    for i in range(3):
+        pads.append((str(12 + i), 0.5 - i * 0.5, -1.1625, 0.3, 0.6))
+    out = _fp_open(fid, "TDK InvenSense ICM-42688-P 6-axis IMU, LGA-14 2.5x3.0x0.91 "
+                        "(pitch 0.5). Pads 1:1 with package terminals +0.1 toe "
+                        "(0.3x0.6). The standard FPV flight-controller IMU.",
+                   "ICM-42688-P IMU 6-axis gyro accel SPI", -2.6, 2.6)
+    out += _fab_body(-1.25, -1.5, 1.25, 1.5, 0.6)
+    out += _silk_box((1.51, 1.76), -1.0, -0.5, -1.85)
+    out += _court(-1.5, -1.75, 1.5, 1.75)
+    for name, x, y, w, h in pads:
+        out.append(_smd(name, x, y, w, h))
+    out.append(')')
+    fp = "\n".join(out) + "\n"
+    nm = ["AP_SDO/AD0", "RESV", "RESV", "INT1", "VDDIO", "GND", "RESV(GND!)",
+          "VDD", "INT2/FSYNC/CLKIN", "RESV", "RESV", "AP_CS", "AP_SCL/SCLK",
+          "AP_SDA/SDIO/SDI"]
+    sym = _lr_symbol(fid, [(str(i + 1), nm[i]) for i in range(7)],
+                     [(str(i + 8), nm[i + 7]) for i in range(7)])
+    meta = _meta(fid, "ICM-42688-P 6-Axis IMU", "sensor", "motion",
+                 "TDK InvenSense", "ICM-42688-P",
+                 "TDK InvenSense ICM-42688-P 6-axis gyroscope+accelerometer - the "
+                 "standard modern FPV flight-controller IMU (Betaflight/ArduPilot). "
+                 "SPI 24MHz / I2C 0x68-0x69 / I3C, 1.71-3.6V, LGA-14 2.5x3. Pin 7 "
+                 "RESV must connect to GND.",
+                 {"contacts": 14, "mounting": "SMD", "interface": "SPI/I2C/I3C",
+                  "i2c_address": "0x68/0x69", "supply_voltage": "1.71-3.6V",
+                  "body_mm": "2.5x3.0x0.91"},
+                 "https://www.cdiweb.com/datasheets/invensense/ds-000347-icm-42688-p-v1.2.pdf",
+                 "TDK DS-000347 v1.2: LGA-14 2.5x3.0x0.91, terminals 0.25x0.475 pitch "
+                 "0.5, 4-pin columns centers +/-0.9125, 3-pin rows +/-1.1625 "
+                 "(cross-checked vs body/edge-gap arithmetic). Pads 1:1 +0.1 toe. "
+                 "Pinout Table 9.",
+                 ["icm-42688", "icm42688", "imu", "gyroscope", "accelerometer", "fpv",
+                  "betaflight", "spi", "tdk"])
+    return fid, lib, fp, sym, meta
+
+
+def bno085():
+    fid, lib = "bno085", "sensor/ceva/bno085"
+    # 탑뷰(도면 직접 판독): 상단행 좌→우 = 1,28..20 / 좌열 2-5 / 하단행 6-15 / 우열 16-19
+    pads = []
+    top_nums = [1, 28, 27, 26, 25, 24, 23, 22, 21, 20]
+    for i, n in enumerate(top_nums):
+        pads.append((str(n), -2.25 + i * 0.5, -1.5625, 0.25, 0.675))
+    for i in range(4):
+        pads.append((str(2 + i), -2.3125, -0.75 + i * 0.5, 0.575, 0.25))
+    for i in range(10):
+        pads.append((str(6 + i), -2.25 + i * 0.5, 1.5625, 0.25, 0.675))
+    for i in range(4):
+        pads.append((str(16 + i), 2.3125, 0.75 - i * 0.5, 0.575, 0.25))
+    out = _fp_open(fid, "CEVA/Hillcrest BNO085 9-DOF sensor-fusion IMU, LGA-28 "
+                        "5.2x3.8x1.18. Land per datasheet Fig.7-2 (vector-verified, "
+                        "spans are outer-edge): 20 pads 0.25x0.675 + 8 pads 0.575x0.25, "
+                        "pitch 0.5.",
+                   "BNO085 IMU 9-DOF fusion quaternion", -3.4, 3.4)
+    out += _fab_body(-2.6, -1.9, 2.6, 1.9, 0.8)
+    out += _rect_lines([(-2.71, -2.01, -2.71, 2.01), (2.71, -2.01, 2.71, 2.01)],
+                       "F.SilkS", 0.12)
+    out.append(_line(-2.5, -2.25, -2.0, -2.25, "F.SilkS", 0.12))  # pin1 틱
+    out += _court(-2.85, -2.15, 2.85, 2.15)
+    for name, x, y, w, h in pads:
+        out.append(_smd(name, x, y, w, h))
+    out.append(')')
+    fp = "\n".join(out) + "\n"
+    nm = {1: "RESV_NC", 2: "GND", 3: "VDD", 4: "BOOTN", 5: "PS1", 6: "PS0/WAKE",
+          7: "RESV_NC", 8: "RESV_NC", 9: "CAP", 10: "CLKSEL0", 11: "NRST",
+          12: "RESV_NC", 13: "RESV_NC", 14: "H_INTN", 15: "ENV_SCL", 16: "ENV_SDA",
+          17: "SA0/H_MOSI", 18: "H_CSN", 19: "H_SCL/SCK/RX", 20: "H_SDA/H_MISO/TX",
+          21: "RESV_NC", 22: "RESV_NC", 23: "RESV_NC", 24: "RESV_NC", 25: "GND",
+          26: "XOUT32/CLKSEL1", 27: "XIN32", 28: "VDDIO"}
+    sym = _lr_symbol(fid, [(str(i), nm[i]) for i in range(1, 15)],
+                     [(str(i), nm[i]) for i in range(15, 29)])
+    meta = _meta(fid, "BNO085 9-DOF Sensor Fusion IMU", "sensor", "motion",
+                 "CEVA (Hillcrest Labs)", "BNO085",
+                 "CEVA BNO085 9-DOF IMU with on-chip sensor fusion (quaternion output) - "
+                 "Adafruit/SparkFun flagship IMU. Host interface selected by PS1/PS0: "
+                 "I2C 0x4A/0x4B, SPI, or UART. VDD 2.4-3.6V, LGA-28 5.2x3.8. Needs "
+                 "32.768kHz crystal or CLKSEL strap.",
+                 {"contacts": 28, "mounting": "SMD", "interface": "I2C/SPI/UART",
+                  "i2c_address": "0x4A/0x4B", "supply_voltage": "2.4-3.6V",
+                  "body_mm": "5.2x3.8x1.18"},
+                 "https://www.ceva-ip.com/wp-content/uploads/BNO080_085-Datasheet.pdf",
+                 "CEVA BNO08X datasheet v1.17: Fig.7-1 LGA-28 5.2x3.8 (pads 0.25x0.475 "
+                 "x20 + 0.375x0.25 x8, pitch 0.5, bottom-view CW numbering mirrored for "
+                 "footprint - verified by direct drawing read); Fig.7-2 recommended land "
+                 "(0.675x0.25 rows flush 3.8, 0.575x0.25 cols flush 5.2 - outer-edge "
+                 "spans, vector-verified). Pinout Table 1-2.",
+                 ["bno085", "bno080", "ceva", "hillcrest", "imu", "9-dof", "fusion",
+                  "quaternion", "lga"])
+    return fid, lib, fp, sym, meta
+
+
+def tcs34725():
+    fid, lib = "tcs34725", "sensor/ams/tcs34725"
+    pads = two_row_pads(6, 0.65, 1.5, 1.0, 0.4)
+    fp = _fp_two_row(fid, "ams-OSRAM (TAOS) TCS34725 RGBC color sensor, DFN-6 2.0x2.4 "
+                          "(clear mold). Land per datasheet Fig.11: pads 1.0x0.4 pitch "
+                          "0.65, columns 1.5 c-c (outer 2.5).",
+                     "TCS34725 color sensor RGB I2C", pads, (1.0, 1.2))
+    sym = _lr_symbol(fid, [("1", "VDD"), ("2", "SCL"), ("3", "GND")],
+                     [("4", "NC"), ("5", "INT"), ("6", "SDA")])
+    meta = _meta(fid, "TCS34725 RGBC Color Sensor", "sensor", "optical",
+                 "ams-OSRAM (TAOS)", "TCS34725FN",
+                 "TAOS/ams TCS34725 RGB+clear color sensor with IR blocking filter, "
+                 "I2C 0x29, 2.7-3.6V, clear DFN-6 2.0x2.4. The Adafruit color sensor "
+                 "(GY-33 boards). Pin 4 NC: do not connect.",
+                 {"contacts": 6, "mounting": "SMD", "interface": "I2C",
+                  "i2c_address": "0x29", "supply_voltage": "2.7-3.6V",
+                  "body_mm": "2.0x2.4x0.65"},
+                 "https://cdn-shop.adafruit.com/datasheets/TCS34725.pdf",
+                 "TAOS TCS3472 datasheet (TAOS135): FN package 2.0x2.4x0.65, contacts "
+                 "0.3 pitch 0.65; Fig.11 suggested layout (pads 1.0x0.4, pitch 0.65, "
+                 "columns outer-to-outer 2.5 = centers 1.5 c-c). Pinout p.3.",
+                 ["tcs34725", "taos", "ams", "color", "rgb", "sensor", "i2c", "gy-33"])
+    return fid, lib, fp, sym, meta
+
+
 # ---------- 온디맨드 변형 패밀리 (§21-6ⓐ: 변형은 봇/요청이 만든다) ----------
 
 VARIANT_FAMILIES = {
@@ -1783,7 +2028,8 @@ PARTS = [qmc5883l, hmc5883l, adxl345, ip5306, tp5100, cn3791, mp1584, sy8008, sy
          veml7700, hc_sr04, dfplayer_mini, hc05, sim800l, max7219_matrix_module,
          gc9a01_module_128, ld2410c, esp32_devkitc_v4,
          qmc5883p, dht20, aht25, tp4054, tm1638, ttp224, ttp226,
-         mc091gx, msp0961, msp1541, msp1803, msp2008, mc01506, msp2807]
+         mc091gx, msp0961, msp1541, msp1803, msp2008, mc01506, msp2807,
+         wm8960, es8311, cst816s, vs1053b, icm42688, bno085, tcs34725]
 
 
 def main():

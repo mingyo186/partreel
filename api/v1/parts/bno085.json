@@ -1,0 +1,73 @@
+{
+  "id": "bno085",
+  "name": "BNO085 9-DOF Sensor Fusion IMU",
+  "category": "sensor",
+  "family": "motion",
+  "manufacturer": "CEVA (Hillcrest Labs)",
+  "mpn_pattern": "BNO085",
+  "description": "CEVA BNO085 9-DOF IMU with on-chip sensor fusion (quaternion output) - Adafruit/SparkFun flagship IMU. Host interface selected by PS1/PS0: I2C 0x4A/0x4B, SPI, or UART. VDD 2.4-3.6V, LGA-28 5.2x3.8. Needs 32.768kHz crystal or CLKSEL strap.",
+  "parameters": {
+    "contacts": 28,
+    "mounting": "SMD",
+    "interface": "I2C/SPI/UART",
+    "i2c_address": "0x4A/0x4B",
+    "supply_voltage": "2.4-3.6V",
+    "body_mm": "5.2x3.8x1.18"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/sensor/ceva/bno085/bno085/bno085.kicad_mod",
+    "symbol": "https://partreel.com/library/sensor/ceva/bno085/bno085/bno085.kicad_sym",
+    "model_3d": "https://partreel.com/library/sensor/ceva/bno085/bno085/bno085.step",
+    "preview": "https://partreel.com/library/sensor/ceva/bno085/bno085/bno085.glb",
+    "footprint_svg": "https://partreel.com/library/sensor/ceva/bno085/bno085/bno085.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/sensor/ceva/bno085/bno085/bno085.symbol.svg"
+  },
+  "datasheet": "https://www.ceva-ip.com/wp-content/uploads/BNO080_085-Datasheet.pdf",
+  "license": "CC-BY-4.0",
+  "verified": true,
+  "dimensions_source": "CEVA BNO08X datasheet v1.17: Fig.7-1 LGA-28 5.2x3.8 (pads 0.25x0.475 x20 + 0.375x0.25 x8, pitch 0.5, bottom-view CW numbering mirrored for footprint - verified by direct drawing read); Fig.7-2 recommended land (0.675x0.25 rows flush 3.8, 0.575x0.25 cols flush 5.2 - outer-edge spans, vector-verified). Pinout Table 1-2.",
+  "keywords": [
+    "bno085",
+    "bno080",
+    "ceva",
+    "hillcrest",
+    "imu",
+    "9-dof",
+    "fusion",
+    "quaternion",
+    "lga"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "CEVA BNO08X datasheet v1.17: Fig.7-1 LGA-28 5.2x3.8 (pads 0.25x0.475 x20 + 0.375x0.25 x8, pitch 0.5, bottom-view CW numbering mirrored for footprint - verified by direct drawing read); Fig.7-2 recommended land (0.675x0.25 rows flush 3.8, 0.575x0.25 cols flush 5.2 - outer-edge spans, vector-verified). Pinout Table 1-2.",
+    "datasheet": "https://www.ceva-ip.com/wp-content/uploads/BNO080_085-Datasheet.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/gen_ics.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    }
+  },
+  "page": "https://partreel.com/p/bno085/",
+  "api": "https://partreel.com/api/v1/parts/bno085.json"
+}

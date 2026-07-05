@@ -1,0 +1,45 @@
+{
+  "id": "cst816s",
+  "name": "CST816S Capacitive Touch Controller",
+  "category": "ic",
+  "family": "touch",
+  "manufacturer": "Hynitron",
+  "mpn_pattern": "CST816S",
+  "description": "Hynitron CST816S self-capacitance touch controller - the touch chip paired with GC9A01 round LCDs in smartwatch projects. I2C 0x15, 2.7-3.6V, QFN-20 3x3. CMOD needs 1-5.6nF C0G cap.",
+  "parameters": {
+    "contacts": 21,
+    "mounting": "SMD",
+    "interface": "I2C",
+    "i2c_address": "0x15",
+    "supply_voltage": "2.7-3.6V",
+    "body_mm": "3.0x3.0x0.55"
+  },
+  "files": {
+    "footprint": "cst816s.kicad_mod",
+    "symbol": "cst816s.kicad_sym",
+    "model_3d": "cst816s.step",
+    "preview": "cst816s.glb",
+    "footprint_svg": "cst816s.footprint.svg",
+    "symbol_svg": "cst816s.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "https://www.waveshare.com/w/upload/5/51/CST816S_Datasheet_EN.pdf",
+  "dimensions_source": "Hynitron CST816S datasheet V1.4: QFN-20 3x3x0.55 pitch 0.4, EP 1.7 (GND). No vendor land pattern - ES8311's recommended QFN-20 3x3 P0.4 pattern reused (dimensionally identical package). Pinout p.4 (CCW).",
+  "verified": true,
+  "license": "CC-BY-4.0",
+  "generated_by": "generators/gen_ics.py",
+  "keywords": [
+    "cst816s",
+    "hynitron",
+    "touch",
+    "capacitive",
+    "smartwatch",
+    "gc9a01",
+    "qfn"
+  ]
+}

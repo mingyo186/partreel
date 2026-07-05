@@ -1,0 +1,72 @@
+{
+  "id": "tcs34725",
+  "name": "TCS34725 RGBC Color Sensor",
+  "category": "sensor",
+  "family": "optical",
+  "manufacturer": "ams-OSRAM (TAOS)",
+  "mpn_pattern": "TCS34725FN",
+  "description": "TAOS/ams TCS34725 RGB+clear color sensor with IR blocking filter, I2C 0x29, 2.7-3.6V, clear DFN-6 2.0x2.4. The Adafruit color sensor (GY-33 boards). Pin 4 NC: do not connect.",
+  "parameters": {
+    "contacts": 6,
+    "mounting": "SMD",
+    "interface": "I2C",
+    "i2c_address": "0x29",
+    "supply_voltage": "2.7-3.6V",
+    "body_mm": "2.0x2.4x0.65"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/sensor/ams/tcs34725/tcs34725/tcs34725.kicad_mod",
+    "symbol": "https://partreel.com/library/sensor/ams/tcs34725/tcs34725/tcs34725.kicad_sym",
+    "model_3d": "https://partreel.com/library/sensor/ams/tcs34725/tcs34725/tcs34725.step",
+    "preview": "https://partreel.com/library/sensor/ams/tcs34725/tcs34725/tcs34725.glb",
+    "footprint_svg": "https://partreel.com/library/sensor/ams/tcs34725/tcs34725/tcs34725.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/sensor/ams/tcs34725/tcs34725/tcs34725.symbol.svg"
+  },
+  "datasheet": "https://cdn-shop.adafruit.com/datasheets/TCS34725.pdf",
+  "license": "CC-BY-4.0",
+  "verified": true,
+  "dimensions_source": "TAOS TCS3472 datasheet (TAOS135): FN package 2.0x2.4x0.65, contacts 0.3 pitch 0.65; Fig.11 suggested layout (pads 1.0x0.4, pitch 0.65, columns outer-to-outer 2.5 = centers 1.5 c-c). Pinout p.3.",
+  "keywords": [
+    "tcs34725",
+    "taos",
+    "ams",
+    "color",
+    "rgb",
+    "sensor",
+    "i2c",
+    "gy-33"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "TAOS TCS3472 datasheet (TAOS135): FN package 2.0x2.4x0.65, contacts 0.3 pitch 0.65; Fig.11 suggested layout (pads 1.0x0.4, pitch 0.65, columns outer-to-outer 2.5 = centers 1.5 c-c). Pinout p.3.",
+    "datasheet": "https://cdn-shop.adafruit.com/datasheets/TCS34725.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/gen_ics.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    }
+  },
+  "page": "https://partreel.com/p/tcs34725/",
+  "api": "https://partreel.com/api/v1/parts/tcs34725.json"
+}

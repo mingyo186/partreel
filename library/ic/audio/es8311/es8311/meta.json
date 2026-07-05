@@ -1,0 +1,44 @@
+{
+  "id": "es8311",
+  "name": "ES8311 Mono Audio Codec",
+  "category": "ic",
+  "family": "audio",
+  "manufacturer": "Everest Semi",
+  "mpn_pattern": "ES8311",
+  "description": "Everest ES8311 low-power mono audio codec - Espressif's reference codec (ESP32-S3-Box, Korvo, most ESP32 voice kits). I2S/PCM + I2C (0x18/0x19 via CE), 1.6-3.6V, QFN-20 3x3.",
+  "parameters": {
+    "contacts": 21,
+    "mounting": "SMD",
+    "interface": "I2S + I2C(0x18/0x19)",
+    "supply_voltage": "1.6-3.6V",
+    "body_mm": "3.0x3.0x0.55"
+  },
+  "files": {
+    "footprint": "es8311.kicad_mod",
+    "symbol": "es8311.kicad_sym",
+    "model_3d": "es8311.step",
+    "preview": "es8311.glb",
+    "footprint_svg": "es8311.footprint.svg",
+    "symbol_svg": "es8311.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "http://www.everest-semi.com/pdf/ES8311%20PB.pdf",
+  "dimensions_source": "Everest ES8311 datasheet Rev 17.0: QFN-20 3x3x0.55 pitch 0.4, EP 1.7; recommended land p.14 (pads 0.22x0.7 centers 2.9 c-c geometry-verified, center 1.8 sq). Pinout p.3 (CCW).",
+  "verified": true,
+  "license": "CC-BY-4.0",
+  "generated_by": "generators/gen_ics.py",
+  "keywords": [
+    "es8311",
+    "everest",
+    "codec",
+    "audio",
+    "i2s",
+    "esp32",
+    "qfn"
+  ]
+}

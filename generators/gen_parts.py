@@ -275,11 +275,14 @@ def esp32_wroom32():
 
 
 def _lr_symbol(fid, left, right, bottom=None):
-    """좌/우 핀 + (옵션)하단 핀 심볼."""
+    """좌/우 핀 + (옵션)하단 핀 심볼. 박스 폭은 핀명 길이 적응 (긴 이름 충돌 방지)."""
     GRID, PIN = 2.54, 2.54
     n = max(len(left), len(right))
     top = (n - 1) * GRID / 2.0
-    bl, br = -8.89, 8.89
+    _ml = max((len(nm) for _, nm in left), default=0)
+    _mr = max((len(nm) for _, nm in right), default=0)
+    w = max(8.89, round(0.45 * (_ml + _mr) + 1.6, 2))
+    bl, br = -w, w
     bt = top + 2.54
     bb = -top - (2.54 + (2.54 * len(bottom) if bottom else 0))
     out = ['(kicad_symbol_lib (version 20211014) (generator opencad-lib)',

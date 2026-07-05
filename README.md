@@ -65,7 +65,7 @@ before manufacturing.
 ## Parts index
 
 <!-- PARTS:BEGIN -->
-Currently **217 parts**, all machine-verified (structure, KLC drawing rules, render completeness, 3D coplanar/merged-pin checks, STEP kernel) with datasheet-cited dimensions.
+Currently **224 parts**, all machine-verified (structure, KLC drawing rules, render completeness, 3D coplanar/merged-pin checks, STEP kernel) with datasheet-cited dimensions.
 
 ### connector (110)
 
@@ -182,7 +182,7 @@ Currently **217 parts**, all machine-verified (structure, KLC drawing rules, ren
 | [microSD_Friction (SparkFun)](https://partreel.com/p/sparkfun_microsd_friction/) | `microSD_Friction` | SparkFun Electronics | [sparkfun_microsd_friction](library/connector/sparkfun/sparkfun_microsd_friction) |
 | [microSD_PushPush (SparkFun)](https://partreel.com/p/sparkfun_microsd_pushpush/) | `microSD_PushPush` | SparkFun Electronics | [sparkfun_microsd_pushpush](library/connector/sparkfun/sparkfun_microsd_pushpush) |
 
-### ic (26)
+### ic (30)
 
 | Part | MPN | Manufacturer | Files |
 |---|---|---|---|
@@ -190,7 +190,9 @@ Currently **217 parts**, all machine-verified (structure, KLC drawing rules, ren
 | [AS5600 Magnetic Angle Sensor](https://partreel.com/p/as5600/) | `AS5600-ASOT` | ams-OSRAM | [as5600](library/ic/sensor_if/as5600/as5600) |
 | [BH1750FVI Ambient Light Sensor](https://partreel.com/p/bh1750/) | `BH1750FVI-TR` | Rohm | [bh1750](library/ic/sensor_if/bh1750/bh1750) |
 | [CN3791 MPPT Solar Li-Ion Charger](https://partreel.com/p/cn3791/) | `CN3791` | Consonance | [cn3791](library/ic/power/cn3791/cn3791) |
+| [CST816S Capacitive Touch Controller](https://partreel.com/p/cst816s/) | `CST816S` | Hynitron | [cst816s](library/ic/touch/cst816s/cst816s) |
 | [DRV8825 Stepper Motor Driver](https://partreel.com/p/drv8825/) | `DRV8825PWP` | Texas Instruments | [drv8825](library/ic/driver/drv8825/drv8825) |
+| [ES8311 Mono Audio Codec](https://partreel.com/p/es8311/) | `ES8311` | Everest Semi | [es8311](library/ic/audio/es8311/es8311) |
 | [HT7330-A Low-Power LDO 3.0V](https://partreel.com/p/ht7330/) | `HT7330-A` | Holtek | [ht7330](library/ic/regulator/ht7330/ht7330) |
 | [HT7333-A Low-Power LDO 3.3V](https://partreel.com/p/ht7333/) | `HT7333-A` | Holtek | [ht7333](library/ic/regulator/ht7333/ht7333) |
 | [HT7350-A Low-Power LDO 5.0V](https://partreel.com/p/ht7350/) | `HT7350-A` | Holtek | [ht7350](library/ic/regulator/ht7350/ht7350) |
@@ -210,7 +212,9 @@ Currently **217 parts**, all machine-verified (structure, KLC drawing rules, ren
 | [TTP224N-BSB 4-Key Touch IC](https://partreel.com/p/ttp224/) | `TTP224N-BSB` | Tontek | [ttp224](library/ic/touch/ttp224/ttp224) |
 | [TTP226-809SN 8-Key Touch IC](https://partreel.com/p/ttp226/) | `TTP226-809SN` | Tontek | [ttp226](library/ic/touch/ttp226/ttp226) |
 | [TTP229-BSF 16-Key Touch IC](https://partreel.com/p/ttp229/) | `TTP229-BSF` | Tontek | [ttp229](library/ic/touch/ttp229/ttp229) |
+| [VS1053B MP3/Ogg Audio Codec](https://partreel.com/p/vs1053b/) | `VS1053B-L` | VLSI Solution | [vs1053b](library/ic/audio/vs1053b/vs1053b) |
 | [W25Q64JV 64Mbit SPI Flash (SOIC-8 208mil)](https://partreel.com/p/w25q64jv/) | `W25Q64JVSSIQ` | Winbond | [w25q64jv](library/ic/memory/w25q64jv/w25q64jv) |
+| [WM8960 Stereo Audio Codec](https://partreel.com/p/wm8960/) | `WM8960CGEFL/RV` | Cirrus Logic (Wolfson) | [wm8960](library/ic/audio/wm8960/wm8960) |
 | [XL6009 4A Boost Converter](https://partreel.com/p/xl6009/) | `XL6009E1` | XLSEMI | [xl6009](library/ic/regulator/xl6009/xl6009) |
 
 ### module (49)
@@ -267,7 +271,7 @@ Currently **217 parts**, all machine-verified (structure, KLC drawing rules, ren
 | [ZED-X20P (SparkFun)](https://partreel.com/p/sparkfun_zed_x20p/) | `ZED-X20P` | SparkFun Electronics | [sparkfun_zed_x20p](library/module/sparkfun/sparkfun_zed_x20p) |
 | [mosaic-G5_P3 (SparkFun)](https://partreel.com/p/sparkfun_mosaic_g5_p3/) | `mosaic-G5_P3` | SparkFun Electronics | [sparkfun_mosaic_g5_p3](library/module/sparkfun/sparkfun_mosaic_g5_p3) |
 
-### sensor (32)
+### sensor (35)
 
 | Part | MPN | Manufacturer | Files |
 |---|---|---|---|
@@ -277,6 +281,7 @@ Currently **217 parts**, all machine-verified (structure, KLC drawing rules, ren
 | [AHT21 Humidity and Temperature Sensor](https://partreel.com/p/aht21/) | `AHT21` | Aosong (ASAIR) | [aht21](library/sensor/asair/aht21/aht21) |
 | [AHT25 Humidity and Temperature Sensor Module](https://partreel.com/p/aht25/) | `AHT25` | Aosong (ASAIR) | [aht25](library/sensor/asair/aht25/aht25) |
 | [AHT30 Humidity and Temperature Sensor](https://partreel.com/p/aht30/) | `AHT30` | Aosong (ASAIR) | [aht30](library/sensor/asair/aht30/aht30) |
+| [BNO085 9-DOF Sensor Fusion IMU](https://partreel.com/p/bno085/) | `BNO085` | CEVA (Hillcrest Labs) | [bno085](library/sensor/ceva/bno085/bno085) |
 | [CAP1203 (SparkFun)](https://partreel.com/p/sparkfun_cap1203/) | `CAP1203` | SparkFun Electronics | [sparkfun_cap1203](library/sensor/sparkfun/sparkfun_cap1203) |
 | [CY8CMBR3102 (SparkFun)](https://partreel.com/p/sparkfun_cy8cmbr3102/) | `CY8CMBR3102` | SparkFun Electronics | [sparkfun_cy8cmbr3102](library/sensor/sparkfun/sparkfun_cy8cmbr3102) |
 | [DHT20 Temperature & Humidity Sensor (DHT Housing)](https://partreel.com/p/dht20/) | `DHT20` | Aosong (ASAIR) | [dht20](library/sensor/asair/dht20/dht20) |
@@ -284,6 +289,7 @@ Currently **217 parts**, all machine-verified (structure, KLC drawing rules, ren
 | [HMC5883L 3-Axis Magnetometer](https://partreel.com/p/hmc5883l/) | `HMC5883L` | Honeywell | [hmc5883l](library/sensor/honeywell/hmc5883l/hmc5883l) |
 | [HMC6343 (SparkFun)](https://partreel.com/p/sparkfun_hmc6343/) | `HMC6343` | SparkFun Electronics | [sparkfun_hmc6343](library/sensor/sparkfun/sparkfun_hmc6343) |
 | [HX711 (SparkFun)](https://partreel.com/p/sparkfun_hx711/) | `HX711` | SparkFun Electronics | [sparkfun_hx711](library/sensor/sparkfun/sparkfun_hx711) |
+| [ICM-42688-P 6-Axis IMU](https://partreel.com/p/icm42688/) | `ICM-42688-P` | TDK InvenSense | [icm42688](library/sensor/tdk/icm42688/icm42688) |
 | [IM19 (SparkFun)](https://partreel.com/p/sparkfun_im19/) | `IM19` | SparkFun Electronics | [sparkfun_im19](library/sensor/sparkfun/sparkfun_im19) |
 | [LIS3DH (SparkFun)](https://partreel.com/p/sparkfun_lis3dh/) | `LIS3DH` | SparkFun Electronics | [sparkfun_lis3dh](library/sensor/sparkfun/sparkfun_lis3dh) |
 | [LSM6DSOX (SparkFun)](https://partreel.com/p/sparkfun_lsm6dsox/) | `LSM6DSOX` | SparkFun Electronics | [sparkfun_lsm6dsox](library/sensor/sparkfun/sparkfun_lsm6dsox) |
@@ -299,6 +305,7 @@ Currently **217 parts**, all machine-verified (structure, KLC drawing rules, ren
 | [SHTC3 (SparkFun)](https://partreel.com/p/sparkfun_shtc3/) | `SHTC3` | SparkFun Electronics | [sparkfun_shtc3](library/sensor/sparkfun/sparkfun_shtc3) |
 | [STC31 (SparkFun)](https://partreel.com/p/sparkfun_stc31/) | `STC31` | SparkFun Electronics | [sparkfun_stc31](library/sensor/sparkfun/sparkfun_stc31) |
 | [STCC4 (SparkFun)](https://partreel.com/p/sparkfun_stcc4/) | `STCC4` | SparkFun Electronics | [sparkfun_stcc4](library/sensor/sparkfun/sparkfun_stcc4) |
+| [TCS34725 RGBC Color Sensor](https://partreel.com/p/tcs34725/) | `TCS34725FN` | ams-OSRAM (TAOS) | [tcs34725](library/sensor/ams/tcs34725/tcs34725) |
 | [TMP102 (SparkFun)](https://partreel.com/p/sparkfun_tmp102/) | `TMP102` | SparkFun Electronics | [sparkfun_tmp102](library/sensor/sparkfun/sparkfun_tmp102) |
 | [VCNL4040 (SparkFun)](https://partreel.com/p/sparkfun_vcnl4040/) | `VCNL4040` | SparkFun Electronics | [sparkfun_vcnl4040](library/sensor/sparkfun/sparkfun_vcnl4040) |
 | [VEML7700 Ambient Light Sensor](https://partreel.com/p/veml7700/) | `VEML7700-TR` | Vishay | [veml7700](library/sensor/vishay/veml7700/veml7700) |
