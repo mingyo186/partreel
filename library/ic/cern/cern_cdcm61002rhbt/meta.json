@@ -21,7 +21,7 @@
     "kicad_mod",
     "kicad_sym"
   ],
-  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Logic.kicad_sym",
+  "datasheet": "https://www.ti.com/lit/ds/symlink/cdcm61002.pdf",
   "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/QFN50P500X500X100-33N-S355.kicad_mod)",
   "verified": true,
   "origin": "imported",
@@ -49,7 +49,8 @@
     "import_date": "2026-07-05",
     "modifications": [
       "extracted single symbol from library",
-      "stripped dead 3D model reference (upstream ships no 3D)"
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "datasheet URL resolved by manufacturer pattern + HTTP verification"
     ]
   }
 }

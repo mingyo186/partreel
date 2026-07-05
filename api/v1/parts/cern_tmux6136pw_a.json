@@ -21,7 +21,7 @@
     "footprint_svg": "https://partreel.com/library/ic/cern/cern_tmux6136pw_a/cern_tmux6136pw_a.footprint.svg",
     "symbol_svg": "https://partreel.com/library/ic/cern/cern_tmux6136pw_a/cern_tmux6136pw_a.symbol.svg"
   },
-  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Analog & Interface.kicad_sym",
+  "datasheet": "https://www.ti.com/lit/ds/symlink/tmux6136.pdf",
   "license": "CERN-OHL-P-2.0",
   "verified": true,
   "tier": "verified-2d",
@@ -41,7 +41,7 @@
   },
   "provenance": {
     "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/SOP65P640X120-16N.kicad_mod)",
-    "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Analog & Interface.kicad_sym",
+    "datasheet": "https://www.ti.com/lit/ds/symlink/tmux6136.pdf",
     "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_cern.py",
     "quality_gates": {
       "gates": [
@@ -72,7 +72,8 @@
       "import_date": "2026-07-05",
       "modifications": [
         "extracted single symbol from library",
-        "stripped dead 3D model reference (upstream ships no 3D)"
+        "stripped dead 3D model reference (upstream ships no 3D)",
+        "datasheet URL resolved by manufacturer pattern + HTTP verification"
       ]
     }
   },

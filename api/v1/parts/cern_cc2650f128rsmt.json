@@ -22,7 +22,7 @@
     "footprint_svg": "https://partreel.com/library/ic/cern/cern_cc2650f128rsmt/cern_cc2650f128rsmt.footprint.svg",
     "symbol_svg": "https://partreel.com/library/ic/cern/cern_cc2650f128rsmt/cern_cc2650f128rsmt.symbol.svg"
   },
-  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Logic.kicad_sym",
+  "datasheet": "https://www.ti.com/lit/ds/symlink/cc2650.pdf",
   "license": "CERN-OHL-P-2.0",
   "verified": true,
   "tier": "verified-2d",
@@ -42,7 +42,7 @@
   },
   "provenance": {
     "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/QFN40P400X400X100-33N-S290.kicad_mod)",
-    "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Logic.kicad_sym",
+    "datasheet": "https://www.ti.com/lit/ds/symlink/cc2650.pdf",
     "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_cern.py",
     "quality_gates": {
       "gates": [
@@ -73,7 +73,8 @@
       "import_date": "2026-07-05",
       "modifications": [
         "extracted single symbol from library",
-        "stripped dead 3D model reference (upstream ships no 3D)"
+        "stripped dead 3D model reference (upstream ships no 3D)",
+        "datasheet URL resolved by manufacturer pattern + HTTP verification"
       ]
     }
   },

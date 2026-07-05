@@ -20,7 +20,7 @@
     "kicad_mod",
     "kicad_sym"
   ],
-  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Analog & Interface.kicad_sym",
+  "datasheet": "https://www.ti.com/lit/ds/symlink/uc3865.pdf",
   "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors THD.pretty/DIP16-300.kicad_mod)",
   "verified": true,
   "origin": "imported",
@@ -48,7 +48,8 @@
     "modifications": [
       "extracted single symbol from library",
       "stripped dead 3D model reference (upstream ships no 3D)",
-      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)",
+      "datasheet URL resolved by manufacturer pattern + HTTP verification"
     ]
   }
 }
