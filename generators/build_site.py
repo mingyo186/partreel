@@ -18,6 +18,7 @@ import html
 
 ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), ".."))
 DOMAIN = "https://partreel.com"
+ASSETS_BASE = "https://assets.partreel.com"  # 대용량 에셋(step/glb) = R2 (§22)
 GITHUB = "https://github.com/mingyo186/partreel"
 MCP_URL = "https://mcp.partreel.com/mcp"
 
@@ -26,7 +27,8 @@ FMT_KEY = {"glb": "preview", "step": "model_3d", "kicad_mod": "footprint", "kica
 
 CSP = ("default-src 'self'; script-src 'self' https://cdn.jsdelivr.net 'unsafe-inline'; "
        "style-src 'self' 'unsafe-inline'; img-src 'self' data:; "
-       "connect-src 'self' https://cdn.jsdelivr.net; object-src 'none'; base-uri 'self'")
+       "connect-src 'self' https://cdn.jsdelivr.net https://assets.partreel.com; "
+       "object-src 'none'; base-uri 'self'")
 
 
 def esc(s):
@@ -93,7 +95,8 @@ def part_page(meta, path):
     has3d = bool(glb)
     tab3d = '<button class="vt active" data-view="3d">3D</button>\n    ' if has3d else ''
     fp_active = '' if has3d else ' active'
-    glb_attr = (' data-glb="' + prefix + path + '/' + esc(glb) + '"') if has3d else ''
+    # 대용량 에셋(step/glb)은 R2 (§22) — 텍스트/SVG는 Pages 유지
+    glb_attr = (f' data-glb="{ASSETS_BASE}/{path}/{esc(glb)}"') if has3d else ''
     default_view = '3d' if has3d else 'fp'
     viewer_msg = 'Loading 3D…' if has3d else 'Verified-2D part (no 3D model upstream)'
     sym_svg = files.get("symbol_svg", "")
@@ -113,7 +116,9 @@ def part_page(meta, path):
         fn = files.get(FMT_KEY.get(fmt, fmt))
         if not fn:
             continue
-        dls.append(f'<a class="dl" href="{prefix}{path}/{esc(fn)}" download>'
+        base = f"{ASSETS_BASE}/{path}" if fn.lower().endswith((".step", ".glb")) \
+            else f"{prefix}{path}"
+        dls.append(f'<a class="dl" href="{base}/{esc(fn)}" download>'
                    f'<span class="ext">{esc(fmt)}</span> {esc(FMT_LABEL.get(fmt, fmt))}</a>')
     downloads = "".join(dls)
 

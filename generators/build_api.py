@@ -13,6 +13,7 @@ import os
 
 ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), ".."))
 DOMAIN = "https://partreel.com"
+ASSETS_BASE = "https://assets.partreel.com"  # 대용량 에셋(step/glb) = R2 (§22)
 GITHUB = "https://github.com/mingyo186/partreel"
 
 
@@ -65,7 +66,11 @@ def main():
     listing = []
     for p in index["parts"]:
         meta = json.load(open(os.path.join(ROOT, p["path"], "meta.json"), encoding="utf-8"))
-        files = {k: abs_url(p["path"], fn) for k, fn in meta.get("files", {}).items()}
+        # 대용량 에셋(step/glb)은 R2 assets 도메인, 텍스트/SVG는 Pages (§22)
+        files = {k: (ASSETS_BASE + "/" + p["path"].replace("\\", "/") + "/" + fn
+                     if fn.lower().endswith((".step", ".glb"))
+                     else abs_url(p["path"], fn))
+                 for k, fn in meta.get("files", {}).items()}
         detail = {
             "id": meta["id"], "name": meta["name"],
             "category": meta.get("category"), "family": meta.get("family"),

@@ -55,7 +55,7 @@ def main():
                     ["npx", "wrangler", "r2", "object", "put",
                      f"{BUCKET}/{key_path}", "--file", fpath, "--remote"],
                     cwd=os.path.join(ROOT, "mcp"), capture_output=True, text=True,
-                    shell=True)
+                    encoding="utf-8", errors="replace", shell=True)
                 if r.returncode != 0:
                     print(f"UPLOAD FAIL {key_path}: {(r.stderr or '')[-200:]}")
                     sys.exit(1)

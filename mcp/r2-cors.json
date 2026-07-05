@@ -1,0 +1,12 @@
+{
+  "rules": [
+    {
+      "allowed": {
+        "origins": ["https://partreel.com", "http://localhost:8931"],
+        "methods": ["GET", "HEAD"],
+        "headers": ["*"]
+      },
+      "maxAgeSeconds": 86400
+    }
+  ]
+}
