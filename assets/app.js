@@ -24,23 +24,37 @@ async function init() {
     return;
   }
   parts = data.parts || [];
+  // 검색 문자열 사전 계산 (키입력마다 13k번 join/toLowerCase 방지)
+  for (const p of parts) p._s = (p.name + ' ' + p.family + ' ' + (p.keywords || []).join(' ')).toLowerCase();
   renderList(parts);
   setupViewer();
   setupTabs();
   if (parts.length) selectPart(parts[0]);
 
+  let debounce = null;
   document.getElementById('q').addEventListener('input', (e) => {
-    const q = e.target.value.toLowerCase().trim();
-    const filtered = !q ? parts : parts.filter((p) =>
-      (p.name + ' ' + p.family + ' ' + (p.keywords || []).join(' ')).toLowerCase().includes(q));
-    renderList(filtered);
+    clearTimeout(debounce);
+    debounce = setTimeout(() => {
+      const q = e.target.value.toLowerCase().trim();
+      renderList(!q ? parts : parts.filter((p) => p._s.includes(q)));
+    }, 120);
   });
 }
+
+const PAGE = 200;  // 13k 전체 DOM 생성 방지 — 200개씩 증분 렌더
 
 function renderList(list) {
   const grid = document.getElementById('list');
   grid.innerHTML = '';
-  list.forEach((p) => {
+  appendChunk(grid, list, 0);
+  document.getElementById('count').textContent = list.length;
+}
+
+function appendChunk(grid, list, from) {
+  const more = grid.querySelector('.more-btn');
+  if (more) more.remove();
+  const frag = document.createDocumentFragment();
+  list.slice(from, from + PAGE).forEach((p) => {
     const card = document.createElement('button');
     card.className = 'card';
     card.innerHTML =
@@ -48,9 +62,16 @@ function renderList(list) {
       `<div class="card-sub">${p.family} · ${p.pins}-pin</div>` +
       `<div class="badges">${(p.formats || []).map((f) => `<span class="badge">${f}</span>`).join('')}</div>`;
     card.addEventListener('click', () => { setActive(card); selectPart(p); });
-    grid.appendChild(card);
+    frag.appendChild(card);
   });
-  document.getElementById('count').textContent = list.length;
+  grid.appendChild(frag);
+  if (list.length > from + PAGE) {
+    const btn = document.createElement('button');
+    btn.className = 'card more-btn';
+    btn.textContent = `Show ${Math.min(PAGE, list.length - from - PAGE)} more (${list.length - from - PAGE} left)`;
+    btn.addEventListener('click', () => appendChunk(grid, list, from + PAGE));
+    grid.appendChild(btn);
+  }
 }
 
 function setActive(card) {
