@@ -63,7 +63,9 @@ def main():
             if svg_copper != kmod_copper:
                 errs.append(f"동판 패드 SVG={svg_copper} != kicad_mod={kmod_copper}")
             # D. 외곽선 수
-            kmod_lines = len(re.findall(r'\(fp_line\b[^\n]*\(layer "F\.(?:SilkS|Fab|CrtYd)"\)', kmod))
+            from render_svg import iter_fp_lines, FP_LAYER_STYLE
+            kmod_lines = sum(1 for ln in iter_fp_lines(kmod)
+                             if ln[5] in FP_LAYER_STYLE)
             svg_lines = fsvg.count('<line')
             if svg_lines != kmod_lines:
                 errs.append(f"외곽선 SVG={svg_lines} != kicad_mod={kmod_lines}")

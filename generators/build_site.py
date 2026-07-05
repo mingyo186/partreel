@@ -122,6 +122,18 @@ def part_page(meta, path):
                    f'<span class="ext">{esc(fmt)}</span> {esc(FMT_LABEL.get(fmt, fmt))}</a>')
     downloads = "".join(dls)
 
+    # 데이터시트 링크 정직성: 수입품의 ds가 소스 레포(=데이터시트 아님)를 가리키면
+    # "검색" 링크를 주 버튼으로, 레포 링크는 provenance로 표기 (라벨 거짓말 금지)
+    if meta.get("origin") == "imported" and ("gitlab.com" in ds or "github.com" in ds):
+        q = esc(mpn).replace(" ", "+")
+        ds_links = (f'<a class="dl" href="https://www.google.com/search?q=%22{q}%22+datasheet" '
+                    f'target="_blank" rel="noopener">Find datasheet ({esc(manu)} {esc(mpn)}) →</a>\n'
+                    f'  <a class="dl" href="{esc(ds)}" target="_blank" rel="noopener">'
+                    f'Source library file (provenance)</a>')
+    else:
+        ds_links = (f'<a class="dl" href="{esc(ds)}" target="_blank" rel="noopener">'
+                    f'Manufacturer datasheet</a>')
+
     jsonld = json.dumps({
         "@context": "https://schema.org", "@type": "Product", "name": name,
         "description": desc, "category": "Electronic Component",
@@ -153,7 +165,7 @@ def part_page(meta, path):
   <h2>Downloads <span class="nologin">· no sign-up</span></h2>
   <div class="downloads">{downloads}</div>
   <h2>Datasheet</h2>
-  <a class="dl" href="{esc(ds)}" target="_blank" rel="noopener">Manufacturer datasheet</a>
+  {ds_links}
   <h2>Buy</h2>
   <a class="buy" href="https://www.lcsc.com/search?q={esc(mpn)}" target="_blank" rel="noopener">Find this part at distributors →</a>
   <p class="affiliate-note">Affiliate link · Part license: {esc(lic)}</p>

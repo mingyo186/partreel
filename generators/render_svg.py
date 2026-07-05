@@ -21,13 +21,35 @@ COL = dict(courtyard="#d24d4d", fab="#6b7280", silk="#e6e9ef",
 PAD_RE = re.compile(
     r'\(pad\s+(?:"([^"]*)"|(\S+))\s+(\w+)\s+(\w+)\s+\(at\s+([-\d.]+)\s+([-\d.]+)[^)]*?\)\s*'
     r'\(size\s+([-\d.]+)\s+([-\d.]+)\)(?:\s*\(drill\s+([^)]+)\))?')
-LINE_RE = re.compile(
-    r'\(fp_line\s+\(start\s+([-\d.]+)\s+([-\d.]+)\)\s+\(end\s+([-\d.]+)\s+([-\d.]+)\)'
-    r'.*?\(width\s+([-\d.]+)\).*?\(layer\s+"([^"]+)"\)')
+# fp_line은 구/신/멀티라인 포맷이 혼재 → 균형블록 추출 후 블록 내부 파싱 (§14-H)
+_FPL_START = re.compile(r"\(fp_line[\s(]")
+
+
+def iter_fp_lines(text):
+    """(x1,y1,x2,y2,width,layer) — 포맷 무관. check_render와 공유(단일 진실원)."""
+    for m in _FPL_START.finditer(text):
+        blk = _balanced(text, m.start())
+        if not blk:
+            continue
+        st = re.search(r'\(start\s+([-\d.]+)\s+([-\d.]+)\)', blk)
+        en = re.search(r'\(end\s+([-\d.]+)\s+([-\d.]+)\)', blk)
+        la = re.search(r'\(layer\s+"([^"]+)"', blk)
+        wi = re.search(r'\(width\s+([-\d.]+)\)', blk)
+        if st and en and la:
+            yield (float(st.group(1)), float(st.group(2)),
+                   float(en.group(1)), float(en.group(2)),
+                   float(wi.group(1)) if wi else 0.12, la.group(1))
+
+
+# 벤더 문서 레이어(Cmts/Dwgs)도 흐리게 표시 — 3M MDR류는 셸 외곽선이 Cmts에 있음
+FP_LAYER_STYLE = {"F.CrtYd": ("#d24d4d", "0.7"), "F.Fab": ("#6b7280", "0.8"),
+                  "F.SilkS": ("#e6e9ef", "1"), "Cmts.User": ("#4a5160", "0.7"),
+                  "Dwgs.User": ("#4a5160", "0.7")}
 RECT_RE = re.compile(
     r'\(rectangle\s+\(start\s+([-\d.]+)\s+([-\d.]+)\)\s+\(end\s+([-\d.]+)\s+([-\d.]+)\)')
 POLY_RE = re.compile(r'\(polyline\s+\(pts((?:\s*\(xy\s+[-\d.]+\s+[-\d.]+\))+)', re.S)
 XY_RE = re.compile(r'\(xy\s+([-\d.]+)\s+([-\d.]+)\)')
+BEZ_RE = re.compile(r'\(bezier\s+\(pts((?:\s*\(xy\s+[-\d.]+\s+[-\d.]+\))+)', re.S)
 CIRC_RE = re.compile(r'\(circle\s+\(center\s+([-\d.]+)\s+([-\d.]+)\)\s+'
                      r'\(radius\s+([-\d.]+)\)', re.S)
 ARC_RE = re.compile(r'\(arc\s+\(start\s+([-\d.]+)\s+([-\d.]+)\)\s+'
@@ -92,9 +114,7 @@ def render_footprint(text):
         pw, ph = float(m.group(7)), float(m.group(8))
         drill = m.group(9)  # None | "0.75" | "oval 0.6 1.2"
         pads.append((name, ptype, shape, x, y, pw, ph, drill))
-    for m in LINE_RE.finditer(text):
-        x1, y1, x2, y2, w, layer = m.groups()
-        lines.append((float(x1), float(y1), float(x2), float(y2), float(w), layer))
+    lines = list(iter_fp_lines(text))
     if not pads:
         return None
 
@@ -113,9 +133,7 @@ def render_footprint(text):
     minx, maxx, miny, maxy = min(xs), max(xs), min(ys), max(ys)
 
     out = [svg_header(minx, miny, maxx - minx, maxy - miny, 1.0)]
-    layer_style = {"F.CrtYd": (COL["courtyard"], "0.7", None),  # KiCad 코트야드는 실선
-                   "F.Fab": (COL["fab"], "0.8", None),
-                   "F.SilkS": (COL["silk"], "1", None)}
+    layer_style = {k: (c, o, None) for k, (c, o) in FP_LAYER_STYLE.items()}
     for x1, y1, x2, y2, w, layer in lines:
         st = layer_style.get(layer)
         if not st:
@@ -282,8 +300,11 @@ def _symbol_elements(text, hide_nums, hide_names, synth_body):
              for m in POLY_RE.finditer(text)]
     circs = [tuple(map(float, m.groups())) for m in CIRC_RE.finditer(text)]
     arcs = [tuple(map(float, m.groups())) for m in ARC_RE.finditer(text)]
+    bezs = [[(float(a), float(b)) for a, b in XY_RE.findall(m.group(1))]
+            for m in BEZ_RE.finditer(text)]
+    bezs = [b for b in bezs if len(b) == 4]
     pins = list(PIN_RE.finditer(text))
-    if not pins and not (rects or polys or circs or arcs):
+    if not pins and not (rects or polys or circs or arcs or bezs):
         return None
     if not pins and not synth_body:
         return None
@@ -310,6 +331,8 @@ def _symbol_elements(text, hide_nums, hide_names, synth_body):
         xs += [cx - r, cx + r]; ys += [ty(cy) - r, ty(cy) + r]
     for sx, sy, mx, my, ex, ey in arcs:
         xs += [sx, mx, ex]; ys += [ty(sy), ty(my), ty(ey)]
+    for pts in bezs:
+        xs += [p[0] for p in pts]; ys += [ty(p[1]) for p in pts]
     pin_data = []
     for m in pins:
         px, py, ang, length, flags, name, num = m.groups()
@@ -361,6 +384,11 @@ def _symbol_elements(text, hide_nums, hide_names, synth_body):
         if path:
             out.append(f'<path d="{path}" fill="none" stroke="{COL["bodyline"]}" '
                        f'stroke-width="0.25"/>')
+    for pts in bezs:
+        (x0, y0), (x1, y1), (x2, y2), (x3, y3) = pts
+        out.append(f'<path d="M {x0:.3f} {ty(y0):.3f} C {x1:.3f} {ty(y1):.3f} '
+                   f'{x2:.3f} {ty(y2):.3f} {x3:.3f} {ty(y3):.3f}" fill="none" '
+                   f'stroke="{COL["bodyline"]}" stroke-width="0.25"/>')
     for px, py, ex, ey, num, name in pin_data:
         out.append(f'<line x1="{px:.3f}" y1="{py:.3f}" x2="{ex:.3f}" y2="{ey:.3f}" '
                    f'stroke="{COL["pin"]}" stroke-width="0.2"/>')
