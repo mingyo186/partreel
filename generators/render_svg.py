@@ -68,8 +68,23 @@ def svg_header(minx, miny, w, h, m):
             f'height="{h + 2 * m:.2f}" fill="{BG}"/>')
 
 
+FP_ARC_RE = re.compile(r'\(fp_arc\s+\(start\s+([-\d.]+)\s+([-\d.]+)\)\s+'
+                       r'\(mid\s+([-\d.]+)\s+([-\d.]+)\)\s+'
+                       r'\(end\s+([-\d.]+)\s+([-\d.]+)\).*?\(layer\s+"([^"]+)"\)', re.S)
+FP_CIRC_RE = re.compile(r'\(fp_circle\s+\(center\s+([-\d.]+)\s+([-\d.]+)\)\s+'
+                        r'\(end\s+([-\d.]+)\s+([-\d.]+)\).*?\(layer\s+"([^"]+)"\)', re.S)
+FP_POLY_RE = re.compile(r'\(fp_poly\s+\(pts((?:\s*\(xy\s+[-\d.]+\s+[-\d.]+\))+)'
+                        r'.*?\(layer\s+"([^"]+)"\)', re.S)
+
+
 def render_footprint(text):
     pads, lines = [], []
+    arcs = [tuple(map(float, m.groups()[:6])) + (m.group(7),)
+            for m in FP_ARC_RE.finditer(text)]
+    fcircs = [tuple(map(float, m.groups()[:4])) + (m.group(5),)
+              for m in FP_CIRC_RE.finditer(text)]
+    fpolys = [([(float(a), float(b)) for a, b in XY_RE.findall(m.group(1))],
+               m.group(2)) for m in FP_POLY_RE.finditer(text)]
     for m in PAD_RE.finditer(text):
         name = m.group(1) if m.group(1) is not None else m.group(2)
         ptype, shape = m.group(3), m.group(4)
@@ -88,6 +103,13 @@ def render_footprint(text):
         xs += [x - pw / 2, x + pw / 2]; ys += [y - ph / 2, y + ph / 2]
     for x1, y1, x2, y2, _, _ in lines:
         xs += [x1, x2]; ys += [y1, y2]
+    for sx, sy, mx, my, ex, ey, _ in arcs:
+        xs += [sx, mx, ex]; ys += [sy, my, ey]
+    for cx, cy, ex, ey, _ in fcircs:
+        r = ((ex - cx) ** 2 + (ey - cy) ** 2) ** 0.5
+        xs += [cx - r, cx + r]; ys += [cy - r, cy + r]
+    for pts, _ in fpolys:
+        xs += [p[0] for p in pts]; ys += [p[1] for p in pts]
     minx, maxx, miny, maxy = min(xs), max(xs), min(ys), max(ys)
 
     out = [svg_header(minx, miny, maxx - minx, maxy - miny, 1.0)]
@@ -103,6 +125,28 @@ def render_footprint(text):
         out.append(f'<line x1="{x1:.3f}" y1="{y1:.3f}" x2="{x2:.3f}" y2="{y2:.3f}" '
                    f'stroke="{col}" stroke-width="{max(w,0.08):.3f}" stroke-linecap="round" '
                    f'opacity="{op}"{dash_attr}/>')
+    for sx, sy, mx, my, ex, ey, layer in arcs:
+        st = layer_style.get(layer)
+        if not st:
+            continue
+        path = arc_path(sx, sy, mx, my, ex, ey)
+        if path:
+            out.append(f'<path d="{path}" fill="none" stroke="{st[0]}" '
+                       f'stroke-width="0.12" opacity="{st[1]}"/>')
+    for cx, cy, ex, ey, layer in fcircs:
+        st = layer_style.get(layer)
+        if not st:
+            continue
+        r = ((ex - cx) ** 2 + (ey - cy) ** 2) ** 0.5
+        out.append(f'<circle cx="{cx:.3f}" cy="{cy:.3f}" r="{r:.3f}" fill="none" '
+                   f'stroke="{st[0]}" stroke-width="0.12" opacity="{st[1]}"/>')
+    for pts, layer in fpolys:
+        st = layer_style.get(layer)
+        if not st or len(pts) < 2:
+            continue
+        pstr = " ".join(f"{x:.3f},{y:.3f}" for x, y in pts)
+        out.append(f'<polygon points="{pstr}" fill="{st[0]}" opacity="{st[1]}" '
+                   f'fill-opacity="0.35" stroke="{st[0]}" stroke-width="0.08"/>')
     for name, ptype, shape, x, y, pw, ph, drill in pads:
         if ptype == "np_thru_hole":  # 마운팅 홀: 링만
             out.append(f'<circle cx="{x:.3f}" cy="{y:.3f}" r="{min(pw,ph)/2:.3f}" '
