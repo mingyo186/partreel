@@ -57,6 +57,9 @@ jobs:
           cp index.json _site/
           cp -r assets _site/
           cp -r library _site/
+          # 대용량 3D(step/glb)는 R2(assets.partreel.com)가 서빙 (§22) — Pages 예산 절약
+          find _site/library -name "*.step" -delete
+          find _site/library -name "*.glb" -delete
           cp -r p _site/
           cp -r about guide agents api _site/
           cp sitemap.xml robots.txt favicon.svg llms.txt _site/
