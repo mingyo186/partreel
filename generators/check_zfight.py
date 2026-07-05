@@ -90,7 +90,12 @@ def main():
     for p in index["parts"]:
         m = json.load(open(os.path.join(ROOT, p["path"], "meta.json"), encoding="utf-8"))
         prm = m.get("parameters", {})
-        meta_pins[p["id"]] = prm.get("pins") or prm.get("contacts")
+        v = prm.get("pins") or prm.get("contacts")
+        try:
+            v = int(v)
+        except (TypeError, ValueError):
+            v = None  # 문자열/결측(수입 메타) — 핀수 검사 스킵
+        meta_pins[p["id"]] = v
     total = 0
     for p in index["parts"]:
         glb = os.path.join(ROOT, p["path"], f"{p['id']}.glb")

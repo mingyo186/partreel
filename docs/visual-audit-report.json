@@ -1,249 +1,239 @@
 {
- "triage_date": "2026-07-05",
- "verdict": "상위 의심 육안 판정 결과 전부 정상 — 휴리스틱 특성상 남는 노이즈",
- "samples_reviewed": {
-  "cern_ironwood_c23013 (미아 149)": "정상 — 칩 테스트 소켓: 중앙 소형 패드 대비 거대한 기구 몸체가 실물",
-  "cern_harwin_d3089_98 (미아 25)": "정상 — 배터리 클립: 단일 접점 패드 + 대형 금속 클립 외곽이 실물",
-  "sparkfun_conn_01x05 (외곽 없음)": "정상 — 업스트림이 몸체 윤곽 없이 배포(스파르탄 스타일), 데이터 충실 원칙상 유지"
- },
- "policy": "WARN은 비차단 리포트 유지. 새 수입 웨이브마다 상위 N개만 육안 확인.",
- "warns": {
-  "cern_harwin_d3089_98": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 25개 (미아 좌표 의심)"
-  ],
-  "cern_harwin_d3089_98_alt": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 25개 (미아 좌표 의심)"
-  ],
-  "cern_harwin_m50_1900005": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 7개 (미아 좌표 의심)"
-  ],
-  "cern_harwin_m50_1900005_alt": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 7개 (미아 좌표 의심)"
-  ],
-  "cern_harwin_m50_2000005": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 5개 (미아 좌표 의심)"
-  ],
-  "cern_harwin_m50_2000005_alt": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 5개 (미아 좌표 의심)"
-  ],
-  "cern_lemo_ecg_0b_302_clv": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 21개 (미아 좌표 의심)"
-  ],
-  "cern_lemo_eda_02782_v1_0_misc1": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
-  ],
-  "cern_lemo_eda_02782_v1_0_misc7": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 9개 (미아 좌표 의심)"
-  ],
-  "cern_lemo_eda_02782_v2_0_misc1": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 9개 (미아 좌표 의심)"
-  ],
-  "cern_stelvio_kontek_3130828000500_a": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 5개 (미아 좌표 의심)"
-  ],
-  "cern_stelvio_kontek_3130828000500_a_alt": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 5개 (미아 좌표 의심)"
-  ],
-  "cern_stelvio_kontek_3131730000400_ah": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 6개 (미아 좌표 의심)"
-  ],
-  "cern_stelvio_kontek_3131730000400_ah_alt": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 6개 (미아 좌표 의심)"
-  ],
-  "cern_stelvio_kontek_3131730000400_av": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 6개 (미아 좌표 의심)"
-  ],
-  "cern_stelvio_kontek_3131730000400_av_alt": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 6개 (미아 좌표 의심)"
-  ],
-  "sparkfun_conn_01x05_p2_0mm_socket_vertical_pth": [
-   "[fp] 외곽 요소가 코트야드뿐 (몸체 윤곽 없음)"
-  ],
-  "cern_lp1a4_snc1": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 9개 (미아 좌표 의심)"
-  ],
-  "cern_mems_voa_5_5_h": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 13개 (미아 좌표 의심)"
-  ],
-  "cern_mun_pd_pin_5g_nf_fc_apc_h": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 13개 (미아 좌표 의심)"
-  ],
-  "cern_mun_pd_pin_5g_nf_fc_apc_hflip": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 13개 (미아 좌표 의심)"
-  ],
-  "sparkfun_lg290p": [
-   "[fp] 외곽 요소가 코트야드뿐 (몸체 윤곽 없음)"
-  ],
-  "sparkfun_lg580p": [
-   "[fp] 외곽 요소가 코트야드뿐 (몸체 윤곽 없음)"
-  ],
-  "sparkfun_power_splitter_jps_3_1": [
-   "[fp] 외곽 요소가 코트야드뿐 (몸체 윤곽 없음)"
-  ],
-  "mc01506": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 3개 (미아 좌표 의심)"
-  ],
-  "weact_epaper_213": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
-  ],
-  "cern_ant_bead_86890": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 7개 (미아 좌표 의심)"
-  ],
-  "sparkfun_fpc235x": [
-   "[fp] 외곽 요소가 코트야드뿐 (몸체 윤곽 없음)"
-  ],
-  "cern_ironwood_c23013": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 149개 (미아 좌표 의심)"
-  ],
-  "cern_ironwood_c23013_alt": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 149개 (미아 좌표 의심)"
-  ],
-  "ai03_alps_solderable_6_25u": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
-  ],
-  "ai03_alps_solderable_6_5u": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
-  ],
-  "ai03_alps_solderable_7u": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
-  ],
-  "ai03_gateron_ks33_hotswap_7u": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 2개 (미아 좌표 의심)"
-  ],
-  "ai03_gateron_ks33_solderable_6_25u": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
-  ],
-  "ai03_gateron_ks33_solderable_7u": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
-  ],
-  "ai03_kailh_pg1353_hotswap_6_25u": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 1개 (미아 좌표 의심)"
-  ],
-  "ai03_kailh_pg1353_hotswap_7u": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 2개 (미아 좌표 의심)"
-  ],
-  "ai03_kailh_pg1353_solderable_6_25u": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
-  ],
-  "ai03_kailh_pg1353_solderable_7u": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
-  ],
-  "ai03_mx_hotswap_10u": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 2개 (미아 좌표 의심)"
-  ],
-  "ai03_mx_hotswap_10u_reversedstabilizers": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 2개 (미아 좌표 의심)"
-  ],
-  "ai03_mx_hotswap_6u_offcenter": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 1개 (미아 좌표 의심)"
-  ],
-  "ai03_mx_hotswap_6u_offcenter_reversedstabilizers": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 1개 (미아 좌표 의심)"
-  ],
-  "ai03_mx_hotswap_7u": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 2개 (미아 좌표 의심)"
-  ],
-  "ai03_mx_hotswap_7u_reversedstabilizers": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 2개 (미아 좌표 의심)"
-  ],
-  "ai03_mx_hotswap_8u": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 2개 (미아 좌표 의심)"
-  ],
-  "ai03_mx_hotswap_8u_reversedstabilizers": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 2개 (미아 좌표 의심)"
-  ],
-  "ai03_mx_hotswap_9u": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 2개 (미아 좌표 의심)"
-  ],
-  "ai03_mx_hotswap_9u_reversedstabilizers": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 2개 (미아 좌표 의심)"
-  ],
-  "ai03_mx_solderable_10u": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
-  ],
-  "ai03_mx_solderable_10u_reversedstabilizers": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
-  ],
-  "ai03_mx_solderable_6_25u": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
-  ],
-  "ai03_mx_solderable_6_25u_reversedstabilizers": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
-  ],
-  "ai03_mx_solderable_6u": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
-  ],
-  "ai03_mx_solderable_6u_offcenter": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
-  ],
-  "ai03_mx_solderable_6u_offcenter_reversedstabilizers": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
-  ],
-  "ai03_mx_solderable_6u_reversedstabilizers": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
-  ],
-  "ai03_mx_solderable_7u": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
-  ],
-  "ai03_mx_solderable_7u_reversedstabilizers": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
-  ],
-  "ai03_mx_solderable_8u": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
-  ],
-  "ai03_mx_solderable_8u_reversedstabilizers": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
-  ],
-  "ai03_mx_solderable_9u": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
-  ],
-  "ai03_mx_solderable_9u_reversedstabilizers": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
-  ],
-  "ai03_mx_alps_hybrid_10u": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
-  ],
-  "ai03_mx_alps_hybrid_10u_reversedstabilizers": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
-  ],
-  "ai03_mx_alps_hybrid_6_25u": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
-  ],
-  "ai03_mx_alps_hybrid_6_25u_reversedstabilizers": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
-  ],
-  "ai03_mx_alps_hybrid_6_5u": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
-  ],
-  "ai03_mx_alps_hybrid_6u": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
-  ],
-  "ai03_mx_alps_hybrid_6u_offcenter": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
-  ],
-  "ai03_mx_alps_hybrid_6u_offcenter_reversedstabilizers": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
-  ],
-  "ai03_mx_alps_hybrid_6u_reversedstabilizers": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
-  ],
-  "ai03_mx_alps_hybrid_7u": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
-  ],
-  "ai03_mx_alps_hybrid_7u_reversedstabilizers": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
-  ],
-  "ai03_mx_alps_hybrid_8u": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
-  ],
-  "ai03_mx_alps_hybrid_8u_reversedstabilizers": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
-  ],
-  "ai03_mx_alps_hybrid_9u": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
-  ],
-  "ai03_mx_alps_hybrid_9u_reversedstabilizers": [
-   "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
-  ]
- }
+ "cern_harwin_d3089_98": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 25개 (미아 좌표 의심)"
+ ],
+ "cern_harwin_d3089_98_alt": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 25개 (미아 좌표 의심)"
+ ],
+ "cern_harwin_m50_1900005": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 7개 (미아 좌표 의심)"
+ ],
+ "cern_harwin_m50_1900005_alt": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 7개 (미아 좌표 의심)"
+ ],
+ "cern_harwin_m50_2000005": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 5개 (미아 좌표 의심)"
+ ],
+ "cern_harwin_m50_2000005_alt": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 5개 (미아 좌표 의심)"
+ ],
+ "cern_lemo_ecg_0b_302_clv": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 21개 (미아 좌표 의심)"
+ ],
+ "cern_lemo_eda_02782_v1_0_misc1": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
+ ],
+ "cern_lemo_eda_02782_v1_0_misc7": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 9개 (미아 좌표 의심)"
+ ],
+ "cern_lemo_eda_02782_v2_0_misc1": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 9개 (미아 좌표 의심)"
+ ],
+ "cern_stelvio_kontek_3130828000500_a": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 5개 (미아 좌표 의심)"
+ ],
+ "cern_stelvio_kontek_3130828000500_a_alt": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 5개 (미아 좌표 의심)"
+ ],
+ "cern_stelvio_kontek_3131730000400_ah": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 6개 (미아 좌표 의심)"
+ ],
+ "cern_stelvio_kontek_3131730000400_ah_alt": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 6개 (미아 좌표 의심)"
+ ],
+ "cern_stelvio_kontek_3131730000400_av": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 6개 (미아 좌표 의심)"
+ ],
+ "cern_stelvio_kontek_3131730000400_av_alt": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 6개 (미아 좌표 의심)"
+ ],
+ "sparkfun_conn_01x05_p2_0mm_socket_vertical_pth": [
+  "[fp] 외곽 요소가 코트야드뿐 (몸체 윤곽 없음)"
+ ],
+ "cern_lp1a4_snc1": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 9개 (미아 좌표 의심)"
+ ],
+ "cern_mems_voa_5_5_h": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 13개 (미아 좌표 의심)"
+ ],
+ "cern_mun_pd_pin_5g_nf_fc_apc_h": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 13개 (미아 좌표 의심)"
+ ],
+ "cern_mun_pd_pin_5g_nf_fc_apc_hflip": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 13개 (미아 좌표 의심)"
+ ],
+ "sparkfun_lg290p": [
+  "[fp] 외곽 요소가 코트야드뿐 (몸체 윤곽 없음)"
+ ],
+ "sparkfun_lg580p": [
+  "[fp] 외곽 요소가 코트야드뿐 (몸체 윤곽 없음)"
+ ],
+ "sparkfun_power_splitter_jps_3_1": [
+  "[fp] 외곽 요소가 코트야드뿐 (몸체 윤곽 없음)"
+ ],
+ "mc01506": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 3개 (미아 좌표 의심)"
+ ],
+ "weact_epaper_213": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
+ ],
+ "cern_ant_bead_86890": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 7개 (미아 좌표 의심)"
+ ],
+ "sparkfun_fpc235x": [
+  "[fp] 외곽 요소가 코트야드뿐 (몸체 윤곽 없음)"
+ ],
+ "cern_ironwood_c23013": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 149개 (미아 좌표 의심)"
+ ],
+ "cern_ironwood_c23013_alt": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 149개 (미아 좌표 의심)"
+ ],
+ "ai03_alps_solderable_6_25u": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
+ ],
+ "ai03_alps_solderable_6_5u": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
+ ],
+ "ai03_alps_solderable_7u": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
+ ],
+ "ai03_gateron_ks33_hotswap_7u": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 2개 (미아 좌표 의심)"
+ ],
+ "ai03_gateron_ks33_solderable_6_25u": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
+ ],
+ "ai03_gateron_ks33_solderable_7u": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
+ ],
+ "ai03_kailh_pg1353_hotswap_6_25u": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 1개 (미아 좌표 의심)"
+ ],
+ "ai03_kailh_pg1353_hotswap_7u": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 2개 (미아 좌표 의심)"
+ ],
+ "ai03_kailh_pg1353_solderable_6_25u": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
+ ],
+ "ai03_kailh_pg1353_solderable_7u": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
+ ],
+ "ai03_mx_hotswap_10u": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 2개 (미아 좌표 의심)"
+ ],
+ "ai03_mx_hotswap_10u_reversedstabilizers": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 2개 (미아 좌표 의심)"
+ ],
+ "ai03_mx_hotswap_6u_offcenter": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 1개 (미아 좌표 의심)"
+ ],
+ "ai03_mx_hotswap_6u_offcenter_reversedstabilizers": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 1개 (미아 좌표 의심)"
+ ],
+ "ai03_mx_hotswap_7u": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 2개 (미아 좌표 의심)"
+ ],
+ "ai03_mx_hotswap_7u_reversedstabilizers": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 2개 (미아 좌표 의심)"
+ ],
+ "ai03_mx_hotswap_8u": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 2개 (미아 좌표 의심)"
+ ],
+ "ai03_mx_hotswap_8u_reversedstabilizers": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 2개 (미아 좌표 의심)"
+ ],
+ "ai03_mx_hotswap_9u": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 2개 (미아 좌표 의심)"
+ ],
+ "ai03_mx_hotswap_9u_reversedstabilizers": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 2개 (미아 좌표 의심)"
+ ],
+ "ai03_mx_solderable_10u": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
+ ],
+ "ai03_mx_solderable_10u_reversedstabilizers": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
+ ],
+ "ai03_mx_solderable_6_25u": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
+ ],
+ "ai03_mx_solderable_6_25u_reversedstabilizers": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
+ ],
+ "ai03_mx_solderable_6u": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
+ ],
+ "ai03_mx_solderable_6u_offcenter": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
+ ],
+ "ai03_mx_solderable_6u_offcenter_reversedstabilizers": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
+ ],
+ "ai03_mx_solderable_6u_reversedstabilizers": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
+ ],
+ "ai03_mx_solderable_7u": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
+ ],
+ "ai03_mx_solderable_7u_reversedstabilizers": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
+ ],
+ "ai03_mx_solderable_8u": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
+ ],
+ "ai03_mx_solderable_8u_reversedstabilizers": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
+ ],
+ "ai03_mx_solderable_9u": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
+ ],
+ "ai03_mx_solderable_9u_reversedstabilizers": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
+ ],
+ "ai03_mx_alps_hybrid_10u": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
+ ],
+ "ai03_mx_alps_hybrid_10u_reversedstabilizers": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
+ ],
+ "ai03_mx_alps_hybrid_6_25u": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
+ ],
+ "ai03_mx_alps_hybrid_6_25u_reversedstabilizers": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
+ ],
+ "ai03_mx_alps_hybrid_6_5u": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
+ ],
+ "ai03_mx_alps_hybrid_6u": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
+ ],
+ "ai03_mx_alps_hybrid_6u_offcenter": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
+ ],
+ "ai03_mx_alps_hybrid_6u_offcenter_reversedstabilizers": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
+ ],
+ "ai03_mx_alps_hybrid_6u_reversedstabilizers": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
+ ],
+ "ai03_mx_alps_hybrid_7u": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
+ ],
+ "ai03_mx_alps_hybrid_7u_reversedstabilizers": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
+ ],
+ "ai03_mx_alps_hybrid_8u": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
+ ],
+ "ai03_mx_alps_hybrid_8u_reversedstabilizers": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
+ ],
+ "ai03_mx_alps_hybrid_9u": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
+ ],
+ "ai03_mx_alps_hybrid_9u_reversedstabilizers": [
+  "[fp] 패드 무리에서 4x 대각선 밖 선분 4개 (미아 좌표 의심)"
+ ]
 }
