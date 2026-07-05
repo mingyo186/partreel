@@ -1993,6 +1993,76 @@ def tcs34725():
     return fid, lib, fp, sym, meta
 
 
+# ---------- 배치 5차 모듈 (Waveshare 공식 도면/STEP + WeAct 공식 레포) ----------
+
+def ssd1331_module_095():
+    # 핀1=VCC 우측 (매뉴얼 넘버링), 행 y = 상단에서 ~2.4 (도면 픽셀실측 2.2-2.6)
+    names = ["VCC", "GND", "NC", "DIN", "CLK", "CS", "D/C", "RES"]
+    pins = [(names[i], 8.89 - i * 2.54, -16.1) for i in range(8)]
+    return _disp_board(
+        "ssd1331_module_095", '0.95" SSD1331 RGB OLED Module (96x64, SPI, Waveshare)',
+        "Waveshare 0.95inch RGB OLED", "SPI",
+        "SSD1331 RGB OLED 0.95 96x64 SPI module", 31.7, 37.0,
+        [(-13.35, -16.0), (13.35, -16.0), (-13.35, 16.0), (13.35, 16.0)], 3.0,
+        (1, pins), [(-10.07, -7.0, 10.07, 6.4)],
+        "Waveshare 0.95 inch 96x64 RGB OLED module (SSD1331), SPI 8-pin header (pin 1 "
+        "= VCC at the right per vendor numbering: VCC GND NC DIN CLK CS D/C RES), "
+        "31.7x37mm board, four 3.0mm holes. (A)=bent pins, (B)=straight - same PCB.",
+        "https://www.waveshare.com/wiki/0.95inch_RGB_OLED_(A)",
+        "Waveshare official size drawing + user manual: board 31.7x37, holes D3.0 at "
+        "2.5 insets (26.7x32.0 spans, arithmetic-verified), 1x8 2.54 header centered "
+        "(span 17.78, row ~2.4 from top - pixel-measured), glass 25.7x22.2 (top 7.1), "
+        "AA 20.14x13.42.",
+        ["ssd1331", "rgb", "oled", "0.95", "96x64", "spi", "module", "waveshare"])
+
+
+def ssd1351_module_15():
+    # 좌측 에지 세로 컬럼 헤더 (STEP 좌표 검증), 핀1=VCC 상단
+    names = ["VCC", "GND", "DIN", "CLK", "CS", "DC", "RST"]
+    pins = [(names[i], -20.0, -7.62 + i * 2.54) for i in range(7)]
+    return _disp_board(
+        "ssd1351_module_15", '1.5" SSD1351 RGB OLED Module (128x128, SPI, Waveshare)',
+        "Waveshare 1.5inch RGB OLED Module", "SPI",
+        "SSD1351 RGB OLED 1.5 128x128 SPI module", 44.5, 37.0,
+        [(-19.75, -16.0), (19.75, -16.0), (-19.75, 16.0), (19.75, 16.0)], 2.0,
+        (1, pins), [(-14.05, -14.6, 12.75, 12.2)],
+        "Waveshare 1.5 inch 128x128 RGB OLED module (SSD1351), SPI 7-pin vertical "
+        "header on the left edge (VCC GND DIN CLK CS DC RST top to bottom), 44.5x37mm "
+        "board, four 2.0mm holes. Second 1.25mm SMD wafer on back carries the same "
+        "signals.",
+        "https://www.waveshare.com/wiki/1.5inch_RGB_OLED_Module",
+        "Waveshare official size drawing + 3D STEP (parsed): board 44.5x37 R1.5, holes "
+        "D2.0 at 2.5 insets (39.5x32.0 STEP-exact), 1x7 2.54 header column 2.25 from "
+        "left edge (pins y-centered, STEP-exact), glass 33.8x34.0, AA 26.855 sq.",
+        ["ssd1351", "rgb", "oled", "1.5", "128x128", "spi", "module", "waveshare"])
+
+
+def weact_epaper_213():
+    # 2x4 듀얼로우 (1x8 아님!) — 홀수열이 에지쪽 (x -34.07), 행 위→아래 (1,2)(3,4)(5,6)(7,8)
+    nm = ["BUSY", "RES", "D/C", "CS", "SCL", "SDA", "GND", "VCC"]
+    pins = []
+    for r in range(4):
+        pins.append((nm[2 * r], -34.07, -3.81 + r * 2.54))
+        pins.append((nm[2 * r + 1], -31.53, -3.81 + r * 2.54))
+    return _disp_board(
+        "weact_epaper_213", '2.13" WeAct E-Paper Module (SSD1680, 122x250, SPI)',
+        "WeAct EpaperModule 2.13", "SPI",
+        "SSD1680 epaper eink 2.13 122x250 SPI module WeAct", 72.0, 30.0,
+        [(-33.2, -12.2), (33.2, -12.2), (-33.2, 12.2), (33.2, 12.2)], 3.2,
+        (1, pins), [(-27.1, -11.85, 21.45, 11.85)],
+        "WeAct Studio 2.13 inch black/white e-paper module (SSD1680 driver, 122x250, "
+        "YRD0213 panel), SPI via a 2x4 (dual-row!) 2.54 header near the left edge "
+        "(1 BUSY 2 RES 3 D/C 4 CS 5 SCL 6 SDA 7 GND 8 VCC, odd pins in the edge-side "
+        "column), 72x30mm board, four 3.2mm holes. The official KiCad library has no "
+        "e-paper content at all.",
+        "https://github.com/WeActStudio/WeActStudio.EpaperModule",
+        "WeAct official Board Shape PDF + Board 3D STEP (both parsed): board 72x30 "
+        "R1.5, holes D3.2/pad5.6 at 2.8 insets (66.4x24.4 STEP-exact; PDF's 3.60 label "
+        "is not the hole offset), 2x4 2.54 header (odd column 1.93 from edge, rows "
+        "mid-height centered, drill 0.81), glass 59.2x29.2, AA 48.55x23.7.",
+        ["ssd1680", "epaper", "e-ink", "eink", "2.13", "weact", "spi", "module"])
+
+
 # ---------- 온디맨드 변형 패밀리 (§21-6ⓐ: 변형은 봇/요청이 만든다) ----------
 
 VARIANT_FAMILIES = {
@@ -2029,7 +2099,8 @@ PARTS = [qmc5883l, hmc5883l, adxl345, ip5306, tp5100, cn3791, mp1584, sy8008, sy
          gc9a01_module_128, ld2410c, esp32_devkitc_v4,
          qmc5883p, dht20, aht25, tp4054, tm1638, ttp224, ttp226,
          mc091gx, msp0961, msp1541, msp1803, msp2008, mc01506, msp2807,
-         wm8960, es8311, cst816s, vs1053b, icm42688, bno085, tcs34725]
+         wm8960, es8311, cst816s, vs1053b, icm42688, bno085, tcs34725,
+         ssd1331_module_095, ssd1351_module_15, weact_epaper_213]
 
 
 def main():

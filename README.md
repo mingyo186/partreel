@@ -65,7 +65,7 @@ before manufacturing.
 ## Parts index
 
 <!-- PARTS:BEGIN -->
-Currently **224 parts**, all machine-verified (structure, KLC drawing rules, render completeness, 3D coplanar/merged-pin checks, STEP kernel) with datasheet-cited dimensions.
+Currently **227 parts**, all machine-verified (structure, KLC drawing rules, render completeness, 3D coplanar/merged-pin checks, STEP kernel) with datasheet-cited dimensions.
 
 ### connector (110)
 
@@ -217,20 +217,23 @@ Currently **224 parts**, all machine-verified (structure, KLC drawing rules, ren
 | [WM8960 Stereo Audio Codec](https://partreel.com/p/wm8960/) | `WM8960CGEFL/RV` | Cirrus Logic (Wolfson) | [wm8960](library/ic/audio/wm8960/wm8960) |
 | [XL6009 4A Boost Converter](https://partreel.com/p/xl6009/) | `XL6009E1` | XLSEMI | [xl6009](library/ic/regulator/xl6009/xl6009) |
 
-### module (49)
+### module (52)
 
 | Part | MPN | Manufacturer | Files |
 |---|---|---|---|
 | [0.91" SSD1306 I2C OLED Module (128x32, MC091GX)](https://partreel.com/p/mc091gx/) | `MC091GX` | Generic (lcdwiki) | [mc091gx](library/module/display/mc091gx/mc091gx) |
+| [0.95" SSD1331 RGB OLED Module (96x64, SPI, Waveshare)](https://partreel.com/p/ssd1331_module_095/) | `Waveshare 0.95inch RGB OLED` | Generic (lcdwiki) | [ssd1331_module_095](library/module/display/ssd1331_module_095/ssd1331_module_095) |
 | [0.96" SSD1306 I2C OLED Module (128x64)](https://partreel.com/p/ssd1306_module_096/) | `MC096VX` | Generic (LCDwiki MC096VX) | [ssd1306_module_096](library/module/display/ssd1306_module_096/ssd1306_module_096) |
 | [0.96" ST7735S IPS Module (80x160, SPI, MSP0961)](https://partreel.com/p/msp0961/) | `MSP0961` | Generic (lcdwiki) | [msp0961](library/module/display/msp0961/msp0961) |
 | [1.28" GC9A01 Round LCD Module (240x240, SPI)](https://partreel.com/p/gc9a01_module_128/) | `MSP1281` | Generic (lcdwiki MSP1281) | [gc9a01_module_128](library/module/display/gc9a01_module_128/gc9a01_module_128) |
 | [1.3" SH1106 I2C OLED Module (128x64)](https://partreel.com/p/sh1106_module_13/) | `MC130VX` | Generic (LCDwiki MC130VX) | [sh1106_module_13](library/module/display/sh1106_module_13/sh1106_module_13) |
 | [1.3" ST7789 IPS TFT Module (240x240, SPI)](https://partreel.com/p/st7789_module_13/) | `MSP1308` | Generic (LCDwiki MSP1308) | [st7789_module_13](library/module/display/st7789_module_13/st7789_module_13) |
 | [1.5" OLED Module (128x128, I2C, MC01506)](https://partreel.com/p/mc01506/) | `MC01506` | Generic (lcdwiki) | [mc01506](library/module/display/mc01506/mc01506) |
+| [1.5" SSD1351 RGB OLED Module (128x128, SPI, Waveshare)](https://partreel.com/p/ssd1351_module_15/) | `Waveshare 1.5inch RGB OLED Module` | Generic (lcdwiki) | [ssd1351_module_15](library/module/display/ssd1351_module_15/ssd1351_module_15) |
 | [1.54" ST7789 IPS Module (240x240, SPI, MSP1541)](https://partreel.com/p/msp1541/) | `MSP1541` | Generic (lcdwiki) | [msp1541](library/module/display/msp1541/msp1541) |
 | [1.8" ST7735 TFT Module (128x160, SPI, MSP1803)](https://partreel.com/p/msp1803/) | `MSP1803` | Generic (lcdwiki) | [msp1803](library/module/display/msp1803/msp1803) |
 | [2.0" ST7789V IPS Module (240x320, SPI, MSP2008)](https://partreel.com/p/msp2008/) | `MSP2008` | Generic (lcdwiki) | [msp2008](library/module/display/msp2008/msp2008) |
+| [2.13" WeAct E-Paper Module (SSD1680, 122x250, SPI)](https://partreel.com/p/weact_epaper_213/) | `WeAct EpaperModule 2.13` | Generic (lcdwiki) | [weact_epaper_213](library/module/display/weact_epaper_213/weact_epaper_213) |
 | [2.8" ILI9341 TFT Module (240x320, SPI+Touch+SD, MSP2807)](https://partreel.com/p/msp2807/) | `MSP2807` | Generic (lcdwiki) | [msp2807](library/module/display/msp2807/msp2807) |
 | [DAN-F10N (SparkFun)](https://partreel.com/p/sparkfun_dan_f10n/) | `DAN-F10N` | SparkFun Electronics | [sparkfun_dan_f10n](library/module/sparkfun/sparkfun_dan_f10n) |
 | [DFPlayer Mini MP3 Player Module](https://partreel.com/p/dfplayer_mini/) | `DFR0299` | DFRobot | [dfplayer_mini](library/module/audio/dfplayer_mini/dfplayer_mini) |

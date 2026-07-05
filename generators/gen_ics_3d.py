@@ -530,6 +530,24 @@ flatpack("sensor/ceva/bno085/bno085", "bno085", 2.6, 1.9, 1.18, bno_pads)
 flatpack("sensor/ams/tcs34725/tcs34725", "tcs34725", 1.0, 1.2, 0.65,
          [(x, -0.65 + i * 0.65, 0.75, 0.3) for x in (-0.75, 0.75) for i in range(3)])
 
+
+# 배치 5차 모듈 3D
+flat_disp_3d("module/display/ssd1331_module_095/ssd1331_module_095", "ssd1331_module_095",
+             31.7, 37.0, [(8.89 - i * 2.54, -16.1) for i in range(8)],
+             [(-13.35, -16.0), (13.35, -16.0), (-13.35, 16.0), (13.35, 16.0)], 3.0,
+             (-12.9, -11.4, 12.8, 10.8), (-10.07, -7.0, 10.07, 6.4))
+flat_disp_3d("module/display/ssd1351_module_15/ssd1351_module_15", "ssd1351_module_15",
+             44.5, 37.0, [(-20.0, -7.62 + i * 2.54) for i in range(7)],
+             [(-19.75, -16.0), (19.75, -16.0), (-19.75, 16.0), (19.75, 16.0)], 2.0,
+             (-17.55, -18.2, 16.25, 15.8), (-14.05, -14.6, 12.75, 12.2))
+_weact_pins = []
+for _r in range(4):
+    _weact_pins += [(-34.07, -3.81 + _r * 2.54), (-31.53, -3.81 + _r * 2.54)]
+flat_disp_3d("module/display/weact_epaper_213/weact_epaper_213", "weact_epaper_213",
+             72.0, 30.0, _weact_pins,
+             [(-33.2, -12.2), (33.2, -12.2), (-33.2, 12.2), (33.2, 12.2)], 3.2,
+             (-29.8, -14.6, 29.4, 14.6), (-27.1, -11.85, 21.45, 11.85))
+
 # ---------- 온디맨드 변형 3D (§21-6ⓐ): env IC_VARIANT="family:code" ----------
 _V = os.environ.get("IC_VARIANT", "").strip()
 if _V:

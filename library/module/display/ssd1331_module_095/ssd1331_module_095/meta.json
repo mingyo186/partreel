@@ -1,0 +1,44 @@
+{
+  "id": "ssd1331_module_095",
+  "name": "0.95\" SSD1331 RGB OLED Module (96x64, SPI, Waveshare)",
+  "category": "module",
+  "family": "display",
+  "manufacturer": "Generic (lcdwiki)",
+  "mpn_pattern": "Waveshare 0.95inch RGB OLED",
+  "description": "Waveshare 0.95 inch 96x64 RGB OLED module (SSD1331), SPI 8-pin header (pin 1 = VCC at the right per vendor numbering: VCC GND NC DIN CLK CS D/C RES), 31.7x37mm board, four 3.0mm holes. (A)=bent pins, (B)=straight - same PCB.",
+  "parameters": {
+    "contacts": 8,
+    "mounting": "THT header",
+    "interface": "SPI",
+    "board_mm": "31.7x37.0"
+  },
+  "files": {
+    "footprint": "ssd1331_module_095.kicad_mod",
+    "symbol": "ssd1331_module_095.kicad_sym",
+    "model_3d": "ssd1331_module_095.step",
+    "preview": "ssd1331_module_095.glb",
+    "footprint_svg": "ssd1331_module_095.footprint.svg",
+    "symbol_svg": "ssd1331_module_095.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "https://www.waveshare.com/wiki/0.95inch_RGB_OLED_(A)",
+  "dimensions_source": "Waveshare official size drawing + user manual: board 31.7x37, holes D3.0 at 2.5 insets (26.7x32.0 spans, arithmetic-verified), 1x8 2.54 header centered (span 17.78, row ~2.4 from top - pixel-measured), glass 25.7x22.2 (top 7.1), AA 20.14x13.42.",
+  "verified": true,
+  "license": "CC-BY-4.0",
+  "generated_by": "generators/gen_ics.py",
+  "keywords": [
+    "ssd1331",
+    "rgb",
+    "oled",
+    "0.95",
+    "96x64",
+    "spi",
+    "module",
+    "waveshare"
+  ]
+}

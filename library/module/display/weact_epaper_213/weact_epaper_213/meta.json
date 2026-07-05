@@ -1,0 +1,44 @@
+{
+  "id": "weact_epaper_213",
+  "name": "2.13\" WeAct E-Paper Module (SSD1680, 122x250, SPI)",
+  "category": "module",
+  "family": "display",
+  "manufacturer": "Generic (lcdwiki)",
+  "mpn_pattern": "WeAct EpaperModule 2.13",
+  "description": "WeAct Studio 2.13 inch black/white e-paper module (SSD1680 driver, 122x250, YRD0213 panel), SPI via a 2x4 (dual-row!) 2.54 header near the left edge (1 BUSY 2 RES 3 D/C 4 CS 5 SCL 6 SDA 7 GND 8 VCC, odd pins in the edge-side column), 72x30mm board, four 3.2mm holes. The official KiCad library has no e-paper content at all.",
+  "parameters": {
+    "contacts": 8,
+    "mounting": "THT header",
+    "interface": "SPI",
+    "board_mm": "72.0x30.0"
+  },
+  "files": {
+    "footprint": "weact_epaper_213.kicad_mod",
+    "symbol": "weact_epaper_213.kicad_sym",
+    "model_3d": "weact_epaper_213.step",
+    "preview": "weact_epaper_213.glb",
+    "footprint_svg": "weact_epaper_213.footprint.svg",
+    "symbol_svg": "weact_epaper_213.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "https://github.com/WeActStudio/WeActStudio.EpaperModule",
+  "dimensions_source": "WeAct official Board Shape PDF + Board 3D STEP (both parsed): board 72x30 R1.5, holes D3.2/pad5.6 at 2.8 insets (66.4x24.4 STEP-exact; PDF's 3.60 label is not the hole offset), 2x4 2.54 header (odd column 1.93 from edge, rows mid-height centered, drill 0.81), glass 59.2x29.2, AA 48.55x23.7.",
+  "verified": true,
+  "license": "CC-BY-4.0",
+  "generated_by": "generators/gen_ics.py",
+  "keywords": [
+    "ssd1680",
+    "epaper",
+    "e-ink",
+    "eink",
+    "2.13",
+    "weact",
+    "spi",
+    "module"
+  ]
+}
