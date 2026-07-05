@@ -1,0 +1,55 @@
+{
+  "id": "cern_souriau_sms6p1_a",
+  "name": "EDA-02436-V1-1 (CERN library)",
+  "category": "connector",
+  "family": "CERN SOURIAU",
+  "manufacturer": "CERN",
+  "mpn_pattern": "EDA-02436-V1-1",
+  "description": "SOURIAU SMS6P1 Adapter Kit For PCB Mount, 6 Poles Qikmate Male Connector (Cable Plug Without Strain Relief Hood). Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "6",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_souriau_sms6p1_a.kicad_mod",
+    "symbol": "cern_souriau_sms6p1_a.kicad_sym",
+    "footprint_svg": "cern_souriau_sms6p1_a.footprint.svg",
+    "symbol_svg": "cern_souriau_sms6p1_a.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Connectors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (SOURIAU THD.pretty/SOURIAU_EDA-02436-V1-1.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "souriau",
+    "sms6p1",
+    "adapter",
+    "kit",
+    "for",
+    "pcb"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#SOURIAU#SOURIAU_SMS6P1_a",
+      "symbol": "SchLib/Connectors.kicad_sym#Connector 6 Male",
+      "footprint": "PcbLib/SOURIAU THD.pretty/SOURIAU_EDA-02436-V1-1.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

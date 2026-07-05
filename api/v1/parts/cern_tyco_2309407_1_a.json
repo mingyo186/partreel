@@ -1,0 +1,82 @@
+{
+  "id": "cern_tyco_2309407_1_a",
+  "name": "2309407-1 (CERN library)",
+  "category": "socket",
+  "family": "CERN Sockets",
+  "manufacturer": "TYCO ELECTRONICS",
+  "mpn_pattern": "2309407-1",
+  "description": "260 Positions, DDR4 Small Outline (SO) DIMM Socket, Right Angle Module Orientation, Stack Height 4mm, Surface Mount. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "260",
+    "mounting": "SMD",
+    "case": "SODIMM",
+    "lifecycle": "None"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/socket/cern/cern_tyco_2309407_1_a/cern_tyco_2309407_1_a.kicad_mod",
+    "symbol": "https://partreel.com/library/socket/cern/cern_tyco_2309407_1_a/cern_tyco_2309407_1_a.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/socket/cern/cern_tyco_2309407_1_a/cern_tyco_2309407_1_a.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/socket/cern/cern_tyco_2309407_1_a/cern_tyco_2309407_1_a.symbol.svg"
+  },
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Sockets.kicad_sym",
+  "license": "CERN-OHL-P-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Sockets.pretty/TYCO_2309407-1.kicad_mod)",
+  "keywords": [
+    "cern",
+    "260",
+    "positions",
+    "ddr4",
+    "small",
+    "outline",
+    "dimm"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "cern-kicad-libs@53054c17 (Sockets.pretty/TYCO_2309407-1.kicad_mod)",
+    "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Sockets.kicad_sym",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_cern.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+      "source_commit": "53054c17",
+      "source_files": {
+        "db": "CERN.sqlite#Sockets#TYCO_2309407-1_a",
+        "symbol": "SchLib/Sockets.kicad_sym#TYCO_2309407-1_a",
+        "footprint": "PcbLib/Sockets.pretty/TYCO_2309407-1.kicad_mod"
+      },
+      "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+      "import_date": "2026-07-05",
+      "modifications": [
+        "extracted single symbol from library",
+        "stripped dead 3D model reference (upstream ships no 3D)"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/cern_tyco_2309407_1_a/",
+  "api": "https://partreel.com/api/v1/parts/cern_tyco_2309407_1_a.json"
+}

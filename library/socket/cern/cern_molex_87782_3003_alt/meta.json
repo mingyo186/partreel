@@ -1,0 +1,55 @@
+{
+  "id": "cern_molex_87782_3003_alt",
+  "name": "87782-3003 (CERN library)",
+  "category": "socket",
+  "family": "CERN Sockets",
+  "manufacturer": "MOLEX",
+  "mpn_pattern": "87782-3003",
+  "description": "0.6mm Pitch miniDIMM DDR3 Socket, Surface Mount, Vertical, 1.5V Voltage Key, 244 Circuits. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "248",
+    "mounting": "SMD",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_molex_87782_3003_alt.kicad_mod",
+    "symbol": "cern_molex_87782_3003_alt.kicad_sym",
+    "footprint_svg": "cern_molex_87782_3003_alt.footprint.svg",
+    "symbol_svg": "cern_molex_87782_3003_alt.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Sockets.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Sockets.pretty/MOLEX_87782-3003.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "6mm",
+    "pitch",
+    "minidimm",
+    "ddr3",
+    "socket",
+    "surface"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Sockets#MOLEX_87782-3003 [alt]",
+      "symbol": "SchLib/Sockets.kicad_sym#MINI-DIMM_DDR3 [alt]",
+      "footprint": "PcbLib/Sockets.pretty/MOLEX_87782-3003.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "id": "cern_preci_dip_310_87_104_41_001101",
+  "name": "310-87-104-41-001101 (CERN library)",
+  "category": "socket",
+  "family": "CERN Sockets",
+  "manufacturer": "PRECI-DIP",
+  "mpn_pattern": "310-87-104-41-001101",
+  "description": "4 Contact 2.54mm Pitch Single Row Socket Connector - Mating Pin  Ø0.47mm. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "4",
+    "case": "SIP4",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_preci_dip_310_87_104_41_001101.kicad_mod",
+    "symbol": "cern_preci_dip_310_87_104_41_001101.kicad_sym",
+    "footprint_svg": "cern_preci_dip_310_87_104_41_001101.footprint.svg",
+    "symbol_svg": "cern_preci_dip_310_87_104_41_001101.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Sockets.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Sockets.pretty/PRECI-DIP_310-87-104-41-001101.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "contact",
+    "54mm",
+    "pitch",
+    "single",
+    "row",
+    "socket"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Sockets#PRECI-DIP_310-87-104-41-001101",
+      "symbol": "SchLib/Sockets.kicad_sym#SIPS4",
+      "footprint": "PcbLib/Sockets.pretty/PRECI-DIP_310-87-104-41-001101.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

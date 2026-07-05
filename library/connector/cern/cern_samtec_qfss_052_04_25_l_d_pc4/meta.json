@@ -1,0 +1,55 @@
+{
+  "id": "cern_samtec_qfss_052_04_25_l_d_pc4",
+  "name": "QFSS-052-04.25-L-D-PC4 (CERN library)",
+  "category": "connector",
+  "family": "CERN SAMTEC",
+  "manufacturer": "SAMTEC",
+  "mpn_pattern": "QFSS-052-04.25-L-D-PC4",
+  "description": "104 Pins 0.635mm Pitch (4x20 Signals + 4x6 Grounds to Shield) + 2x4 Power Pins, Single-Ended Signaling Shielded Ground Plane Socket. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "113",
+    "mounting": "SMD",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_samtec_qfss_052_04_25_l_d_pc4.kicad_mod",
+    "symbol": "cern_samtec_qfss_052_04_25_l_d_pc4.kicad_sym",
+    "footprint_svg": "cern_samtec_qfss_052_04_25_l_d_pc4.footprint.svg",
+    "symbol_svg": "cern_samtec_qfss_052_04_25_l_d_pc4.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Connectors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (SAMTEC SMD.pretty/SAMTEC_QFSS-052-04.25-L-D-PC4.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "104",
+    "pins",
+    "635mm",
+    "pitch",
+    "4x20",
+    "signals"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#SAMTEC#SAMTEC_QFSS-052-04.25-L-D-PC4",
+      "symbol": "SchLib/Connectors.kicad_sym#SAMTEC_QFSS-052-04.25-L-D-PC4",
+      "footprint": "PcbLib/SAMTEC SMD.pretty/SAMTEC_QFSS-052-04.25-L-D-PC4.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

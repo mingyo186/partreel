@@ -1,0 +1,55 @@
+{
+  "id": "cern_tyco_1_1734592_4_alt",
+  "name": "1-1734592-4 (CERN library)",
+  "category": "connector",
+  "family": "CERN TYCO",
+  "manufacturer": "TYCO ELECTRONICS",
+  "mpn_pattern": "1-1734592-4",
+  "description": "14 Contacts, 0.5mm Pitch, SMT Right Angle FPC/FCC Receptacle (Bottom Contact Style). Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "14",
+    "mounting": "SMD",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_tyco_1_1734592_4_alt.kicad_mod",
+    "symbol": "cern_tyco_1_1734592_4_alt.kicad_sym",
+    "footprint_svg": "cern_tyco_1_1734592_4_alt.footprint.svg",
+    "symbol_svg": "cern_tyco_1_1734592_4_alt.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Connectors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (TYCO SMD.pretty/TYCO_1-1734592-4.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "contacts",
+    "5mm",
+    "pitch",
+    "smt",
+    "right",
+    "angle"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#TYCO#TYCO_1-1734592-4 [alt]",
+      "symbol": "SchLib/Connectors.kicad_sym#Connector 14 Female [alt]",
+      "footprint": "PcbLib/TYCO SMD.pretty/TYCO_1-1734592-4.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

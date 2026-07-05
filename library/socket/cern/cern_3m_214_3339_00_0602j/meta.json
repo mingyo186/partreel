@@ -1,0 +1,56 @@
+{
+  "id": "cern_3m_214_3339_00_0602j",
+  "name": "214-3339-00-0602J (CERN library)",
+  "category": "socket",
+  "family": "CERN Sockets",
+  "manufacturer": "3M",
+  "mpn_pattern": "214-3339-00-0602J",
+  "description": "Pitch 2.54mm, Row-to-Row Spacing 7.62mm, DIP14  ZIF Test Socket. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "14",
+    "case": "DIP14-300",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_3m_214_3339_00_0602j.kicad_mod",
+    "symbol": "cern_3m_214_3339_00_0602j.kicad_sym",
+    "footprint_svg": "cern_3m_214_3339_00_0602j.footprint.svg",
+    "symbol_svg": "cern_3m_214_3339_00_0602j.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Sockets.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Sockets.pretty/3M_214-3339-00-0602J.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "pitch",
+    "54mm",
+    "row",
+    "row",
+    "spacing",
+    "62mm"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Sockets#3M_214-3339-00-0602J",
+      "symbol": "SchLib/Sockets.kicad_sym#DIPS14",
+      "footprint": "PcbLib/Sockets.pretty/3M_214-3339-00-0602J.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

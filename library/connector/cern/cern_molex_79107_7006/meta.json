@@ -1,0 +1,55 @@
+{
+  "id": "cern_molex_79107_7006",
+  "name": "79107-7006 (CERN library)",
+  "category": "connector",
+  "family": "CERN MOLEX",
+  "manufacturer": "MOLEX",
+  "mpn_pattern": "79107-7006",
+  "description": "2.00mm (.079') Pitch Milli-Grid™ Receptacle, Vertical, Through Hole, Dual Row, 14 Circuits. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "14",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_molex_79107_7006.kicad_mod",
+    "symbol": "cern_molex_79107_7006.kicad_sym",
+    "footprint_svg": "cern_molex_79107_7006.footprint.svg",
+    "symbol_svg": "cern_molex_79107_7006.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Connectors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (MOLEX THD.pretty/MOLEX_79107-7006.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "00mm",
+    "079",
+    "pitch",
+    "milli",
+    "grid",
+    "receptacle"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#MOLEX#MOLEX_79107-7006",
+      "symbol": "SchLib/Connectors.kicad_sym#Connector 14 Female",
+      "footprint": "PcbLib/MOLEX THD.pretty/MOLEX_79107-7006.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

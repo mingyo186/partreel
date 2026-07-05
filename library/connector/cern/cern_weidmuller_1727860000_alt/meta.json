@@ -1,0 +1,55 @@
+{
+  "id": "cern_weidmuller_1727860000_alt",
+  "name": "1727860000 or S2L 3.50/12/90G 3.5SN OR BX (CERN library)",
+  "category": "connector",
+  "family": "CERN WEIDMULLER",
+  "manufacturer": "WEIDMULLER",
+  "mpn_pattern": "1727860000 or S2L 3.50/12/90G 3.5SN OR BX",
+  "description": "10A 250 V, Pitch 3.5mm, 12 Positions PCB Right Angle Male Header, 2-row, B2L/S2L 3.50 Series. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "12",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_weidmuller_1727860000_alt.kicad_mod",
+    "symbol": "cern_weidmuller_1727860000_alt.kicad_sym",
+    "footprint_svg": "cern_weidmuller_1727860000_alt.footprint.svg",
+    "symbol_svg": "cern_weidmuller_1727860000_alt.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Connectors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (WEIDMULLER THD.pretty/WEIDMULLER_1727860000.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "10a",
+    "250",
+    "pitch",
+    "5mm",
+    "positions",
+    "pcb"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#WEIDMULLER#WEIDMULLER_1727860000 [alt]",
+      "symbol": "SchLib/Connectors.kicad_sym#Connector 12 Male [alt]",
+      "footprint": "PcbLib/WEIDMULLER THD.pretty/WEIDMULLER_1727860000.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

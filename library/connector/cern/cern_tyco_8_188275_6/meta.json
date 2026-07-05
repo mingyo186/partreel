@@ -1,0 +1,55 @@
+{
+  "id": "cern_tyco_8_188275_6",
+  "name": "8-188275-6 (CERN library)",
+  "category": "connector",
+  "family": "CERN TYCO",
+  "manufacturer": "TYCO ELECTRONICS",
+  "mpn_pattern": "8-188275-6",
+  "description": "16 contacts, 1.27mm Centerline, Micro-MaTch Surface Mount, Board-Board & Ribbon-Board Female Connector. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "16",
+    "mounting": "SMD",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_tyco_8_188275_6.kicad_mod",
+    "symbol": "cern_tyco_8_188275_6.kicad_sym",
+    "footprint_svg": "cern_tyco_8_188275_6.footprint.svg",
+    "symbol_svg": "cern_tyco_8_188275_6.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Connectors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (TYCO SMD.pretty/TYCO_8-188275-6.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "contacts",
+    "27mm",
+    "centerline",
+    "micro",
+    "match",
+    "surface"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#TYCO#TYCO_8-188275-6",
+      "symbol": "SchLib/Connectors.kicad_sym#Connector 16 Female",
+      "footprint": "PcbLib/TYCO SMD.pretty/TYCO_8-188275-6.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

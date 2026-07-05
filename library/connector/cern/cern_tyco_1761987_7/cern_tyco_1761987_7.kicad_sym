@@ -1,0 +1,536 @@
+(kicad_symbol_lib (version 20211014) (generator partreel-import)
+  (symbol "Mini-SAS"
+  		(pin_names
+  			(offset 1.27)
+  		)
+  		(exclude_from_sim no)
+  		(in_bom yes)
+  		(on_board yes)
+  		(property "Reference" "J"
+  			(at 12.7 -2.54 0)
+  			(effects
+  				(font
+  					(size 1.524 1.524)
+  				)
+  			)
+  		)
+  		(property "Value" "${FAMILY}"
+  			(at 12.7 -33.02 0)
+  			(effects
+  				(font
+  					(size 1.524 1.524)
+  				)
+  			)
+  		)
+  		(property "Footprint" ""
+  			(at 0 0 0)
+  			(effects
+  				(font
+  					(size 1.27 1.27)
+  				)
+  				(hide yes)
+  			)
+  		)
+  		(property "Datasheet" ""
+  			(at 0 0 0)
+  			(effects
+  				(font
+  					(size 1.27 1.27)
+  				)
+  				(hide yes)
+  			)
+  		)
+  		(property "Description" "26 Position Mini-Sas Connector (Quad Small Form-Factor SFF-8088)"
+  			(at 0 0 0)
+  			(effects
+  				(font
+  					(size 1.27 1.27)
+  				)
+  				(hide yes)
+  			)
+  		)
+  		(symbol "Mini-SAS_1_0"
+  			(rectangle
+  				(start 25.4 0)
+  				(end 0 -35.56)
+  				(stroke
+  					(width 0.0254)
+  					(type solid)
+  					(color 128 0 0 1)
+  				)
+  				(fill
+  					(type background)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -2.54 0)
+  				(length 5.08)
+  				(name "GND"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "A1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at -5.08 -5.08 0)
+  				(length 5.08)
+  				(name "RX0+"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "A2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at -5.08 -7.62 0)
+  				(length 5.08)
+  				(name "RX0-"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "A3"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -10.16 0)
+  				(length 5.08)
+  				(name "GND"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "A4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at -5.08 -12.7 0)
+  				(length 5.08)
+  				(name "RX1+"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "A5"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at -5.08 -15.24 0)
+  				(length 5.08)
+  				(name "RX1-"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "A6"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -17.78 0)
+  				(length 5.08)
+  				(name "GND"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "A7"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at -5.08 -20.32 0)
+  				(length 5.08)
+  				(name "RX2+"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "A8"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at -5.08 -22.86 0)
+  				(length 5.08)
+  				(name "RX2-"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "A9"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -25.4 0)
+  				(length 5.08)
+  				(name "GND"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "A10"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at -5.08 -27.94 0)
+  				(length 5.08)
+  				(name "RX3+"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "A11"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at -5.08 -30.48 0)
+  				(length 5.08)
+  				(name "RX3-"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "A12"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -33.02 0)
+  				(length 5.08)
+  				(name "GND"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "A13"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at 30.48 -2.54 180)
+  				(length 5.08)
+  				(name "GND"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "B1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -5.08 180)
+  				(length 5.08)
+  				(name "TX0+"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "B2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -7.62 180)
+  				(length 5.08)
+  				(name "TX0-"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "B3"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at 30.48 -10.16 180)
+  				(length 5.08)
+  				(name "GND"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "B4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -12.7 180)
+  				(length 5.08)
+  				(name "TX1+"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "B5"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -15.24 180)
+  				(length 5.08)
+  				(name "TX1-"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "B6"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at 30.48 -17.78 180)
+  				(length 5.08)
+  				(name "GND"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "B7"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -20.32 180)
+  				(length 5.08)
+  				(name "TX2+"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "B8"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -22.86 180)
+  				(length 5.08)
+  				(name "TX2-"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "B9"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at 30.48 -25.4 180)
+  				(length 5.08)
+  				(name "GND"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "B10"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -27.94 180)
+  				(length 5.08)
+  				(name "TX3+"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "B11"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -30.48 180)
+  				(length 5.08)
+  				(name "TX3-"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "B12"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at 30.48 -33.02 180)
+  				(length 5.08)
+  				(name "GND"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "B13"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  		)
+  		(embedded_fonts no)
+  	)
+)

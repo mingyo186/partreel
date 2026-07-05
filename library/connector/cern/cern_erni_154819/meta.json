@@ -1,0 +1,56 @@
+{
+  "id": "cern_erni_154819",
+  "name": "154819 (CERN library)",
+  "category": "connector",
+  "family": "CERN ERNI",
+  "manufacturer": "ERNI",
+  "mpn_pattern": "154819",
+  "description": "26 Contacts Pitch 1.27 SMC Vertical Male Connector Type Q. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "30",
+    "mounting": "SMD",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_erni_154819.kicad_mod",
+    "symbol": "cern_erni_154819.kicad_sym",
+    "footprint_svg": "cern_erni_154819.footprint.svg",
+    "symbol_svg": "cern_erni_154819.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Connectors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ERNI SMD.pretty/ERNI_154819.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "contacts",
+    "pitch",
+    "smc",
+    "vertical",
+    "male",
+    "connector"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#ERNI#ERNI_154819",
+      "symbol": "SchLib/Connectors.kicad_sym#Connector 26ab Male (2x13)",
+      "footprint": "PcbLib/ERNI SMD.pretty/ERNI_154819.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

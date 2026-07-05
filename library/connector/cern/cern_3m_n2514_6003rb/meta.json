@@ -1,0 +1,55 @@
+{
+  "id": "cern_3m_n2514_6003rb",
+  "name": "N2514-6003RB (CERN library)",
+  "category": "connector",
+  "family": "CERN 3M",
+  "manufacturer": "3M",
+  "mpn_pattern": "N2514-6003RB",
+  "description": "14 Contacts, Straight .100''' x .100''' Low Profile Four-Wall Header (Solder Tail 3.94mm), 2500 Series. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "14",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_3m_n2514_6003rb.kicad_mod",
+    "symbol": "cern_3m_n2514_6003rb.kicad_sym",
+    "footprint_svg": "cern_3m_n2514_6003rb.footprint.svg",
+    "symbol_svg": "cern_3m_n2514_6003rb.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Connectors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (3M THD.pretty/3M_N2514-6003RB.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "contacts",
+    "straight",
+    "100",
+    "100",
+    "low",
+    "profile"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#3M#3M_N2514-6003RB",
+      "symbol": "SchLib/Connectors.kicad_sym#Connector 14 Male",
+      "footprint": "PcbLib/3M THD.pretty/3M_N2514-6003RB.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

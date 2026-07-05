@@ -1,0 +1,55 @@
+{
+  "id": "cern_amphenol_ddr4288v0213tf",
+  "name": "DDR4288V0213TF (CERN library)",
+  "category": "socket",
+  "family": "CERN Sockets",
+  "manufacturer": "AMPHENOL",
+  "mpn_pattern": "DDR4288V0213TF",
+  "description": "288 Positions, DDR4 Memory Module Sockets, Storage and Server System, Vertical, Through Hole, Pitch 0.85mm. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "288",
+    "case": "DIMM",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_amphenol_ddr4288v0213tf.kicad_mod",
+    "symbol": "cern_amphenol_ddr4288v0213tf.kicad_sym",
+    "footprint_svg": "cern_amphenol_ddr4288v0213tf.footprint.svg",
+    "symbol_svg": "cern_amphenol_ddr4288v0213tf.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Sockets.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Sockets.pretty/AMPHENOL_DDR4288V0213TF.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "288",
+    "positions",
+    "ddr4",
+    "memory",
+    "module",
+    "sockets"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Sockets#AMPHENOL_DDR4288V0213TF",
+      "symbol": "SchLib/Sockets.kicad_sym#AMPHENOL_DDR4288V0213TF",
+      "footprint": "PcbLib/Sockets.pretty/AMPHENOL_DDR4288V0213TF.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "cern_mentor_2032_2331",
+  "name": "2032.2331 (CERN library)",
+  "category": "connector",
+  "family": "CERN MENTOR",
+  "manufacturer": "MENTOR",
+  "mpn_pattern": "2032.2331",
+  "description": "3 x Test Jack 2mm PCB Edge Mounting. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "3",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_mentor_2032_2331.kicad_mod",
+    "symbol": "cern_mentor_2032_2331.kicad_sym",
+    "footprint_svg": "cern_mentor_2032_2331.footprint.svg",
+    "symbol_svg": "cern_mentor_2032_2331.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Connectors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (MENTOR THD.pretty/MENTOR_2032.2331.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "test",
+    "jack",
+    "2mm",
+    "pcb",
+    "edge",
+    "mounting"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#MENTOR#MENTOR_2032.2331",
+      "symbol": "SchLib/Connectors.kicad_sym#MENTOR_2032.2331",
+      "footprint": "PcbLib/MENTOR THD.pretty/MENTOR_2032.2331.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "id": "cern_souriau_eda_02569_v1_0",
+  "name": "EDA-02569-V1-0 (CERN library)",
+  "category": "connector",
+  "family": "CERN SOURIAU",
+  "manufacturer": "CERN",
+  "mpn_pattern": "EDA-02569-V1-0",
+  "description": "SOURIAU UTO0104S21T Adapter Kit For PCB Mount - 20mm Spacer, 4 Poles, Shell Size 10, UT Bantam Circular Female Connector. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "4",
+    "lifecycle": "None"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/connector/cern/cern_souriau_eda_02569_v1_0/cern_souriau_eda_02569_v1_0.kicad_mod",
+    "symbol": "https://partreel.com/library/connector/cern/cern_souriau_eda_02569_v1_0/cern_souriau_eda_02569_v1_0.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/connector/cern/cern_souriau_eda_02569_v1_0/cern_souriau_eda_02569_v1_0.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/connector/cern/cern_souriau_eda_02569_v1_0/cern_souriau_eda_02569_v1_0.symbol.svg"
+  },
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Connectors.kicad_sym",
+  "license": "CERN-OHL-P-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "cern-kicad-libs@53054c17 (SOURIAU THD.pretty/SOURIAU_EDA-02569-V1-0.kicad_mod)",
+  "keywords": [
+    "cern",
+    "souriau",
+    "uto0104s21t",
+    "adapter",
+    "kit",
+    "for",
+    "pcb"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "cern-kicad-libs@53054c17 (SOURIAU THD.pretty/SOURIAU_EDA-02569-V1-0.kicad_mod)",
+    "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Connectors.kicad_sym",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_cern.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+      "source_commit": "53054c17",
+      "source_files": {
+        "db": "CERN.sqlite#SOURIAU#SOURIAU_EDA-02569-V1-0",
+        "symbol": "SchLib/Connectors.kicad_sym#EDA-02569-V1-0",
+        "footprint": "PcbLib/SOURIAU THD.pretty/SOURIAU_EDA-02569-V1-0.kicad_mod"
+      },
+      "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+      "import_date": "2026-07-05",
+      "modifications": [
+        "extracted single symbol from library",
+        "stripped dead 3D model reference (upstream ships no 3D)",
+        "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/cern_souriau_eda_02569_v1_0/",
+  "api": "https://partreel.com/api/v1/parts/cern_souriau_eda_02569_v1_0.json"
+}

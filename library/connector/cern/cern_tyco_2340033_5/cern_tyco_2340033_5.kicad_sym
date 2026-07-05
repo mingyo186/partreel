@@ -1,0 +1,7130 @@
+(kicad_symbol_lib (version 20211014) (generator partreel-import)
+  (symbol "SFP+ 2x8 +Cage_a"
+  		(pin_names
+  			(offset 1.27)
+  		)
+  		(exclude_from_sim no)
+  		(in_bom yes)
+  		(on_board yes)
+  		(property "Reference" "J"
+  			(at 12.7 -17.78 0)
+  			(effects
+  				(font
+  					(size 1.524 1.524)
+  				)
+  			)
+  		)
+  		(property "Value" "${FAMILY}"
+  			(at 12.7 -20.32 0)
+  			(effects
+  				(font
+  					(size 1.524 1.524)
+  				)
+  			)
+  		)
+  		(property "Footprint" ""
+  			(at 0 0 0)
+  			(effects
+  				(font
+  					(size 1.27 1.27)
+  				)
+  				(hide yes)
+  			)
+  		)
+  		(property "Datasheet" ""
+  			(at 0 0 0)
+  			(effects
+  				(font
+  					(size 1.27 1.27)
+  				)
+  				(hide yes)
+  			)
+  		)
+  		(property "Description" "2x8 Position SFP+ Connector (Small Form-factor Pluggable)\r\nLeft to right"
+  			(at 0 0 0)
+  			(effects
+  				(font
+  					(size 1.27 1.27)
+  				)
+  				(hide yes)
+  			)
+  		)
+  		(symbol "SFP+ 2x8 +Cage_a_0_0"
+  			(pin power_in line
+  				(at -5.08 -45.72 0)
+  				(length 5.08)
+  				(name "SHIELD"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "SHIELD"
+  					(effects
+  						(font
+  							(size 0 0)
+  						)
+  					)
+  				)
+  			)
+  		)
+  		(symbol "SFP+ 2x8 +Cage_a_1_0"
+  			(polyline
+  				(pts
+  					(xy 0 0) (xy 25.4 0)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(circle
+  				(center 0 -45.72)
+  				(radius 0.508)
+  				(stroke
+  					(width -0.0001)
+  					(type solid)
+  				)
+  				(fill
+  					(type outline)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 0 -48.26) (xy 0 0)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 0 -48.26) (xy 25.4 -48.26)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 25.4 0) (xy 25.4 -48.26)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(rectangle
+  				(start 25.4 0)
+  				(end 0 -48.26)
+  				(stroke
+  					(width 0.0254)
+  					(type solid)
+  					(color 128 0 0 1)
+  				)
+  				(fill
+  					(type background)
+  				)
+  			)
+  			(text "1st Pos Top"
+  				(at 12.7 -22.86 0)
+  				(effects
+  					(font
+  						(size 1.524 1.524)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -2.54 0)
+  				(length 5.08)
+  				(name "VCCR"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T15A"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -10.16 0)
+  				(length 5.08)
+  				(name "VEER"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T10A"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -12.7 0)
+  				(length 5.08)
+  				(name "VEER"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T11A"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -15.24 0)
+  				(length 5.08)
+  				(name "VEER"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T14A"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -27.94 0)
+  				(length 5.08)
+  				(name "VCCT"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T16A"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -33.02 0)
+  				(length 5.08)
+  				(name "VEET"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T1A"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -35.56 0)
+  				(length 5.08)
+  				(name "VEET"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T17A"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -38.1 0)
+  				(length 5.08)
+  				(name "VEET"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T20A"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -2.54 180)
+  				(length 5.08)
+  				(name "RD+"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T13A"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -7.62 180)
+  				(length 5.08)
+  				(name "RD-"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T12A"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -15.24 180)
+  				(length 5.08)
+  				(name "TD+"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T18A"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -20.32 180)
+  				(length 5.08)
+  				(name "TD-"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T19A"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -27.94 180)
+  				(length 5.08)
+  				(name "TX_FAULT"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T2A"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -30.48 180)
+  				(length 5.08)
+  				(name "TX_DISABLE"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T3A"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 30.48 -33.02 180)
+  				(length 5.08)
+  				(name "SDA"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T4A"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input clock
+  				(at 30.48 -35.56 180)
+  				(length 5.08)
+  				(name "SCL"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T5A"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -38.1 180)
+  				(length 5.08)
+  				(name "MOD_ABS"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T6A"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -40.64 180)
+  				(length 5.08)
+  				(name "RS0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T7A"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -43.18 180)
+  				(length 5.08)
+  				(name "RS1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T9A"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -45.72 180)
+  				(length 5.08)
+  				(name "LOS"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T8A"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  		)
+  		(symbol "SFP+ 2x8 +Cage_a_2_0"
+  			(polyline
+  				(pts
+  					(xy 0 0) (xy 25.4 0)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(circle
+  				(center 0 -45.72)
+  				(radius 0.508)
+  				(stroke
+  					(width -0.0001)
+  					(type solid)
+  				)
+  				(fill
+  					(type outline)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 0 -48.26) (xy 0 0)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 0 -48.26) (xy 25.4 -48.26)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 25.4 0) (xy 25.4 -48.26)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(rectangle
+  				(start 25.4 0)
+  				(end 0 -48.26)
+  				(stroke
+  					(width 0.0254)
+  					(type solid)
+  					(color 128 0 0 1)
+  				)
+  				(fill
+  					(type background)
+  				)
+  			)
+  			(text "1st Pos Bottom"
+  				(at 12.7 -22.86 0)
+  				(effects
+  					(font
+  						(size 1.524 1.524)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -2.54 0)
+  				(length 5.08)
+  				(name "VCCR"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L15A"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -10.16 0)
+  				(length 5.08)
+  				(name "VEER"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L10A"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -12.7 0)
+  				(length 5.08)
+  				(name "VEER"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L11A"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -15.24 0)
+  				(length 5.08)
+  				(name "VEER"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L14A"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -27.94 0)
+  				(length 5.08)
+  				(name "VCCT"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L16A"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -33.02 0)
+  				(length 5.08)
+  				(name "VEET"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L1A"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -35.56 0)
+  				(length 5.08)
+  				(name "VEET"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L17A"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -38.1 0)
+  				(length 5.08)
+  				(name "VEET"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L20A"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -2.54 180)
+  				(length 5.08)
+  				(name "RD+"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L13A"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -7.62 180)
+  				(length 5.08)
+  				(name "RD-"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L12A"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -15.24 180)
+  				(length 5.08)
+  				(name "TD+"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L18A"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -20.32 180)
+  				(length 5.08)
+  				(name "TD-"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L19A"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -27.94 180)
+  				(length 5.08)
+  				(name "TX_FAULT"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L2A"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -30.48 180)
+  				(length 5.08)
+  				(name "TX_DISABLE"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L3A"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 30.48 -33.02 180)
+  				(length 5.08)
+  				(name "SDA"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L4A"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input clock
+  				(at 30.48 -35.56 180)
+  				(length 5.08)
+  				(name "SCL"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L5A"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -38.1 180)
+  				(length 5.08)
+  				(name "MOD_ABS"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L6A"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -40.64 180)
+  				(length 5.08)
+  				(name "RS0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L7A"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -43.18 180)
+  				(length 5.08)
+  				(name "RS1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L9A"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -45.72 180)
+  				(length 5.08)
+  				(name "LOS"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L8A"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  		)
+  		(symbol "SFP+ 2x8 +Cage_a_3_0"
+  			(polyline
+  				(pts
+  					(xy 0 0) (xy 25.4 0)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(circle
+  				(center 0 -45.72)
+  				(radius 0.508)
+  				(stroke
+  					(width -0.0001)
+  					(type solid)
+  				)
+  				(fill
+  					(type outline)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 0 -48.26) (xy 0 0)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 0 -48.26) (xy 25.4 -48.26)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 25.4 0) (xy 25.4 -48.26)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(rectangle
+  				(start 25.4 0)
+  				(end 0 -48.26)
+  				(stroke
+  					(width 0.0254)
+  					(type solid)
+  					(color 128 0 0 1)
+  				)
+  				(fill
+  					(type background)
+  				)
+  			)
+  			(text "2nd Pos Top"
+  				(at 12.7 -22.86 0)
+  				(effects
+  					(font
+  						(size 1.524 1.524)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -2.54 0)
+  				(length 5.08)
+  				(name "VCCR"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T15B"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -10.16 0)
+  				(length 5.08)
+  				(name "VEER"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T10B"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -12.7 0)
+  				(length 5.08)
+  				(name "VEER"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T11B"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -15.24 0)
+  				(length 5.08)
+  				(name "VEER"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T14B"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -27.94 0)
+  				(length 5.08)
+  				(name "VCCT"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T16B"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -33.02 0)
+  				(length 5.08)
+  				(name "VEET"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T1B"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -35.56 0)
+  				(length 5.08)
+  				(name "VEET"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T17B"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -38.1 0)
+  				(length 5.08)
+  				(name "VEET"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T20B"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -2.54 180)
+  				(length 5.08)
+  				(name "RD+"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T13B"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -7.62 180)
+  				(length 5.08)
+  				(name "RD-"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T12B"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -15.24 180)
+  				(length 5.08)
+  				(name "TD+"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T18B"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -20.32 180)
+  				(length 5.08)
+  				(name "TD-"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T19B"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -27.94 180)
+  				(length 5.08)
+  				(name "TX_FAULT"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T2B"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -30.48 180)
+  				(length 5.08)
+  				(name "TX_DISABLE"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T3B"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 30.48 -33.02 180)
+  				(length 5.08)
+  				(name "SDA"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T4B"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input clock
+  				(at 30.48 -35.56 180)
+  				(length 5.08)
+  				(name "SCL"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T5B"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -38.1 180)
+  				(length 5.08)
+  				(name "MOD_ABS"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T6B"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -40.64 180)
+  				(length 5.08)
+  				(name "RS0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T7B"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -43.18 180)
+  				(length 5.08)
+  				(name "RS1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T9B"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -45.72 180)
+  				(length 5.08)
+  				(name "LOS"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T8B"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  		)
+  		(symbol "SFP+ 2x8 +Cage_a_4_0"
+  			(polyline
+  				(pts
+  					(xy 0 0) (xy 25.4 0)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(circle
+  				(center 0 -45.72)
+  				(radius 0.508)
+  				(stroke
+  					(width -0.0001)
+  					(type solid)
+  				)
+  				(fill
+  					(type outline)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 0 -48.26) (xy 0 0)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 0 -48.26) (xy 25.4 -48.26)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 25.4 0) (xy 25.4 -48.26)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(rectangle
+  				(start 25.4 0)
+  				(end 0 -48.26)
+  				(stroke
+  					(width 0.0254)
+  					(type solid)
+  					(color 128 0 0 1)
+  				)
+  				(fill
+  					(type background)
+  				)
+  			)
+  			(text "2nd Pos Bottom"
+  				(at 12.7 -22.86 0)
+  				(effects
+  					(font
+  						(size 1.524 1.524)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -2.54 0)
+  				(length 5.08)
+  				(name "VCCR"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L15B"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -10.16 0)
+  				(length 5.08)
+  				(name "VEER"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L10B"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -12.7 0)
+  				(length 5.08)
+  				(name "VEER"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L11B"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -15.24 0)
+  				(length 5.08)
+  				(name "VEER"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L14B"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -27.94 0)
+  				(length 5.08)
+  				(name "VCCT"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L16B"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -33.02 0)
+  				(length 5.08)
+  				(name "VEET"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L1B"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -35.56 0)
+  				(length 5.08)
+  				(name "VEET"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L17B"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -38.1 0)
+  				(length 5.08)
+  				(name "VEET"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L20B"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -2.54 180)
+  				(length 5.08)
+  				(name "RD+"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L13B"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -7.62 180)
+  				(length 5.08)
+  				(name "RD-"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L12B"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -15.24 180)
+  				(length 5.08)
+  				(name "TD+"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L18B"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -20.32 180)
+  				(length 5.08)
+  				(name "TD-"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L19B"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -27.94 180)
+  				(length 5.08)
+  				(name "TX_FAULT"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L2B"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -30.48 180)
+  				(length 5.08)
+  				(name "TX_DISABLE"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L3B"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 30.48 -33.02 180)
+  				(length 5.08)
+  				(name "SDA"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L4B"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input clock
+  				(at 30.48 -35.56 180)
+  				(length 5.08)
+  				(name "SCL"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L5B"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -38.1 180)
+  				(length 5.08)
+  				(name "MOD_ABS"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L6B"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -40.64 180)
+  				(length 5.08)
+  				(name "RS0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L7B"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -43.18 180)
+  				(length 5.08)
+  				(name "RS1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L9B"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -45.72 180)
+  				(length 5.08)
+  				(name "LOS"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L8B"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  		)
+  		(symbol "SFP+ 2x8 +Cage_a_5_0"
+  			(polyline
+  				(pts
+  					(xy 0 0) (xy 25.4 0)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(circle
+  				(center 0 -45.72)
+  				(radius 0.508)
+  				(stroke
+  					(width -0.0001)
+  					(type solid)
+  				)
+  				(fill
+  					(type outline)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 0 -48.26) (xy 0 0)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 0 -48.26) (xy 25.4 -48.26)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 25.4 0) (xy 25.4 -48.26)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(rectangle
+  				(start 25.4 0)
+  				(end 0 -48.26)
+  				(stroke
+  					(width 0.0254)
+  					(type solid)
+  					(color 128 0 0 1)
+  				)
+  				(fill
+  					(type background)
+  				)
+  			)
+  			(text "3rd Pos Top"
+  				(at 12.7 -22.86 0)
+  				(effects
+  					(font
+  						(size 1.524 1.524)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -2.54 0)
+  				(length 5.08)
+  				(name "VCCR"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T15C"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -10.16 0)
+  				(length 5.08)
+  				(name "VEER"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T10C"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -12.7 0)
+  				(length 5.08)
+  				(name "VEER"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T11C"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -15.24 0)
+  				(length 5.08)
+  				(name "VEER"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T14C"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -27.94 0)
+  				(length 5.08)
+  				(name "VCCT"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T16C"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -33.02 0)
+  				(length 5.08)
+  				(name "VEET"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T1C"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -35.56 0)
+  				(length 5.08)
+  				(name "VEET"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T17C"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -38.1 0)
+  				(length 5.08)
+  				(name "VEET"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T20C"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -2.54 180)
+  				(length 5.08)
+  				(name "RD+"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T13C"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -7.62 180)
+  				(length 5.08)
+  				(name "RD-"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T12C"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -15.24 180)
+  				(length 5.08)
+  				(name "TD+"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T18C"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -20.32 180)
+  				(length 5.08)
+  				(name "TD-"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T19C"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -27.94 180)
+  				(length 5.08)
+  				(name "TX_FAULT"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T2C"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -30.48 180)
+  				(length 5.08)
+  				(name "TX_DISABLE"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T3C"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 30.48 -33.02 180)
+  				(length 5.08)
+  				(name "SDA"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T4C"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input clock
+  				(at 30.48 -35.56 180)
+  				(length 5.08)
+  				(name "SCL"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T5C"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -38.1 180)
+  				(length 5.08)
+  				(name "MOD_ABS"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T6C"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -40.64 180)
+  				(length 5.08)
+  				(name "RS0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T7C"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -43.18 180)
+  				(length 5.08)
+  				(name "RS1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T9C"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -45.72 180)
+  				(length 5.08)
+  				(name "LOS"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T8C"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  		)
+  		(symbol "SFP+ 2x8 +Cage_a_6_0"
+  			(polyline
+  				(pts
+  					(xy 0 0) (xy 25.4 0)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(circle
+  				(center 0 -45.72)
+  				(radius 0.508)
+  				(stroke
+  					(width -0.0001)
+  					(type solid)
+  				)
+  				(fill
+  					(type outline)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 0 -48.26) (xy 0 0)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 0 -48.26) (xy 25.4 -48.26)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 25.4 0) (xy 25.4 -48.26)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(rectangle
+  				(start 25.4 0)
+  				(end 0 -48.26)
+  				(stroke
+  					(width 0.0254)
+  					(type solid)
+  					(color 128 0 0 1)
+  				)
+  				(fill
+  					(type background)
+  				)
+  			)
+  			(text "3rd Pos Bottom"
+  				(at 12.7 -22.86 0)
+  				(effects
+  					(font
+  						(size 1.524 1.524)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -2.54 0)
+  				(length 5.08)
+  				(name "VCCR"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L15C"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -10.16 0)
+  				(length 5.08)
+  				(name "VEER"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L10C"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -12.7 0)
+  				(length 5.08)
+  				(name "VEER"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L11C"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -15.24 0)
+  				(length 5.08)
+  				(name "VEER"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L14C"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -27.94 0)
+  				(length 5.08)
+  				(name "VCCT"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L16C"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -33.02 0)
+  				(length 5.08)
+  				(name "VEET"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L1C"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -35.56 0)
+  				(length 5.08)
+  				(name "VEET"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L17C"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -38.1 0)
+  				(length 5.08)
+  				(name "VEET"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L20C"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -2.54 180)
+  				(length 5.08)
+  				(name "RD+"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L13C"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -7.62 180)
+  				(length 5.08)
+  				(name "RD-"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L12C"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -15.24 180)
+  				(length 5.08)
+  				(name "TD+"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L18C"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -20.32 180)
+  				(length 5.08)
+  				(name "TD-"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L19C"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -27.94 180)
+  				(length 5.08)
+  				(name "TX_FAULT"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L2C"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -30.48 180)
+  				(length 5.08)
+  				(name "TX_DISABLE"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L3C"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 30.48 -33.02 180)
+  				(length 5.08)
+  				(name "SDA"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L4C"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input clock
+  				(at 30.48 -35.56 180)
+  				(length 5.08)
+  				(name "SCL"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L5C"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -38.1 180)
+  				(length 5.08)
+  				(name "MOD_ABS"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L6C"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -40.64 180)
+  				(length 5.08)
+  				(name "RS0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L7C"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -43.18 180)
+  				(length 5.08)
+  				(name "RS1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L9C"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -45.72 180)
+  				(length 5.08)
+  				(name "LOS"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L8C"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  		)
+  		(symbol "SFP+ 2x8 +Cage_a_7_0"
+  			(polyline
+  				(pts
+  					(xy 0 0) (xy 25.4 0)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(circle
+  				(center 0 -45.72)
+  				(radius 0.508)
+  				(stroke
+  					(width -0.0001)
+  					(type solid)
+  				)
+  				(fill
+  					(type outline)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 0 -48.26) (xy 0 0)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 0 -48.26) (xy 25.4 -48.26)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 25.4 0) (xy 25.4 -48.26)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(rectangle
+  				(start 25.4 0)
+  				(end 0 -48.26)
+  				(stroke
+  					(width 0.0254)
+  					(type solid)
+  					(color 128 0 0 1)
+  				)
+  				(fill
+  					(type background)
+  				)
+  			)
+  			(text "4th Pos Top"
+  				(at 12.7 -22.86 0)
+  				(effects
+  					(font
+  						(size 1.524 1.524)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -2.54 0)
+  				(length 5.08)
+  				(name "VCCR"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T15D"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -10.16 0)
+  				(length 5.08)
+  				(name "VEER"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T10D"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -12.7 0)
+  				(length 5.08)
+  				(name "VEER"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T11D"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -15.24 0)
+  				(length 5.08)
+  				(name "VEER"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T14D"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -27.94 0)
+  				(length 5.08)
+  				(name "VCCT"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T16D"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -33.02 0)
+  				(length 5.08)
+  				(name "VEET"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T1D"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -35.56 0)
+  				(length 5.08)
+  				(name "VEET"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T17D"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -38.1 0)
+  				(length 5.08)
+  				(name "VEET"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T20D"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -2.54 180)
+  				(length 5.08)
+  				(name "RD+"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T13D"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -7.62 180)
+  				(length 5.08)
+  				(name "RD-"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T12D"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -15.24 180)
+  				(length 5.08)
+  				(name "TD+"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T18D"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -20.32 180)
+  				(length 5.08)
+  				(name "TD-"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T19D"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -27.94 180)
+  				(length 5.08)
+  				(name "TX_FAULT"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T2D"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -30.48 180)
+  				(length 5.08)
+  				(name "TX_DISABLE"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T3D"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 30.48 -33.02 180)
+  				(length 5.08)
+  				(name "SDA"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T4D"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input clock
+  				(at 30.48 -35.56 180)
+  				(length 5.08)
+  				(name "SCL"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T5D"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -38.1 180)
+  				(length 5.08)
+  				(name "MOD_ABS"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T6D"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -40.64 180)
+  				(length 5.08)
+  				(name "RS0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T7D"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -43.18 180)
+  				(length 5.08)
+  				(name "RS1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T9D"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -45.72 180)
+  				(length 5.08)
+  				(name "LOS"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T8D"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  		)
+  		(symbol "SFP+ 2x8 +Cage_a_8_0"
+  			(polyline
+  				(pts
+  					(xy 0 0) (xy 25.4 0)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(circle
+  				(center 0 -45.72)
+  				(radius 0.508)
+  				(stroke
+  					(width -0.0001)
+  					(type solid)
+  				)
+  				(fill
+  					(type outline)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 0 -48.26) (xy 0 0)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 0 -48.26) (xy 25.4 -48.26)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 25.4 0) (xy 25.4 -48.26)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(rectangle
+  				(start 25.4 0)
+  				(end 0 -48.26)
+  				(stroke
+  					(width 0.0254)
+  					(type solid)
+  					(color 128 0 0 1)
+  				)
+  				(fill
+  					(type background)
+  				)
+  			)
+  			(text "4th Pos Bottom"
+  				(at 12.7 -22.86 0)
+  				(effects
+  					(font
+  						(size 1.524 1.524)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -2.54 0)
+  				(length 5.08)
+  				(name "VCCR"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L15D"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -10.16 0)
+  				(length 5.08)
+  				(name "VEER"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L10D"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -12.7 0)
+  				(length 5.08)
+  				(name "VEER"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L11D"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -15.24 0)
+  				(length 5.08)
+  				(name "VEER"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L14D"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -27.94 0)
+  				(length 5.08)
+  				(name "VCCT"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L16D"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -33.02 0)
+  				(length 5.08)
+  				(name "VEET"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L1D"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -35.56 0)
+  				(length 5.08)
+  				(name "VEET"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L17D"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -38.1 0)
+  				(length 5.08)
+  				(name "VEET"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L20D"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -2.54 180)
+  				(length 5.08)
+  				(name "RD+"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L13D"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -7.62 180)
+  				(length 5.08)
+  				(name "RD-"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L12D"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -15.24 180)
+  				(length 5.08)
+  				(name "TD+"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L18D"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -20.32 180)
+  				(length 5.08)
+  				(name "TD-"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L19D"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -27.94 180)
+  				(length 5.08)
+  				(name "TX_FAULT"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L2D"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -30.48 180)
+  				(length 5.08)
+  				(name "TX_DISABLE"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L3D"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 30.48 -33.02 180)
+  				(length 5.08)
+  				(name "SDA"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L4D"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input clock
+  				(at 30.48 -35.56 180)
+  				(length 5.08)
+  				(name "SCL"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L5D"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -38.1 180)
+  				(length 5.08)
+  				(name "MOD_ABS"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L6D"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -40.64 180)
+  				(length 5.08)
+  				(name "RS0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L7D"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -43.18 180)
+  				(length 5.08)
+  				(name "RS1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L9D"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -45.72 180)
+  				(length 5.08)
+  				(name "LOS"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L8D"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  		)
+  		(symbol "SFP+ 2x8 +Cage_a_9_0"
+  			(polyline
+  				(pts
+  					(xy 0 0) (xy 25.4 0)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(circle
+  				(center 0 -45.72)
+  				(radius 0.508)
+  				(stroke
+  					(width -0.0001)
+  					(type solid)
+  				)
+  				(fill
+  					(type outline)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 0 -48.26) (xy 0 0)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 0 -48.26) (xy 25.4 -48.26)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 25.4 0) (xy 25.4 -48.26)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(rectangle
+  				(start 25.4 0)
+  				(end 0 -48.26)
+  				(stroke
+  					(width 0.0254)
+  					(type solid)
+  					(color 128 0 0 1)
+  				)
+  				(fill
+  					(type background)
+  				)
+  			)
+  			(text "5th Pos Top"
+  				(at 12.7 -22.86 0)
+  				(effects
+  					(font
+  						(size 1.524 1.524)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -2.54 0)
+  				(length 5.08)
+  				(name "VCCR"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T15E"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -10.16 0)
+  				(length 5.08)
+  				(name "VEER"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T10E"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -12.7 0)
+  				(length 5.08)
+  				(name "VEER"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T11E"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -15.24 0)
+  				(length 5.08)
+  				(name "VEER"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T14E"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -27.94 0)
+  				(length 5.08)
+  				(name "VCCT"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T16E"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -33.02 0)
+  				(length 5.08)
+  				(name "VEET"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T1E"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -35.56 0)
+  				(length 5.08)
+  				(name "VEET"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T17E"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -38.1 0)
+  				(length 5.08)
+  				(name "VEET"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T20E"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -2.54 180)
+  				(length 5.08)
+  				(name "RD+"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T13E"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -7.62 180)
+  				(length 5.08)
+  				(name "RD-"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T12E"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -15.24 180)
+  				(length 5.08)
+  				(name "TD+"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T18E"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -20.32 180)
+  				(length 5.08)
+  				(name "TD-"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T19E"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -27.94 180)
+  				(length 5.08)
+  				(name "TX_FAULT"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T2E"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -30.48 180)
+  				(length 5.08)
+  				(name "TX_DISABLE"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T3E"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 30.48 -33.02 180)
+  				(length 5.08)
+  				(name "SDA"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T4E"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input clock
+  				(at 30.48 -35.56 180)
+  				(length 5.08)
+  				(name "SCL"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T5E"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -38.1 180)
+  				(length 5.08)
+  				(name "MOD_ABS"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T6E"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -40.64 180)
+  				(length 5.08)
+  				(name "RS0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T7E"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -43.18 180)
+  				(length 5.08)
+  				(name "RS1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T9E"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -45.72 180)
+  				(length 5.08)
+  				(name "LOS"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T8E"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  		)
+  		(symbol "SFP+ 2x8 +Cage_a_10_0"
+  			(polyline
+  				(pts
+  					(xy 0 0) (xy 25.4 0)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(circle
+  				(center 0 -45.72)
+  				(radius 0.508)
+  				(stroke
+  					(width -0.0001)
+  					(type solid)
+  				)
+  				(fill
+  					(type outline)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 0 -48.26) (xy 0 0)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 0 -48.26) (xy 25.4 -48.26)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 25.4 0) (xy 25.4 -48.26)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(rectangle
+  				(start 25.4 0)
+  				(end 0 -48.26)
+  				(stroke
+  					(width 0.0254)
+  					(type solid)
+  					(color 128 0 0 1)
+  				)
+  				(fill
+  					(type background)
+  				)
+  			)
+  			(text "5th Pos Bottom"
+  				(at 12.7 -22.86 0)
+  				(effects
+  					(font
+  						(size 1.524 1.524)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -2.54 0)
+  				(length 5.08)
+  				(name "VCCR"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L15E"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -10.16 0)
+  				(length 5.08)
+  				(name "VEER"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L10E"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -12.7 0)
+  				(length 5.08)
+  				(name "VEER"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L11E"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -15.24 0)
+  				(length 5.08)
+  				(name "VEER"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L14E"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -27.94 0)
+  				(length 5.08)
+  				(name "VCCT"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L16E"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -33.02 0)
+  				(length 5.08)
+  				(name "VEET"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L1E"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -35.56 0)
+  				(length 5.08)
+  				(name "VEET"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L17E"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -38.1 0)
+  				(length 5.08)
+  				(name "VEET"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L20E"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -2.54 180)
+  				(length 5.08)
+  				(name "RD+"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L13E"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -7.62 180)
+  				(length 5.08)
+  				(name "RD-"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L12E"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -15.24 180)
+  				(length 5.08)
+  				(name "TD+"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L18E"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -20.32 180)
+  				(length 5.08)
+  				(name "TD-"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L19E"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -27.94 180)
+  				(length 5.08)
+  				(name "TX_FAULT"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L2E"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -30.48 180)
+  				(length 5.08)
+  				(name "TX_DISABLE"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L3E"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 30.48 -33.02 180)
+  				(length 5.08)
+  				(name "SDA"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L4E"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input clock
+  				(at 30.48 -35.56 180)
+  				(length 5.08)
+  				(name "SCL"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L5E"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -38.1 180)
+  				(length 5.08)
+  				(name "MOD_ABS"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L6E"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -40.64 180)
+  				(length 5.08)
+  				(name "RS0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L7E"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -43.18 180)
+  				(length 5.08)
+  				(name "RS1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L9E"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -45.72 180)
+  				(length 5.08)
+  				(name "LOS"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L8E"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  		)
+  		(symbol "SFP+ 2x8 +Cage_a_11_0"
+  			(polyline
+  				(pts
+  					(xy 0 0) (xy 25.4 0)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(circle
+  				(center 0 -45.72)
+  				(radius 0.508)
+  				(stroke
+  					(width -0.0001)
+  					(type solid)
+  				)
+  				(fill
+  					(type outline)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 0 -48.26) (xy 0 0)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 0 -48.26) (xy 25.4 -48.26)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 25.4 0) (xy 25.4 -48.26)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(rectangle
+  				(start 25.4 0)
+  				(end 0 -48.26)
+  				(stroke
+  					(width 0.0254)
+  					(type solid)
+  					(color 128 0 0 1)
+  				)
+  				(fill
+  					(type background)
+  				)
+  			)
+  			(text "6th Pos Top"
+  				(at 12.7 -22.86 0)
+  				(effects
+  					(font
+  						(size 1.524 1.524)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -2.54 0)
+  				(length 5.08)
+  				(name "VCCR"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T15F"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -10.16 0)
+  				(length 5.08)
+  				(name "VEER"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T10F"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -12.7 0)
+  				(length 5.08)
+  				(name "VEER"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T11F"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -15.24 0)
+  				(length 5.08)
+  				(name "VEER"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T14F"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -27.94 0)
+  				(length 5.08)
+  				(name "VCCT"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T16F"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -33.02 0)
+  				(length 5.08)
+  				(name "VEET"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T1F"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -35.56 0)
+  				(length 5.08)
+  				(name "VEET"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T17F"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -38.1 0)
+  				(length 5.08)
+  				(name "VEET"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T20F"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -2.54 180)
+  				(length 5.08)
+  				(name "RD+"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T13F"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -7.62 180)
+  				(length 5.08)
+  				(name "RD-"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T12F"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -15.24 180)
+  				(length 5.08)
+  				(name "TD+"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T18F"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -20.32 180)
+  				(length 5.08)
+  				(name "TD-"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T19F"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -27.94 180)
+  				(length 5.08)
+  				(name "TX_FAULT"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T2F"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -30.48 180)
+  				(length 5.08)
+  				(name "TX_DISABLE"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T3F"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 30.48 -33.02 180)
+  				(length 5.08)
+  				(name "SDA"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T4F"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input clock
+  				(at 30.48 -35.56 180)
+  				(length 5.08)
+  				(name "SCL"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T5F"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -38.1 180)
+  				(length 5.08)
+  				(name "MOD_ABS"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T6F"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -40.64 180)
+  				(length 5.08)
+  				(name "RS0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T7F"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -43.18 180)
+  				(length 5.08)
+  				(name "RS1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T9F"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -45.72 180)
+  				(length 5.08)
+  				(name "LOS"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T8F"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  		)
+  		(symbol "SFP+ 2x8 +Cage_a_12_0"
+  			(polyline
+  				(pts
+  					(xy 0 0) (xy 25.4 0)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(circle
+  				(center 0 -45.72)
+  				(radius 0.508)
+  				(stroke
+  					(width -0.0001)
+  					(type solid)
+  				)
+  				(fill
+  					(type outline)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 0 -48.26) (xy 0 0)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 0 -48.26) (xy 25.4 -48.26)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 25.4 0) (xy 25.4 -48.26)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(rectangle
+  				(start 25.4 0)
+  				(end 0 -48.26)
+  				(stroke
+  					(width 0.0254)
+  					(type solid)
+  					(color 128 0 0 1)
+  				)
+  				(fill
+  					(type background)
+  				)
+  			)
+  			(text "6th Pos Bottom"
+  				(at 12.7 -22.86 0)
+  				(effects
+  					(font
+  						(size 1.524 1.524)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -2.54 0)
+  				(length 5.08)
+  				(name "VCCR"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L15F"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -10.16 0)
+  				(length 5.08)
+  				(name "VEER"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L10F"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -12.7 0)
+  				(length 5.08)
+  				(name "VEER"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L11F"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -15.24 0)
+  				(length 5.08)
+  				(name "VEER"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L14F"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -27.94 0)
+  				(length 5.08)
+  				(name "VCCT"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L16F"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -33.02 0)
+  				(length 5.08)
+  				(name "VEET"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L1F"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -35.56 0)
+  				(length 5.08)
+  				(name "VEET"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L17F"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -38.1 0)
+  				(length 5.08)
+  				(name "VEET"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L20F"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -2.54 180)
+  				(length 5.08)
+  				(name "RD+"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L13F"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -7.62 180)
+  				(length 5.08)
+  				(name "RD-"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L12F"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -15.24 180)
+  				(length 5.08)
+  				(name "TD+"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L18F"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -20.32 180)
+  				(length 5.08)
+  				(name "TD-"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L19F"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -27.94 180)
+  				(length 5.08)
+  				(name "TX_FAULT"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L2F"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -30.48 180)
+  				(length 5.08)
+  				(name "TX_DISABLE"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L3F"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 30.48 -33.02 180)
+  				(length 5.08)
+  				(name "SDA"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L4F"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input clock
+  				(at 30.48 -35.56 180)
+  				(length 5.08)
+  				(name "SCL"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L5F"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -38.1 180)
+  				(length 5.08)
+  				(name "MOD_ABS"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L6F"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -40.64 180)
+  				(length 5.08)
+  				(name "RS0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L7F"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -43.18 180)
+  				(length 5.08)
+  				(name "RS1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L9F"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -45.72 180)
+  				(length 5.08)
+  				(name "LOS"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L8F"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  		)
+  		(symbol "SFP+ 2x8 +Cage_a_13_0"
+  			(polyline
+  				(pts
+  					(xy 0 0) (xy 25.4 0)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(circle
+  				(center 0 -45.72)
+  				(radius 0.508)
+  				(stroke
+  					(width -0.0001)
+  					(type solid)
+  				)
+  				(fill
+  					(type outline)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 0 -48.26) (xy 0 0)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 0 -48.26) (xy 25.4 -48.26)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 25.4 0) (xy 25.4 -48.26)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(rectangle
+  				(start 25.4 0)
+  				(end 0 -48.26)
+  				(stroke
+  					(width 0.0254)
+  					(type solid)
+  					(color 128 0 0 1)
+  				)
+  				(fill
+  					(type background)
+  				)
+  			)
+  			(text "7th Pos Top"
+  				(at 12.7 -22.86 0)
+  				(effects
+  					(font
+  						(size 1.524 1.524)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -2.54 0)
+  				(length 5.08)
+  				(name "VCCR"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T15G"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -10.16 0)
+  				(length 5.08)
+  				(name "VEER"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T10G"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -12.7 0)
+  				(length 5.08)
+  				(name "VEER"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T11G"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -15.24 0)
+  				(length 5.08)
+  				(name "VEER"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T14G"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -27.94 0)
+  				(length 5.08)
+  				(name "VCCT"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T16G"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -33.02 0)
+  				(length 5.08)
+  				(name "VEET"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T1G"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -35.56 0)
+  				(length 5.08)
+  				(name "VEET"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T17G"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -38.1 0)
+  				(length 5.08)
+  				(name "VEET"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T20G"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -2.54 180)
+  				(length 5.08)
+  				(name "RD+"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T13G"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -7.62 180)
+  				(length 5.08)
+  				(name "RD-"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T12G"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -15.24 180)
+  				(length 5.08)
+  				(name "TD+"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T18G"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -20.32 180)
+  				(length 5.08)
+  				(name "TD-"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T19G"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -27.94 180)
+  				(length 5.08)
+  				(name "TX_FAULT"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T2G"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -30.48 180)
+  				(length 5.08)
+  				(name "TX_DISABLE"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T3G"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 30.48 -33.02 180)
+  				(length 5.08)
+  				(name "SDA"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T4G"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input clock
+  				(at 30.48 -35.56 180)
+  				(length 5.08)
+  				(name "SCL"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T5G"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -38.1 180)
+  				(length 5.08)
+  				(name "MOD_ABS"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T6G"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -40.64 180)
+  				(length 5.08)
+  				(name "RS0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T7G"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -43.18 180)
+  				(length 5.08)
+  				(name "RS1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T9G"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -45.72 180)
+  				(length 5.08)
+  				(name "LOS"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T8G"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  		)
+  		(symbol "SFP+ 2x8 +Cage_a_14_0"
+  			(polyline
+  				(pts
+  					(xy 0 0) (xy 25.4 0)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(circle
+  				(center 0 -45.72)
+  				(radius 0.508)
+  				(stroke
+  					(width -0.0001)
+  					(type solid)
+  				)
+  				(fill
+  					(type outline)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 0 -48.26) (xy 0 0)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 0 -48.26) (xy 25.4 -48.26)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 25.4 0) (xy 25.4 -48.26)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(rectangle
+  				(start 25.4 0)
+  				(end 0 -48.26)
+  				(stroke
+  					(width 0.0254)
+  					(type solid)
+  					(color 128 0 0 1)
+  				)
+  				(fill
+  					(type background)
+  				)
+  			)
+  			(text "7th Pos Bottom"
+  				(at 12.7 -22.86 0)
+  				(effects
+  					(font
+  						(size 1.524 1.524)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -2.54 0)
+  				(length 5.08)
+  				(name "VCCR"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L15G"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -10.16 0)
+  				(length 5.08)
+  				(name "VEER"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L10G"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -12.7 0)
+  				(length 5.08)
+  				(name "VEER"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L11G"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -15.24 0)
+  				(length 5.08)
+  				(name "VEER"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L14G"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -27.94 0)
+  				(length 5.08)
+  				(name "VCCT"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L16G"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -33.02 0)
+  				(length 5.08)
+  				(name "VEET"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L1G"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -35.56 0)
+  				(length 5.08)
+  				(name "VEET"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L17G"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -38.1 0)
+  				(length 5.08)
+  				(name "VEET"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L20G"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -2.54 180)
+  				(length 5.08)
+  				(name "RD+"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L13G"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -7.62 180)
+  				(length 5.08)
+  				(name "RD-"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L12G"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -15.24 180)
+  				(length 5.08)
+  				(name "TD+"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L18G"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -20.32 180)
+  				(length 5.08)
+  				(name "TD-"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L19G"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -27.94 180)
+  				(length 5.08)
+  				(name "TX_FAULT"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L2G"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -30.48 180)
+  				(length 5.08)
+  				(name "TX_DISABLE"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L3G"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 30.48 -33.02 180)
+  				(length 5.08)
+  				(name "SDA"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L4G"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input clock
+  				(at 30.48 -35.56 180)
+  				(length 5.08)
+  				(name "SCL"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L5G"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -38.1 180)
+  				(length 5.08)
+  				(name "MOD_ABS"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L6G"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -40.64 180)
+  				(length 5.08)
+  				(name "RS0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L7G"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -43.18 180)
+  				(length 5.08)
+  				(name "RS1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L9G"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -45.72 180)
+  				(length 5.08)
+  				(name "LOS"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L8G"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  		)
+  		(symbol "SFP+ 2x8 +Cage_a_15_0"
+  			(polyline
+  				(pts
+  					(xy 0 0) (xy 25.4 0)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(circle
+  				(center 0 -45.72)
+  				(radius 0.508)
+  				(stroke
+  					(width -0.0001)
+  					(type solid)
+  				)
+  				(fill
+  					(type outline)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 0 -48.26) (xy 0 0)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 0 -48.26) (xy 25.4 -48.26)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 25.4 0) (xy 25.4 -48.26)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(rectangle
+  				(start 25.4 0)
+  				(end 0 -48.26)
+  				(stroke
+  					(width 0.0254)
+  					(type solid)
+  					(color 128 0 0 1)
+  				)
+  				(fill
+  					(type background)
+  				)
+  			)
+  			(text "8th Pos Top"
+  				(at 12.7 -22.86 0)
+  				(effects
+  					(font
+  						(size 1.524 1.524)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -2.54 0)
+  				(length 5.08)
+  				(name "VCCR"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T15H"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -10.16 0)
+  				(length 5.08)
+  				(name "VEER"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T10H"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -12.7 0)
+  				(length 5.08)
+  				(name "VEER"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T11H"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -15.24 0)
+  				(length 5.08)
+  				(name "VEER"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T14H"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -27.94 0)
+  				(length 5.08)
+  				(name "VCCT"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T16H"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -33.02 0)
+  				(length 5.08)
+  				(name "VEET"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T1H"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -35.56 0)
+  				(length 5.08)
+  				(name "VEET"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T17H"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -38.1 0)
+  				(length 5.08)
+  				(name "VEET"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T20H"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -2.54 180)
+  				(length 5.08)
+  				(name "RD+"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T13H"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -7.62 180)
+  				(length 5.08)
+  				(name "RD-"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T12H"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -15.24 180)
+  				(length 5.08)
+  				(name "TD+"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T18H"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -20.32 180)
+  				(length 5.08)
+  				(name "TD-"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T19H"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -27.94 180)
+  				(length 5.08)
+  				(name "TX_FAULT"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T2H"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -30.48 180)
+  				(length 5.08)
+  				(name "TX_DISABLE"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T3H"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 30.48 -33.02 180)
+  				(length 5.08)
+  				(name "SDA"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T4H"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input clock
+  				(at 30.48 -35.56 180)
+  				(length 5.08)
+  				(name "SCL"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T5H"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -38.1 180)
+  				(length 5.08)
+  				(name "MOD_ABS"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T6H"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -40.64 180)
+  				(length 5.08)
+  				(name "RS0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T7H"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -43.18 180)
+  				(length 5.08)
+  				(name "RS1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T9H"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -45.72 180)
+  				(length 5.08)
+  				(name "LOS"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "T8H"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  		)
+  		(symbol "SFP+ 2x8 +Cage_a_16_0"
+  			(polyline
+  				(pts
+  					(xy 0 0) (xy 25.4 0)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(circle
+  				(center 0 -45.72)
+  				(radius 0.508)
+  				(stroke
+  					(width -0.0001)
+  					(type solid)
+  				)
+  				(fill
+  					(type outline)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 0 -48.26) (xy 0 0)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 0 -48.26) (xy 25.4 -48.26)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 25.4 0) (xy 25.4 -48.26)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(rectangle
+  				(start 25.4 0)
+  				(end 0 -48.26)
+  				(stroke
+  					(width 0.0254)
+  					(type solid)
+  					(color 128 0 0 1)
+  				)
+  				(fill
+  					(type background)
+  				)
+  			)
+  			(text "8th Pos Bottom"
+  				(at 12.7 -22.86 0)
+  				(effects
+  					(font
+  						(size 1.524 1.524)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -2.54 0)
+  				(length 5.08)
+  				(name "VCCR"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L15H"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -10.16 0)
+  				(length 5.08)
+  				(name "VEER"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L10H"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -12.7 0)
+  				(length 5.08)
+  				(name "VEER"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L11H"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -15.24 0)
+  				(length 5.08)
+  				(name "VEER"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L14H"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -27.94 0)
+  				(length 5.08)
+  				(name "VCCT"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L16H"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -33.02 0)
+  				(length 5.08)
+  				(name "VEET"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L1H"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -35.56 0)
+  				(length 5.08)
+  				(name "VEET"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L17H"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -38.1 0)
+  				(length 5.08)
+  				(name "VEET"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L20H"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -2.54 180)
+  				(length 5.08)
+  				(name "RD+"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L13H"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -7.62 180)
+  				(length 5.08)
+  				(name "RD-"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L12H"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -15.24 180)
+  				(length 5.08)
+  				(name "TD+"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L18H"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -20.32 180)
+  				(length 5.08)
+  				(name "TD-"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L19H"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -27.94 180)
+  				(length 5.08)
+  				(name "TX_FAULT"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L2H"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -30.48 180)
+  				(length 5.08)
+  				(name "TX_DISABLE"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L3H"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 30.48 -33.02 180)
+  				(length 5.08)
+  				(name "SDA"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L4H"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input clock
+  				(at 30.48 -35.56 180)
+  				(length 5.08)
+  				(name "SCL"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L5H"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -38.1 180)
+  				(length 5.08)
+  				(name "MOD_ABS"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L6H"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -40.64 180)
+  				(length 5.08)
+  				(name "RS0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L7H"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 30.48 -43.18 180)
+  				(length 5.08)
+  				(name "RS1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L9H"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 30.48 -45.72 180)
+  				(length 5.08)
+  				(name "LOS"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L8H"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  		)
+  		(embedded_fonts no)
+  	)
+)

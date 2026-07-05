@@ -1,0 +1,55 @@
+{
+  "id": "cern_molex_22_16_2030",
+  "name": "22-16-2030 (CERN library)",
+  "category": "connector",
+  "family": "CERN MOLEX",
+  "manufacturer": "MOLEX",
+  "mpn_pattern": "22-16-2030",
+  "description": "2.54mm (.100') Pitch, 3 Circuits  Single Row  Right Angle SDA-4455 Socket. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "3",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_molex_22_16_2030.kicad_mod",
+    "symbol": "cern_molex_22_16_2030.kicad_sym",
+    "footprint_svg": "cern_molex_22_16_2030.footprint.svg",
+    "symbol_svg": "cern_molex_22_16_2030.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Connectors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (MOLEX THD.pretty/MOLEX_22-16-2030.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "54mm",
+    "100",
+    "pitch",
+    "circuits",
+    "single",
+    "row"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#MOLEX#MOLEX_22-16-2030",
+      "symbol": "SchLib/Connectors.kicad_sym#Connector 3 Female",
+      "footprint": "PcbLib/MOLEX THD.pretty/MOLEX_22-16-2030.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

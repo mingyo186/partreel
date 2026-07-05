@@ -1,0 +1,55 @@
+{
+  "id": "cern_weidmuller_1605090000",
+  "name": "1605090000 or SL 3.50/04/90G 3.2SN OR BX (CERN library)",
+  "category": "connector",
+  "family": "CERN WEIDMULLER",
+  "manufacturer": "WEIDMULLER",
+  "mpn_pattern": "1605090000 or SL 3.50/04/90G 3.2SN OR BX",
+  "description": "10A 300 V, Pitch 3.50mm, 4 Positions PCB Right Angle Header, BL/SL 3.50 Series. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "4",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_weidmuller_1605090000.kicad_mod",
+    "symbol": "cern_weidmuller_1605090000.kicad_sym",
+    "footprint_svg": "cern_weidmuller_1605090000.footprint.svg",
+    "symbol_svg": "cern_weidmuller_1605090000.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Connectors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (WEIDMULLER THD.pretty/WEIDMULLER_1605090000.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "10a",
+    "300",
+    "pitch",
+    "50mm",
+    "positions",
+    "pcb"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#WEIDMULLER#WEIDMULLER_1605090000",
+      "symbol": "SchLib/Connectors.kicad_sym#Connector 4 Male",
+      "footprint": "PcbLib/WEIDMULLER THD.pretty/WEIDMULLER_1605090000.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

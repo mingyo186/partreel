@@ -1,0 +1,55 @@
+{
+  "id": "cern_samtec_seam8_40_s02_0_s_10_2_gp_k",
+  "name": "SEAM8-40-S02.0-S-10-2-GP-K (CERN library)",
+  "category": "connector",
+  "family": "CERN SAMTEC",
+  "manufacturer": "SAMTEC",
+  "mpn_pattern": "SEAM8-40-S02.0-S-10-2-GP-K",
+  "description": "400 Contacts (40 Contacts x 10 Rows abcdefghjk), Pitch 0.8mm, Surface Mount Ultra-High Density Open-Field  Array Board to Board Connector. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: Preferred.",
+  "parameters": {
+    "contacts": "400",
+    "mounting": "SMD",
+    "lifecycle": "Preferred"
+  },
+  "files": {
+    "footprint": "cern_samtec_seam8_40_s02_0_s_10_2_gp_k.kicad_mod",
+    "symbol": "cern_samtec_seam8_40_s02_0_s_10_2_gp_k.kicad_sym",
+    "footprint_svg": "cern_samtec_seam8_40_s02_0_s_10_2_gp_k.footprint.svg",
+    "symbol_svg": "cern_samtec_seam8_40_s02_0_s_10_2_gp_k.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Connectors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (SAMTEC SMD.pretty/SAMTEC_SEAM8-40-S02.0-S-10-2-GP-K.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "400",
+    "contacts",
+    "contacts",
+    "rows",
+    "abcdefghjk",
+    "pitch"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#SAMTEC#SAMTEC_SEAM8-40-S02.0-S-10-2-GP-K",
+      "symbol": "SchLib/Connectors.kicad_sym#Connector 400 Male (10x40) (abcdefghjk)",
+      "footprint": "PcbLib/SAMTEC SMD.pretty/SAMTEC_SEAM8-40-S02.0-S-10-2-GP-K.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

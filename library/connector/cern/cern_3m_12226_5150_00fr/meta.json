@@ -1,0 +1,55 @@
+{
+  "id": "cern_3m_12226_5150_00fr",
+  "name": "12226-5150-00FR (CERN library)",
+  "category": "connector",
+  "family": "CERN 3M",
+  "manufacturer": "3M",
+  "mpn_pattern": "12226-5150-00FR",
+  "description": "26 Contacts, 0.8mm Pitch, Through-hole Right Angle Shrunk Delta Ribbon (SDR) Receptacle, 112 Series. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "28",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_3m_12226_5150_00fr.kicad_mod",
+    "symbol": "cern_3m_12226_5150_00fr.kicad_sym",
+    "footprint_svg": "cern_3m_12226_5150_00fr.footprint.svg",
+    "symbol_svg": "cern_3m_12226_5150_00fr.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Connectors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (3M THD.pretty/3M_12226-5150-00FR.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "contacts",
+    "8mm",
+    "pitch",
+    "through",
+    "hole",
+    "right"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#3M#3M_12226-5150-00FR",
+      "symbol": "SchLib/Connectors.kicad_sym#Connector MDR 26 Female",
+      "footprint": "PcbLib/3M THD.pretty/3M_12226-5150-00FR.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

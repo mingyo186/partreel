@@ -1,0 +1,55 @@
+{
+  "id": "cern_harwin_m80_5401442",
+  "name": "M80-5401442 (CERN library)",
+  "category": "connector",
+  "family": "CERN HARWIN",
+  "manufacturer": "HARWIN",
+  "mpn_pattern": "M80-5401442",
+  "description": "14 Contacts - Pitch 2mm - Male Horizontal PC Tail with Board Mount. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "14",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_harwin_m80_5401442.kicad_mod",
+    "symbol": "cern_harwin_m80_5401442.kicad_sym",
+    "footprint_svg": "cern_harwin_m80_5401442.footprint.svg",
+    "symbol_svg": "cern_harwin_m80_5401442.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Connectors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (HARWIN THD.pretty/HARWIN_M80-5401442.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "contacts",
+    "pitch",
+    "2mm",
+    "male",
+    "horizontal",
+    "tail"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#HARWIN#HARWIN_M80-5401442",
+      "symbol": "SchLib/Connectors.kicad_sym#Connector 14 Male+2MTG",
+      "footprint": "PcbLib/HARWIN THD.pretty/HARWIN_M80-5401442.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

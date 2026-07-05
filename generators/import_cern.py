@@ -24,6 +24,13 @@ IMPORT_DATE = "2026-07-05"
 
 WAVE0 = {"Crystals & Oscillators": ("timing", "CERN Crystals & Oscillators"),
          "LEMO": ("connector", "CERN LEMO")}
+# Wave 1: 벤더 커넥터 전 테이블 + 소켓 (docs/cern-import-plan.md §6)
+WAVE1 = {t: ("connector", f"CERN {t}") for t in
+         ["3M", "AMPHENOL", "ERNI", "FCI", "HARTING", "HARWIN", "MENTOR",
+          "MOLEX", "PHOENIX", "SAMTEC", "SOURIAU", "STELVIO-KONTEK COMATEL",
+          "TYCO", "WEIDMULLER"]}
+WAVE1["Sockets"] = ("socket", "CERN Sockets")
+WAVES = {"0": WAVE0, "1": WAVE1}
 
 
 def slug(name):
@@ -102,7 +109,8 @@ def main():
     con.row_factory = sqlite3.Row
     accepted, skipped = [], []
     used_ids = set()
-    for table, (category, family) in WAVE0.items():
+    wave = os.environ.get("CERN_WAVE", "0")
+    for table, (category, family) in WAVES[wave].items():
         for row in con.execute(f'SELECT * FROM "{table}"'):
             r = dict(row)
             key = r.get("Part Number Nocolon") or r.get("Part Number") or ""
@@ -203,9 +211,9 @@ def main():
             json.dump(meta, open(os.path.join(d, "meta.json"), "w", encoding="utf-8"),
                       indent=2, ensure_ascii=False)
             accepted.append(pid)
-    log = {"commit": COMMIT, "wave": 0, "accepted": accepted,
+    log = {"commit": COMMIT, "wave": wave, "accepted": accepted,
            "skipped": [{"part": k, "reason": v} for k, v in skipped]}
-    json.dump(log, open(os.path.join(ROOT, "docs", "import-cern-wave0-log.json"), "w",
+    json.dump(log, open(os.path.join(ROOT, "docs", "import-cern-wave%s-log.json" % wave), "w",
                         encoding="utf-8"), indent=2, ensure_ascii=False)
     print(f"accepted {len(accepted)}, skipped {len(skipped)}")
 

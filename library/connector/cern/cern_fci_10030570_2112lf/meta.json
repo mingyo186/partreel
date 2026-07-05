@@ -1,0 +1,55 @@
+{
+  "id": "cern_fci_10030570_2112lf",
+  "name": "10030570-2112LF (CERN library)",
+  "category": "connector",
+  "family": "CERN FCI",
+  "manufacturer": "FCI",
+  "mpn_pattern": "10030570-2112LF",
+  "description": "26 Contacts, Pitch 1mm, Surface Mount Card Edge ExpressCard Module Connector. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "26",
+    "mounting": "SMD",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_fci_10030570_2112lf.kicad_mod",
+    "symbol": "cern_fci_10030570_2112lf.kicad_sym",
+    "footprint_svg": "cern_fci_10030570_2112lf.footprint.svg",
+    "symbol_svg": "cern_fci_10030570_2112lf.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Connectors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (FCI SMD.pretty/FCI_10030570-2112LF.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "contacts",
+    "pitch",
+    "1mm",
+    "surface",
+    "mount",
+    "card"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#FCI#FCI_10030570-2112LF",
+      "symbol": "SchLib/Connectors.kicad_sym#Connector 26 Female",
+      "footprint": "PcbLib/FCI SMD.pretty/FCI_10030570-2112LF.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

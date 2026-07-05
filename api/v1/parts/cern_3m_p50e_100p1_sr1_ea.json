@@ -1,0 +1,81 @@
+{
+  "id": "cern_3m_p50e_100p1_sr1_ea",
+  "name": "P50E-100P1-SR1-EA (CERN library)",
+  "category": "connector",
+  "family": "CERN 3M",
+  "manufacturer": "3M",
+  "mpn_pattern": "P50E-100P1-SR1-EA",
+  "description": "100 Contacts - .050' Right Angle, Pak 50 Boardmount Plug, P50E Series. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "100",
+    "lifecycle": "None"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/connector/cern/cern_3m_p50e_100p1_sr1_ea/cern_3m_p50e_100p1_sr1_ea.kicad_mod",
+    "symbol": "https://partreel.com/library/connector/cern/cern_3m_p50e_100p1_sr1_ea/cern_3m_p50e_100p1_sr1_ea.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/connector/cern/cern_3m_p50e_100p1_sr1_ea/cern_3m_p50e_100p1_sr1_ea.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/connector/cern/cern_3m_p50e_100p1_sr1_ea/cern_3m_p50e_100p1_sr1_ea.symbol.svg"
+  },
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Connectors.kicad_sym",
+  "license": "CERN-OHL-P-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "cern-kicad-libs@53054c17 (3M THD.pretty/3M_P50E-100P1-SR1-EA.kicad_mod)",
+  "keywords": [
+    "cern",
+    "100",
+    "contacts",
+    "050",
+    "right",
+    "angle",
+    "pak"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "cern-kicad-libs@53054c17 (3M THD.pretty/3M_P50E-100P1-SR1-EA.kicad_mod)",
+    "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Connectors.kicad_sym",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_cern.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+      "source_commit": "53054c17",
+      "source_files": {
+        "db": "CERN.sqlite#3M#3M_P50E-100P1-SR1-EA",
+        "symbol": "SchLib/Connectors.kicad_sym#Connector 100 Male",
+        "footprint": "PcbLib/3M THD.pretty/3M_P50E-100P1-SR1-EA.kicad_mod"
+      },
+      "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+      "import_date": "2026-07-05",
+      "modifications": [
+        "extracted single symbol from library",
+        "stripped dead 3D model reference (upstream ships no 3D)",
+        "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/cern_3m_p50e_100p1_sr1_ea/",
+  "api": "https://partreel.com/api/v1/parts/cern_3m_p50e_100p1_sr1_ea.json"
+}

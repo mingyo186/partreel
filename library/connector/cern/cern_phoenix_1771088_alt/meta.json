@@ -1,0 +1,55 @@
+{
+  "id": "cern_phoenix_1771088_alt",
+  "name": "1771088 (PTSM 0,5/ 8-2,5-H SMD R44) (CERN library)",
+  "category": "connector",
+  "family": "CERN PHOENIX",
+  "manufacturer": "PHOENIX CONTACT",
+  "mpn_pattern": "1771088 (PTSM 0,5/ 8-2,5-H SMD R44)",
+  "description": "6A, 160V, Pitch 2.5mm, 8 Positions SMD Right Angled Header. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "8",
+    "mounting": "SMD",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_phoenix_1771088_alt.kicad_mod",
+    "symbol": "cern_phoenix_1771088_alt.kicad_sym",
+    "footprint_svg": "cern_phoenix_1771088_alt.footprint.svg",
+    "symbol_svg": "cern_phoenix_1771088_alt.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Connectors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (PHOENIX SMD.pretty/PHOENIX_1771088.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "160v",
+    "pitch",
+    "5mm",
+    "positions",
+    "smd",
+    "right"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#PHOENIX#PHOENIX_1771088 [alt]",
+      "symbol": "SchLib/Connectors.kicad_sym#Connector 8 Male [alt]",
+      "footprint": "PcbLib/PHOENIX SMD.pretty/PHOENIX_1771088.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

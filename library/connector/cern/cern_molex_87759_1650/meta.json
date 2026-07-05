@@ -1,0 +1,55 @@
+{
+  "id": "cern_molex_87759_1650",
+  "name": "87759-1650 (CERN library)",
+  "category": "connector",
+  "family": "CERN MOLEX",
+  "manufacturer": "MOLEX",
+  "mpn_pattern": "87759-1650",
+  "description": "2.00mm (.079') Pitch Milli-Grid™ Header, Vertical with Press-fit Plastic Pegs, 16 Circuits. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "16",
+    "mounting": "SMD",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_molex_87759_1650.kicad_mod",
+    "symbol": "cern_molex_87759_1650.kicad_sym",
+    "footprint_svg": "cern_molex_87759_1650.footprint.svg",
+    "symbol_svg": "cern_molex_87759_1650.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Connectors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (MOLEX SMD.pretty/MOLEX_87759-1650.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "00mm",
+    "079",
+    "pitch",
+    "milli",
+    "grid",
+    "header"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#MOLEX#MOLEX_87759-1650",
+      "symbol": "SchLib/Connectors.kicad_sym#Connector 16 Male",
+      "footprint": "PcbLib/MOLEX SMD.pretty/MOLEX_87759-1650.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

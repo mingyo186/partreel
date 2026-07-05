@@ -1,0 +1,55 @@
+{
+  "id": "cern_samtec_erf8_050_05_0_s_dv_k_tr_alt",
+  "name": "ERF8-050-05.0-S-DV-K (CERN library)",
+  "category": "connector",
+  "family": "CERN SAMTEC",
+  "manufacturer": "SAMTEC",
+  "mpn_pattern": "ERF8-050-05.0-S-DV-K",
+  "description": "100 Contacts, Pitch 0.8mm, Edge Rate™ Rugged High Speed Straight Socket Strip. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "100",
+    "mounting": "SMD",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_samtec_erf8_050_05_0_s_dv_k_tr_alt.kicad_mod",
+    "symbol": "cern_samtec_erf8_050_05_0_s_dv_k_tr_alt.kicad_sym",
+    "footprint_svg": "cern_samtec_erf8_050_05_0_s_dv_k_tr_alt.footprint.svg",
+    "symbol_svg": "cern_samtec_erf8_050_05_0_s_dv_k_tr_alt.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Connectors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (SAMTEC SMD.pretty/SAMTEC_ERF8-050-05.0-S-DV-K-TR.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "100",
+    "contacts",
+    "pitch",
+    "8mm",
+    "edge",
+    "rate"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#SAMTEC#SAMTEC_ERF8-050-05.0-S-DV-K-TR [alt]",
+      "symbol": "SchLib/Connectors.kicad_sym#Connector 100 Female [alt]",
+      "footprint": "PcbLib/SAMTEC SMD.pretty/SAMTEC_ERF8-050-05.0-S-DV-K-TR.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

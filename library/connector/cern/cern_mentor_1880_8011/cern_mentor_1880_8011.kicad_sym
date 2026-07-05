@@ -1,0 +1,294 @@
+(kicad_symbol_lib (version 20211014) (generator partreel-import)
+  (symbol "MENTOR_1880.8011"
+  		(pin_numbers
+  			(hide yes)
+  		)
+  		(pin_names
+  			(offset 1.27)
+  			(hide yes)
+  		)
+  		(exclude_from_sim no)
+  		(in_bom yes)
+  		(on_board yes)
+  		(property "Reference" "B"
+  			(at 0 2.54 0)
+  			(effects
+  				(font
+  					(size 1.524 1.524)
+  				)
+  				(justify right)
+  			)
+  		)
+  		(property "Value" "${FAMILY}"
+  			(at 0 0 0)
+  			(effects
+  				(font
+  					(size 1.524 1.524)
+  				)
+  				(hide yes)
+  			)
+  		)
+  		(property "Footprint" ""
+  			(at 0 0 0)
+  			(effects
+  				(font
+  					(size 1.27 1.27)
+  				)
+  				(hide yes)
+  			)
+  		)
+  		(property "Datasheet" ""
+  			(at 0 0 0)
+  			(effects
+  				(font
+  					(size 1.27 1.27)
+  				)
+  				(hide yes)
+  			)
+  		)
+  		(property "Description" "2 x TEST JACK 2mm + 1 x Green LED 3mm PCB EDGE MOUNTING"
+  			(at 0 0 0)
+  			(effects
+  				(font
+  					(size 1.27 1.27)
+  				)
+  				(hide yes)
+  			)
+  		)
+  		(symbol "MENTOR_1880.8011_1_0"
+  			(polyline
+  				(pts
+  					(xy -1.27 0) (xy 1.27 0)
+  				)
+  				(stroke
+  					(width 0)
+  					(type solid)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy -0.762 -1.524) (xy 0.762 0) (xy -0.762 1.524) (xy -0.762 -1.524)
+  				)
+  				(stroke
+  					(width -0.0001)
+  					(type solid)
+  				)
+  				(fill
+  					(type outline)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 0.762 2.286) (xy 2.032 3.556)
+  				)
+  				(stroke
+  					(width 0)
+  					(type solid)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 0.762 1.524) (xy 0.762 -1.524)
+  				)
+  				(stroke
+  					(width 0)
+  					(type solid)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 2.032 3.556) (xy 1.27 3.302) (xy 1.778 2.794) (xy 2.032 3.556)
+  				)
+  				(stroke
+  					(width -0.0001)
+  					(type solid)
+  				)
+  				(fill
+  					(type outline)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 2.032 2.032) (xy 3.302 3.302)
+  				)
+  				(stroke
+  					(width 0)
+  					(type solid)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 3.302 3.302) (xy 2.54 3.048) (xy 3.048 2.54) (xy 3.302 3.302)
+  				)
+  				(stroke
+  					(width -0.0001)
+  					(type solid)
+  				)
+  				(fill
+  					(type outline)
+  				)
+  			)
+  			(text "Green"
+  				(at 0 -2.54 0)
+  				(effects
+  					(font
+  						(size 1.2192 1.2192)
+  					)
+  				)
+  			)
+  			(pin passive line
+  				(at -3.81 0 0)
+  				(length 2.54)
+  				(name "A"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin passive line
+  				(at 3.81 0 180)
+  				(length 2.54)
+  				(name "C"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  		)
+  		(symbol "MENTOR_1880.8011_2_0"
+  			(bezier
+  				(pts
+  					(xy -6.35 -1.27) (xy -5.6485 -1.27) (xy -5.08 -0.7014) (xy -5.08 0)
+  				)
+  				(stroke
+  					(width 0.508)
+  					(type solid)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(bezier
+  				(pts
+  					(xy -5.08 0) (xy -5.08 0.7014) (xy -5.6485 1.27) (xy -6.35 1.27)
+  				)
+  				(stroke
+  					(width 0.508)
+  					(type solid)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(text "TOP"
+  				(at -2.286 -1.016 0)
+  				(effects
+  					(font
+  						(size 1.2192 1.2192)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 0 0 180)
+  				(length 5.08)
+  				(name "3"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "3"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  		)
+  		(symbol "MENTOR_1880.8011_3_0"
+  			(bezier
+  				(pts
+  					(xy -6.35 -1.27) (xy -5.6485 -1.27) (xy -5.08 -0.7014) (xy -5.08 0)
+  				)
+  				(stroke
+  					(width 0.508)
+  					(type solid)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(bezier
+  				(pts
+  					(xy -5.08 0) (xy -5.08 0.7014) (xy -5.6485 1.27) (xy -6.35 1.27)
+  				)
+  				(stroke
+  					(width 0.508)
+  					(type solid)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(text "BOT"
+  				(at -2.286 -1.016 0)
+  				(effects
+  					(font
+  						(size 1.2192 1.2192)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 0 0 180)
+  				(length 5.08)
+  				(name "4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  		)
+  		(embedded_fonts no)
+  	)
+)

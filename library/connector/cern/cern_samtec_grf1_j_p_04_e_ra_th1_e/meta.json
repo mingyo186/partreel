@@ -1,0 +1,55 @@
+{
+  "id": "cern_samtec_grf1_j_p_04_e_ra_th1_e",
+  "name": "GRF1-J-P-04-E-RA-TH1-E (CERN library)",
+  "category": "connector",
+  "family": "CERN SAMTEC",
+  "manufacturer": "SAMTEC",
+  "mpn_pattern": "GRF1-J-P-04-E-RA-TH1-E",
+  "description": "4 Ganged Right Angled 50 Ohm Micro-Mini RF Jack - 5mm Spacing - GRF1-J Series. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "24",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_samtec_grf1_j_p_04_e_ra_th1_e.kicad_mod",
+    "symbol": "cern_samtec_grf1_j_p_04_e_ra_th1_e.kicad_sym",
+    "footprint_svg": "cern_samtec_grf1_j_p_04_e_ra_th1_e.footprint.svg",
+    "symbol_svg": "cern_samtec_grf1_j_p_04_e_ra_th1_e.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Connectors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (SAMTEC THD.pretty/SAMTEC_GRF1-J-P-04-E-RA-TH1-E.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "ganged",
+    "right",
+    "angled",
+    "ohm",
+    "micro",
+    "mini"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#SAMTEC#SAMTEC_GRF1-J-P-04-E-RA-TH1-E",
+      "symbol": "SchLib/Connectors.kicad_sym#SAMTEC_GRF1-J-P-04-E-RA-TH1-E",
+      "footprint": "PcbLib/SAMTEC THD.pretty/SAMTEC_GRF1-J-P-04-E-RA-TH1-E.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "cern_amphenol_10114633_101lf_alt",
+  "name": "10114633-101LF (CERN library)",
+  "category": "connector",
+  "family": "CERN AMPHENOL",
+  "manufacturer": "AMPHENOL",
+  "mpn_pattern": "10114633-101LF",
+  "description": "72 Contacts, 2mm Pitch, 6 Columns, 4 Pairs per Column, Right Angle Receptacle. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "72",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_amphenol_10114633_101lf_alt.kicad_mod",
+    "symbol": "cern_amphenol_10114633_101lf_alt.kicad_sym",
+    "footprint_svg": "cern_amphenol_10114633_101lf_alt.footprint.svg",
+    "symbol_svg": "cern_amphenol_10114633_101lf_alt.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Connectors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (AMPHENOL THD.pretty/AMPHENOL_10114633-101LF.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "contacts",
+    "2mm",
+    "pitch",
+    "columns",
+    "pairs",
+    "per"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#AMPHENOL#AMPHENOL_10114633-101LF [alt]",
+      "symbol": "SchLib/Connectors.kicad_sym#AMPHENOL_10114633-101LF [alt]",
+      "footprint": "PcbLib/AMPHENOL THD.pretty/AMPHENOL_10114633-101LF.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

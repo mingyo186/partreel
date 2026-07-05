@@ -1,0 +1,55 @@
+{
+  "id": "cern_samtec_tsw_115_23_l_d",
+  "name": "TSW-115-23-L-D (CERN library)",
+  "category": "connector",
+  "family": "CERN SAMTEC",
+  "manufacturer": "SAMTEC",
+  "mpn_pattern": "TSW-115-23-L-D",
+  "description": "30 Contacts, Pitch 2.54mm, Dual Row Through Mount Straight Header (Post Lead 5.84mm, Tail Lead 2.92mm, Insulator 2.54mm). Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "30",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_samtec_tsw_115_23_l_d.kicad_mod",
+    "symbol": "cern_samtec_tsw_115_23_l_d.kicad_sym",
+    "footprint_svg": "cern_samtec_tsw_115_23_l_d.footprint.svg",
+    "symbol_svg": "cern_samtec_tsw_115_23_l_d.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Connectors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (SAMTEC THD.pretty/SAMTEC_TSW-115-23-L-D.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "contacts",
+    "pitch",
+    "54mm",
+    "dual",
+    "row",
+    "through"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#SAMTEC#SAMTEC_TSW-115-23-L-D",
+      "symbol": "SchLib/Connectors.kicad_sym#Connector 30 Male",
+      "footprint": "PcbLib/SAMTEC THD.pretty/SAMTEC_TSW-115-23-L-D.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

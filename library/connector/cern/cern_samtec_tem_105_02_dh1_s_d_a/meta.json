@@ -1,0 +1,55 @@
+{
+  "id": "cern_samtec_tem_105_02_dh1_s_d_a",
+  "name": "TEM-105-02-DH1-S-D-A (CERN library)",
+  "category": "connector",
+  "family": "CERN SAMTEC",
+  "manufacturer": "SAMTEC",
+  "mpn_pattern": "TEM-105-02-DH1-S-D-A",
+  "description": "10 Contacts, Pitch 0.8mm, Dual Row Right Angle Header, Micro Tiger Eye Strip. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "10",
+    "mounting": "SMD",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_samtec_tem_105_02_dh1_s_d_a.kicad_mod",
+    "symbol": "cern_samtec_tem_105_02_dh1_s_d_a.kicad_sym",
+    "footprint_svg": "cern_samtec_tem_105_02_dh1_s_d_a.footprint.svg",
+    "symbol_svg": "cern_samtec_tem_105_02_dh1_s_d_a.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Connectors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (SAMTEC SMD.pretty/SAMTEC_TEM-105-02-DH1-X-D-A.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "contacts",
+    "pitch",
+    "8mm",
+    "dual",
+    "row",
+    "right"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#SAMTEC#SAMTEC_TEM-105-02-DH1-S-D-A",
+      "symbol": "SchLib/Connectors.kicad_sym#Connector 10 Male+2MTG",
+      "footprint": "PcbLib/SAMTEC SMD.pretty/SAMTEC_TEM-105-02-DH1-X-D-A.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "cern_samtec_mptc_02_24_02_01_01_l_ra_sd",
+  "name": "MPTC-02-24-02-01-01-L-RA-SD (CERN library)",
+  "category": "connector",
+  "family": "CERN SAMTEC",
+  "manufacturer": "SAMTEC",
+  "mpn_pattern": "MPTC-02-24-02-01-01-L-RA-SD",
+  "description": "4 Power Contacts + 24 Signal Pins, Right Angle, PowerStrip™/30A Signal/Power Combo Terminal Strip. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "48",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_samtec_mptc_02_24_02_01_01_l_ra_sd.kicad_mod",
+    "symbol": "cern_samtec_mptc_02_24_02_01_01_l_ra_sd.kicad_sym",
+    "footprint_svg": "cern_samtec_mptc_02_24_02_01_01_l_ra_sd.footprint.svg",
+    "symbol_svg": "cern_samtec_mptc_02_24_02_01_01_l_ra_sd.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Connectors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (SAMTEC THD.pretty/SAMTEC_MPTC-02-24-02-01-01-L-RA-SD.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "power",
+    "contacts",
+    "signal",
+    "pins",
+    "right",
+    "angle"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#SAMTEC#SAMTEC_MPTC-02-24-02-01-01-L-RA-SD",
+      "symbol": "SchLib/Connectors.kicad_sym#SAMTEC_MPTC-02-24-02",
+      "footprint": "PcbLib/SAMTEC THD.pretty/SAMTEC_MPTC-02-24-02-01-01-L-RA-SD.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

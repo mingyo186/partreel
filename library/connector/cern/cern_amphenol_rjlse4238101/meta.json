@@ -1,0 +1,54 @@
+{
+  "id": "cern_amphenol_rjlse4238101",
+  "name": "RJLSE4238101 (CERN library)",
+  "category": "connector",
+  "family": "CERN AMPHENOL",
+  "manufacturer": "AMPHENOL",
+  "mpn_pattern": "RJLSE4238101",
+  "description": "1 Port RJ45 Connector, 8P8C ,  Right Angle Without Leds. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "9",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_amphenol_rjlse4238101.kicad_mod",
+    "symbol": "cern_amphenol_rjlse4238101.kicad_sym",
+    "footprint_svg": "cern_amphenol_rjlse4238101.footprint.svg",
+    "symbol_svg": "cern_amphenol_rjlse4238101.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Connectors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (AMPHENOL SMD.pretty/AMPHENOL_RJLSE4238101.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "port",
+    "rj45",
+    "connector",
+    "8p8c",
+    "right",
+    "angle"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#AMPHENOL#AMPHENOL_RJLSE4238101",
+      "symbol": "SchLib/Connectors.kicad_sym#Connector RJ45 + Shield",
+      "footprint": "PcbLib/AMPHENOL SMD.pretty/AMPHENOL_RJLSE4238101.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

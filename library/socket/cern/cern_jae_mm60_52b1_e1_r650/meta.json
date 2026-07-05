@@ -1,0 +1,56 @@
+{
+  "id": "cern_jae_mm60_52b1_e1_r650",
+  "name": "JAE_MM60-52B1-E1-R650 (CERN library)",
+  "category": "socket",
+  "family": "CERN Sockets",
+  "manufacturer": "JAE (JAPAN AVIATION ELECTRONICS INDUSTRY)",
+  "mpn_pattern": "JAE_MM60-52B1-E1-R650",
+  "description": "Right Angle 52 Positions Mini PCI Express Socket. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "54",
+    "mounting": "SMD",
+    "case": "Mini PCIe",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_jae_mm60_52b1_e1_r650.kicad_mod",
+    "symbol": "cern_jae_mm60_52b1_e1_r650.kicad_sym",
+    "footprint_svg": "cern_jae_mm60_52b1_e1_r650.footprint.svg",
+    "symbol_svg": "cern_jae_mm60_52b1_e1_r650.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Sockets.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Sockets.pretty/JAE_MM60-52B1-E1.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "right",
+    "angle",
+    "positions",
+    "mini",
+    "pci",
+    "express"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Sockets#JAE_MM60-52B1-E1-R650",
+      "symbol": "SchLib/Sockets.kicad_sym#Mini PCIe",
+      "footprint": "PcbLib/Sockets.pretty/JAE_MM60-52B1-E1.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

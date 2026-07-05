@@ -1,0 +1,55 @@
+{
+  "id": "cern_fci_61083_104400lf_alt",
+  "name": "61083-104400LF (CERN library)",
+  "category": "connector",
+  "family": "CERN FCI",
+  "manufacturer": "FCI",
+  "mpn_pattern": "61083-104400LF",
+  "description": "100 Positions, Pitch 0.8mm, Dual Row, Surface Mount Board to Board Vertical Header, Bergstak®. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "100",
+    "mounting": "SMD",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_fci_61083_104400lf_alt.kicad_mod",
+    "symbol": "cern_fci_61083_104400lf_alt.kicad_sym",
+    "footprint_svg": "cern_fci_61083_104400lf_alt.footprint.svg",
+    "symbol_svg": "cern_fci_61083_104400lf_alt.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Connectors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (FCI SMD.pretty/FCI_61083-104400LF.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "100",
+    "positions",
+    "pitch",
+    "8mm",
+    "dual",
+    "row"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#FCI#FCI_61083-104400LF [alt]",
+      "symbol": "SchLib/Connectors.kicad_sym#Connector 100 Male [alt]",
+      "footprint": "PcbLib/FCI SMD.pretty/FCI_61083-104400LF.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

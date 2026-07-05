@@ -1,0 +1,55 @@
+{
+  "id": "cern_ironwood_c23013_alt",
+  "name": "C23013 (CERN library)",
+  "category": "socket",
+  "family": "CERN Sockets",
+  "manufacturer": "IRONWOOD ELECTRONICS",
+  "mpn_pattern": "C23013",
+  "description": "Socket For CBT-QFN8 2x2mm 0.5mm pitch, Body 25.3x25.3mm. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "8",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_ironwood_c23013_alt.kicad_mod",
+    "symbol": "cern_ironwood_c23013_alt.kicad_sym",
+    "footprint_svg": "cern_ironwood_c23013_alt.footprint.svg",
+    "symbol_svg": "cern_ironwood_c23013_alt.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Sockets.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Sockets.pretty/IRONWOOD_C23013.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "socket",
+    "for",
+    "cbt",
+    "qfn8",
+    "2x2mm",
+    "5mm"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Sockets#IRONWOOD_C23013 [alt]",
+      "symbol": "SchLib/Sockets.kicad_sym#QFN8 Socket [alt]",
+      "footprint": "PcbLib/Sockets.pretty/IRONWOOD_C23013.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

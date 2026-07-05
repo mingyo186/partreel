@@ -1,0 +1,55 @@
+{
+  "id": "cern_samtec_zf5s_30_01_t_wt_alt",
+  "name": "ZF5S-30-01-T-WT (CERN library)",
+  "category": "connector",
+  "family": "CERN SAMTEC",
+  "manufacturer": "SAMTEC",
+  "mpn_pattern": "ZF5S-30-01-T-WT",
+  "description": "30 Positions, 0.50 mm (.0197') Pitch, Zero Insertion Force Connector for FFC. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "32",
+    "mounting": "SMD",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_samtec_zf5s_30_01_t_wt_alt.kicad_mod",
+    "symbol": "cern_samtec_zf5s_30_01_t_wt_alt.kicad_sym",
+    "footprint_svg": "cern_samtec_zf5s_30_01_t_wt_alt.footprint.svg",
+    "symbol_svg": "cern_samtec_zf5s_30_01_t_wt_alt.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Connectors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (SAMTEC SMD.pretty/SAMTEC_ZF5S-30-01-T-WT.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "positions",
+    "0197",
+    "pitch",
+    "zero",
+    "insertion",
+    "force"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#SAMTEC#SAMTEC_ZF5S-30-01-T-WT [alt]",
+      "symbol": "SchLib/Connectors.kicad_sym#Connector 30 Female + 2 [alt]",
+      "footprint": "PcbLib/SAMTEC SMD.pretty/SAMTEC_ZF5S-30-01-T-WT.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

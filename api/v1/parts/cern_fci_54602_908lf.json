@@ -1,0 +1,81 @@
+{
+  "id": "cern_fci_54602_908lf",
+  "name": "54602-908LF (CERN library)",
+  "category": "connector",
+  "family": "CERN FCI",
+  "manufacturer": "FCI",
+  "mpn_pattern": "54602-908LF",
+  "description": "1 Port, 8 Positions, CAT3 RJ45 Horizontal Modular Jack. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "8",
+    "lifecycle": "None"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/connector/cern/cern_fci_54602_908lf/cern_fci_54602_908lf.kicad_mod",
+    "symbol": "https://partreel.com/library/connector/cern/cern_fci_54602_908lf/cern_fci_54602_908lf.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/connector/cern/cern_fci_54602_908lf/cern_fci_54602_908lf.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/connector/cern/cern_fci_54602_908lf/cern_fci_54602_908lf.symbol.svg"
+  },
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Connectors.kicad_sym",
+  "license": "CERN-OHL-P-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "cern-kicad-libs@53054c17 (FCI THD.pretty/FCI_54602-908LF.kicad_mod)",
+  "keywords": [
+    "cern",
+    "port",
+    "positions",
+    "cat3",
+    "rj45",
+    "horizontal",
+    "modular"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "cern-kicad-libs@53054c17 (FCI THD.pretty/FCI_54602-908LF.kicad_mod)",
+    "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Connectors.kicad_sym",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_cern.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+      "source_commit": "53054c17",
+      "source_files": {
+        "db": "CERN.sqlite#FCI#FCI_54602-908LF",
+        "symbol": "SchLib/Connectors.kicad_sym#FCI_54602-908LF",
+        "footprint": "PcbLib/FCI THD.pretty/FCI_54602-908LF.kicad_mod"
+      },
+      "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+      "import_date": "2026-07-05",
+      "modifications": [
+        "extracted single symbol from library",
+        "stripped dead 3D model reference (upstream ships no 3D)",
+        "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/cern_fci_54602_908lf/",
+  "api": "https://partreel.com/api/v1/parts/cern_fci_54602_908lf.json"
+}

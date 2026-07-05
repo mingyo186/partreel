@@ -1,0 +1,55 @@
+{
+  "id": "cern_amphenol_g14a42121b12hr",
+  "name": "G14A42121B12HR (CERN library)",
+  "category": "connector",
+  "family": "CERN AMPHENOL",
+  "manufacturer": "AMPHENOL",
+  "mpn_pattern": "G14A42121B12HR",
+  "description": "42 Contacts, Right Angle 0.50mm Pitch OCULINK RECEPTACLE, Surface Mount,  Double Row. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "42",
+    "mounting": "SMD",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_amphenol_g14a42121b12hr.kicad_mod",
+    "symbol": "cern_amphenol_g14a42121b12hr.kicad_sym",
+    "footprint_svg": "cern_amphenol_g14a42121b12hr.footprint.svg",
+    "symbol_svg": "cern_amphenol_g14a42121b12hr.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Connectors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (AMPHENOL SMD.pretty/AMPHENOL_G14A42121B12HR.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "contacts",
+    "right",
+    "angle",
+    "50mm",
+    "pitch",
+    "oculink"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#AMPHENOL#AMPHENOL_G14A42121B12HR",
+      "symbol": "SchLib/Connectors.kicad_sym#AMPHENOL_G14A42121B12HR",
+      "footprint": "PcbLib/AMPHENOL SMD.pretty/AMPHENOL_G14A42121B12HR.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

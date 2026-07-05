@@ -1,0 +1,55 @@
+{
+  "id": "cern_harwin_s9101_46r_alt",
+  "name": "S9101-46R (CERN library)",
+  "category": "connector",
+  "family": "CERN HARWIN",
+  "manufacturer": "HARWIN",
+  "mpn_pattern": "S9101-46R",
+  "description": "SMT PC Board Socket for 1.1mm to 1.8mm Mating Pin. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "4",
+    "mounting": "SMD",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_harwin_s9101_46r_alt.kicad_mod",
+    "symbol": "cern_harwin_s9101_46r_alt.kicad_sym",
+    "footprint_svg": "cern_harwin_s9101_46r_alt.footprint.svg",
+    "symbol_svg": "cern_harwin_s9101_46r_alt.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Connectors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (HARWIN SMD.pretty/HARWIN_S9101-46R.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "smt",
+    "board",
+    "socket",
+    "for",
+    "1mm",
+    "8mm"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#HARWIN#HARWIN_S9101-46R [alt]",
+      "symbol": "SchLib/Connectors.kicad_sym#Single Pin Female [alt]",
+      "footprint": "PcbLib/HARWIN SMD.pretty/HARWIN_S9101-46R.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

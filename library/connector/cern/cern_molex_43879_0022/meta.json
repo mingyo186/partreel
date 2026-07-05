@@ -1,0 +1,55 @@
+{
+  "id": "cern_molex_43879_0022",
+  "name": "43879-0022 (CERN library)",
+  "category": "connector",
+  "family": "CERN MOLEX",
+  "manufacturer": "MOLEX",
+  "mpn_pattern": "43879-0022",
+  "description": "4.20mm Pitch, Mini-Fit® CPI (Compliant Pin Interface) 4 Circuits Dual Row Vertical Header. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "4",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_molex_43879_0022.kicad_mod",
+    "symbol": "cern_molex_43879_0022.kicad_sym",
+    "footprint_svg": "cern_molex_43879_0022.footprint.svg",
+    "symbol_svg": "cern_molex_43879_0022.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Connectors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (MOLEX THD.pretty/MOLEX_43879-0022.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "20mm",
+    "pitch",
+    "mini",
+    "fit",
+    "cpi",
+    "compliant"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#MOLEX#MOLEX_43879-0022",
+      "symbol": "SchLib/Connectors.kicad_sym#Connector 4 Male",
+      "footprint": "PcbLib/MOLEX THD.pretty/MOLEX_43879-0022.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

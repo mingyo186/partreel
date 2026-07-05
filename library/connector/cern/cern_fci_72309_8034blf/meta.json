@@ -1,0 +1,55 @@
+{
+  "id": "cern_fci_72309_8034blf",
+  "name": "72309-8034BLF (CERN library)",
+  "category": "connector",
+  "family": "CERN FCI",
+  "manufacturer": "FCI",
+  "mpn_pattern": "72309-8034BLF",
+  "description": "Dual Right Angle USB Type A Receptacle, Through Hole, 30u GXT Contact, 8 Pins, Shield with Bright Tin Plating, 1.57 mm PCB, White HSG. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "9",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_fci_72309_8034blf.kicad_mod",
+    "symbol": "cern_fci_72309_8034blf.kicad_sym",
+    "footprint_svg": "cern_fci_72309_8034blf.footprint.svg",
+    "symbol_svg": "cern_fci_72309_8034blf.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Connectors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (FCI THD.pretty/FCI_72309-8034BLF.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "dual",
+    "right",
+    "angle",
+    "usb",
+    "type",
+    "receptacle"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#FCI#FCI_72309-8034BLF",
+      "symbol": "SchLib/Connectors.kicad_sym#Connector USBx2 4 Pin + 1Shield",
+      "footprint": "PcbLib/FCI THD.pretty/FCI_72309-8034BLF.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

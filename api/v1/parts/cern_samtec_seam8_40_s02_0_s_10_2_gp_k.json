@@ -1,0 +1,81 @@
+{
+  "id": "cern_samtec_seam8_40_s02_0_s_10_2_gp_k",
+  "name": "SEAM8-40-S02.0-S-10-2-GP-K (CERN library)",
+  "category": "connector",
+  "family": "CERN SAMTEC",
+  "manufacturer": "SAMTEC",
+  "mpn_pattern": "SEAM8-40-S02.0-S-10-2-GP-K",
+  "description": "400 Contacts (40 Contacts x 10 Rows abcdefghjk), Pitch 0.8mm, Surface Mount Ultra-High Density Open-Field  Array Board to Board Connector. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: Preferred.",
+  "parameters": {
+    "contacts": "400",
+    "mounting": "SMD",
+    "lifecycle": "Preferred"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/connector/cern/cern_samtec_seam8_40_s02_0_s_10_2_gp_k/cern_samtec_seam8_40_s02_0_s_10_2_gp_k.kicad_mod",
+    "symbol": "https://partreel.com/library/connector/cern/cern_samtec_seam8_40_s02_0_s_10_2_gp_k/cern_samtec_seam8_40_s02_0_s_10_2_gp_k.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/connector/cern/cern_samtec_seam8_40_s02_0_s_10_2_gp_k/cern_samtec_seam8_40_s02_0_s_10_2_gp_k.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/connector/cern/cern_samtec_seam8_40_s02_0_s_10_2_gp_k/cern_samtec_seam8_40_s02_0_s_10_2_gp_k.symbol.svg"
+  },
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Connectors.kicad_sym",
+  "license": "CERN-OHL-P-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "cern-kicad-libs@53054c17 (SAMTEC SMD.pretty/SAMTEC_SEAM8-40-S02.0-S-10-2-GP-K.kicad_mod)",
+  "keywords": [
+    "cern",
+    "400",
+    "contacts",
+    "contacts",
+    "rows",
+    "abcdefghjk",
+    "pitch"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "cern-kicad-libs@53054c17 (SAMTEC SMD.pretty/SAMTEC_SEAM8-40-S02.0-S-10-2-GP-K.kicad_mod)",
+    "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Connectors.kicad_sym",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_cern.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+      "source_commit": "53054c17",
+      "source_files": {
+        "db": "CERN.sqlite#SAMTEC#SAMTEC_SEAM8-40-S02.0-S-10-2-GP-K",
+        "symbol": "SchLib/Connectors.kicad_sym#Connector 400 Male (10x40) (abcdefghjk)",
+        "footprint": "PcbLib/SAMTEC SMD.pretty/SAMTEC_SEAM8-40-S02.0-S-10-2-GP-K.kicad_mod"
+      },
+      "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+      "import_date": "2026-07-05",
+      "modifications": [
+        "extracted single symbol from library",
+        "stripped dead 3D model reference (upstream ships no 3D)"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/cern_samtec_seam8_40_s02_0_s_10_2_gp_k/",
+  "api": "https://partreel.com/api/v1/parts/cern_samtec_seam8_40_s02_0_s_10_2_gp_k.json"
+}
