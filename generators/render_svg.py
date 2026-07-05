@@ -365,7 +365,9 @@ def _symbol_elements(text, hide_nums, hide_names, synth_body):
         name = num if all(n.isdigit() for n in names) and len(names) > 1 else names[0]
         merged.append((px, py, ex, ey, num, name))
     pin_data = merged
-    minx, maxx, miny, maxy = min(xs), max(xs), min(ys), max(ys)
+
+    def _tx(x0, y0, w):  # 텍스트 실폭을 bbox에 포함 (라벨 잘림 방지)
+        xs.extend([x0, x0 + w]); ys.extend([y0 - 1.2, y0 + 0.4])
 
     out = []
     for rx1, ry1, rx2, ry2 in rects:
@@ -401,16 +403,28 @@ def _symbol_elements(text, hide_nums, hide_names, synth_body):
         # 이름=본체 안쪽, 번호=핀선 바깥 위. 핀 방향에 맞춰 좌/우/세로 미러링.
         if abs(dx) >= abs(dy):  # 가로 핀
             if dx > 0:  # 좌측 핀(오른쪽으로 뻗음): 안쪽=오른쪽
+                if not hide_names and name != num:
+                    _tx(ex + 0.5, ey + 0.35, len(name) * 1.1 * 0.62)
+                if not hide_nums:
+                    _tx(ex - 0.3 - len(num) * 0.9 * 0.62, ey - 0.35, len(num) * 0.9 * 0.62)
                 nm = (f'<text x="{ex + 0.5:.3f}" y="{ey + 0.35:.3f}" fill="{COL["name"]}" '
                       f'font-size="1.1" text-anchor="start" font-family="sans-serif">{name}</text>')
                 nu = (f'<text x="{ex - 0.3:.3f}" y="{ey - 0.35:.3f}" fill="{COL["num"]}" '
                       f'font-size="0.9" text-anchor="end" font-family="sans-serif">{num}</text>')
             else:  # 우측 핀(왼쪽으로 뻗음): 안쪽=왼쪽
+                if not hide_names and name != num:
+                    _tx(ex - 0.5 - len(name) * 1.1 * 0.62, ey + 0.35, len(name) * 1.1 * 0.62)
+                if not hide_nums:
+                    _tx(ex + 0.3, ey - 0.35, len(num) * 0.9 * 0.62)
                 nm = (f'<text x="{ex - 0.5:.3f}" y="{ey + 0.35:.3f}" fill="{COL["name"]}" '
                       f'font-size="1.1" text-anchor="end" font-family="sans-serif">{name}</text>')
                 nu = (f'<text x="{ex + 0.3:.3f}" y="{ey - 0.35:.3f}" fill="{COL["num"]}" '
                       f'font-size="0.9" text-anchor="start" font-family="sans-serif">{num}</text>')
         else:  # 세로 핀 (예: 하단 쉴드)
+            if not hide_names and name != num:
+                _tx(ex - len(name) * 1.1 * 0.31, ey - 0.6, len(name) * 1.1 * 0.62)
+            if not hide_nums:
+                _tx(ex + 0.6, ey + 1.0, len(num) * 0.9 * 0.62)
             nm = (f'<text x="{ex:.3f}" y="{ey - 0.6:.3f}" fill="{COL["name"]}" '
                   f'font-size="1.1" text-anchor="middle" font-family="sans-serif">{name}</text>')
             nu = (f'<text x="{ex + 0.6:.3f}" y="{ey + 1.0:.3f}" fill="{COL["num"]}" '
@@ -419,6 +433,7 @@ def _symbol_elements(text, hide_nums, hide_names, synth_body):
             out.append(nm)
         if not hide_nums:
             out.append(nu)
+    minx, maxx, miny, maxy = min(xs), max(xs), min(ys), max(ys)
     return out, minx, miny, maxx, maxy
 
 
