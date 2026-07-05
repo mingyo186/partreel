@@ -90,6 +90,12 @@ def part_page(meta, path):
     params = meta.get("parameters", {})
     files = meta.get("files", {})
     glb = files.get("preview", "")
+    has3d = bool(glb)
+    tab3d = '<button class="vt active" data-view="3d">3D</button>\n    ' if has3d else ''
+    fp_active = '' if has3d else ' active'
+    glb_attr = (' data-glb="' + prefix + path + '/' + esc(glb) + '"') if has3d else ''
+    default_view = '3d' if has3d else 'fp'
+    viewer_msg = 'Loading 3D…' if has3d else 'Verified-2D part (no 3D model upstream)'
     sym_svg = files.get("symbol_svg", "")
     fp_svg = files.get("footprint_svg", "")
 
@@ -129,12 +135,11 @@ def part_page(meta, path):
   <h1>{esc(name)}</h1>
   <p class="desc">{esc(desc)}</p>
   <div class="view-tabs">
-    <button class="vt active" data-view="3d">3D</button>
+    {tab3d}<button class="vt{fp_active}" data-view="fp">Footprint</button>
     <button class="vt" data-view="sym">Symbol</button>
-    <button class="vt" data-view="fp">Footprint</button>
   </div>
-  <div id="viewer" class="viewer part-viewer" data-glb="{prefix}{path}/{esc(glb)}" data-sym="{prefix}{path}/{esc(sym_svg)}" data-fp="{prefix}{path}/{esc(fp_svg)}">
-    <div class="viewer-msg">Loading 3D…</div>
+  <div id="viewer" class="viewer part-viewer"{glb_attr} data-sym="{prefix}{path}/{esc(sym_svg)}" data-fp="{prefix}{path}/{esc(fp_svg)}" data-default="{default_view}">
+    <div class="viewer-msg">{viewer_msg}</div>
     <img id="view-sym" class="view-img" alt="Schematic symbol" hidden>
     <img id="view-fp" class="view-img" alt="PCB footprint" hidden>
   </div>
@@ -158,7 +163,7 @@ def part_page(meta, path):
   <p class="desc">Machine-readable data for this part: <a href="{DOMAIN}/api/v1/parts/{pid}.json">/api/v1/parts/{pid}.json</a> (absolute download URLs).
   MCP: <code>{MCP_URL}</code> → <code>get_part("{pid}")</code>. See <a href="{DOMAIN}/llms.txt">/llms.txt</a> · <a href="{prefix}agents/">agent guide</a></p>
 </main>"""
-    scripts = f'<script type="module" src="{prefix}assets/part.js?v=7"></script>'
+    scripts = f'<script type="module" src="{prefix}assets/part.js?v=8"></script>'
     title = f"{esc(name)} — KiCad footprint, symbol & 3D model | PartReel"
     return render(prefix, title, esc(desc_short), f"{DOMAIN}/p/{pid}/", body, head_extra, scripts)
 

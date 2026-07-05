@@ -1,0 +1,55 @@
+{
+  "id": "cern_osc_125mhz_onsemi_nbvspa019ln1tag",
+  "name": "NBVSPA019LN1TA (CERN library)",
+  "category": "timing",
+  "family": "CERN Crystals & Oscillators",
+  "manufacturer": "ON SEMICONDUCTOR",
+  "mpn_pattern": "NBVSPA019LN1TA",
+  "description": "3.3V, ±50ppm, 7x5mm Surface Mount LVDS Voltage Controlled Oscillator VCXO, NBVSP Series. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "6",
+    "mounting": "SMD",
+    "value": "125MHz"
+  },
+  "files": {
+    "footprint": "cern_osc_125mhz_onsemi_nbvspa019ln1tag.kicad_mod",
+    "symbol": "cern_osc_125mhz_onsemi_nbvspa019ln1tag.kicad_sym",
+    "footprint_svg": "cern_osc_125mhz_onsemi_nbvspa019ln1tag.footprint.svg",
+    "symbol_svg": "cern_osc_125mhz_onsemi_nbvspa019ln1tag.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Crystals & Oscillators.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/OSC_ONSEMI_CASE 848AB-01.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "50ppm",
+    "7x5mm",
+    "surface",
+    "mount",
+    "lvds",
+    "voltage"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Crystals & Oscillators#OSC_125MHZ_ONSEMI_NBVSPA019LN1TAG",
+      "symbol": "SchLib/Crystals & Oscillators.kicad_sym#Oscillator ONSEMI_NBVSP",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/OSC_ONSEMI_CASE 848AB-01.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

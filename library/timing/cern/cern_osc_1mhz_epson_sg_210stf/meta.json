@@ -1,0 +1,55 @@
+{
+  "id": "cern_osc_1mhz_epson_sg_210stf",
+  "name": "SG-210STF 1.0000ML or X1G0041710005 (CERN library)",
+  "category": "timing",
+  "family": "CERN Crystals & Oscillators",
+  "manufacturer": "EPSON",
+  "mpn_pattern": "SG-210STF 1.0000ML or X1G0041710005",
+  "description": "1.6V to 3.6V, ±50ppm, 15pF, -40 to 85°C, Stanby Function, Surface Mount CMOS Crystal Oscillator (SG-210STF Series). Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "4",
+    "mounting": "SMD",
+    "value": "1MHz"
+  },
+  "files": {
+    "footprint": "cern_osc_1mhz_epson_sg_210stf.kicad_mod",
+    "symbol": "cern_osc_1mhz_epson_sg_210stf.kicad_sym",
+    "footprint_svg": "cern_osc_1mhz_epson_sg_210stf.footprint.svg",
+    "symbol_svg": "cern_osc_1mhz_epson_sg_210stf.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Crystals & Oscillators.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/OSC_EPSON_SG-210STF.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "50ppm",
+    "15pf",
+    "stanby",
+    "function",
+    "surface",
+    "mount"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Crystals & Oscillators#OSC_1MHZ_EPSON_SG-210STF",
+      "symbol": "SchLib/Crystals & Oscillators.kicad_sym#Oscillator 1S{backslash}T{backslash} 2GND 3OUT 4VCC",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/OSC_EPSON_SG-210STF.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

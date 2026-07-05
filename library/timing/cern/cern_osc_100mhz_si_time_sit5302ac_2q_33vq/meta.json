@@ -1,0 +1,55 @@
+{
+  "id": "cern_osc_100mhz_si_time_sit5302ac_2q_33vq",
+  "name": "SiT5302AC-2Q-33VQ-100.000000 (CERN library)",
+  "category": "timing",
+  "family": "CERN Crystals & Oscillators",
+  "manufacturer": "SI TIME",
+  "mpn_pattern": "SiT5302AC-2Q-33VQ-100.000000",
+  "description": "3.3V, ±0.1ppm, 12.5pF, 0..70°C, 3.2x2.5mm Surface Mount, High Frequency Stratum 3 MEMS VCTCXO (SiT5302 Series). Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "4",
+    "mounting": "SMD",
+    "value": "100MHz"
+  },
+  "files": {
+    "footprint": "cern_osc_100mhz_si_time_sit5302ac_2q_33vq.kicad_mod",
+    "symbol": "cern_osc_100mhz_si_time_sit5302ac_2q_33vq.kicad_sym",
+    "footprint_svg": "cern_osc_100mhz_si_time_sit5302ac_2q_33vq.footprint.svg",
+    "symbol_svg": "cern_osc_100mhz_si_time_sit5302ac_2q_33vq.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Crystals & Oscillators.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/OSC_SI-TIME_3.2X2.5X0.75mm.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "1ppm",
+    "5pf",
+    "2x2",
+    "5mm",
+    "surface",
+    "mount"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Crystals & Oscillators#OSC_100MHZ_SI-TIME_SiT5302AC-2Q-33VQ",
+      "symbol": "SchLib/Crystals & Oscillators.kicad_sym#Oscillator 1OE 2GND 3OUT 4VDD",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/OSC_SI-TIME_3.2X2.5X0.75mm.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

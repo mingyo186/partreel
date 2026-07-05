@@ -1,0 +1,55 @@
+{
+  "id": "cern_osc_156_25mhz_si_time_sit9365ac_2e2_33e",
+  "name": "SIT9365AC-2E2-33E156.250000X (CERN library)",
+  "category": "timing",
+  "family": "CERN Crystals & Oscillators",
+  "manufacturer": "SI TIME",
+  "mpn_pattern": "SIT9365AC-2E2-33E156.250000X",
+  "description": "3.3V, ±25ppm, -20..70°C, 7x5mm Surface Mount LVDS Differential Oscillator (SiT9365 Series). Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "7",
+    "mounting": "SMD",
+    "value": "156.25MHz"
+  },
+  "files": {
+    "footprint": "cern_osc_156_25mhz_si_time_sit9365ac_2e2_33e.kicad_mod",
+    "symbol": "cern_osc_156_25mhz_si_time_sit9365ac_2e2_33e.kicad_sym",
+    "footprint_svg": "cern_osc_156_25mhz_si_time_sit9365ac_2e2_33e.footprint.svg",
+    "symbol_svg": "cern_osc_156_25mhz_si_time_sit9365ac_2e2_33e.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Crystals & Oscillators.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/OSC_SI-TIME_SIT9365-E.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "25ppm",
+    "7x5mm",
+    "surface",
+    "mount",
+    "lvds",
+    "differential"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Crystals & Oscillators#OSC_156.25MHZ_SI-TIME_SIT9365AC-2E2-33E",
+      "symbol": "SchLib/Crystals & Oscillators.kicad_sym#Oscillator SI-TIME_SIT9365",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/OSC_SI-TIME_SIT9365-E.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

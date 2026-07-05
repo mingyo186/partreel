@@ -1,0 +1,55 @@
+{
+  "id": "cern_osc_20mhz_mercury_vm53s3_20_000_2_5_30_75",
+  "name": "VM53S3-20.000-2.5/-30+75 (CERN library)",
+  "category": "timing",
+  "family": "CERN Crystals & Oscillators",
+  "manufacturer": "MERCURY ELECTRONICS",
+  "mpn_pattern": "VM53S3-20.000-2.5/-30+75",
+  "description": "3V ±2.5ppm -30 to 75° Voltage Controlled Temperature Compensated Crystal Oscillator VM53S3 Series. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "4",
+    "mounting": "SMD",
+    "value": "20MHz"
+  },
+  "files": {
+    "footprint": "cern_osc_20mhz_mercury_vm53s3_20_000_2_5_30_75.kicad_mod",
+    "symbol": "cern_osc_20mhz_mercury_vm53s3_20_000_2_5_30_75.kicad_sym",
+    "footprint_svg": "cern_osc_20mhz_mercury_vm53s3_20_000_2_5_30_75.footprint.svg",
+    "symbol_svg": "cern_osc_20mhz_mercury_vm53s3_20_000_2_5_30_75.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Crystals & Oscillators.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/OSCCC320X500X160-4N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "5ppm",
+    "voltage",
+    "controlled",
+    "temperature",
+    "compensated",
+    "crystal"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Crystals & Oscillators#OSC_20MHZ_MERCURY_VM53S3-20.000-2.5/-30+75",
+      "symbol": "SchLib/Crystals & Oscillators.kicad_sym#Oscillator 1VC 2GND 3OUT 4+Vs",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/OSCCC320X500X160-4N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

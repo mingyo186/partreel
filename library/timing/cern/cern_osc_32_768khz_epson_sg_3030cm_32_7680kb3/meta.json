@@ -1,0 +1,55 @@
+{
+  "id": "cern_osc_32_768khz_epson_sg_3030cm_32_7680kb3",
+  "name": "SG-3030CM 32.7680KB3 (CERN library)",
+  "category": "timing",
+  "family": "CERN Crystals & Oscillators",
+  "manufacturer": "EPSON SEIKO",
+  "mpn_pattern": "SG-3030CM 32.7680KB3",
+  "description": "3.3V, -120ppm/+10ppm , 15pF, -40..85°C, CMOS Surface Mount Crystal Oscillator SPXO, (SG-3030CM Series). Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "4",
+    "mounting": "SMD",
+    "value": "32.768KHz"
+  },
+  "files": {
+    "footprint": "cern_osc_32_768khz_epson_sg_3030cm_32_7680kb3.kicad_mod",
+    "symbol": "cern_osc_32_768khz_epson_sg_3030cm_32_7680kb3.kicad_sym",
+    "footprint_svg": "cern_osc_32_768khz_epson_sg_3030cm_32_7680kb3.footprint.svg",
+    "symbol_svg": "cern_osc_32_768khz_epson_sg_3030cm_32_7680kb3.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Crystals & Oscillators.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/OSC_EPSON_SG-3030CM.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "120ppm",
+    "10ppm",
+    "15pf",
+    "cmos",
+    "surface",
+    "mount"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Crystals & Oscillators#OSC_32.768kHz_EPSON_SG-3030CM 32.7680KB3",
+      "symbol": "SchLib/Crystals & Oscillators.kicad_sym#Oscillator 1VIO 2GND 3OUT 4VCC",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/OSC_EPSON_SG-3030CM.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

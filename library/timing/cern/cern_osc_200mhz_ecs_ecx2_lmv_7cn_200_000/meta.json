@@ -1,0 +1,55 @@
+{
+  "id": "cern_osc_200mhz_ecs_ecx2_lmv_7cn_200_000",
+  "name": "ECX2-LMV-7CN-200.000 (CERN library)",
+  "category": "timing",
+  "family": "CERN Crystals & Oscillators",
+  "manufacturer": "ECS",
+  "mpn_pattern": "ECX2-LMV-7CN-200.000",
+  "description": "2.375 V to 3.63 V, ±25ppm, -40°C to +85°C, 125 MHz, SMD MultiVolt™ LVDS, Low Jitter Crystal Oscillator. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "6",
+    "mounting": "SMD",
+    "value": "200MHZ"
+  },
+  "files": {
+    "footprint": "cern_osc_200mhz_ecs_ecx2_lmv_7cn_200_000.kicad_mod",
+    "symbol": "cern_osc_200mhz_ecs_ecx2_lmv_7cn_200_000.kicad_sym",
+    "footprint_svg": "cern_osc_200mhz_ecs_ecx2_lmv_7cn_200_000.footprint.svg",
+    "symbol_svg": "cern_osc_200mhz_ecs_ecx2_lmv_7cn_200_000.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Crystals & Oscillators.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/OSC_ECS_ECX2-LMV-7CN.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "375",
+    "25ppm",
+    "125",
+    "mhz",
+    "smd",
+    "multivolt"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Crystals & Oscillators#OSC_200MHZ_ECS_ECX2-LMV-7CN-200.000",
+      "symbol": "SchLib/Crystals & Oscillators.kicad_sym#Oscillator ECS_ECX2-LMV",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/OSC_ECS_ECX2-LMV-7CN.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

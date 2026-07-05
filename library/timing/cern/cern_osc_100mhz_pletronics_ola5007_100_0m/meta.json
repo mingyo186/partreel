@@ -1,0 +1,55 @@
+{
+  "id": "cern_osc_100mhz_pletronics_ola5007_100_0m",
+  "name": "OLA5007-100.0M (CERN library)",
+  "category": "timing",
+  "family": "CERN Crystals & Oscillators",
+  "manufacturer": "PLETRONICS",
+  "mpn_pattern": "OLA5007-100.0M",
+  "description": "5V, Stability: ±50ppb, -40°C to +85°C, Ultra Low Phase Noise OCXO, OLA5 Series. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "5",
+    "value": "100MHz"
+  },
+  "files": {
+    "footprint": "cern_osc_100mhz_pletronics_ola5007_100_0m.kicad_mod",
+    "symbol": "cern_osc_100mhz_pletronics_ola5007_100_0m.kicad_sym",
+    "footprint_svg": "cern_osc_100mhz_pletronics_ola5007_100_0m.footprint.svg",
+    "symbol_svg": "cern_osc_100mhz_pletronics_ola5007_100_0m.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Crystals & Oscillators.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors THD.pretty/OSC_PLETRONICS_OLA5.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "stability",
+    "50ppb",
+    "ultra",
+    "low",
+    "phase",
+    "noise"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Crystals & Oscillators#OSC_100MHZ_PLETRONICS_OLA5007-100.0M",
+      "symbol": "SchLib/Crystals & Oscillators.kicad_sym#Oscillator PLETRONICS OLA5007",
+      "footprint": "PcbLib/ICs And Semiconductors THD.pretty/OSC_PLETRONICS_OLA5.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

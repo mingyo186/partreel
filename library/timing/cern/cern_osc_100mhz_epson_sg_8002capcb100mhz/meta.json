@@ -1,0 +1,55 @@
+{
+  "id": "cern_osc_100mhz_epson_sg_8002capcb100mhz",
+  "name": "SG-8002CA PCB 100MHZ (CERN library)",
+  "category": "timing",
+  "family": "CERN Crystals & Oscillators",
+  "manufacturer": "EPSON TOYOCOM",
+  "mpn_pattern": "SG-8002CA PCB 100MHZ",
+  "description": "3.3V ±50ppm 15pF -40..85°C, Output Enable Function , Surface Mount Crystal Oscillator (SG-8002CA Series). Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "4",
+    "mounting": "SMD",
+    "value": "100MHz"
+  },
+  "files": {
+    "footprint": "cern_osc_100mhz_epson_sg_8002capcb100mhz.kicad_mod",
+    "symbol": "cern_osc_100mhz_epson_sg_8002capcb100mhz.kicad_sym",
+    "footprint_svg": "cern_osc_100mhz_epson_sg_8002capcb100mhz.footprint.svg",
+    "symbol_svg": "cern_osc_100mhz_epson_sg_8002capcb100mhz.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Crystals & Oscillators.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/OSC_EPSON_SG-8002CA.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "50ppm",
+    "15pf",
+    "output",
+    "enable",
+    "function",
+    "surface"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Crystals & Oscillators#OSC_100MHZ_EPSON_SG-8002CAPCB100MHZ",
+      "symbol": "SchLib/Crystals & Oscillators.kicad_sym#Oscillator 1OE 2GND 3OUT 4VCC",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/OSC_EPSON_SG-8002CA.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

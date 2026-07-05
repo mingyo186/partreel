@@ -1,0 +1,55 @@
+{
+  "id": "cern_osc_0_2_250mhz_silicon_lab_549cbac000112abg",
+  "name": "549CBAC000112ABG (CERN library)",
+  "category": "timing",
+  "family": "CERN Crystals & Oscillators",
+  "manufacturer": "SILICON LABS",
+  "mpn_pattern": "549CBAC000112ABG",
+  "description": "0.2-250MHz, 1.8V/2.5V/3.3V ±10ppm CMOS , Any-Rate I2C Programmable XO Oscillator Si549 Series. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "8",
+    "mounting": "SMD",
+    "value": "0.2-250MHz"
+  },
+  "files": {
+    "footprint": "cern_osc_0_2_250mhz_silicon_lab_549cbac000112abg.kicad_mod",
+    "symbol": "cern_osc_0_2_250mhz_silicon_lab_549cbac000112abg.kicad_sym",
+    "footprint_svg": "cern_osc_0_2_250mhz_silicon_lab_549cbac000112abg.footprint.svg",
+    "symbol_svg": "cern_osc_0_2_250mhz_silicon_lab_549cbac000112abg.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Crystals & Oscillators.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/OSC_SILICON-LAB_SI549-A.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "250mhz",
+    "10ppm",
+    "cmos",
+    "any",
+    "rate",
+    "i2c"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Crystals & Oscillators#OSC_0.2-250MHZ_SILICON-LAB_549CBAC000112ABG",
+      "symbol": "SchLib/Crystals & Oscillators.kicad_sym#Oscillator SILICON-LAB_Si549-AB",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/OSC_SILICON-LAB_SI549-A.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

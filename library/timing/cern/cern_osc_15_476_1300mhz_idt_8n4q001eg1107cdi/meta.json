@@ -1,0 +1,55 @@
+{
+  "id": "cern_osc_15_476_1300mhz_idt_8n4q001eg1107cdi",
+  "name": "8N4Q001EG1107CDI (CERN library)",
+  "category": "timing",
+  "family": "CERN Crystals & Oscillators",
+  "manufacturer": "INTEGRATED DEVICE TECHNOLOGY",
+  "mpn_pattern": "8N4Q001EG1107CDI",
+  "description": "2.5V, ±50ppm  Quad Default Frequency 187.5MHz, 150MHz, 300MHz, 300MHz, -40°C to +85°C, 5.5pF, LVDS Crystal Oscillator (XO). Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "10",
+    "mounting": "SMD",
+    "value": "15.476MHz- 866.67MHz, 975-1300MHz"
+  },
+  "files": {
+    "footprint": "cern_osc_15_476_1300mhz_idt_8n4q001eg1107cdi.kicad_mod",
+    "symbol": "cern_osc_15_476_1300mhz_idt_8n4q001eg1107cdi.kicad_sym",
+    "footprint_svg": "cern_osc_15_476_1300mhz_idt_8n4q001eg1107cdi.footprint.svg",
+    "symbol_svg": "cern_osc_15_476_1300mhz_idt_8n4q001eg1107cdi.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Crystals & Oscillators.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/OSC_IDT_CD10.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "50ppm",
+    "quad",
+    "default",
+    "frequency",
+    "187",
+    "5mhz"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Crystals & Oscillators#OSC_15.476-1300MHZ_IDT_8N4Q001EG1107CDI",
+      "symbol": "SchLib/Crystals & Oscillators.kicad_sym#Oscillator IDT_8N4Q001",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/OSC_IDT_CD10.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

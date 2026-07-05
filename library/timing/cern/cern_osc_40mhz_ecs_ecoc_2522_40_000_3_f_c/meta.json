@@ -1,0 +1,54 @@
+{
+  "id": "cern_osc_40mhz_ecs_ecoc_2522_40_000_3_f_c",
+  "name": "ECOC-2522-40.000-3-F-C (CERN library)",
+  "category": "timing",
+  "family": "CERN Crystals & Oscillators",
+  "manufacturer": "ECS",
+  "mpn_pattern": "ECOC-2522-40.000-3-F-C",
+  "description": "CMOS 3.3V, ±5ppb, 15pF, 0°C ..+50°C, SMD OCXO. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "5",
+    "mounting": "SMD",
+    "value": "40MHZ"
+  },
+  "files": {
+    "footprint": "cern_osc_40mhz_ecs_ecoc_2522_40_000_3_f_c.kicad_mod",
+    "symbol": "cern_osc_40mhz_ecs_ecoc_2522_40_000_3_f_c.kicad_sym",
+    "footprint_svg": "cern_osc_40mhz_ecs_ecoc_2522_40_000_3_f_c.footprint.svg",
+    "symbol_svg": "cern_osc_40mhz_ecs_ecoc_2522_40_000_3_f_c.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Crystals & Oscillators.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/OSC_ECS_ECOC-2522.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "cmos",
+    "5ppb",
+    "15pf",
+    "smd",
+    "ocxo"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Crystals & Oscillators#OSC_40MHZ_ECS_ECOC-2522-40.000-3-F-C",
+      "symbol": "SchLib/Crystals & Oscillators.kicad_sym#Oscillator ECS_ECOC-2522",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/OSC_ECS_ECOC-2522.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

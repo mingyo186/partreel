@@ -1,0 +1,79 @@
+{
+  "id": "cern_xtal_20mhz_ael_hc_49_u",
+  "name": "X20M000000L010 (CERN library)",
+  "category": "timing",
+  "family": "CERN Crystals & Oscillators",
+  "manufacturer": "AEL CRYSTALS",
+  "mpn_pattern": "X20M000000L010",
+  "description": "±30ppm, Quartz Crystal Resonator, HC-49/U Type. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "2",
+    "value": "20MHz"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/timing/cern/cern_xtal_20mhz_ael_hc_49_u/cern_xtal_20mhz_ael_hc_49_u.kicad_mod",
+    "symbol": "https://partreel.com/library/timing/cern/cern_xtal_20mhz_ael_hc_49_u/cern_xtal_20mhz_ael_hc_49_u.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/timing/cern/cern_xtal_20mhz_ael_hc_49_u/cern_xtal_20mhz_ael_hc_49_u.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/timing/cern/cern_xtal_20mhz_ael_hc_49_u/cern_xtal_20mhz_ael_hc_49_u.symbol.svg"
+  },
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Crystals & Oscillators.kicad_sym",
+  "license": "CERN-OHL-P-2.0",
+  "verified": true,
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors THD.pretty/XTAL_HC-49_U.kicad_mod)",
+  "keywords": [
+    "cern",
+    "30ppm",
+    "quartz",
+    "crystal",
+    "resonator",
+    "type"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors THD.pretty/XTAL_HC-49_U.kicad_mod)",
+    "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Crystals & Oscillators.kicad_sym",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_cern.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+      "source_commit": "53054c17",
+      "source_files": {
+        "db": "CERN.sqlite#Crystals & Oscillators#XTAL_20MHZ_AEL_HC-49/U",
+        "symbol": "SchLib/Crystals & Oscillators.kicad_sym#Quartz Crystal",
+        "footprint": "PcbLib/ICs And Semiconductors THD.pretty/XTAL_HC-49_U.kicad_mod"
+      },
+      "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+      "import_date": "2026-07-05",
+      "modifications": [
+        "extracted single symbol from library",
+        "stripped dead 3D model reference (upstream ships no 3D)",
+        "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/cern_xtal_20mhz_ael_hc_49_u/",
+  "api": "https://partreel.com/api/v1/parts/cern_xtal_20mhz_ael_hc_49_u.json"
+}

@@ -23,6 +23,7 @@ function setView(v) {
   if (v !== '3d' && msg) msg.style.display = 'none';
 }
 document.querySelectorAll('.view-tabs .vt').forEach((b) => b.addEventListener('click', () => setView(b.dataset.view)));
+if (el && el.dataset.default && el.dataset.default !== '3d') setView(el.dataset.default);  // verified-2D 기본탭
 
 const url = el && el.dataset.glb ? el.dataset.glb + CB : null;
 if (el && url) {

@@ -1,0 +1,80 @@
+{
+  "id": "cern_osc_100mhz_abracon_asfl1_100_000mhz_ec",
+  "name": "ASFL1-100.000MHZ-EC (CERN library)",
+  "category": "timing",
+  "family": "CERN Crystals & Oscillators",
+  "manufacturer": "ABRACON",
+  "mpn_pattern": "ASFL1-100.000MHZ-EC",
+  "description": "3.3V, Stability: ±50ppm, 15pF, -20 to 70°C Tri-State HCMOS Surface Mount Oscillator, ASFL1 Series. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "4",
+    "mounting": "SMD",
+    "value": "100MHz"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/timing/cern/cern_osc_100mhz_abracon_asfl1_100_000mhz_ec/cern_osc_100mhz_abracon_asfl1_100_000mhz_ec.kicad_mod",
+    "symbol": "https://partreel.com/library/timing/cern/cern_osc_100mhz_abracon_asfl1_100_000mhz_ec/cern_osc_100mhz_abracon_asfl1_100_000mhz_ec.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/timing/cern/cern_osc_100mhz_abracon_asfl1_100_000mhz_ec/cern_osc_100mhz_abracon_asfl1_100_000mhz_ec.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/timing/cern/cern_osc_100mhz_abracon_asfl1_100_000mhz_ec/cern_osc_100mhz_abracon_asfl1_100_000mhz_ec.symbol.svg"
+  },
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Crystals & Oscillators.kicad_sym",
+  "license": "CERN-OHL-P-2.0",
+  "verified": true,
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/OSC_ABRACON_ASFL1.kicad_mod)",
+  "keywords": [
+    "cern",
+    "stability",
+    "50ppm",
+    "15pf",
+    "tri",
+    "state",
+    "hcmos"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/OSC_ABRACON_ASFL1.kicad_mod)",
+    "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Crystals & Oscillators.kicad_sym",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_cern.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+      "source_commit": "53054c17",
+      "source_files": {
+        "db": "CERN.sqlite#Crystals & Oscillators#OSC_100MHZ_ABRACON_ASFL1-100.000MHZ-EC",
+        "symbol": "SchLib/Crystals & Oscillators.kicad_sym#Oscillator 1OE 2GND 3OUT 4VDD",
+        "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/OSC_ABRACON_ASFL1.kicad_mod"
+      },
+      "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+      "import_date": "2026-07-05",
+      "modifications": [
+        "extracted single symbol from library",
+        "stripped dead 3D model reference (upstream ships no 3D)"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/cern_osc_100mhz_abracon_asfl1_100_000mhz_ec/",
+  "api": "https://partreel.com/api/v1/parts/cern_osc_100mhz_abracon_asfl1_100_000mhz_ec.json"
+}

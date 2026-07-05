@@ -16,6 +16,15 @@ errors = 0
 for p in index["parts"]:
     fid = p["id"]
     path = "%s/%s/%s.step" % (ROOT, p["path"], fid)
+    if not os.path.exists(path):
+        # verified-2D 등급 (수입품, 3D 원본 부재 — §21-6ⓒ): meta.files에 step 없으면 정상
+        import json as _j
+        m = _j.load(open("%s/%s/meta.json" % (ROOT, p["path"]), encoding="utf-8"))
+        if "model_3d" not in m.get("files", {}):
+            continue
+        errors += 1
+        print("FAIL %s: step file missing" % fid)
+        continue
     try:
         shape = Part.Shape()
         shape.read(path)

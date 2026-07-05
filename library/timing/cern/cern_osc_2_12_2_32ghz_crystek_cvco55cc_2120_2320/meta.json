@@ -1,0 +1,54 @@
+{
+  "id": "cern_osc_2_12_2_32ghz_crystek_cvco55cc_2120_2320",
+  "name": "CVCO55CC-2120-2320 (CERN library)",
+  "category": "timing",
+  "family": "CERN Crystals & Oscillators",
+  "manufacturer": "CRYSTEK CRYSTAL",
+  "mpn_pattern": "CVCO55CC-2120-2320",
+  "description": "2.12-2.32GHz, Voltage Controlled Oscillator (VCO). Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "16",
+    "mounting": "SMD",
+    "value": "2.12-2.32GHz"
+  },
+  "files": {
+    "footprint": "cern_osc_2_12_2_32ghz_crystek_cvco55cc_2120_2320.kicad_mod",
+    "symbol": "cern_osc_2_12_2_32ghz_crystek_cvco55cc_2120_2320.kicad_sym",
+    "footprint_svg": "cern_osc_2_12_2_32ghz_crystek_cvco55cc_2120_2320.footprint.svg",
+    "symbol_svg": "cern_osc_2_12_2_32ghz_crystek_cvco55cc_2120_2320.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Crystals & Oscillators.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/OSC_CRYSTEK_CVCO55CC.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "32ghz",
+    "voltage",
+    "controlled",
+    "oscillator",
+    "vco"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Crystals & Oscillators#OSC_2.12-2.32GHZ_CRYSTEK_CVCO55CC-2120-2320",
+      "symbol": "SchLib/Crystals & Oscillators.kicad_sym#Oscillator CRYSTEK_CVCO55CC",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/OSC_CRYSTEK_CVCO55CC.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

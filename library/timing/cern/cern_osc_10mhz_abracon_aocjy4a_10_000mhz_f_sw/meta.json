@@ -1,0 +1,55 @@
+{
+  "id": "cern_osc_10mhz_abracon_aocjy4a_10_000mhz_f_sw",
+  "name": "AOCJY4A-10.000MHZ-F-SW (CERN library)",
+  "category": "timing",
+  "family": "CERN Crystals & Oscillators",
+  "manufacturer": "ABRACON",
+  "mpn_pattern": "AOCJY4A-10.000MHZ-F-SW",
+  "description": "Tolerance: ± 700ppb, Stability: ± 2ppb, -40°C to +75°C, 15pF, 50 Ohms , Through Hole  Crystal, AOCJY4A Serie. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "4",
+    "value": "10MHZ"
+  },
+  "files": {
+    "footprint": "cern_osc_10mhz_abracon_aocjy4a_10_000mhz_f_sw.kicad_mod",
+    "symbol": "cern_osc_10mhz_abracon_aocjy4a_10_000mhz_f_sw.kicad_sym",
+    "footprint_svg": "cern_osc_10mhz_abracon_aocjy4a_10_000mhz_f_sw.footprint.svg",
+    "symbol_svg": "cern_osc_10mhz_abracon_aocjy4a_10_000mhz_f_sw.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Crystals & Oscillators.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors THD.pretty/OSC_ABRACON_AOCJY4A.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "tolerance",
+    "700ppb",
+    "stability",
+    "2ppb",
+    "15pf",
+    "ohms"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Crystals & Oscillators#OSC_10MHZ_ABRACON_AOCJY4A-10.000MHZ-F-SW",
+      "symbol": "SchLib/Crystals & Oscillators.kicad_sym#Oscillator ABRACON_AOCJY4A",
+      "footprint": "PcbLib/ICs And Semiconductors THD.pretty/OSC_ABRACON_AOCJY4A.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

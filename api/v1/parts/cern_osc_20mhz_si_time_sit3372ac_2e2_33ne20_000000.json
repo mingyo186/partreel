@@ -1,0 +1,80 @@
+{
+  "id": "cern_osc_20mhz_si_time_sit3372ac_2e2_33ne20_000000",
+  "name": "SiT3372AC-2E2-33NE20.000000 (CERN library)",
+  "category": "timing",
+  "family": "CERN Crystals & Oscillators",
+  "manufacturer": "SI TIME",
+  "mpn_pattern": "SiT3372AC-2E2-33NE20.000000",
+  "description": "3.3V, ±25ppm, -20..70°C, 7.0x5.0mm Surface Mount LVDS Differential Differential VCXO (SiT3372 Series). Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "7",
+    "mounting": "SMD",
+    "value": "20MHz"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/timing/cern/cern_osc_20mhz_si_time_sit3372ac_2e2_33ne20_000000/cern_osc_20mhz_si_time_sit3372ac_2e2_33ne20_000000.kicad_mod",
+    "symbol": "https://partreel.com/library/timing/cern/cern_osc_20mhz_si_time_sit3372ac_2e2_33ne20_000000/cern_osc_20mhz_si_time_sit3372ac_2e2_33ne20_000000.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/timing/cern/cern_osc_20mhz_si_time_sit3372ac_2e2_33ne20_000000/cern_osc_20mhz_si_time_sit3372ac_2e2_33ne20_000000.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/timing/cern/cern_osc_20mhz_si_time_sit3372ac_2e2_33ne20_000000/cern_osc_20mhz_si_time_sit3372ac_2e2_33ne20_000000.symbol.svg"
+  },
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Crystals & Oscillators.kicad_sym",
+  "license": "CERN-OHL-P-2.0",
+  "verified": true,
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/OSC_SI-TIME_SiT3372AC-2E2.kicad_mod)",
+  "keywords": [
+    "cern",
+    "25ppm",
+    "0x5",
+    "0mm",
+    "surface",
+    "mount",
+    "lvds"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/OSC_SI-TIME_SiT3372AC-2E2.kicad_mod)",
+    "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Crystals & Oscillators.kicad_sym",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_cern.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+      "source_commit": "53054c17",
+      "source_files": {
+        "db": "CERN.sqlite#Crystals & Oscillators#OSC_20MHZ_SI-TIME_SiT3372AC-2E2-33NE20.000000",
+        "symbol": "SchLib/Crystals & Oscillators.kicad_sym#Oscillator SI-TIME_SiT3372AC-2E2",
+        "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/OSC_SI-TIME_SiT3372AC-2E2.kicad_mod"
+      },
+      "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+      "import_date": "2026-07-05",
+      "modifications": [
+        "extracted single symbol from library",
+        "stripped dead 3D model reference (upstream ships no 3D)"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/cern_osc_20mhz_si_time_sit3372ac_2e2_33ne20_000000/",
+  "api": "https://partreel.com/api/v1/parts/cern_osc_20mhz_si_time_sit3372ac_2e2_33ne20_000000.json"
+}

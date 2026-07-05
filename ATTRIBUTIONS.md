@@ -20,3 +20,14 @@ auto-generated courtyard where missing (IPC-7351 bbox+0.25mm), and single-color
 GLB preview meshes tessellated from the original STEP models.
 
 Thank you, SparkFun, for keeping your library open.
+
+## CERN — CERN-OHL-P-2.0
+
+Parts with family `CERN *` come from the
+[CERN KiCad Libraries](https://gitlab.com/ohwr/cern-kicad-libs)
+(commit `53054c17`), © CERN, licensed
+[CERN-OHL-P-2.0](LICENSES/CERN-OHL-P-2.0.txt). Per §3.3 each part's
+`meta.json → import` records the modification notice and date.
+Modifications: single-symbol extraction, dead 3D-model reference removal
+(upstream ships no 3D — these parts are published as **verified-2D**),
+auto-generated courtyard where missing. Not endorsed by CERN.

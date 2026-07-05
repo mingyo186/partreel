@@ -1,0 +1,55 @@
+{
+  "id": "cern_osc_122_880mhz_abracon_asg_d_v_a_122_880mhz",
+  "name": "ASG-D-V-A-122.880MHZ (CERN library)",
+  "category": "timing",
+  "family": "CERN Crystals & Oscillators",
+  "manufacturer": "ABRACON",
+  "mpn_pattern": "ASG-D-V-A-122.880MHZ",
+  "description": "3.3V, Stability: ±35ppm, -40°C to +85°C, Programmable - High Performance SMD VCXO, LVDS Output, ASG-D Series. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "6",
+    "mounting": "SMD",
+    "value": "122.880MHZ"
+  },
+  "files": {
+    "footprint": "cern_osc_122_880mhz_abracon_asg_d_v_a_122_880mhz.kicad_mod",
+    "symbol": "cern_osc_122_880mhz_abracon_asg_d_v_a_122_880mhz.kicad_sym",
+    "footprint_svg": "cern_osc_122_880mhz_abracon_asg_d_v_a_122_880mhz.footprint.svg",
+    "symbol_svg": "cern_osc_122_880mhz_abracon_asg_d_v_a_122_880mhz.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Crystals & Oscillators.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/OSCSC254P500X700X190-6N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "stability",
+    "35ppm",
+    "programmable",
+    "high",
+    "performance",
+    "smd"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Crystals & Oscillators#OSC_122.880MHZ_ABRACON_ASG-D-V-A-122.880MHZ",
+      "symbol": "SchLib/Crystals & Oscillators.kicad_sym#Oscillator ABRACON_ASG-D-V",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/OSCSC254P500X700X190-6N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

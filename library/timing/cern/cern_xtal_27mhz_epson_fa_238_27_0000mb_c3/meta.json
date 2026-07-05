@@ -1,0 +1,55 @@
+{
+  "id": "cern_xtal_27mhz_epson_fa_238_27_0000mb_c3",
+  "name": "FA-238 27.0000MB-C3 (CERN library)",
+  "category": "timing",
+  "family": "CERN Crystals & Oscillators",
+  "manufacturer": "EPSON SEIKO",
+  "mpn_pattern": "FA-238 27.0000MB-C3",
+  "description": "Tolerance: ±50ppm, Stability: ±30ppm, -20°C to +70°C, 18pF, SMD Crystal, FA-238 Series. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "4",
+    "mounting": "SMD",
+    "value": "27MHz"
+  },
+  "files": {
+    "footprint": "cern_xtal_27mhz_epson_fa_238_27_0000mb_c3.kicad_mod",
+    "symbol": "cern_xtal_27mhz_epson_fa_238_27_0000mb_c3.kicad_sym",
+    "footprint_svg": "cern_xtal_27mhz_epson_fa_238_27_0000mb_c3.footprint.svg",
+    "symbol_svg": "cern_xtal_27mhz_epson_fa_238_27_0000mb_c3.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Crystals & Oscillators.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/XTAL_EPSON_FA-238.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "tolerance",
+    "50ppm",
+    "stability",
+    "30ppm",
+    "18pf",
+    "smd"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Crystals & Oscillators#XTAL_27MHZ_EPSON_FA-238 27.0000MB-C3",
+      "symbol": "SchLib/Crystals & Oscillators.kicad_sym#Quartz Crystal 1X 2GND 3X 4GND",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/XTAL_EPSON_FA-238.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "id": "cern_xtal_12mhz_epson_fa_238v_12_0000ma_c",
+  "name": "FA-238V 12.0000MA-C (CERN library)",
+  "category": "timing",
+  "family": "CERN Crystals & Oscillators",
+  "manufacturer": "EPSON SEIKO",
+  "mpn_pattern": "FA-238V 12.0000MA-C",
+  "description": "Tolerance: ±20ppm, Stability: ±30ppm, -20°C to +70°C, 18pF, SMD Crystal, FA-238V Series. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "4",
+    "mounting": "SMD",
+    "value": "12MHz"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/timing/cern/cern_xtal_12mhz_epson_fa_238v_12_0000ma_c/cern_xtal_12mhz_epson_fa_238v_12_0000ma_c.kicad_mod",
+    "symbol": "https://partreel.com/library/timing/cern/cern_xtal_12mhz_epson_fa_238v_12_0000ma_c/cern_xtal_12mhz_epson_fa_238v_12_0000ma_c.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/timing/cern/cern_xtal_12mhz_epson_fa_238v_12_0000ma_c/cern_xtal_12mhz_epson_fa_238v_12_0000ma_c.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/timing/cern/cern_xtal_12mhz_epson_fa_238v_12_0000ma_c/cern_xtal_12mhz_epson_fa_238v_12_0000ma_c.symbol.svg"
+  },
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Crystals & Oscillators.kicad_sym",
+  "license": "CERN-OHL-P-2.0",
+  "verified": true,
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/XTAL_EPSON_FA-238V.kicad_mod)",
+  "keywords": [
+    "cern",
+    "tolerance",
+    "20ppm",
+    "stability",
+    "30ppm",
+    "18pf",
+    "smd"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/XTAL_EPSON_FA-238V.kicad_mod)",
+    "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Crystals & Oscillators.kicad_sym",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_cern.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+      "source_commit": "53054c17",
+      "source_files": {
+        "db": "CERN.sqlite#Crystals & Oscillators#XTAL_12MHZ_EPSON_FA-238V 12.0000MA-C",
+        "symbol": "SchLib/Crystals & Oscillators.kicad_sym#Quartz Crystal 1X 2GND 3X 4GND",
+        "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/XTAL_EPSON_FA-238V.kicad_mod"
+      },
+      "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+      "import_date": "2026-07-05",
+      "modifications": [
+        "extracted single symbol from library",
+        "stripped dead 3D model reference (upstream ships no 3D)"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/cern_xtal_12mhz_epson_fa_238v_12_0000ma_c/",
+  "api": "https://partreel.com/api/v1/parts/cern_xtal_12mhz_epson_fa_238v_12_0000ma_c.json"
+}

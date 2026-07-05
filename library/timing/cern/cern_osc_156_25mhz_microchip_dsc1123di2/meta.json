@@ -1,0 +1,55 @@
+{
+  "id": "cern_osc_156_25mhz_microchip_dsc1123di2",
+  "name": "DSC1123DI2-156.2500 (CERN library)",
+  "category": "timing",
+  "family": "CERN Crystals & Oscillators",
+  "manufacturer": "MICROCHIP TECHNOLOGY",
+  "mpn_pattern": "DSC1123DI2-156.2500",
+  "description": "2.25V-3.6V, ±25ppm, -40..85°C, Surface Mount Low-Jitter Precision LVDS Oscillator (DSC11x3 Series). Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "6",
+    "mounting": "SMD",
+    "value": "156.25Mhz"
+  },
+  "files": {
+    "footprint": "cern_osc_156_25mhz_microchip_dsc1123di2.kicad_mod",
+    "symbol": "cern_osc_156_25mhz_microchip_dsc1123di2.kicad_sym",
+    "footprint_svg": "cern_osc_156_25mhz_microchip_dsc1123di2.footprint.svg",
+    "symbol_svg": "cern_osc_156_25mhz_microchip_dsc1123di2.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Crystals & Oscillators.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/OSC_MICROCHIP_DSC11x3D.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "25v",
+    "25ppm",
+    "surface",
+    "mount",
+    "low",
+    "jitter"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Crystals & Oscillators#OSC_156.25MHZ_MICROCHIP_DSC1123DI2",
+      "symbol": "SchLib/Crystals & Oscillators.kicad_sym#Oscillator MICROCHIP_DSC1123",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/OSC_MICROCHIP_DSC11x3D.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

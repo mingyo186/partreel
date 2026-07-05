@@ -1,0 +1,80 @@
+{
+  "id": "cern_osc_10mhz_connor_winfield_oh100_71003sv",
+  "name": "OH100-71003SV-010.0M (CERN library)",
+  "category": "timing",
+  "family": "CERN Crystals & Oscillators",
+  "manufacturer": "CONNOR-WINFIELD",
+  "mpn_pattern": "OH100-71003SV-010.0M",
+  "description": "Sinewave 5V, ±5.0ppb, 0°C ..+70°C, STRATUM 3E High Stability Oven Stabilized Oscillator,  VCOCXO\r (OH100 Series). Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "5",
+    "value": "10MHZ"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/timing/cern/cern_osc_10mhz_connor_winfield_oh100_71003sv/cern_osc_10mhz_connor_winfield_oh100_71003sv.kicad_mod",
+    "symbol": "https://partreel.com/library/timing/cern/cern_osc_10mhz_connor_winfield_oh100_71003sv/cern_osc_10mhz_connor_winfield_oh100_71003sv.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/timing/cern/cern_osc_10mhz_connor_winfield_oh100_71003sv/cern_osc_10mhz_connor_winfield_oh100_71003sv.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/timing/cern/cern_osc_10mhz_connor_winfield_oh100_71003sv/cern_osc_10mhz_connor_winfield_oh100_71003sv.symbol.svg"
+  },
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Crystals & Oscillators.kicad_sym",
+  "license": "CERN-OHL-P-2.0",
+  "verified": true,
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors THD.pretty/OSC_CONNOR-WINFIELD_OH100.kicad_mod)",
+  "keywords": [
+    "cern",
+    "sinewave",
+    "0ppb",
+    "stratum",
+    "high",
+    "stability",
+    "oven"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors THD.pretty/OSC_CONNOR-WINFIELD_OH100.kicad_mod)",
+    "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Crystals & Oscillators.kicad_sym",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_cern.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+      "source_commit": "53054c17",
+      "source_files": {
+        "db": "CERN.sqlite#Crystals & Oscillators#OSC_10MHZ_CONNOR-WINFIELD_OH100-71003SV",
+        "symbol": "SchLib/Crystals & Oscillators.kicad_sym#Oscillator CONNOR-WINFIELD_OH100-VC",
+        "footprint": "PcbLib/ICs And Semiconductors THD.pretty/OSC_CONNOR-WINFIELD_OH100.kicad_mod"
+      },
+      "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+      "import_date": "2026-07-05",
+      "modifications": [
+        "extracted single symbol from library",
+        "stripped dead 3D model reference (upstream ships no 3D)",
+        "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/cern_osc_10mhz_connor_winfield_oh100_71003sv/",
+  "api": "https://partreel.com/api/v1/parts/cern_osc_10mhz_connor_winfield_oh100_71003sv.json"
+}
