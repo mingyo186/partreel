@@ -70,8 +70,11 @@ WM8960·ES8311·TPA3116D2(오디오) / MLX90614 / TCS34725 / VS1053B / ENS160(**
 배치4: qmc5883p·dht20·aht25·aht30·tp4054·tm1638·ttp224·ttp226 + 디스플레이 7종
 (mc091gx·msp0961·msp1541·msp1803·msp2008·mc01506·msp2807; msp1443 도면불충분 드롭).
 ### ✅ SparkFun 수입 파일럿 완료 (107종 라이브 2026-07-05, §21-6ⓒ) — 217부품
-차기(배치5 후보, 함정검증 진행중): 컬러OLED(SSD1331/1351)·epaper(SSD1680/WeAct)·오디오
-(WM8960/ES8311/TPA3116D2)·VS1053B·ICM-42688-P·BNO085·TCS34725·CST816S·E22·GX12/16 재확인.
+### 배치 5차 확정 (함정검증 2026-07-05, master e111716b + git grep 이중)
+**확정 갭 10**: WM8960, ES8311, VS1053B, ICM-42688-P, BNO085, TCS34725, CST816S,
+SSD1331 모듈, SSD1351 모듈, WeAct 2.13" e-paper(SSD1680) (+GX12/16 도면 타당성 확인 중).
+**활성 MR로 제외**: TPA3116D2(MR !4788 — "TPA31XXD2" 일반화 품명에 숨어 있던 함정),
+E22-900M30S(후속 MR !5253이 심볼 스테이징, 2026-06 활동 — 단 페어 풋프린트 MR엔 900M30S 미포함).
 
 ### (기록) 배치 3차 최종 확정 18종 (함정 검증 완료 2026-07-04, master 클론 e111716be + git grep 이중)
 모듈 8: hc_sr04, dfplayer_mini, hc05, sim800l, max7219_matrix_module, gc9a01_module_128,
