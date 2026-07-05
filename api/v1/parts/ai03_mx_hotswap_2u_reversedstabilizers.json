@@ -1,0 +1,82 @@
+{
+  "id": "ai03_mx_hotswap_2u_reversedstabilizers",
+  "name": "MX-Hotswap-2U-ReversedStabilizers (ai03 MX_V2)",
+  "category": "switch",
+  "family": "ai03 MX Hotswap",
+  "manufacturer": "Cherry MX compatible",
+  "mpn_pattern": "MX-Hotswap-2U-ReversedStabilizers",
+  "description": "Cherry MX-type mechanical keyboard switch, Kailh hotswap socket, 2u keysize (reversed stabilizers). Imported from the ai03 MX_V2 keyboard library (MIT, (c) ai03); passed PartReel quality gates. Verified-2D part. Official KiCad libraries carry no hotswap / low-profile / hybrid switch footprints.",
+  "parameters": {
+    "keysize": "2u",
+    "pins": 2,
+    "mounting": "SMD",
+    "type": "keyboard switch"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/switch/ai03/ai03_mx_hotswap_2u_reversedstabilizers/ai03_mx_hotswap_2u_reversedstabilizers.kicad_mod",
+    "symbol": "https://partreel.com/library/switch/ai03/ai03_mx_hotswap_2u_reversedstabilizers/ai03_mx_hotswap_2u_reversedstabilizers.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/switch/ai03/ai03_mx_hotswap_2u_reversedstabilizers/ai03_mx_hotswap_2u_reversedstabilizers.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/switch/ai03/ai03_mx_hotswap_2u_reversedstabilizers/ai03_mx_hotswap_2u_reversedstabilizers.symbol.svg"
+  },
+  "datasheet": "https://github.com/ai03-2725/MX_V2/blob/main/MX_Hotswap.pretty/MX-Hotswap-2U-ReversedStabilizers.kicad_mod",
+  "license": "MIT",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "ai03 MX_V2@0b379ee (MX_Hotswap.pretty/MX-Hotswap-2U-ReversedStabilizers.kicad_mod) — designed from scratch from official switch datasheets per upstream README",
+  "keywords": [
+    "keyboard",
+    "switch",
+    "ai03",
+    "mx",
+    "hotswap",
+    "2u",
+    "reversedstabilizers"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "ai03 MX_V2@0b379ee (MX_Hotswap.pretty/MX-Hotswap-2U-ReversedStabilizers.kicad_mod) — designed from scratch from official switch datasheets per upstream README",
+    "datasheet": "https://github.com/ai03-2725/MX_V2/blob/main/MX_Hotswap.pretty/MX-Hotswap-2U-ReversedStabilizers.kicad_mod",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_ai03.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/ai03-2725/MX_V2",
+      "source_commit": "0b379ee",
+      "source_files": {
+        "footprint": "MX_Hotswap.pretty/MX-Hotswap-2U-ReversedStabilizers.kicad_mod"
+      },
+      "attribution": "(c) ai03 (ai03-2725/MX_V2), MIT",
+      "import_date": "2026-07-05",
+      "modifications": [
+        "symbol authored by PartReel (upstream pairs with stock KiCad symbols by design)",
+        "removed 3D model reference (socket-only model; part published as verified-2D)",
+        "remapped Dwgs.User outline to F.Fab (keyboard libraries avoid silk under the keycap)",
+        "added minimal silk pin-1 marker (hidden under the mounted switch)"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/ai03_mx_hotswap_2u_reversedstabilizers/",
+  "api": "https://partreel.com/api/v1/parts/ai03_mx_hotswap_2u_reversedstabilizers.json"
+}

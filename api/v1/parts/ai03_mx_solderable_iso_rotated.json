@@ -1,0 +1,81 @@
+{
+  "id": "ai03_mx_solderable_iso_rotated",
+  "name": "MX-Solderable-ISO-Rotated (ai03 MX_V2)",
+  "category": "switch",
+  "family": "ai03 MX Solderable",
+  "manufacturer": "Cherry MX compatible",
+  "mpn_pattern": "MX-Solderable-ISO-Rotated",
+  "description": "Cherry MX-type mechanical keyboard switch, soldered. Imported from the ai03 MX_V2 keyboard library (MIT, (c) ai03); passed PartReel quality gates. Verified-2D part. Official KiCad libraries carry no hotswap / low-profile / hybrid switch footprints.",
+  "parameters": {
+    "pins": 2,
+    "mounting": "THT",
+    "type": "keyboard switch"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/switch/ai03/ai03_mx_solderable_iso_rotated/ai03_mx_solderable_iso_rotated.kicad_mod",
+    "symbol": "https://partreel.com/library/switch/ai03/ai03_mx_solderable_iso_rotated/ai03_mx_solderable_iso_rotated.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/switch/ai03/ai03_mx_solderable_iso_rotated/ai03_mx_solderable_iso_rotated.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/switch/ai03/ai03_mx_solderable_iso_rotated/ai03_mx_solderable_iso_rotated.symbol.svg"
+  },
+  "datasheet": "https://github.com/ai03-2725/MX_V2/blob/main/MX_Solderable.pretty/MX-Solderable-ISO-Rotated.kicad_mod",
+  "license": "MIT",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "ai03 MX_V2@0b379ee (MX_Solderable.pretty/MX-Solderable-ISO-Rotated.kicad_mod) — designed from scratch from official switch datasheets per upstream README",
+  "keywords": [
+    "keyboard",
+    "switch",
+    "ai03",
+    "mx",
+    "solderable",
+    "iso",
+    "rotated"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "ai03 MX_V2@0b379ee (MX_Solderable.pretty/MX-Solderable-ISO-Rotated.kicad_mod) — designed from scratch from official switch datasheets per upstream README",
+    "datasheet": "https://github.com/ai03-2725/MX_V2/blob/main/MX_Solderable.pretty/MX-Solderable-ISO-Rotated.kicad_mod",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_ai03.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/ai03-2725/MX_V2",
+      "source_commit": "0b379ee",
+      "source_files": {
+        "footprint": "MX_Solderable.pretty/MX-Solderable-ISO-Rotated.kicad_mod"
+      },
+      "attribution": "(c) ai03 (ai03-2725/MX_V2), MIT",
+      "import_date": "2026-07-05",
+      "modifications": [
+        "symbol authored by PartReel (upstream pairs with stock KiCad symbols by design)",
+        "remapped Dwgs.User outline to F.Fab (keyboard libraries avoid silk under the keycap)",
+        "added minimal silk pin-1 marker (hidden under the mounted switch)",
+        "auto-added courtyard (pads+outline bbox +0.25mm)"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/ai03_mx_solderable_iso_rotated/",
+  "api": "https://partreel.com/api/v1/parts/ai03_mx_solderable_iso_rotated.json"
+}

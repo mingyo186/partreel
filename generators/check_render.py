@@ -42,7 +42,7 @@ def main():
         if len(str(meta.get("dimensions_source", ""))) < 10:
             errs.append("dimensions_source 없음 (치수 출처 필수)")
         # 자체 생성=CC-BY-4.0 / 수입=원 라이선스 유지 (§21-6ⓒ: 재라이선스 금지)
-        _ALLOWED_LIC = {"CC-BY-4.0", "CERN-OHL-P-2.0"}
+        _ALLOWED_LIC = {"CC-BY-4.0", "CERN-OHL-P-2.0", "MIT"}
         if meta.get("license") not in _ALLOWED_LIC:
             errs.append(f"license not in allowed set ({meta.get('license')})")
         if meta.get("origin") != "imported" and meta.get("license") != "CC-BY-4.0":

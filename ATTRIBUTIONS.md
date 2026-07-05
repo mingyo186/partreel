@@ -31,3 +31,15 @@ Parts with family `CERN *` come from the
 Modifications: single-symbol extraction, dead 3D-model reference removal
 (upstream ships no 3D — these parts are published as **verified-2D**),
 auto-generated courtyard where missing. Not endorsed by CERN.
+
+## ai03 MX_V2 — MIT
+
+Parts with family `ai03 *` come from the
+[ai03 MX_V2 keyboard switch library](https://github.com/ai03-2725/MX_V2)
+(commit `0b379ee`), © ai03, licensed [MIT](LICENSES/MIT-ai03.txt) — footprints
+designed from scratch from official switch datasheets per the upstream README.
+Modifications (recorded per part in `meta.json → import.modifications`):
+schematic symbols authored by PartReel (upstream pairs with stock KiCad
+symbols), Dwgs.User outlines remapped to F.Fab, minimal silk pin-1 marker,
+auto-generated courtyard where missing, socket-only 3D references removed
+(parts published as **verified-2D**). Thank you, ai03.

@@ -14,6 +14,12 @@
    예외는 있으나 라이브러리 재배포엔 SA 강제 → CC-BY 풀에 못 섞음.
 4. **MIT 소형 보석들**: CDFER/JLCPCB-Kicad-Library (184sym/303fp/278STEP — 단 EasyEDA 유래
    지오메트리 출처 스팟체크 필요), ai03 MX 키보드 스위치 라이브러리.
+   **→ CDFER 스팟체크 결과 (2026-07-05, commit 49f69b9): 수입 부적격.** JLCPCB.pretty
+   118개 중 62개 = LCSC 품번 태그(`tags "... C20615795"`) + EasyEDA 명명 규칙
+   (`DFN1006-3L_L1.0-W0.6-LS1.0-BR`) → LCSC CAD 변환물(항목 5 금지 사유 그대로);
+   35개 = descr에 "generated with kicad-footprint-generator" → KiCad 공식 파이프라인
+   산출물(실제 CC-BY-SA)인데 레포가 MIT로 재표기 — 재라이선스 무효 의심. 어느 클래스도
+   우리 규칙(§14 KiCad 공식 카피 금지 + LCSC 금지)상 수입 불가. 큐에서 제외.
 5. **LCSC/EasyEDA 벌크 변환 금지** — ToS상 재배포 그랜트 없음, 테이크다운 리스크.
    허용 패턴은 사용자 개시 단건 클라이언트 변환뿐.
 6. **스킵**: Adafruit(KiCad 라이브러리 자체가 없고 Eagle 라이브러리는 무라이선스),

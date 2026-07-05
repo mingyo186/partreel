@@ -1,0 +1,56 @@
+{
+  "id": "ai03_mx_solderable_10u_reversedstabilizers",
+  "name": "MX-Solderable-10U-ReversedStabilizers (ai03 MX_V2)",
+  "category": "switch",
+  "family": "ai03 MX Solderable",
+  "manufacturer": "Cherry MX compatible",
+  "mpn_pattern": "MX-Solderable-10U-ReversedStabilizers",
+  "description": "Cherry MX-type mechanical keyboard switch, soldered, 10u keysize (reversed stabilizers). Imported from the ai03 MX_V2 keyboard library (MIT, (c) ai03); passed PartReel quality gates. Verified-2D part. Official KiCad libraries carry no hotswap / low-profile / hybrid switch footprints.",
+  "parameters": {
+    "keysize": "10u",
+    "pins": 2,
+    "mounting": "THT",
+    "type": "keyboard switch"
+  },
+  "files": {
+    "footprint": "ai03_mx_solderable_10u_reversedstabilizers.kicad_mod",
+    "symbol": "ai03_mx_solderable_10u_reversedstabilizers.kicad_sym",
+    "footprint_svg": "ai03_mx_solderable_10u_reversedstabilizers.footprint.svg",
+    "symbol_svg": "ai03_mx_solderable_10u_reversedstabilizers.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://github.com/ai03-2725/MX_V2/blob/main/MX_Solderable.pretty/MX-Solderable-10U-ReversedStabilizers.kicad_mod",
+  "dimensions_source": "ai03 MX_V2@0b379ee (MX_Solderable.pretty/MX-Solderable-10U-ReversedStabilizers.kicad_mod) — designed from scratch from official switch datasheets per upstream README",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "MIT",
+  "generated_by": "generators/import_ai03.py",
+  "keywords": [
+    "keyboard",
+    "switch",
+    "ai03",
+    "mx",
+    "solderable",
+    "10u",
+    "reversedstabilizers"
+  ],
+  "import": {
+    "source_repo": "https://github.com/ai03-2725/MX_V2",
+    "source_commit": "0b379ee",
+    "source_files": {
+      "footprint": "MX_Solderable.pretty/MX-Solderable-10U-ReversedStabilizers.kicad_mod"
+    },
+    "attribution": "(c) ai03 (ai03-2725/MX_V2), MIT",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "symbol authored by PartReel (upstream pairs with stock KiCad symbols by design)",
+      "remapped Dwgs.User outline to F.Fab (keyboard libraries avoid silk under the keycap)",
+      "added minimal silk pin-1 marker (hidden under the mounted switch)",
+      "auto-added courtyard (pads+outline bbox +0.25mm)"
+    ]
+  }
+}

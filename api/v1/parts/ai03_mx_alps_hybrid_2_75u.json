@@ -1,0 +1,82 @@
+{
+  "id": "ai03_mx_alps_hybrid_2_75u",
+  "name": "MX-Alps-Hybrid-2.75U (ai03 MX_V2)",
+  "category": "switch",
+  "family": "ai03 MX/Alps Hybrid",
+  "manufacturer": "Cherry MX / Alps compatible",
+  "mpn_pattern": "MX-Alps-Hybrid-2.75U",
+  "description": "Hybrid MX+Alps compatible keyboard switch, soldered, 2.75u keysize. Imported from the ai03 MX_V2 keyboard library (MIT, (c) ai03); passed PartReel quality gates. Verified-2D part. Official KiCad libraries carry no hotswap / low-profile / hybrid switch footprints.",
+  "parameters": {
+    "keysize": "2.75u",
+    "pins": 2,
+    "mounting": "THT",
+    "type": "keyboard switch"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/switch/ai03/ai03_mx_alps_hybrid_2_75u/ai03_mx_alps_hybrid_2_75u.kicad_mod",
+    "symbol": "https://partreel.com/library/switch/ai03/ai03_mx_alps_hybrid_2_75u/ai03_mx_alps_hybrid_2_75u.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/switch/ai03/ai03_mx_alps_hybrid_2_75u/ai03_mx_alps_hybrid_2_75u.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/switch/ai03/ai03_mx_alps_hybrid_2_75u/ai03_mx_alps_hybrid_2_75u.symbol.svg"
+  },
+  "datasheet": "https://github.com/ai03-2725/MX_V2/blob/main/MX_Alps_Hybrid.pretty/MX-Alps-Hybrid-2.75U.kicad_mod",
+  "license": "MIT",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "ai03 MX_V2@0b379ee (MX_Alps_Hybrid.pretty/MX-Alps-Hybrid-2.75U.kicad_mod) — designed from scratch from official switch datasheets per upstream README",
+  "keywords": [
+    "keyboard",
+    "switch",
+    "ai03",
+    "mx",
+    "alps",
+    "hybrid",
+    "75u"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "ai03 MX_V2@0b379ee (MX_Alps_Hybrid.pretty/MX-Alps-Hybrid-2.75U.kicad_mod) — designed from scratch from official switch datasheets per upstream README",
+    "datasheet": "https://github.com/ai03-2725/MX_V2/blob/main/MX_Alps_Hybrid.pretty/MX-Alps-Hybrid-2.75U.kicad_mod",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_ai03.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/ai03-2725/MX_V2",
+      "source_commit": "0b379ee",
+      "source_files": {
+        "footprint": "MX_Alps_Hybrid.pretty/MX-Alps-Hybrid-2.75U.kicad_mod"
+      },
+      "attribution": "(c) ai03 (ai03-2725/MX_V2), MIT",
+      "import_date": "2026-07-05",
+      "modifications": [
+        "symbol authored by PartReel (upstream pairs with stock KiCad symbols by design)",
+        "remapped Dwgs.User outline to F.Fab (keyboard libraries avoid silk under the keycap)",
+        "added minimal silk pin-1 marker (hidden under the mounted switch)",
+        "auto-added courtyard (pads+outline bbox +0.25mm)"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/ai03_mx_alps_hybrid_2_75u/",
+  "api": "https://partreel.com/api/v1/parts/ai03_mx_alps_hybrid_2_75u.json"
+}
