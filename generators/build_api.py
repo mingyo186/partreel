@@ -74,6 +74,7 @@ def main():
             "formats": meta.get("formats", []), "files": files,
             "datasheet": meta.get("datasheet"), "license": meta.get("license"),
             "verified": meta.get("verified", False),
+            "tier": meta.get("tier"),  # "verified-2d" = 업스트림 3D 부재 (null = 3D 포함)
             "dimensions_source": meta.get("dimensions_source"),
             "keywords": meta.get("keywords", []),
             "field_reports": reports.get(meta["id"], {"worked": 0, "problem": 0}),
