@@ -65,7 +65,7 @@ def render(prefix, title, desc, canonical, body, head_extra="", scripts=""):
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
 <meta property="og:url" content="{canonical}">
-<link rel="stylesheet" href="{prefix}assets/style.css?v=4">
+<link rel="stylesheet" href="{prefix}assets/style.css?v=5">
 {head_extra}
 </head>
 <body>
@@ -196,7 +196,7 @@ def part_page(meta, path):
   <p class="desc">Machine-readable data for this part: <a href="{DOMAIN}/api/v1/parts/{pid}.json">/api/v1/parts/{pid}.json</a> (absolute download URLs).
   MCP: <code>{MCP_URL}</code> → <code>get_part("{pid}")</code>. See <a href="{DOMAIN}/llms.txt">/llms.txt</a> · <a href="{prefix}agents/">agent guide</a></p>
 </main>"""
-    scripts = f'<script type="module" src="{prefix}assets/part.js?v=10"></script>'
+    scripts = f'<script type="module" src="{prefix}assets/part.js?v=11"></script>'
     title = f"{esc(name)} — KiCad footprint, symbol & 3D model | PartReel"
     return render(prefix, title, esc(desc_short), f"{DOMAIN}/p/{pid}/", body, head_extra, scripts)
 

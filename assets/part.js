@@ -15,28 +15,80 @@ for (const e of [symEl, fpEl]) {
 }
 
 
-// 심볼/풋프린트 확대: 휠=줌(커서 중심), 드래그=이동, 더블클릭=리셋
+// 심볼/풋프린트 확대: 인라인 SVG는 viewBox 조작(벡터 줌 — 무한 선명), img 폴백은 transform
 function makeZoomable(container, getTarget) {
-  let s = 1, tx = 0, ty = 0, pan = null;
-  const apply = () => { const t = getTarget(); if (t) { t.style.transform = `translate(${tx}px,${ty}px) scale(${s})`; t.style.cursor = s > 1 ? 'grab' : 'zoom-in'; } };
-  const reset = () => { s = 1; tx = 0; ty = 0; apply(); };
+  let img = { s: 1, tx: 0, ty: 0 };
+  let pan = null;
+  const svgOf = (t) => (t && t.tagName !== 'IMG') ? t.querySelector('svg') : null;
+  const geom = (svg) => {
+    const vb = svg.getAttribute('viewBox').split(/\s+/).map(Number);
+    if (!svg._vb0) svg._vb0 = vb.slice();
+    const r = svg.getBoundingClientRect();
+    const s = Math.min(r.width / vb[2], r.height / vb[3]);
+    return { vb, r, s,
+      ox: r.left + (r.width - vb[2] * s) / 2,
+      oy: r.top + (r.height - vb[3] * s) / 2 };
+  };
+  const setCursor = (t, zoomed) => { t.style.cursor = zoomed ? 'grab' : 'zoom-in'; };
+  const reset = () => {
+    const t = getTarget(); if (!t) return;
+    const svg = svgOf(t);
+    if (svg && svg._vb0) svg.setAttribute('viewBox', svg._vb0.join(' '));
+    img = { s: 1, tx: 0, ty: 0 }; t.style.transform = '';
+    setCursor(t, false);
+  };
   container.addEventListener('wheel', (e) => {
     const t = getTarget(); if (!t) return;
     e.preventDefault();
-    const r = container.getBoundingClientRect();
-    const mx = e.clientX - r.left, my = e.clientY - r.top;
-    const ns = Math.min(30, Math.max(1, s * Math.exp(-e.deltaY * 0.0015)));
-    const k = ns / s;
-    tx = mx - k * (mx - tx); ty = my - k * (my - ty); s = ns;
-    if (s === 1) { tx = 0; ty = 0; }
-    apply();
+    const k = Math.exp(-e.deltaY * 0.0015);
+    const svg = svgOf(t);
+    if (svg && svg.getAttribute('viewBox')) {
+      const { vb, s, ox, oy } = geom(svg);
+      const vb0 = svg._vb0;
+      const nw = Math.min(vb0[2], Math.max(vb0[2] / 40, vb[2] / k));
+      const kk = vb[2] / nw;
+      const px = vb[0] + (e.clientX - ox) / s;
+      const py = vb[1] + (e.clientY - oy) / s;
+      const nx = px - (px - vb[0]) / kk;
+      const ny = py - (py - vb[1]) / kk;
+      if (nw >= vb0[2]) svg.setAttribute('viewBox', vb0.join(' '));
+      else svg.setAttribute('viewBox', `${nx} ${ny} ${nw} ${vb[3] / kk}`);
+      setCursor(t, nw < vb0[2]);
+    } else {
+      const r = container.getBoundingClientRect();
+      const mx = e.clientX - r.left, my = e.clientY - r.top;
+      const ns = Math.min(30, Math.max(1, img.s * k));
+      const f = ns / img.s;
+      img.tx = mx - f * (mx - img.tx); img.ty = my - f * (my - img.ty); img.s = ns;
+      if (img.s === 1) { img.tx = 0; img.ty = 0; }
+      t.style.transform = `translate(${img.tx}px,${img.ty}px) scale(${img.s})`;
+      setCursor(t, img.s > 1);
+    }
   }, { passive: false });
   container.addEventListener('pointerdown', (e) => {
-    if (!getTarget() || s === 1) return;
-    pan = { x: e.clientX - tx, y: e.clientY - ty };
+    const t = getTarget(); if (!t) return;
+    const svg = svgOf(t);
+    if (svg && svg._vb0 && svg.getAttribute('viewBox') !== svg._vb0.join(' ')) {
+      const { vb } = geom(svg);
+      pan = { kind: 'svg', x: e.clientX, y: e.clientY, vb };
+    } else if (!svg && img.s > 1) {
+      pan = { kind: 'img', x: e.clientX - img.tx, y: e.clientY - img.ty };
+    } else return;
     container.setPointerCapture(e.pointerId);
   });
-  container.addEventListener('pointermove', (e) => { if (!pan) return; tx = e.clientX - pan.x; ty = e.clientY - pan.y; apply(); });
+  container.addEventListener('pointermove', (e) => {
+    if (!pan) return;
+    const t = getTarget(); if (!t) return;
+    if (pan.kind === 'svg') {
+      const svg = svgOf(t); if (!svg) return;
+      const { s } = geom(svg);
+      svg.setAttribute('viewBox', `${pan.vb[0] - (e.clientX - pan.x) / s} ` +
+        `${pan.vb[1] - (e.clientY - pan.y) / s} ${pan.vb[2]} ${pan.vb[3]}`);
+    } else {
+      img.tx = e.clientX - pan.x; img.ty = e.clientY - pan.y;
+      t.style.transform = `translate(${img.tx}px,${img.ty}px) scale(${img.s})`;
+    }
+  });
   container.addEventListener('pointerup', () => { pan = null; });
   container.addEventListener('dblclick', () => { if (getTarget()) reset(); });
   return reset;
