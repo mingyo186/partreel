@@ -79,6 +79,10 @@ def check_merged_pins(glb_path, expected):
             return None
         metal = geoms[1]
     bodies = len(metal.split(only_watertight=False))
+    # 줄 단위 뭉침도 검출: 연결체 수가 기대 핀수의 60% 미만이면 FAIL
+    # (걸윙=핀당 2조각이 fuse로 1조각씩, EP/실드 여유 감안해 60% 문턱)
+    if bodies >= 2 and bodies < expected * 0.6:
+        return f"금속 연결체 {bodies}개 < 기대 핀 {expected}개의 60% (줄 뭉침 의심)"
     if bodies == 1:
         return f"금속 메시가 한 덩어리 (접점 {expected}개인데 개별 표현 아님)"
     return None

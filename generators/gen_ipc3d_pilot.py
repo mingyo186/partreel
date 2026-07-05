@@ -73,7 +73,10 @@ for rel in PILOT:
     bw = max(bw, span * 0.62)
     ys = sorted(p[1] for p in pads)
     bl = round(ys[-1] - ys[0] + 1.1, 2)       # 몸체 길이 = 핀 스팬 + 마진
-    lead_w = min(p[3] for p in pads) * 0.85
+    # 다리 폭 = 패드의 짧은 변 기준 + 피치의 55% 상한 (뭉침 방지 — "핀 뭉탱이" 재발 사건)
+    pitch = min(b - a for a, b in zip(ys, ys[1:]) if b - a > 0.01)
+    lead_w = min(min(p[2], p[3]) for p in pads) * 0.75
+    lead_w = min(lead_w, pitch * 0.55)
     lead_l = round((span - bw) / 2 - 0.15, 2)
     pad_xy = [(p[0], p[1]) for p in pads]
     gullwing(rel, fid, bw, bl, bh, pad_xy, lead_w, max(lead_l, 0.5))
