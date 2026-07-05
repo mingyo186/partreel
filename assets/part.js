@@ -8,10 +8,10 @@ const symEl = document.getElementById('view-sym');
 const fpEl = document.getElementById('view-fp');
 let rendererCanvas = null;
 
-const CB = `?t=${Date.now()}`;  // 배포 후 낡은 캐시 방지
-if (el) {
-  if (el.dataset.sym && symEl) symEl.src = el.dataset.sym + CB;
-  if (el.dataset.fp && fpEl) fpEl.src = el.dataset.fp + CB;
+const CB = `?t=${Date.now()}`;  // 배포 후 낡은 캐시 방지 (glb/api 전용)
+// SVG는 페이지에 인라인됨(v9) — 초대형만 img 폴백(data-src, 콘텐츠 해시 버전)
+for (const e of [symEl, fpEl]) {
+  if (e && e.tagName === 'IMG' && e.dataset.src) e.src = e.dataset.src;
 }
 
 function setView(v) {

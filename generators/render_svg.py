@@ -156,8 +156,12 @@ def render_footprint(text):
         if not st:
             continue
         r = ((ex - cx) ** 2 + (ey - cy) ** 2) ** 0.5
-        out.append(f'<circle cx="{cx:.3f}" cy="{cy:.3f}" r="{r:.3f}" fill="none" '
-                   f'stroke="{st[0]}" stroke-width="0.12" opacity="{st[1]}"/>')
+        if r <= 0.3:  # 마커 점(핀1 등): KiCad처럼 채운 점으로
+            out.append(f'<circle cx="{cx:.3f}" cy="{cy:.3f}" r="{max(r, 0.15):.3f}" '
+                       f'fill="{st[0]}" opacity="{st[1]}"/>')
+        else:
+            out.append(f'<circle cx="{cx:.3f}" cy="{cy:.3f}" r="{r:.3f}" fill="none" '
+                       f'stroke="{st[0]}" stroke-width="0.12" opacity="{st[1]}"/>')
     for pts, layer in fpolys:
         st = layer_style.get(layer)
         if not st or len(pts) < 2:

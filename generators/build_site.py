@@ -14,6 +14,7 @@ Security (REQUIREMENTS §6/§13): dynamic values html.escape'd, CSP meta on ever
 
 import json
 import os
+import hashlib
 import html
 
 ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), ".."))
@@ -64,7 +65,7 @@ def render(prefix, title, desc, canonical, body, head_extra="", scripts=""):
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
 <meta property="og:url" content="{canonical}">
-<link rel="stylesheet" href="{prefix}assets/style.css?v=2">
+<link rel="stylesheet" href="{prefix}assets/style.css?v=3">
 {head_extra}
 </head>
 <body>
@@ -94,10 +95,10 @@ def part_page(meta, path):
     glb = files.get("preview", "")
     has3d = bool(glb)
     tab3d = '<button class="vt active" data-view="3d">3D</button>\n    ' if has3d else ''
-    fp_active = '' if has3d else ' active'
+    sym_active = '' if has3d else ' active'
     # 대용량 에셋(step/glb)은 R2 (§22) — 텍스트/SVG는 Pages 유지
     glb_attr = (f' data-glb="{ASSETS_BASE}/{path}/{esc(glb)}"') if has3d else ''
-    default_view = '3d' if has3d else 'fp'
+    default_view = '3d' if has3d else 'sym'  # 2D 부품은 심볼 우선 (사용자 2026-07-05)
     viewer_msg = 'Loading 3D…' if has3d else 'Verified-2D part (no 3D model upstream)'
     sym_svg = files.get("symbol_svg", "")
     fp_svg = files.get("footprint_svg", "")
@@ -121,6 +122,21 @@ def part_page(meta, path):
         dls.append(f'<a class="dl" href="{base}/{esc(fn)}" download>'
                    f'<span class="ext">{esc(fmt)}</span> {esc(FMT_LABEL.get(fmt, fmt))}</a>')
     downloads = "".join(dls)
+
+    # SVG는 페이지에 인라인(즉시 표시, 요청 0) — 초대형(>120KB)만 img 폴백
+    def _view(el_id, fn, alt):
+        try:
+            body = open(os.path.join(ROOT, path, fn), encoding="utf-8").read()
+        except OSError:
+            body = ""
+        if body and len(body) <= 120_000:
+            return (f'<div id="{el_id}" class="view-img view-svg" role="img" '
+                    f'aria-label="{alt}" hidden>{body}</div>')
+        h = hashlib.sha1(body.encode()).hexdigest()[:8] if body else "0"
+        return (f'<img id="{el_id}" class="view-img" alt="{alt}" '
+                f'data-src="{prefix}{path}/{esc(fn)}?v={h}" hidden>')
+    sym_view = _view("view-sym", sym_svg, "Schematic symbol")
+    fp_view = _view("view-fp", fp_svg, "PCB footprint")
 
     # 데이터시트 링크 정직성: 수입품의 ds가 소스 레포(=데이터시트 아님)를 가리키면
     # "검색" 링크를 주 버튼으로, 레포 링크는 provenance로 표기 (라벨 거짓말 금지)
@@ -152,13 +168,13 @@ def part_page(meta, path):
   <h1>{esc(name)}</h1>
   <p class="desc">{esc(desc)}</p>
   <div class="view-tabs">
-    {tab3d}<button class="vt{fp_active}" data-view="fp">Footprint</button>
-    <button class="vt" data-view="sym">Symbol</button>
+    {tab3d}<button class="vt{sym_active}" data-view="sym">Symbol</button>
+    <button class="vt" data-view="fp">Footprint</button>
   </div>
-  <div id="viewer" class="viewer part-viewer"{glb_attr} data-sym="{prefix}{path}/{esc(sym_svg)}" data-fp="{prefix}{path}/{esc(fp_svg)}" data-default="{default_view}">
+  <div id="viewer" class="viewer part-viewer"{glb_attr} data-default="{default_view}">
     <div class="viewer-msg">{viewer_msg}</div>
-    <img id="view-sym" class="view-img" alt="Schematic symbol" hidden>
-    <img id="view-fp" class="view-img" alt="PCB footprint" hidden>
+    {sym_view}
+    {fp_view}
   </div>
   <h2>Specifications</h2>
   <table class="specs">{spec_rows}</table>
@@ -180,7 +196,7 @@ def part_page(meta, path):
   <p class="desc">Machine-readable data for this part: <a href="{DOMAIN}/api/v1/parts/{pid}.json">/api/v1/parts/{pid}.json</a> (absolute download URLs).
   MCP: <code>{MCP_URL}</code> → <code>get_part("{pid}")</code>. See <a href="{DOMAIN}/llms.txt">/llms.txt</a> · <a href="{prefix}agents/">agent guide</a></p>
 </main>"""
-    scripts = f'<script type="module" src="{prefix}assets/part.js?v=8"></script>'
+    scripts = f'<script type="module" src="{prefix}assets/part.js?v=9"></script>'
     title = f"{esc(name)} — KiCad footprint, symbol & 3D model | PartReel"
     return render(prefix, title, esc(desc_short), f"{DOMAIN}/p/{pid}/", body, head_extra, scripts)
 
