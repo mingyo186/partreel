@@ -107,7 +107,16 @@ async function selectPart(p) {
   const dsA = document.getElementById('datasheet');
   const dsH = document.getElementById('datasheet-h');
   const hasDs = typeof meta.datasheet === 'string' && meta.datasheet.startsWith('http');
-  if (dsA) { dsA.href = hasDs ? meta.datasheet : '#'; dsA.style.display = hasDs ? '' : 'none'; }
+  const dsIsRepo = hasDs && meta.origin === 'imported' && /git(hub|lab)\.com/.test(meta.datasheet);
+  if (dsA) {
+    if (dsIsRepo) {
+      dsA.href = 'https://www.google.com/search?q=' + encodeURIComponent(`"${meta.mpn_pattern}" datasheet`);
+      dsA.innerHTML = `Find datasheet (${meta.manufacturer || ''} ${meta.mpn_pattern || ''}) →`;
+    } else {
+      dsA.href = hasDs ? meta.datasheet : '#';
+    }
+    dsA.style.display = hasDs ? '' : 'none';
+  }
   if (dsH) dsH.style.display = hasDs ? '' : 'none';
 
   // buy (affiliate placeholder)
@@ -121,14 +130,18 @@ async function selectPart(p) {
   // 3D / SVG — 배포 후 낡은 캐시가 보이지 않게 캐시버스팅 (파일이 작아 비용 미미)
   const cb = `?t=${Date.now()}`;
   const preview = meta.files?.preview;
-  if (preview) loadModel(`${p.path}/${preview}${cb}`);
+  if (preview) loadModel(`https://assets.partreel.com/${p.path}/${preview}${cb}`);
+  // 3D 없는 부품(verified-2D): 3D 탭 숨기고 심볼 우선
+  const btn3d = document.querySelector('.view-tabs .vt[data-view="3d"]');
+  if (btn3d) btn3d.style.display = preview ? '' : 'none';
+  if (!preview && view && view.renderer) view.renderer.domElement.style.display = 'none';
 
   // 뷰 전환용 심볼/풋프린트 SVG
   const symEl = document.getElementById('view-sym');
   const fpEl = document.getElementById('view-fp');
   if (meta.files?.symbol_svg) symEl.src = `${p.path}/${meta.files.symbol_svg}${cb}`;
   if (meta.files?.footprint_svg) fpEl.src = `${p.path}/${meta.files.footprint_svg}${cb}`;
-  setView('3d');
+  setView(preview ? '3d' : 'sym');
 }
 
 function setView(v) {
