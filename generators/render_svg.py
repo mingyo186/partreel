@@ -178,23 +178,128 @@ def render_footprint(text):
     return "".join(out)
 
 
+def _balanced(text, start):
+    depth, i, in_str = 0, start, False
+    while i < len(text):
+        ch = text[i]
+        if in_str:
+            if ch == '"' and text[i - 1] != "\\":
+                in_str = False
+        elif ch == '"':
+            in_str = True
+        elif ch == "(":
+            depth += 1
+        elif ch == ")":
+            depth -= 1
+            if depth == 0:
+                return text[start:i + 1]
+        i += 1
+    return None
+
+
+def _unit_blocks(text):
+    """서브심볼을 유닛 번호별로 묶는다: {0: 공통, 1..N: 유닛}."""
+    units = {}
+    for m in re.finditer(r'\(symbol\s+"[^"]+_(\d+)_\d+"', text):
+        blk = _balanced(text, m.start())
+        if blk:
+            units.setdefault(int(m.group(1)), []).append(blk)
+    return {u: "\n".join(bs) for u, bs in units.items()}
+
+
 def render_symbol(text):
+    units = _unit_blocks(text)
+    real = sorted(u for u in units if u > 0)
+    if len(real) <= 1:
+        return _render_symbol_single(text)
+    # 멀티유닛: 유닛별로 가로 배치 (공통 유닛 0의 도형은 매 유닛에, 핀은 첫 유닛에만)
+    common = units.get(0, "")
+    hide_nums = bool(re.search(r"\(pin_numbers\s*(?:\(offset[^)]*\)\s*)?"
+                               r"(?:hide|\(hide\s+yes\))", text))
+    hide_names = bool(re.search(r"\(pin_names\s*(?:\(offset[^)]*\)\s*)?"
+                                r"(?:hide|\(hide\s+yes\))", text))
+    rendered = []
+    for i, u in enumerate(real):
+        sub = (common if i == 0 else _strip_pins(common)) + "\n" + units[u]
+        r = _symbol_elements(sub, hide_nums, hide_names, synth_body=True)
+        if r:
+            rendered.append((u, r))
+    if not rendered:
+        return None
+    GAP = 6.0
+    cursor = 0.0
+    groups = []
+    ys0, ys1 = [], []
+    for idx, (u, (els, x0, y0, x1, y1)) in enumerate(rendered):
+        dx = cursor - x0
+        label = chr(ord("A") + u - 1)
+        els = els + [f'<text x="{(x0+x1)/2:.2f}" y="{y0-2.0:.2f}" fill="{COL["num"]}" '
+                     f'font-size="1.6" text-anchor="middle" '
+                     f'font-family="sans-serif">{label}</text>']
+        groups.append(f'<g transform="translate({dx:.2f} 0)">' + "".join(els) + "</g>")
+        cursor += (x1 - x0) + GAP
+        ys0.append(y0 - 4.0); ys1.append(y1)
+    total_w = cursor - GAP
+    miny, maxy = min(ys0), max(ys1)
+    out = [svg_header(0, miny, total_w, maxy - miny, 1.5)]
+    out += groups
+    out.append("</svg>")
+    return "".join(out)
+
+
+def _strip_pins(text):
+    """공통 유닛의 핀 정의 제거(도형만 남김) — 핀 중복 렌더 방지."""
+    outp = text
+    while True:
+        m = re.search(r"\(pin\s+\w+\s+\w+\s+\(at", outp)
+        if not m:
+            return outp
+        blk = _balanced(outp, m.start())
+        if blk is None:
+            return outp
+        outp = outp.replace(blk, "", 1)
+
+
+def _render_symbol_single(text):
+    r = None
+    hide_nums = bool(re.search(r"\(pin_numbers\s*(?:\(offset[^)]*\)\s*)?"
+                               r"(?:hide|\(hide\s+yes\))", text))
+    hide_names = bool(re.search(r"\(pin_names\s*(?:\(offset[^)]*\)\s*)?"
+                                r"(?:hide|\(hide\s+yes\))", text))
+    r = _symbol_elements(text, hide_nums, hide_names, synth_body=False)
+    if not r:
+        return None
+    els, x0, y0, x1, y1 = r
+    out = [svg_header(x0, y0, x1 - x0, y1 - y0, 1.5)]
+    out += els
+    out.append("</svg>")
+    return "".join(out)
+
+
+def _symbol_elements(text, hide_nums, hide_names, synth_body):
     rects = [tuple(map(float, m.groups())) for m in RECT_RE.finditer(text)]
     polys = [[(float(a), float(b)) for a, b in XY_RE.findall(m.group(1))]
              for m in POLY_RE.finditer(text)]
     circs = [tuple(map(float, m.groups())) for m in CIRC_RE.finditer(text)]
     arcs = [tuple(map(float, m.groups())) for m in ARC_RE.finditer(text)]
     pins = list(PIN_RE.finditer(text))
-    if not pins or not (rects or polys or circs or arcs):
+    if not pins and not (rects or polys or circs or arcs):
         return None
-    # 심볼 전역 표시 플래그 (구형 인라인 hide / 신형 (hide yes) 둘 다)
-    hide_nums = bool(re.search(r"\(pin_numbers\s*(?:\(offset[^)]*\)\s*)?"
-                               r"(?:hide|\(hide\s+yes\))", text))
-    hide_names = bool(re.search(r"\(pin_names\s*(?:\(offset[^)]*\)\s*)?"
-                                r"(?:hide|\(hide\s+yes\))", text))
+    if not pins and not synth_body:
+        return None
     # KiCad 심볼 Y는 위쪽이 +. SVG는 아래가 + → y 부호 반전.
     def ty(y):
         return -y
+
+    if synth_body and pins and not (rects or polys or circs or arcs):
+        # 핀만 있는 유닛(파워 유닛 등): 핀 안쪽 끝점 bbox로 본체 합성
+        exs, eys = [], []
+        for m in pins:
+            px, py, ang, length = (float(m.group(1)), float(m.group(2)),
+                                   int(m.group(3)), float(m.group(4)))
+            exs.append(px + (length if ang == 0 else -length if ang == 180 else 0))
+            eys.append(py + (length if ang == 90 else -length if ang == 270 else 0))
+        rects = [(min(exs), min(eys) - 1.27, max(exs), max(eys) + 1.27)]
 
     xs, ys = [], []
     for rx1, ry1, rx2, ry2 in rects:
@@ -235,7 +340,7 @@ def render_symbol(text):
     pin_data = merged
     minx, maxx, miny, maxy = min(xs), max(xs), min(ys), max(ys)
 
-    out = [svg_header(minx, miny, maxx - minx, maxy - miny, 1.5)]
+    out = []
     for rx1, ry1, rx2, ry2 in rects:
         bx, by = min(rx1, rx2), min(ty(ry1), ty(ry2))
         out.append(f'<rect x="{bx:.3f}" y="{by:.3f}" width="{abs(rx2-rx1):.3f}" '
@@ -282,8 +387,7 @@ def render_symbol(text):
             out.append(nm)
         if not hide_nums:
             out.append(nu)
-    out.append("</svg>")
-    return "".join(out)
+    return out, minx, miny, maxx, maxy
 
 
 def main():

@@ -69,10 +69,23 @@ def main():
                 errs.append(f"외곽선 SVG={svg_lines} != kicad_mod={kmod_lines}")
 
         if ssvg is not None and ksym is not None:
-            # E. 심볼 핀 수
-            _pins_all = re.findall(r'\(pin\s+\w+\s+\w+\s+\(at([^)]*)\)\s*\(length\s+[-\d.]+\)((?:\s|hide|\(hide\s+yes\))*)\(', ksym)
-            # 스택 핀(같은 위치·각도, 벤더 쉴드 관례)은 렌더러가 1개로 병합 표시 → 고유 위치로 센다
-            ksym_pins = len({at.strip() for at, f in _pins_all if 'hide' not in f})
+            # E. 심볼 핀 수 — 렌더러와 같은 유닛 분리 규칙 사용(단일 진실원):
+            # 유닛 내 같은 위치·각도 = 스택(1개 병합), 유닛 간 같은 좌표 = 별개 핀.
+            # 공통 유닛(0)의 핀은 첫 유닛에만 그려짐.
+            from render_svg import _unit_blocks
+            _PIN = re.compile(r'\(pin\s+\w+\s+\w+\s+\(at([^)]*)\)\s*'
+                              r'\(length\s+[-\d.]+\)((?:\s|hide|\(hide\s+yes\))*)\(')
+
+            def _uniq(txt):
+                return len({at.strip() for at, f in _PIN.findall(txt)
+                            if 'hide' not in f})
+            _units = _unit_blocks(ksym)
+            _real = [u for u in _units if u > 0]
+            if len(_real) > 1:
+                ksym_pins = _uniq(_units.get(0, "")) + sum(
+                    _uniq(_units[u]) for u in _real)
+            else:
+                ksym_pins = _uniq(ksym)
             ssvg_pins = ssvg.count('<line')
             if ssvg_pins != ksym_pins:
                 errs.append(f"심볼 핀선 SVG={ssvg_pins} != kicad_sym={ksym_pins}")

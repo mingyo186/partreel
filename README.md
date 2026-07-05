@@ -65,9 +65,9 @@ before manufacturing.
 ## Parts index
 
 <!-- PARTS:BEGIN -->
-Currently **803 parts**, all machine-verified (structure, KLC drawing rules, render completeness, 3D coplanar/merged-pin checks, STEP kernel) with datasheet-cited dimensions.
+Currently **805 parts**, all machine-verified (structure, KLC drawing rules, render completeness, 3D coplanar/merged-pin checks, STEP kernel) with datasheet-cited dimensions.
 
-### connector (198)
+### connector (200)
 
 | Part | MPN | Manufacturer | Files |
 |---|---|---|---|
@@ -174,6 +174,8 @@ Currently **803 parts**, all machine-verified (structure, KLC drawing rules, ren
 | [EPL.1S.304.HLN (CERN library)](https://partreel.com/p/cern_lemo_epl_1s_304_hln/) | `EPL.1S.304.HLN` | LEMO | [cern_lemo_epl_1s_304_hln](library/connector/cern/cern_lemo_epl_1s_304_hln) |
 | [EPL.1S.305.HLN (CERN library)](https://partreel.com/p/cern_lemo_epl_1s_305_hln/) | `EPL.1S.305.HLN` | LEMO | [cern_lemo_epl_1s_305_hln](library/connector/cern/cern_lemo_epl_1s_305_hln) |
 | [EPL.1S.306.HLN (CERN library)](https://partreel.com/p/cern_lemo_epl_1s_306_hln/) | `EPL.1S.306.HLN` | LEMO | [cern_lemo_epl_1s_306_hln](library/connector/cern/cern_lemo_epl_1s_306_hln) |
+| [EPY.00.250.NTN (CERN library)](https://partreel.com/p/cern_lemo_epy_00_250_ntn/) | `EPY.00.250.NTN` | LEMO | [cern_lemo_epy_00_250_ntn](library/connector/cern/cern_lemo_epy_00_250_ntn) |
+| [EPY.00.250.NTNY (CERN library)](https://partreel.com/p/cern_lemo_epy_00_250_ntny/) | `EPY.00.250.NTNY` | LEMO | [cern_lemo_epy_00_250_ntny](library/connector/cern/cern_lemo_epy_00_250_ntny) |
 | [EXG.0B.302.HLN (CERN library)](https://partreel.com/p/cern_lemo_exg_0b_302_hln/) | `EXG.0B.302.HLN` | LEMO | [cern_lemo_exg_0b_302_hln](library/connector/cern/cern_lemo_exg_0b_302_hln) |
 | [EXG.0B.304.HLN (CERN library)](https://partreel.com/p/cern_lemo_exg_0b_304_hln/) | `EXG.0B.304.HLN` | LEMO | [cern_lemo_exg_0b_304_hln](library/connector/cern/cern_lemo_exg_0b_304_hln) |
 | [EXG.1B.302.HLN (CERN library)](https://partreel.com/p/cern_lemo_exg_1b_302_hln/) | `EXG.1B.302.HLN` | LEMO | [cern_lemo_exg_1b_302_hln](library/connector/cern/cern_lemo_exg_1b_302_hln) |

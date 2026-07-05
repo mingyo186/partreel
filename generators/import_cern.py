@@ -126,9 +126,7 @@ def main():
             if re.search(r'\(extends\s', blk):
                 skipped.append((key, "derived symbol"))
                 continue
-            if re.search(r'\(symbol\s+"' + re.escape(sym_name) + r'_2_', blk):
-                skipped.append((key, "multi-unit symbol (deferred to Wave 2)"))
-                continue
+            # 멀티유닛 심볼: 렌더러 유닛 분리 지원(2026-07-05)으로 수입 허용
             fp_path = os.path.join(SRC, "PcbLib", fp_lib + ".pretty", fp_name + ".kicad_mod")
             if not os.path.exists(fp_path):
                 skipped.append((key, f"footprint file missing ({libfp})"))
