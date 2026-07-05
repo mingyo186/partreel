@@ -1,0 +1,55 @@
+{
+  "id": "cern_r1ex24002asas0i",
+  "name": "R1EX24002ASAS0I (CERN library)",
+  "category": "ic",
+  "family": "CERN Logic",
+  "manufacturer": "RENESAS",
+  "mpn_pattern": "R1EX24002ASAS0I",
+  "description": "Two-Wire Serial Interface 2k EEPROM (256-word x 8-bit). Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "8",
+    "mounting": "SMD",
+    "case": "SOIC8"
+  },
+  "files": {
+    "footprint": "cern_r1ex24002asas0i.kicad_mod",
+    "symbol": "cern_r1ex24002asas0i.kicad_sym",
+    "footprint_svg": "cern_r1ex24002asas0i.footprint.svg",
+    "symbol_svg": "cern_r1ex24002asas0i.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Logic.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/SOIC127P600X175-8N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "two",
+    "wire",
+    "serial",
+    "interface",
+    "eeprom",
+    "256"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Logic#R1EX24002ASAS0I",
+      "symbol": "SchLib/Logic.kicad_sym#R1EX24002A",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/SOIC127P600X175-8N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

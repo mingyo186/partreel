@@ -1,0 +1,54 @@
+{
+  "id": "cern_tmh_0512d",
+  "name": "TMH 0512D (CERN library)",
+  "category": "power",
+  "family": "CERN DC-DC Converters",
+  "manufacturer": "TRACO POWER",
+  "mpn_pattern": "TMH 0512D",
+  "description": "5VDC to ±12V, Iout (max) ±80mA, 2W DC-DC Converter. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "5"
+  },
+  "files": {
+    "footprint": "cern_tmh_0512d.kicad_mod",
+    "symbol": "cern_tmh_0512d.kicad_sym",
+    "footprint_svg": "cern_tmh_0512d.footprint.svg",
+    "symbol_svg": "cern_tmh_0512d.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/DC-DC Converters.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors THD.pretty/DCDC_TRACO_TMH.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "5vdc",
+    "12v",
+    "iout",
+    "max",
+    "80ma",
+    "converter"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#DC-DC Converters#TMH 0512D",
+      "symbol": "SchLib/DC-DC Converters.kicad_sym#DCDC_TRACO_TMH_Dual Outputs",
+      "footprint": "PcbLib/ICs And Semiconductors THD.pretty/DCDC_TRACO_TMH.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

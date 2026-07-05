@@ -1,0 +1,54 @@
+{
+  "id": "cern_sum90220e",
+  "name": "SUM90220E (CERN library)",
+  "category": "discrete",
+  "family": "CERN Transistors",
+  "manufacturer": "VISHAY SILICONIX",
+  "mpn_pattern": "SUM90220E",
+  "description": "200V, 64A, N-Channel (D-S) 175 °C MOSFET. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "3",
+    "mounting": "SMD",
+    "case": "D2PAK"
+  },
+  "files": {
+    "footprint": "cern_sum90220e.kicad_mod",
+    "symbol": "cern_sum90220e.kicad_sym",
+    "footprint_svg": "cern_sum90220e.footprint.svg",
+    "symbol_svg": "cern_sum90220e.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Transistors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/TO254P1524X483-3N-R902X1067.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "200v",
+    "64a",
+    "channel",
+    "175",
+    "mosfet"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Transistors#SUM90220E",
+      "symbol": "SchLib/Transistors.kicad_sym#N-MOSFET-D 1G 2S 3D",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/TO254P1524X483-3N-R902X1067.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

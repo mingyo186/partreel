@@ -1,0 +1,4130 @@
+(kicad_symbol_lib (version 20211014) (generator partreel-import)
+  (symbol "A3PE3000-PQ208"
+  		(pin_names
+  			(offset 1.27)
+  		)
+  		(exclude_from_sim no)
+  		(in_bom yes)
+  		(on_board yes)
+  		(property "Reference" "IC"
+  			(at 0 3.81 0)
+  			(effects
+  				(font
+  					(size 1.524 1.524)
+  				)
+  				(justify left)
+  			)
+  		)
+  		(property "Value" "${DEVICE}"
+  			(at 0 1.27 0)
+  			(effects
+  				(font
+  					(size 1.524 1.524)
+  				)
+  				(justify left)
+  			)
+  		)
+  		(property "Footprint" ""
+  			(at 0 0 0)
+  			(effects
+  				(font
+  					(size 1.27 1.27)
+  				)
+  				(hide yes)
+  			)
+  		)
+  		(property "Datasheet" ""
+  			(at 0 0 0)
+  			(effects
+  				(font
+  					(size 1.27 1.27)
+  				)
+  				(hide yes)
+  			)
+  		)
+  		(property "Description" "ProASIC3E Flash Family FPGA, 147 User IOs, 3M System Gates, 504 Kbits RAM, 1 Kbit FlashROM, 2 PLLs, 208-Pin PQFP, Commercial Grade"
+  			(at 0 0 0)
+  			(effects
+  				(font
+  					(size 1.27 1.27)
+  				)
+  				(hide yes)
+  			)
+  		)
+  		(symbol "A3PE3000-PQ208_1_0"
+  			(rectangle
+  				(start 27.94 0)
+  				(end 0 -66.04)
+  				(stroke
+  					(width 0.0254)
+  					(type solid)
+  					(color 128 0 0 1)
+  				)
+  				(fill
+  					(type background)
+  				)
+  			)
+  			(rectangle
+  				(start 27.94 -1.27)
+  				(end 26.67 -64.77)
+  				(stroke
+  					(width 0.0254)
+  					(type solid)
+  					(color 0 0 128 1)
+  				)
+  				(fill
+  					(type color)
+  					(color 0 0 0 1)
+  				)
+  			)
+  			(text "BANK 0"
+  				(at 5.08 -13.97 900)
+  				(effects
+  					(font
+  						(size 2.1336 2.1336)
+  					)
+  					(justify left bottom)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -2.54 180)
+  				(length 7.62)
+  				(name "GAA0/IO00NDB0V0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "206"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -5.08 180)
+  				(length 7.62)
+  				(name "GAA1/IO00PDB0V0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "205"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -7.62 180)
+  				(length 7.62)
+  				(name "GAB0/IO01NDB0V0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "204"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -10.16 180)
+  				(length 7.62)
+  				(name "GAB1/IO01PDB0V0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "203"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -12.7 180)
+  				(length 7.62)
+  				(name "GAC0/IO02NDB0V0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "202"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -15.24 180)
+  				(length 7.62)
+  				(name "GAC1/IO02PDB0V0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "201"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -17.78 180)
+  				(length 7.62)
+  				(name "IO08NDB0V0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "199"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -20.32 180)
+  				(length 7.62)
+  				(name "IO08PDB0V0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "198"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -22.86 180)
+  				(length 7.62)
+  				(name "IO11NDB0V1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "197"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -25.4 180)
+  				(length 7.62)
+  				(name "IO11PDB0V1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "196"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -27.94 180)
+  				(length 7.62)
+  				(name "IO16NDB0V1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "194"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -30.48 180)
+  				(length 7.62)
+  				(name "IO16PDB0V1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "193"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -33.02 180)
+  				(length 7.62)
+  				(name "IO21PSB0V2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "192"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -35.56 180)
+  				(length 7.62)
+  				(name "IO24NDB0V2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "191"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -38.1 180)
+  				(length 7.62)
+  				(name "IO24PDB0V2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "190"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -40.64 180)
+  				(length 7.62)
+  				(name "IO28NDB0V3"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "189"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -43.18 180)
+  				(length 7.62)
+  				(name "IO28PDB0V3"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "188"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -45.72 180)
+  				(length 7.62)
+  				(name "IO32NDB0V3"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "185"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -48.26 180)
+  				(length 7.62)
+  				(name "IO32PDB0V3"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "184"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -50.8 180)
+  				(length 7.62)
+  				(name "IO35NDB0V4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "183"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -53.34 180)
+  				(length 7.62)
+  				(name "IO35PDB0V4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "182"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -55.88 180)
+  				(length 7.62)
+  				(name "IO37NDB0V4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "181"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -58.42 180)
+  				(length 7.62)
+  				(name "IO37PDB0V4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "180"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -60.96 180)
+  				(length 7.62)
+  				(name "IO40NDB0V4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "179"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -63.5 180)
+  				(length 7.62)
+  				(name "IO40PDB0V4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "177"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  		)
+  		(symbol "A3PE3000-PQ208_2_0"
+  			(rectangle
+  				(start 27.94 0)
+  				(end 0 -40.64)
+  				(stroke
+  					(width 0.0254)
+  					(type solid)
+  					(color 128 0 0 1)
+  				)
+  				(fill
+  					(type background)
+  				)
+  			)
+  			(rectangle
+  				(start 27.94 -1.27)
+  				(end 26.67 -39.37)
+  				(stroke
+  					(width 0.0254)
+  					(type solid)
+  					(color 0 0 128 1)
+  				)
+  				(fill
+  					(type color)
+  					(color 128 0 0 1)
+  				)
+  			)
+  			(text "BANK 1"
+  				(at 5.08 -13.97 900)
+  				(effects
+  					(font
+  						(size 2.1336 2.1336)
+  					)
+  					(justify left bottom)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -2.54 180)
+  				(length 7.62)
+  				(name "IO54NDB1V1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "176"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -5.08 180)
+  				(length 7.62)
+  				(name "IO54PDB1V1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "175"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -7.62 180)
+  				(length 7.62)
+  				(name "IO55NDB1V1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "174"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -10.16 180)
+  				(length 7.62)
+  				(name "IO55PDB1V1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "173"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -12.7 180)
+  				(length 7.62)
+  				(name "IO56PSB1V1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "172"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -15.24 180)
+  				(length 7.62)
+  				(name "IO70NDB1V3"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "169"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -17.78 180)
+  				(length 7.62)
+  				(name "IO70PDB1V3"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "168"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -20.32 180)
+  				(length 7.62)
+  				(name "IO74NDB1V4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "167"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -22.86 180)
+  				(length 7.62)
+  				(name "IO74PDB1V4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "166"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -25.4 180)
+  				(length 7.62)
+  				(name "GBC0/IO79NDB1V4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "165"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -27.94 180)
+  				(length 7.62)
+  				(name "GBC1/IO79PDB1V4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "164"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -30.48 180)
+  				(length 7.62)
+  				(name "GBB0/IO80NDB1V4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "163"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -33.02 180)
+  				(length 7.62)
+  				(name "GBB1/IO80PDB1V4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "161"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -35.56 180)
+  				(length 7.62)
+  				(name "GBA0/IO81NDB1V4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "160"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -38.1 180)
+  				(length 7.62)
+  				(name "GBA1/IO81PDB1V4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "159"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  		)
+  		(symbol "A3PE3000-PQ208_3_0"
+  			(rectangle
+  				(start 27.94 0)
+  				(end 0 -45.72)
+  				(stroke
+  					(width 0.0254)
+  					(type solid)
+  					(color 128 0 0 1)
+  				)
+  				(fill
+  					(type background)
+  				)
+  			)
+  			(rectangle
+  				(start 27.94 -1.27)
+  				(end 26.67 -44.45)
+  				(stroke
+  					(width 0.0254)
+  					(type solid)
+  					(color 0 0 128 1)
+  				)
+  				(fill
+  					(type color)
+  					(color 255 0 0 1)
+  				)
+  			)
+  			(text "BANK 2"
+  				(at 5.08 -13.97 900)
+  				(effects
+  					(font
+  						(size 2.1336 2.1336)
+  					)
+  					(justify left bottom)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -2.54 180)
+  				(length 7.62)
+  				(name "GBA2/IO82PSB2V0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "152"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -5.08 180)
+  				(length 7.62)
+  				(name "GBB2/IO83PSB2V0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "153"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -7.62 180)
+  				(length 7.62)
+  				(name "GBC2/IO84PSB2V0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "151"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -10.16 180)
+  				(length 7.62)
+  				(name "IO88NDB2V0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "149"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -12.7 180)
+  				(length 7.62)
+  				(name "IO88PDB2V0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "150"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -15.24 180)
+  				(length 7.62)
+  				(name "IO91NDB2V1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "147"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -17.78 180)
+  				(length 7.62)
+  				(name "IO91PDB2V1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "148"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -20.32 180)
+  				(length 7.62)
+  				(name "IO96NDB2V1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "145"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -22.86 180)
+  				(length 7.62)
+  				(name "IO96PDB2V1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "146"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -25.4 180)
+  				(length 7.62)
+  				(name "IO99NDB2V2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "143"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -27.94 180)
+  				(length 7.62)
+  				(name "IO99PDB2V2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "144"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -30.48 180)
+  				(length 7.62)
+  				(name "IO106PSB2V3"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "139"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -33.02 180)
+  				(length 7.62)
+  				(name "IO110NDB2V3"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "137"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -35.56 180)
+  				(length 7.62)
+  				(name "IO110PDB2V3"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "138"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -38.1 180)
+  				(length 7.62)
+  				(name "GCC1/IO112PSB2V3"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "136"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -40.64 180)
+  				(length 7.62)
+  				(name "GCB0/IO113NDB2V3"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "134"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -43.18 180)
+  				(length 7.62)
+  				(name "GCB1/IO113PDB2V3"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "135"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  		)
+  		(symbol "A3PE3000-PQ208_4_0"
+  			(rectangle
+  				(start 27.94 0)
+  				(end 0 -43.18)
+  				(stroke
+  					(width 0.0254)
+  					(type solid)
+  					(color 128 0 0 1)
+  				)
+  				(fill
+  					(type background)
+  				)
+  			)
+  			(rectangle
+  				(start 27.94 -1.27)
+  				(end 26.67 -41.91)
+  				(stroke
+  					(width 0.0254)
+  					(type solid)
+  					(color 0 0 128 1)
+  				)
+  				(fill
+  					(type color)
+  					(color 253 131 0 1)
+  				)
+  			)
+  			(text "BANK 3"
+  				(at 5.08 -13.97 900)
+  				(effects
+  					(font
+  						(size 2.1336 2.1336)
+  					)
+  					(justify left bottom)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -2.54 180)
+  				(length 7.62)
+  				(name "GCA0/IO114NPB3V0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "132"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -5.08 180)
+  				(length 7.62)
+  				(name "GCA1/IO114PPB3V0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "129"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -7.62 180)
+  				(length 7.62)
+  				(name "IO115NDB3V0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "127"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -10.16 180)
+  				(length 7.62)
+  				(name "GCA2/IO115PDB3V0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "128"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -12.7 180)
+  				(length 7.62)
+  				(name "GCB2/IO116PSB3V0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "125"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -15.24 180)
+  				(length 7.62)
+  				(name "GCC2/IO117PSB3V0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "124"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -17.78 180)
+  				(length 7.62)
+  				(name "IO132NDB3V2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "120"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -20.32 180)
+  				(length 7.62)
+  				(name "IO132PDB3V2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "121"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -22.86 180)
+  				(length 7.62)
+  				(name "IO134NDB3V2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "118"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -25.4 180)
+  				(length 7.62)
+  				(name "IO134PDB3V2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "119"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -27.94 180)
+  				(length 7.62)
+  				(name "GDC0/IO151NDB3V4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "116"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -30.48 180)
+  				(length 7.62)
+  				(name "GDC1/IO151PDB3V4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "117"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -33.02 180)
+  				(length 7.62)
+  				(name "GDB0/IO152NPB3V4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "113"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -35.56 180)
+  				(length 7.62)
+  				(name "GDB1/IO152PPB3V4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "115"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -38.1 180)
+  				(length 7.62)
+  				(name "GDA0/IO153NPB3V4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "112"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -40.64 180)
+  				(length 7.62)
+  				(name "GDA1/IO153PPB3V4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "114"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  		)
+  		(symbol "A3PE3000-PQ208_5_0"
+  			(rectangle
+  				(start 27.94 0)
+  				(end 0 -40.64)
+  				(stroke
+  					(width 0.0254)
+  					(type solid)
+  					(color 128 0 0 1)
+  				)
+  				(fill
+  					(type background)
+  				)
+  			)
+  			(rectangle
+  				(start 27.94 -1.27)
+  				(end 26.67 -39.37)
+  				(stroke
+  					(width 0.0254)
+  					(type solid)
+  					(color 0 0 128 1)
+  				)
+  				(fill
+  					(type color)
+  					(color 255 238 0 1)
+  				)
+  			)
+  			(text "BANK 4"
+  				(at 5.08 -13.97 900)
+  				(effects
+  					(font
+  						(size 2.1336 2.1336)
+  					)
+  					(justify left bottom)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -2.54 180)
+  				(length 7.62)
+  				(name "GDA2/IO154PPB4V0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "99"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -5.08 180)
+  				(length 7.62)
+  				(name "IO154NPB4V0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "96"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -7.62 180)
+  				(length 7.62)
+  				(name "GDB2/IO155PSB4V0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "98"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -10.16 180)
+  				(length 7.62)
+  				(name "IO156NDB4V0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "94"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -12.7 180)
+  				(length 7.62)
+  				(name "GDC2/IO156PDB4V0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "95"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -15.24 180)
+  				(length 7.62)
+  				(name "IO166NDB4V1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "92"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -17.78 180)
+  				(length 7.62)
+  				(name "IO166PDB4V1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "93"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -20.32 180)
+  				(length 7.62)
+  				(name "IO170NDB4V2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "90"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -22.86 180)
+  				(length 7.62)
+  				(name "IO170PDB4V2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "91"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -25.4 180)
+  				(length 7.62)
+  				(name "IO176NDB4V2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "86"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -27.94 180)
+  				(length 7.62)
+  				(name "IO176PDB4V2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "87"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -30.48 180)
+  				(length 7.62)
+  				(name "IO180NDB4V3"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "84"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -33.02 180)
+  				(length 7.62)
+  				(name "IO180PDB4V3"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "85"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -35.56 180)
+  				(length 7.62)
+  				(name "IO184NDB4V3"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "82"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -38.1 180)
+  				(length 7.62)
+  				(name "IO184PDB4V3"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "83"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  		)
+  		(symbol "A3PE3000-PQ208_6_0"
+  			(rectangle
+  				(start 27.94 0)
+  				(end 0 -58.42)
+  				(stroke
+  					(width 0.0254)
+  					(type solid)
+  					(color 128 0 0 1)
+  				)
+  				(fill
+  					(type background)
+  				)
+  			)
+  			(rectangle
+  				(start 27.94 -1.27)
+  				(end 26.67 -57.15)
+  				(stroke
+  					(width 0.0254)
+  					(type solid)
+  					(color 0 0 128 1)
+  				)
+  				(fill
+  					(type color)
+  					(color 0 191 0 1)
+  				)
+  			)
+  			(text "BANK 5"
+  				(at 5.08 -13.97 900)
+  				(effects
+  					(font
+  						(size 2.1336 2.1336)
+  					)
+  					(justify left bottom)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -2.54 180)
+  				(length 7.62)
+  				(name "IO194NDB5V0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "79"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -5.08 180)
+  				(length 7.62)
+  				(name "IO194PDB5V0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "80"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -7.62 180)
+  				(length 7.62)
+  				(name "IO197NDB5V0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "77"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -10.16 180)
+  				(length 7.62)
+  				(name "IO197PDB5V0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "78"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -12.7 180)
+  				(length 7.62)
+  				(name "IO198NDB5V0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "75"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -15.24 180)
+  				(length 7.62)
+  				(name "IO198PDB5V0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "76"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -17.78 180)
+  				(length 7.62)
+  				(name "IO202NDB5V1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "73"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -20.32 180)
+  				(length 7.62)
+  				(name "IO202PDB5V1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "74"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -22.86 180)
+  				(length 7.62)
+  				(name "IO208NDB5V1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "69"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -25.4 180)
+  				(length 7.62)
+  				(name "IO208PDB5V1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "70"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -27.94 180)
+  				(length 7.62)
+  				(name "IO212NDB5V2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "67"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -30.48 180)
+  				(length 7.62)
+  				(name "IO212PDB5V2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "68"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -33.02 180)
+  				(length 7.62)
+  				(name "IO214PSB5V2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "66"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -35.56 180)
+  				(length 7.62)
+  				(name "IO218NDB5V3"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "63"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -38.1 180)
+  				(length 7.62)
+  				(name "IO218PDB5V3"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "64"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -40.64 180)
+  				(length 7.62)
+  				(name "IO230PSB5V4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "61"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -43.18 180)
+  				(length 7.62)
+  				(name "IO231NDB5V4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "59"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -45.72 180)
+  				(length 7.62)
+  				(name "GEC2/IO231PDB5V4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "60"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -48.26 180)
+  				(length 7.62)
+  				(name "IO232NDB5V4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "57"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -50.8 180)
+  				(length 7.62)
+  				(name "GEB2/IO232PDB5V4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "58"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -53.34 180)
+  				(length 7.62)
+  				(name "IO233NDB5V4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "55"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -55.88 180)
+  				(length 7.62)
+  				(name "GEA2/IO233PDB5V4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "56"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  		)
+  		(symbol "A3PE3000-PQ208_7_0"
+  			(rectangle
+  				(start 27.94 0)
+  				(end 0 -50.8)
+  				(stroke
+  					(width 0.0254)
+  					(type solid)
+  					(color 128 0 0 1)
+  				)
+  				(fill
+  					(type background)
+  				)
+  			)
+  			(rectangle
+  				(start 27.94 -1.27)
+  				(end 26.67 -49.53)
+  				(stroke
+  					(width 0.0254)
+  					(type solid)
+  					(color 0 0 128 1)
+  				)
+  				(fill
+  					(type color)
+  					(color 0 0 255 1)
+  				)
+  			)
+  			(text "BANK 6"
+  				(at 5.08 -13.97 900)
+  				(effects
+  					(font
+  						(size 2.1336 2.1336)
+  					)
+  					(justify left bottom)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -2.54 180)
+  				(length 7.62)
+  				(name "GEA0/IO234NPB6V0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "49"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -5.08 180)
+  				(length 7.62)
+  				(name "GEB0/IO235NPB6V0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "48"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -7.62 180)
+  				(length 7.62)
+  				(name "GEA1/IO234PPB6V0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "47"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -10.16 180)
+  				(length 7.62)
+  				(name "GEC0/IO236NDB6V0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "45"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -12.7 180)
+  				(length 7.62)
+  				(name "GEB1/IO235PPB6V0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "46"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -15.24 180)
+  				(length 7.62)
+  				(name "GEC1/IO236PDB6V0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "44"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -17.78 180)
+  				(length 7.62)
+  				(name "IO244NDB6V1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "43"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -20.32 180)
+  				(length 7.62)
+  				(name "IO244PDB6V1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "42"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -22.86 180)
+  				(length 7.62)
+  				(name "IO248PSB6V1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "39"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -25.4 180)
+  				(length 7.62)
+  				(name "IO252NDB6V2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "38"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -27.94 180)
+  				(length 7.62)
+  				(name "IO252PDB6V2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "37"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -30.48 180)
+  				(length 7.62)
+  				(name "IO270NPB6V4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "35"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -33.02 180)
+  				(length 7.62)
+  				(name "GFC2/IO270PPB6V4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "33"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -35.56 180)
+  				(length 7.62)
+  				(name "IO271NPB6V4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "34"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -38.1 180)
+  				(length 7.62)
+  				(name "GFB2/IO271PPB6V4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "32"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -40.64 180)
+  				(length 7.62)
+  				(name "IO272NDB6V4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "31"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -43.18 180)
+  				(length 7.62)
+  				(name "GFA2/IO272PDB6V4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "30"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -45.72 180)
+  				(length 7.62)
+  				(name "GFA0/IO273NPB6V4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "26"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -48.26 180)
+  				(length 7.62)
+  				(name "GFA1/IO273PPB6V4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "28"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  		)
+  		(symbol "A3PE3000-PQ208_8_0"
+  			(rectangle
+  				(start 27.94 0)
+  				(end 0 -48.26)
+  				(stroke
+  					(width 0.0254)
+  					(type solid)
+  					(color 128 0 0 1)
+  				)
+  				(fill
+  					(type background)
+  				)
+  			)
+  			(rectangle
+  				(start 27.94 -1.27)
+  				(end 26.67 -46.99)
+  				(stroke
+  					(width 0.0254)
+  					(type solid)
+  					(color 0 0 128 1)
+  				)
+  				(fill
+  					(type color)
+  					(color 255 0 255 1)
+  				)
+  			)
+  			(text "BANK 7"
+  				(at 5.08 -13.97 900)
+  				(effects
+  					(font
+  						(size 2.1336 2.1336)
+  					)
+  					(justify left bottom)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -2.54 180)
+  				(length 7.62)
+  				(name "GFB0/IO274NDB7V0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "24"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -5.08 180)
+  				(length 7.62)
+  				(name "GFB1/IO274PDB7V0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "23"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -7.62 180)
+  				(length 7.62)
+  				(name "GFC1/IO275PSB7V0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "22"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -10.16 180)
+  				(length 7.62)
+  				(name "IO279PSB7V0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "21"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -12.7 180)
+  				(length 7.62)
+  				(name "IO285NDB7V1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "20"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -15.24 180)
+  				(length 7.62)
+  				(name "IO285PDB7V1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "19"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -17.78 180)
+  				(length 7.62)
+  				(name "IO291PSB7V2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "15"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -20.32 180)
+  				(length 7.62)
+  				(name "IO295NDB7V2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "14"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -22.86 180)
+  				(length 7.62)
+  				(name "IO295PDB7V2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "13"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -25.4 180)
+  				(length 7.62)
+  				(name "IO299NDB7V3"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "12"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -27.94 180)
+  				(length 7.62)
+  				(name "IO299PDB7V3"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "11"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -30.48 180)
+  				(length 7.62)
+  				(name "IO303NDB7V3"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "10"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -33.02 180)
+  				(length 7.62)
+  				(name "IO303PDB7V3"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "9"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -35.56 180)
+  				(length 7.62)
+  				(name "IO307NDB7V4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "8"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -38.1 180)
+  				(length 7.62)
+  				(name "GAC2/IO307PDB7V4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "7"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -40.64 180)
+  				(length 7.62)
+  				(name "GAB2/IO308PSB7V4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -43.18 180)
+  				(length 7.62)
+  				(name "IO309NDB7V4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "6"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 35.56 -45.72 180)
+  				(length 7.62)
+  				(name "GAA2/IO309PDB7V4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "5"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  		)
+  		(symbol "A3PE3000-PQ208_9_0"
+  			(rectangle
+  				(start 10.16 0)
+  				(end 0 -20.32)
+  				(stroke
+  					(width 0.0254)
+  					(type solid)
+  					(color 128 0 0 1)
+  				)
+  				(fill
+  					(type background)
+  				)
+  			)
+  			(pin input line
+  				(at -7.62 -2.54 0)
+  				(length 7.62)
+  				(name "TDI"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "102"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at -7.62 -5.08 0)
+  				(length 7.62)
+  				(name "TDO"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "108"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input clock
+  				(at -7.62 -7.62 0)
+  				(length 7.62)
+  				(name "TCK"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "101"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at -7.62 -10.16 0)
+  				(length 7.62)
+  				(name "TMS"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "103"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at -7.62 -15.24 0)
+  				(length 7.62)
+  				(name "~{TRST}"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "109"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin passive line
+  				(at -7.62 -17.78 0)
+  				(length 7.62)
+  				(name "NC"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "126"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  		)
+  		(symbol "A3PE3000-PQ208_10_0"
+  			(rectangle
+  				(start 25.4 0)
+  				(end 0 -66.04)
+  				(stroke
+  					(width 0.0254)
+  					(type solid)
+  					(color 128 0 0 1)
+  				)
+  				(fill
+  					(type background)
+  				)
+  			)
+  			(pin power_in line
+  				(at -7.62 -2.54 0)
+  				(length 7.62)
+  				(name "VMV0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "208"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -7.62 -5.08 0)
+  				(length 7.62)
+  				(name "VCCIB0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "186"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -7.62 -7.62 0)
+  				(length 7.62)
+  				(name "VCCIB0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "200"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -7.62 -12.7 0)
+  				(length 7.62)
+  				(name "VMV1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "157"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -7.62 -15.24 0)
+  				(length 7.62)
+  				(name "VCCIB1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "170"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -7.62 -20.32 0)
+  				(length 7.62)
+  				(name "VMV2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "154"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -7.62 -22.86 0)
+  				(length 7.62)
+  				(name "VCCIB2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "140"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -7.62 -27.94 0)
+  				(length 7.62)
+  				(name "VMV3"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "111"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -7.62 -30.48 0)
+  				(length 7.62)
+  				(name "VCCIB3"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "123"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -7.62 -35.56 0)
+  				(length 7.62)
+  				(name "VMV4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "104"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -7.62 -38.1 0)
+  				(length 7.62)
+  				(name "VCCIB4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "89"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -7.62 -43.18 0)
+  				(length 7.62)
+  				(name "VMV5"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "53"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -7.62 -45.72 0)
+  				(length 7.62)
+  				(name "VCCIB5"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "72"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -7.62 -48.26 0)
+  				(length 7.62)
+  				(name "VCCIB5"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "62"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -7.62 -53.34 0)
+  				(length 7.62)
+  				(name "VMV6"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "50"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -7.62 -55.88 0)
+  				(length 7.62)
+  				(name "VCCIB6"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "40"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -7.62 -60.96 0)
+  				(length 7.62)
+  				(name "VMV7"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "3"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -7.62 -63.5 0)
+  				(length 7.62)
+  				(name "VCCIB7"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "18"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at 33.02 -2.54 180)
+  				(length 7.62)
+  				(name "VCC"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "16"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at 33.02 -5.08 180)
+  				(length 7.62)
+  				(name "VCC"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "36"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at 33.02 -7.62 180)
+  				(length 7.62)
+  				(name "VCC"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "71"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at 33.02 -10.16 180)
+  				(length 7.62)
+  				(name "VCC"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "88"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at 33.02 -12.7 180)
+  				(length 7.62)
+  				(name "VCC"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "142"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at 33.02 -15.24 180)
+  				(length 7.62)
+  				(name "VCC"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "171"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at 33.02 -17.78 180)
+  				(length 7.62)
+  				(name "VCC"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "187"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at 33.02 -43.18 180)
+  				(length 7.62)
+  				(name "VCCPLC"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "131"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at 33.02 -45.72 180)
+  				(length 7.62)
+  				(name "VCCPLF"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "27"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at 33.02 -50.8 180)
+  				(length 7.62)
+  				(name "VCOMPLC"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "133"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at 33.02 -53.34 180)
+  				(length 7.62)
+  				(name "VCOMPLF"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "25"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at 33.02 -58.42 180)
+  				(length 7.62)
+  				(name "VJTAG"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "110"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at 33.02 -63.5 180)
+  				(length 7.62)
+  				(name "VPUMP"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "106"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  		)
+  		(symbol "A3PE3000-PQ208_11_0"
+  			(rectangle
+  				(start 17.78 0)
+  				(end 0 -33.02)
+  				(stroke
+  					(width 0.0254)
+  					(type solid)
+  					(color 128 0 0 1)
+  				)
+  				(fill
+  					(type background)
+  				)
+  			)
+  			(pin power_in line
+  				(at -7.62 -2.54 0)
+  				(length 7.62)
+  				(name "GND"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -7.62 -5.08 0)
+  				(length 7.62)
+  				(name "GND"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "17"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -7.62 -7.62 0)
+  				(length 7.62)
+  				(name "GND"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "29"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -7.62 -10.16 0)
+  				(length 7.62)
+  				(name "GND"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "41"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -7.62 -12.7 0)
+  				(length 7.62)
+  				(name "GND"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "52"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -7.62 -15.24 0)
+  				(length 7.62)
+  				(name "GND"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "65"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -7.62 -17.78 0)
+  				(length 7.62)
+  				(name "GND"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "81"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -7.62 -20.32 0)
+  				(length 7.62)
+  				(name "GND"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "97"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -7.62 -22.86 0)
+  				(length 7.62)
+  				(name "GND"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "105"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -7.62 -25.4 0)
+  				(length 7.62)
+  				(name "GND"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "122"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -7.62 -27.94 0)
+  				(length 7.62)
+  				(name "GND"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "130"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -7.62 -30.48 0)
+  				(length 7.62)
+  				(name "GND"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "141"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at 25.4 -2.54 180)
+  				(length 7.62)
+  				(name "GND"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "156"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at 25.4 -5.08 180)
+  				(length 7.62)
+  				(name "GND"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "162"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at 25.4 -7.62 180)
+  				(length 7.62)
+  				(name "GND"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "178"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at 25.4 -10.16 180)
+  				(length 7.62)
+  				(name "GND"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "195"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at 25.4 -12.7 180)
+  				(length 7.62)
+  				(name "GNDQ"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at 25.4 -15.24 180)
+  				(length 7.62)
+  				(name "GNDQ"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "51"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at 25.4 -17.78 180)
+  				(length 7.62)
+  				(name "GNDQ"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "54"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at 25.4 -20.32 180)
+  				(length 7.62)
+  				(name "GNDQ"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "100"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at 25.4 -22.86 180)
+  				(length 7.62)
+  				(name "GNDQ"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "107"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at 25.4 -25.4 180)
+  				(length 7.62)
+  				(name "GNDQ"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "155"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at 25.4 -27.94 180)
+  				(length 7.62)
+  				(name "GNDQ"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "158"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at 25.4 -30.48 180)
+  				(length 7.62)
+  				(name "GNDQ"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "207"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  		)
+  		(embedded_fonts no)
+  	)
+)

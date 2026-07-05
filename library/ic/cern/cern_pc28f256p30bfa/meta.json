@@ -1,0 +1,55 @@
+{
+  "id": "cern_pc28f256p30bfa",
+  "name": "PC28F256P30BFA (CERN library)",
+  "category": "ic",
+  "family": "CERN Logic",
+  "manufacturer": "MICRON TECHNOLOGY",
+  "mpn_pattern": "PC28F256P30BFA",
+  "description": "256Mb Micron Parallel NOR Flash Embedded Memory (P30-65nm). Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "64",
+    "mounting": "SMD",
+    "case": "BGA64"
+  },
+  "files": {
+    "footprint": "cern_pc28f256p30bfa.kicad_mod",
+    "symbol": "cern_pc28f256p30bfa.kicad_sym",
+    "footprint_svg": "cern_pc28f256p30bfa.footprint.svg",
+    "symbol_svg": "cern_pc28f256p30bfa.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Logic.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD_BGA.pretty/BGA64C100P8X8_1000X1300X120.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "256mb",
+    "micron",
+    "parallel",
+    "nor",
+    "flash",
+    "embedded"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Logic#PC28F256P30BFA",
+      "symbol": "SchLib/Logic.kicad_sym#PC28F256P30BFA",
+      "footprint": "PcbLib/ICs And Semiconductors SMD_BGA.pretty/BGA64C100P8X8_1000X1300X120.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

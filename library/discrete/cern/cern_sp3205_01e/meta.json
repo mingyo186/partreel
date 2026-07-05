@@ -1,0 +1,55 @@
+{
+  "id": "cern_sp3205_01e",
+  "name": "SP3205-01E (CERN library)",
+  "category": "discrete",
+  "family": "CERN Diodes",
+  "manufacturer": "LITTELFUSE",
+  "mpn_pattern": "SP3205-01E",
+  "description": "SP3205 Series Low Capacitance ESD Protection. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "6",
+    "mounting": "SMD",
+    "case": "SOD882"
+  },
+  "files": {
+    "footprint": "cern_sp3205_01e.kicad_mod",
+    "symbol": "cern_sp3205_01e.kicad_sym",
+    "footprint_svg": "cern_sp3205_01e.footprint.svg",
+    "symbol_svg": "cern_sp3205_01e.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Diodes.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/SOD882.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "sp3205",
+    "series",
+    "low",
+    "capacitance",
+    "esd",
+    "protection"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Diodes#SP3205-01E",
+      "symbol": "SchLib/Diodes.kicad_sym#Diode TVS Uni-Directional",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/SOD882.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

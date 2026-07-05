@@ -1,0 +1,55 @@
+{
+  "id": "cern_mymgk00504ersr",
+  "name": "MYMGK00504ERSR (CERN library)",
+  "category": "power",
+  "family": "CERN DC-DC Converters",
+  "manufacturer": "MURATA",
+  "mpn_pattern": "MYMGK00504ERSR",
+  "description": "8-15VDC to 5.0VDC, Iout (max) 4A, MonoBK™, DC-DC Converter Series. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: Not Recommended.",
+  "parameters": {
+    "contacts": "23",
+    "mounting": "SMD",
+    "lifecycle": "Not Recommended"
+  },
+  "files": {
+    "footprint": "cern_mymgk00504ersr.kicad_mod",
+    "symbol": "cern_mymgk00504ersr.kicad_sym",
+    "footprint_svg": "cern_mymgk00504ersr.footprint.svg",
+    "symbol_svg": "cern_mymgk00504ersr.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/DC-DC Converters.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/DCDC_MURATA_MYMGK.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "15vdc",
+    "0vdc",
+    "iout",
+    "max",
+    "monobk",
+    "converter"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#DC-DC Converters#MYMGK00504ERSR",
+      "symbol": "SchLib/DC-DC Converters.kicad_sym#DCDC_MURATA_MYMGK",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/DCDC_MURATA_MYMGK.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

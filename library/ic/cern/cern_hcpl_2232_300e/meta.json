@@ -1,0 +1,55 @@
+{
+  "id": "cern_hcpl_2232_300e",
+  "name": "HCPL-2232-300E (CERN library)",
+  "category": "ic",
+  "family": "CERN Optocouplers",
+  "manufacturer": "AVAGO TECHNOLOGIES",
+  "mpn_pattern": "HCPL-2232-300E",
+  "description": "Very High CMR, Wide VCC, Dual Channel Logic Gate Optocoupler. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "8",
+    "mounting": "SMD",
+    "case": "DIP8 SMD"
+  },
+  "files": {
+    "footprint": "cern_hcpl_2232_300e.kicad_mod",
+    "symbol": "cern_hcpl_2232_300e.kicad_sym",
+    "footprint_svg": "cern_hcpl_2232_300e.footprint.svg",
+    "symbol_svg": "cern_hcpl_2232_300e.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Optocouplers.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/AVAGO_HCPL-2232-300E.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "very",
+    "high",
+    "cmr",
+    "wide",
+    "vcc",
+    "dual"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Optocouplers#HCPL-2232-300E",
+      "symbol": "SchLib/Optocouplers.kicad_sym#Logic Gate Optocoupler Type2",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/AVAGO_HCPL-2232-300E.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

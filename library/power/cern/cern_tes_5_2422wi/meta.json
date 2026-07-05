@@ -1,0 +1,54 @@
+{
+  "id": "cern_tes_5_2422wi",
+  "name": "TES 5-2422WI (CERN library)",
+  "category": "power",
+  "family": "CERN DC-DC Converters",
+  "manufacturer": "TRACO POWER",
+  "mpn_pattern": "TES 5-2422WI",
+  "description": "9-36VDC to +12VDC, Iout (max) 210mA, 5W DC-DC Converter. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "14",
+    "mounting": "SMD"
+  },
+  "files": {
+    "footprint": "cern_tes_5_2422wi.kicad_mod",
+    "symbol": "cern_tes_5_2422wi.kicad_sym",
+    "footprint_svg": "cern_tes_5_2422wi.footprint.svg",
+    "symbol_svg": "cern_tes_5_2422wi.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/DC-DC Converters.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/DCDC_TRACO_TES5WI.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "36vdc",
+    "12vdc",
+    "iout",
+    "max",
+    "210ma",
+    "converter"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#DC-DC Converters#TES 5-2422WI",
+      "symbol": "SchLib/DC-DC Converters.kicad_sym#DCDC_TRACO_TES5WI_Dual Output",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/DCDC_TRACO_TES5WI.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "id": "cern_ksz8997",
+  "name": "KSZ8997 (CERN library)",
+  "category": "ic",
+  "family": "CERN Analog & Interface",
+  "manufacturer": "MICROCHIP TECHNOLOGY",
+  "mpn_pattern": "KSZ8997",
+  "description": "8-Port 10/100 Integrated Switch with PHY and Frame Buffer. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "128",
+    "mounting": "SMD",
+    "case": "PQFP128",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_ksz8997.kicad_mod",
+    "symbol": "cern_ksz8997.kicad_sym",
+    "footprint_svg": "cern_ksz8997.footprint.svg",
+    "symbol_svg": "cern_ksz8997.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Analog & Interface.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/QFP50P1720X2320X340-128N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "port",
+    "100",
+    "integrated",
+    "switch",
+    "with",
+    "phy"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Analog & Interface#KSZ8997",
+      "symbol": "SchLib/Analog & Interface.kicad_sym#KSZ8997",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/QFP50P1720X2320X340-128N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

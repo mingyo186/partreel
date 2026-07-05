@@ -1,0 +1,81 @@
+{
+  "id": "cern_fod3182sdv",
+  "name": "FOD3182SDV (CERN library)",
+  "category": "ic",
+  "family": "CERN Optocouplers",
+  "manufacturer": "FAIRCHILD SEMICONDUCTOR",
+  "mpn_pattern": "FOD3182SDV",
+  "description": "3A Output Current, High Speed MOSFET Gate Driver Optocoupler. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "8",
+    "mounting": "SMD",
+    "case": "DIP8 SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/ic/cern/cern_fod3182sdv/cern_fod3182sdv.kicad_mod",
+    "symbol": "https://partreel.com/library/ic/cern/cern_fod3182sdv/cern_fod3182sdv.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/ic/cern/cern_fod3182sdv/cern_fod3182sdv.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/ic/cern/cern_fod3182sdv/cern_fod3182sdv.symbol.svg"
+  },
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Optocouplers.kicad_sym",
+  "license": "CERN-OHL-P-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/FAIRCHILD_8LD MDIP (OPTION S).kicad_mod)",
+  "keywords": [
+    "cern",
+    "output",
+    "current",
+    "high",
+    "speed",
+    "mosfet",
+    "gate"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/FAIRCHILD_8LD MDIP (OPTION S).kicad_mod)",
+    "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Optocouplers.kicad_sym",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_cern.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+      "source_commit": "53054c17",
+      "source_files": {
+        "db": "CERN.sqlite#Optocouplers#FOD3182SDV",
+        "symbol": "SchLib/Optocouplers.kicad_sym#Optocoupler Type17",
+        "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/FAIRCHILD_8LD MDIP (OPTION S).kicad_mod"
+      },
+      "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+      "import_date": "2026-07-05",
+      "modifications": [
+        "extracted single symbol from library",
+        "stripped dead 3D model reference (upstream ships no 3D)"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/cern_fod3182sdv/",
+  "api": "https://partreel.com/api/v1/parts/cern_fod3182sdv.json"
+}

@@ -1,0 +1,55 @@
+{
+  "id": "cern_mic5239_5_0ys",
+  "name": "MIC5239-5.0YS (CERN library)",
+  "category": "ic",
+  "family": "CERN Regulators",
+  "manufacturer": "MICROCHIP TECHNOLOGY",
+  "mpn_pattern": "MIC5239-5.0YS",
+  "description": "5V, Low Quiescent Current 500mA uCap LDO Regulator. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "4",
+    "mounting": "SMD",
+    "case": "SOT223"
+  },
+  "files": {
+    "footprint": "cern_mic5239_5_0ys.kicad_mod",
+    "symbol": "cern_mic5239_5_0ys.kicad_sym",
+    "footprint_svg": "cern_mic5239_5_0ys.footprint.svg",
+    "symbol_svg": "cern_mic5239_5_0ys.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Regulators.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/SOT230P700X180-4N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "low",
+    "quiescent",
+    "current",
+    "500ma",
+    "ucap",
+    "ldo"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Regulators#MIC5239-5.0YS",
+      "symbol": "SchLib/Regulators.kicad_sym#REG3+1 1IN-2GND-3OUT+4GND",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/SOT230P700X180-4N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

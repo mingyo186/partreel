@@ -1,0 +1,55 @@
+{
+  "id": "cern_epc2218",
+  "name": "EPC2218 (CERN library)",
+  "category": "discrete",
+  "family": "CERN Transistors",
+  "manufacturer": "EPC",
+  "mpn_pattern": "EPC2218",
+  "description": "100V, 60A, N-Channel Enhancement Mode Power MOSFET Transistor. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: Not Recommended.",
+  "parameters": {
+    "contacts": "8",
+    "mounting": "SMD",
+    "lifecycle": "Not Recommended"
+  },
+  "files": {
+    "footprint": "cern_epc2218.kicad_mod",
+    "symbol": "cern_epc2218.kicad_sym",
+    "footprint_svg": "cern_epc2218.footprint.svg",
+    "symbol_svg": "cern_epc2218.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Transistors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/EPC_EPC2218.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "100v",
+    "60a",
+    "channel",
+    "enhancement",
+    "mode",
+    "power"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Transistors#EPC2218",
+      "symbol": "SchLib/Transistors.kicad_sym#EPC2218",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/EPC_EPC2218.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

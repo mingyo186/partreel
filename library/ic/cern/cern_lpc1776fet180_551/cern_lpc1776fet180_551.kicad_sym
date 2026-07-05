@@ -1,0 +1,3366 @@
+(kicad_symbol_lib (version 20211014) (generator partreel-import)
+  (symbol "LPC1776FET180,551"
+  		(pin_names
+  			(offset 1.27)
+  		)
+  		(exclude_from_sim no)
+  		(in_bom yes)
+  		(on_board yes)
+  		(property "Reference" "IC"
+  			(at 0 3.81 0)
+  			(effects
+  				(font
+  					(size 1.524 1.524)
+  				)
+  				(justify left)
+  			)
+  		)
+  		(property "Value" "${DEVICE}"
+  			(at 0 1.27 0)
+  			(effects
+  				(font
+  					(size 1.524 1.524)
+  				)
+  				(justify left)
+  			)
+  		)
+  		(property "Footprint" ""
+  			(at 0 0 0)
+  			(effects
+  				(font
+  					(size 1.27 1.27)
+  				)
+  				(hide yes)
+  			)
+  		)
+  		(property "Datasheet" ""
+  			(at 0 0 0)
+  			(effects
+  				(font
+  					(size 1.27 1.27)
+  				)
+  				(hide yes)
+  			)
+  		)
+  		(property "Description" "32-bit ARM Cortex-M3 MCU, 256kB Flash, 80kB SRAM, Ethernet, USB 2.0 Device/Host/OTG, CAN, 12-Bit ADC"
+  			(at 0 0 0)
+  			(effects
+  				(font
+  					(size 1.27 1.27)
+  				)
+  				(hide yes)
+  			)
+  		)
+  		(symbol "LPC1776FET180,551_1_0"
+  			(rectangle
+  				(start 76.2 0)
+  				(end 0 -167.64)
+  				(stroke
+  					(width 0.0254)
+  					(type solid)
+  					(color 128 0 0 1)
+  				)
+  				(fill
+  					(type background)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -2.54 0)
+  				(length 5.08)
+  				(name "P0[0]/CAN_RD1/U3_TXD/I2C1_SDA/U0_TXD"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "M10"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -5.08 0)
+  				(length 5.08)
+  				(name "P0[1]/CAN_TD1/U3_RXD/I2C1_SCL/U0_RXD"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "N11"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -7.62 0)
+  				(length 5.08)
+  				(name "P0[2]/U0_TXD/U3_TXD"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "D5"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -10.16 0)
+  				(length 5.08)
+  				(name "P0[3]/U0_RXD/U3_RXD"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "A3"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -12.7 0)
+  				(length 5.08)
+  				(name "P0[4]/I2S_RX_SCK/CAN_RD2/T2_CAP0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "A11"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -15.24 0)
+  				(length 5.08)
+  				(name "P0[5]/I2S_RX_WS/CAN_TD2/T2_CAP1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "B11"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -17.78 0)
+  				(length 5.08)
+  				(name "P0[6]/I2S_RX_SDA/SSP1_SSEL/T2_MAT0/U1_RTS"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "D11"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -20.32 0)
+  				(length 5.08)
+  				(name "P0[7]/I2S_TX_SCK/SSP1_SCK/T2_MAT1/RTC_EV0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "B12"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -22.86 0)
+  				(length 5.08)
+  				(name "P0[8]/I2S_TX_WS/SSP1_MISO/T2_MAT2/RTC_EV1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "C12"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -25.4 0)
+  				(length 5.08)
+  				(name "P0[9]/I2S_TX_SDA/SSP1_MOSI/T2_MAT3/RTC_EV2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "A13"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -27.94 0)
+  				(length 5.08)
+  				(name "P0[10]/U2_TXD/I2C2_SDA/T3_MAT0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L10"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -30.48 0)
+  				(length 5.08)
+  				(name "P0[11]/U2_RXD/I2C2_SCL/T3_MAT1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "P12"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -33.02 0)
+  				(length 5.08)
+  				(name "P0[12]/~{USB_PPWR2/SSP1}_MISO/ADC0_IN[6]"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "J4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -35.56 0)
+  				(length 5.08)
+  				(name "P0[13]/USB_UP_LED2/SSP1_MOSI/ADC0_IN[7]"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "J5"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -38.1 0)
+  				(length 5.08)
+  				(name "P0[14]/~{USB_HSTEN2}/SSP1_SSEL/USB_CONNECT2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "M5"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -40.64 0)
+  				(length 5.08)
+  				(name "P0[15]/U1_TXD/SSP0_SCK"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "H13"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -43.18 0)
+  				(length 5.08)
+  				(name "P0[16]/U1_RXD/SSP0_SSEL"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "H14"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -45.72 0)
+  				(length 5.08)
+  				(name "P0[17]/U1_CTS/SSP0_MISO"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "J12"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -48.26 0)
+  				(length 5.08)
+  				(name "P0[18]/U1_DCD/SSP0_MOSI"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "J13"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -50.8 0)
+  				(length 5.08)
+  				(name "P0[19]/U1_DSR/SD_CLK/I2C1_SDA"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "J10"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -53.34 0)
+  				(length 5.08)
+  				(name "P0[20]/U1_DTR/SD_CMD/I2C1_SCL"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "K14"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -55.88 0)
+  				(length 5.08)
+  				(name "P0[21]/U1_RI/SD_PWR/U4_OE/CAN_RD1/U4_SCLK"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "K11"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -58.42 0)
+  				(length 5.08)
+  				(name "P0[22]/U1_RTS/SD_DAT[0]/U4_TXD/CAN_TD1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L14"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -60.96 0)
+  				(length 5.08)
+  				(name "P0[23]/ADC0_IN[0]/I2S_RX_SCK/T3_CAP0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "F5"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -63.5 0)
+  				(length 5.08)
+  				(name "P0[24]/ADC0_IN[1]/I2S_RX_WS/T3_CAP1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "E1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -66.04 0)
+  				(length 5.08)
+  				(name "P0[25]/ADC0_IN[2]/I2S_RX_SDA/U3_TXD"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "E4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -68.58 0)
+  				(length 5.08)
+  				(name "P0[26]/ADC0_IN[3]/DAC_OUT/U3_RXD"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "D1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -71.12 0)
+  				(length 5.08)
+  				(name "P0[27]/I2C0_SDA/USB_SDA1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L3"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -73.66 0)
+  				(length 5.08)
+  				(name "P0[28]/I2C0_SCL/USB_SCL1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "M1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -76.2 0)
+  				(length 5.08)
+  				(name "P0[29]/USB_D+1/~{EINT0}"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "K5"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -78.74 0)
+  				(length 5.08)
+  				(name "P0[30]/USB_D-1/~{EINT1}"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "N4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -81.28 0)
+  				(length 5.08)
+  				(name "P0[31]/USB_D+2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "N1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -86.36 0)
+  				(length 5.08)
+  				(name "P1[0]/ENET_TXD0/T3_CAP1/SSP2_SCK"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "B5"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -88.9 0)
+  				(length 5.08)
+  				(name "P1[1]/ENET_TXD1/T3_MAT3/SSP2_MOSI"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "A5"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -91.44 0)
+  				(length 5.08)
+  				(name "P1[2]/ENET_TXD2/SD_CLK/PWM0[1]"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "B7"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -93.98 0)
+  				(length 5.08)
+  				(name "P1[3]/ENET_TXD3/SD_CMD/PWM0[2]"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "A9"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -96.52 0)
+  				(length 5.08)
+  				(name "P1[4]/ENET_TX_EN/T3_MAT2/SSP2_MISO"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "C6"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -99.06 0)
+  				(length 5.08)
+  				(name "P1[5]/ENET_TX_ER/SD_PWR/PWM0[3]"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "B13"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -101.6 0)
+  				(length 5.08)
+  				(name "P1[6]/ENET_TX_CLK/SD_DAT[0]/PWM0[4]"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "B10"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -104.14 0)
+  				(length 5.08)
+  				(name "P1[7]/ENET_COL/SD_DAT[1]/PWM0[5]"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "C13"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -106.68 0)
+  				(length 5.08)
+  				(name "P1[8]/ENET_CRS_(ENET_CRS_DV)/T3_MAT1/SSP2_SSEL"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "B6"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -109.22 0)
+  				(length 5.08)
+  				(name "P1[9]/ENET_RXD0/T3_MAT0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "D7"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -111.76 0)
+  				(length 5.08)
+  				(name "P1[10]/ENET_RXD1/T3_CAP0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "A7"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -114.3 0)
+  				(length 5.08)
+  				(name "P1[11]/ENET_RXD2/SD_DAT[2]/PWM0[6]"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "A12"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -116.84 0)
+  				(length 5.08)
+  				(name "P1[12]/ENET_RXD3/SD_DAT[3]/PWM0_CAP0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "A14"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -119.38 0)
+  				(length 5.08)
+  				(name "P1[13]/ENET_RX_DV"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "D14"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -121.92 0)
+  				(length 5.08)
+  				(name "P1[14]/ENET_RX_ER/T2_CAP0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "D8"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -124.46 0)
+  				(length 5.08)
+  				(name "P1[15]/ENET_RX_CLK_(ENET_REF_CLK)/I2C2_SDA"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "A8"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -127 0)
+  				(length 5.08)
+  				(name "P1[16]/ENET_MDC/I2S_TX_MCLK"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "B8"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -129.54 0)
+  				(length 5.08)
+  				(name "P1[17]/ENET_MDIO/I2S_RX_MCLK"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "C9"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -132.08 0)
+  				(length 5.08)
+  				(name "P1[18]/USB_UP_LED1/PWM1[1]/T1_CAP0/SSP1_MISO"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L5"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -134.62 0)
+  				(length 5.08)
+  				(name "P1[19]/~{USB_TX_E1}/~{USB_PPWR1}/T1_CAP1/MC_0A/SSP1_SCK/U2_OE"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "P5"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -137.16 0)
+  				(length 5.08)
+  				(name "P1[20]/USB_TX_DP1/PWM1[2]/QEI_PHA/MC_FB0/SSP0_SCK"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "K6"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -139.7 0)
+  				(length 5.08)
+  				(name "P1[21]/USB_TX_DM1/PWM1[3]/SSP0_SSEL/~{MC_ABORT}"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "N6"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -142.24 0)
+  				(length 5.08)
+  				(name "P1[22]/USB_RCV1/USB_PWRD1/T1_MAT0/MC_0B/SSP1_MOSI"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "M6"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -144.78 0)
+  				(length 5.08)
+  				(name "P1[23]/USB_RX_DP1/PWM1[4]/QEI_PHB/MC_FB1/SSP0_MISO"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "N7"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -147.32 0)
+  				(length 5.08)
+  				(name "P1[24]/USB_RX_DM1/PWM1[5]/QEI_IDX/MC_FB2/SSP0_MOSI"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "P7"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -149.86 0)
+  				(length 5.08)
+  				(name "P1[25]/~{USB_LS1}/~{USB_HSTEN1}/T1_MAT1/MC_1A/CLKOUT"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L7"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -152.4 0)
+  				(length 5.08)
+  				(name "P1[26]/~{USB_SSPND1}/PWM1[6]/T0_CAP0/MC_1B/SSP1_SSEL"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "P8"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -154.94 0)
+  				(length 5.08)
+  				(name "P1[27]/~{USB_INT1}/~{USB_OVRCR1}/T0_CAP1/CLKOUT"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "M9"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -157.48 0)
+  				(length 5.08)
+  				(name "P1[28]/USB_SCL1/PWM1_CAP0/T0_MAT0/MC_2A/SSP0_SSEL"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "P10"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -160.02 0)
+  				(length 5.08)
+  				(name "P1[29]/USB_SDA1/PWM1_CAP1/T0_MAT1/MC_2B/U4_TXD"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "N10"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -162.56 0)
+  				(length 5.08)
+  				(name "P1[30]/USB_PWRD2/USB_VBUS/ADC0_IN[4]/I2C0_SDA/U3_OE"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "K3"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -165.1 0)
+  				(length 5.08)
+  				(name "P1[31]/~{USB_OVRCR2}/SSP1_SCK/ADC0_IN[5]/I2C0_SCL"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "K2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  		)
+  		(symbol "LPC1776FET180,551_2_0"
+  			(rectangle
+  				(start 66.04 0)
+  				(end 0 -116.84)
+  				(stroke
+  					(width 0.0254)
+  					(type solid)
+  					(color 128 0 0 1)
+  				)
+  				(fill
+  					(type background)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -2.54 0)
+  				(length 5.08)
+  				(name "P2[0]/PWM1[1]/U1_TXD"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "D12"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -5.08 0)
+  				(length 5.08)
+  				(name "P2[1]/PWM1[2]/U1_RXD"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "C14"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -7.62 0)
+  				(length 5.08)
+  				(name "P2[2]/PWM1[3]/U1_CTS/T2_MAT3/TRACEDATA[3]"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "E11"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -10.16 0)
+  				(length 5.08)
+  				(name "P2[3]/PWM1[4]/U1_DCD/T2_MAT2/TRACEDATA[2]"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "E13"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -12.7 0)
+  				(length 5.08)
+  				(name "P2[4]/PWM1[5]/U1_DSR/T2_MAT1/TRACEDATA[1]"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "E14"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -15.24 0)
+  				(length 5.08)
+  				(name "P2[5]/PWM1[6]/U1_DTR/T2_MAT0/TRACEDATA[0]"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "F12"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -17.78 0)
+  				(length 5.08)
+  				(name "P2[6]/PWM1_CAP0/U1_RI/T2_CAP0/U2_OE/TRACECLK"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "F13"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -20.32 0)
+  				(length 5.08)
+  				(name "P2[7]/CAN_RD2/U1_RTS"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "G11"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -22.86 0)
+  				(length 5.08)
+  				(name "P2[8]/CAN_TD2/U2_TXD/U1_CTS/ENET_MDC"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "G14"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -25.4 0)
+  				(length 5.08)
+  				(name "P2[9]/USB_CONNECT1/U2_RXD/U4_RXD/ENET_MDIO"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "H11"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -27.94 0)
+  				(length 5.08)
+  				(name "P2[10]/~{EINT0}/NMI"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "M13"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -30.48 0)
+  				(length 5.08)
+  				(name "P2[11]/~{EINT1}/SD_DAT[1]/I2S_TX_SCK"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "M12"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -33.02 0)
+  				(length 5.08)
+  				(name "P2[12]/~{EINT2}/SD_DAT[2]/I2S_TX_WS"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "N14"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -35.56 0)
+  				(length 5.08)
+  				(name "P2[13]/~{EINT3}/SD_DAT[3]/I2S_TX_SDA"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "M11"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -38.1 0)
+  				(length 5.08)
+  				(name "P2[16]/~{EMC_CAS}"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "P9"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -40.64 0)
+  				(length 5.08)
+  				(name "P2[17]/~{EMC_RAS}"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "P11"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -43.18 0)
+  				(length 5.08)
+  				(name "P2[18]/EMC_CLK[0]"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "P3"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -45.72 0)
+  				(length 5.08)
+  				(name "P2[19]/EMC_CLK[1]"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "N5"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -48.26 0)
+  				(length 5.08)
+  				(name "P2[20]/~{EMC_DYCS0}"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "P6"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -50.8 0)
+  				(length 5.08)
+  				(name "P2[21]/~{EMC_DYCS1}"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "N8"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -53.34 0)
+  				(length 5.08)
+  				(name "P2[24]/EMC_CKE0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "P1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -55.88 0)
+  				(length 5.08)
+  				(name "P2[25]/EMC_CKE1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "P2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -58.42 0)
+  				(length 5.08)
+  				(name "P2[28]/EMC_DQM0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "M2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -60.96 0)
+  				(length 5.08)
+  				(name "P2[29]/EMC_DQM1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -66.04 0)
+  				(length 5.08)
+  				(name "P3[0]/EMC_D[0]"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "D6"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -68.58 0)
+  				(length 5.08)
+  				(name "P3[1]/EMC_D[1]"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "E6"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -71.12 0)
+  				(length 5.08)
+  				(name "P3[2]/EMC_D[2]"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "A2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -73.66 0)
+  				(length 5.08)
+  				(name "P3[3]/EMC_D[3]"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "G5"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -76.2 0)
+  				(length 5.08)
+  				(name "P3[4]/EMC_D[4]"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "D3"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -78.74 0)
+  				(length 5.08)
+  				(name "P3[5]/EMC_D[5]"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "E3"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -81.28 0)
+  				(length 5.08)
+  				(name "P3[6]/EMC_D[6]"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "F4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -83.82 0)
+  				(length 5.08)
+  				(name "P3[7]/EMC_D[7]"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "G3"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -86.36 0)
+  				(length 5.08)
+  				(name "P3[8]/EMC_D[8]"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "A6"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -88.9 0)
+  				(length 5.08)
+  				(name "P3[9]/EMC_D[9]"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "A4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -91.44 0)
+  				(length 5.08)
+  				(name "P3[10]/EMC_D[10]"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "B3"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -93.98 0)
+  				(length 5.08)
+  				(name "P3[11]/EMC_D[11]"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "B2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -96.52 0)
+  				(length 5.08)
+  				(name "P3[12]/EMC_D[12]"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "A1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -99.06 0)
+  				(length 5.08)
+  				(name "P3[13]/EMC_D[13]"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "C1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -101.6 0)
+  				(length 5.08)
+  				(name "P3[14]/EMC_D[14]"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "F1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -104.14 0)
+  				(length 5.08)
+  				(name "P3[15]/EMC_D[15]"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "G4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -106.68 0)
+  				(length 5.08)
+  				(name "P3[23]/EMC_D[23]/PWM1_CAP0/T0_CAP0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "M4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -109.22 0)
+  				(length 5.08)
+  				(name "P3[24]/EMC_D[24]/PWM1[1]/T0_CAP1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "N3"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -111.76 0)
+  				(length 5.08)
+  				(name "P3[25]/EMC_D[25]/PWM1[2]/T0_MAT0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "M3"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -114.3 0)
+  				(length 5.08)
+  				(name "P3[26]/EMC_D[26]/PWM1[3]/T0_MAT1/STCLK"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "K7"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  		)
+  		(symbol "LPC1776FET180,551_3_0"
+  			(rectangle
+  				(start 55.88 0)
+  				(end 0 -88.9)
+  				(stroke
+  					(width 0.0254)
+  					(type solid)
+  					(color 128 0 0 1)
+  				)
+  				(fill
+  					(type background)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -2.54 0)
+  				(length 5.08)
+  				(name "P4[0]/EMC_A[0]"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L6"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -5.08 0)
+  				(length 5.08)
+  				(name "P4[1]/EMC_A[1]"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "M7"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -7.62 0)
+  				(length 5.08)
+  				(name "P4[2]/EMC_A[2]"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "M8"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -10.16 0)
+  				(length 5.08)
+  				(name "P4[3]/EMC_A[3]"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "K9"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -12.7 0)
+  				(length 5.08)
+  				(name "P4[4]/EMC_A[4]"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "P13"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -15.24 0)
+  				(length 5.08)
+  				(name "P4[5]/EMC_A[5]"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "H10"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -17.78 0)
+  				(length 5.08)
+  				(name "P4[6]/EMC_A[6]"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "K10"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -20.32 0)
+  				(length 5.08)
+  				(name "P4[7]/EMC_A[7]"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "K12"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -22.86 0)
+  				(length 5.08)
+  				(name "P4[8]/EMC_A[8]"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "J11"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -25.4 0)
+  				(length 5.08)
+  				(name "P4[9]/EMC_A[9]"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "H12"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -27.94 0)
+  				(length 5.08)
+  				(name "P4[10]/EMC_A[10]"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "G12"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -30.48 0)
+  				(length 5.08)
+  				(name "P4[11]/EMC_A[11]"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "F11"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -33.02 0)
+  				(length 5.08)
+  				(name "P4[12]/EMC_A[12]"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "F10"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -35.56 0)
+  				(length 5.08)
+  				(name "P4[13]/EMC_A[13]"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "B14"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -38.1 0)
+  				(length 5.08)
+  				(name "P4[14]/EMC_A[14]"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "E8"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -40.64 0)
+  				(length 5.08)
+  				(name "P4[15]/EMC_A[15]"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "C10"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -43.18 0)
+  				(length 5.08)
+  				(name "P4[16]/EMC_A[16]"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "N12"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -45.72 0)
+  				(length 5.08)
+  				(name "P4[17]/EMC_A[17]"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "N13"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -48.26 0)
+  				(length 5.08)
+  				(name "P4[18]/EMC_A[18]"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "P14"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -50.8 0)
+  				(length 5.08)
+  				(name "P4[19]/EMC_A[19]"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "M14"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -53.34 0)
+  				(length 5.08)
+  				(name "P4[24]/~{EMC_OE}"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "C8"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -55.88 0)
+  				(length 5.08)
+  				(name "P4[25]/~{EMC_WE}"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "D9"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -58.42 0)
+  				(length 5.08)
+  				(name "P4[26]/~{EMC_BLS0}"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "K13"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -60.96 0)
+  				(length 5.08)
+  				(name "P4[27]/~{EMC_BLS1}"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "F14"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -63.5 0)
+  				(length 5.08)
+  				(name "P4[28]/~{EMC_BLS2}/U3_TXD/T2_MAT0"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "D10"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -66.04 0)
+  				(length 5.08)
+  				(name "P4[29]/~{EMC_BLS3}/U3_RXD/T2_MAT1/I2C2_SCL"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "B9"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -68.58 0)
+  				(length 5.08)
+  				(name "P4[30]/~{EMC_CS0}"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "C7"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -71.12 0)
+  				(length 5.08)
+  				(name "P4[31]/~{EMC_CS1}"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "E7"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -76.2 0)
+  				(length 5.08)
+  				(name "P5[0]/EMC_A[24]/SSP2_MOSI/T2_MAT2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "E5"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -78.74 0)
+  				(length 5.08)
+  				(name "P5[1]/EMC_A[25]/SSP2_MISO/T2_MAT3"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "H1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -81.28 0)
+  				(length 5.08)
+  				(name "P5[2]/T3_MAT2/I2C0_SDA"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L12"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -83.82 0)
+  				(length 5.08)
+  				(name "P5[3]/U4_RXD/I2C0_SCL"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "G10"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -86.36 0)
+  				(length 5.08)
+  				(name "P5[4]/U0_OE/T3_MAT3/U4_TXD"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "C4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  		)
+  		(symbol "LPC1776FET180,551_4_0"
+  			(rectangle
+  				(start 40.64 0)
+  				(end 0 -30.48)
+  				(stroke
+  					(width 0.0254)
+  					(type solid)
+  					(color 128 0 0 1)
+  				)
+  				(fill
+  					(type background)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at -5.08 -2.54 0)
+  				(length 5.08)
+  				(name "USB_D-2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "N2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at -5.08 -7.62 0)
+  				(length 5.08)
+  				(name "~{RESET}"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "J1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at -5.08 -10.16 0)
+  				(length 5.08)
+  				(name "~{RSTOUT}"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "H2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin passive line
+  				(at -5.08 -20.32 0)
+  				(length 5.08)
+  				(name "XTAL1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin passive line
+  				(at -5.08 -27.94 0)
+  				(length 5.08)
+  				(name "XTAL2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "K4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 45.72 -2.54 180)
+  				(length 5.08)
+  				(name "JTAG_TDI"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "C3"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 45.72 -5.08 180)
+  				(length 5.08)
+  				(name "JTAG_TDO(SWO)"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "B1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input clock
+  				(at 45.72 -7.62 180)
+  				(length 5.08)
+  				(name "JTAG_TCK(SWDCLK)"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "D2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 45.72 -10.16 180)
+  				(length 5.08)
+  				(name "JTAG_TMS(SWDIO)"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "C2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 45.72 -15.24 180)
+  				(length 5.08)
+  				(name "JTAG_~{TRST}"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "D4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at 45.72 -20.32 180)
+  				(length 5.08)
+  				(name "RTCX1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "J2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 45.72 -22.86 180)
+  				(length 5.08)
+  				(name "RTCX2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "J3"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 45.72 -27.94 180)
+  				(length 5.08)
+  				(name "RTC_ALARM"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "H5"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  		)
+  		(symbol "LPC1776FET180,551_5_0"
+  			(rectangle
+  				(start 30.48 0)
+  				(end 0 -48.26)
+  				(stroke
+  					(width 0.0254)
+  					(type solid)
+  					(color 128 0 0 1)
+  				)
+  				(fill
+  					(type background)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -2.54 0)
+  				(length 5.08)
+  				(name "VBAT"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "K1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -7.62 0)
+  				(length 5.08)
+  				(name "VDDA"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "F2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -12.7 0)
+  				(length 5.08)
+  				(name "VDD(3V3)"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "C5"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -15.24 0)
+  				(length 5.08)
+  				(name "VDD(3V3)"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "E10"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -17.78 0)
+  				(length 5.08)
+  				(name "VDD(3V3)"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "E12"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -20.32 0)
+  				(length 5.08)
+  				(name "VDD(3V3)"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "E2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -22.86 0)
+  				(length 5.08)
+  				(name "VDD(3V3)"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "J14"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -25.4 0)
+  				(length 5.08)
+  				(name "VDD(3V3)"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "K8"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -27.94 0)
+  				(length 5.08)
+  				(name "VDD(3V3)"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L11"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -30.48 0)
+  				(length 5.08)
+  				(name "VDD(3V3)"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -35.56 0)
+  				(length 5.08)
+  				(name "VDD(REG)(3V3)"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "E9"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -38.1 0)
+  				(length 5.08)
+  				(name "VDD(REG)(3V3)"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "G1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -40.64 0)
+  				(length 5.08)
+  				(name "VDD(REG)(3V3)"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "N9"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -45.72 0)
+  				(length 5.08)
+  				(name "VREFP"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "G2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at 35.56 -7.62 180)
+  				(length 5.08)
+  				(name "VSSA"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "F3"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at 35.56 -12.7 180)
+  				(length 5.08)
+  				(name "VSS"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "B4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at 35.56 -15.24 180)
+  				(length 5.08)
+  				(name "VSS"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "C11"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at 35.56 -17.78 180)
+  				(length 5.08)
+  				(name "VSS"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "D13"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at 35.56 -20.32 180)
+  				(length 5.08)
+  				(name "VSS"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "G13"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at 35.56 -22.86 180)
+  				(length 5.08)
+  				(name "VSS"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "H4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at 35.56 -25.4 180)
+  				(length 5.08)
+  				(name "VSS"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L13"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at 35.56 -27.94 180)
+  				(length 5.08)
+  				(name "VSS"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L9"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at 35.56 -30.48 180)
+  				(length 5.08)
+  				(name "VSS"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "P4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at 35.56 -35.56 180)
+  				(length 5.08)
+  				(name "VSSREG"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "A10"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at 35.56 -38.1 180)
+  				(length 5.08)
+  				(name "VSSREG"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "H3"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at 35.56 -40.64 180)
+  				(length 5.08)
+  				(name "VSSREG"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "L8"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  		)
+  		(embedded_fonts no)
+  	)
+)

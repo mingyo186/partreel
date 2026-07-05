@@ -1,0 +1,55 @@
+{
+  "id": "cern_mcp9600_e_mx",
+  "name": "MCP9600-E/MX (CERN library)",
+  "category": "sensor",
+  "family": "CERN Sensors",
+  "manufacturer": "MICROCHIP",
+  "mpn_pattern": "MCP9600-E/MX",
+  "description": "Thermocouple EMF to Temperature Converter, ±1.5°C Maximum Accuracy. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "21",
+    "mounting": "SMD",
+    "case": "QFN20"
+  },
+  "files": {
+    "footprint": "cern_mcp9600_e_mx.kicad_mod",
+    "symbol": "cern_mcp9600_e_mx.kicad_sym",
+    "footprint_svg": "cern_mcp9600_e_mx.footprint.svg",
+    "symbol_svg": "cern_mcp9600_e_mx.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Sensors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/QFN65P500X500X100-21N-S335.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "thermocouple",
+    "emf",
+    "temperature",
+    "converter",
+    "maximum",
+    "accuracy"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Sensors#MCP9600-E/MX",
+      "symbol": "SchLib/Sensors.kicad_sym#MCP9600-E/MX",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/QFN65P500X500X100-21N-S335.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "cern_at32uc3l064_d3ht_a",
+  "name": "AT32UC3L064-D3HT (CERN library)",
+  "category": "ic",
+  "family": "CERN Logic",
+  "manufacturer": "ATMEL",
+  "mpn_pattern": "AT32UC3L064-D3HT",
+  "description": "64Kb Flash/16Kb SRAM, High-performance, Low-power 32-bit Atmel® AVR® Microcontroller. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "49",
+    "mounting": "SMD",
+    "case": "QFN48"
+  },
+  "files": {
+    "footprint": "cern_at32uc3l064_d3ht_a.kicad_mod",
+    "symbol": "cern_at32uc3l064_d3ht_a.kicad_sym",
+    "footprint_svg": "cern_at32uc3l064_d3ht_a.footprint.svg",
+    "symbol_svg": "cern_at32uc3l064_d3ht_a.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Logic.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/ATMEL_TLLGA-48 (ULGA AA 48).kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "64kb",
+    "flash",
+    "16kb",
+    "sram",
+    "high",
+    "performance"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Logic#AT32UC3L064-D3HT_a",
+      "symbol": "SchLib/Logic.kicad_sym#AT32UC3L064-D3HT_a",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/ATMEL_TLLGA-48 (ULGA AA 48).kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

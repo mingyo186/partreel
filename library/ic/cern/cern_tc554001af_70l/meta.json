@@ -1,0 +1,56 @@
+{
+  "id": "cern_tc554001af_70l",
+  "name": "TC554001AF-70L (CERN library)",
+  "category": "ic",
+  "family": "CERN Logic",
+  "manufacturer": "TOSHIBA",
+  "mpn_pattern": "TC554001AF-70L",
+  "description": "524,288-Word by 8-Bit Static RAM. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: Obsolete.",
+  "parameters": {
+    "contacts": "32",
+    "mounting": "SMD",
+    "case": "SOIC32",
+    "lifecycle": "Obsolete"
+  },
+  "files": {
+    "footprint": "cern_tc554001af_70l.kicad_mod",
+    "symbol": "cern_tc554001af_70l.kicad_sym",
+    "footprint_svg": "cern_tc554001af_70l.footprint.svg",
+    "symbol_svg": "cern_tc554001af_70l.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Logic.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/SOIC127P1413X280-32N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "524",
+    "288",
+    "word",
+    "bit",
+    "static",
+    "ram"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Logic#TC554001AF-70L",
+      "symbol": "SchLib/Logic.kicad_sym#TC554001AF-70L",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/SOIC127P1413X280-32N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

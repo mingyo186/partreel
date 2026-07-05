@@ -1,0 +1,268 @@
+(kicad_symbol_lib (version 20211014) (generator partreel-import)
+  (symbol "MAX3295"
+  		(pin_names
+  			(offset 1.27)
+  		)
+  		(exclude_from_sim no)
+  		(in_bom yes)
+  		(on_board yes)
+  		(property "Reference" "IC"
+  			(at 8.89 1.27 0)
+  			(effects
+  				(font
+  					(size 1.524 1.524)
+  				)
+  			)
+  		)
+  		(property "Value" "${DEVICE}"
+  			(at 8.89 -16.51 0)
+  			(effects
+  				(font
+  					(size 1.524 1.524)
+  				)
+  			)
+  		)
+  		(property "Footprint" ""
+  			(at 0 0 0)
+  			(effects
+  				(font
+  					(size 1.27 1.27)
+  				)
+  				(hide yes)
+  			)
+  		)
+  		(property "Datasheet" ""
+  			(at 0 0 0)
+  			(effects
+  				(font
+  					(size 1.27 1.27)
+  				)
+  				(hide yes)
+  			)
+  		)
+  		(property "Description" "20Mbps, +3.3V, SOT23 RS-485/RS-422 Transmitter"
+  			(at 0 0 0)
+  			(effects
+  				(font
+  					(size 1.27 1.27)
+  				)
+  				(hide yes)
+  			)
+  		)
+  		(symbol "MAX3295_1_0"
+  			(polyline
+  				(pts
+  					(xy 5.08 -2.54) (xy 7.874 -2.54)
+  				)
+  				(stroke
+  					(width 0)
+  					(type solid)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 5.08 -7.62) (xy 6.35 -7.62)
+  				)
+  				(stroke
+  					(width 0)
+  					(type solid)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 7.874 -2.54) (xy 7.874 -5.969)
+  				)
+  				(stroke
+  					(width 0)
+  					(type solid)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(circle
+  				(center 9.398 -6.35)
+  				(radius 0.457)
+  				(stroke
+  					(width 0)
+  					(type solid)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 9.906 -6.35) (xy 12.7 -6.35)
+  				)
+  				(stroke
+  					(width 0)
+  					(type solid)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 10.414 -7.62) (xy 6.35 -5.08) (xy 6.35 -10.16) (xy 10.414 -7.62)
+  				)
+  				(stroke
+  					(width 0)
+  					(type solid)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 12.7 -8.89) (xy 8.382 -8.89)
+  				)
+  				(stroke
+  					(width 0)
+  					(type solid)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(rectangle
+  				(start 17.78 0)
+  				(end 0 -15.24)
+  				(stroke
+  					(width 0.0254)
+  					(type solid)
+  					(color 128 0 0 1)
+  				)
+  				(fill
+  					(type background)
+  				)
+  			)
+  			(text "D"
+  				(at 7.112 -8.382 0)
+  				(effects
+  					(font
+  						(size 0.9144 0.9144)
+  					)
+  					(justify left bottom)
+  				)
+  			)
+  			(pin input line
+  				(at -5.08 -2.54 0)
+  				(length 5.08)
+  				(name "DE"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "3"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at -5.08 -7.62 0)
+  				(length 5.08)
+  				(name "DI"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -12.7 0)
+  				(length 5.08)
+  				(name "VCC"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 22.86 -6.35 180)
+  				(length 5.08)
+  				(name "Z"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 22.86 -8.89 180)
+  				(length 5.08)
+  				(name "Y"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "6"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at 22.86 -12.7 180)
+  				(length 5.08)
+  				(name "GND"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "5"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  		)
+  		(embedded_fonts no)
+  	)
+)

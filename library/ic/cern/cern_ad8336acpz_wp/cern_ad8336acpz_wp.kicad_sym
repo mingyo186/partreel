@@ -1,0 +1,538 @@
+(kicad_symbol_lib (version 20211014) (generator partreel-import)
+  (symbol "AD8336"
+  		(pin_names
+  			(offset 1.27)
+  		)
+  		(exclude_from_sim no)
+  		(in_bom yes)
+  		(on_board yes)
+  		(property "Reference" "IC"
+  			(at 10.16 1.27 0)
+  			(effects
+  				(font
+  					(size 1.524 1.524)
+  				)
+  			)
+  		)
+  		(property "Value" "${DEVICE}"
+  			(at 10.16 -26.67 0)
+  			(effects
+  				(font
+  					(size 1.524 1.524)
+  				)
+  			)
+  		)
+  		(property "Footprint" ""
+  			(at 0 0 0)
+  			(effects
+  				(font
+  					(size 1.27 1.27)
+  				)
+  				(hide yes)
+  			)
+  		)
+  		(property "Datasheet" ""
+  			(at 0 0 0)
+  			(effects
+  				(font
+  					(size 1.27 1.27)
+  				)
+  				(hide yes)
+  			)
+  		)
+  		(property "Description" "Wide Bandwidth, DC Coupled Variable Gain Amplifiers"
+  			(at 0 0 0)
+  			(effects
+  				(font
+  					(size 1.27 1.27)
+  				)
+  				(hide yes)
+  			)
+  		)
+  		(symbol "AD8336_1_0"
+  			(polyline
+  				(pts
+  					(xy 0 -10.16) (xy 2.54 -10.16)
+  				)
+  				(stroke
+  					(width 0)
+  					(type solid)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 0 -15.24) (xy 2.54 -15.24)
+  				)
+  				(stroke
+  					(width 0)
+  					(type solid)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 2.54 -7.62) (xy 2.54 -17.78)
+  				)
+  				(stroke
+  					(width 0)
+  					(type solid)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 2.54 -7.62) (xy 12.7 -12.7)
+  				)
+  				(stroke
+  					(width 0)
+  					(type solid)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 2.54 -17.78) (xy 12.7 -12.7)
+  				)
+  				(stroke
+  					(width 0)
+  					(type solid)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 3.556 -10.16) (xy 5.08 -10.16)
+  				)
+  				(stroke
+  					(width 0)
+  					(type solid)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 3.556 -15.24) (xy 5.08 -15.24)
+  				)
+  				(stroke
+  					(width 0)
+  					(type solid)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 4.318 -14.478) (xy 4.318 -16.002)
+  				)
+  				(stroke
+  					(width 0)
+  					(type solid)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 7.62 -7.62) (xy 7.62 -10.16)
+  				)
+  				(stroke
+  					(width 0)
+  					(type solid)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 7.62 -15.24) (xy 7.62 -17.78)
+  				)
+  				(stroke
+  					(width 0)
+  					(type solid)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 12.7 -12.7) (xy 15.24 -12.7)
+  				)
+  				(stroke
+  					(width 0)
+  					(type solid)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(rectangle
+  				(start 15.24 0)
+  				(end 0 -25.4)
+  				(stroke
+  					(width 0.0254)
+  					(type solid)
+  					(color 128 0 0 1)
+  				)
+  				(fill
+  					(type background)
+  				)
+  			)
+  			(text "V+"
+  				(at 7.62 -8.128 900)
+  				(effects
+  					(font
+  						(size 1.2192 1.2192)
+  					)
+  					(justify left bottom)
+  				)
+  			)
+  			(text "V-"
+  				(at 7.62 -16.764 900)
+  				(effects
+  					(font
+  						(size 1.2192 1.2192)
+  					)
+  					(justify right bottom)
+  				)
+  			)
+  			(pin input line
+  				(at -5.08 -10.16 0)
+  				(length 5.08)
+  				(name "IN-"
+  					(effects
+  						(font
+  							(size 0 0)
+  						)
+  					)
+  				)
+  				(number "5"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at -5.08 -15.24 0)
+  				(length 5.08)
+  				(name "IN+"
+  					(effects
+  						(font
+  							(size 0 0)
+  						)
+  					)
+  				)
+  				(number "4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 20.32 -12.7 180)
+  				(length 5.08)
+  				(name "PRAO"
+  					(effects
+  						(font
+  							(size 0 0)
+  						)
+  					)
+  				)
+  				(number "8"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  		)
+  		(symbol "AD8336_2_0"
+  			(rectangle
+  				(start 20.32 0)
+  				(end 0 -25.4)
+  				(stroke
+  					(width 0.0254)
+  					(type solid)
+  					(color 128 0 0 1)
+  				)
+  				(fill
+  					(type background)
+  				)
+  			)
+  			(pin input line
+  				(at -5.08 -2.54 0)
+  				(length 5.08)
+  				(name "GPOS"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "11"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at -5.08 -5.08 0)
+  				(length 5.08)
+  				(name "GNEG"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "12"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at -5.08 -7.62 0)
+  				(length 5.08)
+  				(name "PWRA"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at -5.08 -12.7 0)
+  				(length 5.08)
+  				(name "VGAI"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "9"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -17.78 0)
+  				(length 5.08)
+  				(name "VPOS"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "13"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -20.32 0)
+  				(length 5.08)
+  				(name "VCOM"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "3"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -5.08 -22.86 0)
+  				(length 5.08)
+  				(name "VNEG"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "10"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 25.4 -2.54 180)
+  				(length 5.08)
+  				(name "VOUT"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin passive line
+  				(at 25.4 -7.62 180)
+  				(length 5.08)
+  				(name "NC"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "16"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin passive line
+  				(at 25.4 -10.16 180)
+  				(length 5.08)
+  				(name "NC"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "15"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin passive line
+  				(at 25.4 -12.7 180)
+  				(length 5.08)
+  				(name "NC"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "14"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin passive line
+  				(at 25.4 -15.24 180)
+  				(length 5.08)
+  				(name "NC"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "7"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin passive line
+  				(at 25.4 -17.78 180)
+  				(length 5.08)
+  				(name "NC"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "6"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at 25.4 -22.86 180)
+  				(length 5.08)
+  				(name "EP"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "17"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  		)
+  		(embedded_fonts no)
+  	)
+)

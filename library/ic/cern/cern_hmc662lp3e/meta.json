@@ -1,0 +1,53 @@
+{
+  "id": "cern_hmc662lp3e",
+  "name": "HMC662LP3E (CERN library)",
+  "category": "ic",
+  "family": "CERN Analog & Interface",
+  "manufacturer": "HITTITE MICROWAVE CORP",
+  "mpn_pattern": "HMC662LP3E",
+  "description": "54dB, Logarithmic Detector, 8 to 30GHz. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "17",
+    "mounting": "SMD",
+    "case": "QFN16"
+  },
+  "files": {
+    "footprint": "cern_hmc662lp3e.kicad_mod",
+    "symbol": "cern_hmc662lp3e.kicad_sym",
+    "footprint_svg": "cern_hmc662lp3e.footprint.svg",
+    "symbol_svg": "cern_hmc662lp3e.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Analog & Interface.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/QFN50P300X300X100-17N-S195.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "54db",
+    "logarithmic",
+    "detector",
+    "30ghz"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Analog & Interface#HMC662LP3E",
+      "symbol": "SchLib/Analog & Interface.kicad_sym#HMC662LP3E",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/QFN50P300X300X100-17N-S195.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

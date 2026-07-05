@@ -1,0 +1,55 @@
+{
+  "id": "cern_tl074cn",
+  "name": "TL074CN (CERN library)",
+  "category": "ic",
+  "family": "CERN Op Amps",
+  "manufacturer": "TEXAS INSTRUMENTS",
+  "mpn_pattern": "TL074CN",
+  "description": "Quad Low-Noise JFET-Input Operational Amplifier. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "14",
+    "case": "DIP14-300"
+  },
+  "files": {
+    "footprint": "cern_tl074cn.kicad_mod",
+    "symbol": "cern_tl074cn.kicad_sym",
+    "footprint_svg": "cern_tl074cn.footprint.svg",
+    "symbol_svg": "cern_tl074cn.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Operational Amplifiers.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors THD.pretty/DIP14-300.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "quad",
+    "low",
+    "noise",
+    "jfet",
+    "input",
+    "operational"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Operational Amplifiers#TL074CN",
+      "symbol": "SchLib/Operational Amplifiers.kicad_sym#Operational Amplifier x4 Type1",
+      "footprint": "PcbLib/ICs And Semiconductors THD.pretty/DIP14-300.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

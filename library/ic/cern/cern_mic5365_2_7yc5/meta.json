@@ -1,0 +1,55 @@
+{
+  "id": "cern_mic5365_2_7yc5",
+  "name": "MIC5365-2.7YC5 (CERN library)",
+  "category": "ic",
+  "family": "CERN Regulators",
+  "manufacturer": "MICROCHIP TECHNOLOGY",
+  "mpn_pattern": "MIC5365-2.7YC5",
+  "description": "2.7V 150mA High-Performance Single 150mA Regulator. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "5",
+    "mounting": "SMD",
+    "case": "SOT353"
+  },
+  "files": {
+    "footprint": "cern_mic5365_2_7yc5.kicad_mod",
+    "symbol": "cern_mic5365_2_7yc5.kicad_sym",
+    "footprint_svg": "cern_mic5365_2_7yc5.footprint.svg",
+    "symbol_svg": "cern_mic5365_2_7yc5.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Regulators.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/SOT65P210X110-5N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "150ma",
+    "high",
+    "performance",
+    "single",
+    "150ma",
+    "regulator"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Regulators#MIC5365-2.7YC5",
+      "symbol": "SchLib/Regulators.kicad_sym#MIC5365-X.XYC5",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/SOT65P210X110-5N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

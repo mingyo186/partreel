@@ -1,0 +1,56 @@
+{
+  "id": "cern_ksz9031rnxia",
+  "name": "KSZ9031RNXIA (CERN library)",
+  "category": "ic",
+  "family": "CERN Analog & Interface",
+  "manufacturer": "MICROCHIP TECHNOLOGY",
+  "mpn_pattern": "KSZ9031RNXIA",
+  "description": "Gigabit Ethernet Transceiver with RGMII Support. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "49",
+    "mounting": "SMD",
+    "case": "QFN48",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_ksz9031rnxia.kicad_mod",
+    "symbol": "cern_ksz9031rnxia.kicad_sym",
+    "footprint_svg": "cern_ksz9031rnxia.footprint.svg",
+    "symbol_svg": "cern_ksz9031rnxia.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Analog & Interface.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/QFN50P700X700X90-49N-S355.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "gigabit",
+    "ethernet",
+    "transceiver",
+    "with",
+    "rgmii",
+    "support"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Analog & Interface#KSZ9031RNXIA",
+      "symbol": "SchLib/Analog & Interface.kicad_sym#KSZ9031RNX",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/QFN50P700X700X90-49N-S355.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

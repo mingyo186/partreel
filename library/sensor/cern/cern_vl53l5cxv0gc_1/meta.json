@@ -1,0 +1,55 @@
+{
+  "id": "cern_vl53l5cxv0gc_1",
+  "name": "VL53L5CXV0GC/1 (CERN library)",
+  "category": "sensor",
+  "family": "CERN Sensors",
+  "manufacturer": "ST MICROELECTRONICS",
+  "mpn_pattern": "VL53L5CXV0GC/1",
+  "description": "Time-of-Flight 8x8 Multizone Ranging Sensor with Wide Field of View. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "17",
+    "mounting": "SMD",
+    "case": "LGA17"
+  },
+  "files": {
+    "footprint": "cern_vl53l5cxv0gc_1.kicad_mod",
+    "symbol": "cern_vl53l5cxv0gc_1.kicad_sym",
+    "footprint_svg": "cern_vl53l5cxv0gc_1.footprint.svg",
+    "symbol_svg": "cern_vl53l5cxv0gc_1.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Sensors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/ST_VL53L5CX.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "time",
+    "flight",
+    "8x8",
+    "multizone",
+    "ranging",
+    "sensor"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Sensors#VL53L5CXV0GC/1",
+      "symbol": "SchLib/Sensors.kicad_sym#VL53L5CXV0GC/1",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/ST_VL53L5CX.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

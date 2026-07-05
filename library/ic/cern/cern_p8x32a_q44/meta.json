@@ -1,0 +1,55 @@
+{
+  "id": "cern_p8x32a_q44",
+  "name": "P8X32A-Q44 (CERN library)",
+  "category": "ic",
+  "family": "CERN Logic",
+  "manufacturer": "PARALLAX SEMICONDUCTOR",
+  "mpn_pattern": "P8X32A-Q44",
+  "description": "32-Bit 8-Cog Multiprocessor Microcontroller Propeller Chip. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "44",
+    "mounting": "SMD",
+    "case": "QFP44"
+  },
+  "files": {
+    "footprint": "cern_p8x32a_q44.kicad_mod",
+    "symbol": "cern_p8x32a_q44.kicad_sym",
+    "footprint_svg": "cern_p8x32a_q44.footprint.svg",
+    "symbol_svg": "cern_p8x32a_q44.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Logic.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/QFP80P1200X1200X160-44N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "bit",
+    "cog",
+    "multiprocessor",
+    "microcontroller",
+    "propeller",
+    "chip"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Logic#P8X32A-Q44",
+      "symbol": "SchLib/Logic.kicad_sym#P8X32A-Q44",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/QFP80P1200X1200X160-44N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

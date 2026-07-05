@@ -1,0 +1,81 @@
+{
+  "id": "cern_vsc8211xvw",
+  "name": "VSC8211XVW (CERN library)",
+  "category": "ic",
+  "family": "CERN Analog & Interface",
+  "manufacturer": "VITESSE SEMICONDUCTOR",
+  "mpn_pattern": "VSC8211XVW",
+  "description": "Single Port 10/100/1000BASE-T PHY and 1000BASE-X PHY with SGMII, SerDes, GMII, MII, TBI, RGMII / RTBI MAC Interfaces. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "117",
+    "mounting": "SMD",
+    "case": "BGA117"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/ic/cern/cern_vsc8211xvw/cern_vsc8211xvw.kicad_mod",
+    "symbol": "https://partreel.com/library/ic/cern/cern_vsc8211xvw/cern_vsc8211xvw.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/ic/cern/cern_vsc8211xvw/cern_vsc8211xvw.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/ic/cern/cern_vsc8211xvw/cern_vsc8211xvw.symbol.svg"
+  },
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Analog & Interface.kicad_sym",
+  "license": "CERN-OHL-P-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD_BGA.pretty/BGA117C100P13X9_1400X1000X170.kicad_mod)",
+  "keywords": [
+    "cern",
+    "single",
+    "port",
+    "100",
+    "1000base",
+    "phy",
+    "and"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD_BGA.pretty/BGA117C100P13X9_1400X1000X170.kicad_mod)",
+    "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Analog & Interface.kicad_sym",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_cern.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+      "source_commit": "53054c17",
+      "source_files": {
+        "db": "CERN.sqlite#Analog & Interface#VSC8211XVW",
+        "symbol": "SchLib/Analog & Interface.kicad_sym#VSC8211XVW",
+        "footprint": "PcbLib/ICs And Semiconductors SMD_BGA.pretty/BGA117C100P13X9_1400X1000X170.kicad_mod"
+      },
+      "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+      "import_date": "2026-07-05",
+      "modifications": [
+        "extracted single symbol from library",
+        "stripped dead 3D model reference (upstream ships no 3D)"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/cern_vsc8211xvw/",
+  "api": "https://partreel.com/api/v1/parts/cern_vsc8211xvw.json"
+}

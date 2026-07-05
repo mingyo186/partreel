@@ -1,0 +1,54 @@
+{
+  "id": "cern_mapc_a1511_as",
+  "name": "MAPC-A1511-AS (CERN library)",
+  "category": "discrete",
+  "family": "CERN Transistors",
+  "manufacturer": "MACOM",
+  "mpn_pattern": "MAPC-A1511-AS",
+  "description": "30 - 700 MHz, GaN Amplifier 100 V, 3000 W. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "4",
+    "mounting": "SMD"
+  },
+  "files": {
+    "footprint": "cern_mapc_a1511_as.kicad_mod",
+    "symbol": "cern_mapc_a1511_as.kicad_sym",
+    "footprint_svg": "cern_mapc_a1511_as.footprint.svg",
+    "symbol_svg": "cern_mapc_a1511_as.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Transistors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/MACOM_AC-1230S-4.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "700",
+    "mhz",
+    "gan",
+    "amplifier",
+    "100",
+    "3000"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Transistors#MAPC-A1511-AS",
+      "symbol": "SchLib/Transistors.kicad_sym#MAPC-A1511",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/MACOM_AC-1230S-4.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

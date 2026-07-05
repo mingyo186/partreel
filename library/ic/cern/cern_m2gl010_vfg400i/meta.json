@@ -1,0 +1,55 @@
+{
+  "id": "cern_m2gl010_vfg400i",
+  "name": "M2GL010-VFG400I (CERN library)",
+  "category": "ic",
+  "family": "CERN Logic",
+  "manufacturer": "MICROSEMI",
+  "mpn_pattern": "M2GL010-VFG400I",
+  "description": "IGLOO2 FPGA, 12084 Cells, 195 User I/Os, 2 PLLs, 912K RAM, 1 PCIe, 400-Pin VF400, Industrial Grade. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "400",
+    "mounting": "SMD",
+    "case": "BGA400"
+  },
+  "files": {
+    "footprint": "cern_m2gl010_vfg400i.kicad_mod",
+    "symbol": "cern_m2gl010_vfg400i.kicad_sym",
+    "footprint_svg": "cern_m2gl010_vfg400i.footprint.svg",
+    "symbol_svg": "cern_m2gl010_vfg400i.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Logic.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD_BGA.pretty/BGA400C80P20X20_1700X1700X160.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "igloo2",
+    "fpga",
+    "12084",
+    "cells",
+    "195",
+    "user"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Logic#M2GL010-VFG400I",
+      "symbol": "SchLib/Logic.kicad_sym#M2GL010-FG400",
+      "footprint": "PcbLib/ICs And Semiconductors SMD_BGA.pretty/BGA400C80P20X20_1700X1700X160.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

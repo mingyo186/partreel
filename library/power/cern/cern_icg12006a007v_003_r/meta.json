@@ -1,0 +1,54 @@
+{
+  "id": "cern_icg12006a007v_003_r",
+  "name": "ICG12006A007V-003-R (CERN library)",
+  "category": "power",
+  "family": "CERN DC-DC Converters",
+  "manufacturer": "TDK",
+  "mpn_pattern": "ICG12006A007V-003-R",
+  "description": "ICG Series, 33W, 4.5-14V Input, 0.7-5.5V Output, 0-6A Non Isolated DC-DC Converter. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "10",
+    "mounting": "SMD"
+  },
+  "files": {
+    "footprint": "cern_icg12006a007v_003_r.kicad_mod",
+    "symbol": "cern_icg12006a007v_003_r.kicad_sym",
+    "footprint_svg": "cern_icg12006a007v_003_r.footprint.svg",
+    "symbol_svg": "cern_icg12006a007v_003_r.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/DC-DC Converters.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/DCDC_LAMBDA_ICG12006A007V-003-R.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "icg",
+    "series",
+    "33w",
+    "14v",
+    "input",
+    "output"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#DC-DC Converters#ICG12006A007V-003-R",
+      "symbol": "SchLib/DC-DC Converters.kicad_sym#DCDC_LAMBDA_ICG12006A007V-003-R",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/DCDC_LAMBDA_ICG12006A007V-003-R.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

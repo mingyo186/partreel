@@ -1,0 +1,55 @@
+{
+  "id": "cern_lt83205rudb",
+  "name": "LT83205RUDB (CERN library)",
+  "category": "ic",
+  "family": "CERN Regulators",
+  "manufacturer": "ANALOG DEVICES",
+  "mpn_pattern": "LT83205RUDB",
+  "description": "18V, 3A/5A Step-Down Silent Switcher 3 with Ultra-Low Noise Reference. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "16",
+    "mounting": "SMD",
+    "case": "QFN15"
+  },
+  "files": {
+    "footprint": "cern_lt83205rudb.kicad_mod",
+    "symbol": "cern_lt83205rudb.kicad_sym",
+    "footprint_svg": "cern_lt83205rudb.footprint.svg",
+    "symbol_svg": "cern_lt83205rudb.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Regulators.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/ANALOG-DEVICES_LFCSP(CP-15-1).kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "18v",
+    "step",
+    "down",
+    "silent",
+    "switcher",
+    "with"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Regulators#LT83205RUDB",
+      "symbol": "SchLib/Regulators.kicad_sym#LT83205",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/ANALOG-DEVICES_LFCSP(CP-15-1).kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

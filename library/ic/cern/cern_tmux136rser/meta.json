@@ -1,0 +1,55 @@
+{
+  "id": "cern_tmux136rser",
+  "name": "TMUX136RSE (CERN library)",
+  "category": "ic",
+  "family": "CERN Analog & Interface",
+  "manufacturer": "TEXAS INSTRUMENTS",
+  "mpn_pattern": "TMUX136RSE",
+  "description": "6-GHz, 2-Channel, 2:1 Switch, with Power-Off Isolation. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "10",
+    "mounting": "SMD",
+    "case": "QFN10"
+  },
+  "files": {
+    "footprint": "cern_tmux136rser.kicad_mod",
+    "symbol": "cern_tmux136rser.kicad_sym",
+    "footprint_svg": "cern_tmux136rser.footprint.svg",
+    "symbol_svg": "cern_tmux136rser.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Analog & Interface.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/TEXAS_RSE (R-PUQFN-N10).kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "ghz",
+    "channel",
+    "switch",
+    "with",
+    "power",
+    "off"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Analog & Interface#TMUX136RSER",
+      "symbol": "SchLib/Analog & Interface.kicad_sym#TMUX136",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/TEXAS_RSE (R-PUQFN-N10).kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

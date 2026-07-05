@@ -1,0 +1,55 @@
+{
+  "id": "cern_aqy212gh",
+  "name": "AQY212GH (CERN library)",
+  "category": "ic",
+  "family": "CERN Optocouplers",
+  "manufacturer": "PANASONIC",
+  "mpn_pattern": "AQY212GH",
+  "description": "GU 1 Form A, PhotoMOS Relay, High Capacity, 60V 1.1A. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "4",
+    "case": "DIP4-300"
+  },
+  "files": {
+    "footprint": "cern_aqy212gh.kicad_mod",
+    "symbol": "cern_aqy212gh.kicad_sym",
+    "footprint_svg": "cern_aqy212gh.footprint.svg",
+    "symbol_svg": "cern_aqy212gh.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Optocouplers.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors THD.pretty/PANASONIC_AQY21(DIP).kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "form",
+    "photomos",
+    "relay",
+    "high",
+    "capacity",
+    "60v"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Optocouplers#AQY212GH",
+      "symbol": "SchLib/Optocouplers.kicad_sym#PhotoMOS Relay x1 Type5_a",
+      "footprint": "PcbLib/ICs And Semiconductors THD.pretty/PANASONIC_AQY21(DIP).kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

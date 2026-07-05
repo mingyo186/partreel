@@ -1,0 +1,416 @@
+(kicad_symbol_lib (version 20211014) (generator partreel-import)
+  (symbol "BAV99S"
+  		(pin_numbers
+  			(hide yes)
+  		)
+  		(pin_names
+  			(offset 1.27)
+  			(hide yes)
+  		)
+  		(exclude_from_sim no)
+  		(in_bom yes)
+  		(on_board yes)
+  		(property "Reference" "D"
+  			(at 3.81 1.27 0)
+  			(effects
+  				(font
+  					(size 1.524 1.524)
+  				)
+  				(justify left)
+  			)
+  		)
+  		(property "Value" "${DEVICE}"
+  			(at 3.81 -8.89 0)
+  			(effects
+  				(font
+  					(size 1.524 1.524)
+  				)
+  				(justify left)
+  			)
+  		)
+  		(property "Footprint" ""
+  			(at 0 0 0)
+  			(effects
+  				(font
+  					(size 1.27 1.27)
+  				)
+  				(hide yes)
+  			)
+  		)
+  		(property "Datasheet" ""
+  			(at 0 0 0)
+  			(effects
+  				(font
+  					(size 1.27 1.27)
+  				)
+  				(hide yes)
+  			)
+  		)
+  		(property "Description" "Integrated Dual Serial Pair High-Speed Switching Diodes"
+  			(at 0 0 0)
+  			(effects
+  				(font
+  					(size 1.27 1.27)
+  				)
+  				(hide yes)
+  			)
+  		)
+  		(symbol "BAV99S_1_0"
+  			(polyline
+  				(pts
+  					(xy 0 -3.81) (xy 2.54 -3.81)
+  				)
+  				(stroke
+  					(width 0)
+  					(type solid)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 1.27 -1.143) (xy 3.81 -1.143)
+  				)
+  				(stroke
+  					(width 0)
+  					(type solid)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 1.27 -5.207) (xy 3.81 -5.207)
+  				)
+  				(stroke
+  					(width 0)
+  					(type solid)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(circle
+  				(center 2.54 -3.81)
+  				(radius 0.381)
+  				(stroke
+  					(width -0.0001)
+  					(type solid)
+  				)
+  				(fill
+  					(type outline)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 2.54 -7.62) (xy 2.54 0)
+  				)
+  				(stroke
+  					(width 0)
+  					(type solid)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 3.81 -2.413) (xy 2.54 -1.143) (xy 1.27 -2.413) (xy 3.81 -2.413)
+  				)
+  				(stroke
+  					(width -0.0001)
+  					(type solid)
+  				)
+  				(fill
+  					(type outline)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 3.81 -6.477) (xy 2.54 -5.207) (xy 1.27 -6.477) (xy 3.81 -6.477)
+  				)
+  				(stroke
+  					(width -0.0001)
+  					(type solid)
+  				)
+  				(fill
+  					(type outline)
+  				)
+  			)
+  			(rectangle
+  				(start 5.08 0)
+  				(end 0 -7.62)
+  				(stroke
+  					(width 0.0254)
+  					(type solid)
+  					(color 128 0 0 1)
+  				)
+  				(fill
+  					(type background)
+  				)
+  			)
+  			(text "6"
+  				(at -1.778 -3.81 0)
+  				(effects
+  					(font
+  						(size 1.2192 1.2192)
+  					)
+  					(justify right bottom)
+  				)
+  			)
+  			(text "2"
+  				(at 2.54 0.508 900)
+  				(effects
+  					(font
+  						(size 1.2192 1.2192)
+  					)
+  					(justify left bottom)
+  				)
+  			)
+  			(text "1"
+  				(at 2.54 -8.89 900)
+  				(effects
+  					(font
+  						(size 1.2192 1.2192)
+  					)
+  					(justify left bottom)
+  				)
+  			)
+  			(pin passive line
+  				(at -2.54 -3.81 0)
+  				(length 2.54)
+  				(name "C1A2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "6"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin passive line
+  				(at 2.54 1.27 270)
+  				(length 1.27)
+  				(name "C2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin passive line
+  				(at 2.54 -8.89 90)
+  				(length 1.27)
+  				(name "A"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  		)
+  		(symbol "BAV99S_2_0"
+  			(polyline
+  				(pts
+  					(xy 0 -3.81) (xy 2.54 -3.81)
+  				)
+  				(stroke
+  					(width 0)
+  					(type solid)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 1.27 -1.143) (xy 3.81 -1.143)
+  				)
+  				(stroke
+  					(width 0)
+  					(type solid)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 1.27 -5.207) (xy 3.81 -5.207)
+  				)
+  				(stroke
+  					(width 0)
+  					(type solid)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(circle
+  				(center 2.54 -3.81)
+  				(radius 0.381)
+  				(stroke
+  					(width -0.0001)
+  					(type solid)
+  				)
+  				(fill
+  					(type outline)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 2.54 -7.62) (xy 2.54 0)
+  				)
+  				(stroke
+  					(width 0)
+  					(type solid)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 3.81 -2.413) (xy 2.54 -1.143) (xy 1.27 -2.413) (xy 3.81 -2.413)
+  				)
+  				(stroke
+  					(width -0.0001)
+  					(type solid)
+  				)
+  				(fill
+  					(type outline)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 3.81 -6.477) (xy 2.54 -5.207) (xy 1.27 -6.477) (xy 3.81 -6.477)
+  				)
+  				(stroke
+  					(width -0.0001)
+  					(type solid)
+  				)
+  				(fill
+  					(type outline)
+  				)
+  			)
+  			(rectangle
+  				(start 5.08 0)
+  				(end 0 -7.62)
+  				(stroke
+  					(width 0.0254)
+  					(type solid)
+  					(color 128 0 0 1)
+  				)
+  				(fill
+  					(type background)
+  				)
+  			)
+  			(text "3"
+  				(at -1.778 -3.81 0)
+  				(effects
+  					(font
+  						(size 1.2192 1.2192)
+  					)
+  					(justify right bottom)
+  				)
+  			)
+  			(text "5"
+  				(at 2.54 0.508 900)
+  				(effects
+  					(font
+  						(size 1.2192 1.2192)
+  					)
+  					(justify left bottom)
+  				)
+  			)
+  			(text "4"
+  				(at 2.54 -8.89 900)
+  				(effects
+  					(font
+  						(size 1.2192 1.2192)
+  					)
+  					(justify left bottom)
+  				)
+  			)
+  			(pin passive line
+  				(at -2.54 -3.81 0)
+  				(length 2.54)
+  				(name "C3A4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "3"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin passive line
+  				(at 2.54 1.27 270)
+  				(length 1.27)
+  				(name "C4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "5"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin passive line
+  				(at 2.54 -8.89 90)
+  				(length 1.27)
+  				(name "A3"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  		)
+  		(embedded_fonts no)
+  	)
+)

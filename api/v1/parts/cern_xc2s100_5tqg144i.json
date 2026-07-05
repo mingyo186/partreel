@@ -1,0 +1,81 @@
+{
+  "id": "cern_xc2s100_5tqg144i",
+  "name": "XC2S100-5TQG144I (CERN library)",
+  "category": "ic",
+  "family": "CERN Logic",
+  "manufacturer": "XILINX",
+  "mpn_pattern": "XC2S100-5TQG144I",
+  "description": "Spartan-II 2.5V FPGA, 92 User I/Os, 144-Pin TQFP, Standard Performance, Industrial Grade, Pb-Free. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "144",
+    "mounting": "SMD",
+    "case": "QFP144"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/ic/cern/cern_xc2s100_5tqg144i/cern_xc2s100_5tqg144i.kicad_mod",
+    "symbol": "https://partreel.com/library/ic/cern/cern_xc2s100_5tqg144i/cern_xc2s100_5tqg144i.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/ic/cern/cern_xc2s100_5tqg144i/cern_xc2s100_5tqg144i.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/ic/cern/cern_xc2s100_5tqg144i/cern_xc2s100_5tqg144i.symbol.svg"
+  },
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Logic.kicad_sym",
+  "license": "CERN-OHL-P-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/QFP50P2200X2200X160-144N.kicad_mod)",
+  "keywords": [
+    "cern",
+    "spartan",
+    "fpga",
+    "user",
+    "144",
+    "pin",
+    "tqfp"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/QFP50P2200X2200X160-144N.kicad_mod)",
+    "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Logic.kicad_sym",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_cern.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+      "source_commit": "53054c17",
+      "source_files": {
+        "db": "CERN.sqlite#Logic#XC2S100-5TQG144I",
+        "symbol": "SchLib/Logic.kicad_sym#XC2S100-5TQG144I",
+        "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/QFP50P2200X2200X160-144N.kicad_mod"
+      },
+      "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+      "import_date": "2026-07-05",
+      "modifications": [
+        "extracted single symbol from library",
+        "stripped dead 3D model reference (upstream ships no 3D)"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/cern_xc2s100_5tqg144i/",
+  "api": "https://partreel.com/api/v1/parts/cern_xc2s100_5tqg144i.json"
+}

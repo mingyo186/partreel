@@ -1,0 +1,55 @@
+{
+  "id": "cern_xc7z010_1clg400i",
+  "name": "XC7Z010-1CLG400I (CERN library)",
+  "category": "ic",
+  "family": "CERN Logic",
+  "manufacturer": "XILINX",
+  "mpn_pattern": "XC7Z010-1CLG400I",
+  "description": "667 MHz Zynq™-7000 AP SoC, 130 PS I/O, 100 FPGA I/O, 400-Ball BGA, Speed Grade 1, Industrial Grade, Pb-Free. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "400",
+    "mounting": "SMD",
+    "case": "BGA400"
+  },
+  "files": {
+    "footprint": "cern_xc7z010_1clg400i.kicad_mod",
+    "symbol": "cern_xc7z010_1clg400i.kicad_sym",
+    "footprint_svg": "cern_xc7z010_1clg400i.footprint.svg",
+    "symbol_svg": "cern_xc7z010_1clg400i.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Logic.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD_BGA.pretty/BGA400C80P20X20_1700X1700X160.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "667",
+    "mhz",
+    "zynq",
+    "7000",
+    "soc",
+    "130"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Logic#XC7Z010-1CLG400I",
+      "symbol": "SchLib/Logic.kicad_sym#XC7Z010-1CLG400I",
+      "footprint": "PcbLib/ICs And Semiconductors SMD_BGA.pretty/BGA400C80P20X20_1700X1700X160.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "cern_ep4cgx150df31c7n",
+  "name": "EP4CGX150DF31C7N (CERN library)",
+  "category": "ic",
+  "family": "CERN Logic",
+  "manufacturer": "ALTERA",
+  "mpn_pattern": "EP4CGX150DF31C7N",
+  "description": "Cyclone IV GX Family FPGA, 475 I/O Pins, 8 Transceiver, 896-Pin FBGA, Speed Grade 7, Commercial Grade, Pb-Free. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "896",
+    "mounting": "SMD",
+    "case": "BGA896"
+  },
+  "files": {
+    "footprint": "cern_ep4cgx150df31c7n.kicad_mod",
+    "symbol": "cern_ep4cgx150df31c7n.kicad_sym",
+    "footprint_svg": "cern_ep4cgx150df31c7n.footprint.svg",
+    "symbol_svg": "cern_ep4cgx150df31c7n.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Logic.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD_BGA.pretty/BGA896C100P30X30_3100X3100X260.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "cyclone",
+    "family",
+    "fpga",
+    "475",
+    "pins",
+    "transceiver"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Logic#EP4CGX150DF31C7N",
+      "symbol": "SchLib/Logic.kicad_sym#EP4CGX150DF31C7N",
+      "footprint": "PcbLib/ICs And Semiconductors SMD_BGA.pretty/BGA896C100P30X30_3100X3100X260.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "cern_mcp659_e_ml",
+  "name": "MCP659-E/ML (CERN library)",
+  "category": "ic",
+  "family": "CERN Op Amps",
+  "manufacturer": "MICROCHIP TECHNOLOGY",
+  "mpn_pattern": "MCP659-E/ML",
+  "description": "Quad 50 MHz, 200 µV Operational Amplifier with mCal. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "17",
+    "mounting": "SMD",
+    "case": "QFN16"
+  },
+  "files": {
+    "footprint": "cern_mcp659_e_ml.kicad_mod",
+    "symbol": "cern_mcp659_e_ml.kicad_sym",
+    "footprint_svg": "cern_mcp659_e_ml.footprint.svg",
+    "symbol_svg": "cern_mcp659_e_ml.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Operational Amplifiers.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/QFN65P400X400X100-17N-S280.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "quad",
+    "mhz",
+    "200",
+    "operational",
+    "amplifier",
+    "with"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Operational Amplifiers#MCP659-E/ML",
+      "symbol": "SchLib/Operational Amplifiers.kicad_sym#MCP659-E-ML",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/QFN65P400X400X100-17N-S280.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

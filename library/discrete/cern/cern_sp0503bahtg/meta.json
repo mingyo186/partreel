@@ -1,0 +1,55 @@
+{
+  "id": "cern_sp0503bahtg",
+  "name": "SP0503BAHTG (CERN library)",
+  "category": "discrete",
+  "family": "CERN Diodes",
+  "manufacturer": "LITTELFUSE",
+  "mpn_pattern": "SP0503BAHTG",
+  "description": "30pF 30kV 3 Channel Unidirectional TVS Array, SP05 Series. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "2",
+    "mounting": "SMD",
+    "case": "SOT143"
+  },
+  "files": {
+    "footprint": "cern_sp0503bahtg.kicad_mod",
+    "symbol": "cern_sp0503bahtg.kicad_sym",
+    "footprint_svg": "cern_sp0503bahtg.footprint.svg",
+    "symbol_svg": "cern_sp0503bahtg.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Diodes.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/SOT143N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "30pf",
+    "30kv",
+    "channel",
+    "unidirectional",
+    "tvs",
+    "array"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Diodes#SP0503BAHTG",
+      "symbol": "SchLib/Diodes.kicad_sym#SP0503BAHTG",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/SOT143N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "cern_r_pbfe_plcc44",
+  "name": "R&PBFE (PLCC44) (CERN library)",
+  "category": "ic",
+  "family": "CERN Analog & Interface",
+  "manufacturer": "CERN",
+  "mpn_pattern": "R&PBFE (PLCC44)",
+  "description": "Resistance & Pressure Bridge Front End (PLCC44 CERN ASIC). Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "44",
+    "mounting": "SMD",
+    "case": "PLCC44"
+  },
+  "files": {
+    "footprint": "cern_r_pbfe_plcc44.kicad_mod",
+    "symbol": "cern_r_pbfe_plcc44.kicad_sym",
+    "footprint_svg": "cern_r_pbfe_plcc44.footprint.svg",
+    "symbol_svg": "cern_r_pbfe_plcc44.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Analog & Interface.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/PLCC127P1752X1752X457-44N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "resistance",
+    "pressure",
+    "bridge",
+    "front",
+    "end",
+    "plcc44"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Analog & Interface#R&PBFE(PLCC44)",
+      "symbol": "SchLib/Analog & Interface.kicad_sym#R&PBFE(PLCC44)",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/PLCC127P1752X1752X457-44N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

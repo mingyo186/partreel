@@ -1,0 +1,81 @@
+{
+  "id": "cern_mr10q010csc",
+  "name": "MR10Q010CSC (CERN library)",
+  "category": "ic",
+  "family": "CERN Logic",
+  "manufacturer": "EVERSPIN TECHNOLOGIES",
+  "mpn_pattern": "MR10Q010CSC",
+  "description": "104MHz Quad SPI Family (Industrial, Extended and AEC-Q100 Grade 1 Temp Range) 1Mb High Speed Quad SPI Interface MRAM. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "16",
+    "mounting": "SMD",
+    "case": "SOIC16"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/ic/cern/cern_mr10q010csc/cern_mr10q010csc.kicad_mod",
+    "symbol": "https://partreel.com/library/ic/cern/cern_mr10q010csc/cern_mr10q010csc.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/ic/cern/cern_mr10q010csc/cern_mr10q010csc.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/ic/cern/cern_mr10q010csc/cern_mr10q010csc.symbol.svg"
+  },
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Logic.kicad_sym",
+  "license": "CERN-OHL-P-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/SOIC127P1030X265-16N.kicad_mod)",
+  "keywords": [
+    "cern",
+    "104mhz",
+    "quad",
+    "spi",
+    "family",
+    "industrial",
+    "extended"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/SOIC127P1030X265-16N.kicad_mod)",
+    "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Logic.kicad_sym",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_cern.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+      "source_commit": "53054c17",
+      "source_files": {
+        "db": "CERN.sqlite#Logic#MR10Q010CSC",
+        "symbol": "SchLib/Logic.kicad_sym#MR10Q010",
+        "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/SOIC127P1030X265-16N.kicad_mod"
+      },
+      "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+      "import_date": "2026-07-05",
+      "modifications": [
+        "extracted single symbol from library",
+        "stripped dead 3D model reference (upstream ships no 3D)"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/cern_mr10q010csc/",
+  "api": "https://partreel.com/api/v1/parts/cern_mr10q010csc.json"
+}

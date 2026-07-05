@@ -1,0 +1,55 @@
+{
+  "id": "cern_ltm4618ey",
+  "name": "LTM4618EY (CERN library)",
+  "category": "ic",
+  "family": "CERN Regulators",
+  "manufacturer": "ANALOG DEVICES",
+  "mpn_pattern": "LTM4618EY",
+  "description": "4.5V-26.5V to 0.8V-5V, 6A DC/DC uModule Regulator with Tracking and Frequency Synchronization. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "84",
+    "mounting": "SMD",
+    "case": "BGA84"
+  },
+  "files": {
+    "footprint": "cern_ltm4618ey.kicad_mod",
+    "symbol": "cern_ltm4618ey.kicad_sym",
+    "footprint_svg": "cern_ltm4618ey.footprint.svg",
+    "symbol_svg": "cern_ltm4618ey.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Regulators.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD_BGA.pretty/BGA84C127P7X12_900X1500X512.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "umodule",
+    "regulator",
+    "with",
+    "tracking",
+    "and",
+    "frequency"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Regulators#LTM4618EY",
+      "symbol": "SchLib/Regulators.kicad_sym#LTM4618",
+      "footprint": "PcbLib/ICs And Semiconductors SMD_BGA.pretty/BGA84C127P7X12_900X1500X512.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

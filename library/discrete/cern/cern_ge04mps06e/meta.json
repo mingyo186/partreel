@@ -1,0 +1,53 @@
+{
+  "id": "cern_ge04mps06e",
+  "name": "GE04MPS06E (CERN library)",
+  "category": "discrete",
+  "family": "CERN Diodes",
+  "manufacturer": "GENESIC",
+  "mpn_pattern": "GE04MPS06E",
+  "description": "SiC Schottky MPS™ Diode. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "3",
+    "mounting": "SMD",
+    "case": "D-PAK"
+  },
+  "files": {
+    "footprint": "cern_ge04mps06e.kicad_mod",
+    "symbol": "cern_ge04mps06e.kicad_sym",
+    "footprint_svg": "cern_ge04mps06e.footprint.svg",
+    "symbol_svg": "cern_ge04mps06e.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Diodes.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/TO228P990X238-3N-R640X555.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "sic",
+    "schottky",
+    "mps",
+    "diode"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Diodes#GE04MPS06E",
+      "symbol": "SchLib/Diodes.kicad_sym#Diode Schottky C1C3_A2",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/TO228P990X238-3N-R640X555.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

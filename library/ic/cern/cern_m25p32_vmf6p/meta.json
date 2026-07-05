@@ -1,0 +1,55 @@
+{
+  "id": "cern_m25p32_vmf6p",
+  "name": "M25P32-VMF6P (CERN library)",
+  "category": "ic",
+  "family": "CERN Logic",
+  "manufacturer": "MICRON TECHNOLOGY",
+  "mpn_pattern": "M25P32-VMF6P",
+  "description": "32 Mbit, Low-Voltage, Serial Flash Memory with 75MHz SPI Bus Interface. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "16",
+    "mounting": "SMD",
+    "case": "SOIC16"
+  },
+  "files": {
+    "footprint": "cern_m25p32_vmf6p.kicad_mod",
+    "symbol": "cern_m25p32_vmf6p.kicad_sym",
+    "footprint_svg": "cern_m25p32_vmf6p.footprint.svg",
+    "symbol_svg": "cern_m25p32_vmf6p.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Logic.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/SOIC127P1030X265-16N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "mbit",
+    "low",
+    "voltage",
+    "serial",
+    "flash",
+    "memory"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Logic#M25P32-VMF6P",
+      "symbol": "SchLib/Logic.kicad_sym#M25P32-VMF",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/SOIC127P1030X265-16N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

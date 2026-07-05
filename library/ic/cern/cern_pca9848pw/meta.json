@@ -1,0 +1,55 @@
+{
+  "id": "cern_pca9848pw",
+  "name": "PCA9848PW (CERN library)",
+  "category": "ic",
+  "family": "CERN Analog & Interface",
+  "manufacturer": "NXP SEMICONDUCTORS",
+  "mpn_pattern": "PCA9848PW",
+  "description": "8-Channel Ultra-Low Voltage, Fm+I2C-Bus Switch with Reset. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "24",
+    "mounting": "SMD",
+    "case": "TSSOP24"
+  },
+  "files": {
+    "footprint": "cern_pca9848pw.kicad_mod",
+    "symbol": "cern_pca9848pw.kicad_sym",
+    "footprint_svg": "cern_pca9848pw.footprint.svg",
+    "symbol_svg": "cern_pca9848pw.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Analog & Interface.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/SOP65P640X110-24N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "channel",
+    "ultra",
+    "low",
+    "voltage",
+    "i2c",
+    "bus"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Analog & Interface#PCA9848PW",
+      "symbol": "SchLib/Analog & Interface.kicad_sym#PCA9848PW",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/SOP65P640X110-24N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

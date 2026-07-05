@@ -1,0 +1,53 @@
+{
+  "id": "cern_1n5404",
+  "name": "1N5404 (CERN library)",
+  "category": "discrete",
+  "family": "CERN Diodes",
+  "manufacturer": "VISHAY GENERAL SEMICONDUCTOR",
+  "mpn_pattern": "1N5404",
+  "description": "General Purpose Plastic Rectifier. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "2",
+    "case": "DO-201AD"
+  },
+  "files": {
+    "footprint": "cern_1n5404.kicad_mod",
+    "symbol": "cern_1n5404.kicad_sym",
+    "footprint_svg": "cern_1n5404.footprint.svg",
+    "symbol_svg": "cern_1n5404.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Diodes.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors THD.pretty/DO-201AD.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "general",
+    "purpose",
+    "plastic",
+    "rectifier"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Diodes#1N5404",
+      "symbol": "SchLib/Diodes.kicad_sym#Diode",
+      "footprint": "PcbLib/ICs And Semiconductors THD.pretty/DO-201AD.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "cern_attiny20_ssu",
+  "name": "ATTINY20-SSU (CERN library)",
+  "category": "ic",
+  "family": "CERN Logic",
+  "manufacturer": "ATMEL",
+  "mpn_pattern": "ATTINY20-SSU",
+  "description": "8-bit AVR Microcontroller, 1.8-5.5V, 2KB Flash, 128 Bytes SRAM, 12 GPIO pins, 14-pin SOIC, Industrial Grade (-40°C to 85°C), Pb-Free. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "14",
+    "mounting": "SMD",
+    "case": "SOIC14"
+  },
+  "files": {
+    "footprint": "cern_attiny20_ssu.kicad_mod",
+    "symbol": "cern_attiny20_ssu.kicad_sym",
+    "footprint_svg": "cern_attiny20_ssu.footprint.svg",
+    "symbol_svg": "cern_attiny20_ssu.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Logic.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/SOIC127P600X175-14N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "bit",
+    "avr",
+    "microcontroller",
+    "2kb",
+    "flash",
+    "128"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Logic#ATTINY20-SSU",
+      "symbol": "SchLib/Logic.kicad_sym#ATTINY20-SSU",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/SOIC127P600X175-14N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "cern_pci9056_ba66bi_g_m",
+  "name": "PCI9056-BA66BI-G (CERN library)",
+  "category": "ic",
+  "family": "CERN Logic",
+  "manufacturer": "PLX TECHNOLOGY",
+  "mpn_pattern": "PCI9056-BA66BI-G",
+  "description": "32-Bit 66MHz PCI Bus Mastering I/O Accelerator for PowerQUICC and Generic 32-Bit, 66MHz Local Bus Design. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "256",
+    "mounting": "SMD",
+    "case": "BGA256"
+  },
+  "files": {
+    "footprint": "cern_pci9056_ba66bi_g_m.kicad_mod",
+    "symbol": "cern_pci9056_ba66bi_g_m.kicad_sym",
+    "footprint_svg": "cern_pci9056_ba66bi_g_m.footprint.svg",
+    "symbol_svg": "cern_pci9056_ba66bi_g_m.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Logic.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD_BGA.pretty/BGA256C100P16X16_1700X1700X170.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "bit",
+    "66mhz",
+    "pci",
+    "bus",
+    "mastering",
+    "accelerator"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Logic#PCI9056-BA66BI-G_m",
+      "symbol": "SchLib/Logic.kicad_sym#PCI9056BA_ModeM",
+      "footprint": "PcbLib/ICs And Semiconductors SMD_BGA.pretty/BGA256C100P16X16_1700X1700X170.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

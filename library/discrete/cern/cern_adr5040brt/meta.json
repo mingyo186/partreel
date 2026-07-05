@@ -1,0 +1,55 @@
+{
+  "id": "cern_adr5040brt",
+  "name": "ADR5040BRT (CERN library)",
+  "category": "discrete",
+  "family": "CERN Diodes",
+  "manufacturer": "ANALOG DEVICES",
+  "mpn_pattern": "ADR5040BRT",
+  "description": "Precision Diode, Micropower Shunt Mode, Voltage Reference. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "3",
+    "mounting": "SMD",
+    "case": "SOT23-3"
+  },
+  "files": {
+    "footprint": "cern_adr5040brt.kicad_mod",
+    "symbol": "cern_adr5040brt.kicad_sym",
+    "footprint_svg": "cern_adr5040brt.footprint.svg",
+    "symbol_svg": "cern_adr5040brt.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Diodes.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/SOT95P237X112-3N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "precision",
+    "diode",
+    "micropower",
+    "shunt",
+    "mode",
+    "voltage"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Diodes#ADR5040BRT",
+      "symbol": "SchLib/Diodes.kicad_sym#Diode C1C3_A2",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/SOT95P237X112-3N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

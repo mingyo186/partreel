@@ -1,0 +1,53 @@
+{
+  "id": "cern_tep_100_2412wir",
+  "name": "TEP 100-2412WIR (CERN library)",
+  "category": "power",
+  "family": "CERN DC-DC Converters",
+  "manufacturer": "TRACO POWER",
+  "mpn_pattern": "TEP 100-2412WIR",
+  "description": "9-36VDC to 12VDC, Iout (max) 8.4A, DC-DC Converter. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "9"
+  },
+  "files": {
+    "footprint": "cern_tep_100_2412wir.kicad_mod",
+    "symbol": "cern_tep_100_2412wir.kicad_sym",
+    "footprint_svg": "cern_tep_100_2412wir.footprint.svg",
+    "symbol_svg": "cern_tep_100_2412wir.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/DC-DC Converters.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors THD.pretty/DCDC_TRACO_TEP100WIR.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "36vdc",
+    "12vdc",
+    "iout",
+    "max",
+    "converter"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#DC-DC Converters#TEP 100-2412WIR",
+      "symbol": "SchLib/DC-DC Converters.kicad_sym#DCDC_TRACO_TEP100WIR",
+      "footprint": "PcbLib/ICs And Semiconductors THD.pretty/DCDC_TRACO_TEP100WIR.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

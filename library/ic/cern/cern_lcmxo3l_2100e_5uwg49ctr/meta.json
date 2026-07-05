@@ -1,0 +1,55 @@
+{
+  "id": "cern_lcmxo3l_2100e_5uwg49ctr",
+  "name": "LCMXO3L-2100E-5UWG49C (CERN library)",
+  "category": "ic",
+  "family": "CERN Logic",
+  "manufacturer": "LATTICE SEMICONDUCTOR",
+  "mpn_pattern": "LCMXO3L-2100E-5UWG49C",
+  "description": "MachXO3, 1.2V, high-speed I/O, 38 I/Os, 49-Pin, Speed Grade 5. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "49",
+    "mounting": "SMD",
+    "case": "BGA49"
+  },
+  "files": {
+    "footprint": "cern_lcmxo3l_2100e_5uwg49ctr.kicad_mod",
+    "symbol": "cern_lcmxo3l_2100e_5uwg49ctr.kicad_sym",
+    "footprint_svg": "cern_lcmxo3l_2100e_5uwg49ctr.footprint.svg",
+    "symbol_svg": "cern_lcmxo3l_2100e_5uwg49ctr.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Logic.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD_BGA.pretty/BGA49C40P7X7_318X310X60.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "machxo3",
+    "high",
+    "speed",
+    "pin",
+    "speed",
+    "grade"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Logic#LCMXO3L-2100E-5UWG49CTR",
+      "symbol": "SchLib/Logic.kicad_sym#LCMXO3L-2100E-5UWG49CTR",
+      "footprint": "PcbLib/ICs And Semiconductors SMD_BGA.pretty/BGA49C40P7X7_318X310X60.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

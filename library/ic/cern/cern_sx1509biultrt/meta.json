@@ -1,0 +1,55 @@
+{
+  "id": "cern_sx1509biultrt",
+  "name": "SX1509BIULTRT (CERN library)",
+  "category": "ic",
+  "family": "CERN Analog & Interface",
+  "manufacturer": "SEMTECH",
+  "mpn_pattern": "SX1509BIULTRT",
+  "description": "World's Lowest Voltage Level Shifting GPIO with LED driver and Keypad Engine. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "29",
+    "mounting": "SMD",
+    "case": "QFN28"
+  },
+  "files": {
+    "footprint": "cern_sx1509biultrt.kicad_mod",
+    "symbol": "cern_sx1509biultrt.kicad_sym",
+    "footprint_svg": "cern_sx1509biultrt.footprint.svg",
+    "symbol_svg": "cern_sx1509biultrt.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Analog & Interface.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/QFN40P400X400X60-29N-S275.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "world",
+    "lowest",
+    "voltage",
+    "level",
+    "shifting",
+    "gpio"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Analog & Interface#SX1509BIULTRT",
+      "symbol": "SchLib/Analog & Interface.kicad_sym#SX1509B",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/QFN40P400X400X60-29N-S275.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

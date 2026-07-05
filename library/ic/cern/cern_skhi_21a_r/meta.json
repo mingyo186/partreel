@@ -1,0 +1,53 @@
+{
+  "id": "cern_skhi_21a_r",
+  "name": "SKHI 21A R (CERN library)",
+  "category": "ic",
+  "family": "CERN Analog & Interface",
+  "manufacturer": "SEMIKRON",
+  "mpn_pattern": "SKHI 21A R",
+  "description": "1200V 8A  Hybrid Dual MOSFET Driver. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "18"
+  },
+  "files": {
+    "footprint": "cern_skhi_21a_r.kicad_mod",
+    "symbol": "cern_skhi_21a_r.kicad_sym",
+    "footprint_svg": "cern_skhi_21a_r.footprint.svg",
+    "symbol_svg": "cern_skhi_21a_r.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Analog & Interface.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors THD.pretty/SEMIKRON_SKHI 21A R.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "1200v",
+    "hybrid",
+    "dual",
+    "mosfet",
+    "driver"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Analog & Interface#SKHI 21A R",
+      "symbol": "SchLib/Analog & Interface.kicad_sym#SKHI 21A R",
+      "footprint": "PcbLib/ICs And Semiconductors THD.pretty/SEMIKRON_SKHI 21A R.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

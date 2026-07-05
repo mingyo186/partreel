@@ -1,0 +1,54 @@
+{
+  "id": "cern_la_100_p_sp13_p26l53w1_5_wh",
+  "name": "04.01.61.918.1 (CERN library)",
+  "category": "sensor",
+  "family": "CERN Sensors",
+  "manufacturer": "CERN",
+  "mpn_pattern": "04.01.61.918.1",
+  "description": "Electronic Flexible Wire, Cu 1.5mm², Length 53mm, White Insulator ø2.3mm. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "2"
+  },
+  "files": {
+    "footprint": "cern_la_100_p_sp13_p26l53w1_5_wh.kicad_mod",
+    "symbol": "cern_la_100_p_sp13_p26l53w1_5_wh.kicad_sym",
+    "footprint_svg": "cern_la_100_p_sp13_p26l53w1_5_wh.footprint.svg",
+    "symbol_svg": "cern_la_100_p_sp13_p26l53w1_5_wh.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Sensors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors THD.pretty/LEM_LA 100-P_SP13_P26L53W1.5-WH.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "electronic",
+    "flexible",
+    "wire",
+    "5mm",
+    "length",
+    "53mm"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Sensors#LA 100-P/SP13_P26L53W1.5-WH",
+      "symbol": "SchLib/Sensors.kicad_sym#LA 100-P/SP13_WIRE",
+      "footprint": "PcbLib/ICs And Semiconductors THD.pretty/LEM_LA 100-P_SP13_P26L53W1.5-WH.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

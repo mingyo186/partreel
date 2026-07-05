@@ -1,0 +1,55 @@
+{
+  "id": "cern_atsame54n19a_az",
+  "name": "ATSAME54N19A-AZ (CERN library)",
+  "category": "ic",
+  "family": "CERN Logic",
+  "manufacturer": "MICROCHIP TECHNOLOGY",
+  "mpn_pattern": "ATSAME54N19A-AZ",
+  "description": "32-bit ARM® Cortex®-M4F MCUs with 1 Msps 12-bit ADC, QSPI, USB, Ethernet, 2x CAN, and PTC, 512KB Flash, 100 QFP, Temperature Range -40°C to 125°C. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "100",
+    "mounting": "SMD",
+    "case": "QFP100"
+  },
+  "files": {
+    "footprint": "cern_atsame54n19a_az.kicad_mod",
+    "symbol": "cern_atsame54n19a_az.kicad_sym",
+    "footprint_svg": "cern_atsame54n19a_az.footprint.svg",
+    "symbol_svg": "cern_atsame54n19a_az.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Logic.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/QFP50P1600X1600X120-100N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "bit",
+    "arm",
+    "cortex",
+    "m4f",
+    "mcus",
+    "with"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Logic#ATSAME54N19A-AZ",
+      "symbol": "SchLib/Logic.kicad_sym#ATSAME54NXXA-A",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/QFP50P1600X1600X120-100N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "cern_ab6000",
+  "name": "AB6000 (CERN library)",
+  "category": "ic",
+  "family": "CERN Analog & Interface",
+  "manufacturer": "HMS",
+  "mpn_pattern": "AB6000",
+  "description": "DIL-32 Anybus®-IC™ Module for Fieldbus and Ethernet. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "26",
+    "case": "DIP32-600"
+  },
+  "files": {
+    "footprint": "cern_ab6000.kicad_mod",
+    "symbol": "cern_ab6000.kicad_sym",
+    "footprint_svg": "cern_ab6000.footprint.svg",
+    "symbol_svg": "cern_ab6000.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Analog & Interface.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors THD.pretty/HMS_AB6000.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "dil",
+    "anybus",
+    "module",
+    "for",
+    "fieldbus",
+    "and"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Analog & Interface#AB6000",
+      "symbol": "SchLib/Analog & Interface.kicad_sym#AB6000",
+      "footprint": "PcbLib/ICs And Semiconductors THD.pretty/HMS_AB6000.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

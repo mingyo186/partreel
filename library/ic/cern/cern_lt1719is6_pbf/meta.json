@@ -1,0 +1,55 @@
+{
+  "id": "cern_lt1719is6_pbf",
+  "name": "LT1719IS6 (CERN library)",
+  "category": "ic",
+  "family": "CERN Op Amps",
+  "manufacturer": "LINEAR TECHNOLOGY",
+  "mpn_pattern": "LT1719IS6",
+  "description": "4.5ns Dual Supply 3V/5V Comparator with Rail-to-Rail Output. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "6",
+    "mounting": "SMD",
+    "case": "SOT23-6"
+  },
+  "files": {
+    "footprint": "cern_lt1719is6_pbf.kicad_mod",
+    "symbol": "cern_lt1719is6_pbf.kicad_sym",
+    "footprint_svg": "cern_lt1719is6_pbf.footprint.svg",
+    "symbol_svg": "cern_lt1719is6_pbf.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Operational Amplifiers.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/SOT95P280X90-6N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "5ns",
+    "dual",
+    "supply",
+    "comparator",
+    "with",
+    "rail"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Operational Amplifiers#LT1719IS6#PBF",
+      "symbol": "SchLib/Operational Amplifiers.kicad_sym#LT1719IS6",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/SOT95P280X90-6N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

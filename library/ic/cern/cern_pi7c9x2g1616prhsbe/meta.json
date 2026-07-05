@@ -1,0 +1,55 @@
+{
+  "id": "cern_pi7c9x2g1616prhsbe",
+  "name": "PI7C9X2G1616PRHSBE (CERN library)",
+  "category": "ic",
+  "family": "CERN Analog & Interface",
+  "manufacturer": "PERICOM / DIODES INC.",
+  "mpn_pattern": "PI7C9X2G1616PRHSBE",
+  "description": "16-port, 16-lane, PCIe2 Packet Switch with GreenPacket Technology. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "324",
+    "mounting": "SMD",
+    "case": "BGA324"
+  },
+  "files": {
+    "footprint": "cern_pi7c9x2g1616prhsbe.kicad_mod",
+    "symbol": "cern_pi7c9x2g1616prhsbe.kicad_sym",
+    "footprint_svg": "cern_pi7c9x2g1616prhsbe.footprint.svg",
+    "symbol_svg": "cern_pi7c9x2g1616prhsbe.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Analog & Interface.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD_BGA.pretty/BGA324C100P18X18_1900X1900X190.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "port",
+    "lane",
+    "pcie2",
+    "packet",
+    "switch",
+    "with"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Analog & Interface#PI7C9X2G1616PRHSBE",
+      "symbol": "SchLib/Analog & Interface.kicad_sym#PI7C9X2G1616PRHSBE",
+      "footprint": "PcbLib/ICs And Semiconductors SMD_BGA.pretty/BGA324C100P18X18_1900X1900X190.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

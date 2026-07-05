@@ -1,0 +1,55 @@
+{
+  "id": "cern_esp32_s2_mini_2_h4_alt",
+  "name": "ESP32-S2-MINI-2-H4 (CERN library)",
+  "category": "ic",
+  "family": "CERN Analog & Interface",
+  "manufacturer": "ESPRESSIF",
+  "mpn_pattern": "ESP32-S2-MINI-2-H4",
+  "description": "ESP32 Bluetooth, WiFi 802.11b/g/n, Bluetooth v5.0 Transceiver Module 2.4GHz. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "73",
+    "mounting": "SMD",
+    "case": "LGA73"
+  },
+  "files": {
+    "footprint": "cern_esp32_s2_mini_2_h4_alt.kicad_mod",
+    "symbol": "cern_esp32_s2_mini_2_h4_alt.kicad_sym",
+    "footprint_svg": "cern_esp32_s2_mini_2_h4_alt.footprint.svg",
+    "symbol_svg": "cern_esp32_s2_mini_2_h4_alt.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Analog & Interface.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/ESPRESSIF_ESP32-SX-MINI-2.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "esp32",
+    "bluetooth",
+    "wifi",
+    "802",
+    "11b",
+    "bluetooth"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Analog & Interface#ESP32-S2-MINI-2-H4 [alt]",
+      "symbol": "SchLib/Analog & Interface.kicad_sym#ESP32-S2-MINI-2 [alt]",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/ESPRESSIF_ESP32-SX-MINI-2.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

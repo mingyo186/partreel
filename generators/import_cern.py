@@ -30,7 +30,18 @@ WAVE1 = {t: ("connector", f"CERN {t}") for t in
           "MOLEX", "PHOENIX", "SAMTEC", "SOURIAU", "STELVIO-KONTEK COMATEL",
           "TYCO", "WEIDMULLER"]}
 WAVE1["Sockets"] = ("socket", "CERN Sockets")
-WAVES = {"0": WAVE0, "1": WAVE1}
+# Wave 2: IC/반도체 (docs/cern-import-plan.md §6 — 멀티유닛 렌더 지원 완료 전제)
+WAVE2 = {"Analog & Interface": ("ic", "CERN Analog & Interface"),
+         "Operational Amplifiers": ("ic", "CERN Op Amps"),
+         "Regulators": ("ic", "CERN Regulators"),
+         "Logic": ("ic", "CERN Logic"),
+         "Standard Logic": ("ic", "CERN Standard Logic"),
+         "Optocouplers": ("ic", "CERN Optocouplers"),
+         "DC-DC Converters": ("power", "CERN DC-DC Converters"),
+         "Diodes": ("discrete", "CERN Diodes"),
+         "Transistors": ("discrete", "CERN Transistors"),
+         "Sensors": ("sensor", "CERN Sensors")}
+WAVES = {"0": WAVE0, "1": WAVE1, "2": WAVE2}
 
 
 def slug(name):

@@ -1,0 +1,53 @@
+{
+  "id": "cern_ncp566st18t3g",
+  "name": "NCP566ST18T3 (CERN library)",
+  "category": "ic",
+  "family": "CERN Regulators",
+  "manufacturer": "ON SEMICONDUCTOR",
+  "mpn_pattern": "NCP566ST18T3",
+  "description": "1.8V, 1.5 A Low Dropout Linear Regulator. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "4",
+    "mounting": "SMD",
+    "case": "SOT223"
+  },
+  "files": {
+    "footprint": "cern_ncp566st18t3g.kicad_mod",
+    "symbol": "cern_ncp566st18t3g.kicad_sym",
+    "footprint_svg": "cern_ncp566st18t3g.footprint.svg",
+    "symbol_svg": "cern_ncp566st18t3g.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Regulators.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/SOT230P700X175-4N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "low",
+    "dropout",
+    "linear",
+    "regulator"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Regulators#NCP566ST18T3G",
+      "symbol": "SchLib/Regulators.kicad_sym#REG3+1 1IN-2GND-3OUT+4GND",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/SOT230P700X175-4N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "cern_74lvth162244mtd",
+  "name": "74LVTH162244MTD (CERN library)",
+  "category": "ic",
+  "family": "CERN Standard Logic",
+  "manufacturer": "FAIRCHILD SEMICONDUCTOR",
+  "mpn_pattern": "74LVTH162244MTD",
+  "description": "Low Voltage 16-Bit Buffer/Line Driver with 3-STATE Outputs and 25 Ohm Series Resistors in the Outputs. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "48",
+    "mounting": "SMD",
+    "case": "TSSOP48"
+  },
+  "files": {
+    "footprint": "cern_74lvth162244mtd.kicad_mod",
+    "symbol": "cern_74lvth162244mtd.kicad_sym",
+    "footprint_svg": "cern_74lvth162244mtd.footprint.svg",
+    "symbol_svg": "cern_74lvth162244mtd.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Standard Logic.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/SOP50P810X120-48N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "low",
+    "voltage",
+    "bit",
+    "buffer",
+    "line",
+    "driver"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Standard Logic#74LVTH162244MTD",
+      "symbol": "SchLib/Standard Logic.kicad_sym#74162244",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/SOP50P810X120-48N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

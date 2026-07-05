@@ -1,0 +1,54 @@
+{
+  "id": "cern_rhrpm4424lk01v",
+  "name": "RHRPM4424LK01V (CERN library)",
+  "category": "ic",
+  "family": "CERN Analog & Interface",
+  "manufacturer": "ST MICROELECTRONICS",
+  "mpn_pattern": "RHRPM4424LK01V",
+  "description": "Rad-Channel Low-Side Mosfet Driver, 4.5A, 4.65V to 18V. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "10",
+    "mounting": "SMD"
+  },
+  "files": {
+    "footprint": "cern_rhrpm4424lk01v.kicad_mod",
+    "symbol": "cern_rhrpm4424lk01v.kicad_sym",
+    "footprint_svg": "cern_rhrpm4424lk01v.footprint.svg",
+    "symbol_svg": "cern_rhrpm4424lk01v.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Analog & Interface.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/ST_RHRPM4424_FLAT-10.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "rad",
+    "channel",
+    "low",
+    "side",
+    "mosfet",
+    "driver"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Analog & Interface#RHRPM4424LK01V",
+      "symbol": "SchLib/Analog & Interface.kicad_sym#RHRPM4424",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/ST_RHRPM4424_FLAT-10.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "cern_ts3ds10224ruk",
+  "name": "TS3DS10224RUK (CERN library)",
+  "category": "ic",
+  "family": "CERN Analog & Interface",
+  "manufacturer": "TEXAS INSTRUMENTS",
+  "mpn_pattern": "TS3DS10224RUK",
+  "description": "High-Speed Differential Crosspoint, 1:4 , 2 Channel 1:2 Differential Multiplexer and Demultiplexer, or Fan-Out Switch. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "21",
+    "mounting": "SMD",
+    "case": "QFN20"
+  },
+  "files": {
+    "footprint": "cern_ts3ds10224ruk.kicad_mod",
+    "symbol": "cern_ts3ds10224ruk.kicad_sym",
+    "footprint_svg": "cern_ts3ds10224ruk.footprint.svg",
+    "symbol_svg": "cern_ts3ds10224ruk.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Analog & Interface.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/QFN40P300X300X80-21N-S180.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "high",
+    "speed",
+    "differential",
+    "crosspoint",
+    "channel",
+    "differential"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Analog & Interface#TS3DS10224RUK",
+      "symbol": "SchLib/Analog & Interface.kicad_sym#TS3DS10224RUK",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/QFN40P300X300X80-21N-S180.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

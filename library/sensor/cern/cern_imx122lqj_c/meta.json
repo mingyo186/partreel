@@ -1,0 +1,54 @@
+{
+  "id": "cern_imx122lqj_c",
+  "name": "IMX122LQJ-C (CERN library)",
+  "category": "sensor",
+  "family": "CERN Sensors",
+  "manufacturer": "SONY",
+  "mpn_pattern": "IMX122LQJ-C",
+  "description": "Diagonal 6.4mm (Type 1/2.9) CMOS Image Sensor with Square Pixel Array 2.43M Pixels for Color Cameras. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "94",
+    "case": "LGA94"
+  },
+  "files": {
+    "footprint": "cern_imx122lqj_c.kicad_mod",
+    "symbol": "cern_imx122lqj_c.kicad_sym",
+    "footprint_svg": "cern_imx122lqj_c.footprint.svg",
+    "symbol_svg": "cern_imx122lqj_c.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Sensors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/SONY_IMX122LQJ-C.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "diagonal",
+    "4mm",
+    "type",
+    "cmos",
+    "image",
+    "sensor"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Sensors#IMX122LQJ-C",
+      "symbol": "SchLib/Sensors.kicad_sym#IMX122LQJ-C",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/SONY_IMX122LQJ-C.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "cern_lmr33610adda",
+  "name": "LMR33610ADDA (CERN library)",
+  "category": "ic",
+  "family": "CERN Regulators",
+  "manufacturer": "TEXAS INSTRUMENTS",
+  "mpn_pattern": "LMR33610ADDA",
+  "description": "SIMPLE SWITCHER® 3.8-V to 36-V, 1-A Synchronous Step-down Converter, Frequency 400kHz. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "9",
+    "mounting": "SMD",
+    "case": "SOIC8"
+  },
+  "files": {
+    "footprint": "cern_lmr33610adda.kicad_mod",
+    "symbol": "cern_lmr33610adda.kicad_sym",
+    "footprint_svg": "cern_lmr33610adda.footprint.svg",
+    "symbol_svg": "cern_lmr33610adda.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Regulators.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/SOIC127P600X170-9N-R260X310.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "simple",
+    "switcher",
+    "synchronous",
+    "step",
+    "down",
+    "converter"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Regulators#LMR33610ADDA",
+      "symbol": "SchLib/Regulators.kicad_sym#LMR33610A",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/SOIC127P600X170-9N-R260X310.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

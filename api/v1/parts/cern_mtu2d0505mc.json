@@ -1,0 +1,80 @@
+{
+  "id": "cern_mtu2d0505mc",
+  "name": "MTU2D0505MC (CERN library)",
+  "category": "power",
+  "family": "CERN DC-DC Converters",
+  "manufacturer": "MURATA POWER SOLUTIONS",
+  "mpn_pattern": "MTU2D0505MC",
+  "description": "5V to ±5V, Iout (max) ±200mA, 1kVDC Isolated, 2W Dual Output DC-DC Converter. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "5",
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/power/cern/cern_mtu2d0505mc/cern_mtu2d0505mc.kicad_mod",
+    "symbol": "https://partreel.com/library/power/cern/cern_mtu2d0505mc/cern_mtu2d0505mc.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/power/cern/cern_mtu2d0505mc/cern_mtu2d0505mc.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/power/cern/cern_mtu2d0505mc/cern_mtu2d0505mc.symbol.svg"
+  },
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/DC-DC Converters.kicad_sym",
+  "license": "CERN-OHL-P-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/DCDC_MURATA_MTU2.kicad_mod)",
+  "keywords": [
+    "cern",
+    "iout",
+    "max",
+    "200ma",
+    "1kvdc",
+    "isolated",
+    "dual"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/DCDC_MURATA_MTU2.kicad_mod)",
+    "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/DC-DC Converters.kicad_sym",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_cern.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+      "source_commit": "53054c17",
+      "source_files": {
+        "db": "CERN.sqlite#DC-DC Converters#MTU2D0505MC",
+        "symbol": "SchLib/DC-DC Converters.kicad_sym#DCDC_MURATA_MTU2_Dual Output",
+        "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/DCDC_MURATA_MTU2.kicad_mod"
+      },
+      "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+      "import_date": "2026-07-05",
+      "modifications": [
+        "extracted single symbol from library",
+        "stripped dead 3D model reference (upstream ships no 3D)"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/cern_mtu2d0505mc/",
+  "api": "https://partreel.com/api/v1/parts/cern_mtu2d0505mc.json"
+}

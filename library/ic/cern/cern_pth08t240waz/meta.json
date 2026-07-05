@@ -1,0 +1,54 @@
+{
+  "id": "cern_pth08t240waz",
+  "name": "PTH08T240WAZ (CERN library)",
+  "category": "ic",
+  "family": "CERN Regulators",
+  "manufacturer": "TEXAS INSTRUMENTS",
+  "mpn_pattern": "PTH08T240WAZ",
+  "description": "10A, 4.5V to 14V Input, Non-Isolated, 0.69V to 5.5V Output Adjustable Power Module with TurboTrans. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "11",
+    "mounting": "SMD"
+  },
+  "files": {
+    "footprint": "cern_pth08t240waz.kicad_mod",
+    "symbol": "cern_pth08t240waz.kicad_sym",
+    "footprint_svg": "cern_pth08t240waz.footprint.svg",
+    "symbol_svg": "cern_pth08t240waz.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Regulators.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/TEXAS_BBT (R-PDSS-B11).kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "10a",
+    "14v",
+    "input",
+    "non",
+    "isolated",
+    "69v"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Regulators#PTH08T240WAZ",
+      "symbol": "SchLib/Regulators.kicad_sym#PTH08T240W",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/TEXAS_BBT (R-PDSS-B11).kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

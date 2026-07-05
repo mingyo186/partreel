@@ -1,0 +1,52 @@
+{
+  "id": "cern_mapc_a1102_as",
+  "name": "MAPC-A1102-AS (CERN library)",
+  "category": "discrete",
+  "family": "CERN Transistors",
+  "manufacturer": "MACOM",
+  "mpn_pattern": "MAPC-A1102-AS",
+  "description": "DC - 3.5 GHz, GaN Amplifier 50 V, 150 W. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "2",
+    "mounting": "SMD"
+  },
+  "files": {
+    "footprint": "cern_mapc_a1102_as.kicad_mod",
+    "symbol": "cern_mapc_a1102_as.kicad_sym",
+    "footprint_svg": "cern_mapc_a1102_as.footprint.svg",
+    "symbol_svg": "cern_mapc_a1102_as.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Transistors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/MACOM_AC-360S-2.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "ghz",
+    "gan",
+    "amplifier",
+    "150"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Transistors#MAPC-A1102-AS",
+      "symbol": "SchLib/Transistors.kicad_sym#MAPC-A1102",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/MACOM_AC-360S-2.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

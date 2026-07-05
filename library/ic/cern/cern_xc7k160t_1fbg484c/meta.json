@@ -1,0 +1,55 @@
+{
+  "id": "cern_xc7k160t_1fbg484c",
+  "name": "XC7K160T-1FBG484C (CERN library)",
+  "category": "ic",
+  "family": "CERN Logic",
+  "manufacturer": "XILINX",
+  "mpn_pattern": "XC7K160T-1FBG484C",
+  "description": "KINTEX-7 FPGA, 162240 Logic Cells, 285 User I/O, 4 GTXs, 484-Ball BGA, Speed Grade 1, Commercial Grade, Pb-Free. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "484",
+    "mounting": "SMD",
+    "case": "BGA484"
+  },
+  "files": {
+    "footprint": "cern_xc7k160t_1fbg484c.kicad_mod",
+    "symbol": "cern_xc7k160t_1fbg484c.kicad_sym",
+    "footprint_svg": "cern_xc7k160t_1fbg484c.footprint.svg",
+    "symbol_svg": "cern_xc7k160t_1fbg484c.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Logic.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD_BGA.pretty/BGA484C100P22X22_2300X2300X254.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "kintex",
+    "fpga",
+    "162240",
+    "logic",
+    "cells",
+    "285"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Logic#XC7K160T-1FBG484C",
+      "symbol": "SchLib/Logic.kicad_sym#XC7K160T-xFBG484",
+      "footprint": "PcbLib/ICs And Semiconductors SMD_BGA.pretty/BGA484C100P22X22_2300X2300X254.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

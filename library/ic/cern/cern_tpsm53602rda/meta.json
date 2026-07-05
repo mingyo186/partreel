@@ -1,0 +1,56 @@
+{
+  "id": "cern_tpsm53602rda",
+  "name": "TPSM53602RDA (CERN library)",
+  "category": "ic",
+  "family": "CERN Regulators",
+  "manufacturer": "TEXAS INSTRUMENTS",
+  "mpn_pattern": "TPSM53602RDA",
+  "description": "3.8V to 36V Input, 1V to 7V Output, 2A Power Module in Enhanced HotRod™. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: Not Recommended.",
+  "parameters": {
+    "contacts": "15",
+    "mounting": "SMD",
+    "case": "DFN14",
+    "lifecycle": "Not Recommended"
+  },
+  "files": {
+    "footprint": "cern_tpsm53602rda.kicad_mod",
+    "symbol": "cern_tpsm53602rda.kicad_sym",
+    "footprint_svg": "cern_tpsm53602rda.footprint.svg",
+    "symbol_svg": "cern_tpsm53602rda.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Regulators.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/TEXAS_RDA0015A (B3QFN).kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "36v",
+    "input",
+    "output",
+    "power",
+    "module",
+    "enhanced"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Regulators#TPSM53602RDA",
+      "symbol": "SchLib/Regulators.kicad_sym#TPSM53602",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/TEXAS_RDA0015A (B3QFN).kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

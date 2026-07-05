@@ -1,0 +1,54 @@
+{
+  "id": "cern_rn2483a_i_rm",
+  "name": "RN2483A-I/RM (CERN library)",
+  "category": "ic",
+  "family": "CERN Analog & Interface",
+  "manufacturer": "MICROCHIP TECHNOLOGY",
+  "mpn_pattern": "RN2483A-I/RM",
+  "description": "Low-Power Long Range LoRa® Technology Transceiver Module. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "47",
+    "mounting": "SMD"
+  },
+  "files": {
+    "footprint": "cern_rn2483a_i_rm.kicad_mod",
+    "symbol": "cern_rn2483a_i_rm.kicad_sym",
+    "footprint_svg": "cern_rn2483a_i_rm.footprint.svg",
+    "symbol_svg": "cern_rn2483a_i_rm.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Analog & Interface.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/MICROCHIP_RN2483A.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "low",
+    "power",
+    "long",
+    "range",
+    "lora",
+    "technology"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Analog & Interface#RN2483A-I/RM",
+      "symbol": "SchLib/Analog & Interface.kicad_sym#RN2483A",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/MICROCHIP_RN2483A.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

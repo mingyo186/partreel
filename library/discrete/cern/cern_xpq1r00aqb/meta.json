@@ -1,0 +1,54 @@
+{
+  "id": "cern_xpq1r00aqb",
+  "name": "XPQ1R00AQB (CERN library)",
+  "category": "discrete",
+  "family": "CERN Transistors",
+  "manufacturer": "TOSHIBA",
+  "mpn_pattern": "XPQ1R00AQB",
+  "description": "100V, 300A, N Channel, Power MOSFET. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "9",
+    "mounting": "SMD",
+    "case": "L-TOGL"
+  },
+  "files": {
+    "footprint": "cern_xpq1r00aqb.kicad_mod",
+    "symbol": "cern_xpq1r00aqb.kicad_sym",
+    "footprint_svg": "cern_xpq1r00aqb.footprint.svg",
+    "symbol_svg": "cern_xpq1r00aqb.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Transistors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/TO120P1181X250-9N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "100v",
+    "300a",
+    "channel",
+    "power",
+    "mosfet"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Transistors#XPQ1R00AQB",
+      "symbol": "SchLib/Transistors.kicad_sym#XPQ1R00AQB",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/TO120P1181X250-9N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

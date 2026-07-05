@@ -1,0 +1,55 @@
+{
+  "id": "cern_mt41k512m8da_107_p",
+  "name": "MT41K512M8DA-107:P (CERN library)",
+  "category": "ic",
+  "family": "CERN Logic",
+  "manufacturer": "MICRON TECHNOLOGY",
+  "mpn_pattern": "MT41K512M8DA-107:P",
+  "description": "1.35V, 4Gb (512 Meg x 8) DDR3L SDRAM. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "78",
+    "mounting": "SMD",
+    "case": "BGA78"
+  },
+  "files": {
+    "footprint": "cern_mt41k512m8da_107_p.kicad_mod",
+    "symbol": "cern_mt41k512m8da_107_p.kicad_sym",
+    "footprint_svg": "cern_mt41k512m8da_107_p.footprint.svg",
+    "symbol_svg": "cern_mt41k512m8da_107_p.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Logic.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD_BGA.pretty/BGA78C80P9X13_800X1050X120.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "35v",
+    "4gb",
+    "512",
+    "meg",
+    "ddr3l",
+    "sdram"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Logic#MT41K512M8DA-107_P",
+      "symbol": "SchLib/Logic.kicad_sym#MT41K512M8DA-107{colon}P",
+      "footprint": "PcbLib/ICs And Semiconductors SMD_BGA.pretty/BGA78C80P9X13_800X1050X120.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

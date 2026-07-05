@@ -1,0 +1,55 @@
+{
+  "id": "cern_ths4551irun",
+  "name": "THS4551IRUN (CERN library)",
+  "category": "ic",
+  "family": "CERN Op Amps",
+  "manufacturer": "TEXAS INSTRUMENTS",
+  "mpn_pattern": "THS4551IRUN",
+  "description": "Low-Noise, Precision, 150MHz, Fully Differential Amplifier. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "10",
+    "mounting": "SMD",
+    "case": "QFN10"
+  },
+  "files": {
+    "footprint": "cern_ths4551irun.kicad_mod",
+    "symbol": "cern_ths4551irun.kicad_sym",
+    "footprint_svg": "cern_ths4551irun.footprint.svg",
+    "symbol_svg": "cern_ths4551irun.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Operational Amplifiers.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/QFN50P200X200X80-10N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "low",
+    "noise",
+    "precision",
+    "150mhz",
+    "fully",
+    "differential"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Operational Amplifiers#THS4551IRUN",
+      "symbol": "SchLib/Operational Amplifiers.kicad_sym#THS4551IRUN",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/QFN50P200X200X80-10N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

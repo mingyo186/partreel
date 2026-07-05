@@ -1,0 +1,54 @@
+{
+  "id": "cern_2n7000kl_tr1_e3",
+  "name": "2N7000KL-TR1-E3 (CERN library)",
+  "category": "discrete",
+  "family": "CERN Transistors",
+  "manufacturer": "VISHAY SILICONIX",
+  "mpn_pattern": "2N7000KL-TR1-E3",
+  "description": "60V, 470mA, N-Channel MOSFET. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: Obsolete.",
+  "parameters": {
+    "contacts": "3",
+    "case": "TO-92",
+    "lifecycle": "Obsolete"
+  },
+  "files": {
+    "footprint": "cern_2n7000kl_tr1_e3.kicad_mod",
+    "symbol": "cern_2n7000kl_tr1_e3.kicad_sym",
+    "footprint_svg": "cern_2n7000kl_tr1_e3.footprint.svg",
+    "symbol_svg": "cern_2n7000kl_tr1_e3.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Transistors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors THD.pretty/TO-92AA-P254.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "60v",
+    "470ma",
+    "channel",
+    "mosfet"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Transistors#2N7000KL-TR1-E3",
+      "symbol": "SchLib/Transistors.kicad_sym#N-MOSFET-D 1S 2G 3D",
+      "footprint": "PcbLib/ICs And Semiconductors THD.pretty/TO-92AA-P254.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "cern_bq24070rhlt",
+  "name": "BQ24070RHL (CERN library)",
+  "category": "ic",
+  "family": "CERN Analog & Interface",
+  "manufacturer": "TEXAS INSTRUMENTS",
+  "mpn_pattern": "BQ24070RHL",
+  "description": "Li-Ion Charger with Dynamic Power-Path Management, Output regulated to 4.4V. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "21",
+    "mounting": "SMD",
+    "case": "QFN20"
+  },
+  "files": {
+    "footprint": "cern_bq24070rhlt.kicad_mod",
+    "symbol": "cern_bq24070rhlt.kicad_sym",
+    "footprint_svg": "cern_bq24070rhlt.footprint.svg",
+    "symbol_svg": "cern_bq24070rhlt.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Analog & Interface.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/TEXAS_RHL (S-PVQFN-N20).kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "ion",
+    "charger",
+    "with",
+    "dynamic",
+    "power",
+    "path"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Analog & Interface#BQ24070RHLT",
+      "symbol": "SchLib/Analog & Interface.kicad_sym#BQ24070RHLT",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/TEXAS_RHL (S-PVQFN-N20).kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

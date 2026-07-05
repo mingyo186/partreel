@@ -1,0 +1,54 @@
+{
+  "id": "cern_cern_nino2_alice_tof",
+  "name": "CERN_NINO2-ALICE-TOF (CERN library)",
+  "category": "ic",
+  "family": "CERN Analog & Interface",
+  "manufacturer": "CERN",
+  "mpn_pattern": "CERN_NINO2-ALICE-TOF",
+  "description": "Ultra Fast Low Power Pre-Amplifier Discriminator. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "76",
+    "mounting": "SMD"
+  },
+  "files": {
+    "footprint": "cern_cern_nino2_alice_tof.kicad_mod",
+    "symbol": "cern_cern_nino2_alice_tof.kicad_sym",
+    "footprint_svg": "cern_cern_nino2_alice_tof.footprint.svg",
+    "symbol_svg": "cern_cern_nino2_alice_tof.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Analog & Interface.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/CERN_NINO2-ALICE-TOF.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "ultra",
+    "fast",
+    "low",
+    "power",
+    "pre",
+    "amplifier"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Analog & Interface#CERN_NINO2-ALICE-TOF",
+      "symbol": "SchLib/Analog & Interface.kicad_sym#CERN_NINO2-ALICE-TOF",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/CERN_NINO2-ALICE-TOF.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "id": "cern_tps61170drvr",
+  "name": "TPS61170DRV (CERN library)",
+  "category": "ic",
+  "family": "CERN Regulators",
+  "manufacturer": "TEXAS INSTRUMENTS",
+  "mpn_pattern": "TPS61170DRV",
+  "description": "3V to 18V Input, 3V to 38V Output, 1.2A High Voltage Boost Converter. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "7",
+    "mounting": "SMD",
+    "case": "SON6"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/ic/cern/cern_tps61170drvr/cern_tps61170drvr.kicad_mod",
+    "symbol": "https://partreel.com/library/ic/cern/cern_tps61170drvr/cern_tps61170drvr.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/ic/cern/cern_tps61170drvr/cern_tps61170drvr.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/ic/cern/cern_tps61170drvr/cern_tps61170drvr.symbol.svg"
+  },
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Regulators.kicad_sym",
+  "license": "CERN-OHL-P-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/SON65P200X200X80-7N-R110X170.kicad_mod)",
+  "keywords": [
+    "cern",
+    "18v",
+    "input",
+    "38v",
+    "output",
+    "high",
+    "voltage"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/SON65P200X200X80-7N-R110X170.kicad_mod)",
+    "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Regulators.kicad_sym",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_cern.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+      "source_commit": "53054c17",
+      "source_files": {
+        "db": "CERN.sqlite#Regulators#TPS61170DRVR",
+        "symbol": "SchLib/Regulators.kicad_sym#TPS61170",
+        "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/SON65P200X200X80-7N-R110X170.kicad_mod"
+      },
+      "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+      "import_date": "2026-07-05",
+      "modifications": [
+        "extracted single symbol from library",
+        "stripped dead 3D model reference (upstream ships no 3D)"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/cern_tps61170drvr/",
+  "api": "https://partreel.com/api/v1/parts/cern_tps61170drvr.json"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "cern_nvt4857uk",
+  "name": "NVT4857UK (CERN library)",
+  "category": "ic",
+  "family": "CERN Analog & Interface",
+  "manufacturer": "NXP SEMICONDUCTORS",
+  "mpn_pattern": "NVT4857UK",
+  "description": "SD 3.0-SDR104 Compliant Integrated Auto-Direction Control Memory Card Voltage Level Translator with EMI Filter and ESD Protection. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: Not Recommended.",
+  "parameters": {
+    "contacts": "20",
+    "mounting": "SMD",
+    "case": "BGA20",
+    "lifecycle": "Not Recommended"
+  },
+  "files": {
+    "footprint": "cern_nvt4857uk.kicad_mod",
+    "symbol": "cern_nvt4857uk.kicad_sym",
+    "footprint_svg": "cern_nvt4857uk.footprint.svg",
+    "symbol_svg": "cern_nvt4857uk.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Analog & Interface.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD_BGA.pretty/BGA20C40P4X5_170X210X50.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "sdr104",
+    "compliant",
+    "integrated",
+    "auto",
+    "direction",
+    "control"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Analog & Interface#NVT4857UK",
+      "symbol": "SchLib/Analog & Interface.kicad_sym#NVT4857UK",
+      "footprint": "PcbLib/ICs And Semiconductors SMD_BGA.pretty/BGA20C40P4X5_170X210X50.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

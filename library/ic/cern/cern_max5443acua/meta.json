@@ -1,0 +1,55 @@
+{
+  "id": "cern_max5443acua",
+  "name": "MAX5443ACUA (CERN library)",
+  "category": "ic",
+  "family": "CERN Analog & Interface",
+  "manufacturer": "MAXIM",
+  "mpn_pattern": "MAX5443ACUA",
+  "description": "+3V, Serial-Input, Voltage-Output, 16-Bit ±2LSB DACs. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "8",
+    "mounting": "SMD",
+    "case": "MSOP8"
+  },
+  "files": {
+    "footprint": "cern_max5443acua.kicad_mod",
+    "symbol": "cern_max5443acua.kicad_sym",
+    "footprint_svg": "cern_max5443acua.footprint.svg",
+    "symbol_svg": "cern_max5443acua.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Analog & Interface.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/SOP65P490X110-8N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "serial",
+    "input",
+    "voltage",
+    "output",
+    "bit",
+    "2lsb"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Analog & Interface#MAX5443ACUA+",
+      "symbol": "SchLib/Analog & Interface.kicad_sym#MAX5443ACUA+",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/SOP65P490X110-8N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

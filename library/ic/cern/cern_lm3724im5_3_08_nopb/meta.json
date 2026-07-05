@@ -1,0 +1,55 @@
+{
+  "id": "cern_lm3724im5_3_08_nopb",
+  "name": "LM3724IM5-3.08 (CERN library)",
+  "category": "ic",
+  "family": "CERN Logic",
+  "manufacturer": "NATIONAL SEMICONDUCTOR",
+  "mpn_pattern": "LM3724IM5-3.08",
+  "description": "5-Pin Microprocessor Reset Circuits  (Reset Threshold 3.08V). Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "5",
+    "mounting": "SMD",
+    "case": "SOT23-5"
+  },
+  "files": {
+    "footprint": "cern_lm3724im5_3_08_nopb.kicad_mod",
+    "symbol": "cern_lm3724im5_3_08_nopb.kicad_sym",
+    "footprint_svg": "cern_lm3724im5_3_08_nopb.footprint.svg",
+    "symbol_svg": "cern_lm3724im5_3_08_nopb.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Logic.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/SOT95P284X122-5N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "pin",
+    "microprocessor",
+    "reset",
+    "circuits",
+    "reset",
+    "threshold"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Logic#LM3724IM5-3.08/NOPB",
+      "symbol": "SchLib/Logic.kicad_sym#LM3724",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/SOT95P284X122-5N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "id": "cern_24smv150d",
+  "name": "24SMV150D (CERN library)",
+  "category": "power",
+  "family": "CERN DC-DC Converters",
+  "manufacturer": "PICO ELECTRONICS",
+  "mpn_pattern": "24SMV150D",
+  "description": "24VDC to ±150VDC, Iout (max) ±4.17mA, 0.625W Unregulated High Voltage Isolated DC-DC Converter. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "5",
+    "mounting": "SMD"
+  },
+  "files": {
+    "footprint": "cern_24smv150d.kicad_mod",
+    "symbol": "cern_24smv150d.kicad_sym",
+    "footprint_svg": "cern_24smv150d.footprint.svg",
+    "symbol_svg": "cern_24smv150d.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/DC-DC Converters.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/DCDC_PICO_SMV.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "24vdc",
+    "150vdc",
+    "iout",
+    "max",
+    "17ma",
+    "625w"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#DC-DC Converters#24SMV150D",
+      "symbol": "SchLib/DC-DC Converters.kicad_sym#DCDC_PICO_SMV_Dual Output",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/DCDC_PICO_SMV.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

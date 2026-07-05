@@ -1,0 +1,55 @@
+{
+  "id": "cern_dsei2x101_12a_flip",
+  "name": "DSEI2x101-12A (CERN library)",
+  "category": "discrete",
+  "family": "CERN Diodes",
+  "manufacturer": "IXYS",
+  "mpn_pattern": "DSEI2x101-12A",
+  "description": "Fast Recovery Diode Epitaxial Diode (FRED). Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "2",
+    "case": "SOT-227B"
+  },
+  "files": {
+    "footprint": "cern_dsei2x101_12a_flip.kicad_mod",
+    "symbol": "cern_dsei2x101_12a_flip.kicad_sym",
+    "footprint_svg": "cern_dsei2x101_12a_flip.footprint.svg",
+    "symbol_svg": "cern_dsei2x101_12a_flip.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Diodes.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors THD.pretty/IXYS_SOT-227B_FLIP.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "fast",
+    "recovery",
+    "diode",
+    "epitaxial",
+    "diode",
+    "fred"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Diodes#DSEI2X101-12A_flip",
+      "symbol": "SchLib/Diodes.kicad_sym#Diode x2 C1A2_A3C4",
+      "footprint": "PcbLib/ICs And Semiconductors THD.pretty/IXYS_SOT-227B_FLIP.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "cern_adp7102ardz_5_0_r7",
+  "name": "ADP7102ARDZ-5.0 (CERN library)",
+  "category": "ic",
+  "family": "CERN Regulators",
+  "manufacturer": "ANALOG DEVICES",
+  "mpn_pattern": "ADP7102ARDZ-5.0",
+  "description": "5V, 300mA, Low Noise, CMOS LDO Linear Regulator. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "8",
+    "mounting": "SMD",
+    "case": "SOIC8"
+  },
+  "files": {
+    "footprint": "cern_adp7102ardz_5_0_r7.kicad_mod",
+    "symbol": "cern_adp7102ardz_5_0_r7.kicad_sym",
+    "footprint_svg": "cern_adp7102ardz_5_0_r7.footprint.svg",
+    "symbol_svg": "cern_adp7102ardz_5_0_r7.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Regulators.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/SOIC127P600X175-9N-R241X309.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "300ma",
+    "low",
+    "noise",
+    "cmos",
+    "ldo",
+    "linear"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Regulators#ADP7102ARDZ-5.0-R7",
+      "symbol": "SchLib/Regulators.kicad_sym#ADP7102ARDZ-X.X-R7",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/SOIC127P600X175-9N-R241X309.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

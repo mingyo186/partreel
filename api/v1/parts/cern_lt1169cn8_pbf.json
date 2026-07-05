@@ -1,0 +1,81 @@
+{
+  "id": "cern_lt1169cn8_pbf",
+  "name": "LT1169CN8 (CERN library)",
+  "category": "ic",
+  "family": "CERN Op Amps",
+  "manufacturer": "LINEAR TECHNOLOGY",
+  "mpn_pattern": "LT1169CN8",
+  "description": "Dual Low Noise, Picoampere Bias Current, JFET Input  Operational Amplifier. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "8",
+    "case": "DIP8-300"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/ic/cern/cern_lt1169cn8_pbf/cern_lt1169cn8_pbf.kicad_mod",
+    "symbol": "https://partreel.com/library/ic/cern/cern_lt1169cn8_pbf/cern_lt1169cn8_pbf.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/ic/cern/cern_lt1169cn8_pbf/cern_lt1169cn8_pbf.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/ic/cern/cern_lt1169cn8_pbf/cern_lt1169cn8_pbf.symbol.svg"
+  },
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Operational Amplifiers.kicad_sym",
+  "license": "CERN-OHL-P-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors THD.pretty/DIP8-300.kicad_mod)",
+  "keywords": [
+    "cern",
+    "dual",
+    "low",
+    "noise",
+    "picoampere",
+    "bias",
+    "current"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors THD.pretty/DIP8-300.kicad_mod)",
+    "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Operational Amplifiers.kicad_sym",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_cern.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+      "source_commit": "53054c17",
+      "source_files": {
+        "db": "CERN.sqlite#Operational Amplifiers#LT1169CN8#PBF",
+        "symbol": "SchLib/Operational Amplifiers.kicad_sym#Operational Amplifier x2 Type1",
+        "footprint": "PcbLib/ICs And Semiconductors THD.pretty/DIP8-300.kicad_mod"
+      },
+      "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+      "import_date": "2026-07-05",
+      "modifications": [
+        "extracted single symbol from library",
+        "stripped dead 3D model reference (upstream ships no 3D)",
+        "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/cern_lt1169cn8_pbf/",
+  "api": "https://partreel.com/api/v1/parts/cern_lt1169cn8_pbf.json"
+}

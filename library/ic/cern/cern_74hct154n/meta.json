@@ -1,0 +1,53 @@
+{
+  "id": "cern_74hct154n",
+  "name": "74HCT154N (CERN library)",
+  "category": "ic",
+  "family": "CERN Standard Logic",
+  "manufacturer": "NXP SEMICONDUCTORS",
+  "mpn_pattern": "74HCT154N",
+  "description": "4-to-16 Line Decoder/Demultiplexer. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: Not Recommended.",
+  "parameters": {
+    "contacts": "24",
+    "case": "DIP24-600",
+    "lifecycle": "Not Recommended"
+  },
+  "files": {
+    "footprint": "cern_74hct154n.kicad_mod",
+    "symbol": "cern_74hct154n.kicad_sym",
+    "footprint_svg": "cern_74hct154n.footprint.svg",
+    "symbol_svg": "cern_74hct154n.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Standard Logic.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors THD.pretty/DIP24-600.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "line",
+    "decoder",
+    "demultiplexer"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Standard Logic#74HCT154N",
+      "symbol": "SchLib/Standard Logic.kicad_sym#74154",
+      "footprint": "PcbLib/ICs And Semiconductors THD.pretty/DIP24-600.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

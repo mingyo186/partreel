@@ -1,0 +1,54 @@
+{
+  "id": "cern_nx1h35s_lg625pr",
+  "name": "NX1H35S-LG625PR (CERN library)",
+  "category": "ic",
+  "family": "CERN Logic",
+  "manufacturer": "NANOXPLORE (NX)",
+  "mpn_pattern": "NX1H35S-LG625PR",
+  "description": "Radiation Hardened FPGA NG Medium Device. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "625",
+    "mounting": "SMD",
+    "case": "BGA625"
+  },
+  "files": {
+    "footprint": "cern_nx1h35s_lg625pr.kicad_mod",
+    "symbol": "cern_nx1h35s_lg625pr.kicad_sym",
+    "footprint_svg": "cern_nx1h35s_lg625pr.footprint.svg",
+    "symbol_svg": "cern_nx1h35s_lg625pr.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Logic.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD_BGA.pretty/BGA625C100P25X25_2900X2900X374 (NX_LG625).kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "radiation",
+    "hardened",
+    "fpga",
+    "medium",
+    "device"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Logic#NX1H35S-LG625PR",
+      "symbol": "SchLib/Logic.kicad_sym#NX1H35S-LG625",
+      "footprint": "PcbLib/ICs And Semiconductors SMD_BGA.pretty/BGA625C100P25X25_2900X2900X374 (NX_LG625).kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

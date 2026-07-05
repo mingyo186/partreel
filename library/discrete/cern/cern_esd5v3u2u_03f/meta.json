@@ -1,0 +1,55 @@
+{
+  "id": "cern_esd5v3u2u_03f",
+  "name": "ESD5V3U2U-03F (CERN library)",
+  "category": "discrete",
+  "family": "CERN Diodes",
+  "manufacturer": "INFINEON",
+  "mpn_pattern": "ESD5V3U2U-03F",
+  "description": "20kV ESD Ultra-Low Capacitance Uni-Directional TVS Diode Array. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "3",
+    "mounting": "SMD",
+    "case": "SOTFL3"
+  },
+  "files": {
+    "footprint": "cern_esd5v3u2u_03f.kicad_mod",
+    "symbol": "cern_esd5v3u2u_03f.kicad_sym",
+    "footprint_svg": "cern_esd5v3u2u_03f.footprint.svg",
+    "symbol_svg": "cern_esd5v3u2u_03f.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Diodes.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/SOTFL40P120X59-3N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "20kv",
+    "esd",
+    "ultra",
+    "low",
+    "capacitance",
+    "uni"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Diodes#ESD5V3U2U-03F",
+      "symbol": "SchLib/Diodes.kicad_sym#Diode TVS Uni-Directionnal x2 C1A3_C2A3",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/SOTFL40P120X59-3N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

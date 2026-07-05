@@ -1,0 +1,55 @@
+{
+  "id": "cern_nrf51422_qfaa_t",
+  "name": "NRF51422-QFAA-T (CERN library)",
+  "category": "ic",
+  "family": "CERN Analog & Interface",
+  "manufacturer": "NORDIC SEMICONDUCTOR",
+  "mpn_pattern": "NRF51422-QFAA-T",
+  "description": "ANT and ANT/Bluetooth Low Energy Multiprotocol SoC. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "49",
+    "mounting": "SMD",
+    "case": "QFN48"
+  },
+  "files": {
+    "footprint": "cern_nrf51422_qfaa_t.kicad_mod",
+    "symbol": "cern_nrf51422_qfaa_t.kicad_sym",
+    "footprint_svg": "cern_nrf51422_qfaa_t.footprint.svg",
+    "symbol_svg": "cern_nrf51422_qfaa_t.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Analog & Interface.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/QFN40P600X600X90-49N-S470.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "ant",
+    "and",
+    "ant",
+    "bluetooth",
+    "low",
+    "energy"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Analog & Interface#NRF51422-QFAA-T",
+      "symbol": "SchLib/Analog & Interface.kicad_sym#NRF51422-QF",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/QFN40P600X600X90-49N-S470.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

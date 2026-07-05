@@ -1,0 +1,55 @@
+{
+  "id": "cern_emmc16g_tb29_70h01",
+  "name": "EMMC16G-TB29-70H01 (CERN library)",
+  "category": "ic",
+  "family": "CERN Logic",
+  "manufacturer": "KINGSTON TECHNOLOGY",
+  "mpn_pattern": "EMMC16G-TB29-70H01",
+  "description": "Embedded Multi-Media Card (e•MMC ™ 5.1) 16GB. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "153",
+    "mounting": "SMD",
+    "case": "BGA153"
+  },
+  "files": {
+    "footprint": "cern_emmc16g_tb29_70h01.kicad_mod",
+    "symbol": "cern_emmc16g_tb29_70h01.kicad_sym",
+    "footprint_svg": "cern_emmc16g_tb29_70h01.footprint.svg",
+    "symbol_svg": "cern_emmc16g_tb29_70h01.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Logic.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD_BGA.pretty/BGA153C50P14X14_1150X1300X80.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "embedded",
+    "multi",
+    "media",
+    "card",
+    "mmc",
+    "16gb"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Logic#EMMC16G-TB29-70H01",
+      "symbol": "SchLib/Logic.kicad_sym#EMMC16G-TB29-70H01",
+      "footprint": "PcbLib/ICs And Semiconductors SMD_BGA.pretty/BGA153C50P14X14_1150X1300X80.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

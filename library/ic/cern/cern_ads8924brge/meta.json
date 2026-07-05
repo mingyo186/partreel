@@ -1,0 +1,55 @@
+{
+  "id": "cern_ads8924brge",
+  "name": "ADS8924BRGE (CERN library)",
+  "category": "ic",
+  "family": "CERN Analog & Interface",
+  "manufacturer": "TEXAS INSTRUMENTS",
+  "mpn_pattern": "ADS8924BRGE",
+  "description": "16-Bit, High-Speed SAR ADCs with Integrated Reference Buffer, and Enhanced Performance Features. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "25",
+    "mounting": "SMD",
+    "case": "QFN24"
+  },
+  "files": {
+    "footprint": "cern_ads8924brge.kicad_mod",
+    "symbol": "cern_ads8924brge.kicad_sym",
+    "footprint_svg": "cern_ads8924brge.footprint.svg",
+    "symbol_svg": "cern_ads8924brge.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Analog & Interface.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/TEXAS_RGE0024H.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "bit",
+    "high",
+    "speed",
+    "sar",
+    "adcs",
+    "with"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Analog & Interface#ADS8924BRGE",
+      "symbol": "SchLib/Analog & Interface.kicad_sym#ADS8924BRGE",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/TEXAS_RGE0024H.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

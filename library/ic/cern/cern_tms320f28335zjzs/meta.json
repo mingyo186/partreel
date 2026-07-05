@@ -1,0 +1,55 @@
+{
+  "id": "cern_tms320f28335zjzs",
+  "name": "TMS320F28335ZJZS (CERN library)",
+  "category": "ic",
+  "family": "CERN Logic",
+  "manufacturer": "TEXAS INSTRUMENTS",
+  "mpn_pattern": "TMS320F28335ZJZS",
+  "description": "32-Bit 150MHz Digital Signal Processor (DSP). Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "176",
+    "mounting": "SMD",
+    "case": "BGA256"
+  },
+  "files": {
+    "footprint": "cern_tms320f28335zjzs.kicad_mod",
+    "symbol": "cern_tms320f28335zjzs.kicad_sym",
+    "footprint_svg": "cern_tms320f28335zjzs.footprint.svg",
+    "symbol_svg": "cern_tms320f28335zjzs.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Logic.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD_BGA.pretty/BGA176C100P14X14_1500X1500X205.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "bit",
+    "150mhz",
+    "digital",
+    "signal",
+    "processor",
+    "dsp"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Logic#TMS320F28335ZJZS",
+      "symbol": "SchLib/Logic.kicad_sym#TMS320F28335ZJZS",
+      "footprint": "PcbLib/ICs And Semiconductors SMD_BGA.pretty/BGA176C100P14X14_1500X1500X205.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

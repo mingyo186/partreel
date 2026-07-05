@@ -1,0 +1,55 @@
+{
+  "id": "cern_atxmega128a1u_au",
+  "name": "ATXMEGA128A1U-AU (CERN library)",
+  "category": "ic",
+  "family": "CERN Logic",
+  "manufacturer": "ATMEL",
+  "mpn_pattern": "ATXMEGA128A1U-AU",
+  "description": "8/16-bit AVR XMEGA A1U Microcontroller, 1.6-3.6V, 128KB + 8KB Flash, 2KB EEPROM, 8KB SRAM, 100-pin TQFP, Industrial Grade (-40°C to 85°C), Pb-Free. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "100",
+    "mounting": "SMD",
+    "case": "QFP100"
+  },
+  "files": {
+    "footprint": "cern_atxmega128a1u_au.kicad_mod",
+    "symbol": "cern_atxmega128a1u_au.kicad_sym",
+    "footprint_svg": "cern_atxmega128a1u_au.footprint.svg",
+    "symbol_svg": "cern_atxmega128a1u_au.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Logic.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/QFP50P1600X1600X120-100N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "bit",
+    "avr",
+    "xmega",
+    "a1u",
+    "microcontroller",
+    "128kb"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Logic#ATXMEGA128A1U-AU",
+      "symbol": "SchLib/Logic.kicad_sym#ATXMEGA128A1U-AU",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/QFP50P1600X1600X120-100N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

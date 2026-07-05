@@ -1,0 +1,55 @@
+{
+  "id": "cern_tms320f28379dzwts",
+  "name": "TMS320F28379DZWTS (CERN library)",
+  "category": "ic",
+  "family": "CERN Logic",
+  "manufacturer": "TEXAS INSTRUMENTS",
+  "mpn_pattern": "TMS320F28379DZWTS",
+  "description": "Dual-Core Microcontroller Temperature Range : -40 .. +125 °C. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "337",
+    "mounting": "SMD",
+    "case": "BGA337"
+  },
+  "files": {
+    "footprint": "cern_tms320f28379dzwts.kicad_mod",
+    "symbol": "cern_tms320f28379dzwts.kicad_sym",
+    "footprint_svg": "cern_tms320f28379dzwts.footprint.svg",
+    "symbol_svg": "cern_tms320f28379dzwts.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Logic.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD_BGA.pretty/BGA337C80P19X19_1600X1600X140.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "dual",
+    "core",
+    "microcontroller",
+    "temperature",
+    "range",
+    "125"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Logic#TMS320F28379DZWTS",
+      "symbol": "SchLib/Logic.kicad_sym#TMS320F28379DZWT",
+      "footprint": "PcbLib/ICs And Semiconductors SMD_BGA.pretty/BGA337C80P19X19_1600X1600X140.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

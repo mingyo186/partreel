@@ -1,0 +1,55 @@
+{
+  "id": "cern_ls1046asn8t1a",
+  "name": "LS1046ASN8T1A (CERN library)",
+  "category": "ic",
+  "family": "CERN Logic",
+  "manufacturer": "NXP",
+  "mpn_pattern": "LS1046ASN8T1A",
+  "description": "QorIQ® Layerscape Four Arm Cortex-A72 Cores 1800MHz Communications Processor, 780-Pin BGA. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "780",
+    "mounting": "SMD",
+    "case": "BGA780"
+  },
+  "files": {
+    "footprint": "cern_ls1046asn8t1a.kicad_mod",
+    "symbol": "cern_ls1046asn8t1a.kicad_sym",
+    "footprint_svg": "cern_ls1046asn8t1a.footprint.svg",
+    "symbol_svg": "cern_ls1046asn8t1a.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Logic.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD_BGA.pretty/BGA780C80P28X28_2300X2300X261.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "qoriq",
+    "layerscape",
+    "four",
+    "arm",
+    "cortex",
+    "a72"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Logic#LS1046ASN8T1A",
+      "symbol": "SchLib/Logic.kicad_sym#LS1046ASN8T1A",
+      "footprint": "PcbLib/ICs And Semiconductors SMD_BGA.pretty/BGA780C80P28X28_2300X2300X261.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

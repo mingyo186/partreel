@@ -1,0 +1,55 @@
+{
+  "id": "cern_max6746ka29",
+  "name": "MAX6746KA29 (CERN library)",
+  "category": "ic",
+  "family": "CERN Logic",
+  "manufacturer": "MAXIM",
+  "mpn_pattern": "MAX6746KA29",
+  "description": "uP Reset Circuits with Capacitor-Adjustable Reset/Watchdog Timeout Delay (Voltage Threshold 2.93V). Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "8",
+    "mounting": "SMD",
+    "case": "SOT23-8"
+  },
+  "files": {
+    "footprint": "cern_max6746ka29.kicad_mod",
+    "symbol": "cern_max6746ka29.kicad_sym",
+    "footprint_svg": "cern_max6746ka29.footprint.svg",
+    "symbol_svg": "cern_max6746ka29.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Logic.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/SOT65P280X145-8N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "reset",
+    "circuits",
+    "with",
+    "capacitor",
+    "adjustable",
+    "reset"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Logic#MAX6746KA29+",
+      "symbol": "SchLib/Logic.kicad_sym#MAX6746",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/SOT65P280X145-8N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

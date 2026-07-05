@@ -1,0 +1,55 @@
+{
+  "id": "cern_xc7a12t_1csg325i",
+  "name": "XC7A12T-1CSG325I (CERN library)",
+  "category": "ic",
+  "family": "CERN Logic",
+  "manufacturer": "XILINX",
+  "mpn_pattern": "XC7A12T-1CSG325I",
+  "description": "Artix-7 FPGA, 150 User I/Os, 0 GTP, 324-Ball BGA, Speed Grade 1, Industrial Grade, Pb-Free. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "324",
+    "mounting": "SMD",
+    "case": "BGA324"
+  },
+  "files": {
+    "footprint": "cern_xc7a12t_1csg325i.kicad_mod",
+    "symbol": "cern_xc7a12t_1csg325i.kicad_sym",
+    "footprint_svg": "cern_xc7a12t_1csg325i.footprint.svg",
+    "symbol_svg": "cern_xc7a12t_1csg325i.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Logic.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD_BGA.pretty/BGA324C80P18X18_1500X1500X150.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "artix",
+    "fpga",
+    "150",
+    "user",
+    "gtp",
+    "324"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Logic#XC7A12T-1CSG325I",
+      "symbol": "SchLib/Logic.kicad_sym#XC7A12T-1CSG325I",
+      "footprint": "PcbLib/ICs And Semiconductors SMD_BGA.pretty/BGA324C80P18X18_1500X1500X150.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

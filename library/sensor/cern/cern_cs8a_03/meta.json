@@ -1,0 +1,51 @@
+{
+  "id": "cern_cs8a_03",
+  "name": "CS8A-03 (CERN library)",
+  "category": "sensor",
+  "family": "CERN Sensors",
+  "manufacturer": "SENIS",
+  "mpn_pattern": "CS8A-03",
+  "description": "Current Sensors CS-03 series. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "9"
+  },
+  "files": {
+    "footprint": "cern_cs8a_03.kicad_mod",
+    "symbol": "cern_cs8a_03.kicad_sym",
+    "footprint_svg": "cern_cs8a_03.footprint.svg",
+    "symbol_svg": "cern_cs8a_03.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Sensors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors THD.pretty/SENIS_CS8A-03.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "current",
+    "sensors",
+    "series"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Sensors#CS8A-03",
+      "symbol": "SchLib/Sensors.kicad_sym#CS8A-03",
+      "footprint": "PcbLib/ICs And Semiconductors THD.pretty/SENIS_CS8A-03.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "cern_hmc637bpm5e",
+  "name": "HMC637BPM5E (CERN library)",
+  "category": "ic",
+  "family": "CERN Op Amps",
+  "manufacturer": "ANALOG DEVICES",
+  "mpn_pattern": "HMC637BPM5E",
+  "description": "GaAs, pHEMT, MMIC, Single Positive Supply, DC to 7.5 GHz, 1W Power Amplifier, −55°C to +85°C. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "33",
+    "mounting": "SMD",
+    "case": "QFN32"
+  },
+  "files": {
+    "footprint": "cern_hmc637bpm5e.kicad_mod",
+    "symbol": "cern_hmc637bpm5e.kicad_sym",
+    "footprint_svg": "cern_hmc637bpm5e.footprint.svg",
+    "symbol_svg": "cern_hmc637bpm5e.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Operational Amplifiers.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/QFN50P500X500X135-33N-S320.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "gaas",
+    "phemt",
+    "mmic",
+    "single",
+    "positive",
+    "supply"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Operational Amplifiers#HMC637BPM5E",
+      "symbol": "SchLib/Operational Amplifiers.kicad_sym#HMC637BPM5E",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/QFN50P500X500X135-33N-S320.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

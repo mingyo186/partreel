@@ -1,0 +1,54 @@
+{
+  "id": "cern_s13361_2050ne_08",
+  "name": "S13361-2050NE-08 (CERN library)",
+  "category": "sensor",
+  "family": "CERN Sensors",
+  "manufacturer": "HAMAMATSU",
+  "mpn_pattern": "S13361-2050NE-08",
+  "description": "2x2mm, 1584x64 Pixels, 8x8 Channel MPPC (Multi-Pixel Photon Counter). Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "64",
+    "mounting": "SMD"
+  },
+  "files": {
+    "footprint": "cern_s13361_2050ne_08.kicad_mod",
+    "symbol": "cern_s13361_2050ne_08.kicad_sym",
+    "footprint_svg": "cern_s13361_2050ne_08.footprint.svg",
+    "symbol_svg": "cern_s13361_2050ne_08.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Sensors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/HAMAMATSU_S13361-2050NE-08.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "2x2mm",
+    "1584x64",
+    "pixels",
+    "8x8",
+    "channel",
+    "mppc"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Sensors#S13361-2050NE-08",
+      "symbol": "SchLib/Sensors.kicad_sym#S13361-2050NE-08",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/HAMAMATSU_S13361-2050NE-08.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

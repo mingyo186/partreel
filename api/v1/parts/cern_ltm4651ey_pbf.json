@@ -1,0 +1,81 @@
+{
+  "id": "cern_ltm4651ey_pbf",
+  "name": "LTM4651EY (CERN library)",
+  "category": "ic",
+  "family": "CERN Regulators",
+  "manufacturer": "ANALOG DEVICES",
+  "mpn_pattern": "LTM4651EY",
+  "description": "3.6V-58V to 0.5V-26.5V, 24W, Inverting-Output DC/DC μModule Regulator. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "77",
+    "mounting": "SMD",
+    "case": "BGA77"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/ic/cern/cern_ltm4651ey_pbf/cern_ltm4651ey_pbf.kicad_mod",
+    "symbol": "https://partreel.com/library/ic/cern/cern_ltm4651ey_pbf/cern_ltm4651ey_pbf.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/ic/cern/cern_ltm4651ey_pbf/cern_ltm4651ey_pbf.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/ic/cern/cern_ltm4651ey_pbf/cern_ltm4651ey_pbf.symbol.svg"
+  },
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Regulators.kicad_sym",
+  "license": "CERN-OHL-P-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD_BGA.pretty/BGA77C127P7X11_900X1500X521.kicad_mod)",
+  "keywords": [
+    "cern",
+    "58v",
+    "24w",
+    "inverting",
+    "output",
+    "module",
+    "regulator"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD_BGA.pretty/BGA77C127P7X11_900X1500X521.kicad_mod)",
+    "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Regulators.kicad_sym",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_cern.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+      "source_commit": "53054c17",
+      "source_files": {
+        "db": "CERN.sqlite#Regulators#LTM4651EY#PBF",
+        "symbol": "SchLib/Regulators.kicad_sym#LTM4651",
+        "footprint": "PcbLib/ICs And Semiconductors SMD_BGA.pretty/BGA77C127P7X11_900X1500X521.kicad_mod"
+      },
+      "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+      "import_date": "2026-07-05",
+      "modifications": [
+        "extracted single symbol from library",
+        "stripped dead 3D model reference (upstream ships no 3D)"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/cern_ltm4651ey_pbf/",
+  "api": "https://partreel.com/api/v1/parts/cern_ltm4651ey_pbf.json"
+}

@@ -1,0 +1,55 @@
+{
+  "id": "cern_ap7313_33sag_7",
+  "name": "AP7313-33SA (CERN library)",
+  "category": "ic",
+  "family": "CERN Regulators",
+  "manufacturer": "DIODES INCORPORATED",
+  "mpn_pattern": "AP7313-33SA",
+  "description": "3.3V, 150mA Low Quiescent Current, Fast Transient Low Dropout Linear Regulator. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "3",
+    "mounting": "SMD",
+    "case": "SOT23"
+  },
+  "files": {
+    "footprint": "cern_ap7313_33sag_7.kicad_mod",
+    "symbol": "cern_ap7313_33sag_7.kicad_sym",
+    "footprint_svg": "cern_ap7313_33sag_7.footprint.svg",
+    "symbol_svg": "cern_ap7313_33sag_7.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Regulators.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/SOT95P240X130-3N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "150ma",
+    "low",
+    "quiescent",
+    "current",
+    "fast",
+    "transient"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Regulators#AP7313-33SAG-7",
+      "symbol": "SchLib/Regulators.kicad_sym#REG3 1IN-2OUT-3GND",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/SOT95P240X130-3N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

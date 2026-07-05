@@ -1,0 +1,53 @@
+{
+  "id": "cern_pi4ioe5v96224zl",
+  "name": "PI4IOE5V96224ZL (CERN library)",
+  "category": "ic",
+  "family": "CERN Analog & Interface",
+  "manufacturer": "DIODES INCORPORATED",
+  "mpn_pattern": "PI4IOE5V96224ZL",
+  "description": "24-Bit I2C-Bus I/O Expander. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "33",
+    "mounting": "SMD",
+    "case": "QFN32"
+  },
+  "files": {
+    "footprint": "cern_pi4ioe5v96224zl.kicad_mod",
+    "symbol": "cern_pi4ioe5v96224zl.kicad_sym",
+    "footprint_svg": "cern_pi4ioe5v96224zl.footprint.svg",
+    "symbol_svg": "cern_pi4ioe5v96224zl.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Analog & Interface.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/DIODES-INC_ZL32.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "bit",
+    "i2c",
+    "bus",
+    "expander"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Analog & Interface#PI4IOE5V96224ZL",
+      "symbol": "SchLib/Analog & Interface.kicad_sym#PI4IOE5V96224ZL",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/DIODES-INC_ZL32.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

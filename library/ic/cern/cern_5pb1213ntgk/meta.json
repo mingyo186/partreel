@@ -1,0 +1,55 @@
+{
+  "id": "cern_5pb1213ntgk",
+  "name": "5PB1213NTGK (CERN library)",
+  "category": "ic",
+  "family": "CERN Analog & Interface",
+  "manufacturer": "RENESAS",
+  "mpn_pattern": "5PB1213NTGK",
+  "description": "High-Performance TCXO/LVCMOS Clock Buffer Family. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "11",
+    "mounting": "SMD",
+    "case": "SON10"
+  },
+  "files": {
+    "footprint": "cern_5pb1213ntgk.kicad_mod",
+    "symbol": "cern_5pb1213ntgk.kicad_sym",
+    "footprint_svg": "cern_5pb1213ntgk.footprint.svg",
+    "symbol_svg": "cern_5pb1213ntgk.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Analog & Interface.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/SON40P200X200X80-11N-R100X160.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "high",
+    "performance",
+    "tcxo",
+    "lvcmos",
+    "clock",
+    "buffer"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Analog & Interface#5PB1213NTGK",
+      "symbol": "SchLib/Analog & Interface.kicad_sym#5PB1213",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/SON40P200X200X80-11N-R100X160.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

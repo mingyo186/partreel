@@ -1,0 +1,55 @@
+{
+  "id": "cern_mpm54504gbs_alt",
+  "name": "MPM54504GBS (CERN library)",
+  "category": "ic",
+  "family": "CERN Regulators",
+  "manufacturer": "MPS (MONOLITIC  POWER SYSTEMS)",
+  "mpn_pattern": "MPM54504GBS",
+  "description": "16V, Quad DC/DC Power Module with 5A Output Array. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "69",
+    "mounting": "SMD",
+    "case": "BGA69"
+  },
+  "files": {
+    "footprint": "cern_mpm54504gbs_alt.kicad_mod",
+    "symbol": "cern_mpm54504gbs_alt.kicad_sym",
+    "footprint_svg": "cern_mpm54504gbs_alt.footprint.svg",
+    "symbol_svg": "cern_mpm54504gbs_alt.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Regulators.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD_BGA.pretty/MPS_MPM54504GBS.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "16v",
+    "quad",
+    "power",
+    "module",
+    "with",
+    "output"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Regulators#MPM54504GBS [alt]",
+      "symbol": "SchLib/Regulators.kicad_sym#MPM54504GBS [alt]",
+      "footprint": "PcbLib/ICs And Semiconductors SMD_BGA.pretty/MPS_MPM54504GBS.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "id": "cern_fdb9403_f085",
+  "name": "FDB9403-F085 (CERN library)",
+  "category": "discrete",
+  "family": "CERN Transistors",
+  "manufacturer": "ON SEMICONDUCTOR",
+  "mpn_pattern": "FDB9403-F085",
+  "description": "40V, 110A, N-Channel Power Trench MOSFET. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: Obsolete.",
+  "parameters": {
+    "contacts": "3",
+    "mounting": "SMD",
+    "case": "D2PAK",
+    "lifecycle": "Obsolete"
+  },
+  "files": {
+    "footprint": "cern_fdb9403_f085.kicad_mod",
+    "symbol": "cern_fdb9403_f085.kicad_sym",
+    "footprint_svg": "cern_fdb9403_f085.footprint.svg",
+    "symbol_svg": "cern_fdb9403_f085.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Transistors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/TO254P1524X483-3N-R765X1075.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "40v",
+    "110a",
+    "channel",
+    "power",
+    "trench",
+    "mosfet"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Transistors#FDB9403-F085",
+      "symbol": "SchLib/Transistors.kicad_sym#N-MOSFET-D 1G 2S 3D",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/TO254P1524X483-3N-R765X1075.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

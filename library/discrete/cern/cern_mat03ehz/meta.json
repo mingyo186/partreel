@@ -1,0 +1,56 @@
+{
+  "id": "cern_mat03ehz",
+  "name": "MAT03EHZ (CERN library)",
+  "category": "discrete",
+  "family": "CERN Transistors",
+  "manufacturer": "ANALOG DEVICES",
+  "mpn_pattern": "MAT03EHZ",
+  "description": "Low Noise, Matched Dual PNP Transistor. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: Not Recommended.",
+  "parameters": {
+    "contacts": "6",
+    "case": "TO-78-6",
+    "lifecycle": "Not Recommended"
+  },
+  "files": {
+    "footprint": "cern_mat03ehz.kicad_mod",
+    "symbol": "cern_mat03ehz.kicad_sym",
+    "footprint_svg": "cern_mat03ehz.footprint.svg",
+    "symbol_svg": "cern_mat03ehz.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Transistors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors THD.pretty/TO-78-6.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "low",
+    "noise",
+    "matched",
+    "dual",
+    "pnp",
+    "transistor"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Transistors#MAT03EHZ",
+      "symbol": "SchLib/Transistors.kicad_sym#MAT03",
+      "footprint": "PcbLib/ICs And Semiconductors THD.pretty/TO-78-6.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

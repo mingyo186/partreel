@@ -1,0 +1,55 @@
+{
+  "id": "cern_afe5816zav",
+  "name": "AFE5816ZAV (CERN library)",
+  "category": "ic",
+  "family": "CERN Analog & Interface",
+  "manufacturer": "TEXAS INSTRUMENTS",
+  "mpn_pattern": "AFE5816ZAV",
+  "description": "16-Channel Ultrasound AFE with 90-mW/Channel Power, 1-nV/√Hz Noise, 14-Bit, 65-MSPS or 12-Bit, 80-MSPS ADC and Passive CW Mixer. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "289",
+    "mounting": "SMD",
+    "case": "BGA289"
+  },
+  "files": {
+    "footprint": "cern_afe5816zav.kicad_mod",
+    "symbol": "cern_afe5816zav.kicad_sym",
+    "footprint_svg": "cern_afe5816zav.footprint.svg",
+    "symbol_svg": "cern_afe5816zav.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Analog & Interface.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD_BGA.pretty/BGA289C80P17X17_1500X1500X140.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "channel",
+    "ultrasound",
+    "afe",
+    "with",
+    "channel",
+    "power"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Analog & Interface#AFE5816ZAV",
+      "symbol": "SchLib/Analog & Interface.kicad_sym#AFE5816",
+      "footprint": "PcbLib/ICs And Semiconductors SMD_BGA.pretty/BGA289C80P17X17_1500X1500X140.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

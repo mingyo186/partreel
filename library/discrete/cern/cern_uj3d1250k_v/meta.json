@@ -1,0 +1,51 @@
+{
+  "id": "cern_uj3d1250k_v",
+  "name": "UJ3D1250K (CERN library)",
+  "category": "discrete",
+  "family": "CERN Diodes",
+  "manufacturer": "UNITED SIC",
+  "mpn_pattern": "UJ3D1250K",
+  "description": "Schottky Diode. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "3",
+    "case": "TO-247-3L"
+  },
+  "files": {
+    "footprint": "cern_uj3d1250k_v.kicad_mod",
+    "symbol": "cern_uj3d1250k_v.kicad_sym",
+    "footprint_svg": "cern_uj3d1250k_v.footprint.svg",
+    "symbol_svg": "cern_uj3d1250k_v.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Diodes.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors THD.pretty/UNITEDSIC_TO-247-3L-V.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "schottky",
+    "diode"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Diodes#UJ3D1250K_V",
+      "symbol": "SchLib/Diodes.kicad_sym#Diode A1A3_C2",
+      "footprint": "PcbLib/ICs And Semiconductors THD.pretty/UNITEDSIC_TO-247-3L-V.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

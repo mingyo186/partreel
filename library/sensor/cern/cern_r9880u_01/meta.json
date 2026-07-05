@@ -1,0 +1,53 @@
+{
+  "id": "cern_r9880u_01",
+  "name": "R9880U-01 (CERN library)",
+  "category": "sensor",
+  "family": "CERN Sensors",
+  "manufacturer": "HAMAMATSU",
+  "mpn_pattern": "R9880U-01",
+  "description": "12 Leads Metal Package Photomultiplier Tube. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "0"
+  },
+  "files": {
+    "footprint": "cern_r9880u_01.kicad_mod",
+    "symbol": "cern_r9880u_01.kicad_sym",
+    "footprint_svg": "cern_r9880u_01.footprint.svg",
+    "symbol_svg": "cern_r9880u_01.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Sensors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors THD.pretty/HAMAMATSU_R9880U-XX.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "leads",
+    "metal",
+    "package",
+    "photomultiplier",
+    "tube"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Sensors#R9880U-01",
+      "symbol": "SchLib/Sensors.kicad_sym#R9880U-XX",
+      "footprint": "PcbLib/ICs And Semiconductors THD.pretty/HAMAMATSU_R9880U-XX.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

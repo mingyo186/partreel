@@ -1,0 +1,55 @@
+{
+  "id": "cern_ixft50n30q3",
+  "name": "IXFT50N30Q3 (CERN library)",
+  "category": "discrete",
+  "family": "CERN Transistors",
+  "manufacturer": "IXYS",
+  "mpn_pattern": "IXFT50N30Q3",
+  "description": "300V 50A N-Channel Polar HiPerFET Power MOSFET Q3-Class. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "3",
+    "mounting": "SMD",
+    "case": "D3PAK"
+  },
+  "files": {
+    "footprint": "cern_ixft50n30q3.kicad_mod",
+    "symbol": "cern_ixft50n30q3.kicad_sym",
+    "footprint_svg": "cern_ixft50n30q3.footprint.svg",
+    "symbol_svg": "cern_ixft50n30q3.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Transistors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/TO545P1890X510-3N-R1270X1605.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "300v",
+    "50a",
+    "channel",
+    "polar",
+    "hiperfet",
+    "power"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Transistors#IXFT50N30Q3",
+      "symbol": "SchLib/Transistors.kicad_sym#N-MOSFET-D 1G 2S 3D",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/TO545P1890X510-3N-R1270X1605.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

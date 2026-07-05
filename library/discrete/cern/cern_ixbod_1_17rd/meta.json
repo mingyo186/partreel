@@ -1,0 +1,51 @@
+{
+  "id": "cern_ixbod_1_17rd",
+  "name": "IXBOD 1-17RD (CERN library)",
+  "category": "discrete",
+  "family": "CERN Diodes",
+  "manufacturer": "IXYS",
+  "mpn_pattern": "IXBOD 1-17RD",
+  "description": "Breakover Diode (BOD). Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "2"
+  },
+  "files": {
+    "footprint": "cern_ixbod_1_17rd.kicad_mod",
+    "symbol": "cern_ixbod_1_17rd.kicad_sym",
+    "footprint_svg": "cern_ixbod_1_17rd.footprint.svg",
+    "symbol_svg": "cern_ixbod_1_17rd.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Diodes.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors THD.pretty/IXYS_IXBOD 1-12R..42.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "breakover",
+    "diode",
+    "bod"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Diodes#IXBOD 1-17RD",
+      "symbol": "SchLib/Diodes.kicad_sym#Diode BOD Type RD",
+      "footprint": "PcbLib/ICs And Semiconductors THD.pretty/IXYS_IXBOD 1-12R..42.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

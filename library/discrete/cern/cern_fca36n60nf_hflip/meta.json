@@ -1,0 +1,54 @@
+{
+  "id": "cern_fca36n60nf_hflip",
+  "name": "FCA36N60NF (CERN library)",
+  "category": "discrete",
+  "family": "CERN Transistors",
+  "manufacturer": "FAIRCHILD SEMICONDUCTOR",
+  "mpn_pattern": "FCA36N60NF",
+  "description": "600V 36A N-Channel MOSFET, FRFET. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "4",
+    "case": "TO-3PN"
+  },
+  "files": {
+    "footprint": "cern_fca36n60nf_hflip.kicad_mod",
+    "symbol": "cern_fca36n60nf_hflip.kicad_sym",
+    "footprint_svg": "cern_fca36n60nf_hflip.footprint.svg",
+    "symbol_svg": "cern_fca36n60nf_hflip.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Transistors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors THD.pretty/FAIRCHILD_TO-3P03A_hflip.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "600v",
+    "36a",
+    "channel",
+    "mosfet",
+    "frfet"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Transistors#FCA36N60NF_hflip",
+      "symbol": "SchLib/Transistors.kicad_sym#N-MOSFET-D 1G 2D 3S",
+      "footprint": "PcbLib/ICs And Semiconductors THD.pretty/FAIRCHILD_TO-3P03A_hflip.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

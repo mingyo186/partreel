@@ -1,0 +1,56 @@
+{
+  "id": "cern_bsr18a",
+  "name": "BSR18A (CERN library)",
+  "category": "discrete",
+  "family": "CERN Transistors",
+  "manufacturer": "FAIRCHILD SEMICONDUCTOR",
+  "mpn_pattern": "BSR18A",
+  "description": "40V 200mA PNP General-Purpose Amplifier. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: Obsolete.",
+  "parameters": {
+    "contacts": "3",
+    "mounting": "SMD",
+    "case": "SOT23-3",
+    "lifecycle": "Obsolete"
+  },
+  "files": {
+    "footprint": "cern_bsr18a.kicad_mod",
+    "symbol": "cern_bsr18a.kicad_sym",
+    "footprint_svg": "cern_bsr18a.footprint.svg",
+    "symbol_svg": "cern_bsr18a.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Transistors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/SOT95P240X110-3N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "40v",
+    "200ma",
+    "pnp",
+    "general",
+    "purpose",
+    "amplifier"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Transistors#BSR18A",
+      "symbol": "SchLib/Transistors.kicad_sym#PNP B1 E2 C3",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/SOT95P240X110-3N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "cern_cern_gan_controller_v2_1",
+  "name": "GAN_CONTROLLER_V2.1 (CERN library)",
+  "category": "ic",
+  "family": "CERN Analog & Interface",
+  "manufacturer": "CERN",
+  "mpn_pattern": "GAN_CONTROLLER_V2.1",
+  "description": "IC REG CTRLR BUCK 32QFN.  Version 2.1. PWM signal removed and SW clamp added in a separate pin. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "33",
+    "mounting": "SMD",
+    "case": "QFN33"
+  },
+  "files": {
+    "footprint": "cern_cern_gan_controller_v2_1.kicad_mod",
+    "symbol": "cern_cern_gan_controller_v2_1.kicad_sym",
+    "footprint_svg": "cern_cern_gan_controller_v2_1.footprint.svg",
+    "symbol_svg": "cern_cern_gan_controller_v2_1.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Analog & Interface.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/QFN50P500X500X90-33N-S360.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "reg",
+    "ctrlr",
+    "buck",
+    "32qfn",
+    "version",
+    "pwm"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Analog & Interface#CERN_GAN_CONTROLLER_V2.1",
+      "symbol": "SchLib/Analog & Interface.kicad_sym#CERN_GAN_CONTROLLER_V2.1",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/QFN50P500X500X90-33N-S360.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

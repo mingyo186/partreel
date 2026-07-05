@@ -1,0 +1,53 @@
+{
+  "id": "cern_mej2d1212sc",
+  "name": "MEJ2D1212SC (CERN library)",
+  "category": "power",
+  "family": "CERN DC-DC Converters",
+  "manufacturer": "MURATA",
+  "mpn_pattern": "MEJ2D1212SC",
+  "description": "12VDC to ±12VDC, Iout (max) ±83mA, 5.2kVDC Isolated, 2W DC-DC Converter. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "5"
+  },
+  "files": {
+    "footprint": "cern_mej2d1212sc.kicad_mod",
+    "symbol": "cern_mej2d1212sc.kicad_sym",
+    "footprint_svg": "cern_mej2d1212sc.footprint.svg",
+    "symbol_svg": "cern_mej2d1212sc.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/DC-DC Converters.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors THD.pretty/DCDC_MURATA_MEJ2D.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "12vdc",
+    "12vdc",
+    "iout",
+    "max",
+    "83ma",
+    "2kvdc"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#DC-DC Converters#MEJ2D1212SC",
+      "symbol": "SchLib/DC-DC Converters.kicad_sym#DCDC_MURATA_MEJ2_Dual Output",
+      "footprint": "PcbLib/ICs And Semiconductors THD.pretty/DCDC_MURATA_MEJ2D.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

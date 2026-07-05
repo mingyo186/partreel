@@ -1,0 +1,54 @@
+{
+  "id": "cern_acs37012llzatr_030b3",
+  "name": "ACS37012LLZATR-030B3 (CERN library)",
+  "category": "sensor",
+  "family": "CERN Sensors",
+  "manufacturer": "ALLEGRO MICROSYSTEM",
+  "mpn_pattern": "ACS37012LLZATR-030B3",
+  "description": "450 kHz, High Accuracy Current Sensor with FAULT or Reference Output in SOIC-6 Package. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "6",
+    "mounting": "SMD"
+  },
+  "files": {
+    "footprint": "cern_acs37012llzatr_030b3.kicad_mod",
+    "symbol": "cern_acs37012llzatr_030b3.kicad_sym",
+    "footprint_svg": "cern_acs37012llzatr_030b3.footprint.svg",
+    "symbol_svg": "cern_acs37012llzatr_030b3.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Sensors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/ALLEGRO_LZ.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "450",
+    "khz",
+    "high",
+    "accuracy",
+    "current",
+    "sensor"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Sensors#ACS37012LLZATR-030B3",
+      "symbol": "SchLib/Sensors.kicad_sym#ACS37012",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/ALLEGRO_LZ.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "id": "cern_max77751cefg_alt",
+  "name": "MAX77751CEFG (CERN library)",
+  "category": "ic",
+  "family": "CERN Analog & Interface",
+  "manufacturer": "MAXIM",
+  "mpn_pattern": "MAX77751CEFG",
+  "description": "4.2V Battery Termination, 3.15A USB-C Autonomous Charger for 1-Cell Li+ Batteries. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: Not Recommended.",
+  "parameters": {
+    "contacts": "24",
+    "mounting": "SMD",
+    "case": "QFN24",
+    "lifecycle": "Not Recommended"
+  },
+  "files": {
+    "footprint": "cern_max77751cefg_alt.kicad_mod",
+    "symbol": "cern_max77751cefg_alt.kicad_sym",
+    "footprint_svg": "cern_max77751cefg_alt.footprint.svg",
+    "symbol_svg": "cern_max77751cefg_alt.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Analog & Interface.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/MAXIM_FC2QFN.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "battery",
+    "termination",
+    "15a",
+    "usb",
+    "autonomous",
+    "charger"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Analog & Interface#MAX77751CEFG+ [alt]",
+      "symbol": "SchLib/Analog & Interface.kicad_sym#MAX77751 [alt]",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/MAXIM_FC2QFN.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

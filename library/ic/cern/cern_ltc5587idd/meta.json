@@ -1,0 +1,55 @@
+{
+  "id": "cern_ltc5587idd",
+  "name": "LTC5587IDD (CERN library)",
+  "category": "ic",
+  "family": "CERN Analog & Interface",
+  "manufacturer": "ANALOG DEVICES",
+  "mpn_pattern": "LTC5587IDD",
+  "description": "100MHz to 40GHz Linear-in-dB RMS Power Detector with 35dB Dynamic Range, -40°C to 105°C. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "13",
+    "mounting": "SMD",
+    "case": "SON12"
+  },
+  "files": {
+    "footprint": "cern_ltc5587idd.kicad_mod",
+    "symbol": "cern_ltc5587idd.kicad_sym",
+    "footprint_svg": "cern_ltc5587idd.footprint.svg",
+    "symbol_svg": "cern_ltc5587idd.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Analog & Interface.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/SON45P300X300X80-13N-R175X248.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "100mhz",
+    "40ghz",
+    "linear",
+    "rms",
+    "power",
+    "detector"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Analog & Interface#LTC5587IDD",
+      "symbol": "SchLib/Analog & Interface.kicad_sym#LTC5587",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/SON45P300X300X80-13N-R175X248.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

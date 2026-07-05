@@ -1,0 +1,78 @@
+{
+  "id": "cern_s25fs512sagnfi01_alt",
+  "name": "S25FS512SAGNFI01 (CERN library)",
+  "category": "ic",
+  "family": "CERN Logic",
+  "manufacturer": "INFINEON",
+  "mpn_pattern": "S25FS512SAGNFI01",
+  "description": "512Mbit (64MB), 1.8V, FS-S Flash, -40°C to +85°C. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "9",
+    "mounting": "SMD",
+    "case": "WSON8"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/ic/cern/cern_s25fs512sagnfi01_alt/cern_s25fs512sagnfi01_alt.kicad_mod",
+    "symbol": "https://partreel.com/library/ic/cern/cern_s25fs512sagnfi01_alt/cern_s25fs512sagnfi01_alt.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/ic/cern/cern_s25fs512sagnfi01_alt/cern_s25fs512sagnfi01_alt.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/ic/cern/cern_s25fs512sagnfi01_alt/cern_s25fs512sagnfi01_alt.symbol.svg"
+  },
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Logic.kicad_sym",
+  "license": "CERN-OHL-P-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/SON127P800X600X80-9N-R350X410.kicad_mod)",
+  "keywords": [
+    "cern",
+    "512mbit",
+    "64mb",
+    "flash"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/SON127P800X600X80-9N-R350X410.kicad_mod)",
+    "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Logic.kicad_sym",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_cern.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+      "source_commit": "53054c17",
+      "source_files": {
+        "db": "CERN.sqlite#Logic#S25FS512SAGNFI01 [alt]",
+        "symbol": "SchLib/Logic.kicad_sym#S25FS512SAGNFI01 [alt]",
+        "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/SON127P800X600X80-9N-R350X410.kicad_mod"
+      },
+      "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+      "import_date": "2026-07-05",
+      "modifications": [
+        "extracted single symbol from library",
+        "stripped dead 3D model reference (upstream ships no 3D)"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/cern_s25fs512sagnfi01_alt/",
+  "api": "https://partreel.com/api/v1/parts/cern_s25fs512sagnfi01_alt.json"
+}

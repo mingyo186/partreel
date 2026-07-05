@@ -1,0 +1,55 @@
+{
+  "id": "cern_si53301_b_gm",
+  "name": "SI53301-B-GM (CERN library)",
+  "category": "ic",
+  "family": "CERN Logic",
+  "manufacturer": "SKYWORKS",
+  "mpn_pattern": "SI53301-B-GM",
+  "description": "Ultra-Low Additive Jitter Fanout Clock Buffers with up to 10 Universal Outputs from Any-Format Input and Wide Frequency Range from 1 MHz to 725 MHz. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "33",
+    "mounting": "SMD",
+    "case": "QFN32"
+  },
+  "files": {
+    "footprint": "cern_si53301_b_gm.kicad_mod",
+    "symbol": "cern_si53301_b_gm.kicad_sym",
+    "footprint_svg": "cern_si53301_b_gm.footprint.svg",
+    "symbol_svg": "cern_si53301_b_gm.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Logic.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/QFN50P500X500X100-33N-S230.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "ultra",
+    "low",
+    "additive",
+    "jitter",
+    "fanout",
+    "clock"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Logic#SI53301-B-GM",
+      "symbol": "SchLib/Logic.kicad_sym#SI53301",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/QFN50P500X500X100-33N-S230.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

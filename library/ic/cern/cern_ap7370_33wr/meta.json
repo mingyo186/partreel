@@ -1,0 +1,56 @@
+{
+  "id": "cern_ap7370_33wr",
+  "name": "AP7370-33WR (CERN library)",
+  "category": "ic",
+  "family": "CERN Regulators",
+  "manufacturer": "DIODES INCORPORATED",
+  "mpn_pattern": "AP7370-33WR",
+  "description": "3.3V 300mA Wide Input Voltage Range, uLDO Regulator. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: Obsolete.",
+  "parameters": {
+    "contacts": "5",
+    "mounting": "SMD",
+    "case": "SOT25",
+    "lifecycle": "Obsolete"
+  },
+  "files": {
+    "footprint": "cern_ap7370_33wr.kicad_mod",
+    "symbol": "cern_ap7370_33wr.kicad_sym",
+    "footprint_svg": "cern_ap7370_33wr.footprint.svg",
+    "symbol_svg": "cern_ap7370_33wr.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Regulators.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/SOT95P285X140-5N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "300ma",
+    "wide",
+    "input",
+    "voltage",
+    "range",
+    "uldo"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Regulators#AP7370-33WR",
+      "symbol": "SchLib/Regulators.kicad_sym#AP7370-XXWR",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/SOT95P285X140-5N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

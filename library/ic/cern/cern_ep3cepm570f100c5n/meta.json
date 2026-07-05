@@ -1,0 +1,55 @@
+{
+  "id": "cern_ep3cepm570f100c5n",
+  "name": "EPM570F100C5N (CERN library)",
+  "category": "ic",
+  "family": "CERN Logic",
+  "manufacturer": "ALTERA",
+  "mpn_pattern": "EPM570F100C5N",
+  "description": "MAX II 3.3/2.5V CPLD, 76 IOs, 570 Logic Elements, 100-Pin Fineline BGA, Commercial Temperature, Speed Grade 5, Pb-Free. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "100",
+    "mounting": "SMD",
+    "case": "BGA100"
+  },
+  "files": {
+    "footprint": "cern_ep3cepm570f100c5n.kicad_mod",
+    "symbol": "cern_ep3cepm570f100c5n.kicad_sym",
+    "footprint_svg": "cern_ep3cepm570f100c5n.footprint.svg",
+    "symbol_svg": "cern_ep3cepm570f100c5n.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Logic.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD_BGA.pretty/BGA100C100P10X10_1100X1100X155.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "max",
+    "cpld",
+    "ios",
+    "570",
+    "logic",
+    "elements"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Logic#EP3CEPM570F100C5N",
+      "symbol": "SchLib/Logic.kicad_sym#EPM570F100C5N",
+      "footprint": "PcbLib/ICs And Semiconductors SMD_BGA.pretty/BGA100C100P10X10_1100X1100X155.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

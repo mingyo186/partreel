@@ -1,0 +1,53 @@
+{
+  "id": "cern_semix302kt16s",
+  "name": "SEMIX302KT16S (CERN library)",
+  "category": "discrete",
+  "family": "CERN Diodes",
+  "manufacturer": "SEMIKRON",
+  "mpn_pattern": "SEMIX302KT16S",
+  "description": "1600V 300A Rectifier Thyristor Module. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "9"
+  },
+  "files": {
+    "footprint": "cern_semix302kt16s.kicad_mod",
+    "symbol": "cern_semix302kt16s.kicad_sym",
+    "footprint_svg": "cern_semix302kt16s.footprint.svg",
+    "symbol_svg": "cern_semix302kt16s.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Diodes.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors THD.pretty/SEMIKRON_SEMIX 2S.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "1600v",
+    "300a",
+    "rectifier",
+    "thyristor",
+    "module"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Diodes#SEMIX302KT16S",
+      "symbol": "SchLib/Diodes.kicad_sym#SEMIX302KT16S",
+      "footprint": "PcbLib/ICs And Semiconductors THD.pretty/SEMIKRON_SEMIX 2S.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

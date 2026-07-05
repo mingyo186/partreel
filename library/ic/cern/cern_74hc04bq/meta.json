@@ -1,0 +1,50 @@
+{
+  "id": "cern_74hc04bq",
+  "name": "74HC04BQ (CERN library)",
+  "category": "ic",
+  "family": "CERN Standard Logic",
+  "manufacturer": "NEXPERIA",
+  "mpn_pattern": "74HC04BQ",
+  "description": "Hex Inverters. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "15",
+    "case": "QFN14"
+  },
+  "files": {
+    "footprint": "cern_74hc04bq.kicad_mod",
+    "symbol": "cern_74hc04bq.kicad_sym",
+    "footprint_svg": "cern_74hc04bq.footprint.svg",
+    "symbol_svg": "cern_74hc04bq.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Standard Logic.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/QFN50P250X300X100-15N-R115X165.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "hex",
+    "inverters"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Standard Logic#74HC04BQ",
+      "symbol": "SchLib/Standard Logic.kicad_sym#7404BQ",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/QFN50P250X300X100-15N-R115X165.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

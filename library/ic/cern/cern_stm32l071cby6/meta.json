@@ -1,0 +1,55 @@
+{
+  "id": "cern_stm32l071cby6",
+  "name": "STM32L071CBY6 (CERN library)",
+  "category": "ic",
+  "family": "CERN Logic",
+  "manufacturer": "ST MICROELECTRONICS",
+  "mpn_pattern": "STM32L071CBY6",
+  "description": "Access line ultra-low-power 32-bit MCU Arm®-based Cortex®-M0+, up to 192KB Flash, 20KB SRAM, 6KB EEPROM, ADC. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "49",
+    "mounting": "SMD",
+    "case": "BGA49"
+  },
+  "files": {
+    "footprint": "cern_stm32l071cby6.kicad_mod",
+    "symbol": "cern_stm32l071cby6.kicad_sym",
+    "footprint_svg": "cern_stm32l071cby6.footprint.svg",
+    "symbol_svg": "cern_stm32l071cby6.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Logic.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD_BGA.pretty/BGA49C40P7X7_330X326X60.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "access",
+    "line",
+    "ultra",
+    "low",
+    "power",
+    "bit"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Logic#STM32L071CBY6",
+      "symbol": "SchLib/Logic.kicad_sym#STM32L071CBY6",
+      "footprint": "PcbLib/ICs And Semiconductors SMD_BGA.pretty/BGA49C40P7X7_330X326X60.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

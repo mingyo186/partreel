@@ -1,0 +1,55 @@
+{
+  "id": "cern_pma_5455",
+  "name": "PMA-5455 (CERN library)",
+  "category": "ic",
+  "family": "CERN Op Amps",
+  "manufacturer": "MINI-CIRCUITS",
+  "mpn_pattern": "PMA-5455",
+  "description": "Low Noise, High IP3, 0.05 to 5GHz, 50 Ohm, Monolithic Amplifier. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "8",
+    "mounting": "SMD",
+    "case": "DQ849"
+  },
+  "files": {
+    "footprint": "cern_pma_5455.kicad_mod",
+    "symbol": "cern_pma_5455.kicad_sym",
+    "footprint_svg": "cern_pma_5455.footprint.svg",
+    "symbol_svg": "cern_pma_5455.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Operational Amplifiers.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/MINI-CIRCUITS_DQ849.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "low",
+    "noise",
+    "high",
+    "ip3",
+    "5ghz",
+    "ohm"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Operational Amplifiers#PMA-5455+",
+      "symbol": "SchLib/Operational Amplifiers.kicad_sym#PMA-5455+",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/MINI-CIRCUITS_DQ849.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

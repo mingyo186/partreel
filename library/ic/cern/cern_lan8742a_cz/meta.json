@@ -1,0 +1,55 @@
+{
+  "id": "cern_lan8742a_cz",
+  "name": "LAN8742A-CZ (CERN library)",
+  "category": "ic",
+  "family": "CERN Analog & Interface",
+  "manufacturer": "MICROCHIP TECHNOLOGY",
+  "mpn_pattern": "LAN8742A-CZ",
+  "description": "10/100 Base-T/TX Ethernet Transceiver with Cable Diagnostics. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "25",
+    "mounting": "SMD",
+    "case": "QFN24"
+  },
+  "files": {
+    "footprint": "cern_lan8742a_cz.kicad_mod",
+    "symbol": "cern_lan8742a_cz.kicad_sym",
+    "footprint_svg": "cern_lan8742a_cz.footprint.svg",
+    "symbol_svg": "cern_lan8742a_cz.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Analog & Interface.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/MICROCHIP_C04-143B.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "100",
+    "base",
+    "ethernet",
+    "transceiver",
+    "with",
+    "cable"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Analog & Interface#LAN8742A-CZ",
+      "symbol": "SchLib/Analog & Interface.kicad_sym#LAN8742A-CZ",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/MICROCHIP_C04-143B.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

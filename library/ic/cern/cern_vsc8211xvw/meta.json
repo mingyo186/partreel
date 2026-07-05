@@ -1,0 +1,55 @@
+{
+  "id": "cern_vsc8211xvw",
+  "name": "VSC8211XVW (CERN library)",
+  "category": "ic",
+  "family": "CERN Analog & Interface",
+  "manufacturer": "VITESSE SEMICONDUCTOR",
+  "mpn_pattern": "VSC8211XVW",
+  "description": "Single Port 10/100/1000BASE-T PHY and 1000BASE-X PHY with SGMII, SerDes, GMII, MII, TBI, RGMII / RTBI MAC Interfaces. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "117",
+    "mounting": "SMD",
+    "case": "BGA117"
+  },
+  "files": {
+    "footprint": "cern_vsc8211xvw.kicad_mod",
+    "symbol": "cern_vsc8211xvw.kicad_sym",
+    "footprint_svg": "cern_vsc8211xvw.footprint.svg",
+    "symbol_svg": "cern_vsc8211xvw.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Analog & Interface.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD_BGA.pretty/BGA117C100P13X9_1400X1000X170.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "single",
+    "port",
+    "100",
+    "1000base",
+    "phy",
+    "and"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Analog & Interface#VSC8211XVW",
+      "symbol": "SchLib/Analog & Interface.kicad_sym#VSC8211XVW",
+      "footprint": "PcbLib/ICs And Semiconductors SMD_BGA.pretty/BGA117C100P13X9_1400X1000X170.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

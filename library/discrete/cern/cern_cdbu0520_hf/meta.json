@@ -1,0 +1,55 @@
+{
+  "id": "cern_cdbu0520_hf",
+  "name": "CDBU0520-HF (CERN library)",
+  "category": "discrete",
+  "family": "CERN Diodes",
+  "manufacturer": "COMCHIP",
+  "mpn_pattern": "CDBU0520-HF",
+  "description": "20V Surface mount Schottky Barrier Diode. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "2",
+    "mounting": "SMD",
+    "case": "SOD-523F"
+  },
+  "files": {
+    "footprint": "cern_cdbu0520_hf.kicad_mod",
+    "symbol": "cern_cdbu0520_hf.kicad_sym",
+    "footprint_svg": "cern_cdbu0520_hf.footprint.svg",
+    "symbol_svg": "cern_cdbu0520_hf.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Diodes.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/SOD-523F.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "20v",
+    "surface",
+    "mount",
+    "schottky",
+    "barrier",
+    "diode"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Diodes#CDBU0520-HF",
+      "symbol": "SchLib/Diodes.kicad_sym#Diode Schottky",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/SOD-523F.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

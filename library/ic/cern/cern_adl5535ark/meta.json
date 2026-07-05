@@ -1,0 +1,53 @@
+{
+  "id": "cern_adl5535ark",
+  "name": "ADL5535ARK (CERN library)",
+  "category": "ic",
+  "family": "CERN Op Amps",
+  "manufacturer": "ANALOG DEVICES",
+  "mpn_pattern": "ADL5535ARK",
+  "description": "20MHz to 1GHz IF Gain Block. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "4",
+    "mounting": "SMD",
+    "case": "SOT89"
+  },
+  "files": {
+    "footprint": "cern_adl5535ark.kicad_mod",
+    "symbol": "cern_adl5535ark.kicad_sym",
+    "footprint_svg": "cern_adl5535ark.footprint.svg",
+    "symbol_svg": "cern_adl5535ark.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Operational Amplifiers.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/ANALOG-DEVICES_SOT-89(RK-3).kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "20mhz",
+    "1ghz",
+    "gain",
+    "block"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Operational Amplifiers#ADL5535ARK",
+      "symbol": "SchLib/Operational Amplifiers.kicad_sym#ADL5535",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/ANALOG-DEVICES_SOT-89(RK-3).kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

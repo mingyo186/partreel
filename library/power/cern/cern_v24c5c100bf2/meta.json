@@ -1,0 +1,54 @@
+{
+  "id": "cern_v24c5c100bf2",
+  "name": "V24C5C100BF2 (CERN library)",
+  "category": "power",
+  "family": "CERN DC-DC Converters",
+  "manufacturer": "VICOR",
+  "mpn_pattern": "V24C5C100BF2",
+  "description": "18-36VDC to 5VDC, -20°C to 100°C, 100W DC-DC Converter, Short Pin RoHS, Threaded Baseplate  (Micro Family). Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "7"
+  },
+  "files": {
+    "footprint": "cern_v24c5c100bf2.kicad_mod",
+    "symbol": "cern_v24c5c100bf2.kicad_sym",
+    "footprint_svg": "cern_v24c5c100bf2.footprint.svg",
+    "symbol_svg": "cern_v24c5c100bf2.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/DC-DC Converters.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors THD.pretty/VICOR_VxxCxxxxxxBF2.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "36vdc",
+    "5vdc",
+    "100",
+    "100w",
+    "converter",
+    "short"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#DC-DC Converters#V24C5C100BF2",
+      "symbol": "SchLib/DC-DC Converters.kicad_sym#DCDC_VICOR_Micro",
+      "footprint": "PcbLib/ICs And Semiconductors THD.pretty/VICOR_VxxCxxxxxxBF2.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

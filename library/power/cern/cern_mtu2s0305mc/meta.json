@@ -1,0 +1,54 @@
+{
+  "id": "cern_mtu2s0305mc",
+  "name": "MTU2S0305MC (CERN library)",
+  "category": "power",
+  "family": "CERN DC-DC Converters",
+  "manufacturer": "MURATA POWER SOLUTIONS",
+  "mpn_pattern": "MTU2S0305MC",
+  "description": "3.3V to 5V, Iout (max) 400mA, 1kVDC Isolated, 2W Single Output DC-DC Converter. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "5",
+    "mounting": "SMD"
+  },
+  "files": {
+    "footprint": "cern_mtu2s0305mc.kicad_mod",
+    "symbol": "cern_mtu2s0305mc.kicad_sym",
+    "footprint_svg": "cern_mtu2s0305mc.footprint.svg",
+    "symbol_svg": "cern_mtu2s0305mc.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/DC-DC Converters.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/DCDC_MURATA_MTU2.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "iout",
+    "max",
+    "400ma",
+    "1kvdc",
+    "isolated",
+    "single"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#DC-DC Converters#MTU2S0305MC",
+      "symbol": "SchLib/DC-DC Converters.kicad_sym#DCDC_MURATA_MTU2_Single Output",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/DCDC_MURATA_MTU2.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

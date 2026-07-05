@@ -1,0 +1,55 @@
+{
+  "id": "cern_max6642att9a_t",
+  "name": "MAX6642ATT9A+T (CERN library)",
+  "category": "sensor",
+  "family": "CERN Sensors",
+  "manufacturer": "MAXIM",
+  "mpn_pattern": "MAX6642ATT9A+T",
+  "description": "0°C to +125°C, ±1°C, SMBus-Compatible Remote/Local Temperature Sensor with Overtemperature Alarm (Address 1001 101). Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "7",
+    "mounting": "SMD",
+    "case": "SON6"
+  },
+  "files": {
+    "footprint": "cern_max6642att9a_t.kicad_mod",
+    "symbol": "cern_max6642att9a_t.kicad_sym",
+    "footprint_svg": "cern_max6642att9a_t.footprint.svg",
+    "symbol_svg": "cern_max6642att9a_t.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Sensors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/SON95P300X300X80-7N-R160X240.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "125",
+    "smbus",
+    "compatible",
+    "remote",
+    "local",
+    "temperature"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Sensors#MAX6642ATT9A+T",
+      "symbol": "SchLib/Sensors.kicad_sym#MAX6642ATT",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/SON95P300X300X80-7N-R160X240.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

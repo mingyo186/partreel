@@ -1,0 +1,55 @@
+{
+  "id": "cern_tss_13hln",
+  "name": "TSS-13HLN+ (CERN library)",
+  "category": "ic",
+  "family": "CERN Op Amps",
+  "manufacturer": "MINI-CIRCUITS",
+  "mpn_pattern": "TSS-13HLN+",
+  "description": "1MHz to 1GHz, 50 Ohm, Ultra High Dynamic Range, Shutdown Monolithic Amplifier. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "12",
+    "mounting": "SMD",
+    "case": "DQ1225"
+  },
+  "files": {
+    "footprint": "cern_tss_13hln.kicad_mod",
+    "symbol": "cern_tss_13hln.kicad_sym",
+    "footprint_svg": "cern_tss_13hln.footprint.svg",
+    "symbol_svg": "cern_tss_13hln.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Operational Amplifiers.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/MINI-CIRCUITS_DQ1225.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "1mhz",
+    "1ghz",
+    "ohm",
+    "ultra",
+    "high",
+    "dynamic"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Operational Amplifiers#TSS-13HLN+",
+      "symbol": "SchLib/Operational Amplifiers.kicad_sym#TSS-13",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/MINI-CIRCUITS_DQ1225.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

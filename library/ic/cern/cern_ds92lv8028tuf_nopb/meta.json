@@ -1,0 +1,51 @@
+{
+  "id": "cern_ds92lv8028tuf_nopb",
+  "name": "DS92LV8028TUF (CERN library)",
+  "category": "ic",
+  "family": "CERN Analog & Interface",
+  "manufacturer": "NATIONAL SEMICONDUCTOR",
+  "mpn_pattern": "DS92LV8028TUF",
+  "description": "8 Channel 10:1 Serializer. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "196",
+    "mounting": "SMD",
+    "case": "BGA196"
+  },
+  "files": {
+    "footprint": "cern_ds92lv8028tuf_nopb.kicad_mod",
+    "symbol": "cern_ds92lv8028tuf_nopb.kicad_sym",
+    "footprint_svg": "cern_ds92lv8028tuf_nopb.footprint.svg",
+    "symbol_svg": "cern_ds92lv8028tuf_nopb.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Analog & Interface.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD_BGA.pretty/BGA196C100P14X14_1500X1500X147.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "channel",
+    "serializer"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Analog & Interface#DS92LV8028TUF/NOPB",
+      "symbol": "SchLib/Analog & Interface.kicad_sym#DS92LV8028TUF",
+      "footprint": "PcbLib/ICs And Semiconductors SMD_BGA.pretty/BGA196C100P14X14_1500X1500X147.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

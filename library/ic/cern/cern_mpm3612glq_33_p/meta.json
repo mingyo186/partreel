@@ -1,0 +1,55 @@
+{
+  "id": "cern_mpm3612glq_33_p",
+  "name": "MPM3612GLQ-33-P (CERN library)",
+  "category": "ic",
+  "family": "CERN Regulators",
+  "manufacturer": "MPS (MONOLITIC  POWER SYSTEMS)",
+  "mpn_pattern": "MPM3612GLQ-33-P",
+  "description": "3V to 22V Input, 1A, Ultra-Low 5µA IQ Power Module. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "9",
+    "mounting": "SMD",
+    "case": "LGA8"
+  },
+  "files": {
+    "footprint": "cern_mpm3612glq_33_p.kicad_mod",
+    "symbol": "cern_mpm3612glq_33_p.kicad_sym",
+    "footprint_svg": "cern_mpm3612glq_33_p.footprint.svg",
+    "symbol_svg": "cern_mpm3612glq_33_p.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Regulators.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/MPS_MPM3612.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "22v",
+    "input",
+    "ultra",
+    "low",
+    "power",
+    "module"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Regulators#MPM3612GLQ-33-P",
+      "symbol": "SchLib/Regulators.kicad_sym#MPM3612",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/MPS_MPM3612.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

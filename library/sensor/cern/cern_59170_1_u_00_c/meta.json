@@ -1,0 +1,55 @@
+{
+  "id": "cern_59170_1_u_00_c",
+  "name": "59170-1-U-00-C (CERN library)",
+  "category": "sensor",
+  "family": "CERN Sensors",
+  "manufacturer": "HAMLIN",
+  "mpn_pattern": "59170-1-U-00-C",
+  "description": "SMD Proximity Sensor, 59170 Series (Activate Distance 5mm). Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "2",
+    "mounting": "SMD"
+  },
+  "files": {
+    "footprint": "cern_59170_1_u_00_c.kicad_mod",
+    "symbol": "cern_59170_1_u_00_c.kicad_sym",
+    "footprint_svg": "cern_59170_1_u_00_c.footprint.svg",
+    "symbol_svg": "cern_59170_1_u_00_c.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Sensors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/HAMLIN_59170-1-X-00-C.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "smd",
+    "proximity",
+    "sensor",
+    "59170",
+    "series",
+    "activate"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Sensors#59170-1-U-00-C",
+      "symbol": "SchLib/Sensors.kicad_sym#Magnetic Proximity Sensor NO",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/HAMLIN_59170-1-X-00-C.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

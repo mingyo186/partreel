@@ -1,0 +1,53 @@
+{
+  "id": "cern_mt40a1g16tb_062e_f",
+  "name": "MT40A1G16TB-062E:F (CERN library)",
+  "category": "ic",
+  "family": "CERN Logic",
+  "manufacturer": "MICRON TECHNOLOGY",
+  "mpn_pattern": "MT40A1G16TB-062E:F",
+  "description": "+1.2V, 16Gb (1Gig x 16) DDR4 SDRAM. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "96",
+    "mounting": "SMD",
+    "case": "BGA96"
+  },
+  "files": {
+    "footprint": "cern_mt40a1g16tb_062e_f.kicad_mod",
+    "symbol": "cern_mt40a1g16tb_062e_f.kicad_sym",
+    "footprint_svg": "cern_mt40a1g16tb_062e_f.footprint.svg",
+    "symbol_svg": "cern_mt40a1g16tb_062e_f.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Logic.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD_BGA.pretty/BGA96C80P9X16_750X1300X120.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "16gb",
+    "1gig",
+    "ddr4",
+    "sdram"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Logic#MT40A1G16TB-062E_F",
+      "symbol": "SchLib/Logic.kicad_sym#MT40A1G16TB",
+      "footprint": "PcbLib/ICs And Semiconductors SMD_BGA.pretty/BGA96C80P9X16_750X1300X120.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

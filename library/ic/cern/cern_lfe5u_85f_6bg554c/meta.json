@@ -1,0 +1,55 @@
+{
+  "id": "cern_lfe5u_85f_6bg554c",
+  "name": "LFE5U-85F-6BG554C (CERN library)",
+  "category": "ic",
+  "family": "CERN Logic",
+  "manufacturer": "LATTICE SEMICONDUCTOR",
+  "mpn_pattern": "LFE5U-85F-6BG554C",
+  "description": "FPGA LatticeECP5 Family 84000 Cells 40nm Technology 1.1V 554-Pin CABGA Tray. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "554",
+    "mounting": "SMD",
+    "case": "BGA554"
+  },
+  "files": {
+    "footprint": "cern_lfe5u_85f_6bg554c.kicad_mod",
+    "symbol": "cern_lfe5u_85f_6bg554c.kicad_sym",
+    "footprint_svg": "cern_lfe5u_85f_6bg554c.footprint.svg",
+    "symbol_svg": "cern_lfe5u_85f_6bg554c.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Logic.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD_BGA.pretty/BGA554C80P26X26_2300X2300X176.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "fpga",
+    "latticeecp5",
+    "family",
+    "84000",
+    "cells",
+    "40nm"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Logic#LFE5U-85F-6BG554C",
+      "symbol": "SchLib/Logic.kicad_sym#LFE5U-85F-6BG554C",
+      "footprint": "PcbLib/ICs And Semiconductors SMD_BGA.pretty/BGA554C80P26X26_2300X2300X176.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

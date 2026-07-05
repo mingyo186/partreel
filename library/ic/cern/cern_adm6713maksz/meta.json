@@ -1,0 +1,55 @@
+{
+  "id": "cern_adm6713maksz",
+  "name": "ADM6713MAKS (CERN library)",
+  "category": "ic",
+  "family": "CERN Analog & Interface",
+  "manufacturer": "ANALOG DEVICES",
+  "mpn_pattern": "ADM6713MAKS",
+  "description": "4.38V Supervisory Circuits with Manual Reset. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "4",
+    "mounting": "SMD",
+    "case": "SC70-4"
+  },
+  "files": {
+    "footprint": "cern_adm6713maksz.kicad_mod",
+    "symbol": "cern_adm6713maksz.kicad_sym",
+    "footprint_svg": "cern_adm6713maksz.footprint.svg",
+    "symbol_svg": "cern_adm6713maksz.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Analog & Interface.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/SOT130P210X110-4N_a.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "38v",
+    "supervisory",
+    "circuits",
+    "with",
+    "manual",
+    "reset"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Analog & Interface#ADM6713MAKSZ",
+      "symbol": "SchLib/Analog & Interface.kicad_sym#ADM6713",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/SOT130P210X110-4N_a.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

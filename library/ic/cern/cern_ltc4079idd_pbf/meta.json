@@ -1,0 +1,55 @@
+{
+  "id": "cern_ltc4079idd_pbf",
+  "name": "LTC4079IDD (CERN library)",
+  "category": "ic",
+  "family": "CERN Analog & Interface",
+  "manufacturer": "LINEAR TECHNOLOGY",
+  "mpn_pattern": "LTC4079IDD",
+  "description": "60V, 250mA Linear Charger with Low Quiescent Current. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "11",
+    "mounting": "SMD",
+    "case": "SON10"
+  },
+  "files": {
+    "footprint": "cern_ltc4079idd_pbf.kicad_mod",
+    "symbol": "cern_ltc4079idd_pbf.kicad_sym",
+    "footprint_svg": "cern_ltc4079idd_pbf.footprint.svg",
+    "symbol_svg": "cern_ltc4079idd_pbf.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Analog & Interface.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/SON50P300X300X80-11N-R175X248.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "60v",
+    "250ma",
+    "linear",
+    "charger",
+    "with",
+    "low"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Analog & Interface#LTC4079IDD#PBF",
+      "symbol": "SchLib/Analog & Interface.kicad_sym#LTC4079",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/SON50P300X300X80-11N-R175X248.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

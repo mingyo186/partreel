@@ -1,0 +1,50 @@
+{
+  "id": "cern_cla60mt1200ntz",
+  "name": "CLA60MT1200NTZ (CERN library)",
+  "category": "discrete",
+  "family": "CERN Diodes",
+  "manufacturer": "IXYS",
+  "mpn_pattern": "CLA60MT1200NTZ",
+  "description": "Triac. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "3",
+    "mounting": "SMD",
+    "case": "D3PAK"
+  },
+  "files": {
+    "footprint": "cern_cla60mt1200ntz.kicad_mod",
+    "symbol": "cern_cla60mt1200ntz.kicad_sym",
+    "footprint_svg": "cern_cla60mt1200ntz.footprint.svg",
+    "symbol_svg": "cern_cla60mt1200ntz.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Diodes.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/TO545P1890X510-3N-R1210X1605.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "triac"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Diodes#CLA60MT1200NTZ",
+      "symbol": "SchLib/Diodes.kicad_sym#Triac 1AC2G3AC",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/TO545P1890X510-3N-R1210X1605.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

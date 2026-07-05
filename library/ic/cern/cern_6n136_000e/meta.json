@@ -1,0 +1,54 @@
+{
+  "id": "cern_6n136_000e",
+  "name": "6N136-000E (CERN library)",
+  "category": "ic",
+  "family": "CERN Optocouplers",
+  "manufacturer": "AVAGO TECHNOLOGIES",
+  "mpn_pattern": "6N136-000E",
+  "description": "Single Channel, High Speed Optocouplers. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "8",
+    "case": "DIP8-300"
+  },
+  "files": {
+    "footprint": "cern_6n136_000e.kicad_mod",
+    "symbol": "cern_6n136_000e.kicad_sym",
+    "footprint_svg": "cern_6n136_000e.footprint.svg",
+    "symbol_svg": "cern_6n136_000e.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Optocouplers.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors THD.pretty/DIP8-300.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "single",
+    "channel",
+    "high",
+    "speed",
+    "optocouplers"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Optocouplers#6N136-000E",
+      "symbol": "SchLib/Optocouplers.kicad_sym#Optocoupler Type23",
+      "footprint": "PcbLib/ICs And Semiconductors THD.pretty/DIP8-300.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

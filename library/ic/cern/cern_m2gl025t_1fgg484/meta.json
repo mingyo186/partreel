@@ -1,0 +1,55 @@
+{
+  "id": "cern_m2gl025t_1fgg484",
+  "name": "M2GL025T-1FGG484 (CERN library)",
+  "category": "ic",
+  "family": "CERN Logic",
+  "manufacturer": "MICROSEMI",
+  "mpn_pattern": "M2GL025T-1FGG484",
+  "description": "IGLOO2 FPGA, 27696 Cells, 267 User I/Os, 6 PLLs, 1104K RAM, 1 PCIe, 484-Pin FBGA, Commercial Grade. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "484",
+    "mounting": "SMD",
+    "case": "BGA484"
+  },
+  "files": {
+    "footprint": "cern_m2gl025t_1fgg484.kicad_mod",
+    "symbol": "cern_m2gl025t_1fgg484.kicad_sym",
+    "footprint_svg": "cern_m2gl025t_1fgg484.footprint.svg",
+    "symbol_svg": "cern_m2gl025t_1fgg484.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Logic.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD_BGA.pretty/BGA484C100P22X22_2300X2300X240.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "igloo2",
+    "fpga",
+    "27696",
+    "cells",
+    "267",
+    "user"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Logic#M2GL025T-1FGG484",
+      "symbol": "SchLib/Logic.kicad_sym#M2GL025T-1FGG484",
+      "footprint": "PcbLib/ICs And Semiconductors SMD_BGA.pretty/BGA484C100P22X22_2300X2300X240.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

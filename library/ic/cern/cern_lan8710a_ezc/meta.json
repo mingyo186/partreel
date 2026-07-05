@@ -1,0 +1,55 @@
+{
+  "id": "cern_lan8710a_ezc",
+  "name": "LAN8710A-EZC (CERN library)",
+  "category": "ic",
+  "family": "CERN Analog & Interface",
+  "manufacturer": "MICROCHIP TECHNOLOGY",
+  "mpn_pattern": "LAN8710A-EZC",
+  "description": "Small Footprint MII/RMII 10/100 Ethernet Transceiver with HP Auto-MDIX and flexPWR® Technology. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "33",
+    "mounting": "SMD",
+    "case": "QFN32"
+  },
+  "files": {
+    "footprint": "cern_lan8710a_ezc.kicad_mod",
+    "symbol": "cern_lan8710a_ezc.kicad_sym",
+    "footprint_svg": "cern_lan8710a_ezc.footprint.svg",
+    "symbol_svg": "cern_lan8710a_ezc.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Analog & Interface.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/QFN50P500X500X100-33N-S340.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "small",
+    "footprint",
+    "mii",
+    "rmii",
+    "100",
+    "ethernet"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Analog & Interface#LAN8710A-EZC",
+      "symbol": "SchLib/Analog & Interface.kicad_sym#LAN8710A-EZC",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/QFN50P500X500X100-33N-S340.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

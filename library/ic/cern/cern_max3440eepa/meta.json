@@ -1,0 +1,55 @@
+{
+  "id": "cern_max3440eepa",
+  "name": "MAX3440EEPA (CERN library)",
+  "category": "ic",
+  "family": "CERN Logic",
+  "manufacturer": "MAXIM",
+  "mpn_pattern": "MAX3440EEPA",
+  "description": "±15kV ESD-Protected, ±60V Fault-Protected, 0.25Mbps, Fail-Safe RS-485 Transceiver. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "8",
+    "case": "DIP8-300"
+  },
+  "files": {
+    "footprint": "cern_max3440eepa.kicad_mod",
+    "symbol": "cern_max3440eepa.kicad_sym",
+    "footprint_svg": "cern_max3440eepa.footprint.svg",
+    "symbol_svg": "cern_max3440eepa.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Logic.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors THD.pretty/DIP8-300.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "15kv",
+    "esd",
+    "protected",
+    "60v",
+    "fault",
+    "protected"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Logic#MAX3440EEPA+",
+      "symbol": "SchLib/Logic.kicad_sym#MAX3440E",
+      "footprint": "PcbLib/ICs And Semiconductors THD.pretty/DIP8-300.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

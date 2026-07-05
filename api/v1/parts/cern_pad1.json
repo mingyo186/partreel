@@ -1,0 +1,82 @@
+{
+  "id": "cern_pad1",
+  "name": "PAD1 (CERN library)",
+  "category": "discrete",
+  "family": "CERN Diodes",
+  "manufacturer": "INTERFET CORPORATION",
+  "mpn_pattern": "PAD1",
+  "description": "Low Leakage Pico-Amp (-1pA) Diode. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: Obsolete.",
+  "parameters": {
+    "contacts": "3",
+    "case": "TO-18",
+    "lifecycle": "Obsolete"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/discrete/cern/cern_pad1/cern_pad1.kicad_mod",
+    "symbol": "https://partreel.com/library/discrete/cern/cern_pad1/cern_pad1.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/discrete/cern/cern_pad1/cern_pad1.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/discrete/cern/cern_pad1/cern_pad1.symbol.svg"
+  },
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Diodes.kicad_sym",
+  "license": "CERN-OHL-P-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors THD.pretty/TO-18.kicad_mod)",
+  "keywords": [
+    "cern",
+    "low",
+    "leakage",
+    "pico",
+    "amp",
+    "1pa",
+    "diode"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors THD.pretty/TO-18.kicad_mod)",
+    "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Diodes.kicad_sym",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_cern.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+      "source_commit": "53054c17",
+      "source_files": {
+        "db": "CERN.sqlite#Diodes#PAD1",
+        "symbol": "SchLib/Diodes.kicad_sym#Diode C1C2_A3",
+        "footprint": "PcbLib/ICs And Semiconductors THD.pretty/TO-18.kicad_mod"
+      },
+      "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+      "import_date": "2026-07-05",
+      "modifications": [
+        "extracted single symbol from library",
+        "stripped dead 3D model reference (upstream ships no 3D)",
+        "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/cern_pad1/",
+  "api": "https://partreel.com/api/v1/parts/cern_pad1.json"
+}

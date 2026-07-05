@@ -1,0 +1,55 @@
+{
+  "id": "cern_ads5295pfp",
+  "name": "ADS5295PFP (CERN library)",
+  "category": "ic",
+  "family": "CERN Analog & Interface",
+  "manufacturer": "TEXAS INSTRUMENTS",
+  "mpn_pattern": "ADS5295PFP",
+  "description": "12-Bit, 100-MSPS, 8-Channel Analog-to-Digital Converter. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "81",
+    "mounting": "SMD",
+    "case": "QFP80"
+  },
+  "files": {
+    "footprint": "cern_ads5295pfp.kicad_mod",
+    "symbol": "cern_ads5295pfp.kicad_sym",
+    "footprint_svg": "cern_ads5295pfp.footprint.svg",
+    "symbol_svg": "cern_ads5295pfp.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Analog & Interface.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/QFP50P1400X1400X120-81N-S750.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "bit",
+    "100",
+    "msps",
+    "channel",
+    "analog",
+    "digital"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Analog & Interface#ADS5295PFP",
+      "symbol": "SchLib/Analog & Interface.kicad_sym#ADS5295",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/QFP50P1400X1400X120-81N-S750.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

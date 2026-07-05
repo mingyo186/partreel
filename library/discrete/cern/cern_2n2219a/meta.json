@@ -1,0 +1,55 @@
+{
+  "id": "cern_2n2219a",
+  "name": "2N2219A (CERN library)",
+  "category": "discrete",
+  "family": "CERN Transistors",
+  "manufacturer": "ST MICROELECTRONICS",
+  "mpn_pattern": "2N2219A",
+  "description": "40V, 600mA, NPN Small Signal Transistor. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "3",
+    "case": "TO-39"
+  },
+  "files": {
+    "footprint": "cern_2n2219a.kicad_mod",
+    "symbol": "cern_2n2219a.kicad_sym",
+    "footprint_svg": "cern_2n2219a.footprint.svg",
+    "symbol_svg": "cern_2n2219a.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Transistors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors THD.pretty/TO-39.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "40v",
+    "600ma",
+    "npn",
+    "small",
+    "signal",
+    "transistor"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Transistors#2N2219A",
+      "symbol": "SchLib/Transistors.kicad_sym#NPN E1 B2 C3",
+      "footprint": "PcbLib/ICs And Semiconductors THD.pretty/TO-39.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

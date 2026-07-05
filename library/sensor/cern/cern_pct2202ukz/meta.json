@@ -1,0 +1,56 @@
+{
+  "id": "cern_pct2202ukz",
+  "name": "PCT2202UKZ (CERN library)",
+  "category": "sensor",
+  "family": "CERN Sensors",
+  "manufacturer": "NXP SEMICONDUCTORS",
+  "mpn_pattern": "PCT2202UKZ",
+  "description": "Ultra Low Power, 1.8 V, 1°C Accuracy, Digital Temperature Sensor with I2C-bus Interface. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: Not Recommended.",
+  "parameters": {
+    "contacts": "6",
+    "mounting": "SMD",
+    "case": "BGA6",
+    "lifecycle": "Not Recommended"
+  },
+  "files": {
+    "footprint": "cern_pct2202ukz.kicad_mod",
+    "symbol": "cern_pct2202ukz.kicad_sym",
+    "footprint_svg": "cern_pct2202ukz.footprint.svg",
+    "symbol_svg": "cern_pct2202ukz.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Sensors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD_BGA.pretty/BGA6C40P2X3_69X109X41.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "ultra",
+    "low",
+    "power",
+    "accuracy",
+    "digital",
+    "temperature"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Sensors#PCT2202UKZ",
+      "symbol": "SchLib/Sensors.kicad_sym#PCT2202UKZ",
+      "footprint": "PcbLib/ICs And Semiconductors SMD_BGA.pretty/BGA6C40P2X3_69X109X41.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

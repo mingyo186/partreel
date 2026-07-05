@@ -1,0 +1,55 @@
+{
+  "id": "cern_txs0108epw",
+  "name": "TXS0108EPW (CERN library)",
+  "category": "ic",
+  "family": "CERN Analog & Interface",
+  "manufacturer": "TEXAS INSTRUMENTS",
+  "mpn_pattern": "TXS0108EPW",
+  "description": "8-Bit Bidirectional, Level-Shifting, Voltage Translator for Open-Drain and Push-Pull Applications. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "20",
+    "mounting": "SMD",
+    "case": "TSSOP20"
+  },
+  "files": {
+    "footprint": "cern_txs0108epw.kicad_mod",
+    "symbol": "cern_txs0108epw.kicad_sym",
+    "footprint_svg": "cern_txs0108epw.footprint.svg",
+    "symbol_svg": "cern_txs0108epw.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Analog & Interface.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/SOP65P640X120-20N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "bit",
+    "bidirectional",
+    "level",
+    "shifting",
+    "voltage",
+    "translator"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Analog & Interface#TXS0108EPW",
+      "symbol": "SchLib/Analog & Interface.kicad_sym#TXS0108EPW",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/SOP65P640X120-20N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

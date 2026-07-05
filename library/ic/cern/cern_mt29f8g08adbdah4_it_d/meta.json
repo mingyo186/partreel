@@ -1,0 +1,53 @@
+{
+  "id": "cern_mt29f8g08adbdah4_it_d",
+  "name": "MT29F8G08ADBDAH4-IT:D (CERN library)",
+  "category": "ic",
+  "family": "CERN Logic",
+  "manufacturer": "MICRON TECHNOLOGY",
+  "mpn_pattern": "MT29F8G08ADBDAH4-IT:D",
+  "description": "8Gb, 8-Bit, 1.8V, NAND Flash. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "63",
+    "mounting": "SMD",
+    "case": "BGA63"
+  },
+  "files": {
+    "footprint": "cern_mt29f8g08adbdah4_it_d.kicad_mod",
+    "symbol": "cern_mt29f8g08adbdah4_it_d.kicad_sym",
+    "footprint_svg": "cern_mt29f8g08adbdah4_it_d.footprint.svg",
+    "symbol_svg": "cern_mt29f8g08adbdah4_it_d.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Logic.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD_BGA.pretty/BGA63C80P10X12_900X1100X100.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "8gb",
+    "bit",
+    "nand",
+    "flash"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Logic#MT29F8G08ADBDAH4-IT_D",
+      "symbol": "SchLib/Logic.kicad_sym#MT29F8G08ADBDAH4-IT{colon}D",
+      "footprint": "PcbLib/ICs And Semiconductors SMD_BGA.pretty/BGA63C80P10X12_900X1100X100.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

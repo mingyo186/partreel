@@ -1,0 +1,55 @@
+{
+  "id": "cern_s4016n",
+  "name": "S4016N (CERN library)",
+  "category": "discrete",
+  "family": "CERN Diodes",
+  "manufacturer": "LITTELFUSE",
+  "mpn_pattern": "S4016N",
+  "description": "Teccor Brand Thyristors 16A Standard SCRs. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "3",
+    "mounting": "SMD",
+    "case": "D2PAK"
+  },
+  "files": {
+    "footprint": "cern_s4016n.kicad_mod",
+    "symbol": "cern_s4016n.kicad_sym",
+    "footprint_svg": "cern_s4016n.footprint.svg",
+    "symbol_svg": "cern_s4016n.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Diodes.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/TO254P1544X478-3N-R840X1016.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "teccor",
+    "brand",
+    "thyristors",
+    "16a",
+    "standard",
+    "scrs"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Diodes#S4016N",
+      "symbol": "SchLib/Diodes.kicad_sym#Thyristor 1C2G3A",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/TO254P1544X478-3N-R840X1016.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

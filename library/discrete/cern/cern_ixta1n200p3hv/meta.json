@@ -1,0 +1,55 @@
+{
+  "id": "cern_ixta1n200p3hv",
+  "name": "IXTA1N200P3HV (CERN library)",
+  "category": "discrete",
+  "family": "CERN Transistors",
+  "manufacturer": "IXYS",
+  "mpn_pattern": "IXTA1N200P3HV",
+  "description": "1200V, 6A, N-Channel Polar HiPerFET Power MOSFET. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "3",
+    "mounting": "SMD",
+    "case": "D2PAK"
+  },
+  "files": {
+    "footprint": "cern_ixta1n200p3hv.kicad_mod",
+    "symbol": "cern_ixta1n200p3hv.kicad_sym",
+    "footprint_svg": "cern_ixta1n200p3hv.footprint.svg",
+    "symbol_svg": "cern_ixta1n200p3hv.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Transistors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/TO254P1530X470-3N-R830X1020.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "1200v",
+    "channel",
+    "polar",
+    "hiperfet",
+    "power",
+    "mosfet"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Transistors#IXTA1N200P3HV",
+      "symbol": "SchLib/Transistors.kicad_sym#N-MOSFET-D 1G 2S 3D",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/TO254P1530X470-3N-R830X1020.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

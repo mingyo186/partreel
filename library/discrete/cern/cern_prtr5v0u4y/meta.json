@@ -1,0 +1,56 @@
+{
+  "id": "cern_prtr5v0u4y",
+  "name": "PRTR5V0U4Y (CERN library)",
+  "category": "discrete",
+  "family": "CERN Diodes",
+  "manufacturer": "NXP SEMICONDUCTORS",
+  "mpn_pattern": "PRTR5V0U4Y",
+  "description": "Integrated Quad Ultra-Low Capacitance ESD (±8kV) Protection. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: Obsolete.",
+  "parameters": {
+    "contacts": "6",
+    "mounting": "SMD",
+    "case": "SOT363",
+    "lifecycle": "Obsolete"
+  },
+  "files": {
+    "footprint": "cern_prtr5v0u4y.kicad_mod",
+    "symbol": "cern_prtr5v0u4y.kicad_sym",
+    "footprint_svg": "cern_prtr5v0u4y.footprint.svg",
+    "symbol_svg": "cern_prtr5v0u4y.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Diodes.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/SOT65P210X110-6N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "integrated",
+    "quad",
+    "ultra",
+    "low",
+    "capacitance",
+    "esd"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Diodes#PRTR5V0U4Y",
+      "symbol": "SchLib/Diodes.kicad_sym#PRTR5V0U4Y",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/SOT65P210X110-6N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

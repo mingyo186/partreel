@@ -1,0 +1,55 @@
+{
+  "id": "cern_s29gl256s10tfi020",
+  "name": "S29GL256S10TFI020 (CERN library)",
+  "category": "ic",
+  "family": "CERN Logic",
+  "manufacturer": "SPANSION",
+  "mpn_pattern": "S29GL256S10TFI020",
+  "description": "2.7V to 3.6V, 100ns, 256 Mbit (32Mbyte), MirrorBit Eclipse Flash Memory, 65nm  Process Technology. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "56",
+    "mounting": "SMD",
+    "case": "TSSOP56"
+  },
+  "files": {
+    "footprint": "cern_s29gl256s10tfi020.kicad_mod",
+    "symbol": "cern_s29gl256s10tfi020.kicad_sym",
+    "footprint_svg": "cern_s29gl256s10tfi020.footprint.svg",
+    "symbol_svg": "cern_s29gl256s10tfi020.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Logic.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/SOP50P2000X120-56N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "100ns",
+    "256",
+    "mbit",
+    "32mbyte",
+    "mirrorbit",
+    "eclipse"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Logic#S29GL256S10TFI020",
+      "symbol": "SchLib/Logic.kicad_sym#S29GL256S10TFI020",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/SOP50P2000X120-56N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

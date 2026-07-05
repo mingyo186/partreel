@@ -1,0 +1,55 @@
+{
+  "id": "cern_fan2110mpx",
+  "name": "FAN2110MPX (CERN library)",
+  "category": "ic",
+  "family": "CERN Regulators",
+  "manufacturer": "ON SEMICONDUCTOR",
+  "mpn_pattern": "FAN2110MPX",
+  "description": "200kHz-600kHz, Vin 3V to 24V, 10A Synchronous Buck Regulator. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "28",
+    "mounting": "SMD",
+    "case": "QFN25"
+  },
+  "files": {
+    "footprint": "cern_fan2110mpx.kicad_mod",
+    "symbol": "cern_fan2110mpx.kicad_sym",
+    "footprint_svg": "cern_fan2110mpx.footprint.svg",
+    "symbol_svg": "cern_fan2110mpx.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Regulators.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/QFN65P600X500x80-28N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "200khz",
+    "600khz",
+    "vin",
+    "24v",
+    "10a",
+    "synchronous"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Regulators#FAN2110MPX",
+      "symbol": "SchLib/Regulators.kicad_sym#FAN21",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/QFN65P600X500x80-28N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "cern_lpc1764fbd100_551",
+  "name": "LPC1764FBD100,551 (CERN library)",
+  "category": "ic",
+  "family": "CERN Logic",
+  "manufacturer": "NXP SEMICONDUCTORS",
+  "mpn_pattern": "LPC1764FBD100,551",
+  "description": "Cortex-M3, 32-Bit ARM MCU, 128kB Flash, 32kB SRAM, Ethernet, USB 2.0 Device, CAN, 12-Bit ADC. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "100",
+    "mounting": "SMD",
+    "case": "QFP100"
+  },
+  "files": {
+    "footprint": "cern_lpc1764fbd100_551.kicad_mod",
+    "symbol": "cern_lpc1764fbd100_551.kicad_sym",
+    "footprint_svg": "cern_lpc1764fbd100_551.footprint.svg",
+    "symbol_svg": "cern_lpc1764fbd100_551.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Logic.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/QFP50P1600X1600X160-100N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "cortex",
+    "bit",
+    "arm",
+    "mcu",
+    "128kb",
+    "flash"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Logic#LPC1764FBD100,551",
+      "symbol": "SchLib/Logic.kicad_sym#LPC1764FBD100,551",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/QFP50P1600X1600X160-100N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

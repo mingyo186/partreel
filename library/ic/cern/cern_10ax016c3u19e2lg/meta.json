@@ -1,0 +1,55 @@
+{
+  "id": "cern_10ax016c3u19e2lg",
+  "name": "10AX016C3U19E2LG (CERN library)",
+  "category": "ic",
+  "family": "CERN Logic",
+  "manufacturer": "INTEL",
+  "mpn_pattern": "10AX016C3U19E2LG",
+  "description": "Arria 10 GX Familly FPGA, 160K Logic Elements, 6 GTPs Speed Grade 3, 484-Ball BGA, Extended Temperature (0°C to 100°C), RoHS6. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "484",
+    "mounting": "SMD",
+    "case": "BGA484"
+  },
+  "files": {
+    "footprint": "cern_10ax016c3u19e2lg.kicad_mod",
+    "symbol": "cern_10ax016c3u19e2lg.kicad_sym",
+    "footprint_svg": "cern_10ax016c3u19e2lg.footprint.svg",
+    "symbol_svg": "cern_10ax016c3u19e2lg.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Logic.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD_BGA.pretty/BGA484C80P22X22_1900X1900X325.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "arria",
+    "familly",
+    "fpga",
+    "160k",
+    "logic",
+    "elements"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Logic#10AX016C3U19E2LG",
+      "symbol": "SchLib/Logic.kicad_sym#10AX016C3U19E2LG",
+      "footprint": "PcbLib/ICs And Semiconductors SMD_BGA.pretty/BGA484C80P22X22_1900X1900X325.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

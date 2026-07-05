@@ -1,0 +1,80 @@
+{
+  "id": "cern_oki_78sr_3_3_1_5_w36h_c_a",
+  "name": "OKI-78SR-3.3/1.5-W36H-C (CERN library)",
+  "category": "ic",
+  "family": "CERN Regulators",
+  "manufacturer": "MURATA POWER SOLUTIONS",
+  "mpn_pattern": "OKI-78SR-3.3/1.5-W36H-C",
+  "description": "7-36V to 3.3V, Iout (max) 1.5A, 4.95W Non-Isolated Switching Regulator DC-DC. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "3"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/ic/cern/cern_oki_78sr_3_3_1_5_w36h_c_a/cern_oki_78sr_3_3_1_5_w36h_c_a.kicad_mod",
+    "symbol": "https://partreel.com/library/ic/cern/cern_oki_78sr_3_3_1_5_w36h_c_a/cern_oki_78sr_3_3_1_5_w36h_c_a.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/ic/cern/cern_oki_78sr_3_3_1_5_w36h_c_a/cern_oki_78sr_3_3_1_5_w36h_c_a.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/ic/cern/cern_oki_78sr_3_3_1_5_w36h_c_a/cern_oki_78sr_3_3_1_5_w36h_c_a.symbol.svg"
+  },
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Regulators.kicad_sym",
+  "license": "CERN-OHL-P-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors THD.pretty/DCDC_MURATA_OKI-78SR(H)_a.kicad_mod)",
+  "keywords": [
+    "cern",
+    "36v",
+    "iout",
+    "max",
+    "95w",
+    "non",
+    "isolated"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors THD.pretty/DCDC_MURATA_OKI-78SR(H)_a.kicad_mod)",
+    "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Regulators.kicad_sym",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_cern.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+      "source_commit": "53054c17",
+      "source_files": {
+        "db": "CERN.sqlite#Regulators#OKI-78SR-3.3/1.5-W36H-C_a",
+        "symbol": "SchLib/Regulators.kicad_sym#OKI-78SR_a",
+        "footprint": "PcbLib/ICs And Semiconductors THD.pretty/DCDC_MURATA_OKI-78SR(H)_a.kicad_mod"
+      },
+      "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+      "import_date": "2026-07-05",
+      "modifications": [
+        "extracted single symbol from library",
+        "stripped dead 3D model reference (upstream ships no 3D)",
+        "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/cern_oki_78sr_3_3_1_5_w36h_c_a/",
+  "api": "https://partreel.com/api/v1/parts/cern_oki_78sr_3_3_1_5_w36h_c_a.json"
+}

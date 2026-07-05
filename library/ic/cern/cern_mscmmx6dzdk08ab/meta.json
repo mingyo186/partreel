@@ -1,0 +1,55 @@
+{
+  "id": "cern_mscmmx6dzdk08ab",
+  "name": "MSCMMX6DZDK08AB (CERN library)",
+  "category": "ic",
+  "family": "CERN Logic",
+  "manufacturer": "NXP/FREESCALE SEMICONDUCTOR",
+  "mpn_pattern": "MSCMMX6DZDK08AB",
+  "description": "SCM-i.MX 6Dual processors Based on ARM® Cortex®-A9 MPCore Platform (LPDDR2 - PoP Footprint Version). Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "500",
+    "mounting": "SMD",
+    "case": "BGA500"
+  },
+  "files": {
+    "footprint": "cern_mscmmx6dzdk08ab.kicad_mod",
+    "symbol": "cern_mscmmx6dzdk08ab.kicad_sym",
+    "footprint_svg": "cern_mscmmx6dzdk08ab.footprint.svg",
+    "symbol_svg": "cern_mscmmx6dzdk08ab.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Logic.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD_BGA.pretty/BGA500C65P20X25_1400X1700X180.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "scm",
+    "6dual",
+    "processors",
+    "based",
+    "arm",
+    "cortex"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Logic#MSCMMX6DZDK08AB",
+      "symbol": "SchLib/Logic.kicad_sym#MSCMMX6DZDK08AB",
+      "footprint": "PcbLib/ICs And Semiconductors SMD_BGA.pretty/BGA500C65P20X25_1400X1700X180.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

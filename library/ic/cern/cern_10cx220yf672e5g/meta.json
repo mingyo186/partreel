@@ -1,0 +1,55 @@
+{
+  "id": "cern_10cx220yf672e5g",
+  "name": "10CX220YF672E5G (CERN library)",
+  "category": "ic",
+  "family": "CERN Logic",
+  "manufacturer": "INTEL",
+  "mpn_pattern": "10CX220YF672E5G",
+  "description": "Cyclone 10 GX Family FPGA, 220k Logic Elements, 10 PLLs, 672-Pin FBGA, Speed Grade 5, Extended Grade (0°C to 100°C), RoHS6-Compliant. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "672",
+    "mounting": "SMD",
+    "case": "BGA672"
+  },
+  "files": {
+    "footprint": "cern_10cx220yf672e5g.kicad_mod",
+    "symbol": "cern_10cx220yf672e5g.kicad_sym",
+    "footprint_svg": "cern_10cx220yf672e5g.footprint.svg",
+    "symbol_svg": "cern_10cx220yf672e5g.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Logic.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD_BGA.pretty/BGA672C100P26X26_2700X2700X345.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "cyclone",
+    "family",
+    "fpga",
+    "220k",
+    "logic",
+    "elements"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Logic#10CX220YF672E5G",
+      "symbol": "SchLib/Logic.kicad_sym#10CX220YF672",
+      "footprint": "PcbLib/ICs And Semiconductors SMD_BGA.pretty/BGA672C100P26X26_2700X2700X345.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

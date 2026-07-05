@@ -1,0 +1,54 @@
+{
+  "id": "cern_pth04t230waz",
+  "name": "PTH04T230WAZ (CERN library)",
+  "category": "ic",
+  "family": "CERN Regulators",
+  "manufacturer": "TEXAS INSTRUMENTS",
+  "mpn_pattern": "PTH04T230WAZ",
+  "description": "6A, 2.2V to 5.5V Input, Non-Isolated, 0.69 to 3.6V Output, Adjustable Power Module with TurboTrans™. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "10",
+    "mounting": "SMD"
+  },
+  "files": {
+    "footprint": "cern_pth04t230waz.kicad_mod",
+    "symbol": "cern_pth04t230waz.kicad_sym",
+    "footprint_svg": "cern_pth04t230waz.footprint.svg",
+    "symbol_svg": "cern_pth04t230waz.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Regulators.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/TEXAS_BCM (R-PDSS-T10).kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "input",
+    "non",
+    "isolated",
+    "output",
+    "adjustable",
+    "power"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Regulators#PTH04T230WAZ",
+      "symbol": "SchLib/Regulators.kicad_sym#PTH04T230W",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/TEXAS_BCM (R-PDSS-T10).kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}
