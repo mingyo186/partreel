@@ -1,0 +1,55 @@
+{
+  "id": "cern_xtal_12mhz_ecs_120_18_30_jgn",
+  "name": "ECS-120-18-30-JGN (CERN library)",
+  "category": "timing",
+  "family": "CERN Crystals & Oscillators",
+  "manufacturer": "ECS",
+  "mpn_pattern": "ECS-120-18-30-JGN",
+  "description": "Tolerance: ±20ppm, Stability: ±30 ppm, -40 °C to +85 °C, 18 pF SMD Crystal, ECX-53 Series. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "2",
+    "mounting": "SMD",
+    "value": "12 MHz"
+  },
+  "files": {
+    "footprint": "cern_xtal_12mhz_ecs_120_18_30_jgn.kicad_mod",
+    "symbol": "cern_xtal_12mhz_ecs_120_18_30_jgn.kicad_sym",
+    "footprint_svg": "cern_xtal_12mhz_ecs_120_18_30_jgn.footprint.svg",
+    "symbol_svg": "cern_xtal_12mhz_ecs_120_18_30_jgn.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Crystals & Oscillators.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/XTAL_ECS_ECX-53.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "tolerance",
+    "20ppm",
+    "stability",
+    "ppm",
+    "smd",
+    "crystal"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Crystals & Oscillators#XTAL_12MHz_ECS-120-18-30-JGN",
+      "symbol": "SchLib/Crystals & Oscillators.kicad_sym#Quartz Crystal",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/XTAL_ECS_ECX-53.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

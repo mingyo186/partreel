@@ -1,0 +1,55 @@
+{
+  "id": "cern_lemo_ezg_0s_302_nlny",
+  "name": "EZG.0S.302.NLNY (CERN library)",
+  "category": "connector",
+  "family": "CERN LEMO",
+  "manufacturer": "LEMO",
+  "mpn_pattern": "EZG.0S.302.NLNY",
+  "description": "Size 0S, 1 Female + 1 Male Contacts, Straight Socket with Alignment Key (G). Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "3",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_lemo_ezg_0s_302_nlny.kicad_mod",
+    "symbol": "cern_lemo_ezg_0s_302_nlny.kicad_sym",
+    "footprint_svg": "cern_lemo_ezg_0s_302_nlny.footprint.svg",
+    "symbol_svg": "cern_lemo_ezg_0s_302_nlny.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Connectors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (LEMO THD.pretty/LEMO_EZG.0S.302.NLNY.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "size",
+    "female",
+    "male",
+    "contacts",
+    "straight",
+    "socket"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#LEMO#LEMO_EZG.0S.302.NLNY",
+      "symbol": "SchLib/Connectors.kicad_sym#Coax_1Female_1Male_1Shield",
+      "footprint": "PcbLib/LEMO THD.pretty/LEMO_EZG.0S.302.NLNY.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "cern_xtal_8_192mhz_txc_aa_8_192mage_t",
+  "name": "AA-8.192MAGE-T (CERN library)",
+  "category": "timing",
+  "family": "CERN Crystals & Oscillators",
+  "manufacturer": "TXC CORPORATION",
+  "mpn_pattern": "AA-8.192MAGE-T",
+  "description": "Tolerance: ±30ppm, Stability: ±50ppm, -40°C to +85°C, 12pF, SMD Glass Sealing Crystal, AA Series. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "2",
+    "mounting": "SMD",
+    "value": "8.192MHz"
+  },
+  "files": {
+    "footprint": "cern_xtal_8_192mhz_txc_aa_8_192mage_t.kicad_mod",
+    "symbol": "cern_xtal_8_192mhz_txc_aa_8_192mage_t.kicad_sym",
+    "footprint_svg": "cern_xtal_8_192mhz_txc_aa_8_192mage_t.footprint.svg",
+    "symbol_svg": "cern_xtal_8_192mhz_txc_aa_8_192mage_t.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Crystals & Oscillators.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/XTAL_TXC_AA.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "tolerance",
+    "30ppm",
+    "stability",
+    "50ppm",
+    "12pf",
+    "smd"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Crystals & Oscillators#XTAL_8.192MHZ_TXC_AA-8.192MAGE-T",
+      "symbol": "SchLib/Crystals & Oscillators.kicad_sym#Quartz Crystal",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/XTAL_TXC_AA.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

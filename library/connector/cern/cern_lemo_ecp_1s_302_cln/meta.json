@@ -1,0 +1,55 @@
+{
+  "id": "cern_lemo_ecp_1s_302_cln",
+  "name": "ECP.1S.302.CLN (CERN library)",
+  "category": "connector",
+  "family": "CERN LEMO",
+  "manufacturer": "LEMO",
+  "mpn_pattern": "ECP.1S.302.CLN",
+  "description": "Size 1S, Fixed Receptacle with 2 Nuts, Straight Contacts 1 Female + 1 Male (Half Moon Hermaphroditic keying). Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "2",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_lemo_ecp_1s_302_cln.kicad_mod",
+    "symbol": "cern_lemo_ecp_1s_302_cln.kicad_sym",
+    "footprint_svg": "cern_lemo_ecp_1s_302_cln.footprint.svg",
+    "symbol_svg": "cern_lemo_ecp_1s_302_cln.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Connectors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (LEMO THD.pretty/LEMO_ECP.1S.302.CLN.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "size",
+    "fixed",
+    "receptacle",
+    "with",
+    "nuts",
+    "straight"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#LEMO#LEMO_ECP.1S.302.CLN",
+      "symbol": "SchLib/Connectors.kicad_sym#Coax_1Female_1Male",
+      "footprint": "PcbLib/LEMO THD.pretty/LEMO_ECP.1S.302.CLN.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

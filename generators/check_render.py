@@ -70,8 +70,9 @@ def main():
 
         if ssvg is not None and ksym is not None:
             # E. 심볼 핀 수
-            _pins_all = re.findall(r'\(pin\s+\w+\s+\w+\s+\(at[^)]*\)\s*\(length\s+[-\d.]+\)((?:\s|hide|\(hide\s+yes\))*)\(', ksym)
-            ksym_pins = sum(1 for f in _pins_all if 'hide' not in f)
+            _pins_all = re.findall(r'\(pin\s+\w+\s+\w+\s+\(at([^)]*)\)\s*\(length\s+[-\d.]+\)((?:\s|hide|\(hide\s+yes\))*)\(', ksym)
+            # 스택 핀(같은 위치·각도, 벤더 쉴드 관례)은 렌더러가 1개로 병합 표시 → 고유 위치로 센다
+            ksym_pins = len({at.strip() for at, f in _pins_all if 'hide' not in f})
             ssvg_pins = ssvg.count('<line')
             if ssvg_pins != ksym_pins:
                 errs.append(f"심볼 핀선 SVG={ssvg_pins} != kicad_sym={ksym_pins}")

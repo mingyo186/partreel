@@ -26,6 +26,35 @@ LINE_RE = re.compile(
     r'.*?\(width\s+([-\d.]+)\).*?\(layer\s+"([^"]+)"\)')
 RECT_RE = re.compile(
     r'\(rectangle\s+\(start\s+([-\d.]+)\s+([-\d.]+)\)\s+\(end\s+([-\d.]+)\s+([-\d.]+)\)')
+POLY_RE = re.compile(r'\(polyline\s+\(pts((?:\s*\(xy\s+[-\d.]+\s+[-\d.]+\))+)', re.S)
+XY_RE = re.compile(r'\(xy\s+([-\d.]+)\s+([-\d.]+)\)')
+CIRC_RE = re.compile(r'\(circle\s+\(center\s+([-\d.]+)\s+([-\d.]+)\)\s+'
+                     r'\(radius\s+([-\d.]+)\)', re.S)
+ARC_RE = re.compile(r'\(arc\s+\(start\s+([-\d.]+)\s+([-\d.]+)\)\s+'
+                    r'\(mid\s+([-\d.]+)\s+([-\d.]+)\)\s+'
+                    r'\(end\s+([-\d.]+)\s+([-\d.]+)\)', re.S)
+
+
+def arc_path(sx, sy, mx, my, ex, ey):
+    """3점(SVG 좌표) → SVG 패스 A 명령. 일직선이면 None."""
+    d = 2 * (sx * (my - ey) + mx * (ey - sy) + ex * (sy - my))
+    if abs(d) < 1e-9:
+        return None
+    ux = ((sx * sx + sy * sy) * (my - ey) + (mx * mx + my * my) * (ey - sy)
+          + (ex * ex + ey * ey) * (sy - my)) / d
+    uy = ((sx * sx + sy * sy) * (ex - mx) + (mx * mx + my * my) * (sx - ex)
+          + (ex * ex + ey * ey) * (mx - sx)) / d
+    import math
+    r = math.hypot(sx - ux, sy - uy)
+    # sweep: S→M→E 방향 (SVG y-아래 좌표계에서 시계=1)
+    cross = (mx - sx) * (ey - sy) - (my - sy) * (ex - sx)
+    sweep = 1 if cross > 0 else 0
+    a0, a1, am = (math.atan2(sy - uy, sx - ux), math.atan2(ey - uy, ex - ux),
+                  math.atan2(my - uy, mx - ux))
+    span = (a1 - a0) % (2 * math.pi) if sweep else (a0 - a1) % (2 * math.pi)
+    large = 1 if span > math.pi else 0
+    return (f'M {sx:.3f} {sy:.3f} A {r:.3f} {r:.3f} 0 {large} {sweep} '
+            f'{ex:.3f} {ey:.3f}')
 PIN_RE = re.compile(
     r'\(pin\s+\w+\s+\w+\s+\(at\s+([-\d.]+)\s+([-\d.]+)\s+(\d+)\)\s+\(length\s+([-\d.]+)\)'
     r'((?:\s|hide|\(hide\s+yes\))*)\(name\s+"([^"]+)".*?\(number\s+"([^"]+)"', re.S)
@@ -106,16 +135,32 @@ def render_footprint(text):
 
 
 def render_symbol(text):
-    rm = RECT_RE.search(text)
+    rects = [tuple(map(float, m.groups())) for m in RECT_RE.finditer(text)]
+    polys = [[(float(a), float(b)) for a, b in XY_RE.findall(m.group(1))]
+             for m in POLY_RE.finditer(text)]
+    circs = [tuple(map(float, m.groups())) for m in CIRC_RE.finditer(text)]
+    arcs = [tuple(map(float, m.groups())) for m in ARC_RE.finditer(text)]
     pins = list(PIN_RE.finditer(text))
-    if not rm or not pins:
+    if not pins or not (rects or polys or circs or arcs):
         return None
-    rx1, ry1, rx2, ry2 = map(float, rm.groups())
+    # 심볼 전역 표시 플래그 (구형 인라인 hide / 신형 (hide yes) 둘 다)
+    hide_nums = bool(re.search(r"\(pin_numbers\s*(?:\(offset[^)]*\)\s*)?"
+                               r"(?:hide|\(hide\s+yes\))", text))
+    hide_names = bool(re.search(r"\(pin_names\s*(?:\(offset[^)]*\)\s*)?"
+                                r"(?:hide|\(hide\s+yes\))", text))
     # KiCad 심볼 Y는 위쪽이 +. SVG는 아래가 + → y 부호 반전.
     def ty(y):
         return -y
 
-    xs = [rx1, rx2]; ys = [ty(ry1), ty(ry2)]
+    xs, ys = [], []
+    for rx1, ry1, rx2, ry2 in rects:
+        xs += [rx1, rx2]; ys += [ty(ry1), ty(ry2)]
+    for pts in polys:
+        xs += [p[0] for p in pts]; ys += [ty(p[1]) for p in pts]
+    for cx, cy, r in circs:
+        xs += [cx - r, cx + r]; ys += [ty(cy) - r, ty(cy) + r]
+    for sx, sy, mx, my, ex, ey in arcs:
+        xs += [sx, mx, ex]; ys += [ty(sy), ty(my), ty(ey)]
     pin_data = []
     for m in pins:
         px, py, ang, length, flags, name, num = m.groups()
@@ -127,13 +172,46 @@ def render_symbol(text):
         ey = py + (length if ang == 90 else -length if ang == 270 else 0)
         pin_data.append((px, ty(py), ex, ty(ey), num, name))
         xs += [px, ex]; ys += [ty(py), ty(ey)]
+    # 같은 위치 스택 핀(벤더 쉴드 관례, hide 아님) → 1개로 병합, 번호는 "9-12"
+    grouped = {}
+    for px, py, ex, ey, num, name in pin_data:
+        grouped.setdefault((px, py, ex, ey), []).append((num, name))
+    merged = []
+    for (px, py, ex, ey), nn in grouped.items():
+        nums = [n for n, _ in nn]
+        if len(nums) > 1 and all(n.isdigit() for n in nums):
+            sn = sorted(map(int, nums))
+            num = (f"{sn[0]}-{sn[-1]}" if sn == list(range(sn[0], sn[-1] + 1))
+                   else ",".join(map(str, sn)))
+        else:
+            num = nums[0]
+        names = [n for _, n in nn]
+        name = num if all(n.isdigit() for n in names) and len(names) > 1 else names[0]
+        merged.append((px, py, ex, ey, num, name))
+    pin_data = merged
     minx, maxx, miny, maxy = min(xs), max(xs), min(ys), max(ys)
 
     out = [svg_header(minx, miny, maxx - minx, maxy - miny, 1.5)]
-    bx, by = min(rx1, rx2), min(ty(ry1), ty(ry2))
-    out.append(f'<rect x="{bx:.3f}" y="{by:.3f}" width="{abs(rx2-rx1):.3f}" '
-               f'height="{abs(ty(ry2)-ty(ry1)):.3f}" fill="{COL["body"]}" '
-               f'stroke="{COL["bodyline"]}" stroke-width="0.25"/>')
+    for rx1, ry1, rx2, ry2 in rects:
+        bx, by = min(rx1, rx2), min(ty(ry1), ty(ry2))
+        out.append(f'<rect x="{bx:.3f}" y="{by:.3f}" width="{abs(rx2-rx1):.3f}" '
+                   f'height="{abs(ty(ry2)-ty(ry1)):.3f}" fill="{COL["body"]}" '
+                   f'stroke="{COL["bodyline"]}" stroke-width="0.25"/>')
+    for pts in polys:
+        pstr = " ".join(f"{x:.3f},{ty(y):.3f}" for x, y in pts)
+        closed = len(pts) > 2 and pts[0] == pts[-1]
+        fill = COL["body"] if closed else "none"
+        out.append(f'<polyline points="{pstr}" fill="{fill}" '
+                   f'stroke="{COL["bodyline"]}" stroke-width="0.25" '
+                   f'stroke-linejoin="round"/>')
+    for cx, cy, r in circs:
+        out.append(f'<circle cx="{cx:.3f}" cy="{ty(cy):.3f}" r="{r:.3f}" '
+                   f'fill="none" stroke="{COL["bodyline"]}" stroke-width="0.25"/>')
+    for sx, sy, mx, my, ex, ey in arcs:
+        path = arc_path(sx, ty(sy), mx, ty(my), ex, ty(ey))
+        if path:
+            out.append(f'<path d="{path}" fill="none" stroke="{COL["bodyline"]}" '
+                       f'stroke-width="0.25"/>')
     for px, py, ex, ey, num, name in pin_data:
         out.append(f'<line x1="{px:.3f}" y1="{py:.3f}" x2="{ex:.3f}" y2="{ey:.3f}" '
                    f'stroke="{COL["pin"]}" stroke-width="0.2"/>')
@@ -156,8 +234,10 @@ def render_symbol(text):
                   f'font-size="1.1" text-anchor="middle" font-family="sans-serif">{name}</text>')
             nu = (f'<text x="{ex + 0.6:.3f}" y="{ey + 1.0:.3f}" fill="{COL["num"]}" '
                   f'font-size="0.9" text-anchor="start" font-family="sans-serif">{num}</text>')
-        out.append(nm)
-        out.append(nu)
+        if not hide_names and name != num:  # 이름=번호인 무의미 중복도 생략
+            out.append(nm)
+        if not hide_nums:
+            out.append(nu)
     out.append("</svg>")
     return "".join(out)
 

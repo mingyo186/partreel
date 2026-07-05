@@ -65,9 +65,9 @@ before manufacturing.
 ## Parts index
 
 <!-- PARTS:BEGIN -->
-Currently **698 parts**, all machine-verified (structure, KLC drawing rules, render completeness, 3D coplanar/merged-pin checks, STEP kernel) with datasheet-cited dimensions.
+Currently **803 parts**, all machine-verified (structure, KLC drawing rules, render completeness, 3D coplanar/merged-pin checks, STEP kernel) with datasheet-cited dimensions.
 
-### connector (121)
+### connector (198)
 
 | Part | MPN | Manufacturer | Files |
 |---|---|---|---|
@@ -117,16 +117,90 @@ Currently **698 parts**, all machine-verified (structure, KLC drawing rules, ren
 | [Conn_01x24_FPC_P0.5mm_Horizontal_BottomContact (SparkFun)](https://partreel.com/p/sparkfun_conn_01x24_fpc_p0_5mm_horizontal_bottomcontact/) | `Conn_01x24_FPC_P0.5mm_Horizontal_BottomContact` | SparkFun Electronics | [sparkfun_conn_01x24_fpc_p0_5mm_horizontal_bottomcontact](library/connector/sparkfun/sparkfun_conn_01x24_fpc_p0_5mm_horizontal_bottomcontact) |
 | [Conn_01x24_FPC_P0.5mm_Horizontal_DualContact (SparkFun)](https://partreel.com/p/sparkfun_conn_01x24_fpc_p0_5mm_horizontal_dualcontact/) | `Conn_01x24_FPC_P0.5mm_Horizontal_DualContact` | SparkFun Electronics | [sparkfun_conn_01x24_fpc_p0_5mm_horizontal_dualcontact](library/connector/sparkfun/sparkfun_conn_01x24_fpc_p0_5mm_horizontal_dualcontact) |
 | [Debug-Cortex-2x5_P1.27mm-SMD-Unshrouded (SparkFun)](https://partreel.com/p/sparkfun_debug_cortex_2x5_p1_27mm_smd_unshrouded/) | `Debug-Cortex-2x5_P1.27mm-SMD-Unshrouded` | SparkFun Electronics | [sparkfun_debug_cortex_2x5_p1_27mm_smd_unshrouded](library/connector/sparkfun/sparkfun_debug_cortex_2x5_p1_27mm_smd_unshrouded) |
+| [ECG.0B.302.CLN (CERN library)](https://partreel.com/p/cern_lemo_ecg_0b_302_cln/) | `ECG.0B.302.CLN` | LEMO | [cern_lemo_ecg_0b_302_cln](library/connector/cern/cern_lemo_ecg_0b_302_cln) |
+| [ECG.0B.302.CLV (CERN library)](https://partreel.com/p/cern_lemo_ecg_0b_302_clv/) | `ECG.0B.302.CLV` | LEMO | [cern_lemo_ecg_0b_302_clv](library/connector/cern/cern_lemo_ecg_0b_302_clv) |
+| [ECG.0B.304.CLV (CERN library)](https://partreel.com/p/cern_lemo_ecg_0b_304_clv/) | `ECG.0B.304.CLV` | LEMO | [cern_lemo_ecg_0b_304_clv](library/connector/cern/cern_lemo_ecg_0b_304_clv) |
+| [ECG.0B.304.CLV (CERN library)](https://partreel.com/p/cern_lemo_ecg_0b_309_clv/) | `ECG.0B.304.CLV` | LEMO | [cern_lemo_ecg_0b_309_clv](library/connector/cern/cern_lemo_ecg_0b_309_clv) |
+| [ECG.0B.305.CLV (CERN library)](https://partreel.com/p/cern_lemo_ecg_0b_305_clv/) | `ECG.0B.305.CLV` | LEMO | [cern_lemo_ecg_0b_305_clv](library/connector/cern/cern_lemo_ecg_0b_305_clv) |
+| [ECG.1B.305.CLV (CERN library)](https://partreel.com/p/cern_lemo_ecg_1b_305_clv/) | `ECG.1B.305.CLV` | LEMO | [cern_lemo_ecg_1b_305_clv](library/connector/cern/cern_lemo_ecg_1b_305_clv) |
+| [ECG.2B.305.CLV (CERN library)](https://partreel.com/p/cern_lemo_ecg_2b_305_clv/) | `ECG.2B.305.CLV` | LEMO | [cern_lemo_ecg_2b_305_clv](library/connector/cern/cern_lemo_ecg_2b_305_clv) |
+| [ECG.2B.306.CLV (CERN library)](https://partreel.com/p/cern_lemo_ecg_2b_306_clv/) | `ECG.2B.306.CLV` | LEMO | [cern_lemo_ecg_2b_306_clv](library/connector/cern/cern_lemo_ecg_2b_306_clv) |
+| [ECG.2B.308.CLV (CERN library)](https://partreel.com/p/cern_lemo_ecg_2b_308_clv/) | `ECG.2B.308.CLV` | LEMO | [cern_lemo_ecg_2b_308_clv](library/connector/cern/cern_lemo_ecg_2b_308_clv) |
 | [ECG.2B.542.CLN (CERN library)](https://partreel.com/p/cern_lemo_ecg_2b_542_cln/) | `ECG.2B.542.CLN` | LEMO | [cern_lemo_ecg_2b_542_cln](library/connector/cern/cern_lemo_ecg_2b_542_cln) |
 | [ECG.2B.542.CLN (CERN library)](https://partreel.com/p/cern_lemo_ecg_2b_542_cln_alt/) | `ECG.2B.542.CLN` | LEMO | [cern_lemo_ecg_2b_542_cln_alt](library/connector/cern/cern_lemo_ecg_2b_542_cln_alt) |
+| [ECG.3B.306.CLV (CERN library)](https://partreel.com/p/cern_lemo_ecg_3b_306_clv/) | `ECG.3B.306.CLV` | LEMO | [cern_lemo_ecg_3b_306_clv](library/connector/cern/cern_lemo_ecg_3b_306_clv) |
+| [ECG.3B.310.CLV (CERN library)](https://partreel.com/p/cern_lemo_ecg_3b_310_clv/) | `ECG.3B.310.CLV` | LEMO | [cern_lemo_ecg_3b_310_clv](library/connector/cern/cern_lemo_ecg_3b_310_clv) |
+| [ECP.0S.302.CLN (CERN library)](https://partreel.com/p/cern_lemo_ecp_0s_302_cln/) | `ECP.0S.302.CLN` | LEMO | [cern_lemo_ecp_0s_302_cln](library/connector/cern/cern_lemo_ecp_0s_302_cln) |
+| [ECP.1S.302.CLN (CERN library)](https://partreel.com/p/cern_lemo_ecp_1s_302_cln/) | `ECP.1S.302.CLN` | LEMO | [cern_lemo_ecp_1s_302_cln](library/connector/cern/cern_lemo_ecp_1s_302_cln) |
+| [ECP.2S.302.CLN (CERN library)](https://partreel.com/p/cern_lemo_ecp_2s_302_cln/) | `ECP.2S.302.CLN` | LEMO | [cern_lemo_ecp_2s_302_cln](library/connector/cern/cern_lemo_ecp_2s_302_cln) |
+| [ECP.2S.304.CLN (CERN library)](https://partreel.com/p/cern_lemo_ecp_2s_304_cln/) | `ECP.2S.304.CLN` | LEMO | [cern_lemo_ecp_2s_304_cln](library/connector/cern/cern_lemo_ecp_2s_304_cln) |
+| [ECP.2S.304.CLV (CERN library)](https://partreel.com/p/cern_lemo_ecp_2s_304_clv/) | `ECP.2S.304.CLV` | LEMO | [cern_lemo_ecp_2s_304_clv](library/connector/cern/cern_lemo_ecp_2s_304_clv) |
+| [ECP.2S.306.CLV (CERN library)](https://partreel.com/p/cern_lemo_ecp_2s_306_clv/) | `ECP.2S.306.CLV` | LEMO | [cern_lemo_ecp_2s_306_clv](library/connector/cern/cern_lemo_ecp_2s_306_clv) |
+| [EDA-02782-V1-0_misc1 (CERN library)](https://partreel.com/p/cern_lemo_eda_02782_v1_0_misc1/) | `EDA-02782-V1-0_misc1` | CERN | [cern_lemo_eda_02782_v1_0_misc1](library/connector/cern/cern_lemo_eda_02782_v1_0_misc1) |
+| [EDA-02782-V1-0_misc7 (CERN library)](https://partreel.com/p/cern_lemo_eda_02782_v1_0_misc7/) | `EDA-02782-V1-0_misc7` | CERN | [cern_lemo_eda_02782_v1_0_misc7](library/connector/cern/cern_lemo_eda_02782_v1_0_misc7) |
+| [EDA-02782-V2-0_misc1 (CERN library)](https://partreel.com/p/cern_lemo_eda_02782_v2_0_misc1/) | `EDA-02782-V2-0_misc1` | CERN | [cern_lemo_eda_02782_v2_0_misc1](library/connector/cern/cern_lemo_eda_02782_v2_0_misc1) |
+| [EDA-02832-V1-0 (CERN library)](https://partreel.com/p/cern_lemo_eda_02832_v1_0/) | `EDA-02832-V1-0` | CERN | [cern_lemo_eda_02832_v1_0](library/connector/cern/cern_lemo_eda_02832_v1_0) |
+| [EDA-02833-V1-0 (CERN library)](https://partreel.com/p/cern_lemo_eda_02833_v1_0/) | `EDA-02833-V1-0` | CERN | [cern_lemo_eda_02833_v1_0](library/connector/cern/cern_lemo_eda_02833_v1_0) |
+| [EDA-02834-V1-0 (CERN library)](https://partreel.com/p/cern_lemo_eda_02834_v1_0/) | `EDA-02834-V1-0` | CERN | [cern_lemo_eda_02834_v1_0](library/connector/cern/cern_lemo_eda_02834_v1_0) |
+| [EDA-02835-V1-0 (CERN library)](https://partreel.com/p/cern_lemo_eda_02835_v1_0/) | `EDA-02835-V1-0` | CERN | [cern_lemo_eda_02835_v1_0](library/connector/cern/cern_lemo_eda_02835_v1_0) |
+| [EDA-02836-V1-0 (CERN library)](https://partreel.com/p/cern_lemo_eda_02836_v1_0/) | `EDA-02836-V1-0` | CERN | [cern_lemo_eda_02836_v1_0](library/connector/cern/cern_lemo_eda_02836_v1_0) |
+| [EDA-02837-V1-0 (CERN library)](https://partreel.com/p/cern_lemo_eda_02837_v1_0/) | `EDA-02837-V1-0` | CERN | [cern_lemo_eda_02837_v1_0](library/connector/cern/cern_lemo_eda_02837_v1_0) |
+| [EDA-02838-V1-0 (CERN library)](https://partreel.com/p/cern_lemo_eda_02838_v1_0/) | `EDA-02838-V1-0` | CERN | [cern_lemo_eda_02838_v1_0](library/connector/cern/cern_lemo_eda_02838_v1_0) |
+| [EGG.0R.317.GLN (CERN library)](https://partreel.com/p/cern_lemo_egg_0r_317_gln/) | `EGG.0R.317.GLN` | LEMO | [cern_lemo_egg_0r_317_gln](library/connector/cern/cern_lemo_egg_0r_317_gln) |
 | [EGG.0R.317.GLN (CERN library)](https://partreel.com/p/cern_lemo_egg_0r_317_gln_alt/) | `EGG.0R.317.GLN` | LEMO | [cern_lemo_egg_0r_317_gln_alt](library/connector/cern/cern_lemo_egg_0r_317_gln_alt) |
+| [EGG.1R.336.GLN (CERN library)](https://partreel.com/p/cern_lemo_egg_1r_336_gln/) | `EGG.1R.336.GLN` | LEMO | [cern_lemo_egg_1r_336_gln](library/connector/cern/cern_lemo_egg_1r_336_gln) |
 | [EGG.1R.336.GLN (CERN library)](https://partreel.com/p/cern_lemo_egg_1r_336_gln_alt/) | `EGG.1R.336.GLN` | LEMO | [cern_lemo_egg_1r_336_gln_alt](library/connector/cern/cern_lemo_egg_1r_336_gln_alt) |
+| [EGG.RR.313.GLN (CERN library)](https://partreel.com/p/cern_lemo_egg_rr_313_gln/) | `EGG.RR.313.GLN` | LEMO | [cern_lemo_egg_rr_313_gln](library/connector/cern/cern_lemo_egg_rr_313_gln) |
 | [EGG.RR.313.GLN (CERN library)](https://partreel.com/p/cern_lemo_egg_rr_313_gln_alt/) | `EGG.RR.313.GLN` | LEMO | [cern_lemo_egg_rr_313_gln_alt](library/connector/cern/cern_lemo_egg_rr_313_gln_alt) |
+| [EPA.00.250.NTN (CERN library)](https://partreel.com/p/cern_lemo_epa_00_250_ntn/) | `EPA.00.250.NTN` | LEMO | [cern_lemo_epa_00_250_ntn](library/connector/cern/cern_lemo_epa_00_250_ntn) |
+| [EPE.00.250.NTN (CERN library)](https://partreel.com/p/cern_lemo_epe_00_250_ntn/) | `EPE.00.250.NTN` | LEMO | [cern_lemo_epe_00_250_ntn](library/connector/cern/cern_lemo_epe_00_250_ntn) |
+| [EPG.00.302.NLN (CERN library)](https://partreel.com/p/cern_lemo_epg_00_302_nln/) | `EPG.00.302.NLN` | LEMO | [cern_lemo_epg_00_302_nln](library/connector/cern/cern_lemo_epg_00_302_nln) |
+| [EPG.00.304.NLN (CERN library)](https://partreel.com/p/cern_lemo_epg_00_304_nln/) | `EPG.00.304.NLN` | LEMO | [cern_lemo_epg_00_304_nln](library/connector/cern/cern_lemo_epg_00_304_nln) |
+| [EPG.0B.302.HLN (CERN library)](https://partreel.com/p/cern_lemo_epg_0b_302_hln/) | `EPG.0B.302.HLN` | LEMO | [cern_lemo_epg_0b_302_hln](library/connector/cern/cern_lemo_epg_0b_302_hln) |
+| [EPG.0B.304.HLN (CERN library)](https://partreel.com/p/cern_lemo_epg_0b_304_hln/) | `EPG.0B.304.HLN` | LEMO | [cern_lemo_epg_0b_304_hln](library/connector/cern/cern_lemo_epg_0b_304_hln) |
+| [EPG.1B.302.HLN (CERN library)](https://partreel.com/p/cern_lemo_epg_1b_302_hln/) | `EPG.1B.302.HLN` | LEMO | [cern_lemo_epg_1b_302_hln](library/connector/cern/cern_lemo_epg_1b_302_hln) |
+| [EPG.1B.304.HLN (CERN library)](https://partreel.com/p/cern_lemo_epg_1b_304_hln/) | `EPG.1B.304.HLN` | LEMO | [cern_lemo_epg_1b_304_hln](library/connector/cern/cern_lemo_epg_1b_304_hln) |
+| [EPG.1B.306.HLN (CERN library)](https://partreel.com/p/cern_lemo_epg_1b_306_hln/) | `EPG.1B.306.HLN` | LEMO | [cern_lemo_epg_1b_306_hln](library/connector/cern/cern_lemo_epg_1b_306_hln) |
+| [EPG.1B.308.HLN (CERN library)](https://partreel.com/p/cern_lemo_epg_1b_308_hln/) | `EPG.1B.308.HLN` | LEMO | [cern_lemo_epg_1b_308_hln](library/connector/cern/cern_lemo_epg_1b_308_hln) |
+| [EPG.1B.310.HLN (CERN library)](https://partreel.com/p/cern_lemo_epg_1b_310_hln/) | `EPG.1B.310.HLN` | LEMO | [cern_lemo_epg_1b_310_hln](library/connector/cern/cern_lemo_epg_1b_310_hln) |
+| [EPK.00.250.NTN (CERN library)](https://partreel.com/p/cern_lemo_epk_00_250_ntn/) | `EPK.00.250.NTN` | LEMO | [cern_lemo_epk_00_250_ntn](library/connector/cern/cern_lemo_epk_00_250_ntn) |
+| [EPL.00.250.NTN (CERN library)](https://partreel.com/p/cern_lemo_epl_00_250_ntn/) | `EPL.00.250.NTN` | LEMO | [cern_lemo_epl_00_250_ntn](library/connector/cern/cern_lemo_epl_00_250_ntn) |
+| [EPL.00.650.NLN (CERN library)](https://partreel.com/p/cern_lemo_epl_00_650_nln/) | `EPL.00.650.NLN` | LEMO | [cern_lemo_epl_00_650_nln](library/connector/cern/cern_lemo_epl_00_650_nln) |
+| [EPL.0S.302.HLN (CERN library)](https://partreel.com/p/cern_lemo_epl_0s_302_hln/) | `EPL.0S.302.HLN` | LEMO | [cern_lemo_epl_0s_302_hln](library/connector/cern/cern_lemo_epl_0s_302_hln) |
+| [EPL.0S.303.HLN (CERN library)](https://partreel.com/p/cern_lemo_epl_0s_303_hln/) | `EPL.0S.303.HLN` | LEMO | [cern_lemo_epl_0s_303_hln](library/connector/cern/cern_lemo_epl_0s_303_hln) |
+| [EPL.0S.303.HLNS (CERN library)](https://partreel.com/p/cern_lemo_epl_0s_303_hlns/) | `EPL.0S.303.HLNS` | LEMO | [cern_lemo_epl_0s_303_hlns](library/connector/cern/cern_lemo_epl_0s_303_hlns) |
+| [EPL.0S.304.HLN (CERN library)](https://partreel.com/p/cern_lemo_epl_0s_304_hln/) | `EPL.0S.304.HLN` | LEMO | [cern_lemo_epl_0s_304_hln](library/connector/cern/cern_lemo_epl_0s_304_hln) |
+| [EPL.1S.302.HLN (CERN library)](https://partreel.com/p/cern_lemo_epl_1s_302_hln/) | `EPL.1S.302.HLN` | LEMO | [cern_lemo_epl_1s_302_hln](library/connector/cern/cern_lemo_epl_1s_302_hln) |
+| [EPL.1S.304.HLN (CERN library)](https://partreel.com/p/cern_lemo_epl_1s_304_hln/) | `EPL.1S.304.HLN` | LEMO | [cern_lemo_epl_1s_304_hln](library/connector/cern/cern_lemo_epl_1s_304_hln) |
+| [EPL.1S.305.HLN (CERN library)](https://partreel.com/p/cern_lemo_epl_1s_305_hln/) | `EPL.1S.305.HLN` | LEMO | [cern_lemo_epl_1s_305_hln](library/connector/cern/cern_lemo_epl_1s_305_hln) |
+| [EPL.1S.306.HLN (CERN library)](https://partreel.com/p/cern_lemo_epl_1s_306_hln/) | `EPL.1S.306.HLN` | LEMO | [cern_lemo_epl_1s_306_hln](library/connector/cern/cern_lemo_epl_1s_306_hln) |
+| [EXG.0B.302.HLN (CERN library)](https://partreel.com/p/cern_lemo_exg_0b_302_hln/) | `EXG.0B.302.HLN` | LEMO | [cern_lemo_exg_0b_302_hln](library/connector/cern/cern_lemo_exg_0b_302_hln) |
+| [EXG.0B.304.HLN (CERN library)](https://partreel.com/p/cern_lemo_exg_0b_304_hln/) | `EXG.0B.304.HLN` | LEMO | [cern_lemo_exg_0b_304_hln](library/connector/cern/cern_lemo_exg_0b_304_hln) |
+| [EXG.1B.302.HLN (CERN library)](https://partreel.com/p/cern_lemo_exg_1b_302_hln/) | `EXG.1B.302.HLN` | LEMO | [cern_lemo_exg_1b_302_hln](library/connector/cern/cern_lemo_exg_1b_302_hln) |
+| [EXJ.1B.304.HLD (CERN library)](https://partreel.com/p/cern_lemo_exj_1b_304_hld/) | `EXJ.1B.304.HLD` | LEMO | [cern_lemo_exj_1b_304_hld](library/connector/cern/cern_lemo_exj_1b_304_hld) |
+| [EZG.00.302.CLN (CERN library)](https://partreel.com/p/cern_lemo_ezg_00_302_cln/) | `EZG.00.302.CLN` | LEMO | [cern_lemo_ezg_00_302_cln](library/connector/cern/cern_lemo_ezg_00_302_cln) |
+| [EZG.00.304.CLN (CERN library)](https://partreel.com/p/cern_lemo_ezg_00_304_cln/) | `EZG.00.304.CLN` | LEMO | [cern_lemo_ezg_00_304_cln](library/connector/cern/cern_lemo_ezg_00_304_cln) |
+| [EZG.0B.302.CLN (CERN library)](https://partreel.com/p/cern_lemo_ezg_0b_302_cln/) | `EZG.0B.302.CLN` | LEMO | [cern_lemo_ezg_0b_302_cln](library/connector/cern/cern_lemo_ezg_0b_302_cln) |
+| [EZG.0B.304.CLN (CERN library)](https://partreel.com/p/cern_lemo_ezg_0b_304_cln/) | `EZG.0B.304.CLN` | LEMO | [cern_lemo_ezg_0b_304_cln](library/connector/cern/cern_lemo_ezg_0b_304_cln) |
+| [EZG.0S.302.NLNY (CERN library)](https://partreel.com/p/cern_lemo_ezg_0s_302_nlny/) | `EZG.0S.302.NLNY` | LEMO | [cern_lemo_ezg_0s_302_nlny](library/connector/cern/cern_lemo_ezg_0s_302_nlny) |
+| [EZG.1B.302.CLN (CERN library)](https://partreel.com/p/cern_lemo_ezg_1b_302_cln/) | `EZG.1B.302.CLN` | LEMO | [cern_lemo_ezg_1b_302_cln](library/connector/cern/cern_lemo_ezg_1b_302_cln) |
+| [EZG.1B.304.NLN (CERN library)](https://partreel.com/p/cern_lemo_ezg_1b_304_nln/) | `EZG.1B.304.NLN` | LEMO | [cern_lemo_ezg_1b_304_nln](library/connector/cern/cern_lemo_ezg_1b_304_nln) |
+| [EZG.1B.306.CLN (CERN library)](https://partreel.com/p/cern_lemo_ezg_1b_306_cln/) | `EZG.1B.306.CLN` | LEMO | [cern_lemo_ezg_1b_306_cln](library/connector/cern/cern_lemo_ezg_1b_306_cln) |
+| [FPA.00.250.NTD (CERN library)](https://partreel.com/p/cern_lemo_fpa_00_250_ntd/) | `FPA.00.250.NTD` | LEMO | [cern_lemo_fpa_00_250_ntd](library/connector/cern/cern_lemo_fpa_00_250_ntd) |
+| [FPL.00.250.NTD (CERN library)](https://partreel.com/p/cern_lemo_fpl_00_250_ntd/) | `FPL.00.250.NTD` | LEMO | [cern_lemo_fpl_00_250_ntd](library/connector/cern/cern_lemo_fpl_00_250_ntd) |
+| [HEN.2M.308.XLNP (CERN library)](https://partreel.com/p/cern_lemo_hen_2m_308_xlnp/) | `HEN.2M.308.XLNP` | LEMO | [cern_lemo_hen_2m_308_xlnp](library/connector/cern/cern_lemo_hen_2m_308_xlnp) |
 | [HEN.2M.308.XLNP (CERN library)](https://partreel.com/p/cern_lemo_hen_2m_308_xlnp_alt/) | `HEN.2M.308.XLNP` | LEMO | [cern_lemo_hen_2m_308_xlnp_alt](library/connector/cern/cern_lemo_hen_2m_308_xlnp_alt) |
+| [HEN.2M.312.XLNP (CERN library)](https://partreel.com/p/cern_lemo_hen_2m_312_xlnp/) | `HEN.2M.312.XLNP` | LEMO | [cern_lemo_hen_2m_312_xlnp](library/connector/cern/cern_lemo_hen_2m_312_xlnp) |
+| [HEN.2M.312.XLNP (CERN library)](https://partreel.com/p/cern_lemo_hen_2m_312_xlnp_alt/) | `HEN.2M.312.XLNP` | LEMO | [cern_lemo_hen_2m_312_xlnp_alt](library/connector/cern/cern_lemo_hen_2m_312_xlnp_alt) |
+| [HEN.2M.319.XLNP (CERN library)](https://partreel.com/p/cern_lemo_hen_2m_319_xlnp/) | `HEN.2M.319.XLNP` | LEMO | [cern_lemo_hen_2m_319_xlnp](library/connector/cern/cern_lemo_hen_2m_319_xlnp) |
 | [HEN.2M.319.XLNP (CERN library)](https://partreel.com/p/cern_lemo_hen_2m_319_xlnp_alt/) | `HEN.2M.319.XLNP` | LEMO | [cern_lemo_hen_2m_319_xlnp_alt](library/connector/cern/cern_lemo_hen_2m_319_xlnp_alt) |
+| [HEP.2M.308.XLNP (CERN library)](https://partreel.com/p/cern_lemo_hep_2m_308_xlnp/) | `HEP.2M.308.XLNP` | LEMO | [cern_lemo_hep_2m_308_xlnp](library/connector/cern/cern_lemo_hep_2m_308_xlnp) |
 | [HEP.2M.308.XLNP (CERN library)](https://partreel.com/p/cern_lemo_hep_2m_308_xlnp_alt/) | `HEP.2M.308.XLNP` | LEMO | [cern_lemo_hep_2m_308_xlnp_alt](library/connector/cern/cern_lemo_hep_2m_308_xlnp_alt) |
+| [HES.2M.308.XLDP (CERN library)](https://partreel.com/p/cern_lemo_hes_2m_308_xldp/) | `HES.2M.308.XLDP` | LEMO | [cern_lemo_hes_2m_308_xldp](library/connector/cern/cern_lemo_hes_2m_308_xldp) |
 | [HES.2M.308.XLDP (CERN library)](https://partreel.com/p/cern_lemo_hes_2m_308_xldp_alt/) | `HES.2M.308.XLDP` | LEMO | [cern_lemo_hes_2m_308_xldp_alt](library/connector/cern/cern_lemo_hes_2m_308_xldp_alt) |
+| [HET.2M.308.XLDP (CERN library)](https://partreel.com/p/cern_lemo_het_2m_308_xldp/) | `HET.2M.308.XLDP` | LEMO | [cern_lemo_het_2m_308_xldp](library/connector/cern/cern_lemo_het_2m_308_xldp) |
 | [HET.2M.308.XLDP (CERN library)](https://partreel.com/p/cern_lemo_het_2m_308_xldp_alt/) | `HET.2M.308.XLDP` | LEMO | [cern_lemo_het_2m_308_xldp_alt](library/connector/cern/cern_lemo_het_2m_308_xldp_alt) |
+| [HEU.2M.308.XLNP (CERN library)](https://partreel.com/p/cern_lemo_heu_2m_308_xlnp/) | `HEU.2M.308.XLNP` | LEMO | [cern_lemo_heu_2m_308_xlnp](library/connector/cern/cern_lemo_heu_2m_308_xlnp) |
 | [HEU.2M.308.XLNP (CERN library)](https://partreel.com/p/cern_lemo_heu_2m_308_xlnp_alt/) | `HEU.2M.308.XLNP` | LEMO | [cern_lemo_heu_2m_308_xlnp_alt](library/connector/cern/cern_lemo_heu_2m_308_xlnp_alt) |
 | [JST GH 10-pin (BM10B-GHS-TBT)](https://partreel.com/p/jst_gh_10pin/) | `BM10B-GHS-TBT` | JST | [jst_gh_10pin](library/connector/jst/gh/jst_gh_10pin) |
 | [JST GH 11-pin (BM11B-GHS-TBT)](https://partreel.com/p/jst_gh_11pin/) | `BM11B-GHS-TBT` | JST | [jst_gh_11pin](library/connector/jst/gh/jst_gh_11pin) |
@@ -169,6 +243,9 @@ Currently **698 parts**, all machine-verified (structure, KLC drawing rules, ren
 | [JST XH 7-pin (B7B-XH-A)](https://partreel.com/p/jst_xh_7pin/) | `B7B-XH-A` | JST | [jst_xh_7pin](library/connector/jst/xh/jst_xh_7pin) |
 | [JST XH 8-pin (B8B-XH-A)](https://partreel.com/p/jst_xh_8pin/) | `B8B-XH-A` | JST | [jst_xh_8pin](library/connector/jst/xh/jst_xh_8pin) |
 | [JST XH 9-pin (B9B-XH-A)](https://partreel.com/p/jst_xh_9pin/) | `B9B-XH-A` | JST | [jst_xh_9pin](library/connector/jst/xh/jst_xh_9pin) |
+| [PPG.M0.6GG.N (CERN library)](https://partreel.com/p/cern_lemo_ppg_m0_6gg_n/) | `PPG.M0.6GG.N` | LEMO | [cern_lemo_ppg_m0_6gg_n](library/connector/cern/cern_lemo_ppg_m0_6gg_n) |
+| [PPG.M0.8GG.N (CERN library)](https://partreel.com/p/cern_lemo_ppg_m0_8gg_n/) | `PPG.M0.8GG.N` | LEMO | [cern_lemo_ppg_m0_8gg_n](library/connector/cern/cern_lemo_ppg_m0_8gg_n) |
+| [PPG.M1.0GG.N (CERN library)](https://partreel.com/p/cern_lemo_ppg_m1_0gg_n/) | `PPG.M1.0GG.N` | LEMO | [cern_lemo_ppg_m1_0gg_n](library/connector/cern/cern_lemo_ppg_m1_0gg_n) |
 | [Pin Header 2.54mm 4-pin (PinHeader_1x04_P2.54mm)](https://partreel.com/p/pin_header_254_4pin/) | `PinHeader_1x04_P2.54mm` | Generic | [pin_header_254_4pin](library/connector/header/p254/pin_header_254_4pin) |
 | [Pin Header 2.54mm 7-pin (PinHeader_1x07_P2.54mm)](https://partreel.com/p/pin_header_254_7pin/) | `PinHeader_1x07_P2.54mm` | Generic | [pin_header_254_7pin](library/connector/header/p254/pin_header_254_7pin) |
 | [Qwiic_Horizontal (SparkFun)](https://partreel.com/p/sparkfun_qwiic_horizontal/) | `Qwiic_Horizontal` | SparkFun Electronics | [sparkfun_qwiic_horizontal](library/connector/sparkfun/sparkfun_qwiic_horizontal) |
@@ -483,11 +560,12 @@ Currently **698 parts**, all machine-verified (structure, KLC drawing rules, ren
 | [MX-Solderable-ISO-Rotated (ai03 MX_V2)](https://partreel.com/p/ai03_mx_solderable_iso_rotated/) | `MX-Solderable-ISO-Rotated` | Cherry MX compatible | [ai03_mx_solderable_iso_rotated](library/switch/ai03/ai03_mx_solderable_iso_rotated) |
 | [MX-Solderable-ISO-Rotated-ReversedStabilizers (ai03 MX_V2)](https://partreel.com/p/ai03_mx_solderable_iso_rotated_reversedstabilizers/) | `MX-Solderable-ISO-Rotated-ReversedStabilizers` | Cherry MX compatible | [ai03_mx_solderable_iso_rotated_reversedstabilizers](library/switch/ai03/ai03_mx_solderable_iso_rotated_reversedstabilizers) |
 
-### timing (307)
+### timing (335)
 
 | Part | MPN | Manufacturer | Files |
 |---|---|---|---|
 | [20.0MHz IQXO-22B (CERN library)](https://partreel.com/p/cern_osc_20mhz_iqd_iqxo_22b/) | `20.0MHz IQXO-22B` | IQD FREQUENCY PRODUCTS | [cern_osc_20mhz_iqd_iqxo_22b](library/timing/cern/cern_osc_20mhz_iqd_iqxo_22b) |
+| [4.9152MHz HC49/4H SMX 30/50/10/16 (LF A127E ) (CERN library)](https://partreel.com/p/cern_xtal_4_9152mhz_iqd_hc49_4hsmx_30_50_10_16/) | `4.9152MHz HC49/4H SMX 30/50/10/16 (LF A127E )` | IQD FREQUENCY PRODUCTS | [cern_xtal_4_9152mhz_iqd_hc49_4hsmx_30_50_10_16](library/timing/cern/cern_xtal_4_9152mhz_iqd_hc49_4hsmx_30_50_10_16) |
 | [40MHZ CFPT-9301 FX A (CERN library)](https://partreel.com/p/cern_osc_40mhz_rakon_cfpt_9301_fx_a/) | `40MHZ CFPT-9301 FX A` | RAKON | [cern_osc_40mhz_rakon_cfpt_9301_fx_a](library/timing/cern/cern_osc_40mhz_rakon_cfpt_9301_fx_a) |
 | [501-22578-01 (CERN library)](https://partreel.com/p/cern_osc_10mhz_wenzel_501_22578_01/) | `501-22578-01` | WENZEL | [cern_osc_10mhz_wenzel_501_22578_01](library/timing/cern/cern_osc_10mhz_wenzel_501_22578_01) |
 | [501-27514-14 (CERN library)](https://partreel.com/p/cern_osc_100mhz_wenzel_501_27514_14/) | `501-27514-14` | WENZEL | [cern_osc_100mhz_wenzel_501_27514_14](library/timing/cern/cern_osc_100mhz_wenzel_501_27514_14) |
@@ -510,6 +588,9 @@ Currently **698 parts**, all machine-verified (structure, KLC drawing rules, ren
 | [570BBC000121DG (CERN library)](https://partreel.com/p/cern_osc_10_280mhz_silicon_lab_si570bbc000121dg/) | `570BBC000121DG` | SILICON LABS | [cern_osc_10_280mhz_silicon_lab_si570bbc000121dg](library/timing/cern/cern_osc_10_280mhz_silicon_lab_si570bbc000121dg) |
 | [570CAC000121DG (CERN library)](https://partreel.com/p/cern_osc_10_160mhz_silicon_lab_si570cac000121dg/) | `570CAC000121DG` | SILICON LABS | [cern_osc_10_160mhz_silicon_lab_si570cac000121dg](library/timing/cern/cern_osc_10_160mhz_silicon_lab_si570cac000121dg) |
 | [636L3I050M00000 (CERN library)](https://partreel.com/p/cern_osc_50mhz_cts_636l3i050m00000/) | `636L3I050M00000` | CTS ELECTRONIC COMPONENTS | [cern_osc_50mhz_cts_636l3i050m00000](library/timing/cern/cern_osc_50mhz_cts_636l3i050m00000) |
+| [6MHz HC49/4H SMX 20/50/10/16 (CERN library)](https://partreel.com/p/cern_xtal_6mhz_rakon_hc49_4h_smx_20_50_10_16/) | `6MHz HC49/4H SMX 20/50/10/16` | RAKON | [cern_xtal_6mhz_rakon_hc49_4h_smx_20_50_10_16](library/timing/cern/cern_xtal_6mhz_rakon_hc49_4h_smx_20_50_10_16) |
+| [7A-12.000MAAJ-T (CERN library)](https://partreel.com/p/cern_xtal_12mhz_txc_7a_12_000maaj_t/) | `7A-12.000MAAJ-T` | TXC CORPORATION | [cern_xtal_12mhz_txc_7a_12_000maaj_t](library/timing/cern/cern_xtal_12mhz_txc_7a_12_000maaj_t) |
+| [7A-8.000MAAE-T (CERN library)](https://partreel.com/p/cern_xtal_8mhz_txc_7a_8_000maae_t/) | `7A-8.000MAAE-T` | TXC CORPORATION | [cern_xtal_8mhz_txc_7a_8_000maae_t](library/timing/cern/cern_xtal_8mhz_txc_7a_8_000maae_t) |
 | [7C-20.000MBA-T (CERN library)](https://partreel.com/p/cern_osc_20mhz_txc_7c_20_000mba_t/) | `7C-20.000MBA-T` | TXC CORPORATION | [cern_osc_20mhz_txc_7c_20_000mba_t](library/timing/cern/cern_osc_20mhz_txc_7c_20_000mba_t) |
 | [7C-48.000MBA-T (CERN library)](https://partreel.com/p/cern_osc_48mhz_txc_7c_48_000mba_t/) | `7C-48.000MBA-T` | TXC CORPORATION | [cern_osc_48mhz_txc_7c_48_000mba_t](library/timing/cern/cern_osc_48mhz_txc_7c_48_000mba_t) |
 | [7M-12.000MAAJ-T (CERN library)](https://partreel.com/p/cern_xtal_12mhz_txc_7m_12_000maaj_t/) | `7M-12.000MAAJ-T` | TXC CORPORATION | [cern_xtal_12mhz_txc_7m_12_000maaj_t](library/timing/cern/cern_xtal_12mhz_txc_7m_12_000maaj_t) |
@@ -521,10 +602,18 @@ Currently **698 parts**, all machine-verified (structure, KLC drawing rules, ren
 | [7W-4.096MBB-T (CERN library)](https://partreel.com/p/cern_osc_4_096mhz_txc_7w_4_096mbb_t/) | `7W-4.096MBB-T` | TXC CORPORATION | [cern_osc_4_096mhz_txc_7w_4_096mbb_t](library/timing/cern/cern_osc_4_096mhz_txc_7w_4_096mbb_t) |
 | [8.0MHz IQXO-22B (CERN library)](https://partreel.com/p/cern_osc_8mhz_iqd_iqxo_22b/) | `8.0MHz IQXO-22B` | IQD FREQUENCY PRODUCTS | [cern_osc_8mhz_iqd_iqxo_22b](library/timing/cern/cern_osc_8mhz_iqd_iqxo_22b) |
 | [831056297 (CERN library)](https://partreel.com/p/cern_osc_26mhz_wurth_831056297/) | `831056297` | WURTH ELEKTRONIK | [cern_osc_26mhz_wurth_831056297](library/timing/cern/cern_osc_26mhz_wurth_831056297) |
+| [855 (CERN library)](https://partreel.com/p/cern_xtal_apc_855/) | `855` | APC | [cern_xtal_apc_855](library/timing/cern/cern_xtal_apc_855) |
 | [8N4Q001EG1107CDI (CERN library)](https://partreel.com/p/cern_osc_15_476_1300mhz_idt_8n4q001eg1107cdi/) | `8N4Q001EG1107CDI` | INTEGRATED DEVICE TECHNOLOGY | [cern_osc_15_476_1300mhz_idt_8n4q001eg1107cdi](library/timing/cern/cern_osc_15_476_1300mhz_idt_8n4q001eg1107cdi) |
 | [8Y-25.000MAAJ-T (CERN library)](https://partreel.com/p/cern_xtal_25mhz_txc_8y_25_000maaj_t/) | `8Y-25.000MAAJ-T` | TXC CORPORATION | [cern_xtal_25mhz_txc_8y_25_000maaj_t](library/timing/cern/cern_xtal_25mhz_txc_8y_25_000maaj_t) |
+| [9C-4.000MAAJ-T (CERN library)](https://partreel.com/p/cern_xtal_4mhz_txc_9c_4_000maaj_t/) | `9C-4.000MAAJ-T` | TXC CORPORATION | [cern_xtal_4mhz_txc_9c_4_000maaj_t](library/timing/cern/cern_xtal_4mhz_txc_9c_4_000maaj_t) |
+| [AA-8.192MAGE-T (CERN library)](https://partreel.com/p/cern_xtal_8_192mhz_txc_aa_8_192mage_t/) | `AA-8.192MAGE-T` | TXC CORPORATION | [cern_xtal_8_192mhz_txc_aa_8_192mage_t](library/timing/cern/cern_xtal_8_192mhz_txc_aa_8_192mage_t) |
+| [ABL-16.000MHZ-B1U (CERN library)](https://partreel.com/p/cern_xtal_16mhz_abracon_abl_16_000mhz_b1u/) | `ABL-16.000MHZ-B1U` | ABRACON | [cern_xtal_16mhz_abracon_abl_16_000mhz_b1u](library/timing/cern/cern_xtal_16mhz_abracon_abl_16_000mhz_b1u) |
 | [ABLNO-V-100.000MHZ (CERN library)](https://partreel.com/p/cern_osc_100mhz_abracon_ablno_v/) | `ABLNO-V-100.000MHZ` | ABRACON | [cern_osc_100mhz_abracon_ablno_v](library/timing/cern/cern_osc_100mhz_abracon_ablno_v) |
+| [ABLS-25.000MHZ-B2F-T (CERN library)](https://partreel.com/p/cern_xtal_25mhz_abracon_abls_25_000mhz_b2f_t/) | `ABLS-25.000MHZ-B2F-T` | ABRACON | [cern_xtal_25mhz_abracon_abls_25_000mhz_b2f_t](library/timing/cern/cern_xtal_25mhz_abracon_abls_25_000mhz_b2f_t) |
+| [ABLS-8.192MHZ-B2-T (CERN library)](https://partreel.com/p/cern_xtal_8_192mhz_abracon_abls_8_192mhz_b2_t/) | `ABLS-8.192MHZ-B2-T` | ABRACON | [cern_xtal_8_192mhz_abracon_abls_8_192mhz_b2_t](library/timing/cern/cern_xtal_8_192mhz_abracon_abls_8_192mhz_b2_t) |
+| [ABLS2-12.000MHZ-D4Y (CERN library)](https://partreel.com/p/cern_xtal_12mhz_abracon_abls2_12_000mhz_d4y/) | `ABLS2-12.000MHZ-D4Y` | ABRACON | [cern_xtal_12mhz_abracon_abls2_12_000mhz_d4y](library/timing/cern/cern_xtal_12mhz_abracon_abls2_12_000mhz_d4y) |
 | [ABLSG-5.000MHZ-D-2-Y-T (CERN library)](https://partreel.com/p/cern_xtal_5mhz_abracon_ablsg_5_000mhz_d_2_y_t/) | `ABLSG-5.000MHZ-D-2-Y-T` | ABRACON | [cern_xtal_5mhz_abracon_ablsg_5_000mhz_d_2_y_t](library/timing/cern/cern_xtal_5mhz_abracon_ablsg_5_000mhz_d_2_y_t) |
+| [ABM3-28.6363MHZ-B2 (CERN library)](https://partreel.com/p/cern_xtal_28_6363mhz_abracon_abm3_28_6363mhz_b2/) | `ABM3-28.6363MHZ-B2` | ABRACON | [cern_xtal_28_6363mhz_abracon_abm3_28_6363mhz_b2](library/timing/cern/cern_xtal_28_6363mhz_abracon_abm3_28_6363mhz_b2) |
 | [ABM3B-12.000MHZ-B2-T (CERN library)](https://partreel.com/p/cern_xtal_12mhz_abracon_abm3b_12_000mhz_b2_t/) | `ABM3B-12.000MHZ-B2-T` | ABRACON | [cern_xtal_12mhz_abracon_abm3b_12_000mhz_b2_t](library/timing/cern/cern_xtal_12mhz_abracon_abm3b_12_000mhz_b2_t) |
 | [ABM3B-18.432MHZ-B2-T (CERN library)](https://partreel.com/p/cern_xtal_18_432mhz_abracon_abm3b_18_432mhz_b2_t/) | `ABM3B-18.432MHZ-B2-T` | ABRACON | [cern_xtal_18_432mhz_abracon_abm3b_18_432mhz_b2_t](library/timing/cern/cern_xtal_18_432mhz_abracon_abm3b_18_432mhz_b2_t) |
 | [ABM3B-8.000MHZ-B2-T (CERN library)](https://partreel.com/p/cern_xtal_8mhz_abracon_abm3b_8_000mhz_b2_t/) | `ABM3B-8.000MHZ-B2-T` | ABRACON | [cern_xtal_8mhz_abracon_abm3b_8_000mhz_b2_t](library/timing/cern/cern_xtal_8mhz_abracon_abm3b_8_000mhz_b2_t) |
@@ -532,6 +621,10 @@ Currently **698 parts**, all machine-verified (structure, KLC drawing rules, ren
 | [ABM8G-25.000MHZ-18-D2Y (CERN library)](https://partreel.com/p/cern_xtal_25_000mhz_abracon_abm8g_25_000mhz_18_d2y/) | `ABM8G-25.000MHZ-18-D2Y` | ABRACON | [cern_xtal_25_000mhz_abracon_abm8g_25_000mhz_18_d2y](library/timing/cern/cern_xtal_25_000mhz_abracon_abm8g_25_000mhz_18_d2y) |
 | [ABM8W-50.0000MHZ-8-B1U (CERN library)](https://partreel.com/p/cern_xtal_50_0000mhz_abracon_abm8w_50_0000mhz_8_b1u/) | `ABM8W-50.0000MHZ-8-B1U` | ABRACON | [cern_xtal_50_0000mhz_abracon_abm8w_50_0000mhz_8_b1u](library/timing/cern/cern_xtal_50_0000mhz_abracon_abm8w_50_0000mhz_8_b1u) |
 | [ABMM2-10.000MHZ-E2-T (CERN library)](https://partreel.com/p/cern_xtal_10mhz_abracon_abmm2_10_000mhz_e2_t/) | `ABMM2-10.000MHZ-E2-T` | ABRACON | [cern_xtal_10mhz_abracon_abmm2_10_000mhz_e2_t](library/timing/cern/cern_xtal_10mhz_abracon_abmm2_10_000mhz_e2_t) |
+| [ABS06-107-32.768kHz (CERN library)](https://partreel.com/p/cern_xtal_32_768khz_abracon_abs06_107_32_768khz/) | `ABS06-107-32.768kHz` | ABRACON | [cern_xtal_32_768khz_abracon_abs06_107_32_768khz](library/timing/cern/cern_xtal_32_768khz_abracon_abs06_107_32_768khz) |
+| [ABS06-32.768kHz-9 (CERN library)](https://partreel.com/p/cern_xtal_32_768khz_abracon_abs06_32_768khz_9/) | `ABS06-32.768kHz-9` | ABRACON | [cern_xtal_32_768khz_abracon_abs06_32_768khz_9](library/timing/cern/cern_xtal_32_768khz_abracon_abs06_32_768khz_9) |
+| [ABS06-32.768kHz-T (CERN library)](https://partreel.com/p/cern_xtal_32_768khz_abracon_abs06_32_768khz_t/) | `ABS06-32.768kHz-T` | ABRACON | [cern_xtal_32_768khz_abracon_abs06_32_768khz_t](library/timing/cern/cern_xtal_32_768khz_abracon_abs06_32_768khz_t) |
+| [ABS09-32.768KHZ-T (CERN library)](https://partreel.com/p/cern_xtal_32_768khz_abracon_abs09_32_768khz_t/) | `ABS09-32.768KHZ-T` | ABRACON | [cern_xtal_32_768khz_abracon_abs09_32_768khz_t](library/timing/cern/cern_xtal_32_768khz_abracon_abs09_32_768khz_t) |
 | [ABS25-32.768KHZ-T (CERN library)](https://partreel.com/p/cern_xtal_32_768khz_abracon_abs25_32_768khz_t/) | `ABS25-32.768KHZ-T` | ABRACON | [cern_xtal_32_768khz_abracon_abs25_32_768khz_t](library/timing/cern/cern_xtal_32_768khz_abracon_abs25_32_768khz_t) |
 | [ACH-10.000MHZ-EK (CERN library)](https://partreel.com/p/cern_osc_10mhz_abracon_ach_10_000mhz_ek/) | `ACH-10.000MHZ-EK` | ABRACON | [cern_osc_10mhz_abracon_ach_10_000mhz_ek](library/timing/cern/cern_osc_10mhz_abracon_ach_10_000mhz_ek) |
 | [AD2S99AP (CERN library)](https://partreel.com/p/cern_ad2s99apz/) | `AD2S99AP` | ANALOG DEVICES | [cern_ad2s99apz](library/timing/cern/cern_ad2s99apz) |
@@ -558,12 +651,15 @@ Currently **698 parts**, all machine-verified (structure, KLC drawing rules, ren
 | [ASV-24.576MHZ-EJ-T (CERN library)](https://partreel.com/p/cern_osc_24_576mhz_abracon_asv_24_576mhz_ej_t/) | `ASV-24.576MHZ-EJ-T` | ABRACON | [cern_osc_24_576mhz_abracon_asv_24_576mhz_ej_t](library/timing/cern/cern_osc_24_576mhz_abracon_asv_24_576mhz_ej_t) |
 | [ASVTX-11-A-25.000MHz-T (CERN library)](https://partreel.com/p/cern_osc_25mhz_abracon_asvtx_11_ah_xxmhz_t/) | `ASVTX-11-A-25.000MHz-T` | ABRACON | [cern_osc_25mhz_abracon_asvtx_11_ah_xxmhz_t](library/timing/cern/cern_osc_25mhz_abracon_asvtx_11_ah_xxmhz_t) |
 | [ASVV-20.000MHZ-N152-T (CERN library)](https://partreel.com/p/cern_osc_20mhz_abracon_asvv_20_000mhz_n152_t/) | `ASVV-20.000MHZ-N152-T` | ABRACON | [cern_osc_20mhz_abracon_asvv_20_000mhz_n152_t](library/timing/cern/cern_osc_20mhz_abracon_asvv_20_000mhz_n152_t) |
+| [ATS100B-E (CERN library)](https://partreel.com/p/cern_xtal_10mhz_cts_ats100b_e/) | `ATS100B-E` | CTS | [cern_xtal_10mhz_cts_ats100b_e](library/timing/cern/cern_xtal_10mhz_cts_ats100b_e) |
 | [AXIOM45ULN-24_Rev.1-100.000MHz (CERN library)](https://partreel.com/p/cern_osc_100mhz_axtal_axiom45uln_24/) | `AXIOM45ULN-24_Rev.1-100.000MHz` | AXTAL | [cern_osc_100mhz_axtal_axiom45uln_24](library/timing/cern/cern_osc_100mhz_axtal_axiom45uln_24) |
 | [BJ-156.250MBE-T (CERN library)](https://partreel.com/p/cern_osc_156_25mhz_txc_bj_156_250mbe_t/) | `BJ-156.250MBE-T` | TXC CORPORATION | [cern_osc_156_25mhz_txc_bj_156_250mbe_t](library/timing/cern/cern_osc_156_25mhz_txc_bj_156_250mbe_t) |
+| [CC6F-T1A 80.157372MHZ 14.2PF -18/+18PPM TB QI (CERN library)](https://partreel.com/p/cern_xtal_80_157372mhz_micro_crystal_cc6f_t1a/) | `CC6F-T1A 80.157372MHZ 14.2PF -18/+18PPM TB QI` | MICRO CRYSTAL | [cern_xtal_80_157372mhz_micro_crystal_cc6f_t1a](library/timing/cern/cern_xtal_80_157372mhz_micro_crystal_cc6f_t1a) |
 | [CCHD-575X-20-80.000 (CERN library)](https://partreel.com/p/cern_osc_80mhz_crystek_cchd_575x_20/) | `CCHD-575X-20-80.000` | CRYSTEK CRYSTAL | [cern_osc_80mhz_crystek_cchd_575x_20](library/timing/cern/cern_osc_80mhz_crystek_cchd_575x_20) |
 | [CCLD-033-50-100.000 (CERN library)](https://partreel.com/p/cern_osc_100mhz_crystek_ccld_033_50_100_000/) | `CCLD-033-50-100.000` | CRYSTEK CRYSTAL | [cern_osc_100mhz_crystek_ccld_033_50_100_000](library/timing/cern/cern_osc_100mhz_crystek_ccld_033_50_100_000) |
 | [CCLD-033-50-156.250 (CERN library)](https://partreel.com/p/cern_osc_156_250mhz_crystek_ccld_033_50_156_250/) | `CCLD-033-50-156.250` | CRYSTEK CRYSTAL | [cern_osc_156_250mhz_crystek_ccld_033_50_156_250](library/timing/cern/cern_osc_156_250mhz_crystek_ccld_033_50_156_250) |
 | [CCLD-033-50-250.000 (CERN library)](https://partreel.com/p/cern_osc_250_000mhz_crystek_ccld_033_50_250_000/) | `CCLD-033-50-250.000` | CRYSTEK CRYSTAL | [cern_osc_250_000mhz_crystek_ccld_033_50_250_000](library/timing/cern/cern_osc_250_000mhz_crystek_ccld_033_50_250_000) |
+| [CERN CC1F-T1A 160.314744MHZ (CERN library)](https://partreel.com/p/cern_xtal_160_314744mhz_micro_crystal_cc1f_t1a/) | `CERN CC1F-T1A 160.314744MHZ` | MICRO CRYSTAL | [cern_xtal_160_314744mhz_micro_crystal_cc1f_t1a](library/timing/cern/cern_xtal_160_314744mhz_micro_crystal_cc1f_t1a) |
 | [CS-018-114.285M (CERN library)](https://partreel.com/p/cern_xtal_114_285mhz_connor_cs_018/) | `CS-018-114.285M` | CONNOR-WINFIELD | [cern_xtal_114_285mhz_connor_cs_018](library/timing/cern/cern_xtal_114_285mhz_connor_cs_018) |
 | [CS-023-114.285M (CERN library)](https://partreel.com/p/cern_xtal_114_285mhz_connor_cs_023/) | `CS-023-114.285M` | CONNOR-WINFIELD | [cern_xtal_114_285mhz_connor_cs_023](library/timing/cern/cern_xtal_114_285mhz_connor_cs_023) |
 | [CSTNE8M00G550000 (CERN library)](https://partreel.com/p/cern_xtal_8mhz_murata_cstne8m00g550000/) | `CSTNE8M00G550000` | MURATA | [cern_xtal_8mhz_murata_cstne8m00g550000](library/timing/cern/cern_xtal_8mhz_murata_cstne8m00g550000) |
@@ -606,6 +702,7 @@ Currently **698 parts**, all machine-verified (structure, KLC drawing rules, ren
 | [ECOC-2522-40.000-3-F-C (CERN library)](https://partreel.com/p/cern_osc_40mhz_ecs_ecoc_2522_40_000_3_f_c/) | `ECOC-2522-40.000-3-F-C` | ECS | [cern_osc_40mhz_ecs_ecoc_2522_40_000_3_f_c](library/timing/cern/cern_osc_40mhz_ecs_ecoc_2522_40_000_3_f_c) |
 | [ECS-100AX-100 (CERN library)](https://partreel.com/p/cern_osc_10mhz_ecs_ecs_100ax_100/) | `ECS-100AX-100` | ECS | [cern_osc_10mhz_ecs_ecs_100ax_100](library/timing/cern/cern_osc_10mhz_ecs_ecs_100ax_100) |
 | [ECS-110.5-18-7SX (CERN library)](https://partreel.com/p/cern_xtal_11_0592mhz_ecs_110_5_18_7sx/) | `ECS-110.5-18-7SX` | ECS | [cern_xtal_11_0592mhz_ecs_110_5_18_7sx](library/timing/cern/cern_xtal_11_0592mhz_ecs_110_5_18_7sx) |
+| [ECS-120-18-30-JGN (CERN library)](https://partreel.com/p/cern_xtal_12mhz_ecs_120_18_30_jgn/) | `ECS-120-18-30-JGN` | ECS | [cern_xtal_12mhz_ecs_120_18_30_jgn](library/timing/cern/cern_xtal_12mhz_ecs_120_18_30_jgn) |
 | [ECS-2333-400-BN (CERN library)](https://partreel.com/p/cern_xtal_40mhz_ecs_ecs_2333_400_bn/) | `ECS-2333-400-BN` | ECS | [cern_xtal_40mhz_ecs_ecs_2333_400_bn](library/timing/cern/cern_xtal_40mhz_ecs_ecs_2333_400_bn) |
 | [ECS-240-20-30B (CERN library)](https://partreel.com/p/cern_xtal_24mhz_ecs_240_20_30b/) | `ECS-240-20-30B` | ECS | [cern_xtal_24mhz_ecs_240_20_30b](library/timing/cern/cern_xtal_24mhz_ecs_240_20_30b) |
 | [ECS-250-10-33B-CWN (CERN library)](https://partreel.com/p/cern_xtal_25mhz_ecs_ecs_250_10_33b_cwn/) | `ECS-250-10-33B-CWN` | ECS | [cern_xtal_25mhz_ecs_ecs_250_10_33b_cwn](library/timing/cern/cern_xtal_25mhz_ecs_ecs_250_10_33b_cwn) |
@@ -629,6 +726,7 @@ Currently **698 parts**, all machine-verified (structure, KLC drawing rules, ren
 | [F1100ELF-400 (CERN library)](https://partreel.com/p/cern_osc_40mhz_fox_f1100elf_400/) | `F1100ELF-400` | FOX ELECTRONICS | [cern_osc_40mhz_fox_f1100elf_400](library/timing/cern/cern_osc_40mhz_fox_f1100elf_400) |
 | [FA-238 27.0000MB-C3 (CERN library)](https://partreel.com/p/cern_xtal_27mhz_epson_fa_238_27_0000mb_c3/) | `FA-238 27.0000MB-C3` | EPSON SEIKO | [cern_xtal_27mhz_epson_fa_238_27_0000mb_c3](library/timing/cern/cern_xtal_27mhz_epson_fa_238_27_0000mb_c3) |
 | [FA-238V 12.0000MA-C (CERN library)](https://partreel.com/p/cern_xtal_12mhz_epson_fa_238v_12_0000ma_c/) | `FA-238V 12.0000MA-C` | EPSON SEIKO | [cern_xtal_12mhz_epson_fa_238v_12_0000ma_c](library/timing/cern/cern_xtal_12mhz_epson_fa_238v_12_0000ma_c) |
+| [FC-135 32.7680KA-A0 (CERN library)](https://partreel.com/p/cern_xtal_32_768khz_epson_fc_135_32_7680ka_a0/) | `FC-135 32.7680KA-A0` | EPSON | [cern_xtal_32_768khz_epson_fc_135_32_7680ka_a0](library/timing/cern/cern_xtal_32_768khz_epson_fc_135_32_7680ka_a0) |
 | [FL2400041 (CERN library)](https://partreel.com/p/cern_xtal_24mhz_pericom_fl2400041/) | `FL2400041` | PERICOM | [cern_xtal_24mhz_pericom_fl2400041](library/timing/cern/cern_xtal_24mhz_pericom_fl2400041) |
 | [FNETHE025 (CERN library)](https://partreel.com/p/cern_osc_25mhz_pericom_fnethe025/) | `FNETHE025` | PERICOM | [cern_osc_25mhz_pericom_fnethe025](library/timing/cern/cern_osc_25mhz_pericom_fnethe025) |
 | [FNSURV054 (CERN library)](https://partreel.com/p/cern_osc_54mhz_pericom_fnsurv054/) | `FNSURV054` | PERICOM | [cern_osc_54mhz_pericom_fnsurv054](library/timing/cern/cern_osc_54mhz_pericom_fnsurv054) |
@@ -640,12 +738,17 @@ Currently **698 parts**, all machine-verified (structure, KLC drawing rules, ren
 | [FXO-HC736R-40 (CERN library)](https://partreel.com/p/cern_osc_40mhz_fox_fxo_hc736r_40/) | `FXO-HC736R-40` | FOX | [cern_osc_40mhz_fox_fxo_hc736r_40](library/timing/cern/cern_osc_40mhz_fox_fxo_hc736r_40) |
 | [FXO-LC536R-622.08 (CERN library)](https://partreel.com/p/cern_osc_622_08mhz_fxo_lc536r_622_08/) | `FXO-LC536R-622.08` | FOX ELECTRONICS | [cern_osc_622_08mhz_fxo_lc536r_622_08](library/timing/cern/cern_osc_622_08mhz_fxo_lc536r_622_08) |
 | [G080000000CBCUPN43BA (CERN library)](https://partreel.com/p/cern_osc_80mhz_comtec_crystals_g080000000cbcupn43ba/) | `G080000000CBCUPN43BA` | COMTEC CRYSTALS | [cern_osc_80mhz_comtec_crystals_g080000000cbcupn43ba](library/timing/cern/cern_osc_80mhz_comtec_crystals_g080000000cbcupn43ba) |
+| [HC49US5.000MABJ-UB (CERN library)](https://partreel.com/p/cern_xtal_5mhz_citizen_hc49us5_000mabj_ub/) | `HC49US5.000MABJ-UB` | CITIZEN FINETECH MIYOTA CO | [cern_xtal_5mhz_citizen_hc49us5_000mabj_ub](library/timing/cern/cern_xtal_5mhz_citizen_hc49us5_000mabj_ub) |
+| [HCM49-24.000MABJT (CERN library)](https://partreel.com/p/cern_xtal_24mhz_citizen_hcm49_24_000mabjt/) | `HCM49-24.000MABJT` | CITIZEN FINETECH MIYOTA CO | [cern_xtal_24mhz_citizen_hcm49_24_000mabjt](library/timing/cern/cern_xtal_24mhz_citizen_hcm49_24_000mabjt) |
 | [IVT3205CR 20.0 MHz (CERN library)](https://partreel.com/p/cern_osc_20mhz_rakon_ivt3205cr/) | `IVT3205CR 20.0 MHz` | RAKON | [cern_osc_20mhz_rakon_ivt3205cr](library/timing/cern/cern_osc_20mhz_rakon_ivt3205cr) |
 | [IVT3205CR 25.0 MHz (CERN library)](https://partreel.com/p/cern_osc_25mhz_rakon_ivt3205cr/) | `IVT3205CR 25.0 MHz` | RAKON | [cern_osc_25mhz_rakon_ivt3205cr](library/timing/cern/cern_osc_25mhz_rakon_ivt3205cr) |
 | [KC3225A125.000C3GE00 (CERN library)](https://partreel.com/p/cern_xtal_125mhz_kyocera_kc3225a125_000c3ge00/) | `KC3225A125.000C3GE00` | KYOCERA | [cern_xtal_125mhz_kyocera_kc3225a125_000c3ge00](library/timing/cern/cern_xtal_125mhz_kyocera_kc3225a125_000c3ge00) |
 | [KT7050A20000KAW33TAD (CERN library)](https://partreel.com/p/cern_osc_20mhz_kyocera_kt7050a20000kaw33tad/) | `KT7050A20000KAW33TAD` | KYOCERA | [cern_osc_20mhz_kyocera_kt7050a20000kaw33tad](library/timing/cern/cern_osc_20mhz_kyocera_kt7050a20000kaw33tad) |
 | [KV7050B20.0000C3GD00 (CERN library)](https://partreel.com/p/cern_osc_20mhz_kyocera_kv7050b20_0000c3gd00/) | `KV7050B20.0000C3GD00` | KYOCERA | [cern_osc_20mhz_kyocera_kv7050b20_0000c3gd00](library/timing/cern/cern_osc_20mhz_kyocera_kv7050b20_0000c3gd00) |
 | [KV7050B25.0000C3GD00 (CERN library)](https://partreel.com/p/cern_osc_25mhz_kyocera_kv7050b25_0000c3gd00/) | `KV7050B25.0000C3GD00` | KYOCERA | [cern_osc_25mhz_kyocera_kv7050b25_0000c3gd00](library/timing/cern/cern_osc_25mhz_kyocera_kv7050b25_0000c3gd00) |
+| [LF XTAL003166 (CERN library)](https://partreel.com/p/cern_xtal_10mhz_iqd_lfxtal003166/) | `LF XTAL003166` | IQD FREQUENCY PRODUCTS | [cern_xtal_10mhz_iqd_lfxtal003166](library/timing/cern/cern_xtal_10mhz_iqd_lfxtal003166) |
+| [LF XTAL003237 (CERN library)](https://partreel.com/p/cern_xtal_16mhz_iqd_lfxtal003237/) | `LF XTAL003237` | IQD FREQUENCY PRODUCTS | [cern_xtal_16mhz_iqd_lfxtal003237](library/timing/cern/cern_xtal_16mhz_iqd_lfxtal003237) |
+| [LF XTAL033584 (CERN library)](https://partreel.com/p/cern_xtal_40mhz_iqd_lfxtal033584/) | `LF XTAL033584` | IQD FREQUENCY PRODUCTS | [cern_xtal_40mhz_iqd_lfxtal033584](library/timing/cern/cern_xtal_40mhz_iqd_lfxtal033584) |
 | [LFPTXO000244 (CERN library)](https://partreel.com/p/cern_osc_20mhz_iqd_lfptxo000244/) | `LFPTXO000244` | IQD FREQUENCY PRODUCTS | [cern_osc_20mhz_iqd_lfptxo000244](library/timing/cern/cern_osc_20mhz_iqd_lfptxo000244) |
 | [LFSPXO009437 (CERN library)](https://partreel.com/p/cern_osc_100mhz_iqd_lfspxo009437/) | `LFSPXO009437` | IQD FREQUENCY PRODUCTS | [cern_osc_100mhz_iqd_lfspxo009437](library/timing/cern/cern_osc_100mhz_iqd_lfspxo009437) |
 | [LFSPXO009441 (CERN library)](https://partreel.com/p/cern_osc_80mhz_iqd_lfspxo009441/) | `LFSPXO009441` | IQD FREQUENCY PRODUCTS | [cern_osc_80mhz_iqd_lfspxo009441](library/timing/cern/cern_osc_80mhz_iqd_lfspxo009441) |
@@ -784,6 +887,7 @@ Currently **698 parts**, all machine-verified (structure, KLC drawing rules, ren
 | [VM53S3-25.000-2.5/-30+75 (CERN library)](https://partreel.com/p/cern_osc_25mhz_mercury_vm53s3_25_000_2_5_30_75/) | `VM53S3-25.000-2.5/-30+75` | MERCURY ELECTRONICS | [cern_osc_25mhz_mercury_vm53s3_25_000_2_5_30_75](library/timing/cern/cern_osc_25mhz_mercury_vm53s3_25_000_2_5_30_75) |
 | [VX-501-0253-125M0 (CERN library)](https://partreel.com/p/cern_osc_125mhz_vectron_vx_501_0253_125m0/) | `VX-501-0253-125M0` | VECTRON / MICROSEMI | [cern_osc_125mhz_vectron_vx_501_0253_125m0](library/timing/cern/cern_osc_125mhz_vectron_vx_501_0253_125m0) |
 | [X1G0042610020 (CERN library)](https://partreel.com/p/cern_osc_125mhz_epson_x1g0042610020/) | `X1G0042610020` | EPSON | [cern_osc_125mhz_epson_x1g0042610020](library/timing/cern/cern_osc_125mhz_epson_x1g0042610020) |
+| [X20M000000L010 (CERN library)](https://partreel.com/p/cern_xtal_20mhz_ael_hc_49_u/) | `X20M000000L010` | AEL CRYSTALS | [cern_xtal_20mhz_ael_hc_49_u](library/timing/cern/cern_xtal_20mhz_ael_hc_49_u) |
 | [XE51N62M-120.2361 (CERN library)](https://partreel.com/p/cern_osc_120_2361mhz_xsis_xe51n62m_120_2361/) | `XE51N62M-120.2361` | XSIS | [cern_osc_120_2361mhz_xsis_xe51n62m_120_2361](library/timing/cern/cern_osc_120_2361mhz_xsis_xe51n62m_120_2361) |
 | [XE51N62M-80.1574 (CERN library)](https://partreel.com/p/cern_osc_80_1574mhz_xsis_xe51n62m_80_1574/) | `XE51N62M-80.1574` | XSIS | [cern_osc_80_1574mhz_xsis_xe51n62m_80_1574](library/timing/cern/cern_osc_80_1574mhz_xsis_xe51n62m_80_1574) |
 | [XLH735037.500000X (CERN library)](https://partreel.com/p/cern_osc_37_5mhz_renesas_xlh735037_500000x/) | `XLH735037.500000X` | RENESAS | [cern_osc_37_5mhz_renesas_xlh735037_500000x](library/timing/cern/cern_osc_37_5mhz_renesas_xlh735037_500000x) |
@@ -794,5 +898,6 @@ Currently **698 parts**, all machine-verified (structure, KLC drawing rules, ren
 | [XLL736120.000000X (CERN library)](https://partreel.com/p/cern_osc_120mhz_idt_xll736120_000000x/) | `XLL736120.000000X` | IDT | [cern_osc_120mhz_idt_xll736120_000000x](library/timing/cern/cern_osc_120mhz_idt_xll736120_000000x) |
 | [XRCGB24M000F1H17R0 (CERN library)](https://partreel.com/p/cern_xtal_24mhz_murata_xrcgb24m000f1h17r0/) | `XRCGB24M000F1H17R0` | MURATA | [cern_xtal_24mhz_murata_xrcgb24m000f1h17r0](library/timing/cern/cern_xtal_24mhz_murata_xrcgb24m000f1h17r0) |
 | [XUL536100.000000I (CERN library)](https://partreel.com/p/cern_osc_100mhz_renesas_xul536100_000000i/) | `XUL536100.000000I` | RENESAS | [cern_osc_100mhz_renesas_xul536100_000000i](library/timing/cern/cern_osc_100mhz_renesas_xul536100_000000i) |
+| [ZTB400P (CERN library)](https://partreel.com/p/cern_xtal_400khz_ecs_ztb400p/) | `ZTB400P` | ECS | [cern_xtal_400khz_ecs_ztb400p](library/timing/cern/cern_xtal_400khz_ecs_ztb400p) |
 
 <!-- PARTS:END -->
