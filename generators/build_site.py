@@ -26,9 +26,9 @@ MCP_URL = "https://mcp.partreel.com/mcp"
 FMT_LABEL = {"kicad_mod": "KiCad footprint", "kicad_sym": "KiCad symbol", "step": "3D STEP", "glb": "3D preview"}
 FMT_KEY = {"glb": "preview", "step": "model_3d", "kicad_mod": "footprint", "kicad_sym": "symbol"}
 
-CSP = ("default-src 'self'; script-src 'self' https://cdn.jsdelivr.net 'unsafe-inline'; "
+CSP = ("default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://static.cloudflareinsights.com 'unsafe-inline'; "
        "style-src 'self' 'unsafe-inline'; img-src 'self' data:; "
-       "connect-src 'self' https://cdn.jsdelivr.net https://assets.partreel.com; "
+       "connect-src 'self' https://cdn.jsdelivr.net https://assets.partreel.com https://cloudflareinsights.com; "
        "object-src 'none'; base-uri 'self'")
 
 
@@ -76,6 +76,7 @@ def render(prefix, title, desc, canonical, body, head_extra="", scripts=""):
 {body}
 {footer(prefix)}
 {scripts}
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{{\"token\": \"9242b7f30096451fbef717c4678559c6\"}}'></script>
 </body>
 </html>
 """

@@ -28,6 +28,11 @@ def main():
 
         # A. 파일 존재
         for key, fn in meta.get("files", {}).items():
+            if fn.lower().endswith((".step", ".glb")):
+                # 3D는 R2 관할(§22 Phase 2) — 로컬 부재 허용, 해시 기록+check_r2가 보증
+                if fn not in meta.get("asset_sha256", {}):
+                    errs.append(f"3D 해시 미기록: {fn}")
+                continue
             if not os.path.exists(os.path.join(d, fn)):
                 errs.append(f"파일 없음: {fn}")
         # A2. 부품 페이지 존재 (build_site 누락 방지 — /p/<id>/ 404 방지)
