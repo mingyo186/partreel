@@ -68,8 +68,9 @@ def main():
                            r"\.kicad_mod", ds)
             if not mm:
                 continue
-            if os.path.exists(os.path.join(d, fid + ".glb")):
-                continue  # 이미 생성됨 (재실행 안전)
+            if (os.path.exists(os.path.join(d, fid + ".glb"))
+                    or os.path.exists(os.path.join(d, fid + "__pins.stl"))):
+                continue  # 이미 생성됨 (재실행/중단 재개 안전)
             bh = int(mm.group(2)) / 100.0
             mod = open(os.path.join(d, fid + ".kicad_mod"), encoding="utf-8").read()
             pads = []
