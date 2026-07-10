@@ -1,0 +1,56 @@
+{
+  "id": "cern_rn_1k_9k_90k_900k_9m_caddock_1776_c6815_a",
+  "name": "1776-C6815 (CERN library)",
+  "category": "passive",
+  "family": "CERN Resistor Networks THD",
+  "manufacturer": "CADDOCK",
+  "mpn_pattern": "1776-C6815",
+  "description": "Type 1776 Precision Decade Resistor Voltage Dividers. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "6",
+    "value": "1k 9k 90k 900k 9M",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_rn_1k_9k_90k_900k_9m_caddock_1776_c6815_a.kicad_mod",
+    "symbol": "cern_rn_1k_9k_90k_900k_9m_caddock_1776_c6815_a.kicad_sym",
+    "footprint_svg": "cern_rn_1k_9k_90k_900k_9m_caddock_1776_c6815_a.footprint.svg",
+    "symbol_svg": "cern_rn_1k_9k_90k_900k_9m_caddock_1776_c6815_a.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Resistors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Networks THD.pretty/RN_CADDOCK_1776_FIG10.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "type",
+    "1776",
+    "precision",
+    "decade",
+    "resistor",
+    "voltage"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Resistor Networks THD#RN_1K_9K_90K_900K_9M_CADDOCK_1776-C6815_a",
+      "symbol": "SchLib/Resistors.kicad_sym#RN_CADDOCK_1776-C6815_a",
+      "footprint": "PcbLib/Networks THD.pretty/RN_CADDOCK_1776_FIG10.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

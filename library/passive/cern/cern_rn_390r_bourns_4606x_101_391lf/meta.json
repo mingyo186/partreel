@@ -1,0 +1,57 @@
+{
+  "id": "cern_rn_390r_bourns_4606x_101_391lf",
+  "name": "4606X-101-391LF (CERN library)",
+  "category": "passive",
+  "family": "CERN Resistor Networks THD",
+  "manufacturer": "BOURNS",
+  "mpn_pattern": "4606X-101-391LF",
+  "description": "Thick Film Molded SIP Resistors Network (5 Bussed Resistors). Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "6",
+    "case": "SIP6",
+    "value": "390",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_rn_390r_bourns_4606x_101_391lf.kicad_mod",
+    "symbol": "cern_rn_390r_bourns_4606x_101_391lf.kicad_sym",
+    "footprint_svg": "cern_rn_390r_bourns_4606x_101_391lf.footprint.svg",
+    "symbol_svg": "cern_rn_390r_bourns_4606x_101_391lf.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Resistors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Networks THD.pretty/RN_BOURNS_4606X.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "thick",
+    "film",
+    "molded",
+    "sip",
+    "resistors",
+    "network"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Resistor Networks THD#RN_390R_BOURNS_4606X-101-391LF",
+      "symbol": "SchLib/Resistors.kicad_sym#RN SIP6_5xR_Bussed_2%",
+      "footprint": "PcbLib/Networks THD.pretty/RN_BOURNS_4606X.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "id": "cern_rmf_180r_5_5w_300ppm_koa_mos5c181j",
+  "name": "MOS5C181J (CERN library)",
+  "category": "passive",
+  "family": "CERN Resistors THD",
+  "manufacturer": "KOA",
+  "mpn_pattern": "MOS5C181J",
+  "description": "Reduced Size Metal Oxide Power Type Leaded Resistor. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "2",
+    "case": "LS30 L24.5 x D10",
+    "value": "180",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_rmf_180r_5_5w_300ppm_koa_mos5c181j.kicad_mod",
+    "symbol": "cern_rmf_180r_5_5w_300ppm_koa_mos5c181j.kicad_sym",
+    "footprint_svg": "cern_rmf_180r_5_5w_300ppm_koa_mos5c181j.footprint.svg",
+    "symbol_svg": "cern_rmf_180r_5_5w_300ppm_koa_mos5c181j.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Resistors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Resistors THD.pretty/RES_KOA_MOS5.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "reduced",
+    "size",
+    "metal",
+    "oxide",
+    "power",
+    "type"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Resistors THD#RMF_180R_5%_5W_300PPM_KOA_MOS5C181J",
+      "symbol": "SchLib/Resistors.kicad_sym#Resistor - 5%",
+      "footprint": "PcbLib/Resistors THD.pretty/RES_KOA_MOS5.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

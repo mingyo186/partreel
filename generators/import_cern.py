@@ -41,7 +41,18 @@ WAVE2 = {"Analog & Interface": ("ic", "CERN Analog & Interface"),
          "Diodes": ("discrete", "CERN Diodes"),
          "Transistors": ("discrete", "CERN Transistors"),
          "Sensors": ("sensor", "CERN Sensors")}
-WAVES = {"0": WAVE0, "1": WAVE1, "2": WAVE2}
+# Wave 3: 브랜드 패시브 + 전기기계 (GENERIC 제외 — §7-4)
+_W3 = {"Capacitors SMD": "passive", "Capacitors THD": "passive",
+       "Capacitors Networks SMD": "passive", "Capacitors Networks THD": "passive",
+       "Resistors SMD": "passive", "Resistors THD": "passive",
+       "Resistor Networks SMD": "passive", "Resistor Networks THD": "passive",
+       "Inductors SMD": "passive", "Inductors THD": "passive",
+       "Thermistors And Varistors": "passive",
+       "Potentiometers SMD": "passive", "Potentiometers THD": "passive",
+       "Relays": "relay", "Fuses": "fuse", "Switches": "switch",
+       "Transformers": "transformer"}
+WAVE3 = {t: (c, f"CERN {t}") for t, c in _W3.items()}
+WAVES = {"0": WAVE0, "1": WAVE1, "2": WAVE2, "3": WAVE3}
 
 
 def slug(name):
@@ -131,6 +142,8 @@ def main():
             libsym = r.get("LibSymbol") or ""
             libfp = r.get("LibFootprint") or ""
             reason = None
+            if manuf.strip().upper() == "GENERIC":
+                reason = "GENERIC manufacturer (no orderable MPN)"
             if ":" not in libsym or ":" not in libfp:
                 reason = "missing symbol/footprint reference"
             if reason:

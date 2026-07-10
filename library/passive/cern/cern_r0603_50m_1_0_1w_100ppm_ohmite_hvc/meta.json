@@ -1,0 +1,57 @@
+{
+  "id": "cern_r0603_50m_1_0_1w_100ppm_ohmite_hvc",
+  "name": "HVC0603T5005FET (CERN library)",
+  "category": "passive",
+  "family": "CERN Resistors SMD",
+  "manufacturer": "OHMITE",
+  "mpn_pattern": "HVC0603T5005FET",
+  "description": "Precision High-Value High-voltage Wraparound Chip Resistor. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "2",
+    "mounting": "SMD",
+    "case": "0603",
+    "value": "50M",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_r0603_50m_1_0_1w_100ppm_ohmite_hvc.kicad_mod",
+    "symbol": "cern_r0603_50m_1_0_1w_100ppm_ohmite_hvc.kicad_sym",
+    "footprint_svg": "cern_r0603_50m_1_0_1w_100ppm_ohmite_hvc.footprint.svg",
+    "symbol_svg": "cern_r0603_50m_1_0_1w_100ppm_ohmite_hvc.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Resistors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Resistors SMD.pretty/RESC1509X55N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "precision",
+    "high",
+    "value",
+    "high",
+    "voltage",
+    "wraparound"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Resistors SMD#R0603_50M_1%_0.1W_100PPM_OHMITE_HVC",
+      "symbol": "SchLib/Resistors.kicad_sym#Resistor - 1%",
+      "footprint": "PcbLib/Resistors SMD.pretty/RESC1509X55N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

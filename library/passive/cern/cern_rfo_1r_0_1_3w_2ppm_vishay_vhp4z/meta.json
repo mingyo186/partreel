@@ -1,0 +1,56 @@
+{
+  "id": "cern_rfo_1r_0_1_3w_2ppm_vishay_vhp4z",
+  "name": "VHP4Z 1R0000 0.1% (CERN library)",
+  "category": "passive",
+  "family": "CERN Resistors THD",
+  "manufacturer": "VISHAY FOIL RESISTOR",
+  "mpn_pattern": "VHP4Z 1R0000 0.1%",
+  "description": "Power and Current Sensing Resistor. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: Not recommended.",
+  "parameters": {
+    "contacts": "4",
+    "case": "TO-3",
+    "value": "1",
+    "lifecycle": "Not recommended"
+  },
+  "files": {
+    "footprint": "cern_rfo_1r_0_1_3w_2ppm_vishay_vhp4z.kicad_mod",
+    "symbol": "cern_rfo_1r_0_1_3w_2ppm_vishay_vhp4z.kicad_sym",
+    "footprint_svg": "cern_rfo_1r_0_1_3w_2ppm_vishay_vhp4z.footprint.svg",
+    "symbol_svg": "cern_rfo_1r_0_1_3w_2ppm_vishay_vhp4z.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Resistors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Resistors THD.pretty/RES_VISHAY_VHP4Z.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "power",
+    "and",
+    "current",
+    "sensing",
+    "resistor"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Resistors THD#RFO_1R_0.1%_3W_2PPM_VISHAY_VHP4Z",
+      "symbol": "SchLib/Resistors.kicad_sym#Current Sense Resistor + Case",
+      "footprint": "PcbLib/Resistors THD.pretty/RES_VISHAY_VHP4Z.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "id": "cern_rel_tyco_im06cgr",
+  "name": "IM06CGR or 9-1462037-9 (CERN library)",
+  "category": "relay",
+  "family": "CERN Relays",
+  "manufacturer": "TYCO AXICOM",
+  "mpn_pattern": "IM06CGR or 9-1462037-9",
+  "description": "2A/250VAC, DPDT  (2 Form C) SMT High Dielectric Signal Relay, IM Series. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: Not Recommended.",
+  "parameters": {
+    "contacts": "8",
+    "mounting": "SMD",
+    "value": "12VDC",
+    "lifecycle": "Not Recommended"
+  },
+  "files": {
+    "footprint": "cern_rel_tyco_im06cgr.kicad_mod",
+    "symbol": "cern_rel_tyco_im06cgr.kicad_sym",
+    "footprint_svg": "cern_rel_tyco_im06cgr.footprint.svg",
+    "symbol_svg": "cern_rel_tyco_im06cgr.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Relays.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Relays.pretty/REL_TYCO_IMXXXGX.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "250vac",
+    "dpdt",
+    "form",
+    "smt",
+    "high",
+    "dielectric"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Relays#REL_TYCO_IM06CGR",
+      "symbol": "SchLib/Relays.kicad_sym#REL_TYCO_IM Non-latching",
+      "footprint": "PcbLib/Relays.pretty/REL_TYCO_IMXXXGX.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

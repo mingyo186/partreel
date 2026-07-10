@@ -1,0 +1,81 @@
+{
+  "id": "cern_rel_omron_g6l_1f_dc24",
+  "name": "G6L-1F-DC24 (CERN library)",
+  "category": "relay",
+  "family": "CERN Relays",
+  "manufacturer": "OMRON ELECTRONIC",
+  "mpn_pattern": "G6L-1F-DC24",
+  "description": "Low Signal Relay, 24VDC, 9.6mA, G6L Series. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "4",
+    "mounting": "SMD",
+    "lifecycle": "None"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/relay/cern/cern_rel_omron_g6l_1f_dc24/cern_rel_omron_g6l_1f_dc24.kicad_mod",
+    "symbol": "https://partreel.com/library/relay/cern/cern_rel_omron_g6l_1f_dc24/cern_rel_omron_g6l_1f_dc24.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/relay/cern/cern_rel_omron_g6l_1f_dc24/cern_rel_omron_g6l_1f_dc24.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/relay/cern/cern_rel_omron_g6l_1f_dc24/cern_rel_omron_g6l_1f_dc24.symbol.svg"
+  },
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Relays.kicad_sym",
+  "license": "CERN-OHL-P-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Relays.pretty/REL_OMRON_G6L-1F.kicad_mod)",
+  "keywords": [
+    "cern",
+    "low",
+    "signal",
+    "relay",
+    "24vdc",
+    "6ma",
+    "g6l"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "cern-kicad-libs@53054c17 (Relays.pretty/REL_OMRON_G6L-1F.kicad_mod)",
+    "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Relays.kicad_sym",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_cern.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+      "source_commit": "53054c17",
+      "source_files": {
+        "db": "CERN.sqlite#Relays#REL_OMRON_G6L-1F-DC24",
+        "symbol": "SchLib/Relays.kicad_sym#REL_OMRON_G6L",
+        "footprint": "PcbLib/Relays.pretty/REL_OMRON_G6L-1F.kicad_mod"
+      },
+      "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+      "import_date": "2026-07-05",
+      "modifications": [
+        "extracted single symbol from library",
+        "stripped dead 3D model reference (upstream ships no 3D)"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/cern_rel_omron_g6l_1f_dc24/",
+  "api": "https://partreel.com/api/v1/parts/cern_rel_omron_g6l_1f_dc24.json"
+}

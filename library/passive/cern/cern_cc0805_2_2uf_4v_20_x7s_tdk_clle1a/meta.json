@@ -1,0 +1,55 @@
+{
+  "id": "cern_cc0805_2_2uf_4v_20_x7s_tdk_clle1a",
+  "name": "CLLE1AX7S0G225M/0.85 (CERN library)",
+  "category": "passive",
+  "family": "CERN Capacitors SMD",
+  "manufacturer": "TDK",
+  "mpn_pattern": "CLLE1AX7S0G225M/0.85",
+  "description": "Ultra Low Inductance Capacitor. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": 2.0,
+    "mounting": "SMD",
+    "case": "0805",
+    "value": "2.2uF",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_cc0805_2_2uf_4v_20_x7s_tdk_clle1a.kicad_mod",
+    "symbol": "cern_cc0805_2_2uf_4v_20_x7s_tdk_clle1a.kicad_sym",
+    "footprint_svg": "cern_cc0805_2_2uf_4v_20_x7s_tdk_clle1a.footprint.svg",
+    "symbol_svg": "cern_cc0805_2_2uf_4v_20_x7s_tdk_clle1a.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Capacitors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Capacitors SMD.pretty/CAPC_TDK_CLLE1A-0.85.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "ultra",
+    "low",
+    "inductance",
+    "capacitor"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Capacitors SMD#CC0805_2.2UF_4V_20%_X7S_TDK_CLLE1A",
+      "symbol": "SchLib/Capacitors.kicad_sym#Capacitor TDK CLLx1A",
+      "footprint": "PcbLib/Capacitors SMD.pretty/CAPC_TDK_CLLE1A-0.85.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

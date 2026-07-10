@@ -1,0 +1,57 @@
+{
+  "id": "cern_rmf_1m_5_1_2w_100ppm_ebg_sox_20",
+  "name": "SOX-20 1M 5% 100ppm (CERN library)",
+  "category": "passive",
+  "family": "CERN Resistors THD",
+  "manufacturer": "EBG RESISTORS",
+  "mpn_pattern": "SOX-20 1M 5% 100ppm",
+  "description": "Power- and Precision High-Voltage Resistor. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "2",
+    "case": "LS29.30 L21.3 x D8.6",
+    "value": "1M",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_rmf_1m_5_1_2w_100ppm_ebg_sox_20.kicad_mod",
+    "symbol": "cern_rmf_1m_5_1_2w_100ppm_ebg_sox_20.kicad_sym",
+    "footprint_svg": "cern_rmf_1m_5_1_2w_100ppm_ebg_sox_20.footprint.svg",
+    "symbol_svg": "cern_rmf_1m_5_1_2w_100ppm_ebg_sox_20.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Resistors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Resistors THD.pretty/RES2930-2130X860.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "power",
+    "and",
+    "precision",
+    "high",
+    "voltage",
+    "resistor"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Resistors THD#RMF_1M_5%_1.2W_100PPM_EBG_SOX-20",
+      "symbol": "SchLib/Resistors.kicad_sym#Resistor - 5%",
+      "footprint": "PcbLib/Resistors THD.pretty/RES2930-2130X860.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

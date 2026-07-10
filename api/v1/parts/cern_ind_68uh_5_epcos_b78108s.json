@@ -1,0 +1,79 @@
+{
+  "id": "cern_ind_68uh_5_epcos_b78108s",
+  "name": "B78108S1683J (CERN library)",
+  "category": "passive",
+  "family": "CERN Inductors THD",
+  "manufacturer": "EPCOS",
+  "mpn_pattern": "B78108S1683J",
+  "description": "Axial RF Choke. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: Preferred.",
+  "parameters": {
+    "contacts": 2.0,
+    "case": "LS15.24 L9.2 x D4",
+    "value": "68uH",
+    "lifecycle": "Preferred"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/passive/cern/cern_ind_68uh_5_epcos_b78108s/cern_ind_68uh_5_epcos_b78108s.kicad_mod",
+    "symbol": "https://partreel.com/library/passive/cern/cern_ind_68uh_5_epcos_b78108s/cern_ind_68uh_5_epcos_b78108s.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/passive/cern/cern_ind_68uh_5_epcos_b78108s/cern_ind_68uh_5_epcos_b78108s.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/passive/cern/cern_ind_68uh_5_epcos_b78108s/cern_ind_68uh_5_epcos_b78108s.symbol.svg"
+  },
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Inductors & Transformers.kicad_sym",
+  "license": "CERN-OHL-P-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Inductors THD.pretty/INDAD1524-920X400.kicad_mod)",
+  "keywords": [
+    "cern",
+    "axial",
+    "choke"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "cern-kicad-libs@53054c17 (Inductors THD.pretty/INDAD1524-920X400.kicad_mod)",
+    "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Inductors & Transformers.kicad_sym",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_cern.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+      "source_commit": "53054c17",
+      "source_files": {
+        "db": "CERN.sqlite#Inductors THD#IND_68UH_5%_EPCOS_B78108S",
+        "symbol": "SchLib/Inductors & Transformers.kicad_sym#Inductor With Magnetic core",
+        "footprint": "PcbLib/Inductors THD.pretty/INDAD1524-920X400.kicad_mod"
+      },
+      "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+      "import_date": "2026-07-05",
+      "modifications": [
+        "extracted single symbol from library",
+        "stripped dead 3D model reference (upstream ships no 3D)",
+        "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/cern_ind_68uh_5_epcos_b78108s/",
+  "api": "https://partreel.com/api/v1/parts/cern_ind_68uh_5_epcos_b78108s.json"
+}

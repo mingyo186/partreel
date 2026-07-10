@@ -1,0 +1,81 @@
+{
+  "id": "cern_cae430_540_10uf_16v_20",
+  "name": "EEEFK1C100AR (CERN library)",
+  "category": "passive",
+  "family": "CERN Capacitors SMD",
+  "manufacturer": "PANASONIC",
+  "mpn_pattern": "EEEFK1C100AR",
+  "description": "Aluminum Electrolytic SMT Capacitor. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: Not Recommended.",
+  "parameters": {
+    "contacts": 2.0,
+    "mounting": "SMD",
+    "case": "B",
+    "value": "10uF",
+    "lifecycle": "Not Recommended"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/passive/cern/cern_cae430_540_10uf_16v_20/cern_cae430_540_10uf_16v_20.kicad_mod",
+    "symbol": "https://partreel.com/library/passive/cern/cern_cae430_540_10uf_16v_20/cern_cae430_540_10uf_16v_20.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/passive/cern/cern_cae430_540_10uf_16v_20/cern_cae430_540_10uf_16v_20.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/passive/cern/cern_cae430_540_10uf_16v_20/cern_cae430_540_10uf_16v_20.symbol.svg"
+  },
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Capacitors.kicad_sym",
+  "license": "CERN-OHL-P-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Capacitors SMD.pretty/CAPAE430X540N.kicad_mod)",
+  "keywords": [
+    "cern",
+    "aluminum",
+    "electrolytic",
+    "smt",
+    "capacitor"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "cern-kicad-libs@53054c17 (Capacitors SMD.pretty/CAPAE430X540N.kicad_mod)",
+    "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Capacitors.kicad_sym",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_cern.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+      "source_commit": "53054c17",
+      "source_files": {
+        "db": "CERN.sqlite#Capacitors SMD#CAE430-540_10UF_16V_20%",
+        "symbol": "SchLib/Capacitors.kicad_sym#Capacitor - polarized",
+        "footprint": "PcbLib/Capacitors SMD.pretty/CAPAE430X540N.kicad_mod"
+      },
+      "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+      "import_date": "2026-07-05",
+      "modifications": [
+        "extracted single symbol from library",
+        "stripped dead 3D model reference (upstream ships no 3D)"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/cern_cae430_540_10uf_16v_20/",
+  "api": "https://partreel.com/api/v1/parts/cern_cae430_540_10uf_16v_20.json"
+}

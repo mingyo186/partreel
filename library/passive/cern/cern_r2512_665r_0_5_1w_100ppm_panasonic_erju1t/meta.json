@@ -1,0 +1,57 @@
+{
+  "id": "cern_r2512_665r_0_5_1w_100ppm_panasonic_erju1t",
+  "name": "ERJU1TD6650U (CERN library)",
+  "category": "passive",
+  "family": "CERN Resistors SMD",
+  "manufacturer": "PANASONIC",
+  "mpn_pattern": "ERJU1TD6650U",
+  "description": "Anti-Sulfurated Thick Film Chip Resistor. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: Not Recommended.",
+  "parameters": {
+    "contacts": "2",
+    "mounting": "SMD",
+    "case": "2512",
+    "value": "665",
+    "lifecycle": "Not Recommended"
+  },
+  "files": {
+    "footprint": "cern_r2512_665r_0_5_1w_100ppm_panasonic_erju1t.kicad_mod",
+    "symbol": "cern_r2512_665r_0_5_1w_100ppm_panasonic_erju1t.kicad_sym",
+    "footprint_svg": "cern_r2512_665r_0_5_1w_100ppm_panasonic_erju1t.footprint.svg",
+    "symbol_svg": "cern_r2512_665r_0_5_1w_100ppm_panasonic_erju1t.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Resistors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Resistors SMD.pretty/RESC6432X70N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "anti",
+    "sulfurated",
+    "thick",
+    "film",
+    "chip",
+    "resistor"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Resistors SMD#R2512_665R_0.5%_1W_100PPM_PANASONIC_ERJU1T",
+      "symbol": "SchLib/Resistors.kicad_sym#Resistor - 0.5%",
+      "footprint": "PcbLib/Resistors SMD.pretty/RESC6432X70N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

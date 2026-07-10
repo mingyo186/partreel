@@ -1,0 +1,57 @@
+{
+  "id": "cern_cte3216_18_10uf_25v_20_avx_tcj",
+  "name": "TCJA106M025R0150 (CERN library)",
+  "category": "passive",
+  "family": "CERN Capacitors SMD",
+  "manufacturer": "AVX",
+  "mpn_pattern": "TCJA106M025R0150",
+  "description": "ESR 0R150 Tantalum Solid Electrolytic Chip Capacitor with Conductive Polymer Electrode. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: Preferred.",
+  "parameters": {
+    "contacts": 2.0,
+    "mounting": "SMD",
+    "case": "A",
+    "value": "10uF",
+    "lifecycle": "Preferred"
+  },
+  "files": {
+    "footprint": "cern_cte3216_18_10uf_25v_20_avx_tcj.kicad_mod",
+    "symbol": "cern_cte3216_18_10uf_25v_20_avx_tcj.kicad_sym",
+    "footprint_svg": "cern_cte3216_18_10uf_25v_20_avx_tcj.footprint.svg",
+    "symbol_svg": "cern_cte3216_18_10uf_25v_20_avx_tcj.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Capacitors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Capacitors SMD.pretty/CAPMP3216X180N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "esr",
+    "0r150",
+    "tantalum",
+    "solid",
+    "electrolytic",
+    "chip"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Capacitors SMD#CTE3216-18_10UF_25V_20%_AVX_TCJ",
+      "symbol": "SchLib/Capacitors.kicad_sym#Capacitor - polarized",
+      "footprint": "PcbLib/Capacitors SMD.pretty/CAPMP3216X180N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "id": "cern_rel_panasonic_sfs3_dc24v_a",
+  "name": "SFS3-DC24V (CERN library)",
+  "category": "relay",
+  "family": "CERN Relays",
+  "manufacturer": "PANASONIC",
+  "mpn_pattern": "SFS3-DC24V",
+  "description": "6A/250VAC, 4 Poles (3 Form A (NO) + 1 Form B (NC)), Slim Type Safety Relay, SF Series. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "0",
+    "value": "24VDC",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_rel_panasonic_sfs3_dc24v_a.kicad_mod",
+    "symbol": "cern_rel_panasonic_sfs3_dc24v_a.kicad_sym",
+    "footprint_svg": "cern_rel_panasonic_sfs3_dc24v_a.footprint.svg",
+    "symbol_svg": "cern_rel_panasonic_sfs3_dc24v_a.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Relays.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Relays.pretty/REL_PANASONIC_SFS3_a.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "250vac",
+    "poles",
+    "form",
+    "form",
+    "slim",
+    "type"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Relays#REL_PANASONIC_SFS3-DC24V_a",
+      "symbol": "SchLib/Relays.kicad_sym#REL_PANASONIC_SFS3_a",
+      "footprint": "PcbLib/Relays.pretty/REL_PANASONIC_SFS3_a.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

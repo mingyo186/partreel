@@ -1,0 +1,55 @@
+{
+  "id": "cern_ind_10uh_10_coilcraft_ser2918h_103kl",
+  "name": "SER2918H-103KL (CERN library)",
+  "category": "passive",
+  "family": "CERN Inductors SMD",
+  "manufacturer": "COILCRAFT",
+  "mpn_pattern": "SER2918H-103KL",
+  "description": "SMT Shielded Power Inductor (SER2900 Series). Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": 2.0,
+    "mounting": "SMD",
+    "value": "10uH"
+  },
+  "files": {
+    "footprint": "cern_ind_10uh_10_coilcraft_ser2918h_103kl.kicad_mod",
+    "symbol": "cern_ind_10uh_10_coilcraft_ser2918h_103kl.kicad_sym",
+    "footprint_svg": "cern_ind_10uh_10_coilcraft_ser2918h_103kl.footprint.svg",
+    "symbol_svg": "cern_ind_10uh_10_coilcraft_ser2918h_103kl.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Inductors & Transformers.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Inductors SMD.pretty/IND_COILCRAFT_SER2918H.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "smt",
+    "shielded",
+    "power",
+    "inductor",
+    "ser2900",
+    "series"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Inductors SMD#IND_10UH_10%_COILCRAFT_SER2918H-103KL",
+      "symbol": "SchLib/Inductors & Transformers.kicad_sym#IND_COILCRAFT_SER1052",
+      "footprint": "PcbLib/Inductors SMD.pretty/IND_COILCRAFT_SER2918H.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

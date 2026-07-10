@@ -1,0 +1,81 @@
+{
+  "id": "cern_trim_25t_1m_bourns_3296y_1_105lf",
+  "name": "3296Y-1-105LF (CERN library)",
+  "category": "passive",
+  "family": "CERN Potentiometers THD",
+  "manufacturer": "BOURNS",
+  "mpn_pattern": "3296Y-1-105LF",
+  "description": "25 Turn Trimming Potentiometer (Top Adjustment). Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "3",
+    "case": "3296Y",
+    "value": "1M"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/passive/cern/cern_trim_25t_1m_bourns_3296y_1_105lf/cern_trim_25t_1m_bourns_3296y_1_105lf.kicad_mod",
+    "symbol": "https://partreel.com/library/passive/cern/cern_trim_25t_1m_bourns_3296y_1_105lf/cern_trim_25t_1m_bourns_3296y_1_105lf.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/passive/cern/cern_trim_25t_1m_bourns_3296y_1_105lf/cern_trim_25t_1m_bourns_3296y_1_105lf.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/passive/cern/cern_trim_25t_1m_bourns_3296y_1_105lf/cern_trim_25t_1m_bourns_3296y_1_105lf.symbol.svg"
+  },
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Resistors.kicad_sym",
+  "license": "CERN-OHL-P-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Potentiometers THD.pretty/TRIM_BOURNS_3296Y.kicad_mod)",
+  "keywords": [
+    "cern",
+    "turn",
+    "trimming",
+    "potentiometer",
+    "top",
+    "adjustment"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "cern-kicad-libs@53054c17 (Potentiometers THD.pretty/TRIM_BOURNS_3296Y.kicad_mod)",
+    "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Resistors.kicad_sym",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_cern.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+      "source_commit": "53054c17",
+      "source_files": {
+        "db": "CERN.sqlite#Potentiometers THD#TRIM_25T_1M_BOURNS_3296Y-1-105LF",
+        "symbol": "SchLib/Resistors.kicad_sym#Trimming Potentiometer",
+        "footprint": "PcbLib/Potentiometers THD.pretty/TRIM_BOURNS_3296Y.kicad_mod"
+      },
+      "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+      "import_date": "2026-07-05",
+      "modifications": [
+        "extracted single symbol from library",
+        "stripped dead 3D model reference (upstream ships no 3D)",
+        "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/cern_trim_25t_1m_bourns_3296y_1_105lf/",
+  "api": "https://partreel.com/api/v1/parts/cern_trim_25t_1m_bourns_3296y_1_105lf.json"
+}

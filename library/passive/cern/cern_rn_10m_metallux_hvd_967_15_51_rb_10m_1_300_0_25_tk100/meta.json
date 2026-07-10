@@ -1,0 +1,56 @@
+{
+  "id": "cern_rn_10m_metallux_hvd_967_15_51_rb_10m_1_300_0_25_tk100",
+  "name": "HVD 967.15.51 RB 10M 1:300 0.25% TK100 (CERN library)",
+  "category": "passive",
+  "family": "CERN Resistor Networks THD",
+  "manufacturer": "METALLUX",
+  "mpn_pattern": "HVD 967.15.51 RB 10M 1:300 0.25% TK100",
+  "description": "High Voltage Divider HVD NW Series 967.15.51 Type. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "3",
+    "value": "10M",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_rn_10m_metallux_hvd_967_15_51_rb_10m_1_300_0_25_tk100.kicad_mod",
+    "symbol": "cern_rn_10m_metallux_hvd_967_15_51_rb_10m_1_300_0_25_tk100.kicad_sym",
+    "footprint_svg": "cern_rn_10m_metallux_hvd_967_15_51_rb_10m_1_300_0_25_tk100.footprint.svg",
+    "symbol_svg": "cern_rn_10m_metallux_hvd_967_15_51_rb_10m_1_300_0_25_tk100.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Resistors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Networks THD.pretty/RN_METALLUX_HVD 967.15.51.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "high",
+    "voltage",
+    "divider",
+    "hvd",
+    "series",
+    "967"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Resistor Networks THD#RN_10M_METALLUX_HVD 967.15.51 RB 10M 1_300 0.25% TK100",
+      "symbol": "SchLib/Resistors.kicad_sym#RN Div - 0.25% R1=10M R2=10M",
+      "footprint": "PcbLib/Networks THD.pretty/RN_METALLUX_HVD 967.15.51.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

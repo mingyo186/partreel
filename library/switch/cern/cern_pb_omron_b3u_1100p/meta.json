@@ -1,0 +1,55 @@
+{
+  "id": "cern_pb_omron_b3u_1100p",
+  "name": "B3U-1100P (CERN library)",
+  "category": "switch",
+  "family": "CERN Switches",
+  "manufacturer": "OMRON",
+  "mpn_pattern": "B3U-1100P",
+  "description": "3x2.5mm Ultra-Small Tactile SPST Pushbutton Switch (with Ground Terminal),Contact Rating 50mA 12VDC, B3U Series. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "3",
+    "mounting": "SMD",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_pb_omron_b3u_1100p.kicad_mod",
+    "symbol": "cern_pb_omron_b3u_1100p.kicad_sym",
+    "footprint_svg": "cern_pb_omron_b3u_1100p.footprint.svg",
+    "symbol_svg": "cern_pb_omron_b3u_1100p.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Switches.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Switches.pretty/PB_OMRON_B3U-1100P.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "3x2",
+    "5mm",
+    "ultra",
+    "small",
+    "tactile",
+    "spst"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Switches#PB_OMRON_B3U-1100P",
+      "symbol": "SchLib/Switches.kicad_sym#PB SPST 1NO-2NO 3CASE",
+      "footprint": "PcbLib/Switches.pretty/PB_OMRON_B3U-1100P.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "id": "cern_cppr_25uf_900v_5_kemet_c4aqobw5250p3oj",
+  "name": "C4AQOBW5250P3OJ (CERN library)",
+  "category": "passive",
+  "family": "CERN Capacitors THD",
+  "manufacturer": "KEMET",
+  "mpn_pattern": "C4AQOBW5250P3OJ",
+  "description": "4 Pins Metallized Polypropylene Film Capacitor (C4AQ-Serie). Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": 4.0,
+    "case": "LS37.5 W35 x L42 x H50",
+    "value": "25uF",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_cppr_25uf_900v_5_kemet_c4aqobw5250p3oj.kicad_mod",
+    "symbol": "cern_cppr_25uf_900v_5_kemet_c4aqobw5250p3oj.kicad_sym",
+    "footprint_svg": "cern_cppr_25uf_900v_5_kemet_c4aqobw5250p3oj.footprint.svg",
+    "symbol_svg": "cern_cppr_25uf_900v_5_kemet_c4aqobw5250p3oj.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Capacitors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Capacitors THD.pretty/CAPR3750-3500X4200X5000-Q4.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "pins",
+    "metallized",
+    "polypropylene",
+    "film",
+    "capacitor",
+    "c4aq"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Capacitors THD#CPPR_25UF_900V_5%_KEMET_C4AQOBW5250P3OJ",
+      "symbol": "SchLib/Capacitors.kicad_sym#Capacitor - non polarized",
+      "footprint": "PcbLib/Capacitors THD.pretty/CAPR3750-3500X4200X5000-Q4.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

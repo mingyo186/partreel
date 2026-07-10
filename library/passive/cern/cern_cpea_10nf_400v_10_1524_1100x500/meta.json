@@ -1,0 +1,57 @@
+{
+  "id": "cern_cpea_10nf_400v_10_1524_1100x500",
+  "name": "MKT1813310405 (CERN library)",
+  "category": "passive",
+  "family": "CERN Capacitors THD",
+  "manufacturer": "VISHAY ROEDERSTEIN",
+  "mpn_pattern": "MKT1813310405",
+  "description": "Metallized Polyester Film Capacitor (MKT 1813 Series). Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": 2.0,
+    "case": "LS15.24 L11 x D5",
+    "value": "10nF",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_cpea_10nf_400v_10_1524_1100x500.kicad_mod",
+    "symbol": "cern_cpea_10nf_400v_10_1524_1100x500.kicad_sym",
+    "footprint_svg": "cern_cpea_10nf_400v_10_1524_1100x500.footprint.svg",
+    "symbol_svg": "cern_cpea_10nf_400v_10_1524_1100x500.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Capacitors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Capacitors THD.pretty/CAPAD1524-1100X500.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "metallized",
+    "polyester",
+    "film",
+    "capacitor",
+    "mkt",
+    "1813"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Capacitors THD#CPEA_10NF_400V_10%_1524-1100X500",
+      "symbol": "SchLib/Capacitors.kicad_sym#Capacitor - non polarized",
+      "footprint": "PcbLib/Capacitors THD.pretty/CAPAD1524-1100X500.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

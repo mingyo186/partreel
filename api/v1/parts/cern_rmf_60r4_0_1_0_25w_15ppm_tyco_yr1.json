@@ -1,0 +1,82 @@
+{
+  "id": "cern_rmf_60r4_0_1_0_25w_15ppm_tyco_yr1",
+  "name": "YR1B60R4CC (1-1879027-0) (CERN library)",
+  "category": "passive",
+  "family": "CERN Resistors THD",
+  "manufacturer": "TYCO NEOHM",
+  "mpn_pattern": "YR1B60R4CC (1-1879027-0)",
+  "description": "Precision Metal Film Fixed Resistor. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "2",
+    "case": "LS10.16 L6.5 x D2.5",
+    "value": "60R4",
+    "lifecycle": "None"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/passive/cern/cern_rmf_60r4_0_1_0_25w_15ppm_tyco_yr1/cern_rmf_60r4_0_1_0_25w_15ppm_tyco_yr1.kicad_mod",
+    "symbol": "https://partreel.com/library/passive/cern/cern_rmf_60r4_0_1_0_25w_15ppm_tyco_yr1/cern_rmf_60r4_0_1_0_25w_15ppm_tyco_yr1.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/passive/cern/cern_rmf_60r4_0_1_0_25w_15ppm_tyco_yr1/cern_rmf_60r4_0_1_0_25w_15ppm_tyco_yr1.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/passive/cern/cern_rmf_60r4_0_1_0_25w_15ppm_tyco_yr1/cern_rmf_60r4_0_1_0_25w_15ppm_tyco_yr1.symbol.svg"
+  },
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Resistors.kicad_sym",
+  "license": "CERN-OHL-P-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Resistors THD.pretty/RES1016-660X250.kicad_mod)",
+  "keywords": [
+    "cern",
+    "precision",
+    "metal",
+    "film",
+    "fixed",
+    "resistor"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "cern-kicad-libs@53054c17 (Resistors THD.pretty/RES1016-660X250.kicad_mod)",
+    "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Resistors.kicad_sym",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_cern.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+      "source_commit": "53054c17",
+      "source_files": {
+        "db": "CERN.sqlite#Resistors THD#RMF_60R4_0.1%_0.25W_15PPM_TYCO_YR1",
+        "symbol": "SchLib/Resistors.kicad_sym#Resistor - 0.1%",
+        "footprint": "PcbLib/Resistors THD.pretty/RES1016-660X250.kicad_mod"
+      },
+      "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+      "import_date": "2026-07-05",
+      "modifications": [
+        "extracted single symbol from library",
+        "stripped dead 3D model reference (upstream ships no 3D)",
+        "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/cern_rmf_60r4_0_1_0_25w_15ppm_tyco_yr1/",
+  "api": "https://partreel.com/api/v1/parts/cern_rmf_60r4_0_1_0_25w_15ppm_tyco_yr1.json"
+}

@@ -1,0 +1,57 @@
+{
+  "id": "cern_rmf_300_0_05_0_125w_15ppm_vishay_ptf56",
+  "name": "PTF56300R00AX (CERN library)",
+  "category": "passive",
+  "family": "CERN Resistors THD",
+  "manufacturer": "VISHAY DALE",
+  "mpn_pattern": "PTF56300R00AX",
+  "description": "Leaded Metal Film Resistor, High Precision, High Stability. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "2",
+    "case": "LS11.8 L7.62 x D2.55",
+    "value": "300",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_rmf_300_0_05_0_125w_15ppm_vishay_ptf56.kicad_mod",
+    "symbol": "cern_rmf_300_0_05_0_125w_15ppm_vishay_ptf56.kicad_sym",
+    "footprint_svg": "cern_rmf_300_0_05_0_125w_15ppm_vishay_ptf56.footprint.svg",
+    "symbol_svg": "cern_rmf_300_0_05_0_125w_15ppm_vishay_ptf56.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Resistors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Resistors THD.pretty/RES_VISHAY_PTF56.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "leaded",
+    "metal",
+    "film",
+    "resistor",
+    "high",
+    "precision"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Resistors THD#RMF_300_0.05%_0.125W_15PPM_VISHAY_PTF56",
+      "symbol": "SchLib/Resistors.kicad_sym#Resistor - 0.05%",
+      "footprint": "PcbLib/Resistors THD.pretty/RES_VISHAY_PTF56.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

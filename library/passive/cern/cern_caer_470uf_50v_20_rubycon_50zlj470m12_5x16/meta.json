@@ -1,0 +1,57 @@
+{
+  "id": "cern_caer_470uf_50v_20_rubycon_50zlj470m12_5x16",
+  "name": "50ZLJ470M12.5X16 (CERN library)",
+  "category": "passive",
+  "family": "CERN Capacitors THD",
+  "manufacturer": "RUBYCON",
+  "mpn_pattern": "50ZLJ470M12.5X16",
+  "description": "Miniature Aluminum Electrolytic Capacitor (Series: ZLJ). Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": 2.0,
+    "case": "LS5 D12.5 x H17.5",
+    "value": "470uF",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_caer_470uf_50v_20_rubycon_50zlj470m12_5x16.kicad_mod",
+    "symbol": "cern_caer_470uf_50v_20_rubycon_50zlj470m12_5x16.kicad_sym",
+    "footprint_svg": "cern_caer_470uf_50v_20_rubycon_50zlj470m12_5x16.footprint.svg",
+    "symbol_svg": "cern_caer_470uf_50v_20_rubycon_50zlj470m12_5x16.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Capacitors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Capacitors THD.pretty/CAPPR500-1250X1750.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "miniature",
+    "aluminum",
+    "electrolytic",
+    "capacitor",
+    "series",
+    "zlj"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Capacitors THD#CAER_470UF_50V_20%_RUBYCON_50ZLJ470M12.5X16",
+      "symbol": "SchLib/Capacitors.kicad_sym#Capacitor - polarized",
+      "footprint": "PcbLib/Capacitors THD.pretty/CAPPR500-1250X1750.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

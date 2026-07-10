@@ -1,0 +1,57 @@
+{
+  "id": "cern_caer_4700uf_35v_20_nichicon_upw",
+  "name": "UPW1V472MHD (CERN library)",
+  "category": "passive",
+  "family": "CERN Capacitors THD",
+  "manufacturer": "NICHICON",
+  "mpn_pattern": "UPW1V472MHD",
+  "description": "Z= 0R014, Aluminum Electrolytic Capacitor, High Reliability For Switching Power Supplies (UPW Series). Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": 2.0,
+    "case": "LS7.5 D18 x H40",
+    "value": "4700uF",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_caer_4700uf_35v_20_nichicon_upw.kicad_mod",
+    "symbol": "cern_caer_4700uf_35v_20_nichicon_upw.kicad_sym",
+    "footprint_svg": "cern_caer_4700uf_35v_20_nichicon_upw.footprint.svg",
+    "symbol_svg": "cern_caer_4700uf_35v_20_nichicon_upw.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Capacitors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Capacitors THD.pretty/CAPPR750-1850X4200.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "0r014",
+    "aluminum",
+    "electrolytic",
+    "capacitor",
+    "high",
+    "reliability"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Capacitors THD#CAER_4700UF_35V_20%_NICHICON_UPW",
+      "symbol": "SchLib/Capacitors.kicad_sym#Capacitor - polarized",
+      "footprint": "PcbLib/Capacitors THD.pretty/CAPPR750-1850X4200.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

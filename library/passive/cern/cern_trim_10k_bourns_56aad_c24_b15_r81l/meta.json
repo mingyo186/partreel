@@ -1,0 +1,55 @@
+{
+  "id": "cern_trim_10k_bourns_56aad_c24_b15_r81l",
+  "name": "56AAD-C24-B15/R81L (CERN library)",
+  "category": "passive",
+  "family": "CERN Potentiometers THD",
+  "manufacturer": "BOURNS",
+  "mpn_pattern": "56AAD-C24-B15/R81L",
+  "description": "Panel Control Trimming Potentiometer with Rotary (Counter Clock Wise) SPDT Switch, 56 Series. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "3",
+    "value": "10k"
+  },
+  "files": {
+    "footprint": "cern_trim_10k_bourns_56aad_c24_b15_r81l.kicad_mod",
+    "symbol": "cern_trim_10k_bourns_56aad_c24_b15_r81l.kicad_sym",
+    "footprint_svg": "cern_trim_10k_bourns_56aad_c24_b15_r81l.footprint.svg",
+    "symbol_svg": "cern_trim_10k_bourns_56aad_c24_b15_r81l.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Resistors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Potentiometers THD.pretty/TRIM_BOURNS_56AAD-C24.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "panel",
+    "control",
+    "trimming",
+    "potentiometer",
+    "with",
+    "rotary"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Potentiometers THD#TRIM_10K_BOURNS_56AAD-C24-B15/R81L",
+      "symbol": "SchLib/Resistors.kicad_sym#TRIM_BOURNS_56AAD-XXX-XXX/R81",
+      "footprint": "PcbLib/Potentiometers THD.pretty/TRIM_BOURNS_56AAD-C24.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

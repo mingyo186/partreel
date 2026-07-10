@@ -1,0 +1,57 @@
+{
+  "id": "cern_ccr_10nf_250vac_20_murata_de2e3sa103ma3bt02f",
+  "name": "DE2E3SA103MA3BT02F (CERN library)",
+  "category": "passive",
+  "family": "CERN Capacitors THD",
+  "manufacturer": "MURATA",
+  "mpn_pattern": "DE2E3SA103MA3BT02F",
+  "description": "Safety Standard Certified Lead Type Disc Ceramic Capacitor for General Purpose, Type SA Class X1, Y2. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": 2.0,
+    "case": "LS7.5 W5 x D15",
+    "value": "10nF",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_ccr_10nf_250vac_20_murata_de2e3sa103ma3bt02f.kicad_mod",
+    "symbol": "cern_ccr_10nf_250vac_20_murata_de2e3sa103ma3bt02f.kicad_sym",
+    "footprint_svg": "cern_ccr_10nf_250vac_20_murata_de2e3sa103ma3bt02f.footprint.svg",
+    "symbol_svg": "cern_ccr_10nf_250vac_20_murata_de2e3sa103ma3bt02f.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Capacitors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Capacitors THD.pretty/CAPRB_MURATA_DE2E3SA103MA3BT02F.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "safety",
+    "standard",
+    "certified",
+    "lead",
+    "type",
+    "disc"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Capacitors THD#CCR_10NF_250VAC_20%_MURATA_DE2E3SA103MA3BT02F",
+      "symbol": "SchLib/Capacitors.kicad_sym#Capacitor - non polarized",
+      "footprint": "PcbLib/Capacitors THD.pretty/CAPRB_MURATA_DE2E3SA103MA3BT02F.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

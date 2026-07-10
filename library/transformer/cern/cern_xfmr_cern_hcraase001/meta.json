@@ -1,0 +1,53 @@
+{
+  "id": "cern_xfmr_cern_hcraase001",
+  "name": "HCRAASE001 (CERN library)",
+  "category": "transformer",
+  "family": "CERN Transformers",
+  "manufacturer": "CERN",
+  "mpn_pattern": "HCRAASE001",
+  "description": "HF Power Transformer RM6. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": 8.0,
+    "value": "HCRAASE001",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_xfmr_cern_hcraase001.kicad_mod",
+    "symbol": "cern_xfmr_cern_hcraase001.kicad_sym",
+    "footprint_svg": "cern_xfmr_cern_hcraase001.footprint.svg",
+    "symbol_svg": "cern_xfmr_cern_hcraase001.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Inductors & Transformers.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Transformers.pretty/XFMR_CERN_HCRAASE001.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "power",
+    "transformer",
+    "rm6"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Transformers#XFMR_CERN_HCRAASE001",
+      "symbol": "SchLib/Inductors & Transformers.kicad_sym#XFMR_CERN_HCRAASE001",
+      "footprint": "PcbLib/Transformers.pretty/XFMR_CERN_HCRAASE001.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

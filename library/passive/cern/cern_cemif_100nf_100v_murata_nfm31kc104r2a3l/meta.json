@@ -1,0 +1,57 @@
+{
+  "id": "cern_cemif_100nf_100v_murata_nfm31kc104r2a3l",
+  "name": "NFM31KC104R2A3L (CERN library)",
+  "category": "passive",
+  "family": "CERN Capacitors SMD",
+  "manufacturer": "MURATA",
+  "mpn_pattern": "NFM31KC104R2A3L",
+  "description": "6A EMI Filter Capacitor Type, NFM31KC Series (1206 Size). Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": 2.0,
+    "mounting": "SMD",
+    "case": "1206",
+    "value": "100nF",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_cemif_100nf_100v_murata_nfm31kc104r2a3l.kicad_mod",
+    "symbol": "cern_cemif_100nf_100v_murata_nfm31kc104r2a3l.kicad_sym",
+    "footprint_svg": "cern_cemif_100nf_100v_murata_nfm31kc104r2a3l.footprint.svg",
+    "symbol_svg": "cern_cemif_100nf_100v_murata_nfm31kc104r2a3l.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Capacitors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Capacitors SMD.pretty/CAPC_MURATA_NFM31KC_1206.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "emi",
+    "filter",
+    "capacitor",
+    "type",
+    "nfm31kc",
+    "series"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Capacitors SMD#CEMIF_100NF_100V_MURATA_NFM31KC104R2A3L",
+      "symbol": "SchLib/Capacitors.kicad_sym#EMI Filter - Capacitor - Type1",
+      "footprint": "PcbLib/Capacitors SMD.pretty/CAPC_MURATA_NFM31KC_1206.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

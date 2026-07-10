@@ -1,0 +1,57 @@
+{
+  "id": "cern_r0805_20k8_0_1_0_125w_10ppm_vishay_tnpw_e3",
+  "name": "TNPW080520K8BY (CERN library)",
+  "category": "passive",
+  "family": "CERN Resistors SMD",
+  "manufacturer": "VISHAY",
+  "mpn_pattern": "TNPW080520K8BY",
+  "description": "High Stability Thin Film Flat Chip Resistor. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: Not Recommended.",
+  "parameters": {
+    "contacts": "2",
+    "mounting": "SMD",
+    "case": "0805",
+    "value": "20k8",
+    "lifecycle": "Not Recommended"
+  },
+  "files": {
+    "footprint": "cern_r0805_20k8_0_1_0_125w_10ppm_vishay_tnpw_e3.kicad_mod",
+    "symbol": "cern_r0805_20k8_0_1_0_125w_10ppm_vishay_tnpw_e3.kicad_sym",
+    "footprint_svg": "cern_r0805_20k8_0_1_0_125w_10ppm_vishay_tnpw_e3.footprint.svg",
+    "symbol_svg": "cern_r0805_20k8_0_1_0_125w_10ppm_vishay_tnpw_e3.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Resistors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Resistors SMD.pretty/RESC2012X60N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "high",
+    "stability",
+    "thin",
+    "film",
+    "flat",
+    "chip"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Resistors SMD#R0805_20K8_0.1%_0.125W_10PPM_VISHAY_TNPW E3",
+      "symbol": "SchLib/Resistors.kicad_sym#Resistor - 0.1%",
+      "footprint": "PcbLib/Resistors SMD.pretty/RESC2012X60N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

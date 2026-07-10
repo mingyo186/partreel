@@ -1,0 +1,57 @@
+{
+  "id": "cern_r5025_1k_5_1w_50ppm_ohmite_mc102",
+  "name": "MC102821001JE (CERN library)",
+  "category": "passive",
+  "family": "CERN Resistors SMD",
+  "manufacturer": "OHMITE",
+  "mpn_pattern": "MC102821001JE",
+  "description": "5kV High Voltage Precision Thick Film Resistor. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "2",
+    "mounting": "SMD",
+    "case": "5025",
+    "value": "1K",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_r5025_1k_5_1w_50ppm_ohmite_mc102.kicad_mod",
+    "symbol": "cern_r5025_1k_5_1w_50ppm_ohmite_mc102.kicad_sym",
+    "footprint_svg": "cern_r5025_1k_5_1w_50ppm_ohmite_mc102.footprint.svg",
+    "symbol_svg": "cern_r5025_1k_5_1w_50ppm_ohmite_mc102.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Resistors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Resistors SMD.pretty/RES_OHMITE_MC102.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "5kv",
+    "high",
+    "voltage",
+    "precision",
+    "thick",
+    "film"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Resistors SMD#R5025_1K_5%_1W_50PPM_OHMITE_MC102",
+      "symbol": "SchLib/Resistors.kicad_sym#Resistor - 5%",
+      "footprint": "PcbLib/Resistors SMD.pretty/RES_OHMITE_MC102.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "id": "cern_xfmr_schurter_itna_0235_d103",
+  "name": "ITNA-0235-D103 (CERN library)",
+  "category": "transformer",
+  "family": "CERN Transformers",
+  "manufacturer": "SCHURTER",
+  "mpn_pattern": "ITNA-0235-D103",
+  "description": "Pulse Transformer. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": 4.0,
+    "value": "1:1",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_xfmr_schurter_itna_0235_d103.kicad_mod",
+    "symbol": "cern_xfmr_schurter_itna_0235_d103.kicad_sym",
+    "footprint_svg": "cern_xfmr_schurter_itna_0235_d103.footprint.svg",
+    "symbol_svg": "cern_xfmr_schurter_itna_0235_d103.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Inductors & Transformers.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Transformers.pretty/XFMR_SCHURTER_IT_35-3.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "pulse",
+    "transformer"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Transformers#XFMR_SCHURTER_ITNA-0235-D103",
+      "symbol": "SchLib/Inductors & Transformers.kicad_sym#XFMR_SCHURTER_IT_35-3",
+      "footprint": "PcbLib/Transformers.pretty/XFMR_SCHURTER_IT_35-3.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

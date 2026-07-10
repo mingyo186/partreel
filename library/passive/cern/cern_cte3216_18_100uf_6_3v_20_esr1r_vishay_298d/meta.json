@@ -1,0 +1,57 @@
+{
+  "id": "cern_cte3216_18_100uf_6_3v_20_esr1r_vishay_298d",
+  "name": "298D107X06R3A2T (CERN library)",
+  "category": "passive",
+  "family": "CERN Capacitors SMD",
+  "manufacturer": "VISHAY",
+  "mpn_pattern": "298D107X06R3A2T",
+  "description": "ESR 1R0 Solid Tantalum Chip Capacitor (MICROTAN Leadframeless Molded). Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": 2.0,
+    "mounting": "SMD",
+    "case": "A",
+    "value": "100uF",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_cte3216_18_100uf_6_3v_20_esr1r_vishay_298d.kicad_mod",
+    "symbol": "cern_cte3216_18_100uf_6_3v_20_esr1r_vishay_298d.kicad_sym",
+    "footprint_svg": "cern_cte3216_18_100uf_6_3v_20_esr1r_vishay_298d.footprint.svg",
+    "symbol_svg": "cern_cte3216_18_100uf_6_3v_20_esr1r_vishay_298d.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Capacitors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Capacitors SMD.pretty/CAPMP3216X180N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "esr",
+    "1r0",
+    "solid",
+    "tantalum",
+    "chip",
+    "capacitor"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Capacitors SMD#CTE3216-18_100UF_6.3V_20%_ESR1R_VISHAY_298D",
+      "symbol": "SchLib/Capacitors.kicad_sym#Capacitor - polarized",
+      "footprint": "PcbLib/Capacitors SMD.pretty/CAPMP3216X180N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

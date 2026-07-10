@@ -1,0 +1,57 @@
+{
+  "id": "cern_r2512_0r01_1_1w_35ppm_vishay_wsk",
+  "name": "WSK2512R0100F (CERN library)",
+  "category": "passive",
+  "family": "CERN Resistors SMD",
+  "manufacturer": "VISHAY DALE",
+  "mpn_pattern": "WSK2512R0100F",
+  "description": "Power Metal Strip® Resistor, Low Value. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "4",
+    "mounting": "SMD",
+    "case": "2512",
+    "value": "0R01",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_r2512_0r01_1_1w_35ppm_vishay_wsk.kicad_mod",
+    "symbol": "cern_r2512_0r01_1_1w_35ppm_vishay_wsk.kicad_sym",
+    "footprint_svg": "cern_r2512_0r01_1_1w_35ppm_vishay_wsk.footprint.svg",
+    "symbol_svg": "cern_r2512_0r01_1_1w_35ppm_vishay_wsk.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Resistors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Resistors SMD.pretty/RES_VISHAY_WSK2512_0R005-0R2.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "power",
+    "metal",
+    "strip",
+    "resistor",
+    "low",
+    "value"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Resistors SMD#R2512_0R01_1%_1W_35PPM_VISHAY_WSK",
+      "symbol": "SchLib/Resistors.kicad_sym#Current Sense Resistor",
+      "footprint": "PcbLib/Resistors SMD.pretty/RES_VISHAY_WSK2512_0R005-0R2.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

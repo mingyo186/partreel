@@ -1,0 +1,56 @@
+{
+  "id": "cern_rmf_47k_0_1_0_5w_15ppm_welwyn_pr5",
+  "name": "PR5Y-47KBI (CERN library)",
+  "category": "passive",
+  "family": "CERN Resistors THD",
+  "manufacturer": "TT WELWYN",
+  "mpn_pattern": "PR5Y-47KBI",
+  "description": "Precision Metal Film Fixed Resistor. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "2",
+    "case": "LS12.7 L9 x D3.6",
+    "value": "47k",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_rmf_47k_0_1_0_5w_15ppm_welwyn_pr5.kicad_mod",
+    "symbol": "cern_rmf_47k_0_1_0_5w_15ppm_welwyn_pr5.kicad_sym",
+    "footprint_svg": "cern_rmf_47k_0_1_0_5w_15ppm_welwyn_pr5.footprint.svg",
+    "symbol_svg": "cern_rmf_47k_0_1_0_5w_15ppm_welwyn_pr5.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Resistors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Resistors THD.pretty/RES_WELWYN_PR5.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "precision",
+    "metal",
+    "film",
+    "fixed",
+    "resistor"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Resistors THD#RMF_47K_0.1%_0.5W_15PPM_WELWYN_PR5",
+      "symbol": "SchLib/Resistors.kicad_sym#Resistor - 0.1%",
+      "footprint": "PcbLib/Resistors THD.pretty/RES_WELWYN_PR5.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

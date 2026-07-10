@@ -1,0 +1,57 @@
+{
+  "id": "cern_cppr_1nf_700vac_5_vishay_mkp385210200jfp2",
+  "name": "MKP385210200JFP2 (CERN library)",
+  "category": "passive",
+  "family": "CERN Capacitors THD",
+  "manufacturer": "VISHAY BCCOMPONENTS",
+  "mpn_pattern": "MKP385210200JFP2",
+  "description": "AC and Pulse Metallized Polypropylene Film Capacitor (MKP 385). Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": 2.0,
+    "case": "LS15 W5 x L17.5 x H11",
+    "value": "1nF",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_cppr_1nf_700vac_5_vishay_mkp385210200jfp2.kicad_mod",
+    "symbol": "cern_cppr_1nf_700vac_5_vishay_mkp385210200jfp2.kicad_sym",
+    "footprint_svg": "cern_cppr_1nf_700vac_5_vishay_mkp385210200jfp2.footprint.svg",
+    "symbol_svg": "cern_cppr_1nf_700vac_5_vishay_mkp385210200jfp2.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Capacitors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Capacitors THD.pretty/CAPR1500-500X1750X1100.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "and",
+    "pulse",
+    "metallized",
+    "polypropylene",
+    "film",
+    "capacitor"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Capacitors THD#CPPR_1NF_700VAC_5%_VISHAY_MKP385210200JFP2",
+      "symbol": "SchLib/Capacitors.kicad_sym#Capacitor - non polarized",
+      "footprint": "PcbLib/Capacitors THD.pretty/CAPR1500-500X1750X1100.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

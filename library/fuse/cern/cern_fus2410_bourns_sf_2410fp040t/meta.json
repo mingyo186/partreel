@@ -1,0 +1,56 @@
+{
+  "id": "cern_fus2410_bourns_sf_2410fp040t",
+  "name": "SF-2410FP040T (CERN library)",
+  "category": "fuse",
+  "family": "CERN Fuses",
+  "manufacturer": "BOURNS",
+  "mpn_pattern": "SF-2410FP040T",
+  "description": "Fast Acting Precision SMD Fuse for Overcurrent Protection, SinglFuse™ SF-2410FP Series. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "2",
+    "mounting": "SMD",
+    "case": "2410",
+    "value": "0.4A-125VAC"
+  },
+  "files": {
+    "footprint": "cern_fus2410_bourns_sf_2410fp040t.kicad_mod",
+    "symbol": "cern_fus2410_bourns_sf_2410fp040t.kicad_sym",
+    "footprint_svg": "cern_fus2410_bourns_sf_2410fp040t.footprint.svg",
+    "symbol_svg": "cern_fus2410_bourns_sf_2410fp040t.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Fuses.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Fuses.pretty/FUSC_BOURNS_SF-2410FP.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "fast",
+    "acting",
+    "precision",
+    "smd",
+    "fuse",
+    "for"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Fuses#FUS2410_BOURNS_SF-2410FP040T",
+      "symbol": "SchLib/Fuses.kicad_sym#Fuse",
+      "footprint": "PcbLib/Fuses.pretty/FUSC_BOURNS_SF-2410FP.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

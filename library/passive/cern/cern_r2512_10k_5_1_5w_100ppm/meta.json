@@ -1,0 +1,57 @@
+{
+  "id": "cern_r2512_10k_5_1_5w_100ppm",
+  "name": "CRGS2512J10K (CERN library)",
+  "category": "passive",
+  "family": "CERN Resistors SMD",
+  "manufacturer": "TYCO ELECTRONICS",
+  "mpn_pattern": "CRGS2512J10K",
+  "description": "SMD Low Ohmic Current Sense Resistor. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "2",
+    "mounting": "SMD",
+    "case": "2512",
+    "value": "10k",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_r2512_10k_5_1_5w_100ppm.kicad_mod",
+    "symbol": "cern_r2512_10k_5_1_5w_100ppm.kicad_sym",
+    "footprint_svg": "cern_r2512_10k_5_1_5w_100ppm.footprint.svg",
+    "symbol_svg": "cern_r2512_10k_5_1_5w_100ppm.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Resistors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Resistors SMD.pretty/RESC6331X70N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "smd",
+    "low",
+    "ohmic",
+    "current",
+    "sense",
+    "resistor"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Resistors SMD#R2512_10K_5%_1.5W_100PPM",
+      "symbol": "SchLib/Resistors.kicad_sym#Resistor - 5%",
+      "footprint": "PcbLib/Resistors SMD.pretty/RESC6331X70N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "id": "cern_rn_70k_20k_vishay_cern_317998_rb_h",
+  "name": "317998 Set 155328 (CERN library)",
+  "category": "passive",
+  "family": "CERN Resistor Networks THD",
+  "manufacturer": "VISHAY/CERN",
+  "mpn_pattern": "317998 Set 155328",
+  "description": "Custom Combined Matched Set 20k/20k (RA) with 70k20k (RB)High Precision Bulk Metal® Foil Surface Voltage Divider, VHD200 Series. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "3",
+    "value": "70k 20k",
+    "lifecycle": "None"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/passive/cern/cern_rn_70k_20k_vishay_cern_317998_rb_h/cern_rn_70k_20k_vishay_cern_317998_rb_h.kicad_mod",
+    "symbol": "https://partreel.com/library/passive/cern/cern_rn_70k_20k_vishay_cern_317998_rb_h/cern_rn_70k_20k_vishay_cern_317998_rb_h.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/passive/cern/cern_rn_70k_20k_vishay_cern_317998_rb_h/cern_rn_70k_20k_vishay_cern_317998_rb_h.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/passive/cern/cern_rn_70k_20k_vishay_cern_317998_rb_h/cern_rn_70k_20k_vishay_cern_317998_rb_h.symbol.svg"
+  },
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Resistors.kicad_sym",
+  "license": "CERN-OHL-P-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Networks THD.pretty/RN_VISHAY_VHD200_H.kicad_mod)",
+  "keywords": [
+    "cern",
+    "custom",
+    "combined",
+    "matched",
+    "set",
+    "20k",
+    "20k"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "cern-kicad-libs@53054c17 (Networks THD.pretty/RN_VISHAY_VHD200_H.kicad_mod)",
+    "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Resistors.kicad_sym",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_cern.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+      "source_commit": "53054c17",
+      "source_files": {
+        "db": "CERN.sqlite#Resistor Networks THD#RN_70K_20K_VISHAY/CERN_317998(RB)_h",
+        "symbol": "SchLib/Resistors.kicad_sym#RN Div 12-23 - 0.05% R1=70K R2=20K",
+        "footprint": "PcbLib/Networks THD.pretty/RN_VISHAY_VHD200_H.kicad_mod"
+      },
+      "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+      "import_date": "2026-07-05",
+      "modifications": [
+        "extracted single symbol from library",
+        "stripped dead 3D model reference (upstream ships no 3D)",
+        "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/cern_rn_70k_20k_vishay_cern_317998_rb_h/",
+  "api": "https://partreel.com/api/v1/parts/cern_rn_70k_20k_vishay_cern_317998_rb_h.json"
+}

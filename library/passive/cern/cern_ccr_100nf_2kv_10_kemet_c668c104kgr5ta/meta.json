@@ -1,0 +1,55 @@
+{
+  "id": "cern_ccr_100nf_2kv_10_kemet_c668c104kgr5ta",
+  "name": "C668C104KGR5TA (CERN library)",
+  "category": "passive",
+  "family": "CERN Capacitors THD",
+  "manufacturer": "KEMET",
+  "mpn_pattern": "C668C104KGR5TA",
+  "description": "High Voltage Ceramic  Capacitor. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": 2.0,
+    "case": "LS17.14 W6.89 x L19.56 x H18.29",
+    "value": "100nF",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_ccr_100nf_2kv_10_kemet_c668c104kgr5ta.kicad_mod",
+    "symbol": "cern_ccr_100nf_2kv_10_kemet_c668c104kgr5ta.kicad_sym",
+    "footprint_svg": "cern_ccr_100nf_2kv_10_kemet_c668c104kgr5ta.footprint.svg",
+    "symbol_svg": "cern_ccr_100nf_2kv_10_kemet_c668c104kgr5ta.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Capacitors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Capacitors THD.pretty/CAPRR1714-689X1956X1829.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "high",
+    "voltage",
+    "ceramic",
+    "capacitor"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Capacitors THD#CCR_100NF_2KV_10%_KEMET_C668C104KGR5TA",
+      "symbol": "SchLib/Capacitors.kicad_sym#Capacitor - non polarized",
+      "footprint": "PcbLib/Capacitors THD.pretty/CAPRR1714-689X1956X1829.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "id": "cern_cae10800_850_2200000uf_5_5v_80_20",
+  "name": "NEXCW224Z5.5V10.7X8.5TRF (CERN library)",
+  "category": "passive",
+  "family": "CERN Capacitors SMD",
+  "manufacturer": "NIC COMPONENTS",
+  "mpn_pattern": "NEXCW224Z5.5V10.7X8.5TRF",
+  "description": "V-Chip Memory Back-Up Capacitor. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": 2.0,
+    "mounting": "SMD",
+    "value": "220 000uF",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_cae10800_850_2200000uf_5_5v_80_20.kicad_mod",
+    "symbol": "cern_cae10800_850_2200000uf_5_5v_80_20.kicad_sym",
+    "footprint_svg": "cern_cae10800_850_2200000uf_5_5v_80_20.footprint.svg",
+    "symbol_svg": "cern_cae10800_850_2200000uf_5_5v_80_20.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Capacitors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Capacitors SMD.pretty/CAPAE1080X850N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "chip",
+    "memory",
+    "back",
+    "capacitor"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Capacitors SMD#CAE10800-850_2200000UF_5.5V_+80%-20%",
+      "symbol": "SchLib/Capacitors.kicad_sym#Capacitor - polarized",
+      "footprint": "PcbLib/Capacitors SMD.pretty/CAPAE1080X850N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

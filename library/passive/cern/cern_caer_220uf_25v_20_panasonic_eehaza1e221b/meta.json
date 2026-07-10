@@ -1,0 +1,55 @@
+{
+  "id": "cern_caer_220uf_25v_20_panasonic_eehaza1e221b",
+  "name": "EEHAZA1E221B (CERN library)",
+  "category": "passive",
+  "family": "CERN Capacitors THD",
+  "manufacturer": "PANASONIC",
+  "mpn_pattern": "EEHAZA1E221B",
+  "description": "Aluminum Electrolytic Capacitor, (ZA-A Series). Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": 2.0,
+    "case": "LS3.5 D8 x H10.5",
+    "value": "220uF",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_caer_220uf_25v_20_panasonic_eehaza1e221b.kicad_mod",
+    "symbol": "cern_caer_220uf_25v_20_panasonic_eehaza1e221b.kicad_sym",
+    "footprint_svg": "cern_caer_220uf_25v_20_panasonic_eehaza1e221b.footprint.svg",
+    "symbol_svg": "cern_caer_220uf_25v_20_panasonic_eehaza1e221b.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Capacitors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Capacitors THD.pretty/CAPPR350-850X1050.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "aluminum",
+    "electrolytic",
+    "capacitor",
+    "series"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Capacitors THD#CAER_220UF_25V_20%_PANASONIC_EEHAZA1E221B",
+      "symbol": "SchLib/Capacitors.kicad_sym#Capacitor - polarized",
+      "footprint": "PcbLib/Capacitors THD.pretty/CAPPR350-850X1050.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

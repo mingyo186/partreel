@@ -1,0 +1,56 @@
+{
+  "id": "cern_caer_180uf_400v_20_epcos_b43547a9187m000",
+  "name": "B43547A9187M000 (CERN library)",
+  "category": "passive",
+  "family": "CERN Capacitors THD",
+  "manufacturer": "EPCOS",
+  "mpn_pattern": "B43547A9187M000",
+  "description": "Aluminum Electrolytic Capacitor  (B43547 Series). Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": 2.0,
+    "case": "LS10 D25 x H35",
+    "value": "180uF",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_caer_180uf_400v_20_epcos_b43547a9187m000.kicad_mod",
+    "symbol": "cern_caer_180uf_400v_20_epcos_b43547a9187m000.kicad_sym",
+    "footprint_svg": "cern_caer_180uf_400v_20_epcos_b43547a9187m000.footprint.svg",
+    "symbol_svg": "cern_caer_180uf_400v_20_epcos_b43547a9187m000.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Capacitors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Capacitors THD.pretty/CAPPR1000-2640X3720.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "aluminum",
+    "electrolytic",
+    "capacitor",
+    "b43547",
+    "series"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Capacitors THD#CAER_180UF_400V_20%_EPCOS_B43547A9187M000",
+      "symbol": "SchLib/Capacitors.kicad_sym#Capacitor - polarized",
+      "footprint": "PcbLib/Capacitors THD.pretty/CAPPR1000-2640X3720.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "id": "cern_xfmr_coilcraft_fa2925_al",
+  "name": "FA2925-AL (CERN library)",
+  "category": "transformer",
+  "family": "CERN Transformers",
+  "manufacturer": "COILCRAFT",
+  "mpn_pattern": "FA2925-AL",
+  "description": "Flyback Transformer For Silicon Laboratories Si3402 PD Controller. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": 10.0,
+    "mounting": "SMD",
+    "value": "1:1",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_xfmr_coilcraft_fa2925_al.kicad_mod",
+    "symbol": "cern_xfmr_coilcraft_fa2925_al.kicad_sym",
+    "footprint_svg": "cern_xfmr_coilcraft_fa2925_al.footprint.svg",
+    "symbol_svg": "cern_xfmr_coilcraft_fa2925_al.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Inductors & Transformers.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Transformers.pretty/XFMR_COILCRAFT_FA2925-AL.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "flyback",
+    "transformer",
+    "for",
+    "silicon",
+    "laboratories",
+    "si3402"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Transformers#XFMR_COILCRAFT_FA2925-AL",
+      "symbol": "SchLib/Inductors & Transformers.kicad_sym#XFMR_COILCRAFT_FA2925-AL",
+      "footprint": "PcbLib/Transformers.pretty/XFMR_COILCRAFT_FA2925-AL.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

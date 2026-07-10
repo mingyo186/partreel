@@ -1,0 +1,83 @@
+{
+  "id": "cern_rmf_0r05_1_35w_200ppm_irc_mhp35_hflip",
+  "name": "TFP-MHP35LF-0R05-F-L04 (CERN library)",
+  "category": "passive",
+  "family": "CERN Resistors THD",
+  "manufacturer": "TT ELECTRONICS IRC",
+  "mpn_pattern": "TFP-MHP35LF-0R05-F-L04",
+  "description": "High Voltage (500V) TO-220 Thick Film Power Resistor (2.25W in Free Air). Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "2",
+    "case": "TO-220",
+    "value": "0R05",
+    "lifecycle": "None"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/passive/cern/cern_rmf_0r05_1_35w_200ppm_irc_mhp35_hflip/cern_rmf_0r05_1_35w_200ppm_irc_mhp35_hflip.kicad_mod",
+    "symbol": "https://partreel.com/library/passive/cern/cern_rmf_0r05_1_35w_200ppm_irc_mhp35_hflip/cern_rmf_0r05_1_35w_200ppm_irc_mhp35_hflip.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/passive/cern/cern_rmf_0r05_1_35w_200ppm_irc_mhp35_hflip/cern_rmf_0r05_1_35w_200ppm_irc_mhp35_hflip.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/passive/cern/cern_rmf_0r05_1_35w_200ppm_irc_mhp35_hflip/cern_rmf_0r05_1_35w_200ppm_irc_mhp35_hflip.symbol.svg"
+  },
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Resistors.kicad_sym",
+  "license": "CERN-OHL-P-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Resistors THD.pretty/TO-220-2-HFLIP.kicad_mod)",
+  "keywords": [
+    "cern",
+    "high",
+    "voltage",
+    "500v",
+    "220",
+    "thick",
+    "film"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "cern-kicad-libs@53054c17 (Resistors THD.pretty/TO-220-2-HFLIP.kicad_mod)",
+    "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Resistors.kicad_sym",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_cern.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+      "source_commit": "53054c17",
+      "source_files": {
+        "db": "CERN.sqlite#Resistors THD#RMF_0R05_1%_35W_200PPM_IRC_MHP35_hflip",
+        "symbol": "SchLib/Resistors.kicad_sym#Resistor - 1%",
+        "footprint": "PcbLib/Resistors THD.pretty/TO-220-2-HFLIP.kicad_mod"
+      },
+      "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+      "import_date": "2026-07-05",
+      "modifications": [
+        "extracted single symbol from library",
+        "stripped dead 3D model reference (upstream ships no 3D)",
+        "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/cern_rmf_0r05_1_35w_200ppm_irc_mhp35_hflip/",
+  "api": "https://partreel.com/api/v1/parts/cern_rmf_0r05_1_35w_200ppm_irc_mhp35_hflip.json"
+}

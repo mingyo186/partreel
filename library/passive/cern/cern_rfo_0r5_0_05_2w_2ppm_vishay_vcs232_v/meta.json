@@ -1,0 +1,56 @@
+{
+  "id": "cern_rfo_0r5_0_05_2w_2ppm_vishay_vcs232_v",
+  "name": "Y0942 0R50000 A 9 L (CERN library)",
+  "category": "passive",
+  "family": "CERN Resistors THD",
+  "manufacturer": "VISHAY FOIL RESISTOR",
+  "mpn_pattern": "Y0942 0R50000 A 9 L",
+  "description": "Ultra High Precision Foil Power Current Sensing Resistor - VCS232 Series. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: Not recommended.",
+  "parameters": {
+    "contacts": "5",
+    "value": "0R5",
+    "lifecycle": "Not recommended"
+  },
+  "files": {
+    "footprint": "cern_rfo_0r5_0_05_2w_2ppm_vishay_vcs232_v.kicad_mod",
+    "symbol": "cern_rfo_0r5_0_05_2w_2ppm_vishay_vcs232_v.kicad_sym",
+    "footprint_svg": "cern_rfo_0r5_0_05_2w_2ppm_vishay_vcs232_v.footprint.svg",
+    "symbol_svg": "cern_rfo_0r5_0_05_2w_2ppm_vishay_vcs232_v.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Resistors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Resistors THD.pretty/RES_VISHAY_VCS232_V.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "ultra",
+    "high",
+    "precision",
+    "foil",
+    "power",
+    "current"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Resistors THD#RFO_0R5_0.05%_2W_2PPM_VISHAY_VCS232_v",
+      "symbol": "SchLib/Resistors.kicad_sym#Current Sense Resistor",
+      "footprint": "PcbLib/Resistors THD.pretty/RES_VISHAY_VCS232_V.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

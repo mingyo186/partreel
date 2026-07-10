@@ -1,0 +1,55 @@
+{
+  "id": "cern_ind_3_3uh_20_coilcraft_lpd3015",
+  "name": "LPD3015-332MR (CERN library)",
+  "category": "passive",
+  "family": "CERN Inductors SMD",
+  "manufacturer": "COILCRAFT",
+  "mpn_pattern": "LPD3015-332MR",
+  "description": "Coupled Inductor for SEPIC Applications, LPD5030 Series. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": 2.0,
+    "mounting": "SMD",
+    "value": "3.3uH"
+  },
+  "files": {
+    "footprint": "cern_ind_3_3uh_20_coilcraft_lpd3015.kicad_mod",
+    "symbol": "cern_ind_3_3uh_20_coilcraft_lpd3015.kicad_sym",
+    "footprint_svg": "cern_ind_3_3uh_20_coilcraft_lpd3015.footprint.svg",
+    "symbol_svg": "cern_ind_3_3uh_20_coilcraft_lpd3015.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Inductors & Transformers.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Inductors SMD.pretty/IND_COILCRAFT_LPD3015.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "coupled",
+    "inductor",
+    "for",
+    "sepic",
+    "applications",
+    "lpd5030"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Inductors SMD#IND_3.3UH_20%_COILCRAFT_LPD3015",
+      "symbol": "SchLib/Inductors & Transformers.kicad_sym#Inductor Common Mode 1Dot-2 4Dot-3",
+      "footprint": "PcbLib/Inductors SMD.pretty/IND_COILCRAFT_LPD3015.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "cern_xfmr_eda_03141_v2_0_misc1_a",
+  "name": "EDA-03141-V2-0_misc1 (CERN library)",
+  "category": "transformer",
+  "family": "CERN Transformers",
+  "manufacturer": "CERN",
+  "mpn_pattern": "EDA-03141-V2-0_misc1",
+  "description": "Cable Transformer (8kV Cable HTC-50-3-2 +  Ferrite toroid TN9/6/3-3E25). Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": 6.0,
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_xfmr_eda_03141_v2_0_misc1_a.kicad_mod",
+    "symbol": "cern_xfmr_eda_03141_v2_0_misc1_a.kicad_sym",
+    "footprint_svg": "cern_xfmr_eda_03141_v2_0_misc1_a.footprint.svg",
+    "symbol_svg": "cern_xfmr_eda_03141_v2_0_misc1_a.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Inductors & Transformers.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Transformers.pretty/XFMR_EDA-03141-V2-0_misc1_a.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "cable",
+    "transformer",
+    "8kv",
+    "cable",
+    "htc",
+    "ferrite"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Transformers#XFMR_EDA-03141-V2-0_misc1_a",
+      "symbol": "SchLib/Inductors & Transformers.kicad_sym#XFMR_EDA-03141-V2-0_misc1_a",
+      "footprint": "PcbLib/Transformers.pretty/XFMR_EDA-03141-V2-0_misc1_a.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

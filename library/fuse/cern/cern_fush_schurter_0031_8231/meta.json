@@ -1,0 +1,54 @@
+{
+  "id": "cern_fush_schurter_0031_8231",
+  "name": "0031.8231 (CERN library)",
+  "category": "fuse",
+  "family": "CERN Fuses",
+  "manufacturer": "SCHURTER",
+  "mpn_pattern": "0031.8231",
+  "description": "Fuse holder for 5x20mm/6.3x32mm Fuses (OGD Series). Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "2"
+  },
+  "files": {
+    "footprint": "cern_fush_schurter_0031_8231.kicad_mod",
+    "symbol": "cern_fush_schurter_0031_8231.kicad_sym",
+    "footprint_svg": "cern_fush_schurter_0031_8231.footprint.svg",
+    "symbol_svg": "cern_fush_schurter_0031_8231.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Fuses.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Fuses.pretty/FUSH_SCHURTER_0031.8231.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "fuse",
+    "holder",
+    "for",
+    "5x20mm",
+    "3x32mm",
+    "fuses"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Fuses#FUSH_SCHURTER_0031.8231",
+      "symbol": "SchLib/Fuses.kicad_sym#Fuse Holder",
+      "footprint": "PcbLib/Fuses.pretty/FUSH_SCHURTER_0031.8231.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

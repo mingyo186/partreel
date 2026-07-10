@@ -1,0 +1,53 @@
+{
+  "id": "cern_var_tdk_avrh10c221kt1r5ya8",
+  "name": "AVRH10C221KT1R5YA8 (CERN library)",
+  "category": "passive",
+  "family": "CERN Thermistors And Varistors",
+  "manufacturer": "TDK",
+  "mpn_pattern": "AVRH10C221KT1R5YA8",
+  "description": "Multilayer Chip Varistor Series AVR. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "2",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_var_tdk_avrh10c221kt1r5ya8.kicad_mod",
+    "symbol": "cern_var_tdk_avrh10c221kt1r5ya8.kicad_sym",
+    "footprint_svg": "cern_var_tdk_avrh10c221kt1r5ya8.footprint.svg",
+    "symbol_svg": "cern_var_tdk_avrh10c221kt1r5ya8.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Resistors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Thermistors And Varistors.pretty/VAR_1005X55N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "multilayer",
+    "chip",
+    "varistor",
+    "series",
+    "avr"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Thermistors And Varistors#VAR_TDK_AVRH10C221KT1R5YA8",
+      "symbol": "SchLib/Resistors.kicad_sym#Varistor",
+      "footprint": "PcbLib/Thermistors And Varistors.pretty/VAR_1005X55N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

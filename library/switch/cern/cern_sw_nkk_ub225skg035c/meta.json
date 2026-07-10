@@ -1,0 +1,55 @@
+{
+  "id": "cern_sw_nkk_ub225skg035c",
+  "name": "UB225SKG035C (CERN library)",
+  "category": "switch",
+  "family": "CERN Switches",
+  "manufacturer": "NKK SWITCHES",
+  "mpn_pattern": "UB225SKG035C",
+  "description": "Straight PCB Mounting Momentary Illuminated Pushbutton, Bright LED, Clear Lens/Red Diffuser, Contact Rating 0.4A 28V AC/DC. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "8",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_sw_nkk_ub225skg035c.kicad_mod",
+    "symbol": "cern_sw_nkk_ub225skg035c.kicad_sym",
+    "footprint_svg": "cern_sw_nkk_ub225skg035c.footprint.svg",
+    "symbol_svg": "cern_sw_nkk_ub225skg035c.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Switches.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Switches.pretty/SW_NKK_UB225SKG035C.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "straight",
+    "pcb",
+    "mounting",
+    "momentary",
+    "illuminated",
+    "pushbutton"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Switches#SW_NKK_UB225SKG035C",
+      "symbol": "SchLib/Switches.kicad_sym#SW_NKK_UB225SKG035C",
+      "footprint": "PcbLib/Switches.pretty/SW_NKK_UB225SKG035C.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

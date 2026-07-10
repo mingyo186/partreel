@@ -1,0 +1,55 @@
+{
+  "id": "cern_sw_apem_pt65121l508",
+  "name": "PT65121L508 (CERN library)",
+  "category": "switch",
+  "family": "CERN Switches",
+  "manufacturer": "APEM",
+  "mpn_pattern": "PT65121L508",
+  "description": "Rotary Decimal Code 4 Positions Right Angled Switch Whith Arrow Shaped Slot Actuator, PT65 (CR65) Series. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "6",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_sw_apem_pt65121l508.kicad_mod",
+    "symbol": "cern_sw_apem_pt65121l508.kicad_sym",
+    "footprint_svg": "cern_sw_apem_pt65121l508.footprint.svg",
+    "symbol_svg": "cern_sw_apem_pt65121l508.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Switches.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Switches.pretty/SW_APEM_PT65121L508.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "rotary",
+    "decimal",
+    "code",
+    "positions",
+    "right",
+    "angled"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Switches#SW_APEM_PT65121L508",
+      "symbol": "SchLib/Switches.kicad_sym#SW Rotary 1 2 3 4 C1 C2",
+      "footprint": "PcbLib/Switches.pretty/SW_APEM_PT65121L508.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

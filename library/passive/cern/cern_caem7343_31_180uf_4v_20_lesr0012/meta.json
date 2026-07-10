@@ -1,0 +1,56 @@
+{
+  "id": "cern_caem7343_31_180uf_4v_20_lesr0012",
+  "name": "ECASD60G187M012K00 (CERN library)",
+  "category": "passive",
+  "family": "CERN Capacitors SMD",
+  "manufacturer": "MURATA",
+  "mpn_pattern": "ECASD60G187M012K00",
+  "description": "ESR 0R012 Polymer Aluminum Electrolytic Capacitor. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": 2.0,
+    "mounting": "SMD",
+    "value": "180uF",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_caem7343_31_180uf_4v_20_lesr0012.kicad_mod",
+    "symbol": "cern_caem7343_31_180uf_4v_20_lesr0012.kicad_sym",
+    "footprint_svg": "cern_caem7343_31_180uf_4v_20_lesr0012.footprint.svg",
+    "symbol_svg": "cern_caem7343_31_180uf_4v_20_lesr0012.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Capacitors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Capacitors SMD.pretty/CAPMP7343X310N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "esr",
+    "0r012",
+    "polymer",
+    "aluminum",
+    "electrolytic",
+    "capacitor"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Capacitors SMD#CAEM7343-31_180UF_4V_20%_LESR0012",
+      "symbol": "SchLib/Capacitors.kicad_sym#Capacitor - polarized",
+      "footprint": "PcbLib/Capacitors SMD.pretty/CAPMP7343X310N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

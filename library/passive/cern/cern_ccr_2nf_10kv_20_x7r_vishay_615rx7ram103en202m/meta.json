@@ -1,0 +1,57 @@
+{
+  "id": "cern_ccr_2nf_10kv_20_x7r_vishay_615rx7ram103en202m",
+  "name": "615RX7RAM103EN202M (CERN library)",
+  "category": "passive",
+  "family": "CERN Capacitors THD",
+  "manufacturer": "VISHAY CERA-MITE",
+  "mpn_pattern": "615RX7RAM103EN202M",
+  "description": "High Voltage Ceramic Singlelayer DC Disc Capacitor. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": 2.0,
+    "case": "LS12.7 W7.9 x D24.9",
+    "value": "2nF",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_ccr_2nf_10kv_20_x7r_vishay_615rx7ram103en202m.kicad_mod",
+    "symbol": "cern_ccr_2nf_10kv_20_x7r_vishay_615rx7ram103en202m.kicad_sym",
+    "footprint_svg": "cern_ccr_2nf_10kv_20_x7r_vishay_615rx7ram103en202m.footprint.svg",
+    "symbol_svg": "cern_ccr_2nf_10kv_20_x7r_vishay_615rx7ram103en202m.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Capacitors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Capacitors THD.pretty/CAPRB_VISHAY_615RX7RAM103EN202M.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "high",
+    "voltage",
+    "ceramic",
+    "singlelayer",
+    "disc",
+    "capacitor"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Capacitors THD#CCR_2NF_10KV_20%_X7R_VISHAY_615RX7RAM103EN202M",
+      "symbol": "SchLib/Capacitors.kicad_sym#Capacitor - non polarized",
+      "footprint": "PcbLib/Capacitors THD.pretty/CAPRB_VISHAY_615RX7RAM103EN202M.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

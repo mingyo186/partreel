@@ -1,0 +1,82 @@
+{
+  "id": "cern_caer_3f_5_4v_30_10_eaton_phv_5r4v305_r",
+  "name": "PHV-5R4V305-R (CERN library)",
+  "category": "passive",
+  "family": "CERN Capacitors THD",
+  "manufacturer": "EATON",
+  "mpn_pattern": "PHV-5R4V305-R",
+  "description": "Z= 0R080 Radial Lead, Supercapacitors Cylindrical pack, (PHV Series). Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": 2.0,
+    "case": "LS11.8 D9 x L17.3 x H32.5",
+    "value": "3F",
+    "lifecycle": "None"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/passive/cern/cern_caer_3f_5_4v_30_10_eaton_phv_5r4v305_r/cern_caer_3f_5_4v_30_10_eaton_phv_5r4v305_r.kicad_mod",
+    "symbol": "https://partreel.com/library/passive/cern/cern_caer_3f_5_4v_30_10_eaton_phv_5r4v305_r/cern_caer_3f_5_4v_30_10_eaton_phv_5r4v305_r.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/passive/cern/cern_caer_3f_5_4v_30_10_eaton_phv_5r4v305_r/cern_caer_3f_5_4v_30_10_eaton_phv_5r4v305_r.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/passive/cern/cern_caer_3f_5_4v_30_10_eaton_phv_5r4v305_r/cern_caer_3f_5_4v_30_10_eaton_phv_5r4v305_r.symbol.svg"
+  },
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Capacitors.kicad_sym",
+  "license": "CERN-OHL-P-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Capacitors THD.pretty/CAPPR_EATON_PHV-5R4V305-R.kicad_mod)",
+  "keywords": [
+    "cern",
+    "0r080",
+    "radial",
+    "lead",
+    "supercapacitors",
+    "cylindrical",
+    "pack"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "cern-kicad-libs@53054c17 (Capacitors THD.pretty/CAPPR_EATON_PHV-5R4V305-R.kicad_mod)",
+    "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Capacitors.kicad_sym",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_cern.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+      "source_commit": "53054c17",
+      "source_files": {
+        "db": "CERN.sqlite#Capacitors THD#CAER_3F_5.4V_+30% -10%_EATON_PHV-5R4V305-R",
+        "symbol": "SchLib/Capacitors.kicad_sym#Capacitor - polarized",
+        "footprint": "PcbLib/Capacitors THD.pretty/CAPPR_EATON_PHV-5R4V305-R.kicad_mod"
+      },
+      "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+      "import_date": "2026-07-05",
+      "modifications": [
+        "extracted single symbol from library",
+        "stripped dead 3D model reference (upstream ships no 3D)"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/cern_caer_3f_5_4v_30_10_eaton_phv_5r4v305_r/",
+  "api": "https://partreel.com/api/v1/parts/cern_caer_3f_5_4v_30_10_eaton_phv_5r4v305_r.json"
+}

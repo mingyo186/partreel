@@ -1,0 +1,57 @@
+{
+  "id": "cern_cppr_220pf_630v_1_500_450x720x600",
+  "name": "KP1830122631 (CERN library)",
+  "category": "passive",
+  "family": "CERN Capacitors THD",
+  "manufacturer": "VISHAY ROEDERSTEIN",
+  "mpn_pattern": "KP1830122631",
+  "description": "AC and Pulse Film Foil Polypropylene Capacitor (KP). Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": 2.0,
+    "case": "LS5 W4.5 x L7.2 x H6",
+    "value": "220pF",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_cppr_220pf_630v_1_500_450x720x600.kicad_mod",
+    "symbol": "cern_cppr_220pf_630v_1_500_450x720x600.kicad_sym",
+    "footprint_svg": "cern_cppr_220pf_630v_1_500_450x720x600.footprint.svg",
+    "symbol_svg": "cern_cppr_220pf_630v_1_500_450x720x600.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Capacitors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Capacitors THD.pretty/CAPR500-450X720X600.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "and",
+    "pulse",
+    "film",
+    "foil",
+    "polypropylene",
+    "capacitor"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Capacitors THD#CPPR_220PF_630V_1%_500-450X720X600",
+      "symbol": "SchLib/Capacitors.kicad_sym#Capacitor - non polarized",
+      "footprint": "PcbLib/Capacitors THD.pretty/CAPR500-450X720X600.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

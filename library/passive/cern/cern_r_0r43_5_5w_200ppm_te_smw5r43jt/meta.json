@@ -1,0 +1,54 @@
+{
+  "id": "cern_r_0r43_5_5w_200ppm_te_smw5r43jt",
+  "name": "SMW5R43JT (CERN library)",
+  "category": "passive",
+  "family": "CERN Resistors SMD",
+  "manufacturer": "TE Connectivity",
+  "mpn_pattern": "SMW5R43JT",
+  "description": "SMD Moulded Power Resistor. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: Not Recommended.",
+  "parameters": {
+    "contacts": "2",
+    "mounting": "SMD",
+    "value": "0R43",
+    "lifecycle": "Not Recommended"
+  },
+  "files": {
+    "footprint": "cern_r_0r43_5_5w_200ppm_te_smw5r43jt.kicad_mod",
+    "symbol": "cern_r_0r43_5_5w_200ppm_te_smw5r43jt.kicad_sym",
+    "footprint_svg": "cern_r_0r43_5_5w_200ppm_te_smw5r43jt.footprint.svg",
+    "symbol_svg": "cern_r_0r43_5_5w_200ppm_te_smw5r43jt.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Resistors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Resistors SMD.pretty/RES_TE_SMW5.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "smd",
+    "moulded",
+    "power",
+    "resistor"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Resistors SMD#R_0R43_5%_5W_200PPM_TE_SMW5R43JT",
+      "symbol": "SchLib/Resistors.kicad_sym#Resistor - 5%",
+      "footprint": "PcbLib/Resistors SMD.pretty/RES_TE_SMW5.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

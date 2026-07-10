@@ -1,0 +1,56 @@
+{
+  "id": "cern_ind_1mh_bourns_2224_v_rc",
+  "name": "2224-V-RC (CERN library)",
+  "category": "passive",
+  "family": "CERN Inductors THD",
+  "manufacturer": "BOURNS",
+  "mpn_pattern": "2224-V-RC",
+  "description": "High Current Vertical Leaded Toroid Inductor. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": 2.0,
+    "case": "LS12.44 D24.13 x W13.97",
+    "value": "1mH"
+  },
+  "files": {
+    "footprint": "cern_ind_1mh_bourns_2224_v_rc.kicad_mod",
+    "symbol": "cern_ind_1mh_bourns_2224_v_rc.kicad_sym",
+    "footprint_svg": "cern_ind_1mh_bourns_2224_v_rc.footprint.svg",
+    "symbol_svg": "cern_ind_1mh_bourns_2224_v_rc.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Inductors & Transformers.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Inductors THD.pretty/IND_BOURNS_2224-V-RC.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "high",
+    "current",
+    "vertical",
+    "leaded",
+    "toroid",
+    "inductor"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Inductors THD#IND_1MH_BOURNS_2224-V-RC",
+      "symbol": "SchLib/Inductors & Transformers.kicad_sym#Inductor With Magnetic core",
+      "footprint": "PcbLib/Inductors THD.pretty/IND_BOURNS_2224-V-RC.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "id": "cern_r3637_0r1_0_1_3w_10ppm_vishay_csm",
+  "name": "Y14750R10000B (CERN library)",
+  "category": "passive",
+  "family": "CERN Resistors SMD",
+  "manufacturer": "VISHAY FOIL RESISTOR",
+  "mpn_pattern": "Y14750R10000B",
+  "description": "Bulk Metal® Technology High Precision, Current Sense,Power Surface Mount Resistor. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "4",
+    "mounting": "SMD",
+    "case": "3637",
+    "value": "0R1",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_r3637_0r1_0_1_3w_10ppm_vishay_csm.kicad_mod",
+    "symbol": "cern_r3637_0r1_0_1_3w_10ppm_vishay_csm.kicad_sym",
+    "footprint_svg": "cern_r3637_0r1_0_1_3w_10ppm_vishay_csm.footprint.svg",
+    "symbol_svg": "cern_r3637_0r1_0_1_3w_10ppm_vishay_csm.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Resistors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Resistors SMD.pretty/RES_VISHAY_CSM3637.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "bulk",
+    "metal",
+    "technology",
+    "high",
+    "precision",
+    "current"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Resistors SMD#R3637_0R1_0.1%_3W_10PPM_VISHAY_CSM",
+      "symbol": "SchLib/Resistors.kicad_sym#Current Sense Resistor",
+      "footprint": "PcbLib/Resistors SMD.pretty/RES_VISHAY_CSM3637.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

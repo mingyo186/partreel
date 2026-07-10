@@ -1,0 +1,83 @@
+{
+  "id": "cern_cte7343_43_220uf_16v_10_lesr0050_avx_tps",
+  "name": "TPSE227K016R0050V (CERN library)",
+  "category": "passive",
+  "family": "CERN Capacitors SMD",
+  "manufacturer": "AVX",
+  "mpn_pattern": "TPSE227K016R0050V",
+  "description": "Low ESR 0R05 Solid Tantalum Chip Capacitor. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": 2.0,
+    "mounting": "SMD",
+    "case": "E",
+    "value": "220uF",
+    "lifecycle": "None"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/passive/cern/cern_cte7343_43_220uf_16v_10_lesr0050_avx_tps/cern_cte7343_43_220uf_16v_10_lesr0050_avx_tps.kicad_mod",
+    "symbol": "https://partreel.com/library/passive/cern/cern_cte7343_43_220uf_16v_10_lesr0050_avx_tps/cern_cte7343_43_220uf_16v_10_lesr0050_avx_tps.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/passive/cern/cern_cte7343_43_220uf_16v_10_lesr0050_avx_tps/cern_cte7343_43_220uf_16v_10_lesr0050_avx_tps.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/passive/cern/cern_cte7343_43_220uf_16v_10_lesr0050_avx_tps/cern_cte7343_43_220uf_16v_10_lesr0050_avx_tps.symbol.svg"
+  },
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Capacitors.kicad_sym",
+  "license": "CERN-OHL-P-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Capacitors SMD.pretty/CAPMP7343X430N.kicad_mod)",
+  "keywords": [
+    "cern",
+    "low",
+    "esr",
+    "0r05",
+    "solid",
+    "tantalum",
+    "chip"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "cern-kicad-libs@53054c17 (Capacitors SMD.pretty/CAPMP7343X430N.kicad_mod)",
+    "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Capacitors.kicad_sym",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_cern.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+      "source_commit": "53054c17",
+      "source_files": {
+        "db": "CERN.sqlite#Capacitors SMD#CTE7343-43_220UF_16V_10%_LESR0050_AVX_TPS",
+        "symbol": "SchLib/Capacitors.kicad_sym#Capacitor - polarized",
+        "footprint": "PcbLib/Capacitors SMD.pretty/CAPMP7343X430N.kicad_mod"
+      },
+      "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+      "import_date": "2026-07-05",
+      "modifications": [
+        "extracted single symbol from library",
+        "stripped dead 3D model reference (upstream ships no 3D)"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/cern_cte7343_43_220uf_16v_10_lesr0050_avx_tps/",
+  "api": "https://partreel.com/api/v1/parts/cern_cte7343_43_220uf_16v_10_lesr0050_avx_tps.json"
+}

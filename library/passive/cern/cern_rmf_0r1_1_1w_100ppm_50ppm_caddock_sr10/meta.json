@@ -1,0 +1,54 @@
+{
+  "id": "cern_rmf_0r1_1_1w_100ppm_50ppm_caddock_sr10",
+  "name": "SR10-0.10-1% (CERN library)",
+  "category": "passive",
+  "family": "CERN Resistors THD",
+  "manufacturer": "CADDOCK ELECTRONICS",
+  "mpn_pattern": "SR10-0.10-1%",
+  "description": "Precision Current Sense Resistor. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: Not recommended.",
+  "parameters": {
+    "contacts": "4",
+    "value": "0R1",
+    "lifecycle": "Not recommended"
+  },
+  "files": {
+    "footprint": "cern_rmf_0r1_1_1w_100ppm_50ppm_caddock_sr10.kicad_mod",
+    "symbol": "cern_rmf_0r1_1_1w_100ppm_50ppm_caddock_sr10.kicad_sym",
+    "footprint_svg": "cern_rmf_0r1_1_1w_100ppm_50ppm_caddock_sr10.footprint.svg",
+    "symbol_svg": "cern_rmf_0r1_1_1w_100ppm_50ppm_caddock_sr10.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Resistors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Resistors THD.pretty/RES_CADDOCK_SR10.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "precision",
+    "current",
+    "sense",
+    "resistor"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Resistors THD#RMF_0R1_1%_1W_+100PPM-50PPM_CADDOCK_SR10",
+      "symbol": "SchLib/Resistors.kicad_sym#Current Sense Resistor",
+      "footprint": "PcbLib/Resistors THD.pretty/RES_CADDOCK_SR10.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

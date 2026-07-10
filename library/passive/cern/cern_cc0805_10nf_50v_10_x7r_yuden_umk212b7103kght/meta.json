@@ -1,0 +1,57 @@
+{
+  "id": "cern_cc0805_10nf_50v_10_x7r_yuden_umk212b7103kght",
+  "name": "UMK212B7103KGHT (CERN library)",
+  "category": "passive",
+  "family": "CERN Capacitors SMD",
+  "manufacturer": "TAIYO YUDEN",
+  "mpn_pattern": "UMK212B7103KGHT",
+  "description": "SMD Multilayer Chip Ceramic Capacitor (High Dielectric Type) for Automotive / Industrial Applications. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: Not Recommended.",
+  "parameters": {
+    "contacts": 2.0,
+    "mounting": "SMD",
+    "case": "0805",
+    "value": "10nF",
+    "lifecycle": "Not Recommended"
+  },
+  "files": {
+    "footprint": "cern_cc0805_10nf_50v_10_x7r_yuden_umk212b7103kght.kicad_mod",
+    "symbol": "cern_cc0805_10nf_50v_10_x7r_yuden_umk212b7103kght.kicad_sym",
+    "footprint_svg": "cern_cc0805_10nf_50v_10_x7r_yuden_umk212b7103kght.footprint.svg",
+    "symbol_svg": "cern_cc0805_10nf_50v_10_x7r_yuden_umk212b7103kght.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Capacitors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Capacitors SMD.pretty/CAPC2012X135N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "smd",
+    "multilayer",
+    "chip",
+    "ceramic",
+    "capacitor",
+    "high"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Capacitors SMD#CC0805_10NF_50V_10%_X7R_YUDEN_UMK212B7103KGHT",
+      "symbol": "SchLib/Capacitors.kicad_sym#Capacitor - non polarized",
+      "footprint": "PcbLib/Capacitors SMD.pretty/CAPC2012X135N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

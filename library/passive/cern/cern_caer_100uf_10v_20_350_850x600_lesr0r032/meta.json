@@ -1,0 +1,57 @@
+{
+  "id": "cern_caer_100uf_10v_20_350_850x600_lesr0r032",
+  "name": "10SP100M (CERN library)",
+  "category": "passive",
+  "family": "CERN Capacitors THD",
+  "manufacturer": "SANYO OS-CON",
+  "mpn_pattern": "10SP100M",
+  "description": "Low ESR 0R032 Aluminum Solid Capacitor with Organic Semiconductive Electrolyte. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: Obsolete.",
+  "parameters": {
+    "contacts": 2.0,
+    "case": "LS3.5 D8.5 x H6",
+    "value": "100uF",
+    "lifecycle": "Obsolete"
+  },
+  "files": {
+    "footprint": "cern_caer_100uf_10v_20_350_850x600_lesr0r032.kicad_mod",
+    "symbol": "cern_caer_100uf_10v_20_350_850x600_lesr0r032.kicad_sym",
+    "footprint_svg": "cern_caer_100uf_10v_20_350_850x600_lesr0r032.footprint.svg",
+    "symbol_svg": "cern_caer_100uf_10v_20_350_850x600_lesr0r032.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Capacitors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Capacitors THD.pretty/CAPPR350-850X600.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "low",
+    "esr",
+    "0r032",
+    "aluminum",
+    "solid",
+    "capacitor"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Capacitors THD#CAER_100UF_10V_20%_350-850X600_LESR0R032",
+      "symbol": "SchLib/Capacitors.kicad_sym#Capacitor - polarized",
+      "footprint": "PcbLib/Capacitors THD.pretty/CAPPR350-850X600.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "id": "cern_xfmr_triad_sp_21",
+  "name": "SP-21 (CERN library)",
+  "category": "transformer",
+  "family": "CERN Transformers",
+  "manufacturer": "TRIAD MAGNETICS",
+  "mpn_pattern": "SP-21",
+  "description": "Audio Transformer (Primary Z=10k, Secondary Z=2k, Overall Turns Ratio 2.24:1). Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": 6.0,
+    "value": "50mW",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_xfmr_triad_sp_21.kicad_mod",
+    "symbol": "cern_xfmr_triad_sp_21.kicad_sym",
+    "footprint_svg": "cern_xfmr_triad_sp_21.footprint.svg",
+    "symbol_svg": "cern_xfmr_triad_sp_21.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Inductors & Transformers.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Transformers.pretty/XFMR_TRIAD_SP-21.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "audio",
+    "transformer",
+    "primary",
+    "10k",
+    "secondary",
+    "overall"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Transformers#XFMR_TRIAD_SP-21",
+      "symbol": "SchLib/Inductors & Transformers.kicad_sym#XFMR_TRIAD_SP-21",
+      "footprint": "PcbLib/Transformers.pretty/XFMR_TRIAD_SP-21.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "id": "cern_cper_680nf_250v_20_1500_700x1800x1400",
+  "name": "MKS4F036804D00MSSD (CERN library)",
+  "category": "passive",
+  "family": "CERN Capacitors THD",
+  "manufacturer": "WIMA",
+  "mpn_pattern": "MKS4F036804D00MSSD",
+  "description": "Metallized Polyester Film Capacitor (MKS4). Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": 2.0,
+    "case": "LS15 W7 x L18 x H14",
+    "value": "680nF",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_cper_680nf_250v_20_1500_700x1800x1400.kicad_mod",
+    "symbol": "cern_cper_680nf_250v_20_1500_700x1800x1400.kicad_sym",
+    "footprint_svg": "cern_cper_680nf_250v_20_1500_700x1800x1400.footprint.svg",
+    "symbol_svg": "cern_cper_680nf_250v_20_1500_700x1800x1400.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Capacitors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Capacitors THD.pretty/CAPR1500-700X1800X1400.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "metallized",
+    "polyester",
+    "film",
+    "capacitor",
+    "mks4"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Capacitors THD#CPER_680NF_250V_20%_1500-700X1800X1400",
+      "symbol": "SchLib/Capacitors.kicad_sym#Capacitor - non polarized",
+      "footprint": "PcbLib/Capacitors THD.pretty/CAPR1500-700X1800X1400.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

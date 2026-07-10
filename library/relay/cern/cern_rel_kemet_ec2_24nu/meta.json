@@ -1,0 +1,56 @@
+{
+  "id": "cern_rel_kemet_ec2_24nu",
+  "name": "EC2-24NU (CERN library)",
+  "category": "relay",
+  "family": "CERN Relays",
+  "manufacturer": "KEMET",
+  "mpn_pattern": "EC2-24NU",
+  "description": "2A DPDT (2 form C) Miniature Signal Relay, EC2 Series. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: Not Recommended.",
+  "parameters": {
+    "contacts": "8",
+    "value": "24VDC",
+    "lifecycle": "Not Recommended"
+  },
+  "files": {
+    "footprint": "cern_rel_kemet_ec2_24nu.kicad_mod",
+    "symbol": "cern_rel_kemet_ec2_24nu.kicad_sym",
+    "footprint_svg": "cern_rel_kemet_ec2_24nu.footprint.svg",
+    "symbol_svg": "cern_rel_kemet_ec2_24nu.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Relays.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Relays.pretty/REL_KEMET_EC2_NU.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "dpdt",
+    "form",
+    "miniature",
+    "signal",
+    "relay",
+    "ec2"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Relays#REL_KEMET_EC2-24NU",
+      "symbol": "SchLib/Relays.kicad_sym#REL_KEMET_EC2_NU",
+      "footprint": "PcbLib/Relays.pretty/REL_KEMET_EC2_NU.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

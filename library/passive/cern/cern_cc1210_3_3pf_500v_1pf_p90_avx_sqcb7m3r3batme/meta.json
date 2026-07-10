@@ -1,0 +1,57 @@
+{
+  "id": "cern_cc1210_3_3pf_500v_1pf_p90_avx_sqcb7m3r3batme",
+  "name": "SQCB7M3R3BATME (CERN library)",
+  "category": "passive",
+  "family": "CERN Capacitors SMD",
+  "manufacturer": "AVX",
+  "mpn_pattern": "SQCB7M3R3BATME",
+  "description": "Ultra Low ESR MLC Chip Ceramic Capacitor. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": 2.0,
+    "mounting": "SMD",
+    "case": "1210",
+    "value": "3.3pF",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_cc1210_3_3pf_500v_1pf_p90_avx_sqcb7m3r3batme.kicad_mod",
+    "symbol": "cern_cc1210_3_3pf_500v_1pf_p90_avx_sqcb7m3r3batme.kicad_sym",
+    "footprint_svg": "cern_cc1210_3_3pf_500v_1pf_p90_avx_sqcb7m3r3batme.footprint.svg",
+    "symbol_svg": "cern_cc1210_3_3pf_500v_1pf_p90_avx_sqcb7m3r3batme.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Capacitors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Capacitors SMD.pretty/CAPC2928X260N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "ultra",
+    "low",
+    "esr",
+    "mlc",
+    "chip",
+    "ceramic"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Capacitors SMD#CC1210_3.3PF_500V_1PF_P90_AVX_SQCB7M3R3BATME",
+      "symbol": "SchLib/Capacitors.kicad_sym#Capacitor - non polarized",
+      "footprint": "PcbLib/Capacitors SMD.pretty/CAPC2928X260N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

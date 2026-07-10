@@ -1,0 +1,83 @@
+{
+  "id": "cern_rfo_25r_0_01_8w_0_2ppm_vishay_vpr221z_h",
+  "name": "Y169025R0000T9L (CERN library)",
+  "category": "passive",
+  "family": "CERN Resistors THD",
+  "manufacturer": "VISHAY FOIL RESISTOR",
+  "mpn_pattern": "Y169025R0000T9L",
+  "description": "Ultra High Precision Z-Foil Power Resistor in TO-220 Configuration - VPR221Z Series. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: Not recommended.",
+  "parameters": {
+    "contacts": "4",
+    "case": "TO-220-4",
+    "value": "25",
+    "lifecycle": "Not recommended"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/passive/cern/cern_rfo_25r_0_01_8w_0_2ppm_vishay_vpr221z_h/cern_rfo_25r_0_01_8w_0_2ppm_vishay_vpr221z_h.kicad_mod",
+    "symbol": "https://partreel.com/library/passive/cern/cern_rfo_25r_0_01_8w_0_2ppm_vishay_vpr221z_h/cern_rfo_25r_0_01_8w_0_2ppm_vishay_vpr221z_h.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/passive/cern/cern_rfo_25r_0_01_8w_0_2ppm_vishay_vpr221z_h/cern_rfo_25r_0_01_8w_0_2ppm_vishay_vpr221z_h.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/passive/cern/cern_rfo_25r_0_01_8w_0_2ppm_vishay_vpr221z_h/cern_rfo_25r_0_01_8w_0_2ppm_vishay_vpr221z_h.symbol.svg"
+  },
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Resistors.kicad_sym",
+  "license": "CERN-OHL-P-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Resistors THD.pretty/RES_VISHAY_VPR221Z_h.kicad_mod)",
+  "keywords": [
+    "cern",
+    "ultra",
+    "high",
+    "precision",
+    "foil",
+    "power",
+    "resistor"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "cern-kicad-libs@53054c17 (Resistors THD.pretty/RES_VISHAY_VPR221Z_h.kicad_mod)",
+    "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Resistors.kicad_sym",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_cern.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+      "source_commit": "53054c17",
+      "source_files": {
+        "db": "CERN.sqlite#Resistors THD#RFO_25R_0.01%_8W_0.2PPM_VISHAY_VPR221Z_h",
+        "symbol": "SchLib/Resistors.kicad_sym#Current Sense Resistor + Case",
+        "footprint": "PcbLib/Resistors THD.pretty/RES_VISHAY_VPR221Z_h.kicad_mod"
+      },
+      "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+      "import_date": "2026-07-05",
+      "modifications": [
+        "extracted single symbol from library",
+        "stripped dead 3D model reference (upstream ships no 3D)",
+        "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/cern_rfo_25r_0_01_8w_0_2ppm_vishay_vpr221z_h/",
+  "api": "https://partreel.com/api/v1/parts/cern_rfo_25r_0_01_8w_0_2ppm_vishay_vpr221z_h.json"
+}

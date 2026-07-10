@@ -1,0 +1,53 @@
+{
+  "id": "cern_xfmr_mini_circuits_trs1_182_75",
+  "name": "TRS1-182-75 (CERN library)",
+  "category": "transformer",
+  "family": "CERN Transformers",
+  "manufacturer": "MINI-CIRCUITS",
+  "mpn_pattern": "TRS1-182-75",
+  "description": "75 Ohms 10 to 1800MHz RF Transformer. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": 4.0,
+    "mounting": "SMD",
+    "value": "1:1",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_xfmr_mini_circuits_trs1_182_75.kicad_mod",
+    "symbol": "cern_xfmr_mini_circuits_trs1_182_75.kicad_sym",
+    "footprint_svg": "cern_xfmr_mini_circuits_trs1_182_75.footprint.svg",
+    "symbol_svg": "cern_xfmr_mini_circuits_trs1_182_75.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Inductors & Transformers.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Transformers.pretty/XFMR_MINI-CIRCUITS_TT1618-1.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "ohms",
+    "1800mhz",
+    "transformer"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Transformers#XFMR_MINI-CIRCUITS_TRS1-182-75",
+      "symbol": "SchLib/Inductors & Transformers.kicad_sym#XFMR_MINI-CIRCUITS_TRS1-182-75",
+      "footprint": "PcbLib/Transformers.pretty/XFMR_MINI-CIRCUITS_TT1618-1.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

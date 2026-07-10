@@ -1,0 +1,57 @@
+{
+  "id": "cern_ind0805_tyco_bmb2a0600rs2",
+  "name": "BMB2A0600RS2 (CERN library)",
+  "category": "passive",
+  "family": "CERN Inductors SMD",
+  "manufacturer": "TYCO",
+  "mpn_pattern": "BMB2A0600RS2",
+  "description": "SMD Multilayer Ferrite Bead (BMB-R Series). Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: Obsolete.",
+  "parameters": {
+    "contacts": 2.0,
+    "mounting": "SMD",
+    "case": "0805",
+    "value": "600R@100MHz",
+    "lifecycle": "Obsolete"
+  },
+  "files": {
+    "footprint": "cern_ind0805_tyco_bmb2a0600rs2.kicad_mod",
+    "symbol": "cern_ind0805_tyco_bmb2a0600rs2.kicad_sym",
+    "footprint_svg": "cern_ind0805_tyco_bmb2a0600rs2.footprint.svg",
+    "symbol_svg": "cern_ind0805_tyco_bmb2a0600rs2.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Inductors & Transformers.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Inductors SMD.pretty/INDC2012X110N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "smd",
+    "multilayer",
+    "ferrite",
+    "bead",
+    "bmb",
+    "series"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Inductors SMD#IND0805_TYCO_BMB2A0600RS2",
+      "symbol": "SchLib/Inductors & Transformers.kicad_sym#Ferrite Bead",
+      "footprint": "PcbLib/Inductors SMD.pretty/INDC2012X110N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

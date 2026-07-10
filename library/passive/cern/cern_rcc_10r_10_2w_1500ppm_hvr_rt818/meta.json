@@ -1,0 +1,57 @@
+{
+  "id": "cern_rcc_10r_10_2w_1500ppm_hvr_rt818",
+  "name": "RT818A100K (CERN library)",
+  "category": "passive",
+  "family": "CERN Resistors THD",
+  "manufacturer": "HVR",
+  "mpn_pattern": "RT818A100K",
+  "description": "Highest Surge Energy, Non-Inductive, Ceramic Composite Resistor. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "2",
+    "case": "LS25.4 L18.5 x D8",
+    "value": "10",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_rcc_10r_10_2w_1500ppm_hvr_rt818.kicad_mod",
+    "symbol": "cern_rcc_10r_10_2w_1500ppm_hvr_rt818.kicad_sym",
+    "footprint_svg": "cern_rcc_10r_10_2w_1500ppm_hvr_rt818.footprint.svg",
+    "symbol_svg": "cern_rcc_10r_10_2w_1500ppm_hvr_rt818.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Resistors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Resistors THD.pretty/RES_HVR_RT818.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "highest",
+    "surge",
+    "energy",
+    "non",
+    "inductive",
+    "ceramic"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Resistors THD#RCC_10R_10%_2W_1500PPM_HVR_RT818",
+      "symbol": "SchLib/Resistors.kicad_sym#Resistor - 10%",
+      "footprint": "PcbLib/Resistors THD.pretty/RES_HVR_RT818.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

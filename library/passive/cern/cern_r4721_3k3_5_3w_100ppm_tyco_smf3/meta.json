@@ -1,0 +1,57 @@
+{
+  "id": "cern_r4721_3k3_5_3w_100ppm_tyco_smf3",
+  "name": "SMF33K3JT or 2-1879022-5 (CERN library)",
+  "category": "passive",
+  "family": "CERN Resistors SMD",
+  "manufacturer": "TYCO",
+  "mpn_pattern": "SMF33K3JT or 2-1879022-5",
+  "description": "Surface Mount Molded Metal Film Power Resistor SMF Series. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "2",
+    "mounting": "SMD",
+    "case": "4121",
+    "value": "3k3",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_r4721_3k3_5_3w_100ppm_tyco_smf3.kicad_mod",
+    "symbol": "cern_r4721_3k3_5_3w_100ppm_tyco_smf3.kicad_sym",
+    "footprint_svg": "cern_r4721_3k3_5_3w_100ppm_tyco_smf3.footprint.svg",
+    "symbol_svg": "cern_r4721_3k3_5_3w_100ppm_tyco_smf3.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Resistors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Resistors SMD.pretty/RESM12055X530N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "surface",
+    "mount",
+    "molded",
+    "metal",
+    "film",
+    "power"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Resistors SMD#R4721_3K3_5%_3W_100PPM_TYCO_SMF3",
+      "symbol": "SchLib/Resistors.kicad_sym#Resistor - 5%",
+      "footprint": "PcbLib/Resistors SMD.pretty/RESM12055X530N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

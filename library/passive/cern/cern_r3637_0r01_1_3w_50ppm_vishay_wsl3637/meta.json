@@ -1,0 +1,57 @@
+{
+  "id": "cern_r3637_0r01_1_3w_50ppm_vishay_wsl3637",
+  "name": "WSL3637R0100FEA (CERN library)",
+  "category": "passive",
+  "family": "CERN Resistors SMD",
+  "manufacturer": "VISHAY DALE",
+  "mpn_pattern": "WSL3637R0100FEA",
+  "description": "Power Metal Strip® Resistor, Low Value. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "4",
+    "mounting": "SMD",
+    "case": "3637",
+    "value": "0R01",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_r3637_0r01_1_3w_50ppm_vishay_wsl3637.kicad_mod",
+    "symbol": "cern_r3637_0r01_1_3w_50ppm_vishay_wsl3637.kicad_sym",
+    "footprint_svg": "cern_r3637_0r01_1_3w_50ppm_vishay_wsl3637.footprint.svg",
+    "symbol_svg": "cern_r3637_0r01_1_3w_50ppm_vishay_wsl3637.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Resistors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Resistors SMD.pretty/RES_VISHAY_WSL3637_0R002-0R01.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "power",
+    "metal",
+    "strip",
+    "resistor",
+    "low",
+    "value"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Resistors SMD#R3637_0R01_1%_3W_50PPM_VISHAY_WSL3637",
+      "symbol": "SchLib/Resistors.kicad_sym#Current Sense Resistor",
+      "footprint": "PcbLib/Resistors SMD.pretty/RES_VISHAY_WSL3637_0R002-0R01.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

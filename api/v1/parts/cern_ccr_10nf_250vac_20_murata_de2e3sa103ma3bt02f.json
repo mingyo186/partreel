@@ -1,0 +1,83 @@
+{
+  "id": "cern_ccr_10nf_250vac_20_murata_de2e3sa103ma3bt02f",
+  "name": "DE2E3SA103MA3BT02F (CERN library)",
+  "category": "passive",
+  "family": "CERN Capacitors THD",
+  "manufacturer": "MURATA",
+  "mpn_pattern": "DE2E3SA103MA3BT02F",
+  "description": "Safety Standard Certified Lead Type Disc Ceramic Capacitor for General Purpose, Type SA Class X1, Y2. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": 2.0,
+    "case": "LS7.5 W5 x D15",
+    "value": "10nF",
+    "lifecycle": "None"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/passive/cern/cern_ccr_10nf_250vac_20_murata_de2e3sa103ma3bt02f/cern_ccr_10nf_250vac_20_murata_de2e3sa103ma3bt02f.kicad_mod",
+    "symbol": "https://partreel.com/library/passive/cern/cern_ccr_10nf_250vac_20_murata_de2e3sa103ma3bt02f/cern_ccr_10nf_250vac_20_murata_de2e3sa103ma3bt02f.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/passive/cern/cern_ccr_10nf_250vac_20_murata_de2e3sa103ma3bt02f/cern_ccr_10nf_250vac_20_murata_de2e3sa103ma3bt02f.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/passive/cern/cern_ccr_10nf_250vac_20_murata_de2e3sa103ma3bt02f/cern_ccr_10nf_250vac_20_murata_de2e3sa103ma3bt02f.symbol.svg"
+  },
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Capacitors.kicad_sym",
+  "license": "CERN-OHL-P-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Capacitors THD.pretty/CAPRB_MURATA_DE2E3SA103MA3BT02F.kicad_mod)",
+  "keywords": [
+    "cern",
+    "safety",
+    "standard",
+    "certified",
+    "lead",
+    "type",
+    "disc"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "cern-kicad-libs@53054c17 (Capacitors THD.pretty/CAPRB_MURATA_DE2E3SA103MA3BT02F.kicad_mod)",
+    "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Capacitors.kicad_sym",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_cern.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+      "source_commit": "53054c17",
+      "source_files": {
+        "db": "CERN.sqlite#Capacitors THD#CCR_10NF_250VAC_20%_MURATA_DE2E3SA103MA3BT02F",
+        "symbol": "SchLib/Capacitors.kicad_sym#Capacitor - non polarized",
+        "footprint": "PcbLib/Capacitors THD.pretty/CAPRB_MURATA_DE2E3SA103MA3BT02F.kicad_mod"
+      },
+      "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+      "import_date": "2026-07-05",
+      "modifications": [
+        "extracted single symbol from library",
+        "stripped dead 3D model reference (upstream ships no 3D)",
+        "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/cern_ccr_10nf_250vac_20_murata_de2e3sa103ma3bt02f/",
+  "api": "https://partreel.com/api/v1/parts/cern_ccr_10nf_250vac_20_murata_de2e3sa103ma3bt02f.json"
+}

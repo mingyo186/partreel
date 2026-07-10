@@ -1,0 +1,55 @@
+{
+  "id": "cern_r0603_2k67_1_0_1w_50ppm_yageo_re",
+  "name": "RE0603FRE072K67L (CERN library)",
+  "category": "passive",
+  "family": "CERN Resistors SMD",
+  "manufacturer": "YAGEO",
+  "mpn_pattern": "RE0603FRE072K67L",
+  "description": "Thin Film Chip Resistor. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: Not Recommended.",
+  "parameters": {
+    "contacts": "2",
+    "mounting": "SMD",
+    "case": "0603",
+    "value": "2k67",
+    "lifecycle": "Not Recommended"
+  },
+  "files": {
+    "footprint": "cern_r0603_2k67_1_0_1w_50ppm_yageo_re.kicad_mod",
+    "symbol": "cern_r0603_2k67_1_0_1w_50ppm_yageo_re.kicad_sym",
+    "footprint_svg": "cern_r0603_2k67_1_0_1w_50ppm_yageo_re.footprint.svg",
+    "symbol_svg": "cern_r0603_2k67_1_0_1w_50ppm_yageo_re.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Resistors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Resistors SMD.pretty/RESC1608X55N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "thin",
+    "film",
+    "chip",
+    "resistor"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Resistors SMD#R0603_2K67_1%_0.1W_50PPM_YAGEO_RE",
+      "symbol": "SchLib/Resistors.kicad_sym#Resistor - 1%",
+      "footprint": "PcbLib/Resistors SMD.pretty/RESC1608X55N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "id": "cern_rww_330r_5_1w_450ppm_ohmite_om",
+  "name": "OM3315 (CERN library)",
+  "category": "passive",
+  "family": "CERN Resistors THD",
+  "manufacturer": "OHMITE",
+  "mpn_pattern": "OM3315",
+  "description": "Carbon Film Resistors - OM Series. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "2",
+    "case": "LS18.4 L12 x D5",
+    "value": "330",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_rww_330r_5_1w_450ppm_ohmite_om.kicad_mod",
+    "symbol": "cern_rww_330r_5_1w_450ppm_ohmite_om.kicad_sym",
+    "footprint_svg": "cern_rww_330r_5_1w_450ppm_ohmite_om.footprint.svg",
+    "symbol_svg": "cern_rww_330r_5_1w_450ppm_ohmite_om.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Resistors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Resistors THD.pretty/RES_OHMITE_OM.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "carbon",
+    "film",
+    "resistors",
+    "series"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Resistors THD#RWW_330R_5%_1W_450PPM_OHMITE_OM",
+      "symbol": "SchLib/Resistors.kicad_sym#Resistor - 5%",
+      "footprint": "PcbLib/Resistors THD.pretty/RES_OHMITE_OM.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

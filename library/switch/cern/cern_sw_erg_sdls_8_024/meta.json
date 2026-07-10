@@ -1,0 +1,55 @@
+{
+  "id": "cern_sw_erg_sdls_8_024",
+  "name": "SDLS-8-024 (CERN library)",
+  "category": "switch",
+  "family": "CERN Switches",
+  "manufacturer": "ITW ERG",
+  "mpn_pattern": "SDLS-8-024",
+  "description": "10V, 1A, 8 Ways SPST Thru Hole DIP Switch. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: Not Recommended.",
+  "parameters": {
+    "contacts": "16",
+    "lifecycle": "Not Recommended"
+  },
+  "files": {
+    "footprint": "cern_sw_erg_sdls_8_024.kicad_mod",
+    "symbol": "cern_sw_erg_sdls_8_024.kicad_sym",
+    "footprint_svg": "cern_sw_erg_sdls_8_024.footprint.svg",
+    "symbol_svg": "cern_sw_erg_sdls_8_024.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Switches.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Switches.pretty/SW_ERG_SDLS-8-024.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "10v",
+    "ways",
+    "spst",
+    "thru",
+    "hole",
+    "dip"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Switches#SW_ERG_SDLS-8-024",
+      "symbol": "SchLib/Switches.kicad_sym#SW 8x SPST DIP Switch",
+      "footprint": "PcbLib/Switches.pretty/SW_ERG_SDLS-8-024.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "id": "cern_ind_belfuse_spdl485025_250_2p_t",
+  "name": "SPDL485025-250-2P-T (CERN library)",
+  "category": "passive",
+  "family": "CERN Inductors SMD",
+  "manufacturer": "BELFUSE",
+  "mpn_pattern": "SPDL485025-250-2P-T",
+  "description": "Ultra Compact SMD Common Mode Chokes. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": 4.0,
+    "mounting": "SMD",
+    "value": "250R@100MHz"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/passive/cern/cern_ind_belfuse_spdl485025_250_2p_t/cern_ind_belfuse_spdl485025_250_2p_t.kicad_mod",
+    "symbol": "https://partreel.com/library/passive/cern/cern_ind_belfuse_spdl485025_250_2p_t/cern_ind_belfuse_spdl485025_250_2p_t.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/passive/cern/cern_ind_belfuse_spdl485025_250_2p_t/cern_ind_belfuse_spdl485025_250_2p_t.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/passive/cern/cern_ind_belfuse_spdl485025_250_2p_t/cern_ind_belfuse_spdl485025_250_2p_t.symbol.svg"
+  },
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Inductors & Transformers.kicad_sym",
+  "license": "CERN-OHL-P-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Inductors SMD.pretty/IND_BELFUSE_SPDL485025.kicad_mod)",
+  "keywords": [
+    "cern",
+    "ultra",
+    "compact",
+    "smd",
+    "common",
+    "mode",
+    "chokes"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "cern-kicad-libs@53054c17 (Inductors SMD.pretty/IND_BELFUSE_SPDL485025.kicad_mod)",
+    "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Inductors & Transformers.kicad_sym",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_cern.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+      "source_commit": "53054c17",
+      "source_files": {
+        "db": "CERN.sqlite#Inductors SMD#IND_BELFUSE_SPDL485025-250-2P-T",
+        "symbol": "SchLib/Inductors & Transformers.kicad_sym#Inductor Common Mode 1Dot-2 4Dot-3",
+        "footprint": "PcbLib/Inductors SMD.pretty/IND_BELFUSE_SPDL485025.kicad_mod"
+      },
+      "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+      "import_date": "2026-07-05",
+      "modifications": [
+        "extracted single symbol from library",
+        "stripped dead 3D model reference (upstream ships no 3D)"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/cern_ind_belfuse_spdl485025_250_2p_t/",
+  "api": "https://partreel.com/api/v1/parts/cern_ind_belfuse_spdl485025_250_2p_t.json"
+}

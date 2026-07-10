@@ -1,0 +1,56 @@
+{
+  "id": "cern_cte3528_20_22uf_25v_20_panasonic_tqc",
+  "name": "25TQC22MYFB (CERN library)",
+  "category": "passive",
+  "family": "CERN Capacitors SMD",
+  "manufacturer": "PANASONIC",
+  "mpn_pattern": "25TQC22MYFB",
+  "description": "ESR 0R10 Tantalum Chip Capacitor. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": 2.0,
+    "mounting": "SMD",
+    "case": "B",
+    "value": "22uF",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_cte3528_20_22uf_25v_20_panasonic_tqc.kicad_mod",
+    "symbol": "cern_cte3528_20_22uf_25v_20_panasonic_tqc.kicad_sym",
+    "footprint_svg": "cern_cte3528_20_22uf_25v_20_panasonic_tqc.footprint.svg",
+    "symbol_svg": "cern_cte3528_20_22uf_25v_20_panasonic_tqc.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Capacitors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Capacitors SMD.pretty/CAPMP3528X210N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "esr",
+    "0r10",
+    "tantalum",
+    "chip",
+    "capacitor"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Capacitors SMD#CTE3528-20_22UF_25V_20%_PANASONIC_TQC",
+      "symbol": "SchLib/Capacitors.kicad_sym#Capacitor - polarized",
+      "footprint": "PcbLib/Capacitors SMD.pretty/CAPMP3528X210N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "id": "cern_fus1206_littelfuse_0466_375nr",
+  "name": "0466.375NR (CERN library)",
+  "category": "fuse",
+  "family": "CERN Fuses",
+  "manufacturer": "LITTELFUSE",
+  "mpn_pattern": "0466.375NR",
+  "description": "Very Fast-Acting Surface Mount Thin Film Fuse, Size 1206, Series 466. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "2",
+    "mounting": "SMD",
+    "case": "1206",
+    "value": "375mA-125V"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/fuse/cern/cern_fus1206_littelfuse_0466_375nr/cern_fus1206_littelfuse_0466_375nr.kicad_mod",
+    "symbol": "https://partreel.com/library/fuse/cern/cern_fus1206_littelfuse_0466_375nr/cern_fus1206_littelfuse_0466_375nr.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/fuse/cern/cern_fus1206_littelfuse_0466_375nr/cern_fus1206_littelfuse_0466_375nr.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/fuse/cern/cern_fus1206_littelfuse_0466_375nr/cern_fus1206_littelfuse_0466_375nr.symbol.svg"
+  },
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Fuses.kicad_sym",
+  "license": "CERN-OHL-P-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Fuses.pretty/FUSC_LITTELFUSE_466.kicad_mod)",
+  "keywords": [
+    "cern",
+    "very",
+    "fast",
+    "acting",
+    "surface",
+    "mount",
+    "thin"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "cern-kicad-libs@53054c17 (Fuses.pretty/FUSC_LITTELFUSE_466.kicad_mod)",
+    "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Fuses.kicad_sym",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_cern.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+      "source_commit": "53054c17",
+      "source_files": {
+        "db": "CERN.sqlite#Fuses#FUS1206_LITTELFUSE_0466.375NR",
+        "symbol": "SchLib/Fuses.kicad_sym#Fuse",
+        "footprint": "PcbLib/Fuses.pretty/FUSC_LITTELFUSE_466.kicad_mod"
+      },
+      "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+      "import_date": "2026-07-05",
+      "modifications": [
+        "extracted single symbol from library",
+        "stripped dead 3D model reference (upstream ships no 3D)"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/cern_fus1206_littelfuse_0466_375nr/",
+  "api": "https://partreel.com/api/v1/parts/cern_fus1206_littelfuse_0466_375nr.json"
+}

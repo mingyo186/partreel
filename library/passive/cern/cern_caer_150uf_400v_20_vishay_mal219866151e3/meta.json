@@ -1,0 +1,57 @@
+{
+  "id": "cern_caer_150uf_400v_20_vishay_mal219866151e3",
+  "name": "MAL219866151E3 (CERN library)",
+  "category": "passive",
+  "family": "CERN Capacitors THD",
+  "manufacturer": "VISHAY BCCOMPONENTS",
+  "mpn_pattern": "MAL219866151E3",
+  "description": "Radial Aluminum Electrolytic Capacitor, Power High Ripple Current Snap-In, (198 PHR-SI Series). Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": 2.0,
+    "case": "LS10 D22 x H40",
+    "value": "150uF",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_caer_150uf_400v_20_vishay_mal219866151e3.kicad_mod",
+    "symbol": "cern_caer_150uf_400v_20_vishay_mal219866151e3.kicad_sym",
+    "footprint_svg": "cern_caer_150uf_400v_20_vishay_mal219866151e3.footprint.svg",
+    "symbol_svg": "cern_caer_150uf_400v_20_vishay_mal219866151e3.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Capacitors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Capacitors THD.pretty/CAPPR1000-2300X4200.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "radial",
+    "aluminum",
+    "electrolytic",
+    "capacitor",
+    "power",
+    "high"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Capacitors THD#CAER_150UF_400V_20%_VISHAY_MAL219866151E3",
+      "symbol": "SchLib/Capacitors.kicad_sym#Capacitor - polarized",
+      "footprint": "PcbLib/Capacitors THD.pretty/CAPPR1000-2300X4200.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

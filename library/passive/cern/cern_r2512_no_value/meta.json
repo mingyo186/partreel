@@ -1,0 +1,57 @@
+{
+  "id": "cern_r2512_no_value",
+  "name": "R2512_NO-VALUE (CERN library)",
+  "category": "passive",
+  "family": "CERN Resistors SMD",
+  "manufacturer": "Undefined",
+  "mpn_pattern": "R2512_NO-VALUE",
+  "description": "Reserved Footprint For a 2512 (6332) Chip Resistor. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "2",
+    "mounting": "SMD",
+    "case": "2512",
+    "value": "Undefined",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_r2512_no_value.kicad_mod",
+    "symbol": "cern_r2512_no_value.kicad_sym",
+    "footprint_svg": "cern_r2512_no_value.footprint.svg",
+    "symbol_svg": "cern_r2512_no_value.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Resistors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Resistors SMD.pretty/RESC6331X70N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "reserved",
+    "footprint",
+    "for",
+    "2512",
+    "6332",
+    "chip"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Resistors SMD#R2512_NO-VALUE",
+      "symbol": "SchLib/Resistors.kicad_sym#Resistor",
+      "footprint": "PcbLib/Resistors SMD.pretty/RESC6331X70N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

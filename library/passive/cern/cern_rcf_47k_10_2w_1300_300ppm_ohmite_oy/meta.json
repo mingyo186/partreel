@@ -1,0 +1,55 @@
+{
+  "id": "cern_rcf_47k_10_2w_1300_300ppm_ohmite_oy",
+  "name": "OY473KE (CERN library)",
+  "category": "passive",
+  "family": "CERN Resistors THD",
+  "manufacturer": "OHMITE",
+  "mpn_pattern": "OY473KE",
+  "description": "Ceramic Composition Resistor - OY Series. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: Not recommended.",
+  "parameters": {
+    "contacts": "2",
+    "case": "LS30 L22.5 x D8",
+    "value": "47k",
+    "lifecycle": "Not recommended"
+  },
+  "files": {
+    "footprint": "cern_rcf_47k_10_2w_1300_300ppm_ohmite_oy.kicad_mod",
+    "symbol": "cern_rcf_47k_10_2w_1300_300ppm_ohmite_oy.kicad_sym",
+    "footprint_svg": "cern_rcf_47k_10_2w_1300_300ppm_ohmite_oy.footprint.svg",
+    "symbol_svg": "cern_rcf_47k_10_2w_1300_300ppm_ohmite_oy.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Resistors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Resistors THD.pretty/RES_OHMITE_OY.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "ceramic",
+    "composition",
+    "resistor",
+    "series"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Resistors THD#RCF_47K_10%_2W_-1300±300PPM_OHMITE_OY",
+      "symbol": "SchLib/Resistors.kicad_sym#Resistor - 10%",
+      "footprint": "PcbLib/Resistors THD.pretty/RES_OHMITE_OY.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

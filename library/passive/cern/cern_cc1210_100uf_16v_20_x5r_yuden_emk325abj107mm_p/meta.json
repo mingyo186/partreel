@@ -1,0 +1,57 @@
+{
+  "id": "cern_cc1210_100uf_16v_20_x5r_yuden_emk325abj107mm_p",
+  "name": "EMK325ABJ107MM-P (CERN library)",
+  "category": "passive",
+  "family": "CERN Capacitors SMD",
+  "manufacturer": "TAIYO YUDEN",
+  "mpn_pattern": "EMK325ABJ107MM-P",
+  "description": "SMD Multilayer Chip Ceramic Capacitor (High Dielectric Type). Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: Not Recommended.",
+  "parameters": {
+    "contacts": 2.0,
+    "mounting": "SMD",
+    "case": "1210",
+    "value": "100uF",
+    "lifecycle": "Not Recommended"
+  },
+  "files": {
+    "footprint": "cern_cc1210_100uf_16v_20_x5r_yuden_emk325abj107mm_p.kicad_mod",
+    "symbol": "cern_cc1210_100uf_16v_20_x5r_yuden_emk325abj107mm_p.kicad_sym",
+    "footprint_svg": "cern_cc1210_100uf_16v_20_x5r_yuden_emk325abj107mm_p.footprint.svg",
+    "symbol_svg": "cern_cc1210_100uf_16v_20_x5r_yuden_emk325abj107mm_p.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Capacitors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Capacitors SMD.pretty/CAPC3225X280N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "smd",
+    "multilayer",
+    "chip",
+    "ceramic",
+    "capacitor",
+    "high"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Capacitors SMD#CC1210_100UF_16V_20%_X5R_YUDEN_EMK325ABJ107MM-P",
+      "symbol": "SchLib/Capacitors.kicad_sym#Capacitor - non polarized",
+      "footprint": "PcbLib/Capacitors SMD.pretty/CAPC3225X280N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "id": "cern_rmf_0r05_1_35w_200ppm_irc_mhp35",
+  "name": "TFP-MHP35LF-0R05-F-L04 (CERN library)",
+  "category": "passive",
+  "family": "CERN Resistors THD",
+  "manufacturer": "TT ELECTRONICS IRC",
+  "mpn_pattern": "TFP-MHP35LF-0R05-F-L04",
+  "description": "High Voltage (500V) TO-220 Thick Film Power Resistor (2.25W in Free Air). Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "2",
+    "case": "TO-220",
+    "value": "0R05",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_rmf_0r05_1_35w_200ppm_irc_mhp35.kicad_mod",
+    "symbol": "cern_rmf_0r05_1_35w_200ppm_irc_mhp35.kicad_sym",
+    "footprint_svg": "cern_rmf_0r05_1_35w_200ppm_irc_mhp35.footprint.svg",
+    "symbol_svg": "cern_rmf_0r05_1_35w_200ppm_irc_mhp35.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Resistors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Resistors THD.pretty/TO-220-2-v.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "high",
+    "voltage",
+    "500v",
+    "220",
+    "thick",
+    "film"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Resistors THD#RMF_0R05_1%_35W_200PPM_IRC_MHP35",
+      "symbol": "SchLib/Resistors.kicad_sym#Resistor - 1%",
+      "footprint": "PcbLib/Resistors THD.pretty/TO-220-2-v.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

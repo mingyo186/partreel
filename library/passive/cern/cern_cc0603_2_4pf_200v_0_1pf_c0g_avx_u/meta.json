@@ -1,0 +1,57 @@
+{
+  "id": "cern_cc0603_2_4pf_200v_0_1pf_c0g_avx_u",
+  "name": "06032U2R4BAT2A (CERN library)",
+  "category": "passive",
+  "family": "CERN Capacitors SMD",
+  "manufacturer": "AVX",
+  "mpn_pattern": "06032U2R4BAT2A",
+  "description": "RF/Microwave Ultra Low ESR Chip Capacitor, 'U' Series. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": 2.0,
+    "mounting": "SMD",
+    "case": "0603",
+    "value": "2.4pF",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_cc0603_2_4pf_200v_0_1pf_c0g_avx_u.kicad_mod",
+    "symbol": "cern_cc0603_2_4pf_200v_0_1pf_c0g_avx_u.kicad_sym",
+    "footprint_svg": "cern_cc0603_2_4pf_200v_0_1pf_c0g_avx_u.footprint.svg",
+    "symbol_svg": "cern_cc0603_2_4pf_200v_0_1pf_c0g_avx_u.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Capacitors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Capacitors SMD.pretty/CAPC1508X91N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "microwave",
+    "ultra",
+    "low",
+    "esr",
+    "chip",
+    "capacitor"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Capacitors SMD#CC0603_2.4PF_200V_0.1PF_C0G_AVX_U",
+      "symbol": "SchLib/Capacitors.kicad_sym#Capacitor - non polarized",
+      "footprint": "PcbLib/Capacitors SMD.pretty/CAPC1508X91N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

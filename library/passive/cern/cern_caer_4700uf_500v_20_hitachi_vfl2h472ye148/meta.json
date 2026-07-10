@@ -1,0 +1,57 @@
+{
+  "id": "cern_caer_4700uf_500v_20_hitachi_vfl2h472ye148",
+  "name": "VFL2H472YE148 (CERN library)",
+  "category": "passive",
+  "family": "CERN Capacitors THD",
+  "manufacturer": "HITACHI AIC",
+  "mpn_pattern": "VFL2H472YE148",
+  "description": "Radial Lead, Screw Terminal Aluminum Electrolytic Capacitor. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: Not Recommended.",
+  "parameters": {
+    "contacts": 2.0,
+    "case": "LS31.5 D77 x H148",
+    "value": "4700uF",
+    "lifecycle": "Not Recommended"
+  },
+  "files": {
+    "footprint": "cern_caer_4700uf_500v_20_hitachi_vfl2h472ye148.kicad_mod",
+    "symbol": "cern_caer_4700uf_500v_20_hitachi_vfl2h472ye148.kicad_sym",
+    "footprint_svg": "cern_caer_4700uf_500v_20_hitachi_vfl2h472ye148.footprint.svg",
+    "symbol_svg": "cern_caer_4700uf_500v_20_hitachi_vfl2h472ye148.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Capacitors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Capacitors THD.pretty/CAPPR_HITACHI_VFL2H472YE148.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "radial",
+    "lead",
+    "screw",
+    "terminal",
+    "aluminum",
+    "electrolytic"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Capacitors THD#CAER_4700UF_500V_20%_HITACHI_VFL2H472YE148",
+      "symbol": "SchLib/Capacitors.kicad_sym#Capacitor - polarized",
+      "footprint": "PcbLib/Capacitors THD.pretty/CAPPR_HITACHI_VFL2H472YE148.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

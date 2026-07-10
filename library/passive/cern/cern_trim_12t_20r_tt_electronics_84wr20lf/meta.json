@@ -1,0 +1,56 @@
+{
+  "id": "cern_trim_12t_20r_tt_electronics_84wr20lf",
+  "name": "84WR20LF (CERN library)",
+  "category": "passive",
+  "family": "CERN Potentiometers SMD",
+  "manufacturer": "TT ELECTRONICS",
+  "mpn_pattern": "84WR20LF",
+  "description": "12 Turns SMD Trimming Potentiometer (Top Adjust). Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "3",
+    "mounting": "SMD",
+    "case": "84W",
+    "value": "20"
+  },
+  "files": {
+    "footprint": "cern_trim_12t_20r_tt_electronics_84wr20lf.kicad_mod",
+    "symbol": "cern_trim_12t_20r_tt_electronics_84wr20lf.kicad_sym",
+    "footprint_svg": "cern_trim_12t_20r_tt_electronics_84wr20lf.footprint.svg",
+    "symbol_svg": "cern_trim_12t_20r_tt_electronics_84wr20lf.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Resistors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Potentiometers SMD.pretty/TRIM_TT ELECTRONICS_84W.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "turns",
+    "smd",
+    "trimming",
+    "potentiometer",
+    "top",
+    "adjust"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Potentiometers SMD#TRIM_12T_20R_TT ELECTRONICS_84WR20LF",
+      "symbol": "SchLib/Resistors.kicad_sym#Trimming Potentiometer",
+      "footprint": "PcbLib/Potentiometers SMD.pretty/TRIM_TT ELECTRONICS_84W.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

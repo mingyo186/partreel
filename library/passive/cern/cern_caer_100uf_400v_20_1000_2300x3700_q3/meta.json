@@ -1,0 +1,54 @@
+{
+  "id": "cern_caer_100uf_400v_20_1000_2300x3700_q3",
+  "name": "MAL2159 26101E3 Serie 159 PUL-SI (CERN library)",
+  "category": "passive",
+  "family": "CERN Capacitors THD",
+  "manufacturer": "VISHAY BCCOMPONENTS",
+  "mpn_pattern": "MAL2159 26101E3 Serie 159 PUL-SI",
+  "description": "Aluminum Electrolytic Capacitor. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: Not Recommended.",
+  "parameters": {
+    "contacts": 3.0,
+    "case": "LS10/4.75 D23 x H37",
+    "value": "100uF",
+    "lifecycle": "Not Recommended"
+  },
+  "files": {
+    "footprint": "cern_caer_100uf_400v_20_1000_2300x3700_q3.kicad_mod",
+    "symbol": "cern_caer_100uf_400v_20_1000_2300x3700_q3.kicad_sym",
+    "footprint_svg": "cern_caer_100uf_400v_20_1000_2300x3700_q3.footprint.svg",
+    "symbol_svg": "cern_caer_100uf_400v_20_1000_2300x3700_q3.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Capacitors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Capacitors THD.pretty/CAPPR1000-2300X3700-Q3.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "aluminum",
+    "electrolytic",
+    "capacitor"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Capacitors THD#CAER_100UF_400V_20%_1000-2300X3700-Q3",
+      "symbol": "SchLib/Capacitors.kicad_sym#Capacitor - polarized 1+ 23-",
+      "footprint": "PcbLib/Capacitors THD.pretty/CAPPR1000-2300X3700-Q3.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

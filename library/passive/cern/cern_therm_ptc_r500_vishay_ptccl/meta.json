@@ -1,0 +1,54 @@
+{
+  "id": "cern_therm_ptc_r500_vishay_ptccl",
+  "name": "PTCCL17H132DBE (CERN library)",
+  "category": "passive",
+  "family": "CERN Thermistors And Varistors",
+  "manufacturer": "VISHAY",
+  "mpn_pattern": "PTCCL17H132DBE",
+  "description": "30 V to 60 V PTC Thermistors for Overload Protection. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "2",
+    "value": "500m",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_therm_ptc_r500_vishay_ptccl.kicad_mod",
+    "symbol": "cern_therm_ptc_r500_vishay_ptccl.kicad_sym",
+    "footprint_svg": "cern_therm_ptc_r500_vishay_ptccl.footprint.svg",
+    "symbol_svg": "cern_therm_ptc_r500_vishay_ptccl.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Resistors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Thermistors And Varistors.pretty/THERM_VISHAY_PTCCL17.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "ptc",
+    "thermistors",
+    "for",
+    "overload",
+    "protection"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Thermistors And Varistors#THERM_PTC_R500_VISHAY_PTCCL",
+      "symbol": "SchLib/Resistors.kicad_sym#Thermistor PTC",
+      "footprint": "PcbLib/Thermistors And Varistors.pretty/THERM_VISHAY_PTCCL17.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "cern_therm_ptc_7k5_epcos_b59758c0110a070",
+  "name": "B59758C0110A070 (CERN library)",
+  "category": "passive",
+  "family": "CERN Thermistors And Varistors",
+  "manufacturer": "TDK",
+  "mpn_pattern": "B59758C0110A070",
+  "description": "PTC Thermistor for Overcurrent Protection. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "2",
+    "value": "7k5",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_therm_ptc_7k5_epcos_b59758c0110a070.kicad_mod",
+    "symbol": "cern_therm_ptc_7k5_epcos_b59758c0110a070.kicad_sym",
+    "footprint_svg": "cern_therm_ptc_7k5_epcos_b59758c0110a070.footprint.svg",
+    "symbol_svg": "cern_therm_ptc_7k5_epcos_b59758c0110a070.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Resistors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Thermistors And Varistors.pretty/THERM_TDK_C758.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "ptc",
+    "thermistor",
+    "for",
+    "overcurrent",
+    "protection"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Thermistors And Varistors#THERM_PTC_7K5_EPCOS_B59758C0110A070",
+      "symbol": "SchLib/Resistors.kicad_sym#Thermistor PTC",
+      "footprint": "PcbLib/Thermistors And Varistors.pretty/THERM_TDK_C758.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

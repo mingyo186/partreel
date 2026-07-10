@@ -1,0 +1,54 @@
+{
+  "id": "cern_sw_c_k_a20615rncq_a",
+  "name": "A20615RNCQ (CERN library)",
+  "category": "switch",
+  "family": "CERN Switches",
+  "manufacturer": "C&K",
+  "mpn_pattern": "A20615RNCQ",
+  "description": "2 Poles 6 Ways Rotary Switch, A Series. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "14",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_sw_c_k_a20615rncq_a.kicad_mod",
+    "symbol": "cern_sw_c_k_a20615rncq_a.kicad_sym",
+    "footprint_svg": "cern_sw_c_k_a20615rncq_a.footprint.svg",
+    "symbol_svg": "cern_sw_c_k_a20615rncq_a.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Switches.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Switches.pretty/SW_C&K_A20615RNCQ.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "poles",
+    "ways",
+    "rotary",
+    "switch",
+    "series"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Switches#SW_C&K_A20615RNCQ_a",
+      "symbol": "SchLib/Switches.kicad_sym#SW Rotary 2 Poles 6 Ways Type1_a",
+      "footprint": "PcbLib/Switches.pretty/SW_C&K_A20615RNCQ.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

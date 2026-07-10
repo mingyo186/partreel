@@ -1,0 +1,56 @@
+{
+  "id": "cern_rel_magnecraft_w171dip_25",
+  "name": "W171DIP-25 (CERN library)",
+  "category": "relay",
+  "family": "CERN Relays",
+  "manufacturer": "MAGNECRAFT/SCHNEIDER",
+  "mpn_pattern": "W171DIP-25",
+  "description": "0.25A/100VDC DPST Normaly Open (2 Form A) PCB Reed Relay with Clamping Diode, 171DIP Series. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "8",
+    "value": "5VDC",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_rel_magnecraft_w171dip_25.kicad_mod",
+    "symbol": "cern_rel_magnecraft_w171dip_25.kicad_sym",
+    "footprint_svg": "cern_rel_magnecraft_w171dip_25.footprint.svg",
+    "symbol_svg": "cern_rel_magnecraft_w171dip_25.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Relays.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Relays.pretty/REL_MAGNECRAFT_171DIP.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "25a",
+    "100vdc",
+    "dpst",
+    "normaly",
+    "open",
+    "form"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Relays#REL_MAGNECRAFT_W171DIP-25",
+      "symbol": "SchLib/Relays.kicad_sym#REL_MAGNECRAFT_W171DIP-L",
+      "footprint": "PcbLib/Relays.pretty/REL_MAGNECRAFT_171DIP.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

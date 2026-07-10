@@ -1,0 +1,55 @@
+{
+  "id": "cern_ccr_10nf_2kv_5_kemet_c657c103jgg5ta",
+  "name": "C657C103JGG5TA (CERN library)",
+  "category": "passive",
+  "family": "CERN Capacitors THD",
+  "manufacturer": "KEMET",
+  "mpn_pattern": "C657C103JGG5TA",
+  "description": "High Voltage Ceramic  Capacitor. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": 2.0,
+    "case": "LS14.6 W6.89 x L17.02 x H16.76",
+    "value": "10nF",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_ccr_10nf_2kv_5_kemet_c657c103jgg5ta.kicad_mod",
+    "symbol": "cern_ccr_10nf_2kv_5_kemet_c657c103jgg5ta.kicad_sym",
+    "footprint_svg": "cern_ccr_10nf_2kv_5_kemet_c657c103jgg5ta.footprint.svg",
+    "symbol_svg": "cern_ccr_10nf_2kv_5_kemet_c657c103jgg5ta.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Capacitors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Capacitors THD.pretty/CAPRR1460-689X1702X1676.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "high",
+    "voltage",
+    "ceramic",
+    "capacitor"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Capacitors THD#CCR_10NF_2KV_5%_KEMET_C657C103JGG5TA",
+      "symbol": "SchLib/Capacitors.kicad_sym#Capacitor - non polarized",
+      "footprint": "PcbLib/Capacitors THD.pretty/CAPRR1460-689X1702X1676.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

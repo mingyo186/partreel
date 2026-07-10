@@ -1,0 +1,57 @@
+{
+  "id": "cern_therm_ntc_10k_semitec_103kt1608t_1p",
+  "name": "103KT1608T-1P (CERN library)",
+  "category": "passive",
+  "family": "CERN Thermistors And Varistors",
+  "manufacturer": "SEMITEC",
+  "mpn_pattern": "103KT1608T-1P",
+  "description": "High Accuracy, SMD Chip Type Thermistor. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "2",
+    "mounting": "SMD",
+    "case": "0603",
+    "value": "10k",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_therm_ntc_10k_semitec_103kt1608t_1p.kicad_mod",
+    "symbol": "cern_therm_ntc_10k_semitec_103kt1608t_1p.kicad_sym",
+    "footprint_svg": "cern_therm_ntc_10k_semitec_103kt1608t_1p.footprint.svg",
+    "symbol_svg": "cern_therm_ntc_10k_semitec_103kt1608t_1p.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Resistors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Thermistors And Varistors.pretty/THERMC1608X95N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "high",
+    "accuracy",
+    "smd",
+    "chip",
+    "type",
+    "thermistor"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Thermistors And Varistors#THERM_NTC_10K_SEMITEC_103KT1608T-1P",
+      "symbol": "SchLib/Resistors.kicad_sym#Thermistor NTC",
+      "footprint": "PcbLib/Thermistors And Varistors.pretty/THERMC1608X95N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

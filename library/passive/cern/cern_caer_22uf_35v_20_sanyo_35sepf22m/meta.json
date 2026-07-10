@@ -1,0 +1,57 @@
+{
+  "id": "cern_caer_22uf_35v_20_sanyo_35sepf22m",
+  "name": "35SEPF22M (CERN library)",
+  "category": "passive",
+  "family": "CERN Capacitors THD",
+  "manufacturer": "SANYO OS-CON",
+  "mpn_pattern": "35SEPF22M",
+  "description": "ESR 0R035 Radial Aluminum Electrolytic Capacitor (SEPF Series). Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": 2.0,
+    "case": "LS2.5 D6.8 x H6",
+    "value": "22uF",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_caer_22uf_35v_20_sanyo_35sepf22m.kicad_mod",
+    "symbol": "cern_caer_22uf_35v_20_sanyo_35sepf22m.kicad_sym",
+    "footprint_svg": "cern_caer_22uf_35v_20_sanyo_35sepf22m.footprint.svg",
+    "symbol_svg": "cern_caer_22uf_35v_20_sanyo_35sepf22m.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Capacitors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Capacitors THD.pretty/CAPPR250-680X600.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "esr",
+    "0r035",
+    "radial",
+    "aluminum",
+    "electrolytic",
+    "capacitor"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Capacitors THD#CAER_22UF_35V_20%_SANYO_35SEPF22M",
+      "symbol": "SchLib/Capacitors.kicad_sym#Capacitor - polarized",
+      "footprint": "PcbLib/Capacitors THD.pretty/CAPPR250-680X600.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "id": "cern_fusr_bourns_mf_r090",
+  "name": "MF-R090 (CERN library)",
+  "category": "fuse",
+  "family": "CERN Fuses",
+  "manufacturer": "BOURNS",
+  "mpn_pattern": "MF-R090",
+  "description": "PTC Resettable Fuse. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "2",
+    "value": "900mA-60V"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/fuse/cern/cern_fusr_bourns_mf_r090/cern_fusr_bourns_mf_r090.kicad_mod",
+    "symbol": "https://partreel.com/library/fuse/cern/cern_fusr_bourns_mf_r090/cern_fusr_bourns_mf_r090.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/fuse/cern/cern_fusr_bourns_mf_r090/cern_fusr_bourns_mf_r090.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/fuse/cern/cern_fusr_bourns_mf_r090/cern_fusr_bourns_mf_r090.symbol.svg"
+  },
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Fuses.kicad_sym",
+  "license": "CERN-OHL-P-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Fuses.pretty/FUSR_BOURNS_MF-R_STYLE1-D11.7MM.kicad_mod)",
+  "keywords": [
+    "cern",
+    "ptc",
+    "resettable",
+    "fuse"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "cern-kicad-libs@53054c17 (Fuses.pretty/FUSR_BOURNS_MF-R_STYLE1-D11.7MM.kicad_mod)",
+    "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Fuses.kicad_sym",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_cern.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+      "source_commit": "53054c17",
+      "source_files": {
+        "db": "CERN.sqlite#Fuses#FUSR_BOURNS_MF-R090",
+        "symbol": "SchLib/Fuses.kicad_sym#Fuse",
+        "footprint": "PcbLib/Fuses.pretty/FUSR_BOURNS_MF-R_STYLE1-D11.7MM.kicad_mod"
+      },
+      "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+      "import_date": "2026-07-05",
+      "modifications": [
+        "extracted single symbol from library",
+        "stripped dead 3D model reference (upstream ships no 3D)",
+        "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/cern_fusr_bourns_mf_r090/",
+  "api": "https://partreel.com/api/v1/parts/cern_fusr_bourns_mf_r090.json"
+}

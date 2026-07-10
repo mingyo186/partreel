@@ -1,0 +1,57 @@
+{
+  "id": "cern_r0406_22r_1_0_3w_50ppm_vishay_mcw0406",
+  "name": "MCW0406MC2209FP500 (CERN library)",
+  "category": "passive",
+  "family": "CERN Resistors SMD",
+  "manufacturer": "VISHAY",
+  "mpn_pattern": "MCW0406MC2209FP500",
+  "description": "Professional Wide Terminal Thin Film Chip Resistors. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: Not Recommended.",
+  "parameters": {
+    "contacts": "2",
+    "mounting": "SMD",
+    "case": "0406",
+    "value": "22",
+    "lifecycle": "Not Recommended"
+  },
+  "files": {
+    "footprint": "cern_r0406_22r_1_0_3w_50ppm_vishay_mcw0406.kicad_mod",
+    "symbol": "cern_r0406_22r_1_0_3w_50ppm_vishay_mcw0406.kicad_sym",
+    "footprint_svg": "cern_r0406_22r_1_0_3w_50ppm_vishay_mcw0406.footprint.svg",
+    "symbol_svg": "cern_r0406_22r_1_0_3w_50ppm_vishay_mcw0406.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Resistors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Resistors SMD.pretty/RESC1015X35N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "professional",
+    "wide",
+    "terminal",
+    "thin",
+    "film",
+    "chip"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Resistors SMD#R0406_22R_1%_0.3W_50PPM_VISHAY_MCW0406",
+      "symbol": "SchLib/Resistors.kicad_sym#Resistor - 1%",
+      "footprint": "PcbLib/Resistors SMD.pretty/RESC1015X35N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

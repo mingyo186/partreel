@@ -1,0 +1,57 @@
+{
+  "id": "cern_r1206_0r22_1_0_5w_600ppm",
+  "name": "RL1206FR-7W0R22 (235051912207) (CERN library)",
+  "category": "passive",
+  "family": "CERN Resistors SMD",
+  "manufacturer": "YAGEO PHYCOMP",
+  "mpn_pattern": "RL1206FR-7W0R22 (235051912207)",
+  "description": "Low Ohmique High Power Chip Resistor. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: Not Recommended.",
+  "parameters": {
+    "contacts": "2",
+    "mounting": "SMD",
+    "case": "1206",
+    "value": "0R22",
+    "lifecycle": "Not Recommended"
+  },
+  "files": {
+    "footprint": "cern_r1206_0r22_1_0_5w_600ppm.kicad_mod",
+    "symbol": "cern_r1206_0r22_1_0_5w_600ppm.kicad_sym",
+    "footprint_svg": "cern_r1206_0r22_1_0_5w_600ppm.footprint.svg",
+    "symbol_svg": "cern_r1206_0r22_1_0_5w_600ppm.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Resistors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Resistors SMD.pretty/RESC3216X65N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "low",
+    "ohmique",
+    "high",
+    "power",
+    "chip",
+    "resistor"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Resistors SMD#R1206_0R22_1%_0.5W_600PPM",
+      "symbol": "SchLib/Resistors.kicad_sym#Resistor - 1%",
+      "footprint": "PcbLib/Resistors SMD.pretty/RESC3216X65N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

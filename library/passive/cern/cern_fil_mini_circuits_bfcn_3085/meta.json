@@ -1,0 +1,53 @@
+{
+  "id": "cern_fil_mini_circuits_bfcn_3085",
+  "name": "BFCN-3085 (CERN library)",
+  "category": "passive",
+  "family": "CERN Inductors SMD",
+  "manufacturer": "MINI-CIRCUITS",
+  "mpn_pattern": "BFCN-3085",
+  "description": "50 Ohm Band Pass Filter. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": 4.0,
+    "mounting": "SMD",
+    "value": "2800 to 3400MHz"
+  },
+  "files": {
+    "footprint": "cern_fil_mini_circuits_bfcn_3085.kicad_mod",
+    "symbol": "cern_fil_mini_circuits_bfcn_3085.kicad_sym",
+    "footprint_svg": "cern_fil_mini_circuits_bfcn_3085.footprint.svg",
+    "symbol_svg": "cern_fil_mini_circuits_bfcn_3085.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Inductors & Transformers.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Inductors SMD.pretty/FIL_MINI-CIRCUITS_FV1206.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "ohm",
+    "band",
+    "pass",
+    "filter"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Inductors SMD#FIL_MINI-CIRCUITS_BFCN-3085",
+      "symbol": "SchLib/Inductors & Transformers.kicad_sym#FIL_MINI-CIRCUITS_BFCN-3085",
+      "footprint": "PcbLib/Inductors SMD.pretty/FIL_MINI-CIRCUITS_FV1206.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

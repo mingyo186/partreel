@@ -1,0 +1,56 @@
+{
+  "id": "cern_cper_1uf_250v_10_wima_mks4",
+  "name": "MKS4F041005B00KSSD (CERN library)",
+  "category": "passive",
+  "family": "CERN Capacitors THD",
+  "manufacturer": "WIMA",
+  "mpn_pattern": "MKS4F041005B00KSSD",
+  "description": "Metallized Polyester Film Capacitor (MKS4). Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": 2.0,
+    "case": "LS22.5 W6 x L26.5 x H15",
+    "value": "1uF",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_cper_1uf_250v_10_wima_mks4.kicad_mod",
+    "symbol": "cern_cper_1uf_250v_10_wima_mks4.kicad_sym",
+    "footprint_svg": "cern_cper_1uf_250v_10_wima_mks4.footprint.svg",
+    "symbol_svg": "cern_cper_1uf_250v_10_wima_mks4.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Capacitors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Capacitors THD.pretty/CAPR2250-600X2650X1500_A.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "metallized",
+    "polyester",
+    "film",
+    "capacitor",
+    "mks4"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Capacitors THD#CPER_1UF_250V_10%_WIMA_MKS4",
+      "symbol": "SchLib/Capacitors.kicad_sym#Capacitor - non polarized",
+      "footprint": "PcbLib/Capacitors THD.pretty/CAPR2250-600X2650X1500_A.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

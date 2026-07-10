@@ -1,0 +1,288 @@
+(kicad_symbol_lib (version 20211014) (generator partreel-import)
+  (symbol "Current + Voltage Sense Resistor"
+  		(pin_numbers
+  			(hide yes)
+  		)
+  		(pin_names
+  			(offset 1.27)
+  			(hide yes)
+  		)
+  		(exclude_from_sim no)
+  		(in_bom yes)
+  		(on_board yes)
+  		(property "Reference" "R"
+  			(at 0 2.54 0)
+  			(effects
+  				(font
+  					(size 1.524 1.524)
+  				)
+  			)
+  		)
+  		(property "Value" "${VALUE}"
+  			(at 0 -10.16 0)
+  			(effects
+  				(font
+  					(size 1.524 1.524)
+  				)
+  			)
+  		)
+  		(property "Footprint" ""
+  			(at 0 0 0)
+  			(effects
+  				(font
+  					(size 1.27 1.27)
+  				)
+  				(hide yes)
+  			)
+  		)
+  		(property "Datasheet" ""
+  			(at 0 0 0)
+  			(effects
+  				(font
+  					(size 1.27 1.27)
+  				)
+  				(hide yes)
+  			)
+  		)
+  		(property "Description" "Power and Current Sensing Resistor"
+  			(at 0 0 0)
+  			(effects
+  				(font
+  					(size 1.27 1.27)
+  				)
+  				(hide yes)
+  			)
+  		)
+  		(symbol "Current + Voltage Sense Resistor_1_0"
+  			(polyline
+  				(pts
+  					(xy -0.762 -1.524) (xy -0.762 -6.096)
+  				)
+  				(stroke
+  					(width 0)
+  					(type solid)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy -0.762 -6.096) (xy 0.762 -6.096)
+  				)
+  				(stroke
+  					(width 0)
+  					(type solid)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 0 0) (xy 0 -1.524)
+  				)
+  				(stroke
+  					(width 0)
+  					(type solid)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 0 -7.62) (xy -2.54 -7.62)
+  				)
+  				(stroke
+  					(width 0)
+  					(type solid)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 0 -7.62) (xy 0 -6.096)
+  				)
+  				(stroke
+  					(width 0)
+  					(type solid)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 0 -7.62) (xy 2.54 -7.62)
+  				)
+  				(stroke
+  					(width 0)
+  					(type solid)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 0.762 -1.524) (xy -0.762 -1.524)
+  				)
+  				(stroke
+  					(width 0)
+  					(type solid)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 0.762 -6.096) (xy 0.762 -1.524)
+  				)
+  				(stroke
+  					(width 0)
+  					(type solid)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(rectangle
+  				(start 2.54 1.27)
+  				(end -2.54 -8.89)
+  				(stroke
+  					(width 0.0254)
+  					(type solid)
+  					(color 128 0 0 1)
+  				)
+  				(fill
+  					(type background)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 2.54 0) (xy -2.54 0)
+  				)
+  				(stroke
+  					(width 0)
+  					(type solid)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(text "I1"
+  				(at -1.778 -1.524 900)
+  				(effects
+  					(font
+  						(size 0.9144 0.9144)
+  					)
+  					(justify left)
+  				)
+  			)
+  			(text "I2"
+  				(at -1.778 -7.112 900)
+  				(effects
+  					(font
+  						(size 0.9144 0.9144)
+  					)
+  					(justify left)
+  				)
+  			)
+  			(text "V1"
+  				(at 1.778 -1.778 900)
+  				(effects
+  					(font
+  						(size 0.9144 0.9144)
+  					)
+  					(justify left)
+  				)
+  			)
+  			(text "V2"
+  				(at 1.778 -7.112 900)
+  				(effects
+  					(font
+  						(size 0.9144 0.9144)
+  					)
+  					(justify left)
+  				)
+  			)
+  			(pin passive line
+  				(at -3.81 0 0)
+  				(length 1.27)
+  				(name "I1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "I1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin passive line
+  				(at -3.81 -7.62 0)
+  				(length 1.27)
+  				(name "I2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "I2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin passive line
+  				(at 3.81 0 180)
+  				(length 1.27)
+  				(name "V1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "V1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin passive line
+  				(at 3.81 -7.62 180)
+  				(length 1.27)
+  				(name "V2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "V2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  		)
+  		(embedded_fonts no)
+  	)
+)

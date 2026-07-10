@@ -1,0 +1,52 @@
+{
+  "id": "cern_ind_3_3uh_20_panasonic_ell6sh3r3m",
+  "name": "ELL6SH3R3M (CERN library)",
+  "category": "passive",
+  "family": "CERN Inductors SMD",
+  "manufacturer": "PANASONIC",
+  "mpn_pattern": "ELL6SH3R3M",
+  "description": "SMD Choke Coil. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": 2.0,
+    "mounting": "SMD",
+    "value": "3.3uH"
+  },
+  "files": {
+    "footprint": "cern_ind_3_3uh_20_panasonic_ell6sh3r3m.kicad_mod",
+    "symbol": "cern_ind_3_3uh_20_panasonic_ell6sh3r3m.kicad_sym",
+    "footprint_svg": "cern_ind_3_3uh_20_panasonic_ell6sh3r3m.footprint.svg",
+    "symbol_svg": "cern_ind_3_3uh_20_panasonic_ell6sh3r3m.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Inductors & Transformers.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Inductors SMD.pretty/IND_PANASONIC_ELL6SH.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "smd",
+    "choke",
+    "coil"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Inductors SMD#IND_3.3UH_20%_PANASONIC_ELL6SH3R3M",
+      "symbol": "SchLib/Inductors & Transformers.kicad_sym#Inductor With Magnetic core 1Dot",
+      "footprint": "PcbLib/Inductors SMD.pretty/IND_PANASONIC_ELL6SH.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

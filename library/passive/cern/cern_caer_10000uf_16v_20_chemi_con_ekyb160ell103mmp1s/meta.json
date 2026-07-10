@@ -1,0 +1,56 @@
+{
+  "id": "cern_caer_10000uf_16v_20_chemi_con_ekyb160ell103mmp1s",
+  "name": "EKYB160ELL103MMP1S (CERN library)",
+  "category": "passive",
+  "family": "CERN Capacitors THD",
+  "manufacturer": "UNITED CHEMI-CON",
+  "mpn_pattern": "EKYB160ELL103MMP1S",
+  "description": "Z=0R012 Miniature Aluminium Electrolytic Capacitor. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": 2.0,
+    "case": "LS7.5 D18 x H35.5",
+    "value": "10000uF",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_caer_10000uf_16v_20_chemi_con_ekyb160ell103mmp1s.kicad_mod",
+    "symbol": "cern_caer_10000uf_16v_20_chemi_con_ekyb160ell103mmp1s.kicad_sym",
+    "footprint_svg": "cern_caer_10000uf_16v_20_chemi_con_ekyb160ell103mmp1s.footprint.svg",
+    "symbol_svg": "cern_caer_10000uf_16v_20_chemi_con_ekyb160ell103mmp1s.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Capacitors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Capacitors THD.pretty/CAPPR750-1850X3750.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "0r012",
+    "miniature",
+    "aluminium",
+    "electrolytic",
+    "capacitor"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Capacitors THD#CAER_10000UF_16V_20%_CHEMI-CON_EKYB160ELL103MMP1S",
+      "symbol": "SchLib/Capacitors.kicad_sym#Capacitor - polarized",
+      "footprint": "PcbLib/Capacitors THD.pretty/CAPPR750-1850X3750.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

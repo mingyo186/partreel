@@ -1,0 +1,56 @@
+{
+  "id": "cern_therm_ptc_680r_epcos_b59721a0100a062",
+  "name": "B59721A0100A062 (CERN library)",
+  "category": "passive",
+  "family": "CERN Thermistors And Varistors",
+  "manufacturer": "EPCOS / TDK",
+  "mpn_pattern": "B59721A0100A062",
+  "description": "PTC Thermistor as Limit Temperature Sensors. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "2",
+    "mounting": "SMD",
+    "case": "0805",
+    "value": "680R",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_therm_ptc_680r_epcos_b59721a0100a062.kicad_mod",
+    "symbol": "cern_therm_ptc_680r_epcos_b59721a0100a062.kicad_sym",
+    "footprint_svg": "cern_therm_ptc_680r_epcos_b59721a0100a062.footprint.svg",
+    "symbol_svg": "cern_therm_ptc_680r_epcos_b59721a0100a062.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Resistors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Thermistors And Varistors.pretty/THERMC2013X100N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "ptc",
+    "thermistor",
+    "limit",
+    "temperature",
+    "sensors"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Thermistors And Varistors#THERM_PTC_680R_EPCOS_B59721A0100A062",
+      "symbol": "SchLib/Resistors.kicad_sym#Thermistor PTC",
+      "footprint": "PcbLib/Thermistors And Varistors.pretty/THERMC2013X100N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

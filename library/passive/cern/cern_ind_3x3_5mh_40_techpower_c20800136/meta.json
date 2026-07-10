@@ -1,0 +1,53 @@
+{
+  "id": "cern_ind_3x3_5mh_40_techpower_c20800136",
+  "name": "C20800136 (CERN library)",
+  "category": "passive",
+  "family": "CERN Inductors THD",
+  "manufacturer": "TECH POWER ELECTRONICS",
+  "mpn_pattern": "C20800136",
+  "description": "3-phase Common Mode Choke. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": 12.0,
+    "value": "3x 3.5mH"
+  },
+  "files": {
+    "footprint": "cern_ind_3x3_5mh_40_techpower_c20800136.kicad_mod",
+    "symbol": "cern_ind_3x3_5mh_40_techpower_c20800136.kicad_sym",
+    "footprint_svg": "cern_ind_3x3_5mh_40_techpower_c20800136.footprint.svg",
+    "symbol_svg": "cern_ind_3x3_5mh_40_techpower_c20800136.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Inductors & Transformers.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Inductors THD.pretty/IND_TECHPOWER_C20800136.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "phase",
+    "common",
+    "mode",
+    "choke"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Inductors THD#IND_3X3.5MH_40%_TECHPOWER_C20800136",
+      "symbol": "SchLib/Inductors & Transformers.kicad_sym#IND_TECHPOWER_C20800136",
+      "footprint": "PcbLib/Inductors THD.pretty/IND_TECHPOWER_C20800136.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

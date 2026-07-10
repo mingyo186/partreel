@@ -1,0 +1,56 @@
+{
+  "id": "cern_rmelf0207_1k5_2_1w_250ppm_vishay_cmb",
+  "name": "CMB02070X1501G (CERN library)",
+  "category": "passive",
+  "family": "CERN Resistors SMD",
+  "manufacturer": "VISHAY BEYSCHLAG",
+  "mpn_pattern": "CMB02070X1501G",
+  "description": "High Pulse Load MELF Resistor. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: Not Recommended.",
+  "parameters": {
+    "contacts": "2",
+    "mounting": "SMD",
+    "case": "0207",
+    "value": "1K5",
+    "lifecycle": "Not Recommended"
+  },
+  "files": {
+    "footprint": "cern_rmelf0207_1k5_2_1w_250ppm_vishay_cmb.kicad_mod",
+    "symbol": "cern_rmelf0207_1k5_2_1w_250ppm_vishay_cmb.kicad_sym",
+    "footprint_svg": "cern_rmelf0207_1k5_2_1w_250ppm_vishay_cmb.footprint.svg",
+    "symbol_svg": "cern_rmelf0207_1k5_2_1w_250ppm_vishay_cmb.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Resistors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Resistors SMD.pretty/RESMELF5721N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "high",
+    "pulse",
+    "load",
+    "melf",
+    "resistor"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Resistors SMD#RMELF0207_1K5_2%_1W_250PPM_VISHAY_CMB",
+      "symbol": "SchLib/Resistors.kicad_sym#Resistor - 2%",
+      "footprint": "PcbLib/Resistors SMD.pretty/RESMELF5721N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

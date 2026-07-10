@@ -1,0 +1,652 @@
+(kicad_symbol_lib (version 20211014) (generator partreel-import)
+  (symbol "REL_OMRON_G6K-2F-RF-T"
+  		(pin_names
+  			(offset 1.27)
+  			(hide yes)
+  		)
+  		(exclude_from_sim no)
+  		(in_bom yes)
+  		(on_board yes)
+  		(property "Reference" "RL"
+  			(at 3.81 3.81 0)
+  			(effects
+  				(font
+  					(size 1.524 1.524)
+  				)
+  			)
+  		)
+  		(property "Value" "*"
+  			(at 2.286 -3.048 0)
+  			(effects
+  				(font
+  					(size 1.524 1.524)
+  				)
+  				(justify right)
+  				(hide yes)
+  			)
+  		)
+  		(property "Footprint" ""
+  			(at 0 0 0)
+  			(effects
+  				(font
+  					(size 1.27 1.27)
+  				)
+  				(hide yes)
+  			)
+  		)
+  		(property "Datasheet" ""
+  			(at 0 0 0)
+  			(effects
+  				(font
+  					(size 1.27 1.27)
+  				)
+  				(hide yes)
+  			)
+  		)
+  		(property "Description" "DPDT Subminiature Relay, G6K-2F-RF-T"
+  			(at 0 0 0)
+  			(effects
+  				(font
+  					(size 1.27 1.27)
+  				)
+  				(hide yes)
+  			)
+  		)
+  		(symbol "REL_OMRON_G6K-2F-RF-T_1_0"
+  			(polyline
+  				(pts
+  					(xy 6.35 2.54) (xy 3.81 2.54) (xy 3.81 -2.54) (xy 6.35 -2.54) (xy 6.35 2.54)
+  				)
+  				(stroke
+  					(width 0)
+  					(type solid)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 6.35 1.27) (xy 3.81 -1.27)
+  				)
+  				(stroke
+  					(width 0)
+  					(type solid)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(text "+"
+  				(at 2.286 0.254 0)
+  				(effects
+  					(font
+  						(size 1.524 1.524)
+  					)
+  					(justify left bottom)
+  				)
+  			)
+  			(pin passive line
+  				(at 0 0 0)
+  				(length 3.81)
+  				(name "1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin passive line
+  				(at 10.16 0 180)
+  				(length 3.81)
+  				(name "8"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "8"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  		)
+  		(symbol "REL_OMRON_G6K-2F-RF-T_2_0"
+  			(circle
+  				(center 5.08 0)
+  				(radius 0.635)
+  				(stroke
+  					(width 0.0254)
+  					(type solid)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(circle
+  				(center 10.16 2.54)
+  				(radius 0.635)
+  				(stroke
+  					(width 0.0254)
+  					(type solid)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(circle
+  				(center 10.16 -2.54)
+  				(radius 0.635)
+  				(stroke
+  					(width 0.0254)
+  					(type solid)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 10.668 2.032) (xy 5.588 0.254)
+  				)
+  				(stroke
+  					(width 0)
+  					(type solid)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 0 0 0)
+  				(length 4.445)
+  				(name "C"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "3"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 15.24 2.54 180)
+  				(length 4.445)
+  				(name "NC"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 15.24 -2.54 180)
+  				(length 4.445)
+  				(name "NO"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  		)
+  		(symbol "REL_OMRON_G6K-2F-RF-T_3_0"
+  			(circle
+  				(center 5.08 0)
+  				(radius 0.635)
+  				(stroke
+  					(width 0.0254)
+  					(type solid)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(circle
+  				(center 10.16 2.54)
+  				(radius 0.635)
+  				(stroke
+  					(width 0.0254)
+  					(type solid)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(circle
+  				(center 10.16 -2.54)
+  				(radius 0.635)
+  				(stroke
+  					(width 0.0254)
+  					(type solid)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(polyline
+  				(pts
+  					(xy 10.668 2.032) (xy 5.588 0.254)
+  				)
+  				(stroke
+  					(width 0)
+  					(type solid)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 0 0 0)
+  				(length 4.445)
+  				(name "C"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "6"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 15.24 2.54 180)
+  				(length 4.445)
+  				(name "NC"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "7"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin bidirectional line
+  				(at 15.24 -2.54 180)
+  				(length 4.445)
+  				(name "NO"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "5"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  		)
+  		(symbol "REL_OMRON_G6K-2F-RF-T_4_0"
+  			(polyline
+  				(pts
+  					(xy 0 19.05) (xy 0 5.08) (xy 7.62 5.08) (xy 7.62 19.05)
+  				)
+  				(stroke
+  					(width 0)
+  					(type dash)
+  				)
+  				(fill
+  					(type none)
+  				)
+  			)
+  			(circle
+  				(center 0 16.51)
+  				(radius 0.254)
+  				(stroke
+  					(width 0.508)
+  					(type solid)
+  				)
+  				(fill
+  					(type color)
+  					(color 255 255 255 0.5)
+  				)
+  			)
+  			(circle
+  				(center 0 13.97)
+  				(radius 0.254)
+  				(stroke
+  					(width 0.508)
+  					(type solid)
+  				)
+  				(fill
+  					(type color)
+  					(color 255 255 255 0.5)
+  				)
+  			)
+  			(circle
+  				(center 0 11.43)
+  				(radius 0.254)
+  				(stroke
+  					(width 0.508)
+  					(type solid)
+  				)
+  				(fill
+  					(type color)
+  					(color 255 255 255 0.5)
+  				)
+  			)
+  			(circle
+  				(center 0 8.89)
+  				(radius 0.254)
+  				(stroke
+  					(width 0.508)
+  					(type solid)
+  				)
+  				(fill
+  					(type color)
+  					(color 255 255 255 0.5)
+  				)
+  			)
+  			(circle
+  				(center 0 6.35)
+  				(radius 0.254)
+  				(stroke
+  					(width 0.508)
+  					(type solid)
+  				)
+  				(fill
+  					(type color)
+  					(color 255 255 255 0.5)
+  				)
+  			)
+  			(circle
+  				(center 7.62 16.51)
+  				(radius 0.254)
+  				(stroke
+  					(width 0.508)
+  					(type solid)
+  				)
+  				(fill
+  					(type color)
+  					(color 255 255 255 0.5)
+  				)
+  			)
+  			(circle
+  				(center 7.62 13.97)
+  				(radius 0.254)
+  				(stroke
+  					(width 0.508)
+  					(type solid)
+  				)
+  				(fill
+  					(type color)
+  					(color 255 255 255 0.5)
+  				)
+  			)
+  			(circle
+  				(center 7.62 11.43)
+  				(radius 0.254)
+  				(stroke
+  					(width 0.508)
+  					(type solid)
+  				)
+  				(fill
+  					(type color)
+  					(color 255 255 255 0.5)
+  				)
+  			)
+  			(circle
+  				(center 7.62 8.89)
+  				(radius 0.254)
+  				(stroke
+  					(width 0.508)
+  					(type solid)
+  				)
+  				(fill
+  					(type color)
+  					(color 255 255 255 0.5)
+  				)
+  			)
+  			(circle
+  				(center 7.62 6.35)
+  				(radius 0.254)
+  				(stroke
+  					(width 0.508)
+  					(type solid)
+  				)
+  				(fill
+  					(type color)
+  					(color 255 255 255 0.5)
+  				)
+  			)
+  			(text "CASE"
+  				(at 3.81 6.35 0)
+  				(effects
+  					(font
+  						(size 1.2192 1.2192)
+  					)
+  				)
+  			)
+  			(pin passive line
+  				(at -3.81 16.51 0)
+  				(length 3.81)
+  				(name "CASE"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "C1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin passive line
+  				(at -3.81 13.97 0)
+  				(length 3.81)
+  				(name "CASE"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "C2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin passive line
+  				(at -3.81 11.43 0)
+  				(length 3.81)
+  				(name "CASE"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "C3"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin passive line
+  				(at -3.81 8.89 0)
+  				(length 3.81)
+  				(name "CASE"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "C4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin passive line
+  				(at -3.81 6.35 0)
+  				(length 3.81)
+  				(name "CASE"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "C5"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin passive line
+  				(at 11.43 16.51 180)
+  				(length 3.81)
+  				(name "CASE"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "C10"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin passive line
+  				(at 11.43 13.97 180)
+  				(length 3.81)
+  				(name "CASE"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "C9"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin passive line
+  				(at 11.43 11.43 180)
+  				(length 3.81)
+  				(name "CASE"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "C8"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin passive line
+  				(at 11.43 8.89 180)
+  				(length 3.81)
+  				(name "CASE"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "C7"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin passive line
+  				(at 11.43 6.35 180)
+  				(length 3.81)
+  				(name "CASE"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "C6"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  		)
+  		(embedded_fonts no)
+  	)
+)

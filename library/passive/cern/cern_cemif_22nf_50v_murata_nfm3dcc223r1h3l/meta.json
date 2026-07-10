@@ -1,0 +1,57 @@
+{
+  "id": "cern_cemif_22nf_50v_murata_nfm3dcc223r1h3l",
+  "name": "NFM3DCC223R1H3L (CERN library)",
+  "category": "passive",
+  "family": "CERN Capacitors SMD",
+  "manufacturer": "MURATA",
+  "mpn_pattern": "NFM3DCC223R1H3L",
+  "description": "300mA EMI Filter Capacitor Type, NFM3DC Series. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": 2.0,
+    "mounting": "SMD",
+    "case": "1205",
+    "value": "22nF",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_cemif_22nf_50v_murata_nfm3dcc223r1h3l.kicad_mod",
+    "symbol": "cern_cemif_22nf_50v_murata_nfm3dcc223r1h3l.kicad_sym",
+    "footprint_svg": "cern_cemif_22nf_50v_murata_nfm3dcc223r1h3l.footprint.svg",
+    "symbol_svg": "cern_cemif_22nf_50v_murata_nfm3dcc223r1h3l.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Capacitors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Capacitors SMD.pretty/CAPC_MURATA_NFM3DC_1206.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "300ma",
+    "emi",
+    "filter",
+    "capacitor",
+    "type",
+    "nfm3dc"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Capacitors SMD#CEMIF_22NF_50V_MURATA_NFM3DCC223R1H3L",
+      "symbol": "SchLib/Capacitors.kicad_sym#EMI Filter - Capacitor - Type1",
+      "footprint": "PcbLib/Capacitors SMD.pretty/CAPC_MURATA_NFM3DC_1206.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "id": "cern_rel_enerdis_oktms4r",
+  "name": "OKTMS4R-P6GEO-LED (CERN library)",
+  "category": "relay",
+  "family": "CERN Relays",
+  "manufacturer": "ENERDIS",
+  "mpn_pattern": "OKTMS4R-P6GEO-LED",
+  "description": "10A/300VAC, 4 Changeover Contacts, Programmable Off Time-Delay Relay,  (Options: P6GEO , Coil power LED), OK tms Series. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "16",
+    "value": "48VDC",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_rel_enerdis_oktms4r.kicad_mod",
+    "symbol": "cern_rel_enerdis_oktms4r.kicad_sym",
+    "footprint_svg": "cern_rel_enerdis_oktms4r.footprint.svg",
+    "symbol_svg": "cern_rel_enerdis_oktms4r.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Relays.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Relays.pretty/REL_ENERDIS_OKTMS4R.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "10a",
+    "300vac",
+    "changeover",
+    "contacts",
+    "programmable",
+    "off"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Relays#REL_ENERDIS_OKTMS4R",
+      "symbol": "SchLib/Relays.kicad_sym#REL_ENERDIS_OKTMS4R",
+      "footprint": "PcbLib/Relays.pretty/REL_ENERDIS_OKTMS4R.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

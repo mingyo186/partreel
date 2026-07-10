@@ -1,0 +1,57 @@
+{
+  "id": "cern_cae1030_1680_1mf_25v_20",
+  "name": "EEHZS1E102UP (CERN library)",
+  "category": "passive",
+  "family": "CERN Capacitors SMD",
+  "manufacturer": "PANASONIC",
+  "mpn_pattern": "EEHZS1E102UP",
+  "description": "Conductive Polymer Hybrid Aluminum Electrolytic Capacitor. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: Not Recommended.",
+  "parameters": {
+    "contacts": 2.0,
+    "mounting": "SMD",
+    "case": "G16",
+    "value": "1mF",
+    "lifecycle": "Not Recommended"
+  },
+  "files": {
+    "footprint": "cern_cae1030_1680_1mf_25v_20.kicad_mod",
+    "symbol": "cern_cae1030_1680_1mf_25v_20.kicad_sym",
+    "footprint_svg": "cern_cae1030_1680_1mf_25v_20.footprint.svg",
+    "symbol_svg": "cern_cae1030_1680_1mf_25v_20.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Capacitors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Capacitors SMD.pretty/CAPAE1030X1680N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "conductive",
+    "polymer",
+    "hybrid",
+    "aluminum",
+    "electrolytic",
+    "capacitor"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Capacitors SMD#CAE1030-1680_1MF_25V_20%",
+      "symbol": "SchLib/Capacitors.kicad_sym#Capacitor - polarized",
+      "footprint": "PcbLib/Capacitors SMD.pretty/CAPAE1030X1680N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

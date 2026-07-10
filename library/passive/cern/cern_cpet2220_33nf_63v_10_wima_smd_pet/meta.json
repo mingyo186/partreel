@@ -1,0 +1,57 @@
+{
+  "id": "cern_cpet2220_33nf_63v_10_wima_smd_pet",
+  "name": "SMDTD02330QA00KP00 (CERN library)",
+  "category": "passive",
+  "family": "CERN Capacitors SMD",
+  "manufacturer": "WIMA",
+  "mpn_pattern": "SMDTD02330QA00KP00",
+  "description": "Metallized Polyester PET (Polyethylene-Terephthalate) Film Capacitor. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: Not Recommended.",
+  "parameters": {
+    "contacts": 2.0,
+    "mounting": "SMD",
+    "case": "2220",
+    "value": "33nF",
+    "lifecycle": "Not Recommended"
+  },
+  "files": {
+    "footprint": "cern_cpet2220_33nf_63v_10_wima_smd_pet.kicad_mod",
+    "symbol": "cern_cpet2220_33nf_63v_10_wima_smd_pet.kicad_sym",
+    "footprint_svg": "cern_cpet2220_33nf_63v_10_wima_smd_pet.footprint.svg",
+    "symbol_svg": "cern_cpet2220_33nf_63v_10_wima_smd_pet.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Capacitors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Capacitors SMD.pretty/CAPC5751X380N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "metallized",
+    "polyester",
+    "pet",
+    "polyethylene",
+    "terephthalate",
+    "film"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Capacitors SMD#CPET2220_33NF_63V_10%_WIMA_SMD-PET",
+      "symbol": "SchLib/Capacitors.kicad_sym#Capacitor - non polarized",
+      "footprint": "PcbLib/Capacitors SMD.pretty/CAPC5751X380N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "id": "cern_ind_680uh_10_wurth_we_ti",
+  "name": "744772681 (CERN library)",
+  "category": "passive",
+  "family": "CERN Inductors THD",
+  "manufacturer": "WURTH ELEKTRONIK",
+  "mpn_pattern": "744772681",
+  "description": "Radial Leaded Filter Choke WE-TI Series. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": 2.0,
+    "case": "LS5.08 H10 x D8.3",
+    "value": "680uH"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/passive/cern/cern_ind_680uh_10_wurth_we_ti/cern_ind_680uh_10_wurth_we_ti.kicad_mod",
+    "symbol": "https://partreel.com/library/passive/cern/cern_ind_680uh_10_wurth_we_ti/cern_ind_680uh_10_wurth_we_ti.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/passive/cern/cern_ind_680uh_10_wurth_we_ti/cern_ind_680uh_10_wurth_we_ti.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/passive/cern/cern_ind_680uh_10_wurth_we_ti/cern_ind_680uh_10_wurth_we_ti.symbol.svg"
+  },
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Inductors & Transformers.kicad_sym",
+  "license": "CERN-OHL-P-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Inductors THD.pretty/IND_WURTH_WE-TI.kicad_mod)",
+  "keywords": [
+    "cern",
+    "radial",
+    "leaded",
+    "filter",
+    "choke",
+    "series"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "cern-kicad-libs@53054c17 (Inductors THD.pretty/IND_WURTH_WE-TI.kicad_mod)",
+    "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Inductors & Transformers.kicad_sym",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_cern.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+      "source_commit": "53054c17",
+      "source_files": {
+        "db": "CERN.sqlite#Inductors THD#IND_680UH_10%_WURTH_WE-TI",
+        "symbol": "SchLib/Inductors & Transformers.kicad_sym#Inductor With Magnetic core",
+        "footprint": "PcbLib/Inductors THD.pretty/IND_WURTH_WE-TI.kicad_mod"
+      },
+      "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+      "import_date": "2026-07-05",
+      "modifications": [
+        "extracted single symbol from library",
+        "stripped dead 3D model reference (upstream ships no 3D)",
+        "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/cern_ind_680uh_10_wurth_we_ti/",
+  "api": "https://partreel.com/api/v1/parts/cern_ind_680uh_10_wurth_we_ti.json"
+}

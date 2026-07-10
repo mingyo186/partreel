@@ -1,0 +1,82 @@
+{
+  "id": "cern_r2512_680k_1_1w_100ppm_tt_htcr2512f",
+  "name": "HTCR2512F-680KFT18 (CERN library)",
+  "category": "passive",
+  "family": "CERN Resistors SMD",
+  "manufacturer": "TT Electronics",
+  "mpn_pattern": "HTCR2512F-680KFT18",
+  "description": "500V, High Temperature Chip Resistor. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "2",
+    "mounting": "SMD",
+    "case": "2512",
+    "value": "680k",
+    "lifecycle": "None"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/passive/cern/cern_r2512_680k_1_1w_100ppm_tt_htcr2512f/cern_r2512_680k_1_1w_100ppm_tt_htcr2512f.kicad_mod",
+    "symbol": "https://partreel.com/library/passive/cern/cern_r2512_680k_1_1w_100ppm_tt_htcr2512f/cern_r2512_680k_1_1w_100ppm_tt_htcr2512f.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/passive/cern/cern_r2512_680k_1_1w_100ppm_tt_htcr2512f/cern_r2512_680k_1_1w_100ppm_tt_htcr2512f.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/passive/cern/cern_r2512_680k_1_1w_100ppm_tt_htcr2512f/cern_r2512_680k_1_1w_100ppm_tt_htcr2512f.symbol.svg"
+  },
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Resistors.kicad_sym",
+  "license": "CERN-OHL-P-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Resistors SMD.pretty/RESC6332X80N.kicad_mod)",
+  "keywords": [
+    "cern",
+    "500v",
+    "high",
+    "temperature",
+    "chip",
+    "resistor"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "cern-kicad-libs@53054c17 (Resistors SMD.pretty/RESC6332X80N.kicad_mod)",
+    "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Resistors.kicad_sym",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_cern.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+      "source_commit": "53054c17",
+      "source_files": {
+        "db": "CERN.sqlite#Resistors SMD#R2512_680K_1%_1W_100PPM_TT_HTCR2512F",
+        "symbol": "SchLib/Resistors.kicad_sym#Resistor - 1%",
+        "footprint": "PcbLib/Resistors SMD.pretty/RESC6332X80N.kicad_mod"
+      },
+      "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+      "import_date": "2026-07-05",
+      "modifications": [
+        "extracted single symbol from library",
+        "stripped dead 3D model reference (upstream ships no 3D)"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/cern_r2512_680k_1_1w_100ppm_tt_htcr2512f/",
+  "api": "https://partreel.com/api/v1/parts/cern_r2512_680k_1_1w_100ppm_tt_htcr2512f.json"
+}

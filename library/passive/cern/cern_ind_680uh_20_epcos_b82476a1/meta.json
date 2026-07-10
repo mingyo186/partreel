@@ -1,0 +1,55 @@
+{
+  "id": "cern_ind_680uh_20_epcos_b82476a1",
+  "name": "B82476A1684M000 (CERN library)",
+  "category": "passive",
+  "family": "CERN Inductors SMD",
+  "manufacturer": "EPCOS",
+  "mpn_pattern": "B82476A1684M000",
+  "description": "SMT Power Inductor (12.95x9.4x5.08mm). Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": 2.0,
+    "mounting": "SMD",
+    "value": "680uH"
+  },
+  "files": {
+    "footprint": "cern_ind_680uh_20_epcos_b82476a1.kicad_mod",
+    "symbol": "cern_ind_680uh_20_epcos_b82476a1.kicad_sym",
+    "footprint_svg": "cern_ind_680uh_20_epcos_b82476a1.footprint.svg",
+    "symbol_svg": "cern_ind_680uh_20_epcos_b82476a1.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Inductors & Transformers.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Inductors SMD.pretty/IND_EPCOS_B82476A1.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "smt",
+    "power",
+    "inductor",
+    "95x9",
+    "4x5",
+    "08mm"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Inductors SMD#IND_680UH_20%_EPCOS_B82476A1",
+      "symbol": "SchLib/Inductors & Transformers.kicad_sym#Inductor With Magnetic core",
+      "footprint": "PcbLib/Inductors SMD.pretty/IND_EPCOS_B82476A1.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

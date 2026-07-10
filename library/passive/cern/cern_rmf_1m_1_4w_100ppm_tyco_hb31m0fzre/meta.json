@@ -1,0 +1,56 @@
+{
+  "id": "cern_rmf_1m_1_4w_100ppm_tyco_hb31m0fzre",
+  "name": "HB31M0FZRE (CERN library)",
+  "category": "passive",
+  "family": "CERN Resistors THD",
+  "manufacturer": "TYCO ELECTRONICS",
+  "mpn_pattern": "HB31M0FZRE",
+  "description": "High Voltage (15kV) Thick Film Resistor (HB Series). Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "2",
+    "case": "LS48.3 W3 x L52 x H10.4",
+    "value": "1M",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_rmf_1m_1_4w_100ppm_tyco_hb31m0fzre.kicad_mod",
+    "symbol": "cern_rmf_1m_1_4w_100ppm_tyco_hb31m0fzre.kicad_sym",
+    "footprint_svg": "cern_rmf_1m_1_4w_100ppm_tyco_hb31m0fzre.footprint.svg",
+    "symbol_svg": "cern_rmf_1m_1_4w_100ppm_tyco_hb31m0fzre.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Resistors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Resistors THD.pretty/RES_TYCO_HB3(RE).kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "high",
+    "voltage",
+    "15kv",
+    "thick",
+    "film",
+    "resistor"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Resistors THD#RMF_1M_1%_4W_100PPM_TYCO_HB31M0FZRE",
+      "symbol": "SchLib/Resistors.kicad_sym#Resistor - 1%",
+      "footprint": "PcbLib/Resistors THD.pretty/RES_TYCO_HB3(RE).kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

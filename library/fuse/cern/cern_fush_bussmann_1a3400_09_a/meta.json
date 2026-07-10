@@ -1,0 +1,53 @@
+{
+  "id": "cern_fush_bussmann_1a3400_09_a",
+  "name": "2 x 1A3400-09 (CERN library)",
+  "category": "fuse",
+  "family": "CERN Fuses",
+  "manufacturer": "BUSSMANN",
+  "mpn_pattern": "2 x 1A3400-09",
+  "description": "2 fuse clips (13/32') to receive a 10x38mm Fuse. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": "2"
+  },
+  "files": {
+    "footprint": "cern_fush_bussmann_1a3400_09_a.kicad_mod",
+    "symbol": "cern_fush_bussmann_1a3400_09_a.kicad_sym",
+    "footprint_svg": "cern_fush_bussmann_1a3400_09_a.footprint.svg",
+    "symbol_svg": "cern_fush_bussmann_1a3400_09_a.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Fuses.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Fuses.pretty/FUSH_BUSSMANN_1A3400-09_A.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "fuse",
+    "clips",
+    "receive",
+    "10x38mm",
+    "fuse"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Fuses#FUSH_BUSSMANN_1A3400-09_A",
+      "symbol": "SchLib/Fuses.kicad_sym#Fuse Holder",
+      "footprint": "PcbLib/Fuses.pretty/FUSH_BUSSMANN_1A3400-09_A.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

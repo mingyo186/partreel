@@ -1,0 +1,82 @@
+{
+  "id": "cern_rel_finder_50_16_9_024_5420",
+  "name": "50.16.9.024.5420 (CERN library)",
+  "category": "relay",
+  "family": "CERN Relays",
+  "manufacturer": "FINDER",
+  "mpn_pattern": "50.16.9.024.5420",
+  "description": "8A 4NO+2NC Forcibly Guided Contacts Relay. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: Not Recommended.",
+  "parameters": {
+    "contacts": "14",
+    "value": "24VDC",
+    "lifecycle": "Not Recommended"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/relay/cern/cern_rel_finder_50_16_9_024_5420/cern_rel_finder_50_16_9_024_5420.kicad_mod",
+    "symbol": "https://partreel.com/library/relay/cern/cern_rel_finder_50_16_9_024_5420/cern_rel_finder_50_16_9_024_5420.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/relay/cern/cern_rel_finder_50_16_9_024_5420/cern_rel_finder_50_16_9_024_5420.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/relay/cern/cern_rel_finder_50_16_9_024_5420/cern_rel_finder_50_16_9_024_5420.symbol.svg"
+  },
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Relays.kicad_sym",
+  "license": "CERN-OHL-P-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Relays.pretty/REL_FINDER_50.16-X42X.kicad_mod)",
+  "keywords": [
+    "cern",
+    "4no",
+    "2nc",
+    "forcibly",
+    "guided",
+    "contacts",
+    "relay"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "cern-kicad-libs@53054c17 (Relays.pretty/REL_FINDER_50.16-X42X.kicad_mod)",
+    "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Relays.kicad_sym",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_cern.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+      "source_commit": "53054c17",
+      "source_files": {
+        "db": "CERN.sqlite#Relays#REL_FINDER_50.16.9.024.5420",
+        "symbol": "SchLib/Relays.kicad_sym#REL_FINDER_50.16-X42X",
+        "footprint": "PcbLib/Relays.pretty/REL_FINDER_50.16-X42X.kicad_mod"
+      },
+      "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+      "import_date": "2026-07-05",
+      "modifications": [
+        "extracted single symbol from library",
+        "stripped dead 3D model reference (upstream ships no 3D)",
+        "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/cern_rel_finder_50_16_9_024_5420/",
+  "api": "https://partreel.com/api/v1/parts/cern_rel_finder_50_16_9_024_5420.json"
+}

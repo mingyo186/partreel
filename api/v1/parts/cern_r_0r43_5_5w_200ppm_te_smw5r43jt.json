@@ -1,0 +1,80 @@
+{
+  "id": "cern_r_0r43_5_5w_200ppm_te_smw5r43jt",
+  "name": "SMW5R43JT (CERN library)",
+  "category": "passive",
+  "family": "CERN Resistors SMD",
+  "manufacturer": "TE Connectivity",
+  "mpn_pattern": "SMW5R43JT",
+  "description": "SMD Moulded Power Resistor. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: Not Recommended.",
+  "parameters": {
+    "contacts": "2",
+    "mounting": "SMD",
+    "value": "0R43",
+    "lifecycle": "Not Recommended"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/passive/cern/cern_r_0r43_5_5w_200ppm_te_smw5r43jt/cern_r_0r43_5_5w_200ppm_te_smw5r43jt.kicad_mod",
+    "symbol": "https://partreel.com/library/passive/cern/cern_r_0r43_5_5w_200ppm_te_smw5r43jt/cern_r_0r43_5_5w_200ppm_te_smw5r43jt.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/passive/cern/cern_r_0r43_5_5w_200ppm_te_smw5r43jt/cern_r_0r43_5_5w_200ppm_te_smw5r43jt.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/passive/cern/cern_r_0r43_5_5w_200ppm_te_smw5r43jt/cern_r_0r43_5_5w_200ppm_te_smw5r43jt.symbol.svg"
+  },
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Resistors.kicad_sym",
+  "license": "CERN-OHL-P-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Resistors SMD.pretty/RES_TE_SMW5.kicad_mod)",
+  "keywords": [
+    "cern",
+    "smd",
+    "moulded",
+    "power",
+    "resistor"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "cern-kicad-libs@53054c17 (Resistors SMD.pretty/RES_TE_SMW5.kicad_mod)",
+    "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Resistors.kicad_sym",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_cern.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+      "source_commit": "53054c17",
+      "source_files": {
+        "db": "CERN.sqlite#Resistors SMD#R_0R43_5%_5W_200PPM_TE_SMW5R43JT",
+        "symbol": "SchLib/Resistors.kicad_sym#Resistor - 5%",
+        "footprint": "PcbLib/Resistors SMD.pretty/RES_TE_SMW5.kicad_mod"
+      },
+      "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+      "import_date": "2026-07-05",
+      "modifications": [
+        "extracted single symbol from library",
+        "stripped dead 3D model reference (upstream ships no 3D)"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/cern_r_0r43_5_5w_200ppm_te_smw5r43jt/",
+  "api": "https://partreel.com/api/v1/parts/cern_r_0r43_5_5w_200ppm_te_smw5r43jt.json"
+}

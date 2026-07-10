@@ -1,0 +1,55 @@
+{
+  "id": "cern_ind0805_33nh_5_epcos_b82498b",
+  "name": "B82498B3330J (CERN library)",
+  "category": "passive",
+  "family": "CERN Inductors SMD",
+  "manufacturer": "EPCOS",
+  "mpn_pattern": "B82498B3330J",
+  "description": "SMT Inductor SIMID Series. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: Preferred.",
+  "parameters": {
+    "contacts": 2.0,
+    "mounting": "SMD",
+    "case": "0805",
+    "value": "33nH",
+    "lifecycle": "Preferred"
+  },
+  "files": {
+    "footprint": "cern_ind0805_33nh_5_epcos_b82498b.kicad_mod",
+    "symbol": "cern_ind0805_33nh_5_epcos_b82498b.kicad_sym",
+    "footprint_svg": "cern_ind0805_33nh_5_epcos_b82498b.footprint.svg",
+    "symbol_svg": "cern_ind0805_33nh_5_epcos_b82498b.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Inductors & Transformers.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Inductors SMD.pretty/INDC2014X145N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "smt",
+    "inductor",
+    "simid",
+    "series"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Inductors SMD#IND0805_33NH_5%_EPCOS_B82498B",
+      "symbol": "SchLib/Inductors & Transformers.kicad_sym#Inductor With Magnetic core",
+      "footprint": "PcbLib/Inductors SMD.pretty/INDC2014X145N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

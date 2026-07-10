@@ -1,0 +1,56 @@
+{
+  "id": "cern_xfmr_block_vb_1_0_1_18",
+  "name": "VB 1,0/1/18 (CERN library)",
+  "category": "transformer",
+  "family": "CERN Transformers",
+  "manufacturer": "BLOCK TRANSFORMATOREN ELEKTRONIK",
+  "mpn_pattern": "VB 1,0/1/18",
+  "description": "1VA Short Circuit Proof PCB Transformer Type VB. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": 4.0,
+    "value": "230V to 18V",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_xfmr_block_vb_1_0_1_18.kicad_mod",
+    "symbol": "cern_xfmr_block_vb_1_0_1_18.kicad_sym",
+    "footprint_svg": "cern_xfmr_block_vb_1_0_1_18.footprint.svg",
+    "symbol_svg": "cern_xfmr_block_vb_1_0_1_18.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Inductors & Transformers.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Transformers.pretty/XFMR_BLOCK_VB 1.0-1.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "1va",
+    "short",
+    "circuit",
+    "proof",
+    "pcb",
+    "transformer"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Transformers#XFMR_BLOCK_VB 1,0/1/18",
+      "symbol": "SchLib/Inductors & Transformers.kicad_sym#Transformer 1xPrim 1xSec Type1",
+      "footprint": "PcbLib/Transformers.pretty/XFMR_BLOCK_VB 1.0-1.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

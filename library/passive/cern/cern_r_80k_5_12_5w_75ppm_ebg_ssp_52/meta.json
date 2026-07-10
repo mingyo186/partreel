@@ -1,0 +1,56 @@
+{
+  "id": "cern_r_80k_5_12_5w_75ppm_ebg_ssp_52",
+  "name": "SSP52 80KJ 75ppm (CERN library)",
+  "category": "passive",
+  "family": "CERN Resistors THD",
+  "manufacturer": "EBG RESISTORS",
+  "mpn_pattern": "SSP52 80KJ 75ppm",
+  "description": "High Voltage (6kV), Cylindrical Power Resistor, SSP Series. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "2",
+    "value": "80k",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_r_80k_5_12_5w_75ppm_ebg_ssp_52.kicad_mod",
+    "symbol": "cern_r_80k_5_12_5w_75ppm_ebg_ssp_52.kicad_sym",
+    "footprint_svg": "cern_r_80k_5_12_5w_75ppm_ebg_ssp_52.footprint.svg",
+    "symbol_svg": "cern_r_80k_5_12_5w_75ppm_ebg_ssp_52.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Resistors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Resistors THD.pretty/RES_EBG_SSP 52.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "high",
+    "voltage",
+    "6kv",
+    "cylindrical",
+    "power",
+    "resistor"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Resistors THD#R_80K_5%_12.5W_75PPM_EBG_SSP 52",
+      "symbol": "SchLib/Resistors.kicad_sym#Resistor - 5%",
+      "footprint": "PcbLib/Resistors THD.pretty/RES_EBG_SSP 52.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

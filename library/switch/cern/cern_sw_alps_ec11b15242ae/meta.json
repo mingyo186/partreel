@@ -1,0 +1,55 @@
+{
+  "id": "cern_sw_alps_ec11b15242ae",
+  "name": "EC11B15242AE (CERN library)",
+  "category": "switch",
+  "family": "CERN Switches",
+  "manufacturer": "ALPS",
+  "mpn_pattern": "EC11B15242AE",
+  "description": "Encoder, 30-Detent, 15-Pulse, Horizontal with Push-on Switch. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: None.",
+  "parameters": {
+    "contacts": "7",
+    "lifecycle": "None"
+  },
+  "files": {
+    "footprint": "cern_sw_alps_ec11b15242ae.kicad_mod",
+    "symbol": "cern_sw_alps_ec11b15242ae.kicad_sym",
+    "footprint_svg": "cern_sw_alps_ec11b15242ae.footprint.svg",
+    "symbol_svg": "cern_sw_alps_ec11b15242ae.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Switches.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Switches.pretty/SW_ALPS_EC11B15242AE.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "encoder",
+    "detent",
+    "pulse",
+    "horizontal",
+    "with",
+    "push"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Switches#SW_ALPS_EC11B15242AE",
+      "symbol": "SchLib/Switches.kicad_sym#SW_ALPS_EC11B15242AE",
+      "footprint": "PcbLib/Switches.pretty/SW_ALPS_EC11B15242AE.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+    ]
+  }
+}

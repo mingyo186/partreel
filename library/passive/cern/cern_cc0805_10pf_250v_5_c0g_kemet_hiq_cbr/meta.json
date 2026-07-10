@@ -1,0 +1,56 @@
+{
+  "id": "cern_cc0805_10pf_250v_5_c0g_kemet_hiq_cbr",
+  "name": "CBR08C100JAGAC (CERN library)",
+  "category": "passive",
+  "family": "CERN Capacitors SMD",
+  "manufacturer": "KEMET",
+  "mpn_pattern": "CBR08C100JAGAC",
+  "description": "High Q and low ESR, SMD Multilayer Chip Ceramic Capacitor, HiQ-CBR Series. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models.",
+  "parameters": {
+    "contacts": 2.0,
+    "mounting": "SMD",
+    "case": "0805",
+    "value": "10pF"
+  },
+  "files": {
+    "footprint": "cern_cc0805_10pf_250v_5_c0g_kemet_hiq_cbr.kicad_mod",
+    "symbol": "cern_cc0805_10pf_250v_5_c0g_kemet_hiq_cbr.kicad_sym",
+    "footprint_svg": "cern_cc0805_10pf_250v_5_c0g_kemet_hiq_cbr.footprint.svg",
+    "symbol_svg": "cern_cc0805_10pf_250v_5_c0g_kemet_hiq_cbr.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Capacitors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Capacitors SMD.pretty/CAPC2013X100N.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "high",
+    "and",
+    "low",
+    "esr",
+    "smd",
+    "multilayer"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Capacitors SMD#CC0805_10PF_250V_5%_C0G_KEMET_HiQ-CBR",
+      "symbol": "SchLib/Capacitors.kicad_sym#Capacitor - non polarized",
+      "footprint": "PcbLib/Capacitors SMD.pretty/CAPC2013X100N.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}

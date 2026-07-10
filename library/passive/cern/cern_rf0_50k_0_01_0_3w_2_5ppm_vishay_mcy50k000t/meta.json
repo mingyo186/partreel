@@ -1,0 +1,54 @@
+{
+  "id": "cern_rf0_50k_0_01_0_3w_2_5ppm_vishay_mcy50k000t",
+  "name": "MCY50K000T (CERN library)",
+  "category": "passive",
+  "family": "CERN Resistors THD",
+  "manufacturer": "VISHAY FOIL RESISTOR",
+  "mpn_pattern": "MCY50K000T",
+  "description": "Ultra Precision Resistor -  MC Series. Imported from the CERN KiCad library (CERN-OHL-P-2.0, (c) CERN); passed PartReel quality gates. Verified-2D part: upstream ships no 3D models. Lifecycle status: Not recommended.",
+  "parameters": {
+    "contacts": "2",
+    "case": "LS5.08 W2.3 x L7.9 x H8.5",
+    "value": "50k",
+    "lifecycle": "Not recommended"
+  },
+  "files": {
+    "footprint": "cern_rf0_50k_0_01_0_3w_2_5ppm_vishay_mcy50k000t.kicad_mod",
+    "symbol": "cern_rf0_50k_0_01_0_3w_2_5ppm_vishay_mcy50k000t.kicad_sym",
+    "footprint_svg": "cern_rf0_50k_0_01_0_3w_2_5ppm_vishay_mcy50k000t.footprint.svg",
+    "symbol_svg": "cern_rf0_50k_0_01_0_3w_2_5ppm_vishay_mcy50k000t.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Resistors.kicad_sym",
+  "dimensions_source": "cern-kicad-libs@53054c17 (Resistors THD.pretty/RES_VISHAY_MC.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_cern.py",
+  "keywords": [
+    "cern",
+    "ultra",
+    "precision",
+    "resistor",
+    "series"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Resistors THD#RF0_50K_0.01%_0.3W_2.5PPM_VISHAY_MCY50K000T",
+      "symbol": "SchLib/Resistors.kicad_sym#Resistor - 0.01%",
+      "footprint": "PcbLib/Resistors THD.pretty/RES_VISHAY_MC.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)"
+    ]
+  }
+}
