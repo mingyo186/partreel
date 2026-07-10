@@ -157,3 +157,9 @@ h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .05em; color: v
   .part-page { padding: 18px 16px 40px; }
   .part-viewer { height: 280px; }
 }
+
+.browse { list-style: none; padding: 0; columns: 3 260px; }
+.browse li { margin: 4px 0; break-inside: avoid; }
+.browse a { color: var(--accent, #4ea1ff); text-decoration: none; }
+.browse a:hover { text-decoration: underline; }
+.bcount { color: var(--muted); font-size: 12px; }

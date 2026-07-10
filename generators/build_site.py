@@ -165,7 +165,7 @@ def part_page(meta, path):
         f'<script type="application/ld+json">\n{jsonld}\n</script>'
     )
     body = f"""<main class="part-page">
-  <nav class="crumb"><a href="{prefix}">Home</a> / {esc(fam)} / {esc(name)}</nav>
+  <nav class="crumb"><a href="{prefix}">Home</a> / <a href="{prefix}browse/{_slug(meta.get('category','etc'))}/{_slug(fam)}/">{esc(fam)}</a> / {esc(name)}</nav>
   <h1>{esc(name)}</h1>
   <p class="desc">{esc(desc)}</p>
   <div class="view-tabs">
@@ -308,14 +308,78 @@ def write(relpath, content):
         f.write(content)
 
 
+
+def _slug(name):
+    import re as _re
+    t = _re.sub(r"[^a-z0-9]+", "-", str(name).lower()).strip("-")
+    return _re.sub(r"-+", "-", t) or "etc"
+
+
+def browse_pages(index, metas):
+    """정적 둘러보기 허브(§21-5 색인 가속): 카테고리→패밀리→부품 HTML 링크 그물."""
+    from collections import OrderedDict
+    tree = OrderedDict()  # cat -> {fam: [(id, name)]}
+    for p in index["parts"]:
+        m = metas[p["id"]]
+        cat, fam = m.get("category", "etc"), m.get("family", "etc")
+        tree.setdefault(cat, OrderedDict()).setdefault(fam, []).append((p["id"], m["name"]))
+    pages = []  # (relpath, html, url)
+    # 루트: 카테고리 목록
+    items = "".join(
+        f'<li><a href="{_slug(c)}/">{esc(c)}</a> <span class="bcount">{sum(len(v) for v in fams.values())} parts</span></li>'
+        for c, fams in sorted(tree.items()))
+    body = (f'<main class="part-page"><nav class="crumb"><a href="../">Home</a> / Browse</nav>'
+            f'<h1>Browse all parts</h1><p class="desc">Every part, grouped by category and family. '
+            f'No sign-up — every link is an instant download page.</p><ul class="browse">{items}</ul></main>')
+    pages.append(("browse/index.html",
+                  render("../", "Browse all KiCad parts by category | PartReel",
+                         "Browse 13,000+ free KiCad footprints, symbols and 3D models by category.",
+                         f"{DOMAIN}/browse/", body), f"{DOMAIN}/browse/"))
+    for c, fams in sorted(tree.items()):
+        cs = _slug(c)
+        items = "".join(
+            f'<li><a href="{_slug(f)}/">{esc(f)}</a> <span class="bcount">{len(ps)} parts</span></li>'
+            for f, ps in sorted(fams.items()))
+        body = (f'<main class="part-page"><nav class="crumb"><a href="../../">Home</a> / '
+                f'<a href="../">Browse</a> / {esc(c)}</nav><h1>{esc(c)} — families</h1>'
+                f'<ul class="browse">{items}</ul></main>')
+        pages.append((f"browse/{cs}/index.html",
+                      render("../../", f"{esc(c)} parts — browse by family | PartReel",
+                             f"Browse free KiCad {esc(c)} footprints and symbols by family.",
+                             f"{DOMAIN}/browse/{cs}/", body), f"{DOMAIN}/browse/{cs}/"))
+        for f, ps in sorted(fams.items()):
+            fs = _slug(f)
+            items = "".join(f'<li><a href="../../../p/{pid}/">{esc(nm)}</a></li>'
+                            for pid, nm in sorted(ps, key=lambda x: x[1]))
+            body = (f'<main class="part-page"><nav class="crumb"><a href="../../../">Home</a> / '
+                    f'<a href="../../">Browse</a> / <a href="../">{esc(c)}</a> / {esc(f)}</nav>'
+                    f'<h1>{esc(f)}</h1><p class="desc">{len(ps)} verified parts — KiCad footprint + '
+                    f'symbol{" + 3D" if any(metas[pid].get("files", {}).get("preview") for pid, _ in ps) else ""}, '
+                    f'free, no login.</p><ul class="browse browse-parts">{items}</ul></main>')
+            pages.append((f"browse/{cs}/{fs}/index.html",
+                          render("../../../", f"{esc(f)} — {len(ps)} free KiCad parts | PartReel",
+                                 f"All {len(ps)} {esc(f)} parts with verified KiCad footprints and symbols.",
+                                 f"{DOMAIN}/browse/{cs}/{fs}/", body),
+                          f"{DOMAIN}/browse/{cs}/{fs}/"))
+    return pages
+
+
 def main():
     index = json.load(open(os.path.join(ROOT, "index.json"), encoding="utf-8"))
     urls = [f"{DOMAIN}/"]
+    metas = {}
     for p in index["parts"]:
         path = p["path"]
         meta = json.load(open(os.path.join(ROOT, path, "meta.json"), encoding="utf-8"))
+        metas[p["id"]] = meta
         write(os.path.join("p", p["id"], "index.html"), part_page(meta, path))
         urls.append(f"{DOMAIN}/p/{p['id']}/")
+
+    nb = 0
+    for relpath, html_out, url in browse_pages(index, metas):
+        write(relpath, html_out)
+        urls.append(url)
+        nb += 1
 
     write(os.path.join("about", "index.html"), about_page())
     write(os.path.join("guide", "kicad", "index.html"), guide_page())
