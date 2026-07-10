@@ -61,7 +61,7 @@ jobs:
           find _site/library -name "*.step" -delete
           find _site/library -name "*.glb" -delete
           cp -r p _site/
-          cp -r about guide agents api _site/
+          cp -r about guide agents api browse _site/
           cp sitemap.xml robots.txt favicon.svg llms.txt _site/
           echo "partreel.com" > _site/CNAME
 
