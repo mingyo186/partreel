@@ -20,7 +20,7 @@
     "footprint_svg": "https://partreel.com/library/connector/cern/cern_samtec_ipbs_115_01_t_d_gp/cern_samtec_ipbs_115_01_t_d_gp.footprint.svg",
     "symbol_svg": "https://partreel.com/library/connector/cern/cern_samtec_ipbs_115_01_t_d_gp/cern_samtec_ipbs_115_01_t_d_gp.symbol.svg"
   },
-  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Connectors.kicad_sym",
+  "datasheet": "https://suddendocs.samtec.com/catalog_english/ipbs.pdf",
   "license": "CERN-OHL-P-2.0",
   "verified": true,
   "tier": "verified-2d",
@@ -40,7 +40,7 @@
   },
   "provenance": {
     "dimensions_source": "cern-kicad-libs@53054c17 (SAMTEC THD.pretty/SAMTEC_IPBS-115-01-T-D-GP.kicad_mod)",
-    "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Connectors.kicad_sym",
+    "datasheet": "https://suddendocs.samtec.com/catalog_english/ipbs.pdf",
     "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_cern.py",
     "quality_gates": {
       "gates": [
@@ -72,7 +72,8 @@
       "modifications": [
         "extracted single symbol from library",
         "stripped dead 3D model reference (upstream ships no 3D)",
-        "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+        "auto-added courtyard (pads+outline+poly bbox +0.25mm)",
+        "datasheet URL resolved by manufacturer pattern + HTTP verification"
       ]
     }
   },

@@ -36,9 +36,22 @@ def main():
             if fn.lower().endswith((".step", ".glb")):
                 url = f"{BASE}/{p['path']}".replace("\\", "/") + f"/{fn}"
                 targets.append((url, hashes.get(fn)))
+    # 증분 검사(2026-07-12): 지난 PASS 스냅샷과 해시 동일한 에셋은 무작위 표본만.
+    # 신규/변경분은 전수 — 전수 대조가 1.5h/회로 파이프라인 병목이 됐던 문제 해결.
+    snap_path = os.path.join(ROOT, "docs", "r2-verified.json")
+    try:
+        snap = json.load(open(snap_path, encoding="utf-8"))
+    except Exception:
+        snap = {}
+    changed = [t for t in targets if snap.get(t[0]) != t[1]]
+    unchanged = [t for t in targets if snap.get(t[0]) == t[1]]
+    rng0 = random.Random()
+    sample = rng0.sample(unchanged, min(300, len(unchanged)))
+    to_check = changed + sample
+    print(f"검사 대상: 신규/변경 {len(changed)} + 표본 {len(sample)} / 전체 {len(targets)}")
     errs = 0
     with ThreadPoolExecutor(16) as ex:
-        for (url, _), st in zip(targets, ex.map(lambda t: head(t[0]), targets)):
+        for (url, _), st in zip(to_check, ex.map(lambda t: head(t[0]), to_check)):
             if st != 200:
                 print(f"FAIL {st}: {url}")
                 errs += 1
@@ -51,7 +64,10 @@ def main():
         if hashlib.sha256(body).hexdigest() != digest:
             print(f"FAIL hash mismatch: {url}")
             errs += 1
-    print(f"{'PASS' if not errs else 'FAIL'}: {len(targets)} R2 assets, {errs} issues")
+    if not errs:  # PASS 시 스냅샷 갱신 (다음 회부터 증분)
+        json.dump({u: h for u, h in targets}, open(snap_path, "w", encoding="utf-8"))
+    print(f"{'PASS' if not errs else 'FAIL'}: {len(targets)} R2 assets "
+          f"(checked {len(to_check)}), {errs} issues")
     sys.exit(1 if errs else 0)
 
 

@@ -21,7 +21,7 @@
     "footprint_svg": "https://partreel.com/library/connector/cern/cern_samtec_shf_104_01_l_d_sm_alt/cern_samtec_shf_104_01_l_d_sm_alt.footprint.svg",
     "symbol_svg": "https://partreel.com/library/connector/cern/cern_samtec_shf_104_01_l_d_sm_alt/cern_samtec_shf_104_01_l_d_sm_alt.symbol.svg"
   },
-  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Connectors.kicad_sym",
+  "datasheet": "https://suddendocs.samtec.com/catalog_english/shf.pdf",
   "license": "CERN-OHL-P-2.0",
   "verified": true,
   "tier": "verified-2d",
@@ -41,7 +41,7 @@
   },
   "provenance": {
     "dimensions_source": "cern-kicad-libs@53054c17 (SAMTEC SMD.pretty/SAMTEC_SHF-104-01-L-D-SM.kicad_mod)",
-    "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Connectors.kicad_sym",
+    "datasheet": "https://suddendocs.samtec.com/catalog_english/shf.pdf",
     "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_cern.py",
     "quality_gates": {
       "gates": [
@@ -72,7 +72,8 @@
       "import_date": "2026-07-05",
       "modifications": [
         "extracted single symbol from library",
-        "stripped dead 3D model reference (upstream ships no 3D)"
+        "stripped dead 3D model reference (upstream ships no 3D)",
+        "datasheet URL resolved by manufacturer pattern + HTTP verification"
       ]
     }
   },

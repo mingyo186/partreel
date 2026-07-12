@@ -20,7 +20,7 @@
     "kicad_mod",
     "kicad_sym"
   ],
-  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Connectors.kicad_sym",
+  "datasheet": "https://suddendocs.samtec.com/catalog_english/ts.pdf",
   "dimensions_source": "cern-kicad-libs@53054c17 (SAMTEC THD.pretty/SAMTEC_TS-101-T-A_a.kicad_mod)",
   "verified": true,
   "origin": "imported",
@@ -49,7 +49,8 @@
     "modifications": [
       "extracted single symbol from library",
       "stripped dead 3D model reference (upstream ships no 3D)",
-      "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+      "auto-added courtyard (pads+outline+poly bbox +0.25mm)",
+      "datasheet URL resolved by manufacturer pattern + HTTP verification"
     ]
   }
 }

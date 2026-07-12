@@ -21,7 +21,7 @@
     "footprint_svg": "https://partreel.com/library/connector/cern/cern_samtec_hdwm_20_54_l_d_335_sm_p/cern_samtec_hdwm_20_54_l_d_335_sm_p.footprint.svg",
     "symbol_svg": "https://partreel.com/library/connector/cern/cern_samtec_hdwm_20_54_l_d_335_sm_p/cern_samtec_hdwm_20_54_l_d_335_sm_p.symbol.svg"
   },
-  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Connectors.kicad_sym",
+  "datasheet": "https://suddendocs.samtec.com/catalog_english/hdwm.pdf",
   "license": "CERN-OHL-P-2.0",
   "verified": true,
   "tier": "verified-2d",
@@ -41,7 +41,7 @@
   },
   "provenance": {
     "dimensions_source": "cern-kicad-libs@53054c17 (SAMTEC SMD.pretty/SAMTEC_HDWM-20-54-L-D-335-SM-P.kicad_mod)",
-    "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Connectors.kicad_sym",
+    "datasheet": "https://suddendocs.samtec.com/catalog_english/hdwm.pdf",
     "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_cern.py",
     "quality_gates": {
       "gates": [
@@ -72,7 +72,8 @@
       "import_date": "2026-07-05",
       "modifications": [
         "extracted single symbol from library",
-        "stripped dead 3D model reference (upstream ships no 3D)"
+        "stripped dead 3D model reference (upstream ships no 3D)",
+        "datasheet URL resolved by manufacturer pattern + HTTP verification"
       ]
     }
   },

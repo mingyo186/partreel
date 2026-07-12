@@ -15,11 +15,12 @@ ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)),
 UA = {"User-Agent": "Mozilla/5.0 partreel-datasheet-resolver"}
 
 
-def ok(url):
+def ok(url, want="pdf"):
     try:
         req = urllib.request.Request(url, method="HEAD", headers=UA)
         with urllib.request.urlopen(req, timeout=20) as r:
-            return r.status == 200 and "pdf" in (r.headers.get("Content-Type") or "").lower()
+            ct = (r.headers.get("Content-Type") or "").lower()
+            return r.status == 200 and (want in ct or (want == "any" and r.status == 200))
     except Exception:
         return False
 
@@ -45,6 +46,37 @@ def ti_candidates(mpn):
     return [f"https://www.ti.com/lit/ds/symlink/{c}.pdf" for c in dict.fromkeys(cands)]
 
 
+def _bases(mpn):
+    """패키지 접미사 단계 제거한 베이스 후보들."""
+    b = mpn.lower().replace(" ", "").replace("/", "-")
+    out = [b]
+    core = re.sub(r"[-#].*$", "", b)
+    if core != b:
+        out.append(core)
+    for i in (1, 2, 3, 4):
+        c = core[:-i] if len(core) > i + 2 else None
+        if c and c not in out and (c[-1].isdigit() or len(core) - i >= 5):
+            out.append(c)
+    m = re.match(r"^([a-z]+\d+[a-z]?\d*)", core)
+    if m and m.group(1) not in out:
+        out.append(m.group(1))
+    return out
+
+
+RESOLVERS = {
+    "TEXAS": lambda mpn: [(f"https://www.ti.com/lit/ds/symlink/{b}.pdf", "pdf") for b in _bases(mpn)],
+    "SAMTEC": lambda mpn: [(f"https://suddendocs.samtec.com/catalog_english/{mpn.split('-')[0].lower()}.pdf", "pdf")] if "-" in mpn else [],
+}
+
+
+def candidates_for(manuf, mpn):
+    mu = manuf.upper()
+    for key, fn in RESOLVERS.items():
+        if key in mu:
+            return fn(mpn)
+    return []
+
+
 def main():
     apply = "--apply" in sys.argv
     index = json.load(open(os.path.join(ROOT, "index.json"), encoding="utf-8"))
@@ -57,15 +89,15 @@ def main():
         ds = meta.get("datasheet", "")
         if "gitlab.com" not in ds and "github.com" not in ds:
             continue  # 이미 진짜 링크
-        manu = (meta.get("manufacturer") or "").upper()
-        if "TEXAS" in manu or manu == "TI":
+        manu = (meta.get("manufacturer") or "")
+        if candidates_for(manu, meta.get("mpn_pattern") or ""):
             targets.append((mpath, meta))
-    print(f"TI targets: {len(targets)}")
+    print(f"targets: {len(targets)}")
 
     def resolve(t):
         mpath, meta = t
-        for url in ti_candidates(meta["mpn_pattern"]):
-            if ok(url):
+        for url, want in candidates_for(meta.get("manufacturer") or "", meta["mpn_pattern"]):
+            if ok(url, want):
                 return (mpath, meta, url)
         return None
 

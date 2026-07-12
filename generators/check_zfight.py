@@ -100,11 +100,25 @@ def main():
         except (TypeError, ValueError):
             v = None  # 문자열/결측(수입 메타) — 핀수 검사 스킵
         meta_pins[p["id"]] = v
+    # 증분(2026-07-12): 지난 PASS와 mtime+size 동일한 GLB는 스킵 (7k 전수=수시간 병목)
+    snap_path = os.path.join(ROOT, "docs", "zfight-verified.json")
+    try:
+        snap = json.load(open(snap_path, encoding="utf-8"))
+    except Exception:
+        snap = {}
+    newsnap = {}
+    checked = 0
     total = 0
     for p in index["parts"]:
-        glb = os.path.join(ROOT, p["path"], f"{p['id']}.glb")
+        glb = os.path.normpath(os.path.join(ROOT, p["path"], f"{p['id']}.glb"))
         if not os.path.exists(glb):
             continue
+        st = os.stat(glb)
+        sig = f"{st.st_mtime_ns}:{st.st_size}"
+        newsnap[glb] = sig
+        if snap.get(glb) == sig:
+            continue
+        checked += 1
         issues = check_part(glb)
         merged = check_merged_pins(glb, meta_pins.get(p["id"]))
         if merged:
@@ -114,7 +128,10 @@ def main():
             print(f"FAIL {p['id']}:")
             for i in issues:
                 print(f"   - {i}")
-    print(f"\n{'PASS' if total == 0 else 'FAIL'}: {len(index['parts'])} parts, {total} 3D issues (coplanar/merged-pins)")
+    if total == 0:
+        json.dump(newsnap, open(snap_path, "w", encoding="utf-8"))
+    print(f"\n{'PASS' if total == 0 else 'FAIL'}: {len(index['parts'])} parts "
+          f"(checked {checked}), {total} 3D issues (coplanar/merged-pins)")
     sys.exit(1 if total else 0)
 
 

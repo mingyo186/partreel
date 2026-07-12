@@ -21,7 +21,7 @@
     "footprint_svg": "https://partreel.com/library/connector/cern/cern_samtec_hlcd_20_06_00_trs_trs_1_alt/cern_samtec_hlcd_20_06_00_trs_trs_1_alt.footprint.svg",
     "symbol_svg": "https://partreel.com/library/connector/cern/cern_samtec_hlcd_20_06_00_trs_trs_1_alt/cern_samtec_hlcd_20_06_00_trs_trs_1_alt.symbol.svg"
   },
-  "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Connectors.kicad_sym",
+  "datasheet": "https://suddendocs.samtec.com/catalog_english/hlcd.pdf",
   "license": "CERN-OHL-P-2.0",
   "verified": true,
   "tier": "verified-2d",
@@ -41,7 +41,7 @@
   },
   "provenance": {
     "dimensions_source": "cern-kicad-libs@53054c17 (SAMTEC SMD.pretty/SAMTEC_HLCD-20-06.00-TRS-TRS-1.kicad_mod)",
-    "datasheet": "https://gitlab.com/ohwr/cern-kicad-libs/-/blob/master/SchLib/Connectors.kicad_sym",
+    "datasheet": "https://suddendocs.samtec.com/catalog_english/hlcd.pdf",
     "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_cern.py",
     "quality_gates": {
       "gates": [
@@ -73,7 +73,8 @@
       "modifications": [
         "extracted single symbol from library",
         "stripped dead 3D model reference (upstream ships no 3D)",
-        "auto-added courtyard (pads+outline+poly bbox +0.25mm)"
+        "auto-added courtyard (pads+outline+poly bbox +0.25mm)",
+        "datasheet URL resolved by manufacturer pattern + HTTP verification"
       ]
     }
   },
