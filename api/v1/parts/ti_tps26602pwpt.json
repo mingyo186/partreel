@@ -1,0 +1,83 @@
+{
+  "id": "ti_tps26602pwpt",
+  "name": "TPS26602PWPT",
+  "category": "ic",
+  "family": "CERN Analog & Interface",
+  "manufacturer": "TEXAS INSTRUMENTS",
+  "mpn_pattern": "TPS26602PWPT",
+  "description": "60V eFuse with fixed 38V internal overvoltage clamp (vs TPS26600's adjustable overvoltage cut-off); circuit-breaker with auto-retry. Same package and pinout as TPS26600PWP per the TI family datasheet; footprint/symbol reuse the gate-verified TPS26600PWP assets.",
+  "parameters": {
+    "contacts": "17",
+    "mounting": "SMD",
+    "case": "SSOP16"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/ic/cern/ti_tps26602pwpt/ti_tps26602pwpt.kicad_mod",
+    "symbol": "https://partreel.com/library/ic/cern/ti_tps26602pwpt/ti_tps26602pwpt.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/ic/cern/ti_tps26602pwpt/ti_tps26602pwpt.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/ic/cern/ti_tps26602pwpt/ti_tps26602pwpt.symbol.svg"
+  },
+  "datasheet": "https://www.ti.com/lit/ds/symlink/tps2660.pdf",
+  "license": "CERN-OHL-P-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/SOP65P640X120-17N-R266X246.kicad_mod)",
+  "keywords": [
+    "cern",
+    "60v",
+    "industrial",
+    "efuse",
+    "with",
+    "integrated",
+    "reverse"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/SOP65P640X120-17N-R266X246.kicad_mod)",
+    "datasheet": "https://www.ti.com/lit/ds/symlink/tps2660.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/clone_variants.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+      "source_commit": "53054c17",
+      "source_files": {
+        "db": "CERN.sqlite#Analog & Interface#TPS26600PWPT",
+        "symbol": "SchLib/Analog & Interface.kicad_sym#TPS26600PWP",
+        "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/SOP65P640X120-17N-R266X246.kicad_mod"
+      },
+      "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+      "import_date": "2026-07-05",
+      "modifications": [
+        "extracted single symbol from library",
+        "stripped dead 3D model reference (upstream ships no 3D)",
+        "datasheet URL resolved by manufacturer pattern + HTTP verification",
+        "registered as same-package variant of TPS26600PWP (TI family datasheet evidence; Opus research 2026-07-17)"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/ti_tps26602pwpt/",
+  "api": "https://partreel.com/api/v1/parts/ti_tps26602pwpt.json"
+}

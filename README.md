@@ -65,7 +65,7 @@ before manufacturing.
 ## Parts index
 
 <!-- PARTS:BEGIN -->
-Currently **18242 parts**, all machine-verified (structure, KLC drawing rules, render completeness, 3D coplanar/merged-pin checks, STEP kernel) with datasheet-cited dimensions.
+Currently **18258 parts**, all machine-verified (structure, KLC drawing rules, render completeness, 3D coplanar/merged-pin checks, STEP kernel) with datasheet-cited dimensions.
 
 ### connector (4330)
 
@@ -6247,7 +6247,7 @@ Currently **18242 parts**, all machine-verified (structure, KLC drawing rules, r
 | [nanoSMDC016F (CERN library)](https://partreel.com/p/cern_fusr1206_littelfuse_nanosmdc016f/) | `nanoSMDC016F` | LITTELFUSE | [cern_fusr1206_littelfuse_nanosmdc016f](library/fuse/cern/cern_fusr1206_littelfuse_nanosmdc016f) |
 | [nanoSMDC016F (CERN library)](https://partreel.com/p/cern_fusr1206_tyco_nanosmd016f/) | `nanoSMDC016F` | TYCO ELECTRONICS | [cern_fusr1206_tyco_nanosmd016f](library/fuse/cern/cern_fusr1206_tyco_nanosmd016f) |
 
-### ic (6635)
+### ic (6651)
 
 | Part | MPN | Manufacturer | Files |
 |---|---|---|---|
@@ -8967,8 +8967,12 @@ Currently **18242 parts**, all machine-verified (structure, KLC drawing rules, r
 | [LM5116MH (CERN library)](https://partreel.com/p/cern_lm5116mh_nopb/) | `LM5116MH` | TEXAS INSTRUMENTS | [cern_lm5116mh_nopb](library/ic/cern/cern_lm5116mh_nopb) |
 | [LM5163DDA (CERN library)](https://partreel.com/p/cern_lm5163dda/) | `LM5163DDA` | TEXAS INSTRUMENTS | [cern_lm5163dda](library/ic/cern/cern_lm5163dda) |
 | [LM5163DDA (CERN library)](https://partreel.com/p/cern_lm5163dda_alt/) | `LM5163DDA` | TEXAS INSTRUMENTS | [cern_lm5163dda_alt](library/ic/cern/cern_lm5163dda_alt) |
+| [LM5163DDAR](https://partreel.com/p/ti_lm5163ddar/) | `LM5163DDAR` | TEXAS INSTRUMENTS | [ti_lm5163ddar](library/ic/cern/ti_lm5163ddar) |
+| [LM5163HQDDARQ1](https://partreel.com/p/ti_lm5163hqddarq1/) | `LM5163HQDDARQ1` | TEXAS INSTRUMENTS | [ti_lm5163hqddarq1](library/ic/cern/ti_lm5163hqddarq1) |
+| [LM5163QDDARQ1](https://partreel.com/p/ti_lm5163qddarq1/) | `LM5163QDDARQ1` | TEXAS INSTRUMENTS | [ti_lm5163qddarq1](library/ic/cern/ti_lm5163qddarq1) |
 | [LM5164DDA (CERN library)](https://partreel.com/p/cern_lm5164dda/) | `LM5164DDA` | TEXAS INSTRUMENTS | [cern_lm5164dda](library/ic/cern/cern_lm5164dda) |
 | [LM5164DDA (CERN library)](https://partreel.com/p/cern_lm5164dda_alt/) | `LM5164DDA` | TEXAS INSTRUMENTS | [cern_lm5164dda_alt](library/ic/cern/cern_lm5164dda_alt) |
+| [LM5164QDDARQ1](https://partreel.com/p/ti_lm5164qddarq1/) | `LM5164QDDARQ1` | TEXAS INSTRUMENTS | [ti_lm5164qddarq1](library/ic/cern/ti_lm5164qddarq1) |
 | [LM6132AIM (CERN library)](https://partreel.com/p/cern_lm6132aim_nopb/) | `LM6132AIM` | TEXAS INSTRUMENTS | [cern_lm6132aim_nopb](library/ic/cern/cern_lm6132aim_nopb) |
 | [LM6132AIM (CERN library)](https://partreel.com/p/cern_lm6132aim_nopb_alt/) | `LM6132AIM` | TEXAS INSTRUMENTS | [cern_lm6132aim_nopb_alt](library/ic/cern/cern_lm6132aim_nopb_alt) |
 | [LM6171AIM (CERN library)](https://partreel.com/p/cern_lm6171aim_nopb/) | `LM6171AIM` | NATIONAL SEMICONDUCTOR | [cern_lm6171aim_nopb](library/ic/cern/cern_lm6171aim_nopb) |
@@ -12367,9 +12371,21 @@ Currently **18242 parts**, all machine-verified (structure, KLC drawing rules, r
 | [TPS2420RSA (CERN library)](https://partreel.com/p/cern_tps2420rsar/) | `TPS2420RSA` | TEXAS INSTRUMENTS | [cern_tps2420rsar](library/ic/cern/cern_tps2420rsar) |
 | [TPS2459RHB (CERN library)](https://partreel.com/p/cern_tps2459rhbt/) | `TPS2459RHB` | TEXAS INSTRUMENTS | [cern_tps2459rhbt](library/ic/cern/cern_tps2459rhbt) |
 | [TPS2500DRC (CERN library)](https://partreel.com/p/cern_tps2500drc/) | `TPS2500DRC` | TEXAS INSTRUMENTS | [cern_tps2500drc](library/ic/cern/cern_tps2500drc) |
+| [TPS259520DSGR](https://partreel.com/p/ti_tps259520dsgr/) | `TPS259520DSGR` | TEXAS INSTRUMENTS | [ti_tps259520dsgr](library/ic/cern/ti_tps259520dsgr) |
+| [TPS259521DSGR](https://partreel.com/p/ti_tps259521dsgr/) | `TPS259521DSGR` | TEXAS INSTRUMENTS | [ti_tps259521dsgr](library/ic/cern/ti_tps259521dsgr) |
+| [TPS259525DSGR](https://partreel.com/p/ti_tps259525dsgr/) | `TPS259525DSGR` | TEXAS INSTRUMENTS | [ti_tps259525dsgr](library/ic/cern/ti_tps259525dsgr) |
+| [TPS259530DSGR](https://partreel.com/p/ti_tps259530dsgr/) | `TPS259530DSGR` | TEXAS INSTRUMENTS | [ti_tps259530dsgr](library/ic/cern/ti_tps259530dsgr) |
+| [TPS259531DSGR](https://partreel.com/p/ti_tps259531dsgr/) | `TPS259531DSGR` | TEXAS INSTRUMENTS | [ti_tps259531dsgr](library/ic/cern/ti_tps259531dsgr) |
+| [TPS259533DSGR](https://partreel.com/p/ti_tps259533dsgr/) | `TPS259533DSGR` | TEXAS INSTRUMENTS | [ti_tps259533dsgr](library/ic/cern/ti_tps259533dsgr) |
+| [TPS259535DSGR](https://partreel.com/p/ti_tps259535dsgr/) | `TPS259535DSGR` | TEXAS INSTRUMENTS | [ti_tps259535dsgr](library/ic/cern/ti_tps259535dsgr) |
+| [TPS259540DSGR](https://partreel.com/p/ti_tps259540dsgr/) | `TPS259540DSGR` | TEXAS INSTRUMENTS | [ti_tps259540dsgr](library/ic/cern/ti_tps259540dsgr) |
+| [TPS259541DSGR](https://partreel.com/p/ti_tps259541dsgr/) | `TPS259541DSGR` | TEXAS INSTRUMENTS | [ti_tps259541dsgr](library/ic/cern/ti_tps259541dsgr) |
+| [TPS259570DSGR](https://partreel.com/p/ti_tps259570dsgr/) | `TPS259570DSGR` | TEXAS INSTRUMENTS | [ti_tps259570dsgr](library/ic/cern/ti_tps259570dsgr) |
+| [TPS259571DSGR](https://partreel.com/p/ti_tps259571dsgr/) | `TPS259571DSGR` | TEXAS INSTRUMENTS | [ti_tps259571dsgr](library/ic/cern/ti_tps259571dsgr) |
 | [TPS259573DSG (CERN library)](https://partreel.com/p/cern_tps259573dsgr/) | `TPS259573DSG` | TEXAS INSTRUMENTS | [cern_tps259573dsgr](library/ic/cern/cern_tps259573dsgr) |
 | [TPS259813ARPW (CERN library)](https://partreel.com/p/cern_tps259813arpw/) | `TPS259813ARPW` | TEXAS INSTRUMENTS | [cern_tps259813arpw](library/ic/cern/cern_tps259813arpw) |
 | [TPS26600PWP (CERN library)](https://partreel.com/p/cern_tps26600pwpt/) | `TPS26600PWP` | TEXAS INSTRUMENTS | [cern_tps26600pwpt](library/ic/cern/cern_tps26600pwpt) |
+| [TPS26602PWPT](https://partreel.com/p/ti_tps26602pwpt/) | `TPS26602PWPT` | TEXAS INSTRUMENTS | [ti_tps26602pwpt](library/ic/cern/ti_tps26602pwpt) |
 | [TPS26624DRC (CERN library)](https://partreel.com/p/cern_tps26624drc/) | `TPS26624DRC` | TEXAS INSTRUMENTS | [cern_tps26624drc](library/ic/cern/cern_tps26624drc) |
 | [TPS26631PWP (CERN library)](https://partreel.com/p/cern_tps26631pwp/) | `TPS26631PWP` | TEXAS INSTRUMENTS | [cern_tps26631pwp](library/ic/cern/cern_tps26631pwp) |
 | [TPS3103E12DBV (CERN library)](https://partreel.com/p/cern_tps3103e12dbvt/) | `TPS3103E12DBV` | TEXAS INSTRUMENTS | [cern_tps3103e12dbvt](library/ic/cern/cern_tps3103e12dbvt) |

@@ -1,0 +1,82 @@
+{
+  "id": "ti_lm5163ddar",
+  "name": "LM5163DDAR",
+  "category": "ic",
+  "family": "CERN Regulators",
+  "manufacturer": "TEXAS INSTRUMENTS",
+  "mpn_pattern": "LM5163DDAR",
+  "description": "100V input COT buck converter, 0.5A output (vs 1A on LM5164), same ultra-low IQ. Same package and pinout as LM5164DDA per the TI family datasheet; footprint/symbol reuse the gate-verified LM5164DDA assets.",
+  "parameters": {
+    "contacts": "9",
+    "mounting": "SMD",
+    "case": "SOIC8"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/ic/cern/ti_lm5163ddar/ti_lm5163ddar.kicad_mod",
+    "symbol": "https://partreel.com/library/ic/cern/ti_lm5163ddar/ti_lm5163ddar.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/ic/cern/ti_lm5163ddar/ti_lm5163ddar.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/ic/cern/ti_lm5163ddar/ti_lm5163ddar.symbol.svg"
+  },
+  "datasheet": "https://www.ti.com/lit/ds/symlink/lm5163.pdf",
+  "license": "CERN-OHL-P-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/SOIC127P600X170-9N-R260X310.kicad_mod)",
+  "keywords": [
+    "cern",
+    "100",
+    "input",
+    "synchronous",
+    "buck",
+    "converter",
+    "with"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/SOIC127P600X170-9N-R260X310.kicad_mod)",
+    "datasheet": "https://www.ti.com/lit/ds/symlink/lm5163.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/clone_variants.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+      "source_commit": "53054c17",
+      "source_files": {
+        "db": "CERN.sqlite#Regulators#LM5164DDA",
+        "symbol": "SchLib/Regulators.kicad_sym#LM5164",
+        "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/SOIC127P600X170-9N-R260X310.kicad_mod"
+      },
+      "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+      "import_date": "2026-07-05",
+      "modifications": [
+        "extracted single symbol from library",
+        "stripped dead 3D model reference (upstream ships no 3D)",
+        "registered as same-package variant of LM5164DDA (TI family datasheet evidence; Opus research 2026-07-17)"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/ti_lm5163ddar/",
+  "api": "https://partreel.com/api/v1/parts/ti_lm5163ddar.json"
+}

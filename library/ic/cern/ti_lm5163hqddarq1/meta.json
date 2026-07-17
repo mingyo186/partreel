@@ -1,0 +1,56 @@
+{
+  "id": "ti_lm5163hqddarq1",
+  "name": "LM5163HQDDARQ1",
+  "category": "ic",
+  "family": "CERN Regulators",
+  "manufacturer": "TEXAS INSTRUMENTS",
+  "mpn_pattern": "LM5163HQDDARQ1",
+  "description": "100V input COT buck converter, 0.5A output, AEC-Q100 automotive extended high-temperature (165C junction) grade. Same package and pinout as LM5164DDA per the TI family datasheet; footprint/symbol reuse the gate-verified LM5164DDA assets.",
+  "parameters": {
+    "contacts": "9",
+    "mounting": "SMD",
+    "case": "SOIC8"
+  },
+  "files": {
+    "footprint": "ti_lm5163hqddarq1.kicad_mod",
+    "symbol": "ti_lm5163hqddarq1.kicad_sym",
+    "footprint_svg": "ti_lm5163hqddarq1.footprint.svg",
+    "symbol_svg": "ti_lm5163hqddarq1.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://www.ti.com/lit/ds/symlink/lm5163h-q1.pdf",
+  "dimensions_source": "cern-kicad-libs@53054c17 (ICs And Semiconductors SMD.pretty/SOIC127P600X170-9N-R260X310.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "tier": "verified-2d",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/clone_variants.py",
+  "keywords": [
+    "cern",
+    "100",
+    "input",
+    "synchronous",
+    "buck",
+    "converter",
+    "with"
+  ],
+  "import": {
+    "source_repo": "https://gitlab.com/ohwr/cern-kicad-libs",
+    "source_commit": "53054c17",
+    "source_files": {
+      "db": "CERN.sqlite#Regulators#LM5164DDA",
+      "symbol": "SchLib/Regulators.kicad_sym#LM5164",
+      "footprint": "PcbLib/ICs And Semiconductors SMD.pretty/SOIC127P600X170-9N-R260X310.kicad_mod"
+    },
+    "attribution": "CERN (kicad-dev@cern.ch), CERN-OHL-P-2.0",
+    "import_date": "2026-07-05",
+    "modifications": [
+      "extracted single symbol from library",
+      "stripped dead 3D model reference (upstream ships no 3D)",
+      "registered as same-package variant of LM5164DDA (TI family datasheet evidence; Opus research 2026-07-17)"
+    ]
+  }
+}
