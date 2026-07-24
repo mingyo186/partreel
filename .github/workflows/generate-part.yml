@@ -36,6 +36,16 @@ jobs:
           echo "pins=$PINS" >> "$GITHUB_OUTPUT"
           echo "variant=$VARIANT" >> "$GITHUB_OUTPUT"
 
+      # R2 크리덴셜 없으면 새 부품 3D를 창고(assets.partreel.com)에 못 올림 → 조기 명시 실패 (§19 사건 2026-07-24)
+      - name: Require R2 credential
+        env:
+          T: ${{ secrets.R2_WRANGLER_TOKEN }}
+        run: |
+          if [ -z "$T" ]; then
+            echo "::error::R2_WRANGLER_TOKEN secret missing - on-demand 3D cannot be published (see REQUIREMENTS §19)"
+            exit 1
+          fi
+
       # ubuntu 24.04 apt엔 freecad가 없음 → conda-forge로 설치 (REQUIREMENTS §19)
       - name: Install FreeCAD + deps (conda-forge)
         run: |
@@ -49,6 +59,9 @@ jobs:
           PINS: ${{ steps.req.outputs.pins }}
           VARIANT: ${{ steps.req.outputs.variant }}
           FREECADCMD: ./fcenv/bin/freecadcmd
+          # R2 업로드는 generate_one 내부, qa(check_r2) 이전에 수행 (§19/§22)
+          CLOUDFLARE_API_TOKEN: ${{ secrets.R2_WRANGLER_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: 59c582799b858f66a23af4561c26c696
         run: ./fcenv/bin/python generators/generate_one.py
 
       - name: Commit to main
@@ -65,7 +78,10 @@ jobs:
         run: |
           mkdir -p _site
           cp index.html index.json _site/
-          cp -r assets library p about guide agents api _site/
+          cp -r assets library p about guide agents api browse _site/
+          # 대용량 3D(step/glb)는 R2가 서빙 (§22) — deploy.yml과 동일하게 제거
+          find _site/library -name "*.step" -delete
+          find _site/library -name "*.glb" -delete
           cp sitemap.xml robots.txt favicon.svg llms.txt _site/
           echo "partreel.com" > _site/CNAME
 

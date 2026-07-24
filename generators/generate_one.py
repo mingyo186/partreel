@@ -15,6 +15,24 @@ sys.path.insert(0, HERE)
 from gen_connectors import get_family, generate  # noqa: E402
 
 
+def upload_part_assets(fid):
+    """이 부품의 step/glb만 R2에 업로드 (오브젝트 키 = 레포 경로, §22).
+    로컬=wrangler OAuth(mcp/), CI=env CLOUDFLARE_API_TOKEN."""
+    import json
+    root = os.path.normpath(os.path.join(HERE, ".."))
+    idx = json.load(open(os.path.join(root, "index.json"), encoding="utf-8"))
+    path = next(p["path"] for p in idx["parts"] if p["id"] == fid)
+    npx = "npx.cmd" if sys.platform == "win32" else "npx"
+    for ext in (".step", ".glb"):
+        fpath = os.path.join(root, path, fid + ext)
+        if not os.path.exists(fpath):
+            continue
+        key = f"{path}/{fid}{ext}".replace("\\", "/")
+        run([npx, "--yes", "wrangler", "r2", "object", "put",
+             f"partreel-assets/{key}", "--file", fpath, "--remote"],
+            cwd=os.path.join(root, "mcp"))
+
+
 def run(cmd, **kw):
     print("+", " ".join(cmd))
     r = subprocess.run(cmd, **kw)
@@ -68,6 +86,10 @@ def main():
         run([freecadcmd, os.path.join(HERE, "gen_connectors_3d.py")], env=env)
     # 4) GLB (STL 있는 부품만 변환하므로 안전)
     run([py, os.path.join(HERE, "stl_to_glb.py")])
+    # 4.5) 새 step/glb 해시 기록 + R2 업로드 (§22). 업로드가 qa(check_r2)보다 먼저여야 함
+    #      — 게이트가 R2 404를 보면 실패하는 닭-달걀 (§19 사건 2026-07-24).
+    run([py, os.path.join(HERE, "sync_r2.py"), "--hash"])
+    upload_part_assets(fid)
     # 5) SVG / 6) 사이트 / 7) API
     run([py, os.path.join(HERE, "render_svg.py")])
     run([py, os.path.join(HERE, "build_site.py")])
