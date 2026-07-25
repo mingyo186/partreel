@@ -173,7 +173,7 @@ Code MIT. Component assets CC-BY-4.0 (attribution: "PartReel").
 <meta name="description" content="PartReel public API: KiCad footprints, symbols and 3D models as JSON. No auth, no rate limit, AI-agent friendly.">
 <link rel="canonical" href="{DOMAIN}/api/">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="../assets/style.css?v=3">
+<link rel="stylesheet" href="../assets/style.css?v=4">
 </head><body>
 <header class="topbar">
   <a class="brand" href="../" style="text-decoration:none;color:inherit"><span class="logo">◈</span><span class="brand-name">PartReel</span></a>

@@ -167,8 +167,8 @@ async function selectPart(p) {
 
 
 // 심볼/풋프린트 확대: 인라인 SVG는 viewBox 조작(벡터 줌 — 무한 선명), img 폴백은 transform
-// 입력: 휠(데스크톱, Firefox 줄단위 정규화) + 핀치(모바일 — 2026-07-24 레딧 제보로 추가)
-// touch-action: 미확대=pan-y(페이지 스크롤 통과), 확대=none(팬 제스처 전용)
+// 입력: 핀치(모바일 터치 + 데스크톱 터치패드 ctrl+휠) / 확대 중 휠 / 더블클릭 / 줌 버튼.
+// 미확대 상태의 일반 스크롤은 페이지에 양보 (2026-07-24 터치패드 제보 — 뷰어가 스크롤을 삼키면 "고장"으로 느껴짐)
 function makeZoomable(container, getTarget) {
   let img = { s: 1, tx: 0, ty: 0 };
   let pan = null;
@@ -183,6 +183,10 @@ function makeZoomable(container, getTarget) {
     return { vb, r, s,
       ox: r.left + (r.width - vb[2] * s) / 2,
       oy: r.top + (r.height - vb[3] * s) / 2 };
+  };
+  const isZoomed = (t) => {
+    const svg = svgOf(t);
+    return svg ? Boolean(svg._vb0 && svg.getAttribute('viewBox') !== svg._vb0.join(' ')) : img.s > 1;
   };
   const setCursor = (t, zoomed) => {
     t.style.cursor = zoomed ? 'grab' : 'zoom-in';
@@ -222,9 +226,13 @@ function makeZoomable(container, getTarget) {
   };
   container.addEventListener('wheel', (e) => {
     const t = getTarget(); if (!t) return;
+    const pinch = e.ctrlKey || e.metaKey;  // 터치패드 핀치는 ctrl+휠로 도착
+    if (!pinch && !isZoomed(t)) return;    // 미확대 + 일반 스크롤 = 페이지 스크롤에 양보
+    if (!pinch && Math.abs(e.deltaX) > Math.abs(e.deltaY)) return;
     e.preventDefault();
     const dy = e.deltaMode === 1 ? e.deltaY * 33 : (e.deltaMode === 2 ? e.deltaY * 300 : e.deltaY);
-    zoomAt(t, e.clientX, e.clientY, Math.exp(-dy * 0.0015));
+    const k = Math.min(2, Math.max(0.5, Math.exp(-dy * (pinch ? 0.01 : 0.0015))));
+    zoomAt(t, e.clientX, e.clientY, k);
   }, { passive: false });
   container.addEventListener('pointerdown', (e) => {
     const t = getTarget(); if (!t) return;
@@ -270,8 +278,31 @@ function makeZoomable(container, getTarget) {
   const drop = (e) => { pts.delete(e.pointerId); pinchD = 0; pan = null; };
   container.addEventListener('pointerup', drop);
   container.addEventListener('pointercancel', drop);
-  container.addEventListener('dblclick', () => { if (getTarget()) reset(); });
+  container.addEventListener('dblclick', (e) => {
+    const t = getTarget(); if (!t) return;
+    if (isZoomed(t)) reset(); else zoomAt(t, e.clientX, e.clientY, 2.5);
+  });
+  // 줌 버튼 (+ / − / 원위치) — 휠 없는 환경·발견성 (마우스는 더블클릭/버튼, 터치패드는 핀치)
+  const ui = document.createElement('div');
+  ui.className = 'zoom-ui';
+  const centerZoom = (k) => {
+    const t = getTarget(); if (!t) return;
+    const r = container.getBoundingClientRect();
+    zoomAt(t, r.left + r.width / 2, r.top + r.height / 2, k);
+  };
+  for (const [label, title, fn] of [
+      ['+', 'Zoom in', () => centerZoom(1.6)],
+      ['−', 'Zoom out', () => centerZoom(1 / 1.6)],
+      ['⟲', 'Reset view', reset]]) {
+    const b = document.createElement('button');
+    b.type = 'button'; b.textContent = label; b.title = title;
+    b.addEventListener('click', fn);
+    ui.appendChild(b);
+  }
+  container.appendChild(ui);
   container.style.touchAction = 'pan-y';
+  reset.setUiVisible = (v) => { ui.style.display = v ? '' : 'none'; };
+  reset.setUiVisible(false);  // 초기엔 숨김 — setView가 2D 탭에서 켬
   return reset;
 }
 
@@ -282,7 +313,7 @@ function setView(v) {
   const sym = document.getElementById('view-sym');
   const fp = document.getElementById('view-fp');
   const msg = document.getElementById('viewer-msg');
-  if (zoomReset) zoomReset();
+  if (zoomReset) { zoomReset(); if (zoomReset.setUiVisible) zoomReset.setUiVisible(v !== '3d'); }
   if (sym) sym.hidden = v !== 'sym';
   if (fp) fp.hidden = v !== 'fp';
   if (view && view.renderer) view.renderer.domElement.style.display = v === '3d' ? 'block' : 'none';
