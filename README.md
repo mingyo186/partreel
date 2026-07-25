@@ -62,6 +62,12 @@ mcp/                     Cloudflare Worker MCP server
 Dimensions come from manufacturer datasheets and are provided as-is; verify
 before manufacturing.
 
+## Credits
+
+Bug reports are contributions. Reporters whose feedback led to a fix are
+recorded in [CREDITS.md](CREDITS.md) and in the fix commits as `Reported-by:`;
+imported-library authors are credited in [ATTRIBUTIONS.md](ATTRIBUTIONS.md).
+
 ## Parts index
 
 <!-- PARTS:BEGIN -->
