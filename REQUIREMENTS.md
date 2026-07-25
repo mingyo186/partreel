@@ -158,6 +158,8 @@
 
 ✅ **HTTPS 강제 완료** · ✅ **Google Search Console 등록+sitemap 제출+색인 요청 완료**(사용자) · ✅ **2순위 다듬기 완료(2026-06-23)**: 모바일 반응형 / About(/about/) / KiCad 가이드(/guide/kicad/) / favicon / 전 페이지 푸터. build_site.py에 공통 render() 도입. sitemap 18 URL. 라이브 검증 통과.
 
+⚠️ **모바일 줌 부재 사건 (2026-07-24, r/KiCad 런칭 댓글 제보 "zooming was totally broken")**: 뷰어가 `touch-action: none`으로 브라우저 기본 핀치·스크롤을 막아놓고 터치 핀치 줌은 미구현 → 모바일에서 확대 불가 + 뷰어 위 페이지 스크롤 먹통. 데스크톱(휠)은 정상이라 우리 검증에서 안 잡힘 — **교훈: UI 검증은 모바일 뷰포트+터치 입력 포함**. 수정: makeZoomable(app.js v13/part.js v12 공통)에 ①2포인터 핀치 줌(zoomAt 공통 헬퍼, svg viewBox·img transform 양 경로) ②touch-action 동적 전환(미확대=pan-y로 페이지 스크롤 통과, 확대=none으로 팬 전용) ③Firefox 휠 deltaMode(줄/페이지 단위) 정규화. style.css v3/v6.
+
 ✅ **뷰 셀렉터 완료(2026-06-23)**: 뷰어에 **[3D | 심볼 | 풋프린트] 탭**. 심볼·풋프린트는 `generators/render_svg.py`가 .kicad_sym/.kicad_mod 파싱→SVG 미리보기 생성(부품당 .symbol.svg/.footprint.svg, meta.files에 등록). 홈 SPA(app.js)+부품 페이지(part.js) 양쪽 적용. **교차검증**: 브라우저 렌더로 SVG 품질 시각 확인 + 탭 전환 eval 검증(양쪽 페이지). 에셋에 `?v=` 캐시버스팅 도입(앞으로 JS/CSS 변경 시 v 올릴 것).
 
 **▶ NEXT 후보**:
