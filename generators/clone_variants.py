@@ -63,7 +63,7 @@ def main():
         src = v["src_id"]
         sd = os.path.join(ROOT, paths[src])
         smeta = json.load(open(os.path.join(sd, "meta.json"), encoding="utf-8"))
-        nid = "ti_" + slug(mpn)
+        nid = v.get("prefix", "ti_") + slug(mpn)
         nd = os.path.join(os.path.dirname(sd), nid)
         os.makedirs(nd, exist_ok=True)
         # 풋프린트: 그대로 (검증된 랜드패턴 재사용)
@@ -78,21 +78,34 @@ def main():
         meta["id"] = nid
         meta["name"] = mpn
         meta["mpn_pattern"] = mpn
+        note = v.get("vendor_note", "the TI family datasheet")
         meta["description"] = (f"{v['diff']} Same package and pinout as {smeta['mpn_pattern']} "
-                               f"per the TI family datasheet; footprint/symbol reuse the "
+                               f"per {note}; footprint/symbol reuse the "
                                f"gate-verified {smeta['mpn_pattern']} assets"
                                + (" (pins renamed per variant)." if v.get("pin_renames") else "."))
         meta["datasheet"] = v["datasheet"]
-        meta["files"] = {k: fn.replace(src, nid) for k, fn in smeta["files"].items()
-                         if not fn.endswith((".step", ".glb"))}
-        meta["formats"] = [f for f in smeta["formats"] if f not in ("step", "glb")]
-        meta.pop("asset_sha256", None)
-        meta["tier"] = "verified-2d"
+        carry3d = bool(v.get("carry_3d")) and smeta.get("asset_sha256")
+        if carry3d:
+            # 풋프린트 동일 → 3D도 동일: step/glb 복사 + 해시 승계(내용 동일=해시 동일)
+            meta["files"] = {k: fn.replace(src, nid) for k, fn in smeta["files"].items()}
+            meta["formats"] = list(smeta["formats"])
+            meta["asset_sha256"] = {fn.replace(src, nid): h
+                                    for fn, h in smeta["asset_sha256"].items()}
+            for fn in smeta["asset_sha256"]:
+                shutil.copy2(os.path.join(sd, fn),
+                             os.path.join(nd, fn.replace(src, nid)))
+            print("  carry_3d: R2 업로드 필요 →", nid)
+        else:
+            meta["files"] = {k: fn.replace(src, nid) for k, fn in smeta["files"].items()
+                             if not fn.endswith((".step", ".glb"))}
+            meta["formats"] = [f for f in smeta["formats"] if f not in ("step", "glb")]
+            meta.pop("asset_sha256", None)
+            meta["tier"] = "verified-2d"
         meta["generated_by"] = "generators/clone_variants.py"
         imp = dict(smeta.get("import") or {})
         imp["modifications"] = list(imp.get("modifications") or []) + [
             f"registered as same-package variant of {smeta['mpn_pattern']} "
-            f"(TI family datasheet evidence; Opus research 2026-07-17)"]
+            f"({note} evidence; {v.get('evidence_date', 'Opus research 2026-07-17')})"]
         meta["import"] = imp
         json.dump(meta, open(os.path.join(nd, "meta.json"), "w", encoding="utf-8"),
                   indent=2, ensure_ascii=False)
