@@ -9,6 +9,12 @@ PartReel accepts part contributions via GitHub PR. **CI quality gates auto-revie
 > The registry is machine-reviewed end to end — your agent's PR is judged by the
 > same CI gates as the maintainer's own commits. This is the intended way the
 > catalog grows: **your AI builds, our gates verify, everyone reuses.**
+>
+> **You don't wait for the merge to use your part** — the files are on your
+> machine the moment your AI creates them; drop them into your KiCad project
+> immediately. The PR is the give-back step, and it doubles as **free QA**:
+> our gates check your part's structure, drawing rules and dimension sourcing
+> before your board goes to fab. A failed gate is a defect caught early.
 
 ## What to contribute
 
