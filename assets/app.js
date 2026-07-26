@@ -24,8 +24,14 @@ async function init() {
     return;
   }
   parts = data.parts || [];
-  // 검색 문자열 사전 계산 (키입력마다 13k번 join/toLowerCase 방지)
-  for (const p of parts) p._s = (p.name + ' ' + p.family + ' ' + (p.keywords || []).join(' ')).toLowerCase();
+  // 검색 문자열 사전 계산 (키입력마다 18k번 join/toLowerCase 방지)
+  // 정규화: 구분자(-_/,())를 공백으로 — "5 pin JST"가 "JST XH 5-pin"에 매칭되도록
+  // (2026-07-26 레딧 제보: 어순·표기 무관 검색)
+  const norm = (s) => s.toLowerCase().replace(/[-_/,()]+/g, ' ').replace(/\s+/g, ' ');
+  for (const p of parts) {
+    p._s = norm(p.name + ' ' + p.family + ' ' + (p.keywords || []).join(' ') + ' ' + (p.manufacturer || ''));
+    p._c = p._s.replace(/ /g, '');  // 압축본: "5pin"처럼 붙여 쓴 질의 대응
+  }
   renderList(parts);
   setupViewer();
   setupTabs();
@@ -36,7 +42,10 @@ async function init() {
     clearTimeout(debounce);
     debounce = setTimeout(() => {
       const q = e.target.value.toLowerCase().trim();
-      renderList(!q ? parts : parts.filter((p) => p._s.includes(q)));
+      // 토큰 AND 매칭 (어순 무관): 각 토큰이 정규화 문자열 또는 압축본에 존재하면 통과
+      const toks = q.replace(/[-_/,()]+/g, ' ').split(/\s+/).filter(Boolean);
+      renderList(!toks.length ? parts
+        : parts.filter((p) => toks.every((t) => p._s.includes(t) || p._c.includes(t))));
     }, 120);
   });
 }
