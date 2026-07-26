@@ -90,6 +90,8 @@ def check_merged_pins(glb_path, expected):
 
 def main():
     index = json.load(open(os.path.join(ROOT, "index.json"), encoding="utf-8"))
+    from scope import scoped_parts
+    index["parts"] = scoped_parts(index["parts"])  # PART_SCOPE 증분 (§19-A)
     meta_pins = {}
     for p in index["parts"]:
         m = json.load(open(os.path.join(ROOT, p["path"], "meta.json"), encoding="utf-8"))

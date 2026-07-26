@@ -69,6 +69,8 @@ def _segments(svg):
 def main():
     files = glob.glob(os.path.join(ROOT, "library", "**", "*.symbol.svg"), recursive=True)
     files += glob.glob(os.path.join(ROOT, "library", "**", "*.footprint.svg"), recursive=True)
+    from scope import path_in_scope
+    files = [f for f in files if path_in_scope(f)]  # PART_SCOPE 증분 (§19-A)
     total = 0
     for f in sorted(files):
         svg = open(f, encoding="utf-8").read()

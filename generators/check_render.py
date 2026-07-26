@@ -19,6 +19,8 @@ ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), ".."))
 
 def main():
     index = json.load(open(os.path.join(ROOT, "index.json"), encoding="utf-8"))
+    from scope import scoped_parts
+    index["parts"] = scoped_parts(index["parts"])  # PART_SCOPE 증분 (§19-A)
     total = 0
     for p in index["parts"]:
         d = os.path.join(ROOT, p["path"])

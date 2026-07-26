@@ -1,7 +1,9 @@
 name: PR quality gates (contributions)
 
-# 외부 기여(봇/사람 PR)도 동일한 품질 게이트로 자동 심사 (REQUIREMENTS §17/§14).
+# 외부 기여(봇/사람 PR)도 동일한 품질 게이트로 자동 심사 (REQUIREMENTS §17/§14/§19-A).
 # 게이트 green = 등록 자격. 머지는 메인테이너(또는 추후 자동머지).
+# 증분 심사(§19-A): 부품만 바뀐 PR은 그 부품만 검사 (PART_SCOPE) — PR당 분 단위.
+# 생성기(generators/**)가 바뀐 PR은 전량 검사 (렌더러 변경은 전 부품에 영향).
 on:
   pull_request:
 
@@ -14,8 +16,27 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # 기여자(봇)는 원천 5파일만 제출 — 파생물은 여기서 빌드 후 검사 (§20)
+      - name: Compute incremental scope
+        id: scope
+        run: |
+          git fetch --depth=1 origin ${{ github.base_ref }}
+          BASE="origin/${{ github.base_ref }}"
+          GEN=$(git diff --name-only "$BASE"...HEAD -- 'generators/**' 'assets/**' | wc -l)
+          IDS=$(git diff --name-only "$BASE"...HEAD -- 'library/**' | xargs -r -n1 dirname | xargs -r -n1 basename | sort -u | paste -sd, -)
+          STEPS=$(git diff --name-only "$BASE"...HEAD -- 'library/**/*.step' | wc -l)
+          MODS=$(git diff --name-only "$BASE"...HEAD -- 'library/**/*.kicad_mod' | tr '\n' ' ')
+          if [ "$GEN" -gt 0 ] || [ -z "$IDS" ]; then
+            echo "scope=" >> "$GITHUB_OUTPUT"; echo "full run (generators changed or no part changes)"
+          else
+            echo "scope=$IDS" >> "$GITHUB_OUTPUT"; echo "incremental: $IDS"
+          fi
+          echo "steps=$STEPS" >> "$GITHUB_OUTPUT"
+          echo "mods=$MODS" >> "$GITHUB_OUTPUT"
+
+      # 기여자(봇)는 원천 3-5파일만 제출 — 파생물은 여기서 빌드 후 검사 (§20)
       - name: Build derived artifacts
+        env:
+          PART_SCOPE: ${{ steps.scope.outputs.scope }}
         run: |
           python3 generators/build_index.py
           python3 generators/render_svg.py
@@ -23,6 +44,8 @@ jobs:
           python3 generators/build_api.py
 
       - name: Structure / overlap / render / meta / zfight gates
+        env:
+          PART_SCOPE: ${{ steps.scope.outputs.scope }}
         run: |
           pip -q install trimesh numpy scipy
           python3 generators/validate_kicad.py
@@ -33,16 +56,15 @@ jobs:
       # 기여 풋프린트 표절 검사 — 공식 KiCad 라이브러리(CC-BY-SA) 카피는 라이선스상 수용 불가.
       # 이름 무관 패드-지오메트리 대조 (docs/official-fp-signatures.json = 공식 15,447개 서명)
       - name: Provenance gate (no official-library copies)
-        run: |
-          git fetch --depth=1 origin ${{ github.base_ref }}
-          CHANGED=$(git diff --name-only origin/${{ github.base_ref }}...HEAD -- 'library/**/*.kicad_mod' || true)
-          if [ -z "$CHANGED" ]; then echo "no footprint changes"; exit 0; fi
-          python3 generators/check_provenance.py --gate --file $CHANGED
+        if: steps.scope.outputs.mods != ''
+        run: python3 generators/check_provenance.py --gate --file ${{ steps.scope.outputs.mods }}
 
       - name: Install FreeCAD (conda-forge) for STEP kernel check
+        if: steps.scope.outputs.steps != '0'
         run: |
           curl -Ls https://micro.mamba.pm/api/micromamba/linux-64/latest | tar -xj bin/micromamba
           ./bin/micromamba create -y -q -p ./fcenv -c conda-forge freecad python=3.11 > /dev/null
 
       - name: STEP kernel gate (isValid / volume)
+        if: steps.scope.outputs.steps != '0'
         run: ./fcenv/bin/freecadcmd generators/validate_step.py
