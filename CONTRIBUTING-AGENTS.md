@@ -15,6 +15,9 @@ PartReel accepts part contributions via GitHub PR. **CI quality gates auto-revie
 > immediately. The PR is the give-back step, and it doubles as **free QA**:
 > our gates check your part's structure, drawing rules and dimension sourcing
 > before your board goes to fab. A failed gate is a defect caught early.
+> And a registered part keeps paying you back: if anyone later finds and fixes
+> a defect in it, the registry copy gets the fix — the copy sitting alone on
+> your disk never will.
 
 ## What to contribute
 
