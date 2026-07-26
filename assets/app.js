@@ -44,8 +44,14 @@ async function init() {
       const q = e.target.value.toLowerCase().trim();
       // 토큰 AND 매칭 (어순 무관): 각 토큰이 정규화 문자열 또는 압축본에 존재하면 통과
       const toks = q.replace(/[-_/,()]+/g, ' ').split(/\s+/).filter(Boolean);
-      renderList(!toks.length ? parts
-        : parts.filter((p) => toks.every((t) => p._s.includes(t) || p._c.includes(t))));
+      // 순수 숫자 토큰은 단어 경계 매칭 — "5"가 "1.25mm" 속 5에 걸리는 것 방지
+      const tests = toks.map((t) => /^\d+$/.test(t)
+        ? { re: new RegExp('\\b' + t + '\\b') }
+        : { t });
+      renderList(!tests.length ? parts
+        : parts.filter((p) => tests.every((x) => x.re
+            ? x.re.test(p._s)
+            : (p._s.includes(x.t) || p._c.includes(x.t)))));
     }, 120);
   });
 }
