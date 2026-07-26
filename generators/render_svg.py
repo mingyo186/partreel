@@ -79,7 +79,7 @@ def arc_path(sx, sy, mx, my, ex, ey):
             f'{ex:.3f} {ey:.3f}')
 PIN_RE = re.compile(
     r'\(pin\s+\w+\s+\w+\s+\(at\s+([-\d.]+)\s+([-\d.]+)\s+(\d+)\)\s+\(length\s+([-\d.]+)\)'
-    r'((?:\s|hide|\(hide\s+yes\))*)\(name\s+"([^"]+)".*?\(number\s+"([^"]+)"', re.S)
+    r'((?:\s|hide|\(hide\s+yes\))*)\(name\s+"([^"]*)".*?\(number\s+"([^"]+)"', re.S)
 
 
 def svg_header(minx, miny, w, h, m):
