@@ -30,6 +30,15 @@ jobs:
           python3 generators/check_render.py
           python3 generators/check_zfight.py
 
+      # 기여 풋프린트 표절 검사 — 공식 KiCad 라이브러리(CC-BY-SA) 카피는 라이선스상 수용 불가.
+      # 이름 무관 패드-지오메트리 대조 (docs/official-fp-signatures.json = 공식 15,447개 서명)
+      - name: Provenance gate (no official-library copies)
+        run: |
+          git fetch --depth=1 origin ${{ github.base_ref }}
+          CHANGED=$(git diff --name-only origin/${{ github.base_ref }}...HEAD -- 'library/**/*.kicad_mod' || true)
+          if [ -z "$CHANGED" ]; then echo "no footprint changes"; exit 0; fi
+          python3 generators/check_provenance.py --gate --file $CHANGED
+
       - name: Install FreeCAD (conda-forge) for STEP kernel check
         run: |
           curl -Ls https://micro.mamba.pm/api/micromamba/linux-64/latest | tar -xj bin/micromamba

@@ -86,22 +86,26 @@ const TOOLS = [
 ];
 
 const CONTRIBUTE_GUIDE = {
-  summary: "Contribute parts via GitHub PR. CI quality gates auto-review; merge = published to registry.",
+  summary: "Your AI builds the part, our CI gates verify it, everyone reuses it. Contribute via GitHub PR; gates auto-review, merge = published to registry (site + API + MCP).",
+  one_prompt: "Fetch https://github.com/mingyo186/partreel/blob/main/CONTRIBUTING-AGENTS.md and follow it to create a part for <MPN> from its datasheet, then open a PR.",
   repo: "https://github.com/mingyo186/partreel",
   guide: "https://github.com/mingyo186/partreel/blob/main/CONTRIBUTING-AGENTS.md",
   part_layout: {
     directory: "library/<category>/<group>/<part_id>/",
-    required_files: ["<part_id>.kicad_mod", "<part_id>.kicad_sym", "<part_id>.step", "<part_id>.glb",
-                     "<part_id>.footprint.svg", "<part_id>.symbol.svg", "meta.json"],
+    required_files: ["<part_id>.kicad_mod", "<part_id>.kicad_sym", "meta.json"],
+    optional_files: ["<part_id>.step + <part_id>.glb (without them set meta.tier='verified-2d' — ~40% of the catalog is 2D)"],
+    note: "SVG previews / site page / index / API entries are built by CI — do not include them.",
   },
   quality_gates: [
     "validate_kicad.py: s-expression structure, pad count/numbering, pin1 at origin, pitch, required layers",
     "check_overlap.py: no overlapping text in SVG previews",
     "check_render.py: file existence, pad/outline counts match source, obround slots, part page",
+    "check_provenance.py: pad-geometry compared against all 15,447 official KiCad footprints — copies of the official (CC-BY-SA) library are rejected automatically",
     "KLC drawing rules: silk 0.12mm (0.2mm pad clearance), fab 0.10mm + pin1 chamfer, courtyard 0.05mm solid",
     "dimensions must cite a source (datasheet URL) in meta.dimensions_source",
   ],
-  license: "Contributions are published under CC-BY-4.0.",
+  license: "Original work: CC-BY-4.0. Imports from permissive libraries (MIT/Apache-2.0/CERN-OHL-P/CC-BY) welcome — keep original license in meta.license and record meta.import provenance.",
+  credit: "Merged contributors appear in the GitHub contributors graph; report-driven fixes are credited in CREDITS.md and commit trailers.",
 };
 
 const CORS = {

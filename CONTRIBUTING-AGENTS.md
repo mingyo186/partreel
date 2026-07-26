@@ -2,17 +2,27 @@
 
 PartReel accepts part contributions via GitHub PR. **CI quality gates auto-review every PR** — if gates pass and dimensions cite a source, it gets merged and published to the registry (site + API + MCP).
 
+> **One-prompt pattern for AI agents.** If you are a human with an AI assistant,
+> this whole document is designed so that a single instruction works:
+> *"Fetch https://github.com/mingyo186/partreel/blob/main/CONTRIBUTING-AGENTS.md
+> and follow it to create a part for `<MPN>` from its datasheet, then open a PR."*
+> The registry is machine-reviewed end to end — your agent's PR is judged by the
+> same CI gates as the maintainer's own commits. This is the intended way the
+> catalog grows: **your AI builds, our gates verify, everyone reuses.**
+
 ## What to contribute
 
-A part = one directory under `library/<category>/<group>/<part_id>/` containing **just five source files** — SVG previews, the site page, the search index and the API entry are **built automatically by CI**:
+A part = one directory under `library/<category>/<group>/<part_id>/` containing **3-5 source files** — SVG previews, the site page, the search index and the API entry are **built automatically by CI**:
 
 | File | What |
 |---|---|
-| `<part_id>.kicad_mod` | KiCad footprint (s-expression, KiCad 7+) |
+| `<part_id>.kicad_mod` | KiCad footprint (s-expression, KiCad 7-10) |
 | `<part_id>.kicad_sym` | KiCad symbol library with one symbol |
-| `<part_id>.step` | 3D model (valid solid; body must match footprint fab outline; no coplanar overlapping faces between solids; pins as individual bodies, not one merged strip) |
-| `<part_id>.glb` | Colored web preview mesh (small, few KB; housing + metal as separate meshes) |
 | `meta.json` | Metadata — see schema below |
+| `<part_id>.step` | *(optional)* 3D model (valid solid; body must match footprint fab outline; no coplanar overlapping faces between solids; pins as individual bodies, not one merged strip) |
+| `<part_id>.glb` | *(optional, required if step present)* web preview mesh (small; housing + metal as separate meshes, or a single mesh named "imported") |
+
+Without 3D the part ships at the **verified-2D** tier (set `"tier": "verified-2d"` in meta and omit step/glb from `files`) — perfectly acceptable; ~40% of the catalog is 2D. Large 3D binaries are mirrored to the asset CDN by maintainer automation after merge; just include them in the PR.
 
 `part_id`: lowercase `[a-z0-9_]+`, descriptive (e.g. `jst_ph_4pin`, `usb_c_16p`).
 
@@ -35,9 +45,10 @@ Required: `id`, `name`, `category`, `family`, `manufacturer`, `mpn_pattern`,
 ## Rules
 
 - **Dimensions must come from facts** (manufacturer datasheet / IPC / official library dimensions). Cite in `dimensions_source`.
-- **Do not copy other libraries' files** (KiCad official is CC-BY-SA — incompatible). Pad positions/dimensions are facts and fine; drawn outlines must be your own.
-- Contributions are published under **CC-BY-4.0**.
-- No need to run our build scripts — CI builds index/SVG/pages/API from your five files and then runs the gates.
+- **Do not copy other libraries' files** (KiCad official is CC-BY-SA — incompatible). Pad positions/dimensions are facts and fine; drawn outlines must be your own. **This is machine-enforced**: CI compares every contributed footprint's pad geometry against all 15,447 official-library footprints (name-independent) and rejects copies.
+- Original contributions are published under **CC-BY-4.0**. Importing from another *permissive* open library (MIT / Apache-2.0 / CERN-OHL-P / CC-BY) is welcome too — keep the original license in `meta.license` and record `meta.import` (source repo, commit, files, attribution, modifications).
+- No need to run our build scripts — CI builds index/SVG/pages/API from your source files and then runs the gates.
+- **Credit**: merged contributors appear in the GitHub contributors graph; bug reporters whose reports lead to fixes are recorded in [CREDITS.md](CREDITS.md) and in fix commits as `Reported-by:`.
 
 ## PR checklist
 

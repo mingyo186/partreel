@@ -116,10 +116,11 @@ def judge_file(path, idx, official_dir=None, official_name=None):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--official", required=True)
+    ap.add_argument("--official")  # --file 모드는 색인만으로 동작 (CI)
     ap.add_argument("--index", action="store_true")
     ap.add_argument("--pairs")
     ap.add_argument("--file", nargs="*")
+    ap.add_argument("--gate", action="store_true", help="IDENTICAL 발견 시 비0 종료 (PR 게이트)")
     args = ap.parse_args()
     cache = os.path.join(ROOT, "docs", "official-fp-signatures.json")
     if args.index:
@@ -140,6 +141,9 @@ def main():
     out = os.path.join(ROOT, "docs", "provenance-report.json")
     json.dump(results, open(out, "w", encoding="utf-8"), indent=1, ensure_ascii=False)
     print(f"-> {out}")
+    if args.gate and any(r["verdict"] == "IDENTICAL" for r in results):
+        print("GATE FAIL: official-library copy detected (license-incompatible)")
+        sys.exit(1)
 
 
 if __name__ == "__main__":
