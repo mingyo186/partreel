@@ -37,21 +37,52 @@ async function init() {
   setupTabs();
   if (parts.length) selectPart(parts[0]);
 
+  // MiniSearch 색인 (assets/vendor 자체 호스팅, 로드 실패 시 토큰 검색 폴백 — §16/CSP).
+  // 오타 허용 + 접두 매칭 + 관련도 순위. 첫 페인트 후 지연 색인(18k 문서 ~수백 ms).
+  let mini = null;
+  if (window.MiniSearch) {
+    setTimeout(() => {
+      try {
+        const ms = new window.MiniSearch({
+          fields: ['name', 'family', 'kw', 'manufacturer'],
+          storeFields: [],
+          searchOptions: { prefix: true, fuzzy: 0.3, combineWith: 'AND',
+                           boost: { name: 3, family: 2 } },
+        });
+        ms.addAll(parts.map((p, i) => ({
+          id: i, name: p.name || '', family: p.family || '',
+          kw: (p.keywords || []).join(' '), manufacturer: p.manufacturer || '',
+        })));
+        mini = ms;
+      } catch (e) { /* 폴백 유지 */ }
+    }, 0);
+  }
+
+  const tokenFilter = (q) => {
+    // 폴백: 토큰 AND 매칭 (어순 무관); 순수 숫자 토큰은 단어 경계
+    const toks = q.replace(/[-_/,()]+/g, ' ').split(/\s+/).filter(Boolean);
+    const tests = toks.map((t) => /^\d+$/.test(t)
+      ? { re: new RegExp('\\b' + t + '\\b') }
+      : { t });
+    return !tests.length ? parts
+      : parts.filter((p) => tests.every((x) => x.re
+          ? x.re.test(p._s)
+          : (p._s.includes(x.t) || p._c.includes(x.t))));
+  };
+
   let debounce = null;
   document.getElementById('q').addEventListener('input', (e) => {
     clearTimeout(debounce);
     debounce = setTimeout(() => {
       const q = e.target.value.toLowerCase().trim();
-      // 토큰 AND 매칭 (어순 무관): 각 토큰이 정규화 문자열 또는 압축본에 존재하면 통과
-      const toks = q.replace(/[-_/,()]+/g, ' ').split(/\s+/).filter(Boolean);
-      // 순수 숫자 토큰은 단어 경계 매칭 — "5"가 "1.25mm" 속 5에 걸리는 것 방지
-      const tests = toks.map((t) => /^\d+$/.test(t)
-        ? { re: new RegExp('\\b' + t + '\\b') }
-        : { t });
-      renderList(!tests.length ? parts
-        : parts.filter((p) => tests.every((x) => x.re
-            ? x.re.test(p._s)
-            : (p._s.includes(x.t) || p._c.includes(x.t)))));
+      if (!q) { renderList(parts); return; }
+      if (mini) {
+        const hits = mini.search(q).map((h) => parts[h.id]);
+        // 엔진이 0건이면 폴백도 시도 (압축 표기 "5pin" 등 토크나이저 밖 질의)
+        renderList(hits.length ? hits : tokenFilter(q));
+      } else {
+        renderList(tokenFilter(q));
+      }
     }, 120);
   });
 }
