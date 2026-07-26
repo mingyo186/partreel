@@ -56,6 +56,17 @@ Required: `id`, `name`, `category`, `family`, `manufacturer`, `mpn_pattern`,
 - No need to run our build scripts — CI builds index/SVG/pages/API from your source files and then runs the gates.
 - **Credit**: merged contributors appear in the GitHub contributors graph; bug reporters whose reports lead to fixes are recorded in [CREDITS.md](CREDITS.md) and in fix commits as `Reported-by:`.
 
+## Failing gates is the normal workflow — iterate
+
+Do not expect a first attempt to pass. Our own parts rarely did; every past
+mistake class (merged 3D pins, overlapping labels, missing render elements,
+copied footprints...) is now a permanent automated check, so your part gets
+the benefit of every lesson this registry has learned. When CI goes red:
+feed the CI log back to your AI ("read this gate failure and fix the part"),
+push again, repeat until green. The error messages are written to be
+machine-actionable. Gate-fail -> fix -> resubmit is the intended loop, not
+an exception.
+
 ## PR checklist
 
 - [ ] `python generators/qa.py` passes locally
