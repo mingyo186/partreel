@@ -1,0 +1,63 @@
+{
+  "id": "nordic_nrf52833_cjxx",
+  "name": "nRF52833-CJXX",
+  "category": "ic",
+  "family": "Nordic nrf52",
+  "manufacturer": "Nordic Semiconductor",
+  "mpn_pattern": "nRF52833-CJXX",
+  "description": "2.4GHz Bluetooth 5.4 USB NFC SoC, 512KB Flash, 128KB RAM, 105°C Cortex-M4 FPU, ADC, SPI, UART, TWI, PWM, I2S, PDM, CSP-76 Imported from nordic-lib-kicad (CERN-OHL-P-2.0, attribution: Helmut Lord); dimensions generated from manufacturer datasheet inputs; passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 76,
+    "mounting": "SMD"
+  },
+  "files": {
+    "footprint": "nordic_nrf52833_cjxx.kicad_mod",
+    "symbol": "nordic_nrf52833_cjxx.kicad_sym",
+    "footprint_svg": "nordic_nrf52833_cjxx.footprint.svg",
+    "symbol_svg": "nordic_nrf52833_cjxx.symbol.svg",
+    "model_3d": "nordic_nrf52833_cjxx.step",
+    "preview": "nordic_nrf52833_cjxx.glb"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "https://docs-be.nordicsemi.com/bundle/ps_nrf52833/attach/nRF52833_PS_v1.7.pdf?_LANG=enus",
+  "dimensions_source": "nordic-lib-kicad@b12341fb8eae (footprints/nordic-lib-kicad-nrf52.pretty/BGA-76_9x9_3.175x3.175mm.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_nordic.py",
+  "keywords": [
+    "nordic",
+    "wireless",
+    "ble",
+    "bluetooth-low-energy",
+    "bluetooth-mesh",
+    "thread",
+    "zigbee",
+    "arm",
+    "microcontroller",
+    "wireless"
+  ],
+  "import": {
+    "source_repo": "https://github.com/hlord2000/nordic-lib-kicad",
+    "source_commit": "b12341fb8eaea4c72685c87bc37b591bfe25d20a",
+    "source_files": {
+      "symbol": "symbols/nordic-lib-kicad-nrf52.kicad_sym#nRF52833-CJXX",
+      "footprint": "footprints/nordic-lib-kicad-nrf52.pretty/BGA-76_9x9_3.175x3.175mm.kicad_mod",
+      "model": "3dmodels/nordic-lib-kicad-nrf52.3dshapes/BGA-76_9x9_3.175x3.175mm.step"
+    },
+    "attribution": "Helmut Lord — nordic-lib-kicad (CERN-OHL-P-2.0)",
+    "modifications": [
+      "extracted single symbol from library",
+      "rewrote 3D model path to per-part relative"
+    ]
+  },
+  "asset_sha256": {
+    "nordic_nrf52833_cjxx.step": "a3beb6fb2367637c20c7937d1ad544fd76f670febbb009ae77401fccfcd04b00",
+    "nordic_nrf52833_cjxx.glb": "1d4e96021104ee273b03b3694d114b2f2bebfaaf896496c90fd1b43412d87059"
+  }
+}

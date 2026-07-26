@@ -22,8 +22,7 @@ VB_RE = re.compile(r'viewBox="([-\d. ]+)"')
 LINE_RE = re.compile(r'<line x1="([-\d.]+)" y1="([-\d.]+)" x2="([-\d.]+)" y2="([-\d.]+)"')
 CIRC_RE = re.compile(r'<circle cx="([-\d.]+)" cy="([-\d.]+)" r="([-\d.]+)"[^>]*?(?:fill="([^"]*)")?')
 RECT_RE = re.compile(r'<rect x="([-\d.]+)" y="([-\d.]+)" width="([-\d.]+)" height="([-\d.]+)"[^>]*?fill="([^"]*)"')
-TEXT_RE = re.compile(r'<text x="([-\d.]+)" y="([-\d.]+)"[^>]*?font-size="([\d.]+)"[^>]*?'
-                     r'text-anchor="(\w+)"[^>]*?>([^<]*)</text>')
+TEXT_RE = re.compile(r'<text ([^>]*)>([^<]*)</text>')
 COPPER = "#c79b5c"
 
 
@@ -78,11 +77,18 @@ def sym_checks(svg):
         return [f"뷰박스 퇴화 ({vw}x{vh})"], warns
     over = 0
     from check_overlap import _segments  # <g translate> 오프셋 인지 (멀티유닛)
+    from check_overlap import text_attrs
     for seg, dx, dy in _segments(svg):
       for mm in TEXT_RE.finditer(seg):
-        x, y, fs = float(mm.group(1)) + dx, float(mm.group(2)) + dy, float(mm.group(3))
-        anchor, txt = mm.group(4), mm.group(5)
+        x, y, fs, anchor, rot = text_attrs(mm.group(1))
+        x, y = x + dx, y + dy
+        txt = mm.group(2)
         w = max(len(txt), 1) * fs * 0.62
+        if rot:  # 세로쓰기 핀 이름: 세로 범위로 판정
+            y0 = y - w if anchor == "start" else y if anchor == "end" else y - w / 2
+            if y0 < vy - 2 or y0 + w > vy + vh + 2 or x < vx - 2 or x > vx + vw + 2:
+                over += 1
+            continue
         x0 = x - w / 2 if anchor == "middle" else x - w if anchor == "end" else x
         if x0 < vx - 2 or x0 + w > vx + vw + 2 or y < vy - 2 or y > vy + vh + 2:
             over += 1

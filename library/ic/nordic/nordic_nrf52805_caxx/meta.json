@@ -1,0 +1,63 @@
+{
+  "id": "nordic_nrf52805_caxx",
+  "name": "nRF52805-CAXX",
+  "category": "ic",
+  "family": "Nordic nrf52",
+  "manufacturer": "Nordic Semiconductor",
+  "mpn_pattern": "nRF52805-CAXX",
+  "description": "2.4GHz Bluetooth 5.4 SoC, 192KB Flash, 24KB RAM, Cortex-M4, ADC, SPI, UART, TWI, QDEC, WLCSP-36 Imported from nordic-lib-kicad (CERN-OHL-P-2.0, attribution: Helmut Lord); dimensions generated from manufacturer datasheet inputs; passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 28,
+    "mounting": "SMD"
+  },
+  "files": {
+    "footprint": "nordic_nrf52805_caxx.kicad_mod",
+    "symbol": "nordic_nrf52805_caxx.kicad_sym",
+    "footprint_svg": "nordic_nrf52805_caxx.footprint.svg",
+    "symbol_svg": "nordic_nrf52805_caxx.symbol.svg",
+    "model_3d": "nordic_nrf52805_caxx.step",
+    "preview": "nordic_nrf52805_caxx.glb"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "https://docs.nordicsemi.com/bundle/nRF52805_PS_v1.4/resource/nRF52805_PS_v1.4.pdf",
+  "dimensions_source": "nordic-lib-kicad@b12341fb8eae (footprints/nordic-lib-kicad-nrf52.pretty/BGA-28_6x6_2.482x2.464mm.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_nordic.py",
+  "keywords": [
+    "nordic",
+    "wireless",
+    "ble",
+    "bluetooth-low-energy",
+    "arm",
+    "cortex-m4",
+    "soc",
+    "microcontroller",
+    "two-layer",
+    "wireless"
+  ],
+  "import": {
+    "source_repo": "https://github.com/hlord2000/nordic-lib-kicad",
+    "source_commit": "b12341fb8eaea4c72685c87bc37b591bfe25d20a",
+    "source_files": {
+      "symbol": "symbols/nordic-lib-kicad-nrf52.kicad_sym#nRF52805-CAXX",
+      "footprint": "footprints/nordic-lib-kicad-nrf52.pretty/BGA-28_6x6_2.482x2.464mm.kicad_mod",
+      "model": "3dmodels/nordic-lib-kicad-nrf52.3dshapes/BGA-28_6x6_2.482x2.464mm.step"
+    },
+    "attribution": "Helmut Lord — nordic-lib-kicad (CERN-OHL-P-2.0)",
+    "modifications": [
+      "extracted single symbol from library",
+      "rewrote 3D model path to per-part relative"
+    ]
+  },
+  "asset_sha256": {
+    "nordic_nrf52805_caxx.step": "5babab6895ce0e1cde143b2266396ceefb7783d5ff5789069d6707abcabd4c66",
+    "nordic_nrf52805_caxx.glb": "96819ede03495140a9ef6b712b4e2c72525050a0b0a327e8638fb003cf7a89c8"
+  }
+}

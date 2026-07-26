@@ -1,0 +1,55 @@
+{
+  "id": "nordic_bm20x",
+  "name": "BM20x",
+  "category": "module",
+  "family": "Nordic nrf54-modules",
+  "manufacturer": "Fanstel",
+  "mpn_pattern": "BM20x",
+  "description": "BM20x Imported from nordic-lib-kicad (CERN-OHL-P-2.0, attribution: Helmut Lord); dimensions generated from manufacturer datasheet inputs; passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 90,
+    "mounting": "SMD"
+  },
+  "files": {
+    "footprint": "nordic_bm20x.kicad_mod",
+    "symbol": "nordic_bm20x.kicad_sym",
+    "footprint_svg": "nordic_bm20x.footprint.svg",
+    "symbol_svg": "nordic_bm20x.symbol.svg",
+    "model_3d": "nordic_bm20x.step",
+    "preview": "nordic_bm20x.glb"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "https://github.com/hlord2000/nordic-lib-kicad/blob/b12341fb8eae/symbols/nordic-lib-kicad-nrf54-modules.kicad_sym",
+  "dimensions_source": "nordic-lib-kicad@b12341fb8eae (footprints/nordic-lib-kicad-nrf54-modules.pretty/BM20x-LGA-90_15.8x10mm.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_nordic.py",
+  "keywords": [
+    "nordic",
+    "wireless"
+  ],
+  "import": {
+    "source_repo": "https://github.com/hlord2000/nordic-lib-kicad",
+    "source_commit": "b12341fb8eaea4c72685c87bc37b591bfe25d20a",
+    "source_files": {
+      "symbol": "symbols/nordic-lib-kicad-nrf54-modules.kicad_sym#BM20x",
+      "footprint": "footprints/nordic-lib-kicad-nrf54-modules.pretty/BM20x-LGA-90_15.8x10mm.kicad_mod",
+      "model": "3dmodels/nordic-lib-kicad-nrf54-modules.3dshapes/BM20x-LGA-90_15.8x10mm.step"
+    },
+    "attribution": "Helmut Lord — nordic-lib-kicad (CERN-OHL-P-2.0)",
+    "modifications": [
+      "extracted single symbol from library",
+      "rewrote 3D model path to per-part relative"
+    ]
+  },
+  "asset_sha256": {
+    "nordic_bm20x.step": "7b2cbcb8aaba44dbbb3b5050b3098644776ad126fea6251c37d656f5010bb283",
+    "nordic_bm20x.glb": "db019e35df172ba8475bb64ce6cc8717d67979acd20c8dbcff51c0dbc279dbaa"
+  }
+}

@@ -9,14 +9,30 @@ import sys
 import glob
 
 ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), ".."))
-TEXT_RE = re.compile(
-    r'<text x="([-\d.]+)" y="([-\d.]+)"[^>]*?font-size="([\d.]+)"[^>]*?'
-    r'text-anchor="(\w+)"[^>]*?>([^<]*)</text>')
+TEXT_RE = re.compile(r'<text ([^>]*)>([^<]*)</text>')
 TOL = 0.15  # mm, 살짝 닿는 건 허용
 
 
-def bbox(x, y, fs, anchor, txt):
+def text_attrs(attrs):
+    """(x, y, fs, anchor, rotated) — 속성 블롭 파싱 (옵션 그룹 정규식은 lazy와 결합 시
+    항상 빈 매치가 되는 함정이 있어 블롭 방식 사용, 2026-07-26)."""
+    def g(key, default=None):
+        m = re.search(r'(?:^|\s)' + key + r'="([^"]*)"', attrs)
+        return m.group(1) if m else default
+    return (float(g("x", "0")), float(g("y", "0")), float(g("font-size", "1")),
+            g("text-anchor", "start"), "rotate(-90" in attrs)
+
+
+def bbox(x, y, fs, anchor, rot, txt):
     w = max(len(txt), 1) * fs * 0.62
+    if rot:  # 세로쓰기(rotate -90) — 세로 핀 이름 (2026-07-26): 세로로 길고 가로는 글자 높이
+        if anchor == "start":
+            y0, y1 = y - w, y
+        elif anchor == "end":
+            y0, y1 = y, y + w
+        else:
+            y0, y1 = y - w / 2, y + w / 2
+        return (x - fs * 0.78, y0, x + fs * 0.22, y1, txt)
     if anchor == "middle":
         x0 = x - w / 2
     elif anchor == "end":
@@ -59,9 +75,9 @@ def main():
         # <g transform="translate(dx dy)"> 오프셋 반영 (멀티유닛 심볼)
         boxes = []
         for seg, dx, dy in _segments(svg):
-            boxes += [bbox(float(m[0]) + dx, float(m[1]) + dy,
-                           float(m[2]), m[3], m[4])
-                      for m in TEXT_RE.findall(seg)]
+            for attrs, txt in TEXT_RE.findall(seg):
+                x, y, fs, anchor, rot = text_attrs(attrs)
+                boxes.append(bbox(x + dx, y + dy, fs, anchor, rot, txt))
         hits = []
         for i in range(len(boxes)):
             for j in range(i + 1, len(boxes)):

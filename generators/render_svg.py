@@ -360,9 +360,10 @@ def _symbol_elements(text, hide_nums, hide_names, synth_body):
             num = (f"{sn[0]}-{sn[-1]}" if sn == list(range(sn[0], sn[-1] + 1))
                    else ",".join(map(str, sn)))
         else:
-            num = nums[0]
-        names = [n for _, n in nn]
-        name = num if all(n.isdigit() for n in names) and len(names) > 1 else names[0]
+            num = ",".join(dict.fromkeys(nums))
+        names = list(dict.fromkeys(n for _, n in nn))
+        # 이름이 다른 스택 핀(VIN/VIN_ANA류)은 병기 — 하나만 남기면 정보 소실 (2026-07-26 Nordic)
+        name = num if all(n.isdigit() for n in names) and len(names) > 1 else "/".join(names)
         merged.append((px, py, ex, ey, num, name))
     pin_data = merged
 
@@ -420,15 +421,29 @@ def _symbol_elements(text, hide_nums, hide_names, synth_body):
                       f'font-size="1.1" text-anchor="end" font-family="sans-serif">{name}</text>')
                 nu = (f'<text x="{ex + 0.3:.3f}" y="{ey - 0.35:.3f}" fill="{COL["num"]}" '
                       f'font-size="0.9" text-anchor="start" font-family="sans-serif">{num}</text>')
-        else:  # 세로 핀 (예: 하단 쉴드)
+        else:  # 세로 핀 — 이름은 KiCad처럼 세로쓰기(rotate -90). 가로쓰기는 2.54mm 피치에서
+            #        이웃 이름과 겹침 (2026-07-26 Nordic 수입 게이트가 검출)
+            nw = len(name) * 1.1 * 0.62
+            if ey > py:   # 상단 핀(본체가 아래): 이름이 끝점 아래로 (끝점에서 위로 읽음)
+                ny0, anchor = ey + 0.5, "end"
+                ys.extend([ny0, ny0 + nw])
+            else:         # 하단 핀(본체가 위): 이름이 끝점 위로
+                ny0, anchor = ey - 0.5, "start"
+                ys.extend([ny0 - nw, ny0])
             if not hide_names and name != num:
-                _tx(ex - len(name) * 1.1 * 0.31, ey - 0.6, len(name) * 1.1 * 0.62)
+                xs.extend([ex - 0.55, ex + 0.55])
+            # 번호도 세로쓰기, 핀선 바깥쪽 옆 (KiCad 동일) — 가로쓰기는 이웃 세로 이름과 충돌
+            my = (py + ey) / 2
             if not hide_nums:
-                _tx(ex + 0.6, ey + 1.0, len(num) * 0.9 * 0.62)
-            nm = (f'<text x="{ex:.3f}" y="{ey - 0.6:.3f}" fill="{COL["name"]}" '
-                  f'font-size="1.1" text-anchor="middle" font-family="sans-serif">{name}</text>')
-            nu = (f'<text x="{ex + 0.6:.3f}" y="{ey + 1.0:.3f}" fill="{COL["num"]}" '
-                  f'font-size="0.9" text-anchor="start" font-family="sans-serif">{num}</text>')
+                nw2 = len(num) * 0.9 * 0.62
+                xs.extend([ex - 0.95, ex])
+                ys.extend([my - nw2 / 2, my + nw2 / 2])
+            nm = (f'<text x="{ex + 0.35:.3f}" y="{ny0:.3f}" fill="{COL["name"]}" '
+                  f'font-size="1.1" text-anchor="{anchor}" font-family="sans-serif" '
+                  f'transform="rotate(-90 {ex + 0.35:.3f} {ny0:.3f})">{name}</text>')
+            nu = (f'<text x="{ex - 0.25:.3f}" y="{my:.3f}" fill="{COL["num"]}" '
+                  f'font-size="0.9" text-anchor="middle" font-family="sans-serif" '
+                  f'transform="rotate(-90 {ex - 0.25:.3f} {my:.3f})">{num}</text>')
         if not hide_names and name != num:  # 이름=번호인 무의미 중복도 생략
             out.append(nm)
         if not hide_nums:

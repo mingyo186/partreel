@@ -1,0 +1,58 @@
+{
+  "id": "nordic_npm1100_caxx",
+  "name": "nPM1100-CAXX",
+  "category": "power",
+  "family": "Nordic npm",
+  "manufacturer": "Nordic Semiconductor",
+  "mpn_pattern": "nPM1100-CAXX",
+  "description": "PMIC and Battery Charger, BGA-25 Imported from nordic-lib-kicad (CERN-OHL-P-2.0, attribution: Helmut Lord); dimensions generated from manufacturer datasheet inputs; passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 25,
+    "mounting": "SMD"
+  },
+  "files": {
+    "footprint": "nordic_npm1100_caxx.kicad_mod",
+    "symbol": "nordic_npm1100_caxx.kicad_sym",
+    "footprint_svg": "nordic_npm1100_caxx.footprint.svg",
+    "symbol_svg": "nordic_npm1100_caxx.symbol.svg",
+    "model_3d": "nordic_npm1100_caxx.step",
+    "preview": "nordic_npm1100_caxx.glb"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "https://docs-be.nordicsemi.com/bundle/ps_npm1100/attach/nPM1100_PS_v1.4.pdf?_LANG=enus",
+  "dimensions_source": "nordic-lib-kicad@b12341fb8eae (footprints/nordic-lib-kicad-npm.pretty/BGA-25_5x5_2.075x2.075mm.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_nordic.py",
+  "keywords": [
+    "nordic",
+    "wireless",
+    "PMIC",
+    "Charger",
+    "Regulator"
+  ],
+  "import": {
+    "source_repo": "https://github.com/hlord2000/nordic-lib-kicad",
+    "source_commit": "b12341fb8eaea4c72685c87bc37b591bfe25d20a",
+    "source_files": {
+      "symbol": "symbols/nordic-lib-kicad-npm.kicad_sym#nPM1100-CAXX",
+      "footprint": "footprints/nordic-lib-kicad-npm.pretty/BGA-25_5x5_2.075x2.075mm.kicad_mod",
+      "model": "3dmodels/nordic-lib-kicad-npm.3dshapes/BGA-25_5x5_2.075x2.075mm.step"
+    },
+    "attribution": "Helmut Lord — nordic-lib-kicad (CERN-OHL-P-2.0)",
+    "modifications": [
+      "extracted single symbol from library",
+      "rewrote 3D model path to per-part relative"
+    ]
+  },
+  "asset_sha256": {
+    "nordic_npm1100_caxx.step": "ffa1380f12aff76934245c5271f996496fd3b00d2472d77c7e9d4fc499af08eb",
+    "nordic_npm1100_caxx.glb": "6d6a5d8c2c0d1f47ee5485b119860b3930066c2dadbeece78d01b69963fd63b2"
+  }
+}

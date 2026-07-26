@@ -1,0 +1,61 @@
+{
+  "id": "nordic_npm1300_caxx",
+  "name": "nPM1300-CAXX",
+  "category": "power",
+  "family": "Nordic npm",
+  "manufacturer": "Nordic Semiconductor",
+  "mpn_pattern": "nPM1300-CAXX",
+  "description": "PMIC, LED Driver, Battery Charger, BGA-35 Imported from nordic-lib-kicad (CERN-OHL-P-2.0, attribution: Helmut Lord); dimensions generated from manufacturer datasheet inputs; passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 35,
+    "mounting": "SMD"
+  },
+  "files": {
+    "footprint": "nordic_npm1300_caxx.kicad_mod",
+    "symbol": "nordic_npm1300_caxx.kicad_sym",
+    "footprint_svg": "nordic_npm1300_caxx.footprint.svg",
+    "symbol_svg": "nordic_npm1300_caxx.symbol.svg",
+    "model_3d": "nordic_npm1300_caxx.step",
+    "preview": "nordic_npm1300_caxx.glb"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "https://docs.nordicsemi.com/bundle/ps_npm1300",
+  "dimensions_source": "nordic-lib-kicad@b12341fb8eae (footprints/nordic-lib-kicad-npm.pretty/BGA-35_7x5_3.077x2.3775mm.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_nordic.py",
+  "keywords": [
+    "nordic",
+    "wireless",
+    "PMIC",
+    "Regulator",
+    "LED",
+    "Driver",
+    "Battery",
+    "Charger"
+  ],
+  "import": {
+    "source_repo": "https://github.com/hlord2000/nordic-lib-kicad",
+    "source_commit": "b12341fb8eaea4c72685c87bc37b591bfe25d20a",
+    "source_files": {
+      "symbol": "symbols/nordic-lib-kicad-npm.kicad_sym#nPM1300-CAXX",
+      "footprint": "footprints/nordic-lib-kicad-npm.pretty/BGA-35_7x5_3.077x2.3775mm.kicad_mod",
+      "model": "3dmodels/nordic-lib-kicad-npm.3dshapes/BGA-35_7x5_3.077x2.3775mm.step"
+    },
+    "attribution": "Helmut Lord — nordic-lib-kicad (CERN-OHL-P-2.0)",
+    "modifications": [
+      "extracted single symbol from library",
+      "rewrote 3D model path to per-part relative"
+    ]
+  },
+  "asset_sha256": {
+    "nordic_npm1300_caxx.step": "0b5aa31450724d3d1b39c0f3078f3bd844458d4a66ebb46df8032743ce34c029",
+    "nordic_npm1300_caxx.glb": "756bde7bc4ee2bf7fa4cc437f5e506a72aa841908321515fec4a4a9614141a71"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "id": "nordic_nrf52820_cfxx",
+  "name": "nRF52820-CFXX",
+  "category": "ic",
+  "family": "Nordic nrf52",
+  "manufacturer": "Nordic Semiconductor",
+  "mpn_pattern": "nRF52820-CFXX",
+  "description": "2.4GHz Bluetooth 5.4 USB SoC, 256KB Flash, 32KB RAM, Cortex-M4, Comparator, UART, SPI, TWI, QDEC, CSP- Imported from nordic-lib-kicad (CERN-OHL-P-2.0, attribution: Helmut Lord); dimensions generated from manufacturer datasheet inputs; passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 44,
+    "mounting": "SMD"
+  },
+  "files": {
+    "footprint": "nordic_nrf52820_cfxx.kicad_mod",
+    "symbol": "nordic_nrf52820_cfxx.kicad_sym",
+    "footprint_svg": "nordic_nrf52820_cfxx.footprint.svg",
+    "symbol_svg": "nordic_nrf52820_cfxx.symbol.svg",
+    "model_3d": "nordic_nrf52820_cfxx.step",
+    "preview": "nordic_nrf52820_cfxx.glb"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "https://docs-be.nordicsemi.com/bundle/ps_nrf52820/attach/nRF52820_PS_v1.5.pdf?_LANG=enus",
+  "dimensions_source": "nordic-lib-kicad@b12341fb8eae (footprints/nordic-lib-kicad-nrf52.pretty/BGA-44_7x7_2.531x2.531mm.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_nordic.py",
+  "keywords": [
+    "nordic",
+    "wireless",
+    "ble",
+    "bluetooth-low-energy",
+    "bluetooth-mesh",
+    "thread",
+    "zigbee",
+    "arm",
+    "microcontroller",
+    "wireless"
+  ],
+  "import": {
+    "source_repo": "https://github.com/hlord2000/nordic-lib-kicad",
+    "source_commit": "b12341fb8eaea4c72685c87bc37b591bfe25d20a",
+    "source_files": {
+      "symbol": "symbols/nordic-lib-kicad-nrf52.kicad_sym#nRF52820-CFXX",
+      "footprint": "footprints/nordic-lib-kicad-nrf52.pretty/BGA-44_7x7_2.531x2.531mm.kicad_mod",
+      "model": "3dmodels/nordic-lib-kicad-nrf52.3dshapes/BGA-44_7x7_2.531x2.531mm.step"
+    },
+    "attribution": "Helmut Lord — nordic-lib-kicad (CERN-OHL-P-2.0)",
+    "modifications": [
+      "extracted single symbol from library",
+      "rewrote 3D model path to per-part relative"
+    ]
+  },
+  "asset_sha256": {
+    "nordic_nrf52820_cfxx.step": "94f87998075839ea35558dc8cd1b4734e788b533c5ac0651d49d66a249f55475",
+    "nordic_nrf52820_cfxx.glb": "a02b8766578f5f650949754e761f83de91485fd5916b5b6f8f829295f9785c54"
+  }
+}

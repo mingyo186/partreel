@@ -1,0 +1,63 @@
+{
+  "id": "nordic_nrf9151_laxx",
+  "name": "nRF9151-LAXX",
+  "category": "ic",
+  "family": "Nordic nrf9",
+  "manufacturer": "Nordic Semiconductor",
+  "mpn_pattern": "nRF9151-LAXX",
+  "description": "LTE-M/NB-IoT/DECT-NR+ SiP, ARM Cortex-M33, GNSS, LGA-100 Imported from nordic-lib-kicad (CERN-OHL-P-2.0, attribution: Helmut Lord); dimensions generated from manufacturer datasheet inputs; passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 113,
+    "mounting": "SMD"
+  },
+  "files": {
+    "footprint": "nordic_nrf9151_laxx.kicad_mod",
+    "symbol": "nordic_nrf9151_laxx.kicad_sym",
+    "footprint_svg": "nordic_nrf9151_laxx.footprint.svg",
+    "symbol_svg": "nordic_nrf9151_laxx.symbol.svg",
+    "model_3d": "nordic_nrf9151_laxx.step",
+    "preview": "nordic_nrf9151_laxx.glb"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "https://docs.nordicsemi.com/bundle/ps_nrf9151/page/nRF9151_html5_keyfeatures.html",
+  "dimensions_source": "nordic-lib-kicad@b12341fb8eae (footprints/nordic-lib-kicad-nrf9.pretty/LGA_9151_12.1x11.1mm.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_nordic.py",
+  "keywords": [
+    "nordic",
+    "wireless",
+    "cellular",
+    "iot",
+    "lte-m",
+    "nb-iot",
+    "dect-nr+",
+    "non-terrestrial-network",
+    "gnss",
+    "trustzone"
+  ],
+  "import": {
+    "source_repo": "https://github.com/hlord2000/nordic-lib-kicad",
+    "source_commit": "b12341fb8eaea4c72685c87bc37b591bfe25d20a",
+    "source_files": {
+      "symbol": "symbols/nordic-lib-kicad-nrf9.kicad_sym#nRF9151-LAXX",
+      "footprint": "footprints/nordic-lib-kicad-nrf9.pretty/LGA_9151_12.1x11.1mm.kicad_mod",
+      "model": "3dmodels/nordic-lib-kicad-nrf9.3dshapes/LGA_9151_12.1x11.1mm.step"
+    },
+    "attribution": "Helmut Lord — nordic-lib-kicad (CERN-OHL-P-2.0)",
+    "modifications": [
+      "extracted single symbol from library",
+      "rewrote 3D model path to per-part relative"
+    ]
+  },
+  "asset_sha256": {
+    "nordic_nrf9151_laxx.step": "d67aef3b87dd1074b771bf79c99c264ca33bee167afebcb0ae1e932458b90fd4",
+    "nordic_nrf9151_laxx.glb": "a2d7788bb0992225908f2d688a137dd251d3f4e790fb4a78f9422d2c52db5eea"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "id": "nordic_bm15x",
+  "name": "BM15x",
+  "category": "module",
+  "family": "Nordic nrf54-modules",
+  "manufacturer": "Fanstel",
+  "mpn_pattern": "BM15x",
+  "description": "BM15x Imported from nordic-lib-kicad (CERN-OHL-P-2.0, attribution: Helmut Lord); dimensions generated from manufacturer datasheet inputs; passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 45,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/module/nordic/nordic_bm15x/nordic_bm15x.kicad_mod",
+    "symbol": "https://partreel.com/library/module/nordic/nordic_bm15x/nordic_bm15x.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/module/nordic/nordic_bm15x/nordic_bm15x.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/module/nordic/nordic_bm15x/nordic_bm15x.symbol.svg",
+    "model_3d": "https://assets.partreel.com/library/module/nordic/nordic_bm15x/nordic_bm15x.step",
+    "preview": "https://assets.partreel.com/library/module/nordic/nordic_bm15x/nordic_bm15x.glb"
+  },
+  "datasheet": "https://static1.squarespace.com/static/561459a2e4b0b39f5cefa12e/t/66c3d7591cc204465c3f6e4f/1724110684125/BM15C+Product+Specifications.pdf",
+  "license": "CERN-OHL-P-2.0",
+  "verified": true,
+  "tier": null,
+  "dimensions_source": "nordic-lib-kicad@b12341fb8eae (footprints/nordic-lib-kicad-nrf54-modules.pretty/BM15x-LGA-45_15.8x10mm.kicad_mod)",
+  "keywords": [
+    "nordic",
+    "wireless",
+    "nRF54L15"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "nordic-lib-kicad@b12341fb8eae (footprints/nordic-lib-kicad-nrf54-modules.pretty/BM15x-LGA-45_15.8x10mm.kicad_mod)",
+    "datasheet": "https://static1.squarespace.com/static/561459a2e4b0b39f5cefa12e/t/66c3d7591cc204465c3f6e4f/1724110684125/BM15C+Product+Specifications.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_nordic.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/hlord2000/nordic-lib-kicad",
+      "source_commit": "b12341fb8eaea4c72685c87bc37b591bfe25d20a",
+      "source_files": {
+        "symbol": "symbols/nordic-lib-kicad-nrf54-modules.kicad_sym#BM15x",
+        "footprint": "footprints/nordic-lib-kicad-nrf54-modules.pretty/BM15x-LGA-45_15.8x10mm.kicad_mod",
+        "model": "3dmodels/nordic-lib-kicad-nrf54-modules.3dshapes/BM15x-LGA-45_15.8x10mm.step"
+      },
+      "attribution": "Helmut Lord — nordic-lib-kicad (CERN-OHL-P-2.0)",
+      "modifications": [
+        "extracted single symbol from library",
+        "rewrote 3D model path to per-part relative"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/nordic_bm15x/",
+  "api": "https://partreel.com/api/v1/parts/nordic_bm15x.json"
+}

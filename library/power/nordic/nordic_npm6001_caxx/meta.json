@@ -1,0 +1,59 @@
+{
+  "id": "nordic_npm6001_caxx",
+  "name": "nPM6001-CAXX",
+  "category": "power",
+  "family": "Nordic npm",
+  "manufacturer": "Nordic Semiconductor",
+  "mpn_pattern": "nPM6001-CAXX",
+  "description": "PMIC with Buck/LDO Imported from nordic-lib-kicad (CERN-OHL-P-2.0, attribution: Helmut Lord); dimensions generated from manufacturer datasheet inputs; passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 45,
+    "mounting": "SMD"
+  },
+  "files": {
+    "footprint": "nordic_npm6001_caxx.kicad_mod",
+    "symbol": "nordic_npm6001_caxx.kicad_sym",
+    "footprint_svg": "nordic_npm6001_caxx.footprint.svg",
+    "symbol_svg": "nordic_npm6001_caxx.symbol.svg",
+    "model_3d": "nordic_npm6001_caxx.step",
+    "preview": "nordic_npm6001_caxx.glb"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "https://docs.nordicsemi.com/bundle/ps_npm6001",
+  "dimensions_source": "nordic-lib-kicad@b12341fb8eae (footprints/nordic-lib-kicad-npm.pretty/BGA-45_5x9_2.175x3.635mm.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_nordic.py",
+  "keywords": [
+    "nordic",
+    "wireless",
+    "PMIC",
+    "Buck",
+    "Regulator",
+    "LDO"
+  ],
+  "import": {
+    "source_repo": "https://github.com/hlord2000/nordic-lib-kicad",
+    "source_commit": "b12341fb8eaea4c72685c87bc37b591bfe25d20a",
+    "source_files": {
+      "symbol": "symbols/nordic-lib-kicad-npm.kicad_sym#nPM6001-CAXX",
+      "footprint": "footprints/nordic-lib-kicad-npm.pretty/BGA-45_5x9_2.175x3.635mm.kicad_mod",
+      "model": "3dmodels/nordic-lib-kicad-npm.3dshapes/BGA-45_5x9_2.175x3.635mm.step"
+    },
+    "attribution": "Helmut Lord — nordic-lib-kicad (CERN-OHL-P-2.0)",
+    "modifications": [
+      "extracted single symbol from library",
+      "rewrote 3D model path to per-part relative"
+    ]
+  },
+  "asset_sha256": {
+    "nordic_npm6001_caxx.step": "431838d6072decd3ed3dd95fae6e6e8806369ff57473e7b0f3d92c6371f48156",
+    "nordic_npm6001_caxx.glb": "b8a7c2182f18091277ed8bb5a767de82b96ef80bc5ae981c9aea2896398a94f3"
+  }
+}

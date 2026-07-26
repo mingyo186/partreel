@@ -1,0 +1,59 @@
+{
+  "id": "nordic_nrf54l15_qgxx",
+  "name": "nRF54L15-QGXX",
+  "category": "ic",
+  "family": "Nordic nrf54l",
+  "manufacturer": "Nordic Semiconductor",
+  "mpn_pattern": "nRF54L15-QGXX",
+  "description": "nRF54L Dual Core Multiprotocol BLE SoC Imported from nordic-lib-kicad (CERN-OHL-P-2.0, attribution: Helmut Lord); dimensions generated from manufacturer datasheet inputs; passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 53,
+    "mounting": "SMD+THT"
+  },
+  "files": {
+    "footprint": "nordic_nrf54l15_qgxx.kicad_mod",
+    "symbol": "nordic_nrf54l15_qgxx.kicad_sym",
+    "footprint_svg": "nordic_nrf54l15_qgxx.footprint.svg",
+    "symbol_svg": "nordic_nrf54l15_qgxx.symbol.svg",
+    "model_3d": "nordic_nrf54l15_qgxx.step",
+    "preview": "nordic_nrf54l15_qgxx.glb"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "https://docs.nordicsemi.com/bundle/ps_nrf54L15",
+  "dimensions_source": "nordic-lib-kicad@b12341fb8eae (footprints/nordic-lib-kicad-nrf54l.pretty/QFN-52-1EP_6x6mm_P0.4mm_EP4.7x4.7mm_ThermalVias.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_nordic.py",
+  "keywords": [
+    "nordic",
+    "wireless",
+    "BLE",
+    "SoC",
+    "nRF",
+    "QFN48"
+  ],
+  "import": {
+    "source_repo": "https://github.com/hlord2000/nordic-lib-kicad",
+    "source_commit": "b12341fb8eaea4c72685c87bc37b591bfe25d20a",
+    "source_files": {
+      "symbol": "symbols/nordic-lib-kicad-nrf54l.kicad_sym#nRF54L15-QGXX",
+      "footprint": "footprints/nordic-lib-kicad-nrf54l.pretty/QFN-52-1EP_6x6mm_P0.4mm_EP4.7x4.7mm_ThermalVias.kicad_mod",
+      "model": "3dmodels/nordic-lib-kicad-nrf54l.3dshapes/QFN-52-1EP_6x6mm_P0.4mm_EP4.7x4.7mm.step"
+    },
+    "attribution": "Helmut Lord — nordic-lib-kicad (CERN-OHL-P-2.0)",
+    "modifications": [
+      "extracted single symbol from library",
+      "rewrote 3D model path to per-part relative"
+    ]
+  },
+  "asset_sha256": {
+    "nordic_nrf54l15_qgxx.step": "c0076a4f9174f42bd5d25e5652a47f2056dab7d44bc2f72581666f6ac395bed3",
+    "nordic_nrf54l15_qgxx.glb": "704042dfb6be0dc79aa0d4645e046f6732c8bbeece09fddcff1905e7bff61eb2"
+  }
+}

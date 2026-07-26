@@ -1,0 +1,82 @@
+{
+  "id": "nordic_npm6001_caxx",
+  "name": "nPM6001-CAXX",
+  "category": "power",
+  "family": "Nordic npm",
+  "manufacturer": "Nordic Semiconductor",
+  "mpn_pattern": "nPM6001-CAXX",
+  "description": "PMIC with Buck/LDO Imported from nordic-lib-kicad (CERN-OHL-P-2.0, attribution: Helmut Lord); dimensions generated from manufacturer datasheet inputs; passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 45,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/power/nordic/nordic_npm6001_caxx/nordic_npm6001_caxx.kicad_mod",
+    "symbol": "https://partreel.com/library/power/nordic/nordic_npm6001_caxx/nordic_npm6001_caxx.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/power/nordic/nordic_npm6001_caxx/nordic_npm6001_caxx.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/power/nordic/nordic_npm6001_caxx/nordic_npm6001_caxx.symbol.svg",
+    "model_3d": "https://assets.partreel.com/library/power/nordic/nordic_npm6001_caxx/nordic_npm6001_caxx.step",
+    "preview": "https://assets.partreel.com/library/power/nordic/nordic_npm6001_caxx/nordic_npm6001_caxx.glb"
+  },
+  "datasheet": "https://docs.nordicsemi.com/bundle/ps_npm6001",
+  "license": "CERN-OHL-P-2.0",
+  "verified": true,
+  "tier": null,
+  "dimensions_source": "nordic-lib-kicad@b12341fb8eae (footprints/nordic-lib-kicad-npm.pretty/BGA-45_5x9_2.175x3.635mm.kicad_mod)",
+  "keywords": [
+    "nordic",
+    "wireless",
+    "PMIC",
+    "Buck",
+    "Regulator",
+    "LDO"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "nordic-lib-kicad@b12341fb8eae (footprints/nordic-lib-kicad-npm.pretty/BGA-45_5x9_2.175x3.635mm.kicad_mod)",
+    "datasheet": "https://docs.nordicsemi.com/bundle/ps_npm6001",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_nordic.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/hlord2000/nordic-lib-kicad",
+      "source_commit": "b12341fb8eaea4c72685c87bc37b591bfe25d20a",
+      "source_files": {
+        "symbol": "symbols/nordic-lib-kicad-npm.kicad_sym#nPM6001-CAXX",
+        "footprint": "footprints/nordic-lib-kicad-npm.pretty/BGA-45_5x9_2.175x3.635mm.kicad_mod",
+        "model": "3dmodels/nordic-lib-kicad-npm.3dshapes/BGA-45_5x9_2.175x3.635mm.step"
+      },
+      "attribution": "Helmut Lord — nordic-lib-kicad (CERN-OHL-P-2.0)",
+      "modifications": [
+        "extracted single symbol from library",
+        "rewrote 3D model path to per-part relative"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/nordic_npm6001_caxx/",
+  "api": "https://partreel.com/api/v1/parts/nordic_npm6001_caxx.json"
+}

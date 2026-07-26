@@ -1,0 +1,56 @@
+{
+  "id": "nordic_bm15x",
+  "name": "BM15x",
+  "category": "module",
+  "family": "Nordic nrf54-modules",
+  "manufacturer": "Fanstel",
+  "mpn_pattern": "BM15x",
+  "description": "BM15x Imported from nordic-lib-kicad (CERN-OHL-P-2.0, attribution: Helmut Lord); dimensions generated from manufacturer datasheet inputs; passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 45,
+    "mounting": "SMD"
+  },
+  "files": {
+    "footprint": "nordic_bm15x.kicad_mod",
+    "symbol": "nordic_bm15x.kicad_sym",
+    "footprint_svg": "nordic_bm15x.footprint.svg",
+    "symbol_svg": "nordic_bm15x.symbol.svg",
+    "model_3d": "nordic_bm15x.step",
+    "preview": "nordic_bm15x.glb"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "https://static1.squarespace.com/static/561459a2e4b0b39f5cefa12e/t/66c3d7591cc204465c3f6e4f/1724110684125/BM15C+Product+Specifications.pdf",
+  "dimensions_source": "nordic-lib-kicad@b12341fb8eae (footprints/nordic-lib-kicad-nrf54-modules.pretty/BM15x-LGA-45_15.8x10mm.kicad_mod)",
+  "verified": true,
+  "origin": "imported",
+  "license": "CERN-OHL-P-2.0",
+  "generated_by": "generators/import_nordic.py",
+  "keywords": [
+    "nordic",
+    "wireless",
+    "nRF54L15"
+  ],
+  "import": {
+    "source_repo": "https://github.com/hlord2000/nordic-lib-kicad",
+    "source_commit": "b12341fb8eaea4c72685c87bc37b591bfe25d20a",
+    "source_files": {
+      "symbol": "symbols/nordic-lib-kicad-nrf54-modules.kicad_sym#BM15x",
+      "footprint": "footprints/nordic-lib-kicad-nrf54-modules.pretty/BM15x-LGA-45_15.8x10mm.kicad_mod",
+      "model": "3dmodels/nordic-lib-kicad-nrf54-modules.3dshapes/BM15x-LGA-45_15.8x10mm.step"
+    },
+    "attribution": "Helmut Lord — nordic-lib-kicad (CERN-OHL-P-2.0)",
+    "modifications": [
+      "extracted single symbol from library",
+      "rewrote 3D model path to per-part relative"
+    ]
+  },
+  "asset_sha256": {
+    "nordic_bm15x.step": "7c92aa0648b1182103d3636936c6c58e8576a8f7df2c9738ac6b5539300146e5",
+    "nordic_bm15x.glb": "512fdbdcbd962a66c1937f17cc5cc3ee7f6455b3546de76c38c80c0fd07bc090"
+  }
+}

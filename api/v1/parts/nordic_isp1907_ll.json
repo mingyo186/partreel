@@ -1,0 +1,78 @@
+{
+  "id": "nordic_isp1907_ll",
+  "name": "ISP1907-LL",
+  "category": "module",
+  "family": "Nordic nrf52-modules",
+  "manufacturer": "Insight SiP",
+  "mpn_pattern": "ISP1907-LL",
+  "description": "ISP1907-LL Imported from nordic-lib-kicad (CERN-OHL-P-2.0, attribution: Helmut Lord); dimensions generated from manufacturer datasheet inputs; passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 62,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/module/nordic/nordic_isp1907_ll/nordic_isp1907_ll.kicad_mod",
+    "symbol": "https://partreel.com/library/module/nordic/nordic_isp1907_ll/nordic_isp1907_ll.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/module/nordic/nordic_isp1907_ll/nordic_isp1907_ll.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/module/nordic/nordic_isp1907_ll/nordic_isp1907_ll.symbol.svg",
+    "model_3d": "https://assets.partreel.com/library/module/nordic/nordic_isp1907_ll/nordic_isp1907_ll.step",
+    "preview": "https://assets.partreel.com/library/module/nordic/nordic_isp1907_ll/nordic_isp1907_ll.glb"
+  },
+  "datasheet": "https://www.insightsip.com/fichiers_insightsip/pdf/ble/ISP1907/isp_ble_DS1907.pdf",
+  "license": "CERN-OHL-P-2.0",
+  "verified": true,
+  "tier": null,
+  "dimensions_source": "nordic-lib-kicad@b12341fb8eae (footprints/nordic-lib-kicad-nrf52-modules.pretty/ISP1907_8x8mm_LGA.kicad_mod)",
+  "keywords": [
+    "nordic",
+    "wireless"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "nordic-lib-kicad@b12341fb8eae (footprints/nordic-lib-kicad-nrf52-modules.pretty/ISP1907_8x8mm_LGA.kicad_mod)",
+    "datasheet": "https://www.insightsip.com/fichiers_insightsip/pdf/ble/ISP1907/isp_ble_DS1907.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_nordic.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/hlord2000/nordic-lib-kicad",
+      "source_commit": "b12341fb8eaea4c72685c87bc37b591bfe25d20a",
+      "source_files": {
+        "symbol": "symbols/nordic-lib-kicad-nrf52-modules.kicad_sym#ISP1907-LL",
+        "footprint": "footprints/nordic-lib-kicad-nrf52-modules.pretty/ISP1907_8x8mm_LGA.kicad_mod",
+        "model": "3dmodels/nordic-lib-kicad-nrf52-modules.3dshapes/ISP1907_8x8mm_LGA.step"
+      },
+      "attribution": "Helmut Lord — nordic-lib-kicad (CERN-OHL-P-2.0)",
+      "modifications": [
+        "extracted single symbol from library",
+        "rewrote 3D model path to per-part relative"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/nordic_isp1907_ll/",
+  "api": "https://partreel.com/api/v1/parts/nordic_isp1907_ll.json"
+}

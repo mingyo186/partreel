@@ -1,0 +1,78 @@
+{
+  "id": "nordic_npm2100_caxx",
+  "name": "nPM2100-CAXX",
+  "category": "power",
+  "family": "Nordic npm",
+  "manufacturer": "Nordic Semiconductor",
+  "mpn_pattern": "nPM2100-CAXX",
+  "description": "nPM2100-CAXX Imported from nordic-lib-kicad (CERN-OHL-P-2.0, attribution: Helmut Lord); dimensions generated from manufacturer datasheet inputs; passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 16,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/power/nordic/nordic_npm2100_caxx/nordic_npm2100_caxx.kicad_mod",
+    "symbol": "https://partreel.com/library/power/nordic/nordic_npm2100_caxx/nordic_npm2100_caxx.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/power/nordic/nordic_npm2100_caxx/nordic_npm2100_caxx.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/power/nordic/nordic_npm2100_caxx/nordic_npm2100_caxx.symbol.svg",
+    "model_3d": "https://assets.partreel.com/library/power/nordic/nordic_npm2100_caxx/nordic_npm2100_caxx.step",
+    "preview": "https://assets.partreel.com/library/power/nordic/nordic_npm2100_caxx/nordic_npm2100_caxx.glb"
+  },
+  "datasheet": "https://github.com/hlord2000/nordic-lib-kicad/blob/b12341fb8eae/symbols/nordic-lib-kicad-npm.kicad_sym",
+  "license": "CERN-OHL-P-2.0",
+  "verified": true,
+  "tier": null,
+  "dimensions_source": "nordic-lib-kicad@b12341fb8eae (footprints/nordic-lib-kicad-npm.pretty/BGA-16_4x4_1.9175x1.8975mm.kicad_mod)",
+  "keywords": [
+    "nordic",
+    "wireless"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "nordic-lib-kicad@b12341fb8eae (footprints/nordic-lib-kicad-npm.pretty/BGA-16_4x4_1.9175x1.8975mm.kicad_mod)",
+    "datasheet": "https://github.com/hlord2000/nordic-lib-kicad/blob/b12341fb8eae/symbols/nordic-lib-kicad-npm.kicad_sym",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_nordic.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/hlord2000/nordic-lib-kicad",
+      "source_commit": "b12341fb8eaea4c72685c87bc37b591bfe25d20a",
+      "source_files": {
+        "symbol": "symbols/nordic-lib-kicad-npm.kicad_sym#nPM2100-CAXX",
+        "footprint": "footprints/nordic-lib-kicad-npm.pretty/BGA-16_4x4_1.9175x1.8975mm.kicad_mod",
+        "model": "3dmodels/nordic-lib-kicad-npm.3dshapes/BGA-16_4x4_1.9175x1.8975mm.step"
+      },
+      "attribution": "Helmut Lord — nordic-lib-kicad (CERN-OHL-P-2.0)",
+      "modifications": [
+        "extracted single symbol from library",
+        "rewrote 3D model path to per-part relative"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/nordic_npm2100_caxx/",
+  "api": "https://partreel.com/api/v1/parts/nordic_npm2100_caxx.json"
+}
