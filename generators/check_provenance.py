@@ -121,6 +121,8 @@ def main():
     ap.add_argument("--pairs")
     ap.add_argument("--file", nargs="*")
     ap.add_argument("--gate", action="store_true", help="IDENTICAL 발견 시 비0 종료 (PR 게이트)")
+    ap.add_argument("--canonical", action="store_true",
+                    help="정본 provenance-report.json에 기록 (물결 감사 전용)")
     args = ap.parse_args()
     cache = os.path.join(ROOT, "docs", "official-fp-signatures.json")
     if args.index:
@@ -138,10 +140,12 @@ def main():
     for r in results:
         print(f"{r['verdict']:<10} {os.path.basename(r['file']):<50} "
               f"delta={r['max_delta_mm']} match={r['matched']}")
-    # --gate(PR 검사)는 정본 리포트를 덮어쓰지 않는다 (2026-07-27 본대 수입 사고 재발 방지:
-    # 게이트 1회 실행이 106종 판정 정본을 지워 제외 목록이 비는 사고)
+    # 정본 provenance-report.json(수입 제외 목록의 근거)은 --canonical 명시 시에만 기록.
+    # 그 외(게이트·수시 검사)는 전부 provenance-gate-last.json — 2026-07-27 정본 클로버
+    # 사고 2건(게이트 1회 실행, 수시 --file 실행) 재발 방지: 기본값을 안전한 쪽으로.
     out = os.path.join(ROOT, "docs",
-                       "provenance-gate-last.json" if args.gate else "provenance-report.json")
+                       "provenance-report.json" if args.canonical
+                       else "provenance-gate-last.json")
     json.dump(results, open(out, "w", encoding="utf-8"), indent=1, ensure_ascii=False)
     print(f"-> {out}")
     if args.gate and any(r["verdict"] == "IDENTICAL" for r in results):

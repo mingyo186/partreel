@@ -178,6 +178,65 @@ def guess_category(data, fp_name):
     return "ic"
 
 
+# IPC-7351 밀도 레벨 B(공칭) 칩 랜드패턴 — 수치 출처: KEMET C1002 X7R SMD 카탈로그
+# Table 3 (치수=사실). C=패드 간격, Y=패드 길이(x), X=패드 폭(y), V1/V2=코트야드.
+# KiCad 공식 카피로 판정된 풋프린트 4종의 대체용 (§21-C 대체 수입 규칙).
+CHIP_LAND = {
+    "1005": {"C": 0.45, "Y": 0.62, "X": 0.62, "V1": 1.90, "V2": 1.00,
+             "body": (1.0, 0.5)},
+    "3216": {"C": 1.50, "Y": 1.15, "X": 1.80, "V1": 4.70, "V2": 2.30,
+             "body": (3.2, 1.6)},
+}
+FP_REPLACEMENTS = {
+    "C_0402_1005Metric": "1005", "D_0402_1005Metric": "1005",
+    "L_0402_1005Metric": "1005", "C_1206_3216Metric": "3216",
+}
+
+
+def chip_footprint(pid, size_key):
+    """자체 생성 2패드 칩 풋프린트 (SMD, IPC-7351 밀도 B 공칭)."""
+    p = CHIP_LAND[size_key]
+    cx = round((p["C"] + p["Y"]) / 2, 4)          # 패드 중심 x
+    hx, hy = p["body"][0] / 2, p["body"][1] / 2   # 몸체 반폭
+    vx, vy = p["V1"] / 2, p["V2"] / 2             # 코트야드 반폭
+    ty = round(vy + 1.1, 2)                       # 참조/값 텍스트 y
+    L = [f'(footprint "{pid}"',
+         '  (version 20240108) (generator "partreel")',
+         '  (layer "F.Cu")',
+         f'  (descr "Chip {size_key} metric 2-terminal SMD. Land pattern per '
+         'IPC-7351 density level B (nominal), values as tabulated in KEMET '
+         'C1002 X7R SMD datasheet Table 3")',
+         '  (attr smd)',
+         f'  (fp_text reference "REF**" (at 0 {-ty}) (layer "F.SilkS")'
+         ' (effects (font (size 1 1) (thickness 0.15))))',
+         f'  (fp_text value "VAL**" (at 0 {ty}) (layer "F.Fab")'
+         ' (effects (font (size 1 1) (thickness 0.15))))']
+    # 몸체 외곽 (Fab)
+    for a, b, c, d in ((-hx, -hy, hx, -hy), (hx, -hy, hx, hy),
+                       (hx, hy, -hx, hy), (-hx, hy, -hx, -hy)):
+        L.append(f'  (fp_line (start {a} {b}) (end {c} {d})'
+                 ' (stroke (width 0.1) (type solid)) (layer "F.Fab"))')
+    # 실크 (패드 사이 상하 라인 — 1005는 공간이 없어 생략, KiCad 관행과 동일)
+    if size_key != "1005":
+        sy = round(p["X"] / 2 + 0.16, 3)
+        sx = round(cx - p["Y"] / 2 - 0.2, 3)
+        for s in (-sy, sy):
+            L.append(f'  (fp_line (start {-sx} {s}) (end {sx} {s})'
+                     ' (stroke (width 0.12) (type solid)) (layer "F.SilkS"))')
+    # 코트야드
+    for a, b, c, d in ((-vx, -vy, vx, -vy), (vx, -vy, vx, vy),
+                       (vx, vy, -vx, vy), (-vx, vy, -vx, -vy)):
+        L.append(f'  (fp_line (start {a} {b}) (end {c} {d})'
+                 ' (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))')
+    for num, x in (("1", -cx), ("2", cx)):
+        L.append(f'  (pad "{num}" smd rect (at {x} 0) (size {p["Y"]} {p["X"]})'
+                 ' (layers "F.Cu" "F.Paste" "F.Mask"))')
+    L.append(f'  (model "{pid}.glb" (offset (xyz 0 0 0)) (scale (xyz 1 1 1))'
+             ' (rotate (xyz 0 0 0)))')
+    L.append(')')
+    return "\n".join(L) + "\n"
+
+
 def excluded_footprints():
     """판별 리포트에서 IDENTICAL/NEAR 풋프린트 이름 집합 (수입 제외 — §21-C)."""
     try:
@@ -210,19 +269,25 @@ def import_loop(cfg, ref):
         try:
             data = json.loads(gh_api_file(f"components/{slug}/data.json", ref))
             sym_name, fp_name = data["symbol"], data["footprint"]
+            replaced_fp = fp_name in FP_REPLACEMENTS
             sym = gh_api_file(f"components/{slug}/{sym_name}.kicad_sym", ref)
-            fp = gh_api_file(f"components/{slug}/{fp_name}.kicad_mod", ref)
-            if not sym or not fp:
+            fp = None if replaced_fp else \
+                gh_api_file(f"components/{slug}/{fp_name}.kicad_mod", ref)
+            if not sym or (not replaced_fp and not fp):
                 skipped.append((slug, "symbol/footprint fetch failed")); continue
-            fp_text = fp.decode("utf-8")
             sym_text = flatten_extends(sym.decode("utf-8"), sym_name)
             if not sym_text:
                 skipped.append((slug, f"symbol '{sym_name}' not found/flatten failed")); continue
-            if '"F.CrtYd"' not in fp_text:
-                skipped.append((slug, "no courtyard")); continue
 
             mpn = data.get("mpn") or slug
             pid = "antmicro_" + slugify(mpn)
+            if replaced_fp:
+                # §21-C 대체 수입: 공식 카피 판정 풋프린트 → 자체 생성 랜드패턴
+                fp_text = chip_footprint(pid, FP_REPLACEMENTS[fp_name])
+            else:
+                fp_text = fp.decode("utf-8")
+            if '"F.CrtYd"' not in fp_text:
+                skipped.append((slug, "no courtyard")); continue
             d = os.path.join(LIB_ROOT, category, "antmicro", pid)
             os.makedirs(d, exist_ok=True)
 
@@ -247,6 +312,12 @@ def import_loop(cfg, ref):
             # 3D 모델 경로 제거 (glb만 제공, step 없음)
             fp_text = re.sub(r'\(model\s+"[^"]*"', '(model "%s.glb"' % pid, fp_text)
             mods = ["converted glTF (LOD) to single-mesh GLB preview"]
+            if replaced_fp:
+                mods.append(
+                    f"footprint replaced: source used '{fp_name}' (KiCad-official-"
+                    "derived, license-incompatible); PartReel generated its own "
+                    "IPC-7351 density-B nominal land pattern instead (values per "
+                    "KEMET C1002 X7R SMD datasheet Table 3)")
             open(os.path.join(d, f"{pid}.kicad_mod"), "w", encoding="utf-8",
                  newline="\n").write(fp_text)
             open(os.path.join(d, f"{pid}.kicad_sym"), "w", encoding="utf-8",
@@ -274,7 +345,10 @@ def import_loop(cfg, ref):
                 "files": files, "formats": formats,
                 "datasheet": data.get("datasheet") or "",
                 "dimensions_source": f"antmicro/hardware-components@{ref[:12]} "
-                                     f"(components/{slug})",
+                                     f"(components/{slug})" +
+                                     ("; footprint land pattern: IPC-7351 density "
+                                      "level B nominal (KEMET C1002 X7R SMD "
+                                      "datasheet Table 3)" if replaced_fp else ""),
                 "verified": True, "origin": "imported", "license": "Apache-2.0",
                 "generated_by": "generators/import_antmicro.py",
                 "keywords": ["antmicro"] + kw[:8],
