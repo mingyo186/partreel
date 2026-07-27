@@ -1,0 +1,75 @@
+{
+  "id": "antmicro_mem2080_00_128_00_a",
+  "name": "MEM2080-00-128-00-A",
+  "category": "connector",
+  "family": "Antmicro connector",
+  "manufacturer": "GCT",
+  "mpn_pattern": "MEM2080-00-128-00-A",
+  "description": "Memory Card Connectors Micro SD, Push Push, SMT, Card Entry Normal, 1.28 mm profile Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 14,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/connector/antmicro/antmicro_mem2080_00_128_00_a/antmicro_mem2080_00_128_00_a.kicad_mod",
+    "symbol": "https://partreel.com/library/connector/antmicro/antmicro_mem2080_00_128_00_a/antmicro_mem2080_00_128_00_a.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/connector/antmicro/antmicro_mem2080_00_128_00_a/antmicro_mem2080_00_128_00_a.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/connector/antmicro/antmicro_mem2080_00_128_00_a/antmicro_mem2080_00_128_00_a.symbol.svg"
+  },
+  "datasheet": "https://gct.co/files/specs/mem2080-spec.pdf",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/gct-mem2080-00-128-00-a)",
+  "keywords": [
+    "antmicro",
+    "horizontal",
+    "smt",
+    "memory",
+    "connector",
+    "rohs"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/gct-mem2080-00-128-00-a)",
+    "datasheet": "https://gct.co/files/specs/mem2080-spec.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/gct-mem2080-00-128-00-a"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_mem2080_00_128_00_a/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_mem2080_00_128_00_a.json"
+}

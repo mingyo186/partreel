@@ -1,0 +1,75 @@
+{
+  "id": "antmicro_rak811_868mhz",
+  "name": "RAK811-868MHz",
+  "category": "module",
+  "family": "Antmicro module",
+  "manufacturer": "RAKwireless",
+  "mpn_pattern": "RAK811-868MHz",
+  "description": "LoRa Module, STM32L151, EU868, RAKwireless Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 34,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/module/antmicro/antmicro_rak811_868mhz/antmicro_rak811_868mhz.kicad_mod",
+    "symbol": "https://partreel.com/library/module/antmicro/antmicro_rak811_868mhz/antmicro_rak811_868mhz.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/module/antmicro/antmicro_rak811_868mhz/antmicro_rak811_868mhz.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/module/antmicro/antmicro_rak811_868mhz/antmicro_rak811_868mhz.symbol.svg",
+    "preview": "https://assets.partreel.com/library/module/antmicro/antmicro_rak811_868mhz/antmicro_rak811_868mhz.glb"
+  },
+  "datasheet": "https://downloads.rakwireless.com/LoRa/RAK811/Hardware_Specification/RAK811_LoRa_Module_Datasheet_V1.4.pdf",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": null,
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/rakwireless-rak811-868mhz)",
+  "keywords": [
+    "antmicro",
+    "smt",
+    "rf",
+    "module"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/rakwireless-rak811-868mhz)",
+    "datasheet": "https://downloads.rakwireless.com/LoRa/RAK811/Hardware_Specification/RAK811_LoRa_Module_Datasheet_V1.4.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/rakwireless-rak811-868mhz"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_rak811_868mhz/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_rak811_868mhz.json"
+}

@@ -1,0 +1,76 @@
+{
+  "id": "antmicro_lm335am",
+  "name": "LM335AM",
+  "category": "sensor",
+  "family": "Antmicro sensor",
+  "manufacturer": "Texas Instruments",
+  "mpn_pattern": "LM335AM",
+  "description": "Temperature sensor, analog, local -40°C ~ 100°C 10mV/°K 8-SOIC Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 7,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/sensor/antmicro/antmicro_lm335am/antmicro_lm335am.kicad_mod",
+    "symbol": "https://partreel.com/library/sensor/antmicro/antmicro_lm335am/antmicro_lm335am.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/sensor/antmicro/antmicro_lm335am/antmicro_lm335am.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/sensor/antmicro/antmicro_lm335am/antmicro_lm335am.symbol.svg",
+    "preview": "https://assets.partreel.com/library/sensor/antmicro/antmicro_lm335am/antmicro_lm335am.glb"
+  },
+  "datasheet": "https://www.ti.com/lit/ds/symlink/lm135.pdf?HQS=dis-dk-null-digikeymode-dsf-pf-null-wwe&ts=1705317147743&ref_url=https%253A%252F%252Fwww.ti.com%252Fgeneral%252Fdocs%252Fsuppproductinfo.tsp%253FdistId%253D10%2526gotoUrl%253Dhttps%253A%252F%252Fwww.ti.com%252Flit%252Fgpn%252Flm135",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": null,
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/texas-instruments-lm335am)",
+  "keywords": [
+    "antmicro",
+    "analog",
+    "sensor",
+    "smt",
+    "rohs"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/texas-instruments-lm335am)",
+    "datasheet": "https://www.ti.com/lit/ds/symlink/lm135.pdf?HQS=dis-dk-null-digikeymode-dsf-pf-null-wwe&ts=1705317147743&ref_url=https%253A%252F%252Fwww.ti.com%252Fgeneral%252Fdocs%252Fsuppproductinfo.tsp%253FdistId%253D10%2526gotoUrl%253Dhttps%253A%252F%252Fwww.ti.com%252Flit%252Fgpn%252Flm135",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/texas-instruments-lm335am"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_lm335am/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_lm335am.json"
+}

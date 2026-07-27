@@ -178,15 +178,16 @@ def render_footprint(text):
               else min(pw, ph) * 0.25 if shape == "roundrect" else 0)
         out.append(f'<rect x="{x - pw/2:.3f}" y="{y - ph/2:.3f}" width="{pw:.3f}" height="{ph:.3f}" '
                    f'rx="{rx:.3f}" fill="{COL["copper"]}"/>')
-        if drill:  # THT 드릴 홀
-            d = drill.split()
-            if d[0] == "oval" and len(d) >= 3:
+        if drill:  # THT 드릴 홀 — (offset ..) 중첩 표기는 치수만 취하고 무시 (시각 근사, 2026-07-27 Antmicro)
+            head = drill.split("(offset")[0]
+            nums = [float(t) for t in re.findall(r"-?\d+\.?\d*", head)]
+            if drill.split()[0] == "oval" and len(nums) >= 2:
                 # 슬롯 = obround(양끝 반원). ellipse 아님(끝이 뾰족해짐).
-                dw, dh = float(d[1]), float(d[2])
+                dw, dh = nums[0], nums[1]
                 out.append(f'<rect x="{x-dw/2:.3f}" y="{y-dh/2:.3f}" width="{dw:.3f}" '
                            f'height="{dh:.3f}" rx="{min(dw,dh)/2:.3f}" fill="{BG}"/>')
-            else:
-                out.append(f'<circle cx="{x:.3f}" cy="{y:.3f}" r="{float(d[0])/2:.3f}" fill="{BG}"/>')
+            elif nums:
+                out.append(f'<circle cx="{x:.3f}" cy="{y:.3f}" r="{nums[0]/2:.3f}" fill="{BG}"/>')
     # 핀1 마커: 모든 패드가 같은 Y(순수 일렬 커넥터)이고 패드 "1"이 있을 때만.
     p1 = next((pd for pd in pads if pd[0] == "1"), None)
     same_row = len({round(pd[4], 2) for pd in pads}) == 1

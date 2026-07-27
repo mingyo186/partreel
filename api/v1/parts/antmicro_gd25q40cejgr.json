@@ -1,0 +1,78 @@
+{
+  "id": "antmicro_gd25q40cejgr",
+  "name": "GD25Q40CEJGR",
+  "category": "ic",
+  "family": "Antmicro ic",
+  "manufacturer": "GigaDevice",
+  "mpn_pattern": "GD25Q40CEJGR",
+  "description": "FLASH - NOR Memory IC 4Mbit SPI - Quad I/O 120 MHz 8-WSON (5x6) Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 9,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/ic/antmicro/antmicro_gd25q40cejgr/antmicro_gd25q40cejgr.kicad_mod",
+    "symbol": "https://partreel.com/library/ic/antmicro/antmicro_gd25q40cejgr/antmicro_gd25q40cejgr.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/ic/antmicro/antmicro_gd25q40cejgr/antmicro_gd25q40cejgr.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/ic/antmicro/antmicro_gd25q40cejgr/antmicro_gd25q40cejgr.symbol.svg",
+    "preview": "https://assets.partreel.com/library/ic/antmicro/antmicro_gd25q40cejgr/antmicro_gd25q40cejgr.glb"
+  },
+  "datasheet": "https://www.mouser.com/datasheet/2/870/gd25q40c_v2.2_20200318-1668237.pdf",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": null,
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/gigadevice-gd25q40cejgr)",
+  "keywords": [
+    "antmicro",
+    "smt",
+    "memory",
+    "ic",
+    "spi",
+    "flash",
+    "rohs"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/gigadevice-gd25q40cejgr)",
+    "datasheet": "https://www.mouser.com/datasheet/2/870/gd25q40c_v2.2_20200318-1668237.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/gigadevice-gd25q40cejgr"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_gd25q40cejgr/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_gd25q40cejgr.json"
+}

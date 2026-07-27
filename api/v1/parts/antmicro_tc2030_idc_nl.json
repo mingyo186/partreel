@@ -1,0 +1,72 @@
+{
+  "id": "antmicro_tc2030_idc_nl",
+  "name": "TC2030-IDC-NL",
+  "category": "connector",
+  "family": "Antmicro connector",
+  "manufacturer": "Tag Connect",
+  "mpn_pattern": "TC2030-IDC-NL",
+  "description": "Tag Connect 2x3 1.27mm terminal Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 6,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/connector/antmicro/antmicro_tc2030_idc_nl/antmicro_tc2030_idc_nl.kicad_mod",
+    "symbol": "https://partreel.com/library/connector/antmicro/antmicro_tc2030_idc_nl/antmicro_tc2030_idc_nl.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/connector/antmicro/antmicro_tc2030_idc_nl/antmicro_tc2030_idc_nl.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/connector/antmicro/antmicro_tc2030_idc_nl/antmicro_tc2030_idc_nl.symbol.svg"
+  },
+  "datasheet": "https://media.digikey.com/pdf/Data%20Sheets/Tag-Connect/TC2030-IDC_RevB.pdf",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/tag-connect-tc2030-idc-nl)",
+  "keywords": [
+    "antmicro",
+    "pogo-pin",
+    "connector"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/tag-connect-tc2030-idc-nl)",
+    "datasheet": "https://media.digikey.com/pdf/Data%20Sheets/Tag-Connect/TC2030-IDC_RevB.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/tag-connect-tc2030-idc-nl"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_tc2030_idc_nl/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_tc2030_idc_nl.json"
+}

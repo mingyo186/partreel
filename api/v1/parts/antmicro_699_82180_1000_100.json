@@ -1,0 +1,72 @@
+{
+  "id": "antmicro_699_82180_1000_100",
+  "name": "699-82180-1000-100",
+  "category": "module",
+  "family": "Antmicro module",
+  "manufacturer": "Nvidia",
+  "mpn_pattern": "699-82180-1000-100",
+  "description": "Jetson TX1, System On Module, Maxwell GPU, Cortex-A57, 8GB LPDDR4 Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": null,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/module/antmicro/antmicro_699_82180_1000_100/antmicro_699_82180_1000_100.kicad_mod",
+    "symbol": "https://partreel.com/library/module/antmicro/antmicro_699_82180_1000_100/antmicro_699_82180_1000_100.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/module/antmicro/antmicro_699_82180_1000_100/antmicro_699_82180_1000_100.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/module/antmicro/antmicro_699_82180_1000_100/antmicro_699_82180_1000_100.symbol.svg"
+  },
+  "datasheet": "https://developer.nvidia.com/embedded/jetson-tx1",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/nvidia-699-82180-1000-100)",
+  "keywords": [
+    "antmicro",
+    "module",
+    "som"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/nvidia-699-82180-1000-100)",
+    "datasheet": "https://developer.nvidia.com/embedded/jetson-tx1",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/nvidia-699-82180-1000-100"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_699_82180_1000_100/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_699_82180_1000_100.json"
+}

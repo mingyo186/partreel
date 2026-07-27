@@ -1,0 +1,74 @@
+{
+  "id": "antmicro_wf121_a_v2",
+  "name": "WF121-A-V2",
+  "category": "connector",
+  "family": "Antmicro connector",
+  "manufacturer": "Silicon Labs",
+  "mpn_pattern": "WF121-A-V2",
+  "description": "Wireless LAN Module, 2.4GHz, I2C, SPI, UART, USB, Navigation Devices, PoS Terminals, RFID, Cameras Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 55,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/connector/antmicro/antmicro_wf121_a_v2/antmicro_wf121_a_v2.kicad_mod",
+    "symbol": "https://partreel.com/library/connector/antmicro/antmicro_wf121_a_v2/antmicro_wf121_a_v2.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/connector/antmicro/antmicro_wf121_a_v2/antmicro_wf121_a_v2.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/connector/antmicro/antmicro_wf121_a_v2/antmicro_wf121_a_v2.symbol.svg",
+    "preview": "https://assets.partreel.com/library/connector/antmicro/antmicro_wf121_a_v2/antmicro_wf121_a_v2.glb"
+  },
+  "datasheet": "https://media.digikey.com/pdf/Data%20Sheets/BlueGiga%20PDFs/WF121_Datasheet.pdf",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": null,
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/silicon-labs-wf121-a-v2)",
+  "keywords": [
+    "antmicro",
+    "module",
+    "rohs"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/silicon-labs-wf121-a-v2)",
+    "datasheet": "https://media.digikey.com/pdf/Data%20Sheets/BlueGiga%20PDFs/WF121_Datasheet.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/silicon-labs-wf121-a-v2"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_wf121_a_v2/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_wf121_a_v2.json"
+}

@@ -1,0 +1,73 @@
+{
+  "id": "antmicro_cx2016fb40000f0fzzh1",
+  "name": "CX2016FB40000F0FZZH1",
+  "category": "passive",
+  "family": "Antmicro passive",
+  "manufacturer": "KYOCERA AVX",
+  "mpn_pattern": "CX2016FB40000F0FZZH1",
+  "description": "Crystal, 40 MHz ±10ppm, f_stability: ±30ppm), CL: 10pF, ESR: 40 Ohm,  2016 4-SMD, No Lead Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 4,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/passive/antmicro/antmicro_cx2016fb40000f0fzzh1/antmicro_cx2016fb40000f0fzzh1.kicad_mod",
+    "symbol": "https://partreel.com/library/passive/antmicro/antmicro_cx2016fb40000f0fzzh1/antmicro_cx2016fb40000f0fzzh1.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/passive/antmicro/antmicro_cx2016fb40000f0fzzh1/antmicro_cx2016fb40000f0fzzh1.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/passive/antmicro/antmicro_cx2016fb40000f0fzzh1/antmicro_cx2016fb40000f0fzzh1.symbol.svg",
+    "preview": "https://assets.partreel.com/library/passive/antmicro/antmicro_cx2016fb40000f0fzzh1/antmicro_cx2016fb40000f0fzzh1.glb"
+  },
+  "datasheet": "https://ele.kyocera.com/assets/products/crystal-device/specification/CX2016FB_10pF.pdf",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": null,
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/kyocera-avx-cx2016fb40000f0fzzh1)",
+  "keywords": [
+    "antmicro",
+    "oscillator"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/kyocera-avx-cx2016fb40000f0fzzh1)",
+    "datasheet": "https://ele.kyocera.com/assets/products/crystal-device/specification/CX2016FB_10pF.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/kyocera-avx-cx2016fb40000f0fzzh1"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_cx2016fb40000f0fzzh1/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_cx2016fb40000f0fzzh1.json"
+}

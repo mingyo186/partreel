@@ -1,0 +1,74 @@
+{
+  "id": "antmicro_ft2232d",
+  "name": "FT2232D",
+  "category": "connector",
+  "family": "Antmicro connector",
+  "manufacturer": "FTDI Chip",
+  "mpn_pattern": "FT2232D",
+  "description": "Interface Bridges, USB to UART, FIFO, 3 V, 5.25 V, LQFP, 48 Pins, -40 °C Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 48,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/connector/antmicro/antmicro_ft2232d/antmicro_ft2232d.kicad_mod",
+    "symbol": "https://partreel.com/library/connector/antmicro/antmicro_ft2232d/antmicro_ft2232d.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/connector/antmicro/antmicro_ft2232d/antmicro_ft2232d.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/connector/antmicro/antmicro_ft2232d/antmicro_ft2232d.symbol.svg",
+    "preview": "https://assets.partreel.com/library/connector/antmicro/antmicro_ft2232d/antmicro_ft2232d.glb"
+  },
+  "datasheet": "https://ftdichip.com/wp-content/uploads/2020/08/DS_FT2232D.pdf",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": null,
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/ftdi-chip-ft2232d)",
+  "keywords": [
+    "antmicro",
+    "ic",
+    "rohs"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/ftdi-chip-ft2232d)",
+    "datasheet": "https://ftdichip.com/wp-content/uploads/2020/08/DS_FT2232D.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/ftdi-chip-ft2232d"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_ft2232d/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_ft2232d.json"
+}

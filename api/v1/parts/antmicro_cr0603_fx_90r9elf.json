@@ -1,0 +1,77 @@
+{
+  "id": "antmicro_cr0603_fx_90r9elf",
+  "name": "CR0603-FX-90R9ELF",
+  "category": "passive",
+  "family": "Antmicro passive",
+  "manufacturer": "Bourns",
+  "mpn_pattern": "CR0603-FX-90R9ELF",
+  "description": "SMD Chip Resistor, 90.9 ohm, ± 1%, 62.5 mW, 0603 [1608 Metric], Thick Film, General Purpose Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 2,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/passive/antmicro/antmicro_cr0603_fx_90r9elf/antmicro_cr0603_fx_90r9elf.kicad_mod",
+    "symbol": "https://partreel.com/library/passive/antmicro/antmicro_cr0603_fx_90r9elf/antmicro_cr0603_fx_90r9elf.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/passive/antmicro/antmicro_cr0603_fx_90r9elf/antmicro_cr0603_fx_90r9elf.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/passive/antmicro/antmicro_cr0603_fx_90r9elf/antmicro_cr0603_fx_90r9elf.symbol.svg",
+    "preview": "https://assets.partreel.com/library/passive/antmicro/antmicro_cr0603_fx_90r9elf/antmicro_cr0603_fx_90r9elf.glb"
+  },
+  "datasheet": "https://www.bourns.com/docs/product-datasheets/cr.pdf",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": null,
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/bourns-cr0603-fx-90r9elf)",
+  "keywords": [
+    "antmicro",
+    "0603",
+    "smt",
+    "resistor",
+    "passive",
+    "rohs"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/bourns-cr0603-fx-90r9elf)",
+    "datasheet": "https://www.bourns.com/docs/product-datasheets/cr.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/bourns-cr0603-fx-90r9elf"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_cr0603_fx_90r9elf/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_cr0603_fx_90r9elf.json"
+}

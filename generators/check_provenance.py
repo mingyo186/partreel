@@ -138,7 +138,10 @@ def main():
     for r in results:
         print(f"{r['verdict']:<10} {os.path.basename(r['file']):<50} "
               f"delta={r['max_delta_mm']} match={r['matched']}")
-    out = os.path.join(ROOT, "docs", "provenance-report.json")
+    # --gate(PR 검사)는 정본 리포트를 덮어쓰지 않는다 (2026-07-27 본대 수입 사고 재발 방지:
+    # 게이트 1회 실행이 106종 판정 정본을 지워 제외 목록이 비는 사고)
+    out = os.path.join(ROOT, "docs",
+                       "provenance-gate-last.json" if args.gate else "provenance-report.json")
     json.dump(results, open(out, "w", encoding="utf-8"), indent=1, ensure_ascii=False)
     print(f"-> {out}")
     if args.gate and any(r["verdict"] == "IDENTICAL" for r in results):

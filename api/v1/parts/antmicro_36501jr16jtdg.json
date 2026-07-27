@@ -1,0 +1,74 @@
+{
+  "id": "antmicro_36501jr16jtdg",
+  "name": "36501JR16JTDG",
+  "category": "passive",
+  "family": "Antmicro passive",
+  "manufacturer": "TE Connectivity",
+  "mpn_pattern": "36501JR16JTDG",
+  "description": "RF Inductor - 160 nH, 5%, 280 mA, 0603 Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 2,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/passive/antmicro/antmicro_36501jr16jtdg/antmicro_36501jr16jtdg.kicad_mod",
+    "symbol": "https://partreel.com/library/passive/antmicro/antmicro_36501jr16jtdg/antmicro_36501jr16jtdg.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/passive/antmicro/antmicro_36501jr16jtdg/antmicro_36501jr16jtdg.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/passive/antmicro/antmicro_36501jr16jtdg/antmicro_36501jr16jtdg.symbol.svg"
+  },
+  "datasheet": "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=showdoc&DocId=Data+Sheet%7F1773163%7FE%7Fpdf%7FEnglish%7FENG_DS_1773163_E.pdf",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/te-connectivity-36501jr16jtdg)",
+  "keywords": [
+    "antmicro",
+    "inductor",
+    "rf",
+    "passive",
+    "rohs"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/te-connectivity-36501jr16jtdg)",
+    "datasheet": "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=showdoc&DocId=Data+Sheet%7F1773163%7FE%7Fpdf%7FEnglish%7FENG_DS_1773163_E.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/te-connectivity-36501jr16jtdg"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_36501jr16jtdg/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_36501jr16jtdg.json"
+}

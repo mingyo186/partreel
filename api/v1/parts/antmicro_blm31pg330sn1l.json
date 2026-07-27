@@ -1,0 +1,77 @@
+{
+  "id": "antmicro_blm31pg330sn1l",
+  "name": "BLM31PG330SN1L",
+  "category": "passive",
+  "family": "Antmicro passive",
+  "manufacturer": "Murata",
+  "mpn_pattern": "BLM31PG330SN1L",
+  "description": "Ferrite Bead, 1206 [3216 Metric], 33 ohm, 6 A, EMIFIL BLM31P, 0.009 ohm, ± 25% Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 2,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/passive/antmicro/antmicro_blm31pg330sn1l/antmicro_blm31pg330sn1l.kicad_mod",
+    "symbol": "https://partreel.com/library/passive/antmicro/antmicro_blm31pg330sn1l/antmicro_blm31pg330sn1l.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/passive/antmicro/antmicro_blm31pg330sn1l/antmicro_blm31pg330sn1l.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/passive/antmicro/antmicro_blm31pg330sn1l/antmicro_blm31pg330sn1l.symbol.svg",
+    "preview": "https://assets.partreel.com/library/passive/antmicro/antmicro_blm31pg330sn1l/antmicro_blm31pg330sn1l.glb"
+  },
+  "datasheet": "https://eu.mouser.com/datasheet/2/281/ENFA0006-1915741.pdf",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": null,
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/murata-blm31pg330sn1l)",
+  "keywords": [
+    "antmicro",
+    "0603",
+    "smt",
+    "ferrite bead",
+    "passive",
+    "rohs"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/murata-blm31pg330sn1l)",
+    "datasheet": "https://eu.mouser.com/datasheet/2/281/ENFA0006-1915741.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/murata-blm31pg330sn1l"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_blm31pg330sn1l/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_blm31pg330sn1l.json"
+}

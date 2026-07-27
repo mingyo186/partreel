@@ -1,0 +1,79 @@
+{
+  "id": "antmicro_12101c105k4z2a",
+  "name": "12101C105K4Z2A",
+  "category": "passive",
+  "family": "Antmicro passive",
+  "manufacturer": "AVX",
+  "mpn_pattern": "12101C105K4Z2A",
+  "description": "SMT Multilayer Ceramic Capacitor, 1 µF, 100 V, 1210 [3225 Metric], ± 10%, X7R, AVX 1210 MLCC Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 2,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/passive/antmicro/antmicro_12101c105k4z2a/antmicro_12101c105k4z2a.kicad_mod",
+    "symbol": "https://partreel.com/library/passive/antmicro/antmicro_12101c105k4z2a/antmicro_12101c105k4z2a.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/passive/antmicro/antmicro_12101c105k4z2a/antmicro_12101c105k4z2a.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/passive/antmicro/antmicro_12101c105k4z2a/antmicro_12101c105k4z2a.symbol.svg",
+    "preview": "https://assets.partreel.com/library/passive/antmicro/antmicro_12101c105k4z2a/antmicro_12101c105k4z2a.glb"
+  },
+  "datasheet": "https://spicat.kyocera-avx.com/product/mlcc/chartview/12101C105K4Z2A/",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": null,
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/avx-12101c105k4z2a)",
+  "keywords": [
+    "antmicro",
+    "1210",
+    "smt",
+    "capacitor",
+    "passive",
+    "ceramic",
+    "mlcc",
+    "rohs"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/avx-12101c105k4z2a)",
+    "datasheet": "https://spicat.kyocera-avx.com/product/mlcc/chartview/12101C105K4Z2A/",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/avx-12101c105k4z2a"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_12101c105k4z2a/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_12101c105k4z2a.json"
+}

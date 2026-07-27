@@ -1,0 +1,78 @@
+{
+  "id": "antmicro_mj_179ph",
+  "name": "MJ-179PH",
+  "category": "connector",
+  "family": "Antmicro connector",
+  "manufacturer": "Multicomp Pro",
+  "mpn_pattern": "MJ-179PH",
+  "description": "DC Power Connector, Jack, 4 A, 1.95 mm, PCB Mount, Through Hole Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 3,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/connector/antmicro/antmicro_mj_179ph/antmicro_mj_179ph.kicad_mod",
+    "symbol": "https://partreel.com/library/connector/antmicro/antmicro_mj_179ph/antmicro_mj_179ph.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/connector/antmicro/antmicro_mj_179ph/antmicro_mj_179ph.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/connector/antmicro/antmicro_mj_179ph/antmicro_mj_179ph.symbol.svg",
+    "preview": "https://assets.partreel.com/library/connector/antmicro/antmicro_mj_179ph/antmicro_mj_179ph.glb"
+  },
+  "datasheet": "https://www.farnell.com/datasheets/3167288.pdf",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": null,
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/multicomp-pro-mj-179ph)",
+  "keywords": [
+    "antmicro",
+    "horizontal",
+    "tht",
+    "jack",
+    "connector",
+    "power",
+    "rohs"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/multicomp-pro-mj-179ph)",
+    "datasheet": "https://www.farnell.com/datasheets/3167288.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/multicomp-pro-mj-179ph"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_mj_179ph/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_mj_179ph.json"
+}

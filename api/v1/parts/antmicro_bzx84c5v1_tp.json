@@ -1,0 +1,76 @@
+{
+  "id": "antmicro_bzx84c5v1_tp",
+  "name": "BZX84C5V1-TP",
+  "category": "discrete",
+  "family": "Antmicro discrete",
+  "manufacturer": "Micro Commercial Components",
+  "mpn_pattern": "BZX84C5V1-TP",
+  "description": "Zener Single Diode, 5.1 V, 350 mW, SOT-23, 3 Pins, 150 °C, Surface Mount Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 3,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/discrete/antmicro/antmicro_bzx84c5v1_tp/antmicro_bzx84c5v1_tp.kicad_mod",
+    "symbol": "https://partreel.com/library/discrete/antmicro/antmicro_bzx84c5v1_tp/antmicro_bzx84c5v1_tp.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/discrete/antmicro/antmicro_bzx84c5v1_tp/antmicro_bzx84c5v1_tp.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/discrete/antmicro/antmicro_bzx84c5v1_tp/antmicro_bzx84c5v1_tp.symbol.svg",
+    "preview": "https://assets.partreel.com/library/discrete/antmicro/antmicro_bzx84c5v1_tp/antmicro_bzx84c5v1_tp.glb"
+  },
+  "datasheet": "https://www.mccsemi.com/pdf/Products/BZX84C(B)2V4~BZX84C(B)75(SOT-23).pdf",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": null,
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/micro-commercial-components-bzx84c5v1-tp)",
+  "keywords": [
+    "antmicro",
+    "smt",
+    "diode",
+    "semiconductor",
+    "zener"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/micro-commercial-components-bzx84c5v1-tp)",
+    "datasheet": "https://www.mccsemi.com/pdf/Products/BZX84C(B)2V4~BZX84C(B)75(SOT-23).pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/micro-commercial-components-bzx84c5v1-tp"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_bzx84c5v1_tp/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_bzx84c5v1_tp.json"
+}

@@ -1,0 +1,75 @@
+{
+  "id": "antmicro_74ahc1g4212gw",
+  "name": "74AHC1G4212GW",
+  "category": "passive",
+  "family": "Antmicro passive",
+  "manufacturer": "Nexperia",
+  "mpn_pattern": "74AHC1G4212GW",
+  "description": "12-stage divider and oscillator -40°C to 125°C Automotive AEC-Q100 5-Pin TSSOP Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 5,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/passive/antmicro/antmicro_74ahc1g4212gw/antmicro_74ahc1g4212gw.kicad_mod",
+    "symbol": "https://partreel.com/library/passive/antmicro/antmicro_74ahc1g4212gw/antmicro_74ahc1g4212gw.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/passive/antmicro/antmicro_74ahc1g4212gw/antmicro_74ahc1g4212gw.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/passive/antmicro/antmicro_74ahc1g4212gw/antmicro_74ahc1g4212gw.symbol.svg",
+    "preview": "https://assets.partreel.com/library/passive/antmicro/antmicro_74ahc1g4212gw/antmicro_74ahc1g4212gw.glb"
+  },
+  "datasheet": "https://assets.nexperia.com/documents/data-sheet/74AHC1G4212.pdf",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": null,
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/nexperia-74ahc1g4212gw)",
+  "keywords": [
+    "antmicro",
+    "oscillator",
+    "divider",
+    "no-rohs"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/nexperia-74ahc1g4212gw)",
+    "datasheet": "https://assets.nexperia.com/documents/data-sheet/74AHC1G4212.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/nexperia-74ahc1g4212gw"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_74ahc1g4212gw/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_74ahc1g4212gw.json"
+}

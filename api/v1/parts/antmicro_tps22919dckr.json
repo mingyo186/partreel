@@ -1,0 +1,75 @@
+{
+  "id": "antmicro_tps22919dckr",
+  "name": "TPS22919DCKR",
+  "category": "switch",
+  "family": "Antmicro switch",
+  "manufacturer": "Texas Instruments",
+  "mpn_pattern": "TPS22919DCKR",
+  "description": "Power Switch IC - Power Distribution 5.5-V, 1.5-A, 90mOhm load switch with adj. output discharge 6-SC70 -40 to 105 Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 6,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/switch/antmicro/antmicro_tps22919dckr/antmicro_tps22919dckr.kicad_mod",
+    "symbol": "https://partreel.com/library/switch/antmicro/antmicro_tps22919dckr/antmicro_tps22919dckr.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/switch/antmicro/antmicro_tps22919dckr/antmicro_tps22919dckr.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/switch/antmicro/antmicro_tps22919dckr/antmicro_tps22919dckr.symbol.svg",
+    "preview": "https://assets.partreel.com/library/switch/antmicro/antmicro_tps22919dckr/antmicro_tps22919dckr.glb"
+  },
+  "datasheet": "https://www.ti.com/lit/ds/symlink/tps22919.pdf?HQS=dis-mous-null-mousermode-dsf-pf-null-wwe&ts=1695991256194&ref_url=https%253A%252F%252Feu.mouser.com%252F",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": null,
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/texas-instruments-tps22919dckr)",
+  "keywords": [
+    "antmicro",
+    "switch",
+    "ic",
+    "rohs"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/texas-instruments-tps22919dckr)",
+    "datasheet": "https://www.ti.com/lit/ds/symlink/tps22919.pdf?HQS=dis-mous-null-mousermode-dsf-pf-null-wwe&ts=1695991256194&ref_url=https%253A%252F%252Feu.mouser.com%252F",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/texas-instruments-tps22919dckr"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_tps22919dckr/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_tps22919dckr.json"
+}

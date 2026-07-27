@@ -1,0 +1,77 @@
+{
+  "id": "antmicro_pac1934t_i_j6cx",
+  "name": "PAC1934T-I/J6CX",
+  "category": "sensor",
+  "family": "Antmicro sensor",
+  "manufacturer": "Microchip Technology",
+  "mpn_pattern": "PAC1934T-I/J6CX",
+  "description": "DC Power/Energy Monitor With Accumulator, Quad High-side current Sensor, 2.7V to 5.5V, WLCSP-16 Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 16,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/sensor/antmicro/antmicro_pac1934t_i_j6cx/antmicro_pac1934t_i_j6cx.kicad_mod",
+    "symbol": "https://partreel.com/library/sensor/antmicro/antmicro_pac1934t_i_j6cx/antmicro_pac1934t_i_j6cx.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/sensor/antmicro/antmicro_pac1934t_i_j6cx/antmicro_pac1934t_i_j6cx.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/sensor/antmicro/antmicro_pac1934t_i_j6cx/antmicro_pac1934t_i_j6cx.symbol.svg",
+    "preview": "https://assets.partreel.com/library/sensor/antmicro/antmicro_pac1934t_i_j6cx/antmicro_pac1934t_i_j6cx.glb"
+  },
+  "datasheet": "https://www.mouser.com/datasheet/2/268/PAC1931_Family_Data_Sheet_DS20005850E-1519053.pdf",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": null,
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/microchip-technology-pac1934t-i-j6cx)",
+  "keywords": [
+    "antmicro",
+    "ic",
+    "pmic",
+    "smt",
+    "monitor",
+    "rohs"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/microchip-technology-pac1934t-i-j6cx)",
+    "datasheet": "https://www.mouser.com/datasheet/2/268/PAC1931_Family_Data_Sheet_DS20005850E-1519053.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/microchip-technology-pac1934t-i-j6cx"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_pac1934t_i_j6cx/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_pac1934t_i_j6cx.json"
+}

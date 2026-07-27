@@ -1,0 +1,80 @@
+{
+  "id": "antmicro_mp5424grm_0000_z",
+  "name": "MP5424GRM-0000-Z",
+  "category": "switch",
+  "family": "Antmicro switch",
+  "manufacturer": "Monolithic Power Systems",
+  "mpn_pattern": "MP5424GRM-0000-Z",
+  "description": "5V PMIC with Four 4.5A/2.5A/4.5A/2A Buck Converters, 3 LDOs, 1 Load Switch and Flexible System Settings via I2C and MTP Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 34,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/switch/antmicro/antmicro_mp5424grm_0000_z/antmicro_mp5424grm_0000_z.kicad_mod",
+    "symbol": "https://partreel.com/library/switch/antmicro/antmicro_mp5424grm_0000_z/antmicro_mp5424grm_0000_z.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/switch/antmicro/antmicro_mp5424grm_0000_z/antmicro_mp5424grm_0000_z.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/switch/antmicro/antmicro_mp5424grm_0000_z/antmicro_mp5424grm_0000_z.symbol.svg",
+    "preview": "https://assets.partreel.com/library/switch/antmicro/antmicro_mp5424grm_0000_z/antmicro_mp5424grm_0000_z.glb"
+  },
+  "datasheet": "https://www.monolithicpower.com/en/documentview/productdocument/index/version/2/document_type/Datasheet/lang/en/sku/MP5424GRM/document_id/10311/",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": null,
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/monolithic-power-systems-mp5424grm-0000-z)",
+  "keywords": [
+    "antmicro",
+    "smt",
+    "pmic",
+    "ic",
+    "voltage",
+    "regulator",
+    "switching",
+    "dc-dc",
+    "rohs"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/monolithic-power-systems-mp5424grm-0000-z)",
+    "datasheet": "https://www.monolithicpower.com/en/documentview/productdocument/index/version/2/document_type/Datasheet/lang/en/sku/MP5424GRM/document_id/10311/",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/monolithic-power-systems-mp5424grm-0000-z"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_mp5424grm_0000_z/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_mp5424grm_0000_z.json"
+}

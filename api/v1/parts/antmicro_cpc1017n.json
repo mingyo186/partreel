@@ -1,0 +1,76 @@
+{
+  "id": "antmicro_cpc1017n",
+  "name": "CPC1017N ",
+  "category": "relay",
+  "family": "Antmicro relay",
+  "manufacturer": "Littelfuse",
+  "mpn_pattern": "CPC1017N ",
+  "description": "Solid State Relays - PCB Mount SPNO RELAY Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 4,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/relay/antmicro/antmicro_cpc1017n/antmicro_cpc1017n.kicad_mod",
+    "symbol": "https://partreel.com/library/relay/antmicro/antmicro_cpc1017n/antmicro_cpc1017n.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/relay/antmicro/antmicro_cpc1017n/antmicro_cpc1017n.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/relay/antmicro/antmicro_cpc1017n/antmicro_cpc1017n.symbol.svg",
+    "preview": "https://assets.partreel.com/library/relay/antmicro/antmicro_cpc1017n/antmicro_cpc1017n.glb"
+  },
+  "datasheet": "https://www.littelfuse.com/media?resourcetype=datasheets&itemid=a949d001-e3a7-4d05-997d-7fab50bddf6d&filename=littelfuse-integrated-circuits-cpc1017n-series-datasheet",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": null,
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/littelfuse-cpc1017n)",
+  "keywords": [
+    "antmicro",
+    "ic",
+    "relay",
+    "spst",
+    "rohs"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/littelfuse-cpc1017n)",
+    "datasheet": "https://www.littelfuse.com/media?resourcetype=datasheets&itemid=a949d001-e3a7-4d05-997d-7fab50bddf6d&filename=littelfuse-integrated-circuits-cpc1017n-series-datasheet",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/littelfuse-cpc1017n"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_cpc1017n/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_cpc1017n.json"
+}

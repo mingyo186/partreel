@@ -1,0 +1,74 @@
+{
+  "id": "antmicro_m2s025_vfg256",
+  "name": "M2S025-VFG256",
+  "category": "module",
+  "family": "Antmicro module",
+  "manufacturer": "Microchip Technology",
+  "mpn_pattern": "M2S025-VFG256",
+  "description": "ARM® Cortex®-M3 System On Chip (SOC) IC SmartFusion®2 FPGA - 25K Logic Modules 166MHz 256-FPBGA (17x17) Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 212,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/module/antmicro/antmicro_m2s025_vfg256/antmicro_m2s025_vfg256.kicad_mod",
+    "symbol": "https://partreel.com/library/module/antmicro/antmicro_m2s025_vfg256/antmicro_m2s025_vfg256.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/module/antmicro/antmicro_m2s025_vfg256/antmicro_m2s025_vfg256.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/module/antmicro/antmicro_m2s025_vfg256/antmicro_m2s025_vfg256.symbol.svg",
+    "preview": "https://assets.partreel.com/library/module/antmicro/antmicro_m2s025_vfg256/antmicro_m2s025_vfg256.glb"
+  },
+  "datasheet": "https://www.mouser.com/datasheet/2/268/IGLOO_2_FPGA_And_SmartFusion_2_SoC_FPGA_Data_Sheet-3082672.pdf",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": null,
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/microchip-technology-m2s025-vfg256)",
+  "keywords": [
+    "antmicro",
+    "ic",
+    "rohs"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/microchip-technology-m2s025-vfg256)",
+    "datasheet": "https://www.mouser.com/datasheet/2/268/IGLOO_2_FPGA_And_SmartFusion_2_SoC_FPGA_Data_Sheet-3082672.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/microchip-technology-m2s025-vfg256"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_m2s025_vfg256/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_m2s025_vfg256.json"
+}

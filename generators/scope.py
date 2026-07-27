@@ -6,6 +6,9 @@ import os
 
 
 def scope_ids():
+    f = os.environ.get("PART_SCOPE_FILE", "").strip()
+    if f and os.path.exists(f):
+        return set(x.strip() for x in open(f, encoding="utf-8") if x.strip())
     v = os.environ.get("PART_SCOPE", "").strip()
     return set(x for x in v.split(",") if x) if v else None
 

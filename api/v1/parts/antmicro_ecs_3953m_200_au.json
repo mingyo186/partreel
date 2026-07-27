@@ -1,0 +1,75 @@
+{
+  "id": "antmicro_ecs_3953m_200_au",
+  "name": "ECS-3953M-200-AU",
+  "category": "passive",
+  "family": "Antmicro passive",
+  "manufacturer": "ECS Inc. International",
+  "mpn_pattern": "ECS-3953M-200-AU",
+  "description": "Standard Clock Oscillator 3V3 HCMOS 20MHz +/-100ppm Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 4,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/passive/antmicro/antmicro_ecs_3953m_200_au/antmicro_ecs_3953m_200_au.kicad_mod",
+    "symbol": "https://partreel.com/library/passive/antmicro/antmicro_ecs_3953m_200_au/antmicro_ecs_3953m_200_au.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/passive/antmicro/antmicro_ecs_3953m_200_au/antmicro_ecs_3953m_200_au.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/passive/antmicro/antmicro_ecs_3953m_200_au/antmicro_ecs_3953m_200_au.symbol.svg",
+    "preview": "https://assets.partreel.com/library/passive/antmicro/antmicro_ecs_3953m_200_au/antmicro_ecs_3953m_200_au.glb"
+  },
+  "datasheet": "https://ecsxtal.com/store/pdf/ECS_3951_53m_AU.pdf",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": null,
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/ecs-inc-international-ecs-3953m-200-au)",
+  "keywords": [
+    "antmicro",
+    "oscillator",
+    "smt",
+    "rohs"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/ecs-inc-international-ecs-3953m-200-au)",
+    "datasheet": "https://ecsxtal.com/store/pdf/ECS_3951_53m_AU.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/ecs-inc-international-ecs-3953m-200-au"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_ecs_3953m_200_au/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_ecs_3953m_200_au.json"
+}

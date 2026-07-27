@@ -1,0 +1,75 @@
+{
+  "id": "antmicro_fs32k146uat0vlht",
+  "name": "FS32K146UAT0VLHT",
+  "category": "ic",
+  "family": "Antmicro ic",
+  "manufacturer": "NXP",
+  "mpn_pattern": "FS32K146UAT0VLHT",
+  "description": "ARM MCU, S32 Family S32K1xx Series Microcontrollers, ARM Cortex-M4F, 32 bit, 112 MHz, 1 MB Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 64,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/ic/antmicro/antmicro_fs32k146uat0vlht/antmicro_fs32k146uat0vlht.kicad_mod",
+    "symbol": "https://partreel.com/library/ic/antmicro/antmicro_fs32k146uat0vlht/antmicro_fs32k146uat0vlht.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/ic/antmicro/antmicro_fs32k146uat0vlht/antmicro_fs32k146uat0vlht.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/ic/antmicro/antmicro_fs32k146uat0vlht/antmicro_fs32k146uat0vlht.symbol.svg"
+  },
+  "datasheet": "https://www.nxp.com/docs/en/data-sheet/S32K1xx.pdf",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/nxp-fs32k146uat0vlht)",
+  "keywords": [
+    "antmicro",
+    "smt",
+    "mcu",
+    "arm",
+    "microcontroller",
+    "rohs"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/nxp-fs32k146uat0vlht)",
+    "datasheet": "https://www.nxp.com/docs/en/data-sheet/S32K1xx.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/nxp-fs32k146uat0vlht"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_fs32k146uat0vlht/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_fs32k146uat0vlht.json"
+}

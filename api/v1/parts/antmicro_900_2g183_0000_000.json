@@ -1,0 +1,73 @@
+{
+  "id": "antmicro_900_2g183_0000_000",
+  "name": "900-2G183-0000-000",
+  "category": "discrete",
+  "family": "Antmicro discrete",
+  "manufacturer": "Nvidia",
+  "mpn_pattern": "900-2G183-0000-000",
+  "description": "Single-slot, low-profile, 6.6-inch PCI Express Gen3 Universal Deep Learning Accelerator based on the TU104 NVIDIA graphics processing unit (GPU). The T4 has 16 GB GDDR6 memory and a 70 W maximum power limit. The T4 is offered as a passively cooled board that requires system air flow to operate the card within its thermal limits. Memory type: GDDR6, Stream processors: 2560, Number of tensor cores: 320, Theoretical performance: 8.141 TFLOP Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": null,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/discrete/antmicro/antmicro_900_2g183_0000_000/antmicro_900_2g183_0000_000.kicad_mod",
+    "symbol": "https://partreel.com/library/discrete/antmicro/antmicro_900_2g183_0000_000/antmicro_900_2g183_0000_000.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/discrete/antmicro/antmicro_900_2g183_0000_000/antmicro_900_2g183_0000_000.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/discrete/antmicro/antmicro_900_2g183_0000_000/antmicro_900_2g183_0000_000.symbol.svg"
+  },
+  "datasheet": "https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/tesla-t4/t4-tensor-core-datasheet-951643.pdf",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/nvidia-900-2g183-0000-000)",
+  "keywords": [
+    "antmicro",
+    "module",
+    "video",
+    "pcie"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/nvidia-900-2g183-0000-000)",
+    "datasheet": "https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/tesla-t4/t4-tensor-core-datasheet-951643.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/nvidia-900-2g183-0000-000"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_900_2g183_0000_000/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_900_2g183_0000_000.json"
+}

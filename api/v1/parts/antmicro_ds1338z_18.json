@@ -1,0 +1,76 @@
+{
+  "id": "antmicro_ds1338z_18",
+  "name": "DS1338Z-18+",
+  "category": "ic",
+  "family": "Antmicro ic",
+  "manufacturer": "Maxim Integrated Products",
+  "mpn_pattern": "DS1338Z-18+",
+  "description": "Real-time clock/calendar,  1.71V-5.5V supply, I2C, SOIC-8 Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 8,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/ic/antmicro/antmicro_ds1338z_18/antmicro_ds1338z_18.kicad_mod",
+    "symbol": "https://partreel.com/library/ic/antmicro/antmicro_ds1338z_18/antmicro_ds1338z_18.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/ic/antmicro/antmicro_ds1338z_18/antmicro_ds1338z_18.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/ic/antmicro/antmicro_ds1338z_18/antmicro_ds1338z_18.symbol.svg",
+    "preview": "https://assets.partreel.com/library/ic/antmicro/antmicro_ds1338z_18/antmicro_ds1338z_18.glb"
+  },
+  "datasheet": "https://www.analog.com/media/en/technical-documentation/data-sheets/DS1338-DS1338Z.pdf",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": null,
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/maxim-integrated-products-ds1338z-18)",
+  "keywords": [
+    "antmicro",
+    "smt",
+    "ic",
+    "clock",
+    "rohs"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/maxim-integrated-products-ds1338z-18)",
+    "datasheet": "https://www.analog.com/media/en/technical-documentation/data-sheets/DS1338-DS1338Z.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/maxim-integrated-products-ds1338z-18"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_ds1338z_18/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_ds1338z_18.json"
+}

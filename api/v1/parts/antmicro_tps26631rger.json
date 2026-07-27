@@ -1,0 +1,75 @@
+{
+  "id": "antmicro_tps26631rger",
+  "name": "TPS26631RGER",
+  "category": "discrete",
+  "family": "Antmicro discrete",
+  "manufacturer": "Texas Instruments",
+  "mpn_pattern": "TPS26631RGER",
+  "description": "4.5-V to 60-V, 31mΩ, 0.6-6A eFuse with output power limiting and surge protection, -40 to 125 Deg C Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 25,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/discrete/antmicro/antmicro_tps26631rger/antmicro_tps26631rger.kicad_mod",
+    "symbol": "https://partreel.com/library/discrete/antmicro/antmicro_tps26631rger/antmicro_tps26631rger.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/discrete/antmicro/antmicro_tps26631rger/antmicro_tps26631rger.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/discrete/antmicro/antmicro_tps26631rger/antmicro_tps26631rger.symbol.svg"
+  },
+  "datasheet": "https://www.ti.com/lit/ds/symlink/tps2663.pdf",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/texas-instruments-tps26631rger)",
+  "keywords": [
+    "antmicro",
+    "smt",
+    "controller",
+    "ic",
+    "diode",
+    "rohs"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/texas-instruments-tps26631rger)",
+    "datasheet": "https://www.ti.com/lit/ds/symlink/tps2663.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/texas-instruments-tps26631rger"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_tps26631rger/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_tps26631rger.json"
+}

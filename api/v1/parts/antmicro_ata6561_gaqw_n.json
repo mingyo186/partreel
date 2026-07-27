@@ -1,0 +1,77 @@
+{
+  "id": "antmicro_ata6561_gaqw_n",
+  "name": "ATA6561-GAQW-N",
+  "category": "ic",
+  "family": "Antmicro ic",
+  "manufacturer": "Microchip Technology",
+  "mpn_pattern": "ATA6561-GAQW-N",
+  "description": "3.3/5V CAN Transceiver, 5 Mbps, SOIC-8 Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 8,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/ic/antmicro/antmicro_ata6561_gaqw_n/antmicro_ata6561_gaqw_n.kicad_mod",
+    "symbol": "https://partreel.com/library/ic/antmicro/antmicro_ata6561_gaqw_n/antmicro_ata6561_gaqw_n.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/ic/antmicro/antmicro_ata6561_gaqw_n/antmicro_ata6561_gaqw_n.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/ic/antmicro/antmicro_ata6561_gaqw_n/antmicro_ata6561_gaqw_n.symbol.svg",
+    "preview": "https://assets.partreel.com/library/ic/antmicro/antmicro_ata6561_gaqw_n/antmicro_ata6561_gaqw_n.glb"
+  },
+  "datasheet": "https://eu.mouser.com/datasheet/3/282/1/20005991B.pdf",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": null,
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/microchip-technology-ata6561-gaqw-n)",
+  "keywords": [
+    "antmicro",
+    "ic",
+    "smt",
+    "transceiver",
+    "can",
+    "rohs"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/microchip-technology-ata6561-gaqw-n)",
+    "datasheet": "https://eu.mouser.com/datasheet/3/282/1/20005991B.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/microchip-technology-ata6561-gaqw-n"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_ata6561_gaqw_n/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_ata6561_gaqw_n.json"
+}

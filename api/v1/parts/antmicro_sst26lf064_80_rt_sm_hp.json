@@ -1,0 +1,74 @@
+{
+  "id": "antmicro_sst26lf064_80_rt_sm_hp",
+  "name": "SST26LF064-80-RT/SM-HP",
+  "category": "ic",
+  "family": "Antmicro ic",
+  "manufacturer": "Microchip Technology",
+  "mpn_pattern": "SST26LF064-80-RT/SM-HP",
+  "description": "64-Mbit 3.0V-3.6V, SQI Flash Memory, Radiation Tolerant, -55°C to +125°C, Military Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 8,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/ic/antmicro/antmicro_sst26lf064_80_rt_sm_hp/antmicro_sst26lf064_80_rt_sm_hp.kicad_mod",
+    "symbol": "https://partreel.com/library/ic/antmicro/antmicro_sst26lf064_80_rt_sm_hp/antmicro_sst26lf064_80_rt_sm_hp.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/ic/antmicro/antmicro_sst26lf064_80_rt_sm_hp/antmicro_sst26lf064_80_rt_sm_hp.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/ic/antmicro/antmicro_sst26lf064_80_rt_sm_hp/antmicro_sst26lf064_80_rt_sm_hp.symbol.svg"
+  },
+  "datasheet": "https://ww1.microchip.com/downloads/aemDocuments/documents/MPD/ProductDocuments/DataSheets/SST26LF064RT-64-Mbit-Serial-Quad-IO-%28SQI%29-Radiation-Tolerant-Flash-Memory-DS20006576.pdf",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/microchip-technology-sst26lf064-80-rt-sm-hp)",
+  "keywords": [
+    "antmicro",
+    "ic",
+    "smt",
+    "flash",
+    "no-rohs"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/microchip-technology-sst26lf064-80-rt-sm-hp)",
+    "datasheet": "https://ww1.microchip.com/downloads/aemDocuments/documents/MPD/ProductDocuments/DataSheets/SST26LF064RT-64-Mbit-Serial-Quad-IO-%28SQI%29-Radiation-Tolerant-Flash-Memory-DS20006576.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/microchip-technology-sst26lf064-80-rt-sm-hp"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_sst26lf064_80_rt_sm_hp/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_sst26lf064_80_rt_sm_hp.json"
+}

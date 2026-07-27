@@ -1,0 +1,77 @@
+{
+  "id": "antmicro_atsamd21j17d_aft",
+  "name": "ATSAMD21J17D-AFT",
+  "category": "ic",
+  "family": "Antmicro ic",
+  "manufacturer": "Microchip Technology",
+  "mpn_pattern": "ATSAMD21J17D-AFT",
+  "description": "ARM MCU, SAM32 Family SAM D2X Series Microcontrollers, ARM Cortex-M0+, 32 bit, 48 MHz, 128 KB Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 64,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/ic/antmicro/antmicro_atsamd21j17d_aft/antmicro_atsamd21j17d_aft.kicad_mod",
+    "symbol": "https://partreel.com/library/ic/antmicro/antmicro_atsamd21j17d_aft/antmicro_atsamd21j17d_aft.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/ic/antmicro/antmicro_atsamd21j17d_aft/antmicro_atsamd21j17d_aft.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/ic/antmicro/antmicro_atsamd21j17d_aft/antmicro_atsamd21j17d_aft.symbol.svg",
+    "preview": "https://assets.partreel.com/library/ic/antmicro/antmicro_atsamd21j17d_aft/antmicro_atsamd21j17d_aft.glb"
+  },
+  "datasheet": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU32/ProductDocuments/DataSheets/SAM-D21-DA1-Family-Data-Sheet-DS40001882H.pdf",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": null,
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/microchip-technology-atsamd21j17d-aft)",
+  "keywords": [
+    "antmicro",
+    "smt",
+    "microcontroller",
+    "ic",
+    "arm",
+    "rohs"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/microchip-technology-atsamd21j17d-aft)",
+    "datasheet": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU32/ProductDocuments/DataSheets/SAM-D21-DA1-Family-Data-Sheet-DS40001882H.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/microchip-technology-atsamd21j17d-aft"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_atsamd21j17d_aft/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_atsamd21j17d_aft.json"
+}

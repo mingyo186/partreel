@@ -1,0 +1,74 @@
+{
+  "id": "antmicro_eic7700x",
+  "name": "EIC7700X",
+  "category": "ic",
+  "family": "Antmicro ic",
+  "manufacturer": "ESWIN",
+  "mpn_pattern": "EIC7700X",
+  "description": "SoC with a Quad-Core SiFive P550 64-bit Out-of-Order CPU cluster, 32GB PLDDR5 RAM, 19.95 TOPS NPU Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 1097,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/ic/antmicro/antmicro_eic7700x/antmicro_eic7700x.kicad_mod",
+    "symbol": "https://partreel.com/library/ic/antmicro/antmicro_eic7700x/antmicro_eic7700x.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/ic/antmicro/antmicro_eic7700x/antmicro_eic7700x.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/ic/antmicro/antmicro_eic7700x/antmicro_eic7700x.symbol.svg"
+  },
+  "datasheet": "https://www.sifive.com/document-file/eic7700x-datasheet",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/eswin-eic7700x)",
+  "keywords": [
+    "antmicro",
+    "smt",
+    "bga",
+    "soc",
+    "microprocessor"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/eswin-eic7700x)",
+    "datasheet": "https://www.sifive.com/document-file/eic7700x-datasheet",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/eswin-eic7700x"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_eic7700x/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_eic7700x.json"
+}

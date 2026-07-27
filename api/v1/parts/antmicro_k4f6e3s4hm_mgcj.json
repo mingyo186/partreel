@@ -1,0 +1,75 @@
+{
+  "id": "antmicro_k4f6e3s4hm_mgcj",
+  "name": "K4F6E3S4HM-MGCJ",
+  "category": "ic",
+  "family": "Antmicro ic",
+  "manufacturer": "Samsung Electronics",
+  "mpn_pattern": "K4F6E3S4HM-MGCJ",
+  "description": "LPDDR4 DRAM, 1GX32 Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 200,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/ic/antmicro/antmicro_k4f6e3s4hm_mgcj/antmicro_k4f6e3s4hm_mgcj.kicad_mod",
+    "symbol": "https://partreel.com/library/ic/antmicro/antmicro_k4f6e3s4hm_mgcj/antmicro_k4f6e3s4hm_mgcj.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/ic/antmicro/antmicro_k4f6e3s4hm_mgcj/antmicro_k4f6e3s4hm_mgcj.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/ic/antmicro/antmicro_k4f6e3s4hm_mgcj/antmicro_k4f6e3s4hm_mgcj.symbol.svg",
+    "preview": "https://assets.partreel.com/library/ic/antmicro/antmicro_k4f6e3s4hm_mgcj/antmicro_k4f6e3s4hm_mgcj.glb"
+  },
+  "datasheet": "https://semiconductor.samsung.com/dram/lpddr/lpddr4/k4f6e3s4hm-mgcj/",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": null,
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/samsung-electronics-k4f6e3s4hm-mgcj)",
+  "keywords": [
+    "antmicro",
+    "ic",
+    "memory",
+    "ddr"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/samsung-electronics-k4f6e3s4hm-mgcj)",
+    "datasheet": "https://semiconductor.samsung.com/dram/lpddr/lpddr4/k4f6e3s4hm-mgcj/",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/samsung-electronics-k4f6e3s4hm-mgcj"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_k4f6e3s4hm_mgcj/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_k4f6e3s4hm_mgcj.json"
+}

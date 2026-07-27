@@ -1,0 +1,73 @@
+{
+  "id": "antmicro_srr6038_470y",
+  "name": "SRR6038-470Y ",
+  "category": "passive",
+  "family": "Antmicro passive",
+  "manufacturer": "Bourns",
+  "mpn_pattern": "SRR6038-470Y ",
+  "description": "Power Inductor (SMD), 47 µH, 950 mA, Shielded, 1 A, SRR6038 Series Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 2,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/passive/antmicro/antmicro_srr6038_470y/antmicro_srr6038_470y.kicad_mod",
+    "symbol": "https://partreel.com/library/passive/antmicro/antmicro_srr6038_470y/antmicro_srr6038_470y.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/passive/antmicro/antmicro_srr6038_470y/antmicro_srr6038_470y.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/passive/antmicro/antmicro_srr6038_470y/antmicro_srr6038_470y.symbol.svg"
+  },
+  "datasheet": "https://www.bourns.com/docs/product-datasheets/srr6038.pdf",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/bourns-srr6038-470y)",
+  "keywords": [
+    "antmicro",
+    "smt",
+    "inductor",
+    "passive"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/bourns-srr6038-470y)",
+    "datasheet": "https://www.bourns.com/docs/product-datasheets/srr6038.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/bourns-srr6038-470y"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_srr6038_470y/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_srr6038_470y.json"
+}

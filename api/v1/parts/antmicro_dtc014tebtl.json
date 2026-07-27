@@ -1,0 +1,78 @@
+{
+  "id": "antmicro_dtc014tebtl",
+  "name": "DTC014TEBTL",
+  "category": "passive",
+  "family": "Antmicro passive",
+  "manufacturer": "ROHM Semiconductor",
+  "mpn_pattern": "DTC014TEBTL",
+  "description": "Bipolar (BJT) Single Transistor with built-in base resistor, NPN, 50V, 100mA, 150mW, SOT-416FL, Surface Mount Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 3,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/passive/antmicro/antmicro_dtc014tebtl/antmicro_dtc014tebtl.kicad_mod",
+    "symbol": "https://partreel.com/library/passive/antmicro/antmicro_dtc014tebtl/antmicro_dtc014tebtl.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/passive/antmicro/antmicro_dtc014tebtl/antmicro_dtc014tebtl.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/passive/antmicro/antmicro_dtc014tebtl/antmicro_dtc014tebtl.symbol.svg",
+    "preview": "https://assets.partreel.com/library/passive/antmicro/antmicro_dtc014tebtl/antmicro_dtc014tebtl.glb"
+  },
+  "datasheet": "https://www.rohm.com/datasheet?p=DTC014TEB&dist=Mouser&media=referral&source=mouser.com&campaign=Mouser",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": null,
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/rohm-semiconductor-dtc014tebtl)",
+  "keywords": [
+    "antmicro",
+    "smt",
+    "transistor",
+    "semiconductor",
+    "bipolar",
+    "npn",
+    "rohs"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/rohm-semiconductor-dtc014tebtl)",
+    "datasheet": "https://www.rohm.com/datasheet?p=DTC014TEB&dist=Mouser&media=referral&source=mouser.com&campaign=Mouser",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/rohm-semiconductor-dtc014tebtl"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_dtc014tebtl/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_dtc014tebtl.json"
+}

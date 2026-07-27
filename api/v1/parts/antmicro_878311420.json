@@ -1,0 +1,75 @@
+{
+  "id": "antmicro_878311420",
+  "name": "878311420",
+  "category": "connector",
+  "family": "Antmicro connector",
+  "manufacturer": "Molex",
+  "mpn_pattern": "878311420",
+  "description": "2.00mm Pitch, Milli-Grid PCB Header, Dual Row, Vertical, Through Hole, Shrouded, 14 Circuits, 0.38µm Gold (Au) Plating, with Center Polarization Slot, with Locking Window, without PCB Locator, Tube Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 14,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/connector/antmicro/antmicro_878311420/antmicro_878311420.kicad_mod",
+    "symbol": "https://partreel.com/library/connector/antmicro/antmicro_878311420/antmicro_878311420.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/connector/antmicro/antmicro_878311420/antmicro_878311420.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/connector/antmicro/antmicro_878311420/antmicro_878311420.symbol.svg",
+    "preview": "https://assets.partreel.com/library/connector/antmicro/antmicro_878311420/antmicro_878311420.glb"
+  },
+  "datasheet": "https://www.molex.com/en-us/products/part-detail-pdf/878311420?display=pdf",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": null,
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/molex-878311420)",
+  "keywords": [
+    "antmicro",
+    "pinstrip",
+    "header",
+    "rohs"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/molex-878311420)",
+    "datasheet": "https://www.molex.com/en-us/products/part-detail-pdf/878311420?display=pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/molex-878311420"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_878311420/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_878311420.json"
+}

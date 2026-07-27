@@ -1,0 +1,72 @@
+{
+  "id": "antmicro_cyble_022001_00",
+  "name": "CYBLE-022001-00",
+  "category": "module",
+  "family": "Antmicro module",
+  "manufacturer": "Cypress Semiconductor",
+  "mpn_pattern": "CYBLE-022001-00",
+  "description": "PSoC® Module, Bluetooth® v4.1 Low Energy Communication, 2.4GHz, Single Mode Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 21,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/module/antmicro/antmicro_cyble_022001_00/antmicro_cyble_022001_00.kicad_mod",
+    "symbol": "https://partreel.com/library/module/antmicro/antmicro_cyble_022001_00/antmicro_cyble_022001_00.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/module/antmicro/antmicro_cyble_022001_00/antmicro_cyble_022001_00.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/module/antmicro/antmicro_cyble_022001_00/antmicro_cyble_022001_00.symbol.svg"
+  },
+  "datasheet": "http://www.cypress.com/file/140791/download",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/cypress-semiconductor-cyble-022001-00)",
+  "keywords": [
+    "antmicro",
+    "module",
+    "rohs"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/cypress-semiconductor-cyble-022001-00)",
+    "datasheet": "http://www.cypress.com/file/140791/download",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/cypress-semiconductor-cyble-022001-00"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_cyble_022001_00/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_cyble_022001_00.json"
+}

@@ -1,0 +1,73 @@
+{
+  "id": "antmicro_m80_5301442",
+  "name": "M80-5301442",
+  "category": "connector",
+  "family": "Antmicro connector",
+  "manufacturer": "Harwin",
+  "mpn_pattern": "M80-5301442",
+  "description": "14 Pos. Male DIL Horizontal Throughboard Conn. Jackscrews, 2.00mm Pitch High-Reliability Connector - Datamate J-Tek Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 14,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/connector/antmicro/antmicro_m80_5301442/antmicro_m80_5301442.kicad_mod",
+    "symbol": "https://partreel.com/library/connector/antmicro/antmicro_m80_5301442/antmicro_m80_5301442.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/connector/antmicro/antmicro_m80_5301442/antmicro_m80_5301442.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/connector/antmicro/antmicro_m80_5301442/antmicro_m80_5301442.symbol.svg"
+  },
+  "datasheet": "https://cdn.harwin.com/pdfs/M80-530.pdf",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/harwin-m80-5301442)",
+  "keywords": [
+    "antmicro",
+    "pinstrip",
+    "header",
+    "rohs"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/harwin-m80-5301442)",
+    "datasheet": "https://cdn.harwin.com/pdfs/M80-530.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/harwin-m80-5301442"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_m80_5301442/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_m80_5301442.json"
+}

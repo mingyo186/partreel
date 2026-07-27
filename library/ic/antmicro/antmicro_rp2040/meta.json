@@ -1,0 +1,47 @@
+{
+  "id": "antmicro_rp2040",
+  "name": "RP2040",
+  "category": "ic",
+  "family": "Antmicro ic",
+  "manufacturer": "Raspberry Pi",
+  "mpn_pattern": "RP2040",
+  "description": "ARM MCU, Raspberry Pi, Dual ARM Cortex-M0+, 32 bit, 133MHz, 264 KB Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 57,
+    "mounting": "SMD"
+  },
+  "files": {
+    "footprint": "antmicro_rp2040.kicad_mod",
+    "symbol": "antmicro_rp2040.kicad_sym",
+    "footprint_svg": "antmicro_rp2040.footprint.svg",
+    "symbol_svg": "antmicro_rp2040.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "datasheet": "https://datasheets.raspberrypi.com/rp2040/rp2040-datasheet.pdf",
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/raspberry-pi-rp2040)",
+  "verified": true,
+  "origin": "imported",
+  "license": "Apache-2.0",
+  "generated_by": "generators/import_antmicro.py",
+  "keywords": [
+    "antmicro",
+    "smt",
+    "microcontroller",
+    "rohs"
+  ],
+  "import": {
+    "source_repo": "https://github.com/antmicro/hardware-components",
+    "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+    "source_files": {
+      "component": "components/raspberry-pi-rp2040"
+    },
+    "attribution": "Antmicro (Apache-2.0)",
+    "modifications": [
+      "converted glTF (LOD) to single-mesh GLB preview"
+    ]
+  },
+  "tier": "verified-2d"
+}

@@ -1,0 +1,77 @@
+{
+  "id": "antmicro_usb7252ct_i_kdx",
+  "name": "USB7252CT-I/KDX ",
+  "category": "connector",
+  "family": "Antmicro connector",
+  "manufacturer": "Microchip Technology",
+  "mpn_pattern": "USB7252CT-I/KDX ",
+  "description": "4-Port USB 3.2 Hub, 2x Type-C with Power Delivery support, 1x USB 3.2, 1x USB 2.0 Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 101,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/connector/antmicro/antmicro_usb7252ct_i_kdx/antmicro_usb7252ct_i_kdx.kicad_mod",
+    "symbol": "https://partreel.com/library/connector/antmicro/antmicro_usb7252ct_i_kdx/antmicro_usb7252ct_i_kdx.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/connector/antmicro/antmicro_usb7252ct_i_kdx/antmicro_usb7252ct_i_kdx.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/connector/antmicro/antmicro_usb7252ct_i_kdx/antmicro_usb7252ct_i_kdx.symbol.svg",
+    "preview": "https://assets.partreel.com/library/connector/antmicro/antmicro_usb7252ct_i_kdx/antmicro_usb7252ct_i_kdx.glb"
+  },
+  "datasheet": "https://ww1.microchip.com/downloads/en/DeviceDoc/00003852A.pdf",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": null,
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/microchip-technology-usb7252ct-i-kdx)",
+  "keywords": [
+    "antmicro",
+    "interface",
+    "controller",
+    "ic",
+    "usb",
+    "hub"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/microchip-technology-usb7252ct-i-kdx)",
+    "datasheet": "https://ww1.microchip.com/downloads/en/DeviceDoc/00003852A.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/microchip-technology-usb7252ct-i-kdx"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_usb7252ct_i_kdx/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_usb7252ct_i_kdx.json"
+}

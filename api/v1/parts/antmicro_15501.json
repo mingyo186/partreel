@@ -1,0 +1,73 @@
+{
+  "id": "antmicro_15501",
+  "name": "15501",
+  "category": "module",
+  "family": "Antmicro module",
+  "manufacturer": "Allied Vision Technologies",
+  "mpn_pattern": "15501",
+  "description": "Alvium 1800 C MIPI CSI-2 camera with Sony IMX250, 66.0 frames per second, 5.1 MP resolution Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": null,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/module/antmicro/antmicro_15501/antmicro_15501.kicad_mod",
+    "symbol": "https://partreel.com/library/module/antmicro/antmicro_15501/antmicro_15501.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/module/antmicro/antmicro_15501/antmicro_15501.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/module/antmicro/antmicro_15501/antmicro_15501.symbol.svg"
+  },
+  "datasheet": "https://www.alliedvision.com/en/products/alvium-configurator/alvium-1800-c/508/#_configurator",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/allied-vision-technologies-15501)",
+  "keywords": [
+    "antmicro",
+    "sensor",
+    "module",
+    "rohs"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/allied-vision-technologies-15501)",
+    "datasheet": "https://www.alliedvision.com/en/products/alvium-configurator/alvium-1800-c/508/#_configurator",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/allied-vision-technologies-15501"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_15501/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_15501.json"
+}

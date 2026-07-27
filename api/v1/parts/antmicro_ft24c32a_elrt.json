@@ -1,0 +1,73 @@
+{
+  "id": "antmicro_ft24c32a_elrt",
+  "name": "FT24C32A-ELRT",
+  "category": "ic",
+  "family": "Antmicro ic",
+  "manufacturer": "Fremont Micro Devices",
+  "mpn_pattern": "FT24C32A-ELRT",
+  "description": "EEPROM Memory IC 1Kbit I²C 1 MHz 550 ns SOT-23-5 Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 5,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/ic/antmicro/antmicro_ft24c32a_elrt/antmicro_ft24c32a_elrt.kicad_mod",
+    "symbol": "https://partreel.com/library/ic/antmicro/antmicro_ft24c32a_elrt/antmicro_ft24c32a_elrt.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/ic/antmicro/antmicro_ft24c32a_elrt/antmicro_ft24c32a_elrt.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/ic/antmicro/antmicro_ft24c32a_elrt/antmicro_ft24c32a_elrt.symbol.svg",
+    "preview": "https://assets.partreel.com/library/ic/antmicro/antmicro_ft24c32a_elrt/antmicro_ft24c32a_elrt.glb"
+  },
+  "datasheet": "https://www.fremontmicro.com/en/#/eeprom/1-1",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": null,
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/fremont-micro-devices-ft24c32a-elrt)",
+  "keywords": [
+    "antmicro",
+    "ic"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/fremont-micro-devices-ft24c32a-elrt)",
+    "datasheet": "https://www.fremontmicro.com/en/#/eeprom/1-1",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/fremont-micro-devices-ft24c32a-elrt"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_ft24c32a_elrt/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_ft24c32a_elrt.json"
+}

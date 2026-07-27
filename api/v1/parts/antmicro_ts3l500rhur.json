@@ -1,0 +1,79 @@
+{
+  "id": "antmicro_ts3l500rhur",
+  "name": "TS3L500RHUR",
+  "category": "switch",
+  "family": "Antmicro switch",
+  "manufacturer": "Texas Instruments",
+  "mpn_pattern": "TS3L500RHUR",
+  "description": "Logic signal switch/multiplexer/decoder Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 69,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/switch/antmicro/antmicro_ts3l500rhur/antmicro_ts3l500rhur.kicad_mod",
+    "symbol": "https://partreel.com/library/switch/antmicro/antmicro_ts3l500rhur/antmicro_ts3l500rhur.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/switch/antmicro/antmicro_ts3l500rhur/antmicro_ts3l500rhur.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/switch/antmicro/antmicro_ts3l500rhur/antmicro_ts3l500rhur.symbol.svg",
+    "preview": "https://assets.partreel.com/library/switch/antmicro/antmicro_ts3l500rhur/antmicro_ts3l500rhur.glb"
+  },
+  "datasheet": "https://www.ti.com/lit/ds/symlink/ts3l500.pdf?ts=1663940859045&ref_url=https%253A%252F%252Fwww.google.com%252F",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": null,
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/texas-instruments-ts3l500rhur)",
+  "keywords": [
+    "antmicro",
+    "smt",
+    "logic",
+    "ic",
+    "signal",
+    "mux",
+    "switch",
+    "rohs"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/texas-instruments-ts3l500rhur)",
+    "datasheet": "https://www.ti.com/lit/ds/symlink/ts3l500.pdf?ts=1663940859045&ref_url=https%253A%252F%252Fwww.google.com%252F",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/texas-instruments-ts3l500rhur"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_ts3l500rhur/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_ts3l500rhur.json"
+}

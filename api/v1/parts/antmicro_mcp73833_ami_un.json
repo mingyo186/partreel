@@ -1,0 +1,74 @@
+{
+  "id": "antmicro_mcp73833_ami_un",
+  "name": "MCP73833-AMI/UN",
+  "category": "ic",
+  "family": "Antmicro ic",
+  "manufacturer": "Microchip Technology",
+  "mpn_pattern": "MCP73833-AMI/UN",
+  "description": "Battery Charger for 1 Cell  Li-Ion/Li-Pol battery, 6V input, 4.2V / 1.2A output, MSOP-10 Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 10,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/ic/antmicro/antmicro_mcp73833_ami_un/antmicro_mcp73833_ami_un.kicad_mod",
+    "symbol": "https://partreel.com/library/ic/antmicro/antmicro_mcp73833_ami_un/antmicro_mcp73833_ami_un.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/ic/antmicro/antmicro_mcp73833_ami_un/antmicro_mcp73833_ami_un.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/ic/antmicro/antmicro_mcp73833_ami_un/antmicro_mcp73833_ami_un.symbol.svg"
+  },
+  "datasheet": "http://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en027983",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/microchip-technology-mcp73833-ami-un)",
+  "keywords": [
+    "antmicro",
+    "ic",
+    "smt",
+    "charger",
+    "rohs"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/microchip-technology-mcp73833-ami-un)",
+    "datasheet": "http://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en027983",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/microchip-technology-mcp73833-ami-un"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_mcp73833_ami_un/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_mcp73833_ami_un.json"
+}

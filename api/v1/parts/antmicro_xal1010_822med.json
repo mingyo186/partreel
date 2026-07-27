@@ -1,0 +1,76 @@
+{
+  "id": "antmicro_xal1010_822med",
+  "name": "XAL1010-822MED",
+  "category": "passive",
+  "family": "Antmicro passive",
+  "manufacturer": "Coilcraft",
+  "mpn_pattern": "XAL1010-822MED",
+  "description": "Power Inductor (SMD), 8.2 µH, 17.1 A, Shielded, XAL1010 Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 2,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/passive/antmicro/antmicro_xal1010_822med/antmicro_xal1010_822med.kicad_mod",
+    "symbol": "https://partreel.com/library/passive/antmicro/antmicro_xal1010_822med/antmicro_xal1010_822med.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/passive/antmicro/antmicro_xal1010_822med/antmicro_xal1010_822med.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/passive/antmicro/antmicro_xal1010_822med/antmicro_xal1010_822med.symbol.svg",
+    "preview": "https://assets.partreel.com/library/passive/antmicro/antmicro_xal1010_822med/antmicro_xal1010_822med.glb"
+  },
+  "datasheet": "https://eu.mouser.com/datasheet/3/995/1/xal1010.pdf",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": null,
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/coilcraft-xal1010-822med)",
+  "keywords": [
+    "antmicro",
+    "smt",
+    "inductor",
+    "passive",
+    "rohs"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/coilcraft-xal1010-822med)",
+    "datasheet": "https://eu.mouser.com/datasheet/3/995/1/xal1010.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/coilcraft-xal1010-822med"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_xal1010_822med/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_xal1010_822med.json"
+}

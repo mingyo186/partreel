@@ -1,0 +1,74 @@
+{
+  "id": "antmicro_ecs_327mvatx_2_cn_tr3",
+  "name": "ECS-327MVATX-2-CN-TR3",
+  "category": "passive",
+  "family": "Antmicro passive",
+  "manufacturer": "ECS Inc. International",
+  "mpn_pattern": "ECS-327MVATX-2-CN-TR3",
+  "description": "32.768 kHz XO (Standard) CMOS Oscillator 1.6V ~ 3.6V Enable/Disable 4-SMD, No Lead Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 4,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/passive/antmicro/antmicro_ecs_327mvatx_2_cn_tr3/antmicro_ecs_327mvatx_2_cn_tr3.kicad_mod",
+    "symbol": "https://partreel.com/library/passive/antmicro/antmicro_ecs_327mvatx_2_cn_tr3/antmicro_ecs_327mvatx_2_cn_tr3.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/passive/antmicro/antmicro_ecs_327mvatx_2_cn_tr3/antmicro_ecs_327mvatx_2_cn_tr3.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/passive/antmicro/antmicro_ecs_327mvatx_2_cn_tr3/antmicro_ecs_327mvatx_2_cn_tr3.symbol.svg",
+    "preview": "https://assets.partreel.com/library/passive/antmicro/antmicro_ecs_327mvatx_2_cn_tr3/antmicro_ecs_327mvatx_2_cn_tr3.glb"
+  },
+  "datasheet": "https://ecsxtal.com/store/pdf/ECS-327MVATX.pdf",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": null,
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/ecs-inc-international-ecs-327mvatx-2-cn-tr3)",
+  "keywords": [
+    "antmicro",
+    "oscillator",
+    "rohs"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/ecs-inc-international-ecs-327mvatx-2-cn-tr3)",
+    "datasheet": "https://ecsxtal.com/store/pdf/ECS-327MVATX.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/ecs-inc-international-ecs-327mvatx-2-cn-tr3"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_ecs_327mvatx_2_cn_tr3/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_ecs_327mvatx_2_cn_tr3.json"
+}

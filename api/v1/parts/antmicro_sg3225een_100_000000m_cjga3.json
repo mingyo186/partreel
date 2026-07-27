@@ -1,0 +1,74 @@
+{
+  "id": "antmicro_sg3225een_100_000000m_cjga3",
+  "name": "SG3225EEN_100.000000M-CJGA3",
+  "category": "passive",
+  "family": "Antmicro passive",
+  "manufacturer": "Epson",
+  "mpn_pattern": "SG3225EEN_100.000000M-CJGA3",
+  "description": "100 MHz XO (Standard) LVPECL Oscillator 3.3V Enable/Disable 6-SMD, No Lead Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 6,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/passive/antmicro/antmicro_sg3225een_100_000000m_cjga3/antmicro_sg3225een_100_000000m_cjga3.kicad_mod",
+    "symbol": "https://partreel.com/library/passive/antmicro/antmicro_sg3225een_100_000000m_cjga3/antmicro_sg3225een_100_000000m_cjga3.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/passive/antmicro/antmicro_sg3225een_100_000000m_cjga3/antmicro_sg3225een_100_000000m_cjga3.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/passive/antmicro/antmicro_sg3225een_100_000000m_cjga3/antmicro_sg3225een_100_000000m_cjga3.symbol.svg",
+    "preview": "https://assets.partreel.com/library/passive/antmicro/antmicro_sg3225een_100_000000m_cjga3/antmicro_sg3225een_100_000000m_cjga3.glb"
+  },
+  "datasheet": "https://support.epson.biz/td/api/doc_check.php?dl=brief_SG3225EEN&lang=en",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": null,
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/epson-sg3225een-100-000000m-cjga3)",
+  "keywords": [
+    "antmicro",
+    "oscillator",
+    "lvds"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/epson-sg3225een-100-000000m-cjga3)",
+    "datasheet": "https://support.epson.biz/td/api/doc_check.php?dl=brief_SG3225EEN&lang=en",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/epson-sg3225een-100-000000m-cjga3"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_sg3225een_100_000000m_cjga3/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_sg3225een_100_000000m_cjga3.json"
+}

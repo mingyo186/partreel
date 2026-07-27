@@ -1,0 +1,77 @@
+{
+  "id": "antmicro_ntb0102gt",
+  "name": "NTB0102GT",
+  "category": "ic",
+  "family": "Antmicro ic",
+  "manufacturer": "NXP",
+  "mpn_pattern": "NTB0102GT",
+  "description": "Transceiver, 1.65 V to 3.6 V, XSON-8 Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 8,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/ic/antmicro/antmicro_ntb0102gt/antmicro_ntb0102gt.kicad_mod",
+    "symbol": "https://partreel.com/library/ic/antmicro/antmicro_ntb0102gt/antmicro_ntb0102gt.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/ic/antmicro/antmicro_ntb0102gt/antmicro_ntb0102gt.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/ic/antmicro/antmicro_ntb0102gt/antmicro_ntb0102gt.symbol.svg",
+    "preview": "https://assets.partreel.com/library/ic/antmicro/antmicro_ntb0102gt/antmicro_ntb0102gt.glb"
+  },
+  "datasheet": "https://www.nxp.com/docs/en/data-sheet/NTB0102.pdf",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": null,
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/nxp-ntb0102gt)",
+  "keywords": [
+    "antmicro",
+    "smt",
+    "level-shifter",
+    "ic",
+    "logic",
+    "rohs"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/nxp-ntb0102gt)",
+    "datasheet": "https://www.nxp.com/docs/en/data-sheet/NTB0102.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/nxp-ntb0102gt"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_ntb0102gt/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_ntb0102gt.json"
+}

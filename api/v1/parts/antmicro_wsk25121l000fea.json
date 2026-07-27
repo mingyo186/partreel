@@ -1,0 +1,74 @@
+{
+  "id": "antmicro_wsk25121l000fea",
+  "name": "WSK25121L000FEA",
+  "category": "passive",
+  "family": "Antmicro passive",
+  "manufacturer": "Vishay",
+  "mpn_pattern": "WSK25121L000FEA",
+  "description": "1 mOhms ±1% 1W Chip Resistor 2512 (6432 Metric) Anti-Sulfur, Automotive AEC-Q200, Current Sense, Pulse Withstanding Metal Element Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 4,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/passive/antmicro/antmicro_wsk25121l000fea/antmicro_wsk25121l000fea.kicad_mod",
+    "symbol": "https://partreel.com/library/passive/antmicro/antmicro_wsk25121l000fea/antmicro_wsk25121l000fea.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/passive/antmicro/antmicro_wsk25121l000fea/antmicro_wsk25121l000fea.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/passive/antmicro/antmicro_wsk25121l000fea/antmicro_wsk25121l000fea.symbol.svg"
+  },
+  "datasheet": "https://www.vishay.com/docs/30108/wsk2512.pdf",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/vishay-wsk25121l000fea)",
+  "keywords": [
+    "antmicro",
+    "smt",
+    "resistor",
+    "sensor",
+    "rohs"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/vishay-wsk25121l000fea)",
+    "datasheet": "https://www.vishay.com/docs/30108/wsk2512.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/vishay-wsk25121l000fea"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_wsk25121l000fea/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_wsk25121l000fea.json"
+}

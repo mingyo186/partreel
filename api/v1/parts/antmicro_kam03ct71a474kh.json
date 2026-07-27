@@ -1,0 +1,76 @@
+{
+  "id": "antmicro_kam03ct71a474kh",
+  "name": "KAM03CT71A474KH",
+  "category": "passive",
+  "family": "Antmicro passive",
+  "manufacturer": "KYOCERA AVX",
+  "mpn_pattern": "KAM03CT71A474KH",
+  "description": "470nF ±10% 10V Ceramic Capacitor X7T 0201 Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 2,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/passive/antmicro/antmicro_kam03ct71a474kh/antmicro_kam03ct71a474kh.kicad_mod",
+    "symbol": "https://partreel.com/library/passive/antmicro/antmicro_kam03ct71a474kh/antmicro_kam03ct71a474kh.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/passive/antmicro/antmicro_kam03ct71a474kh/antmicro_kam03ct71a474kh.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/passive/antmicro/antmicro_kam03ct71a474kh/antmicro_kam03ct71a474kh.symbol.svg",
+    "preview": "https://assets.partreel.com/library/passive/antmicro/antmicro_kam03ct71a474kh/antmicro_kam03ct71a474kh.glb"
+  },
+  "datasheet": "https://datasheets.kyocera-avx.com/AutoMLCCKAM.pdf",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": null,
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/kyocera-avx-kam03ct71a474kh)",
+  "keywords": [
+    "antmicro",
+    "smt",
+    "capacitor",
+    "passive",
+    "rohs"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/kyocera-avx-kam03ct71a474kh)",
+    "datasheet": "https://datasheets.kyocera-avx.com/AutoMLCCKAM.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/kyocera-avx-kam03ct71a474kh"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_kam03ct71a474kh/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_kam03ct71a474kh.json"
+}

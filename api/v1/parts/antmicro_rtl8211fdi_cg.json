@@ -1,0 +1,78 @@
+{
+  "id": "antmicro_rtl8211fdi_cg",
+  "name": "RTL8211FDI-CG",
+  "category": "ic",
+  "family": "Antmicro ic",
+  "manufacturer": "Realtek",
+  "mpn_pattern": "RTL8211FDI-CG",
+  "description": "Integrated 10/100/1000M Ethernet precision transceiver Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 41,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/ic/antmicro/antmicro_rtl8211fdi_cg/antmicro_rtl8211fdi_cg.kicad_mod",
+    "symbol": "https://partreel.com/library/ic/antmicro/antmicro_rtl8211fdi_cg/antmicro_rtl8211fdi_cg.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/ic/antmicro/antmicro_rtl8211fdi_cg/antmicro_rtl8211fdi_cg.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/ic/antmicro/antmicro_rtl8211fdi_cg/antmicro_rtl8211fdi_cg.symbol.svg",
+    "preview": "https://assets.partreel.com/library/ic/antmicro/antmicro_rtl8211fdi_cg/antmicro_rtl8211fdi_cg.glb"
+  },
+  "datasheet": "https://www.lcsc.com/datasheet/C692886.pdf",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": null,
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/realtek-rtl8211fdi-cg)",
+  "keywords": [
+    "antmicro",
+    "ic",
+    "ethernet",
+    "pcie",
+    "smt",
+    "transceiver",
+    "phy"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/realtek-rtl8211fdi-cg)",
+    "datasheet": "https://www.lcsc.com/datasheet/C692886.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/realtek-rtl8211fdi-cg"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_rtl8211fdi_cg/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_rtl8211fdi_cg.json"
+}

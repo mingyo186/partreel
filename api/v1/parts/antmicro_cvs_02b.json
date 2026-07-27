@@ -1,0 +1,77 @@
+{
+  "id": "antmicro_cvs_02b",
+  "name": "CVS-02B",
+  "category": "switch",
+  "family": "Antmicro switch",
+  "manufacturer": "Nidec Components",
+  "mpn_pattern": "CVS-02B",
+  "description": "Slide switch, 2-position SMD Slide switch, 2-channel Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 8,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/switch/antmicro/antmicro_cvs_02b/antmicro_cvs_02b.kicad_mod",
+    "symbol": "https://partreel.com/library/switch/antmicro/antmicro_cvs_02b/antmicro_cvs_02b.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/switch/antmicro/antmicro_cvs_02b/antmicro_cvs_02b.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/switch/antmicro/antmicro_cvs_02b/antmicro_cvs_02b.symbol.svg",
+    "preview": "https://assets.partreel.com/library/switch/antmicro/antmicro_cvs_02b/antmicro_cvs_02b.glb"
+  },
+  "datasheet": "https://www.mouser.com/datasheet/2/972/cvs-1827291.pdf",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": null,
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/nidec-components-cvs-02b)",
+  "keywords": [
+    "antmicro",
+    "horizontal",
+    "smt",
+    "switch",
+    "mechanical",
+    "rohs"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/nidec-components-cvs-02b)",
+    "datasheet": "https://www.mouser.com/datasheet/2/972/cvs-1827291.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/nidec-components-cvs-02b"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_cvs_02b/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_cvs_02b.json"
+}

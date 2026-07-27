@@ -1,0 +1,77 @@
+{
+  "id": "antmicro_w25q128jvsiq",
+  "name": "W25Q128JVSIQ",
+  "category": "ic",
+  "family": "Antmicro ic",
+  "manufacturer": "Winbond",
+  "mpn_pattern": "W25Q128JVSIQ",
+  "description": "FLASH - NOR Memory IC 128Mbit SPI - Quad I/O, QPI 104 MHz 8-SOIC Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 8,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/ic/antmicro/antmicro_w25q128jvsiq/antmicro_w25q128jvsiq.kicad_mod",
+    "symbol": "https://partreel.com/library/ic/antmicro/antmicro_w25q128jvsiq/antmicro_w25q128jvsiq.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/ic/antmicro/antmicro_w25q128jvsiq/antmicro_w25q128jvsiq.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/ic/antmicro/antmicro_w25q128jvsiq/antmicro_w25q128jvsiq.symbol.svg",
+    "preview": "https://assets.partreel.com/library/ic/antmicro/antmicro_w25q128jvsiq/antmicro_w25q128jvsiq.glb"
+  },
+  "datasheet": "https://www.winbond.com/resource-files/w25q128jv%20revf%2003272018%20plus.pdf",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": null,
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/winbond-w25q128jvsiq)",
+  "keywords": [
+    "antmicro",
+    "smt",
+    "memory",
+    "ic",
+    "flash",
+    "rohs"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/winbond-w25q128jvsiq)",
+    "datasheet": "https://www.winbond.com/resource-files/w25q128jv%20revf%2003272018%20plus.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/winbond-w25q128jvsiq"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_w25q128jvsiq/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_w25q128jvsiq.json"
+}

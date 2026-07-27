@@ -1,0 +1,73 @@
+{
+  "id": "antmicro_df33c_2p_3_3dsa_24",
+  "name": "DF33C-2P-3.3DSA(24)",
+  "category": "connector",
+  "family": "Antmicro connector",
+  "manufacturer": "Hirose Electric",
+  "mpn_pattern": "DF33C-2P-3.3DSA(24)",
+  "description": "Pin Header, Wire-to-Board, 3.3 mm, 1 Rows, 2 Contacts, Through Hole, EnerBee DF33C Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 2,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/connector/antmicro/antmicro_df33c_2p_3_3dsa_24/antmicro_df33c_2p_3_3dsa_24.kicad_mod",
+    "symbol": "https://partreel.com/library/connector/antmicro/antmicro_df33c_2p_3_3dsa_24/antmicro_df33c_2p_3_3dsa_24.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/connector/antmicro/antmicro_df33c_2p_3_3dsa_24/antmicro_df33c_2p_3_3dsa_24.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/connector/antmicro/antmicro_df33c_2p_3_3dsa_24/antmicro_df33c_2p_3_3dsa_24.symbol.svg"
+  },
+  "datasheet": "https://www.mouser.com/datasheet/2/185/DF33C_5P_3_3DSA_252824_2529_CL0676_1134_0_24_Catal-2487016.pdf",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/hirose-electric-df33c-2p-3-3dsa-24)",
+  "keywords": [
+    "antmicro",
+    "connector",
+    "tht",
+    "rohs"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/hirose-electric-df33c-2p-3-3dsa-24)",
+    "datasheet": "https://www.mouser.com/datasheet/2/185/DF33C_5P_3_3DSA_252824_2529_CL0676_1134_0_24_Catal-2487016.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/hirose-electric-df33c-2p-3-3dsa-24"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_df33c_2p_3_3dsa_24/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_df33c_2p_3_3dsa_24.json"
+}

@@ -1,0 +1,74 @@
+{
+  "id": "antmicro_slb9673au20fw2610xtma1",
+  "name": "SLB9673AU20FW2610XTMA1",
+  "category": "ic",
+  "family": "Antmicro ic",
+  "manufacturer": "Infineon",
+  "mpn_pattern": "SLB9673AU20FW2610XTMA1",
+  "description": "Security ICs / Authentication ICs Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 33,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/ic/antmicro/antmicro_slb9673au20fw2610xtma1/antmicro_slb9673au20fw2610xtma1.kicad_mod",
+    "symbol": "https://partreel.com/library/ic/antmicro/antmicro_slb9673au20fw2610xtma1/antmicro_slb9673au20fw2610xtma1.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/ic/antmicro/antmicro_slb9673au20fw2610xtma1/antmicro_slb9673au20fw2610xtma1.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/ic/antmicro/antmicro_slb9673au20fw2610xtma1/antmicro_slb9673au20fw2610xtma1.symbol.svg",
+    "preview": "https://assets.partreel.com/library/ic/antmicro/antmicro_slb9673au20fw2610xtma1/antmicro_slb9673au20fw2610xtma1.glb"
+  },
+  "datasheet": "https://eu.mouser.com/datasheet/2/196/Infineon_OPTIGA_TPM_SLB_9673_FW26_DataSheet_v01_30-3363760.pdf",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": null,
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/infineon-slb9673au20fw2610xtma1)",
+  "keywords": [
+    "antmicro",
+    "ic",
+    "rohs"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/infineon-slb9673au20fw2610xtma1)",
+    "datasheet": "https://eu.mouser.com/datasheet/2/196/Infineon_OPTIGA_TPM_SLB_9673_FW26_DataSheet_v01_30-3363760.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/infineon-slb9673au20fw2610xtma1"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_slb9673au20fw2610xtma1/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_slb9673au20fw2610xtma1.json"
+}

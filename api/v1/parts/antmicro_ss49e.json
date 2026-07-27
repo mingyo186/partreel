@@ -1,0 +1,74 @@
+{
+  "id": "antmicro_ss49e",
+  "name": "SS49E",
+  "category": "switch",
+  "family": "Antmicro switch",
+  "manufacturer": "Honeywell",
+  "mpn_pattern": "SS49E",
+  "description": "Ratiometric Hall Effect Sensor, switching current 1.5 mA Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 3,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/switch/antmicro/antmicro_ss49e/antmicro_ss49e.kicad_mod",
+    "symbol": "https://partreel.com/library/switch/antmicro/antmicro_ss49e/antmicro_ss49e.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/switch/antmicro/antmicro_ss49e/antmicro_ss49e.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/switch/antmicro/antmicro_ss49e/antmicro_ss49e.symbol.svg"
+  },
+  "datasheet": "https://datasheet.datasheetarchive.com/originals/distributors/SFDatasheet-1/sf-00023632.pdf",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/honeywell-ss49e)",
+  "keywords": [
+    "antmicro",
+    "tht",
+    "hall",
+    "sensor",
+    "rohs"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/honeywell-ss49e)",
+    "datasheet": "https://datasheet.datasheetarchive.com/originals/distributors/SFDatasheet-1/sf-00023632.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/honeywell-ss49e"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_ss49e/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_ss49e.json"
+}

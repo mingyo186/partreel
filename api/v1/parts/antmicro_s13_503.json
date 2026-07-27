@@ -1,0 +1,75 @@
+{
+  "id": "antmicro_s13_503",
+  "name": "S13-503 ",
+  "category": "connector",
+  "family": "Antmicro connector",
+  "manufacturer": "Harwin",
+  "mpn_pattern": "S13-503 ",
+  "description": "Spring Probe Sleeve, Suitable for 1.27mm pitch Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 1,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/connector/antmicro/antmicro_s13_503/antmicro_s13_503.kicad_mod",
+    "symbol": "https://partreel.com/library/connector/antmicro/antmicro_s13_503/antmicro_s13_503.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/connector/antmicro/antmicro_s13_503/antmicro_s13_503.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/connector/antmicro/antmicro_s13_503/antmicro_s13_503.symbol.svg",
+    "preview": "https://assets.partreel.com/library/connector/antmicro/antmicro_s13_503/antmicro_s13_503.glb"
+  },
+  "datasheet": "https://content.harwin.com/m/9a9332cff2ce4e77/original/DRG-02184-Technical-Drawing-Datasheet-S13-503-pdf.pdf",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": null,
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/harwin-s13-503)",
+  "keywords": [
+    "antmicro",
+    "pogo-pin",
+    "connector",
+    "rohs"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/harwin-s13-503)",
+    "datasheet": "https://content.harwin.com/m/9a9332cff2ce4e77/original/DRG-02184-Technical-Drawing-Datasheet-S13-503-pdf.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/harwin-s13-503"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_s13_503/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_s13_503.json"
+}

@@ -1,0 +1,74 @@
+{
+  "id": "antmicro_82473c",
+  "name": "82473C",
+  "category": "passive",
+  "family": "Antmicro passive",
+  "manufacturer": "Murata",
+  "mpn_pattern": "82473C",
+  "description": "Power Inductor (SMT), 47 µH, 250 mA, Unshielded, 8200 Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 2,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/passive/antmicro/antmicro_82473c/antmicro_82473c.kicad_mod",
+    "symbol": "https://partreel.com/library/passive/antmicro/antmicro_82473c/antmicro_82473c.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/passive/antmicro/antmicro_82473c/antmicro_82473c.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/passive/antmicro/antmicro_82473c/antmicro_82473c.symbol.svg"
+  },
+  "datasheet": "https://www.murata-ps.com/data/magnetics/kmp_8200c.pdf",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/murata-82473c)",
+  "keywords": [
+    "antmicro",
+    "smt",
+    "inductor",
+    "passive",
+    "rohs"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/murata-82473c)",
+    "datasheet": "https://www.murata-ps.com/data/magnetics/kmp_8200c.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/murata-82473c"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_82473c/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_82473c.json"
+}

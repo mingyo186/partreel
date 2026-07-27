@@ -1,0 +1,80 @@
+{
+  "id": "antmicro_mcp2221a_i_ml",
+  "name": "MCP2221A-I/ML",
+  "category": "connector",
+  "family": "Antmicro connector",
+  "manufacturer": "Microchip Technology",
+  "mpn_pattern": "MCP2221A-I/ML",
+  "description": "USB 2.0 to I 2C/UART Protocol Converter with GPIO Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 17,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/connector/antmicro/antmicro_mcp2221a_i_ml/antmicro_mcp2221a_i_ml.kicad_mod",
+    "symbol": "https://partreel.com/library/connector/antmicro/antmicro_mcp2221a_i_ml/antmicro_mcp2221a_i_ml.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/connector/antmicro/antmicro_mcp2221a_i_ml/antmicro_mcp2221a_i_ml.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/connector/antmicro/antmicro_mcp2221a_i_ml/antmicro_mcp2221a_i_ml.symbol.svg",
+    "preview": "https://assets.partreel.com/library/connector/antmicro/antmicro_mcp2221a_i_ml/antmicro_mcp2221a_i_ml.glb"
+  },
+  "datasheet": "https://ww1.microchip.com/downloads/aemDocuments/documents/APID/ProductDocuments/DataSheets/MCP2221A-Data-Sheet-20005565E.pdf",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": null,
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/microchip-technology-mcp2221a-i-ml)",
+  "keywords": [
+    "antmicro",
+    "smt",
+    "interface",
+    "ic",
+    "controller",
+    "usb",
+    "uart",
+    "i2c",
+    "rohs"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/microchip-technology-mcp2221a-i-ml)",
+    "datasheet": "https://ww1.microchip.com/downloads/aemDocuments/documents/APID/ProductDocuments/DataSheets/MCP2221A-Data-Sheet-20005565E.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/microchip-technology-mcp2221a-i-ml"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_mcp2221a_i_ml/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_mcp2221a_i_ml.json"
+}

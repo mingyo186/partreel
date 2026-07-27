@@ -26,8 +26,29 @@ REPO = "antmicro/hardware-components"
 ATTR = "Antmicro (Apache-2.0)"
 
 
+SRC_LOCAL = os.environ.get("ANTMICRO_SRC", "").strip()
+
+
+def _resolve_local(path):
+    """sparse 클론에서 파일 읽기. Windows는 심링크가 '대상 경로 텍스트 파일'로
+    체크아웃되므로(core.symlinks=false) 짧은 텍스트가 경로처럼 보이면 따라간다."""
+    fp = os.path.join(SRC_LOCAL, *path.split("/"))
+    if not os.path.exists(fp):
+        return None
+    raw = open(fp, "rb").read()
+    if len(raw) < 300 and (b"\n" not in raw.strip()) and (b"../" in raw or b".." == raw[:2]):
+        target = os.path.normpath(os.path.join(os.path.dirname(fp),
+                                               raw.decode("utf-8").strip()))
+        if os.path.exists(target):
+            return open(target, "rb").read()
+        return None
+    return raw
+
+
 def gh_api_file(path, ref):
-    """contents API로 파일 획득 (심링크를 따라 실제 내용 반환)."""
+    """contents API로 파일 획득 (심링크를 따라 실제 내용 반환). ANTMICRO_SRC 있으면 로컬."""
+    if SRC_LOCAL:
+        return _resolve_local(path)
     r = subprocess.run(["gh", "api", f"repos/{REPO}/contents/{path}?ref={ref}",
                         "--jq", ".content"],
                        capture_output=True, text=True, encoding="utf-8")
@@ -122,9 +143,64 @@ def gltf_to_glb(gltf_path, glb_path):
     return os.path.getsize(glb_path)
 
 
+def guess_category(data, fp_name):
+    """키워드/설명 기반 카테고리 추정 (본대 배치용)."""
+    kw = ((data.get("keywords") or "") + " " + (data.get("description") or "")).lower()
+    def has(*words):
+        return any(w in kw for w in words)
+    if has("dimm", " socket", "m.2", "sim card", "sd card", "microsd"):
+        return "socket"
+    if has("connector", "header", "receptacle", "plug", " jack", "usb", "rj45",
+           "ffc", "fpc", "terminal block", "btb", "board-to-board"):
+        return "connector"
+    if has("resistor", "capacitor", "inductor", "ferrite", "choke", "bead",
+           "crystal", "oscillator", "resonator", "varistor", "thermistor"):
+        return "passive"
+    if has("led"):
+        return "discrete"
+    if has("diode", " tvs", "esd", "rectifier", "zener", "transistor", "mosfet"):
+        return "discrete"
+    if has("fuse", " ptc"):
+        return "fuse"
+    if has("relay"):
+        return "relay"
+    if has("switch", "button", "tactile"):
+        return "switch"
+    if has("transformer"):
+        return "transformer"
+    if has("antenna", " module"):
+        return "module"
+    if has("sensor", "accelerometer", "gyro", "magnetometer", "temperature"):
+        return "sensor"
+    if has("regulator", "converter", "pmic", " ldo", " buck", " boost",
+           "power management", "efuse", "load switch"):
+        return "power"
+    return "ic"
+
+
+def excluded_footprints():
+    """판별 리포트에서 IDENTICAL/NEAR 풋프린트 이름 집합 (수입 제외 — §21-C)."""
+    try:
+        rep = json.load(open(os.path.join(ROOT, "docs", "provenance-report.json"),
+                             encoding="utf-8"))
+    except OSError:
+        return set()
+    out = set()
+    for r in rep:
+        if r.get("verdict") in ("IDENTICAL", "NEAR"):
+            out.add(os.path.splitext(os.path.basename(r["file"]))[0])
+    return out
+
+
 def main():
+    if sys.argv[1] == "--all":
+        return main_all()
     cfg = json.load(open(sys.argv[1], encoding="utf-8"))
     ref = os.environ.get("ANTMICRO_COMMIT") or cfg["commit"]
+    import_loop(cfg, ref)
+
+
+def import_loop(cfg, ref):
     tmp = os.path.join(ROOT, "..", "_antmicro_tmp")
     tmp = os.path.abspath(tmp)
     os.makedirs(tmp, exist_ok=True)
@@ -223,6 +299,38 @@ def main():
               open(os.path.join(ROOT, "docs", "import-antmicro-log.json"), "w",
                    encoding="utf-8"), indent=1, ensure_ascii=False)
     print(f"accepted {len(accepted)}, skipped {len(skipped)}")
+
+
+def main_all():
+    ref = os.environ.get("ANTMICRO_COMMIT", "main")
+    comp_dir = os.path.join(SRC_LOCAL, "components")
+    slugs = sorted(os.listdir(comp_dir))
+    excl = excluded_footprints()
+    print(f"components: {len(slugs)}, excluded footprints: {len(excl)}")
+    cfg = {"commit": ref, "parts": []}
+    skipped_pre = []
+    for slug in slugs:
+        raw = _resolve_local(f"components/{slug}/data.json")
+        if not raw:
+            skipped_pre.append((slug, "no data.json")); continue
+        try:
+            data = json.loads(raw)
+        except ValueError:
+            skipped_pre.append((slug, "bad data.json")); continue
+        if data.get("public") is False:
+            skipped_pre.append((slug, "not public")); continue
+        if data.get("footprint") in excl:
+            skipped_pre.append((slug, f"excluded footprint {data.get('footprint')}")); continue
+        cfg["parts"].append({"slug": slug,
+                             "category": guess_category(data, data.get("footprint"))})
+    print(f"eligible: {len(cfg['parts'])}, pre-skipped: {len(skipped_pre)}")
+    json.dump({"commit": ref, "parts": cfg["parts"]},
+              open(os.path.join(ROOT, "docs", "antmicro-wave.json"), "w",
+                   encoding="utf-8"), indent=1)
+    json.dump([{"slug": a, "reason": b} for a, b in skipped_pre],
+              open(os.path.join(ROOT, "docs", "antmicro-wave-preskip.json"), "w",
+                   encoding="utf-8"), indent=1)
+    import_loop(cfg, ref)
 
 
 if __name__ == "__main__":

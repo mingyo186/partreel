@@ -92,6 +92,24 @@ const PAGE = 200;  // 13k 전체 DOM 생성 방지 — 200개씩 증분 렌더
 function renderList(list) {
   const grid = document.getElementById('list');
   grid.innerHTML = '';
+  if (!list.length) {
+    // 검색 0건 = "없는 부품"을 만나는 순간 — 분산 생성 안내 (§19-A)
+    const q = document.getElementById('q')?.value.trim() || '<part>';
+    const prompt = `Fetch https://github.com/mingyo186/partreel/blob/main/CONTRIBUTING-AGENTS.md and build a KiCad part for "${q}" from its datasheet, then open a PR.`;
+    const card = document.createElement('div');
+    card.className = 'card empty-state';
+    card.innerHTML =
+      '<div class="card-name">Part not found — your AI can make it</div>' +
+      '<div class="card-sub" style="white-space:normal">Paste this into your AI assistant. ' +
+      'You get the files immediately; the PR shares them and our CI quality-checks them for free.</div>' +
+      `<code style="display:block;margin-top:8px;white-space:normal;word-break:break-all;font-size:11px">${prompt.replace(/</g, '&lt;')}</code>` +
+      '<button class="vt" style="margin-top:8px">Copy prompt</button>';
+    card.querySelector('button').addEventListener('click', (e) => {
+      navigator.clipboard.writeText(prompt);
+      e.target.textContent = 'Copied!';
+    });
+    grid.appendChild(card);
+  }
   appendChunk(grid, list, 0);
   document.getElementById('count').textContent = list.length;
 }

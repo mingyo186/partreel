@@ -1,0 +1,72 @@
+{
+  "id": "antmicro_rts5420_gr",
+  "name": "RTS5420-GR",
+  "category": "connector",
+  "family": "Antmicro connector",
+  "manufacturer": "Realtek",
+  "mpn_pattern": "RTS5420-GR",
+  "description": "USB3.2 Gen2x1 4-Port Hub Controller Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": null,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/connector/antmicro/antmicro_rts5420_gr/antmicro_rts5420_gr.kicad_mod",
+    "symbol": "https://partreel.com/library/connector/antmicro/antmicro_rts5420_gr/antmicro_rts5420_gr.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/connector/antmicro/antmicro_rts5420_gr/antmicro_rts5420_gr.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/connector/antmicro/antmicro_rts5420_gr/antmicro_rts5420_gr.symbol.svg"
+  },
+  "datasheet": "https://www.realtek.com/Product/Index?id=4146&cate_id=801",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/realtek-rts5420-gr)",
+  "keywords": [
+    "antmicro",
+    "smt",
+    "ic"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/realtek-rts5420-gr)",
+    "datasheet": "https://www.realtek.com/Product/Index?id=4146&cate_id=801",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/realtek-rts5420-gr"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_rts5420_gr/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_rts5420_gr.json"
+}

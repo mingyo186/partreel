@@ -1,0 +1,73 @@
+{
+  "id": "antmicro_emif06_msd02n16",
+  "name": "EMIF06-MSD02N16",
+  "category": "socket",
+  "family": "Antmicro socket",
+  "manufacturer": "STMicroelectronics",
+  "mpn_pattern": "EMIF06-MSD02N16",
+  "description": "EMI Filter, 6-Channel, ESD Protection,  MHz, µQFN-16, SD Card Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 19,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/socket/antmicro/antmicro_emif06_msd02n16/antmicro_emif06_msd02n16.kicad_mod",
+    "symbol": "https://partreel.com/library/socket/antmicro/antmicro_emif06_msd02n16/antmicro_emif06_msd02n16.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/socket/antmicro/antmicro_emif06_msd02n16/antmicro_emif06_msd02n16.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/socket/antmicro/antmicro_emif06_msd02n16/antmicro_emif06_msd02n16.symbol.svg"
+  },
+  "datasheet": "https://eu.mouser.com/datasheet/2/389/emif06_msd02n16-1849116.pdf",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/stmicroelectronics-emif06-msd02n16)",
+  "keywords": [
+    "antmicro",
+    "ic",
+    "smt",
+    "rohs"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/stmicroelectronics-emif06-msd02n16)",
+    "datasheet": "https://eu.mouser.com/datasheet/2/389/emif06_msd02n16-1849116.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/stmicroelectronics-emif06-msd02n16"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_emif06_msd02n16/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_emif06_msd02n16.json"
+}

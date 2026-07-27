@@ -1,0 +1,51 @@
+{
+  "id": "antmicro_bme280",
+  "name": "BME280",
+  "category": "sensor",
+  "family": "Antmicro sensor",
+  "manufacturer": "Bosch",
+  "mpn_pattern": "BME280",
+  "description": "Sensor Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 8,
+    "mounting": "SMD"
+  },
+  "files": {
+    "footprint": "antmicro_bme280.kicad_mod",
+    "symbol": "antmicro_bme280.kicad_sym",
+    "footprint_svg": "antmicro_bme280.footprint.svg",
+    "symbol_svg": "antmicro_bme280.symbol.svg",
+    "preview": "antmicro_bme280.glb"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "glb"
+  ],
+  "datasheet": "https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme280-ds002.pdf",
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/bosch-bme280)",
+  "verified": true,
+  "origin": "imported",
+  "license": "Apache-2.0",
+  "generated_by": "generators/import_antmicro.py",
+  "keywords": [
+    "antmicro",
+    "smt",
+    "sensor",
+    "ic"
+  ],
+  "import": {
+    "source_repo": "https://github.com/antmicro/hardware-components",
+    "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+    "source_files": {
+      "component": "components/bosch-bme280"
+    },
+    "attribution": "Antmicro (Apache-2.0)",
+    "modifications": [
+      "converted glTF (LOD) to single-mesh GLB preview"
+    ]
+  },
+  "asset_sha256": {
+    "antmicro_bme280.glb": "e665fd97534f759f12accb5d92736f27f6fbc645e18e51d823971a89d4ddf650"
+  }
+}

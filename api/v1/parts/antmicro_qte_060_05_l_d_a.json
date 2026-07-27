@@ -1,0 +1,74 @@
+{
+  "id": "antmicro_qte_060_05_l_d_a",
+  "name": "QTE-060-05-L-D-A",
+  "category": "socket",
+  "family": "Antmicro socket",
+  "manufacturer": "Samtec",
+  "mpn_pattern": "QTE-060-05-L-D-A",
+  "description": "Board to Board & Mezzanine Connectors 0.80 mm Q Strip High-Speed Ground Plane Socket Strip Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 132,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/socket/antmicro/antmicro_qte_060_05_l_d_a/antmicro_qte_060_05_l_d_a.kicad_mod",
+    "symbol": "https://partreel.com/library/socket/antmicro/antmicro_qte_060_05_l_d_a/antmicro_qte_060_05_l_d_a.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/socket/antmicro/antmicro_qte_060_05_l_d_a/antmicro_qte_060_05_l_d_a.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/socket/antmicro/antmicro_qte_060_05_l_d_a/antmicro_qte_060_05_l_d_a.symbol.svg"
+  },
+  "datasheet": "https://suddendocs.samtec.com/productspecs/qse-qte.pdf?_gl=1*1k2ocv4*_gcl_au*MTE0MDg3NDI3MS4xNzI3Nzg3OTI5*_ga*MTAwMTk3MDQzOS4xNzI3Nzg3OTI5*_ga_3KFNZC07WW*MTcyNzc4NzkyOS4xLjAuMTcyNzc4NzkyOS42MC4wLjA.",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/samtec-qte-060-05-l-d-a)",
+  "keywords": [
+    "antmicro",
+    "connector",
+    "b2b",
+    "socket",
+    "rohs"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/samtec-qte-060-05-l-d-a)",
+    "datasheet": "https://suddendocs.samtec.com/productspecs/qse-qte.pdf?_gl=1*1k2ocv4*_gcl_au*MTE0MDg3NDI3MS4xNzI3Nzg3OTI5*_ga*MTAwMTk3MDQzOS4xNzI3Nzg3OTI5*_ga_3KFNZC07WW*MTcyNzc4NzkyOS4xLjAuMTcyNzc4NzkyOS42MC4wLjA.",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/samtec-qte-060-05-l-d-a"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_qte_060_05_l_d_a/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_qte_060_05_l_d_a.json"
+}

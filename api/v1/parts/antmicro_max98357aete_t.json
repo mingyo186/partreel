@@ -1,0 +1,77 @@
+{
+  "id": "antmicro_max98357aete_t",
+  "name": "MAX98357AETE+T",
+  "category": "ic",
+  "family": "Antmicro ic",
+  "manufacturer": "Analog Devices",
+  "mpn_pattern": "MAX98357AETE+T",
+  "description": "I2S Class D Amplifier, 2.5V to 5.5V, 3.2W into 4Ω at 5V, TQFN-16 Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 17,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/ic/antmicro/antmicro_max98357aete_t/antmicro_max98357aete_t.kicad_mod",
+    "symbol": "https://partreel.com/library/ic/antmicro/antmicro_max98357aete_t/antmicro_max98357aete_t.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/ic/antmicro/antmicro_max98357aete_t/antmicro_max98357aete_t.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/ic/antmicro/antmicro_max98357aete_t/antmicro_max98357aete_t.symbol.svg"
+  },
+  "datasheet": "https://www.analog.com/media/en/technical-documentation/data-sheets/max98357a-max98357b.pdf",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/analog-devices-max98357aete-t)",
+  "keywords": [
+    "antmicro",
+    "smt",
+    "interface",
+    "ic",
+    "power",
+    "amp",
+    "audio",
+    "rohs"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/analog-devices-max98357aete-t)",
+    "datasheet": "https://www.analog.com/media/en/technical-documentation/data-sheets/max98357a-max98357b.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/analog-devices-max98357aete-t"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_max98357aete_t/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_max98357aete_t.json"
+}

@@ -1,0 +1,72 @@
+{
+  "id": "antmicro_900_83310_0001_000",
+  "name": "900-83310-0001-000 ",
+  "category": "module",
+  "family": "Antmicro module",
+  "manufacturer": "Nvidia",
+  "mpn_pattern": "900-83310-0001-000 ",
+  "description": "Jetson TX2, System On Module, Pascal GPU, ARMv8, 8GB LPDDR4, 32GB eMMC, WLAN/BT Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": null,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/module/antmicro/antmicro_900_83310_0001_000/antmicro_900_83310_0001_000.kicad_mod",
+    "symbol": "https://partreel.com/library/module/antmicro/antmicro_900_83310_0001_000/antmicro_900_83310_0001_000.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/module/antmicro/antmicro_900_83310_0001_000/antmicro_900_83310_0001_000.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/module/antmicro/antmicro_900_83310_0001_000/antmicro_900_83310_0001_000.symbol.svg"
+  },
+  "datasheet": "https://developer.download.nvidia.com/assets/embedded/secure/jetson/tx2_nx/Jetson-TX2-NX-DS-10182-001_v1.5.pdf?IecMUorFyffoh_Ta9AVYAt4JIY5dHDxJIv0EbFf4mO6RNzs4wglH8yVeoXX96RUJsAqf2TFnILOnyva5Ex__gxPkiDCjAhJgk3ErfpbcQRT7Pi55rG8hbQ0cGoDkDCVivlDkEt25CrjNLynrDpPfG5se1Jco1ifHp5qzLbRk-vs1RA3Qa0Yw&t=eyJscyI6ImdzZW8iLCJsc2QiOiJodHRwczovL3d3dy5nb29nbGUuY29tLyJ9",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/nvidia-900-83310-0001-000)",
+  "keywords": [
+    "antmicro",
+    "module",
+    "som"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/nvidia-900-83310-0001-000)",
+    "datasheet": "https://developer.download.nvidia.com/assets/embedded/secure/jetson/tx2_nx/Jetson-TX2-NX-DS-10182-001_v1.5.pdf?IecMUorFyffoh_Ta9AVYAt4JIY5dHDxJIv0EbFf4mO6RNzs4wglH8yVeoXX96RUJsAqf2TFnILOnyva5Ex__gxPkiDCjAhJgk3ErfpbcQRT7Pi55rG8hbQ0cGoDkDCVivlDkEt25CrjNLynrDpPfG5se1Jco1ifHp5qzLbRk-vs1RA3Qa0Yw&t=eyJscyI6ImdzZW8iLCJsc2QiOiJodHRwczovL3d3dy5nb29nbGUuY29tLyJ9",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/nvidia-900-83310-0001-000"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_900_83310_0001_000/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_900_83310_0001_000.json"
+}

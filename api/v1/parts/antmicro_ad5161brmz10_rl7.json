@@ -1,0 +1,77 @@
+{
+  "id": "antmicro_ad5161brmz10_rl7",
+  "name": "AD5161BRMZ10-RL7",
+  "category": "ic",
+  "family": "Antmicro ic",
+  "manufacturer": "Analog Devices",
+  "mpn_pattern": "AD5161BRMZ10-RL7",
+  "description": "Digital Potentiometer IC 8-Bit SPI/I2C Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 10,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/ic/antmicro/antmicro_ad5161brmz10_rl7/antmicro_ad5161brmz10_rl7.kicad_mod",
+    "symbol": "https://partreel.com/library/ic/antmicro/antmicro_ad5161brmz10_rl7/antmicro_ad5161brmz10_rl7.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/ic/antmicro/antmicro_ad5161brmz10_rl7/antmicro_ad5161brmz10_rl7.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/ic/antmicro/antmicro_ad5161brmz10_rl7/antmicro_ad5161brmz10_rl7.symbol.svg"
+  },
+  "datasheet": "https://eu.mouser.com/datasheet/2/609/AD5161-3118637.pdf",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/analog-devices-ad5161brmz10-rl7)",
+  "keywords": [
+    "antmicro",
+    "smt",
+    "digital",
+    "potentiometer",
+    "ic",
+    "spi",
+    "i2c",
+    "rohs"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/analog-devices-ad5161brmz10-rl7)",
+    "datasheet": "https://eu.mouser.com/datasheet/2/609/AD5161-3118637.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/analog-devices-ad5161brmz10-rl7"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_ad5161brmz10_rl7/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_ad5161brmz10_rl7.json"
+}

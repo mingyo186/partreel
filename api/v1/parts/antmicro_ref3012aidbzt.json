@@ -1,0 +1,79 @@
+{
+  "id": "antmicro_ref3012aidbzt",
+  "name": "REF3012AIDBZT",
+  "category": "switch",
+  "family": "Antmicro switch",
+  "manufacturer": "Texas Instruments",
+  "mpn_pattern": "REF3012AIDBZT",
+  "description": "Voltage Reference, Low Power, Low Dropout, Series Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 3,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/switch/antmicro/antmicro_ref3012aidbzt/antmicro_ref3012aidbzt.kicad_mod",
+    "symbol": "https://partreel.com/library/switch/antmicro/antmicro_ref3012aidbzt/antmicro_ref3012aidbzt.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/switch/antmicro/antmicro_ref3012aidbzt/antmicro_ref3012aidbzt.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/switch/antmicro/antmicro_ref3012aidbzt/antmicro_ref3012aidbzt.symbol.svg",
+    "preview": "https://assets.partreel.com/library/switch/antmicro/antmicro_ref3012aidbzt/antmicro_ref3012aidbzt.glb"
+  },
+  "datasheet": "https://www.ti.com/lit/gpn/REF3012",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": null,
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/texas-instruments-ref3012aidbzt)",
+  "keywords": [
+    "antmicro",
+    "smt",
+    "pmic",
+    "ic",
+    "power",
+    "switch",
+    "driver",
+    "rohs"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/texas-instruments-ref3012aidbzt)",
+    "datasheet": "https://www.ti.com/lit/gpn/REF3012",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/texas-instruments-ref3012aidbzt"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_ref3012aidbzt/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_ref3012aidbzt.json"
+}

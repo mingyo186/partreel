@@ -1,0 +1,80 @@
+{
+  "id": "antmicro_39_28_8080",
+  "name": "39-28-8080",
+  "category": "connector",
+  "family": "Antmicro connector",
+  "manufacturer": "Molex",
+  "mpn_pattern": "39-28-8080",
+  "description": "Pin Header, THT, Vertical, UL94V-2, Power, Wire-to-Board, 4.2 mm, 2 Rows, 8 Contacts, Mini-fit Jr, 5566 series Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 8,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/connector/antmicro/antmicro_39_28_8080/antmicro_39_28_8080.kicad_mod",
+    "symbol": "https://partreel.com/library/connector/antmicro/antmicro_39_28_8080/antmicro_39_28_8080.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/connector/antmicro/antmicro_39_28_8080/antmicro_39_28_8080.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/connector/antmicro/antmicro_39_28_8080/antmicro_39_28_8080.symbol.svg",
+    "preview": "https://assets.partreel.com/library/connector/antmicro/antmicro_39_28_8080/antmicro_39_28_8080.glb"
+  },
+  "datasheet": "https://www.molex.com/pdm_docs/sd/039288080_sd.pdf",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": null,
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/molex-39-28-8080)",
+  "keywords": [
+    "antmicro",
+    "vertical",
+    "tht",
+    "header",
+    "connector",
+    "male",
+    "wire-board",
+    "power",
+    "rohs"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/molex-39-28-8080)",
+    "datasheet": "https://www.molex.com/pdm_docs/sd/039288080_sd.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/molex-39-28-8080"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_39_28_8080/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_39_28_8080.json"
+}

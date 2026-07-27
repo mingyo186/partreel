@@ -1,0 +1,72 @@
+{
+  "id": "antmicro_n9120",
+  "name": "N9120",
+  "category": "ic",
+  "family": "Antmicro ic",
+  "manufacturer": "Nordic Semiconductor",
+  "mpn_pattern": "N9120",
+  "description": "Arm® Cortex®-M33 Microcontroller, 1 MB flash, 3.0V - 5.5V, I2C, 12-bit ADC Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": null,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/ic/antmicro/antmicro_n9120/antmicro_n9120.kicad_mod",
+    "symbol": "https://partreel.com/library/ic/antmicro/antmicro_n9120/antmicro_n9120.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/ic/antmicro/antmicro_n9120/antmicro_n9120.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/ic/antmicro/antmicro_n9120/antmicro_n9120.symbol.svg"
+  },
+  "datasheet": "https://docs.nordicsemi.com/bundle/ps_nrf9161/page/nRF9161_html5_keyfeatures.html",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/nordic-semiconductor-n9120)",
+  "keywords": [
+    "antmicro",
+    "smt",
+    "microcontroller"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@93a0579e3c83 (components/nordic-semiconductor-n9120)",
+    "datasheet": "https://docs.nordicsemi.com/bundle/ps_nrf9161/page/nRF9161_html5_keyfeatures.html",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "93a0579e3c83189602e08d058f377308ec18235f",
+      "source_files": {
+        "component": "components/nordic-semiconductor-n9120"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_n9120/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_n9120.json"
+}
