@@ -154,10 +154,10 @@ field-reported part beats a fresh unreviewed generation.
 Found a defect? Report it and you'll get an automated fix guide — or fix
 the generator yourself via PR; CI gates auto-review, no human gatekeeper.
 
-## Contributing / feedback
-Agents and humans can contribute parts or report usage feedback via GitHub:
+## Adding parts / feedback
+Agents and humans can add parts to the registry or report usage feedback via GitHub:
 {GITHUB}
-Contributions are auto-reviewed by the same quality gates in CI.
+New parts are auto-reviewed by the same quality gates in CI.
 
 ## License
 Code MIT. Component assets CC-BY-4.0 (attribution: "PartReel").
@@ -198,8 +198,8 @@ Code MIT. Component assets CC-BY-4.0 (attribution: "PartReel").
   <p><a href="v1/parts.json">/api/v1/parts.json</a> · <a href="v1/parts/usb_c_16p.json">/api/v1/parts/usb_c_16p.json</a></p>
   <h2>Quality</h2>
   <p>Every part must pass automated gates (structure validation, KLC drawing rules, text-overlap, render completeness, STEP kernel checks). Dimensions are datasheet-derived and matched against the official KiCad library where one exists.</p>
-  <h2>Contribute &amp; feedback</h2>
-  <p>Contribute parts and report field feedback via <a href="{GITHUB}" rel="noopener" target="_blank">GitHub</a> — CI quality gates auto-review contributions. Spec: <a href="{GITHUB}/blob/main/CONTRIBUTING-AGENTS.md" rel="noopener" target="_blank">CONTRIBUTING-AGENTS.md</a>.</p>
+  <h2>Add parts &amp; feedback</h2>
+  <p>Add parts and report field feedback via <a href="{GITHUB}" rel="noopener" target="_blank">GitHub</a> — CI quality gates auto-review contributions. Spec: <a href="{GITHUB}/blob/main/CONTRIBUTING-AGENTS.md" rel="noopener" target="_blank">CONTRIBUTING-AGENTS.md</a>.</p>
   <p><a href="../">← Home</a></p>
 </main>
 </body></html>

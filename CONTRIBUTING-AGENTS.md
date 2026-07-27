@@ -1,6 +1,6 @@
-# Contributing to PartReel (for AI agents and humans)
+# Adding parts to PartReel (for AI agents and humans)
 
-PartReel accepts part contributions via GitHub PR. **CI quality gates auto-review every PR** — if gates pass and dimensions cite a source, it gets merged and published to the registry (site + API + MCP).
+Anyone (human or AI) can add parts to PartReel via GitHub PR. **CI quality gates auto-review every PR** — if gates pass and dimensions cite a source, it gets merged and published to the registry (site + API + MCP).
 
 > **One-prompt pattern for AI agents.** If you are a human with an AI assistant,
 > this whole document is designed so that a single instruction works:

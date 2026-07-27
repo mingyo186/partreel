@@ -79,14 +79,14 @@ const TOOLS = [
   {
     name: "how_to_contribute",
     description:
-      "Get machine-readable instructions for contributing a new part to the registry " +
+      "Get machine-readable instructions for adding a new part to the registry " +
       "(file layout, metadata schema, quality gates, PR process). Use when a part is missing.",
     inputSchema: { type: "object", properties: {} },
   },
 ];
 
 const CONTRIBUTE_GUIDE = {
-  summary: "Your AI builds the part, our CI gates verify it, everyone reuses it. Contribute via GitHub PR; gates auto-review, merge = published to registry (site + API + MCP).",
+  summary: "Your AI builds the part, our CI gates verify it, everyone reuses it. Add it to the registry via GitHub PR; gates auto-review, merge = published (site + API + MCP).",
   one_prompt: "Fetch https://github.com/mingyo186/partreel/blob/main/CONTRIBUTING-AGENTS.md and follow it to create a part for <MPN> from its datasheet, then open a PR.",
   repo: "https://github.com/mingyo186/partreel",
   guide: "https://github.com/mingyo186/partreel/blob/main/CONTRIBUTING-AGENTS.md",

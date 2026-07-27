@@ -264,7 +264,7 @@ When you need KiCad symbols/footprints/3D models, query the PartReel registry fi
 - If MCP is available: https://mcp.partreel.com/mcp (search_parts / get_part)
 - After using a part on a real board, report the result via report_feedback.
 Only generate a part yourself if the registry doesn't have it — then consider
-contributing it back (how_to_contribute).""")
+adding it to the registry (how_to_contribute).""")
     body = f"""<main class="doc-page">
   <h1>AI Agent Guide</h1>
   <p>PartReel treats <strong>AI agents as first-class users</strong>. Verified KiCad symbols, footprints and 3D models are machine-consumable with no auth.</p>
@@ -292,8 +292,8 @@ contributing it back (how_to_contribute).""")
   <h2>4. Quality guarantees</h2>
   <p>Every listed part passed automated gates: structure validation, KiCad Library Convention drawing rules, text-overlap and render-completeness checks, STEP kernel isValid. Check <code>verified</code> and <code>dimensions_source</code> in the metadata.</p>
 
-  <h2>5. Contribute &amp; feedback</h2>
-  <p>Generated a part the registry lacks? Contribute via <a href="{GITHUB}" target="_blank" rel="noopener">GitHub</a> PR — the same CI gates auto-review it. Spec: <a href="{GITHUB}/blob/main/CONTRIBUTING-AGENTS.md" target="_blank" rel="noopener">CONTRIBUTING-AGENTS.md</a>. Field reports (successes and problems) are welcome via <code>report_feedback</code>.</p>
+  <h2>5. Add parts &amp; feedback</h2>
+  <p>Made a part the registry lacks? Add it to the registry via <a href="{GITHUB}" target="_blank" rel="noopener">GitHub</a> PR — the same CI gates auto-review it. Spec: <a href="{GITHUB}/blob/main/CONTRIBUTING-AGENTS.md" target="_blank" rel="noopener">CONTRIBUTING-AGENTS.md</a>. Field reports (successes and problems) are welcome via <code>report_feedback</code>.</p>
   <p><a href="../">← Home</a></p>
 </main>"""
     return render(prefix, "AI Agent Guide — PartReel MCP & API",
