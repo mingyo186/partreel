@@ -1,0 +1,66 @@
+{
+  "id": "alps_rkjxt1f42001",
+  "name": "RKJXT1F42001",
+  "category": "switch",
+  "family": "ALPS RKJXT1F",
+  "manufacturer": "ALPS ALPINE",
+  "mpn_pattern": "RKJXT1F42001",
+  "description": "4-directional stick switch with rotary encoder (30 detent / 15 pulse) and center push, 17x17mm round body, THT, automotive grade. Requested by the community (issue #8).",
+  "parameters": {
+    "contacts": 10,
+    "mounting": "THT",
+    "functions": "4-direction + center push + rotary encoder"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/switch/alps/alps_rkjxt1f42001/alps_rkjxt1f42001.kicad_mod",
+    "symbol": "https://partreel.com/library/switch/alps/alps_rkjxt1f42001/alps_rkjxt1f42001.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/switch/alps/alps_rkjxt1f42001/alps_rkjxt1f42001.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/switch/alps/alps_rkjxt1f42001/alps_rkjxt1f42001.symbol.svg"
+  },
+  "datasheet": "https://tech.alpsalpine.com/e/products/detail/RKJXT1F42001/",
+  "license": "CC-BY-4.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "ALPS ALPINE RKJXT1F Series catalog (Update 2510), Drawing No.1 'Mounting Hole Dimensions' (10x phi1.0+0.2 holes, 15.6x15.6 span, tol +/-0.1); function mapping from catalog labels; cross-verified against two independent MIT-licensed field-built implementations (Croktopus/squatterboard, wiciu15/STM32-USBHID-MultimediaPilot) - identical hole coordinates",
+  "keywords": [
+    "alps",
+    "rkjxt1f",
+    "stick",
+    "encoder",
+    "joystick",
+    "switch",
+    "center push",
+    "navigation"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "ALPS ALPINE RKJXT1F Series catalog (Update 2510), Drawing No.1 'Mounting Hole Dimensions' (10x phi1.0+0.2 holes, 15.6x15.6 span, tol +/-0.1); function mapping from catalog labels; cross-verified against two independent MIT-licensed field-built implementations (Croktopus/squatterboard, wiciu15/STM32-USBHID-MultimediaPilot) - identical hole coordinates",
+    "datasheet": "https://tech.alpsalpine.com/e/products/detail/RKJXT1F42001/",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/gen_rkjxt.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    }
+  },
+  "page": "https://partreel.com/p/alps_rkjxt1f42001/",
+  "api": "https://partreel.com/api/v1/parts/alps_rkjxt1f42001.json"
+}
