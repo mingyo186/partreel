@@ -47,3 +47,14 @@ jobs:
               issue_number: issue.number,
               body,
             });
+            // worked 리포트는 접수 즉시 완료 — 자동 닫기 (집계는 state=all이라 무영향).
+            // problem 리포트는 수정 완료까지 열어둔다.
+            if (!labels.includes('report-problem')) {
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                state: 'closed',
+                state_reason: 'completed',
+              });
+            }
