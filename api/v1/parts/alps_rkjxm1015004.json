@@ -1,0 +1,66 @@
+{
+  "id": "alps_rkjxm1015004",
+  "name": "RKJXM1015004",
+  "category": "switch",
+  "family": "ALPS RKJXM",
+  "manufacturer": "ALPS ALPINE",
+  "mpn_pattern": "RKJXM1015004",
+  "description": "8-directional stick switch with center push, single shaft, 11x11mm body, THT, automotive grade. Requested by the community (issue #10).",
+  "parameters": {
+    "contacts": 9,
+    "mounting": "THT",
+    "functions": "8-direction + center push"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/switch/alps/alps_rkjxm1015004/alps_rkjxm1015004.kicad_mod",
+    "symbol": "https://partreel.com/library/switch/alps/alps_rkjxm1015004/alps_rkjxm1015004.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/switch/alps/alps_rkjxm1015004/alps_rkjxm1015004.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/switch/alps/alps_rkjxm1015004/alps_rkjxm1015004.symbol.svg"
+  },
+  "datasheet": "https://tech.alpsalpine.com/e/products/detail/RKJXM1015004/",
+  "license": "CC-BY-4.0",
+  "verified": true,
+  "tier": "verified-2d",
+  "dimensions_source": "ALPS ALPINE RKJXM catalog p436-437 'PC board mounting hole dimensions' (RKJXM10 Drawing No.1 / RKJXM2E Drawing No.2); hole coordinates extracted from the drawing's PDF vector geometry, consistent with printed dims (ø9.9/ø10.7/ø20.3/8/3/4.15) and rotational symmetry; cross-verified against two independent field-built implementations (Input Labs pcb Alpsalpine_RKJXM1015004 — identical within 0.005mm incl. lug; Croktopus/squatterboard RKJXM2E13004, MIT — all 19 holes match within their 0.1mm rounding)",
+  "keywords": [
+    "alps",
+    "rkjxm",
+    "stick",
+    "joystick",
+    "switch",
+    "8-direction",
+    "center push",
+    "navigation"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "ALPS ALPINE RKJXM catalog p436-437 'PC board mounting hole dimensions' (RKJXM10 Drawing No.1 / RKJXM2E Drawing No.2); hole coordinates extracted from the drawing's PDF vector geometry, consistent with printed dims (ø9.9/ø10.7/ø20.3/8/3/4.15) and rotational symmetry; cross-verified against two independent field-built implementations (Input Labs pcb Alpsalpine_RKJXM1015004 — identical within 0.005mm incl. lug; Croktopus/squatterboard RKJXM2E13004, MIT — all 19 holes match within their 0.1mm rounding)",
+    "datasheet": "https://tech.alpsalpine.com/e/products/detail/RKJXM1015004/",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/gen_rkjxm.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    }
+  },
+  "page": "https://partreel.com/p/alps_rkjxm1015004/",
+  "api": "https://partreel.com/api/v1/parts/alps_rkjxm1015004.json"
+}
