@@ -1,0 +1,49 @@
+{
+  "id": "max17049",
+  "name": "MAX17049 LiPo Fuel Gauge (2-cell)",
+  "category": "ic",
+  "family": "power",
+  "manufacturer": "Maxim Integrated",
+  "mpn_pattern": "MAX17049G+T10",
+  "description": "Maxim MAX17049 2-cell Li-ion fuel gauge with ModelGauge, I2C 0x36 fixed, 2.5-4.5V, TDFN-8 2x2 (EP=GND). CELL pin senses the 2-cell stack.",
+  "parameters": {
+    "contacts": 9,
+    "mounting": "SMD",
+    "supply_voltage": "2.5-4.5V",
+    "interface": "I2C",
+    "i2c_address": "0x36",
+    "body_mm": "2.0x2.0x0.75"
+  },
+  "files": {
+    "footprint": "max17049.kicad_mod",
+    "symbol": "max17049.kicad_sym",
+    "model_3d": "max17049.step",
+    "preview": "max17049.glb",
+    "footprint_svg": "max17049.footprint.svg",
+    "symbol_svg": "max17049.symbol.svg"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "step",
+    "glb"
+  ],
+  "datasheet": "https://cdn.sparkfun.com/assets/5/2/7/6/6/MAX17048-MAX17049.pdf",
+  "dimensions_source": "Maxim 19-6171 Rev7 + official outline 21-0168 RevM (TDFN 2x2, pitch 0.5, EP 0.8x1.2) + official land 90-0065 RevE (pads 0.30x0.70, rows 1.98 c-c vector-verified, EP land 0.8x1.38). Pinout p.6 (datasheet covers both MAX17048/MAX17049).",
+  "verified": true,
+  "license": "CC-BY-4.0",
+  "generated_by": "generators/gen_ics.py",
+  "keywords": [
+    "max17049",
+    "maxim",
+    "fuel gauge",
+    "lipo",
+    "battery",
+    "i2c",
+    "tdfn"
+  ],
+  "asset_sha256": {
+    "max17049.step": "af03e800f8d50188ffd2814a1cdea484d790116a52b10ff935771b6b06a0a9bf",
+    "max17049.glb": "0ca02968767fee5cde7e95b26577c1787e52a7faafa6b73bf2bb05d58c77b2de"
+  }
+}
