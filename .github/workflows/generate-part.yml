@@ -70,8 +70,26 @@ jobs:
           git config user.email "actions@github.com"
           git add -A
           git diff --cached --quiet && echo "nothing new" || git commit -m "On-demand part: ${{ steps.req.outputs.family }}_${{ steps.req.outputs.pins }}pin (requested via MCP)"
-          git pull --rebase origin main
-          git push origin main
+          # 동시 온디맨드 커밋과의 경쟁: rebase 충돌(생성 아티팩트) 시 죽지 말고
+          # 병합(-X ours: 소스는 양쪽 보존, 아티팩트는 우리 것) 후 전체 재생성해
+          # 양쪽 부품을 모두 포함시킨다 (2026-07-29 ht78xx 실패 런 재발 방지).
+          for i in 1 2 3; do
+            if git pull --rebase origin main; then
+              git push origin main && exit 0
+            else
+              git rebase --abort || true
+              git fetch origin
+              git merge -X ours origin/main -m "merge concurrent on-demand commits" || exit 1
+              ./fcenv/bin/python generators/build_index.py
+              ./fcenv/bin/python generators/build_site.py
+              ./fcenv/bin/python generators/build_api.py
+              git add -A
+              git diff --cached --quiet || git commit -m "regen artifacts after concurrent merge"
+              git push origin main && exit 0
+            fi
+            echo "push race, retry $i"; sleep 5
+          done
+          echo "::error::push failed after retries"; exit 1
 
       # GITHUB_TOKEN 푸시는 deploy.yml을 트리거하지 않으므로 여기서 인라인 배포 (REQUIREMENTS §19)
       - name: Assemble site
