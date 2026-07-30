@@ -52,6 +52,8 @@ jobs:
           python3 generators/check_overlap.py
           python3 generators/check_render.py
           python3 generators/check_zfight.py
+          # 3D 업그레이드 기여(§21-D): 기여자가 meta에 기록한 sha256 == 실제 파일
+          python3 generators/check_asset_hashes.py
 
       # 기여 풋프린트 표절 검사 — 공식 KiCad 라이브러리(CC-BY-SA) 카피는 라이선스상 수용 불가.
       # 이름 무관 패드-지오메트리 대조 (docs/official-fp-signatures.json = 공식 15,447개 서명)

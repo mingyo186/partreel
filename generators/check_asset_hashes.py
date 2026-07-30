@@ -16,9 +16,11 @@ ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)),
 def main():
     sys.stdout.reconfigure(encoding="utf-8")
     index = json.load(open(os.path.join(ROOT, "index.json"), encoding="utf-8"))
+    from scope import scoped_parts
+    parts = scoped_parts(index["parts"])  # PART_SCOPE 증분 (§19-A / §21-D PR 게이트)
     errs = 0
     checked = 0
-    for p in index["parts"]:
+    for p in parts:
         d = os.path.join(ROOT, p["path"])
         meta = json.load(open(os.path.join(d, "meta.json"), encoding="utf-8"))
         hashes = meta.get("asset_sha256", {})

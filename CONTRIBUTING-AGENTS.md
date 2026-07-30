@@ -92,6 +92,32 @@ family and you need a sibling (another voltage, grade, pin count):
    you register a NEW on-demand family: add the codes dict + builder and wire
    it into `VARIANT_FAMILIES`.
 
+## Upgrading an existing part: add a 3D model (STEP)
+
+**"Part already exists" does NOT mean nothing to contribute.** 18,000+ parts
+are `verified-2d` — correct footprint/symbol but no 3D model. Adding a STEP
+is a first-class contribution:
+
+1. Put the model at `library/<category>/<vendor>/<id>/<id>.step` (AP214/AP242,
+   millimeters, origin and orientation matching the footprint: pin 1 / pad
+   positions must line up when dropped onto the footprint in KiCad).
+2. Edit that part's `meta.json` — three places:
+   - `files`: add `"step": "<id>.step"`
+   - `formats`: append `"step"`
+   - `asset_sha256`: add `"<id>.step": "<sha256 of the file>"` (compute it
+     yourself — this hash is the commit's guarantee of file integrity)
+3. Open the PR. CI validates the solid with the real CAD kernel (FreeCAD
+   `isValid` + volume) and checks your hash. After merge, CI uploads the file
+   to the asset CDN automatically — the part page gets a STEP download button.
+   Web 3D preview (GLB) and tier upgrade happen in a maintainer batch pass.
+
+State the model's source in the PR: self-modeled from the datasheet drawing
+(cite page/figure), or imported with a compatible license (name it). Vendor
+"reference only / no redistribution" models are not accepted.
+
+Note: if your account has **write access** to the repo (maintainer machines),
+fork will fail — push a branch and open the PR from it instead.
+
 ## Usage feedback (no PR needed)
 
 Used a part on a real board? Report it:

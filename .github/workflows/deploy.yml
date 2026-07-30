@@ -22,6 +22,8 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2  # §21-D: 직전 커밋 대비 3D 에셋 변경 감지용
 
       # 파생물 자동 빌드 (§20): 기여자는 원천 5파일만 내면 됨. index/svg/pages/api는 CI가 생성.
       # field_reports 집계도 이때 API에 반영 (GITHUB_TOKEN으로 이슈 조회).
@@ -48,6 +50,20 @@ jobs:
         run: |
           pip -q install trimesh numpy scipy
           python3 generators/check_zfight.py
+
+      # 3D 업그레이드 기여(§21-D): 이 푸시에서 step/glb가 추가/변경된 부품만
+      # R2에 업로드 (sync_r2 --upload는 R2에 없는 파일만 올림 — 재실행 안전).
+      # 시크릿 없으면 건너뜀 (포크 CI 등).
+      - name: Upload new 3D assets to R2
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.R2_WRANGLER_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: 59c582799b858f66a23af4561c26c696
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then echo "no R2 secret, skip"; exit 0; fi
+          IDS=$(git diff --name-only HEAD^ HEAD -- 'library/**/*.step' 'library/**/*.glb' 2>/dev/null | xargs -r -n1 dirname | xargs -r -n1 basename | sort -u | paste -sd, -)
+          if [ -z "$IDS" ]; then echo "no 3D asset changes"; exit 0; fi
+          echo "uploading assets for: $IDS"
+          PART_SCOPE="$IDS" python3 generators/sync_r2.py --upload
 
       # publish 정리: 사이트+라이브러리만 공개. generators/docs는 제외.
       - name: Assemble site
