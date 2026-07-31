@@ -49,8 +49,15 @@
     <li>Open the symbol chooser and type a part name. Placing a part brings its footprint along automatically. No network, no waiting.</li>
   </ol>
   <p>Re-download both files occasionally to pick up newly added parts. For anything outside the curated set, search the full 21,000+ catalog at <a href="../../">partreel.com</a> or through the MCP server.</p>
-  <h3>Optional: live HTTP library</h3>
-  <p>KiCad 8+ can also pull PartReel over the network via <a href="../../assets/partreel.kicad_httplib" download>partreel.kicad_httplib</a> (<strong>Manage Symbol Libraries → +</strong>). It shows the same curated set with live metadata, but <em>KiCad fetches every part one-by-one the first time the chooser opens</em>, so expect a pause of roughly half a minute; the offline files above have no such delay. The HTTP library still needs <code>PartReel.kicad_sym</code> installed, since KiCad's HTTP libraries carry metadata only.</p>
+  <h3>Experimental: live HTTP library (not recommended)</h3>
+  <p>KiCad 8+ can also pull part metadata over the network (<a href="../../assets/partreel.kicad_httplib" download>partreel.kicad_httplib</a>). It works, and the endpoint stays up for anyone already using it, but we do <strong>not</strong> recommend installing it alongside the offline files, for reasons that are inherent to KiCad's HTTP-library design rather than to PartReel:</p>
+  <ul>
+    <li><strong>Duplicate entries</strong> — parts served over HTTP also exist in your offline <code>PartReel</code> library, so they appear twice in the symbol chooser.</li>
+    <li><strong>Startup pause</strong> — KiCad fetches every part one-by-one when the chooser first opens (about 20 seconds here), and repeats it after each restart.</li>
+    <li><strong>Metadata only</strong> — the spec cannot deliver symbols, so <code>PartReel.kicad_sym</code> is required anyway; the HTTP library adds nothing you don't already have offline.</li>
+    <li><strong>Network coupling</strong> — if this site is slow or unreachable, your schematic editor waits on it.</li>
+  </ul>
+  <p>Use the offline files above instead, and re-download them when you want newer parts.</p>
   <p><a href="../../">← Home</a></p>
 </main>
 <footer class="site-footer">
