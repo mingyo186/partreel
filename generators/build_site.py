@@ -247,16 +247,17 @@ def guide_page():
     <li>Point it at the downloaded <code>.step</code> file</li>
   </ol>
   <p>The web preview uses <code>.glb</code> (display only); use <code>.step</code> in KiCad.</p>
-  <h2>4. Browse PartReel inside KiCad (live library, real symbols)</h2>
-  <p>KiCad 8+ can show PartReel's curated set in the <strong>symbol chooser</strong> as a live library — with real symbols and footprints:</p>
+  <h2>4. Install PartReel as a KiCad library (recommended)</h2>
+  <p>Two files give you PartReel's curated set (~450 self-generated, gate-verified parts) <strong>offline and instant</strong> — real symbols, footprints auto-assigned, datasheet links included:</p>
   <ol>
-    <li>Download <a href="../../assets/partreel.kicad_httplib" download>partreel.kicad_httplib</a>, <a href="../../assets/PartReel.kicad_sym" download>PartReel.kicad_sym</a> (all curated symbols, one file) and <a href="../../assets/PartReel-pretty.zip" download>PartReel-pretty.zip</a> (footprints — unzip it somewhere permanent)</li>
-    <li><strong>Preferences → Manage Symbol Libraries</strong> → <strong>+</strong> → add <code>PartReel.kicad_sym</code> with nickname <code>PartReel</code></li>
-    <li><strong>+</strong> again → add <code>partreel.kicad_httplib</code></li>
-    <li><strong>Preferences → Manage Footprint Libraries</strong> → <strong>+</strong> → add the unzipped <code>PartReel.pretty</code> folder with nickname <code>PartReel</code></li>
-    <li>Open the symbol chooser — <code>PartReel_Live</code> categories appear (first open syncs a few minutes). Parts preview with their <strong>real symbols</strong>, come with the matching footprint pre-assigned, and carry datasheet/page/3D URLs in their fields</li>
+    <li>Download <a href="../../assets/PartReel.kicad_sym" download>PartReel.kicad_sym</a> (all symbols in one file) and <a href="../../assets/PartReel-pretty.zip" download>PartReel-pretty.zip</a> (footprints — unzip somewhere permanent)</li>
+    <li><strong>Preferences → Manage Symbol Libraries</strong> → <strong>+</strong> → add <code>PartReel.kicad_sym</code>, nickname <code>PartReel</code></li>
+    <li><strong>Preferences → Manage Footprint Libraries</strong> → <strong>+</strong> → add the unzipped <code>PartReel.pretty</code> folder, nickname <code>PartReel</code></li>
+    <li>Open the symbol chooser and type a part name. Placing a part brings its footprint along automatically. No network, no waiting.</li>
   </ol>
-  <p><em>Scope note:</em> KiCad pre-fetches every part one-by-one when the chooser first opens (client behavior), so the live library serves PartReel's <strong>curated, self-generated set</strong> (~450 parts) rather than the full 21,000+ catalog — search everything at <a href="../../">partreel.com</a> or via the MCP server. Re-download the two library files occasionally to pick up newly generated parts.</p>
+  <p>Re-download both files occasionally to pick up newly added parts. For anything outside the curated set, search the full 21,000+ catalog at <a href="../../">partreel.com</a> or through the MCP server.</p>
+  <h3>Optional: live HTTP library</h3>
+  <p>KiCad 8+ can also pull PartReel over the network via <a href="../../assets/partreel.kicad_httplib" download>partreel.kicad_httplib</a> (<strong>Manage Symbol Libraries → +</strong>). It shows the same curated set with live metadata, but <em>KiCad fetches every part one-by-one the first time the chooser opens</em>, so expect a pause of roughly half a minute; the offline files above have no such delay. The HTTP library still needs <code>PartReel.kicad_sym</code> installed, since KiCad's HTTP libraries carry metadata only.</p>
   <p><a href="../../">← Home</a></p>
 </main>"""
     return render(prefix, "How to add downloaded libraries to KiCad | PartReel",

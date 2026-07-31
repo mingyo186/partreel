@@ -130,14 +130,18 @@ def main():
 
     # B-2. 동기화 시간 실측 (회귀 게이트) — 새 URL 10건의 평균 × 부품수
     import time
-    ids = [p for p in manifest.get("symbols", [])][:10]
+    live_ids = []
+    for c in cats:
+        live_ids += [it["id"] for it in
+                     get_json(f"{BASE}/parts/category/{c['id']}.json{cb}")]
+    ids = live_ids[:10]
     t0 = time.time()
     for pid in ids:
         get(f"{BASE}/parts/{pid}.json?warm={os.getpid()}")
     per = (time.time() - t0) / max(len(ids), 1)
-    est = per * len(manifest.get("symbols", []))
+    est = per * len(live_ids)
     print(f"응답 {per * 1000:.0f}ms/건 → 첫 동기화 추정 {est:.0f}초 "
-          f"({len(manifest.get('symbols', []))}부품)")
+          f"(온라인 노출 {len(live_ids)}부품)")
     if est > MAX_SYNC_SECONDS:
         fail(f"첫 동기화 추정 {est:.0f}초 > 한도 {MAX_SYNC_SECONDS}초 "
              "(KiCad UI가 그만큼 멈춘다)")

@@ -26,6 +26,8 @@ import sys
 sys.stdout.reconfigure(encoding="utf-8")
 ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 OUT = os.path.join(ROOT, "kicad", "v1")
+# 온라인 라이브러리 노출 상한 (첫 동기화 = 상한 × 응답시간)
+LIVE_LIMIT = int(os.environ.get("KICAD_LIVE_LIMIT", "120"))
 SITE = "https://partreel.com"
 
 
@@ -42,7 +44,44 @@ def main():
         return 1
     bundled = set(json.load(open(mpath, encoding="utf-8")).get("symbols", []))
     parts = [p for p in index["parts"] if p["id"] in bundled]
-    print(f"대상 {len(parts)} (manifest {len(bundled)})")
+
+    # 노출 규모 제한 (§18-A 3단계): KiCad는 상세를 전량 선주입하므로
+    # (응답시간 × 부품수)가 UI 프리즈가 된다. 전체 세트는 **오프라인 번들**이
+    # 즉시 제공하므로, 온라인 라이브러리는 "번들 받은 뒤 새로 생긴 것"만
+    # 보여주면 충분하다 → 최신 LIMIT개. 최초 등장 순서는 원장(ledger)으로 추적.
+    ledger_path = os.path.join(ROOT, "docs", "part-ledger.json")
+    first_run = not os.path.exists(ledger_path)
+    try:
+        ledger = json.load(open(ledger_path, encoding="utf-8"))
+    except (OSError, ValueError):
+        ledger = {"order": []}
+    known = set(ledger["order"])
+    # 원장 최초 생성 시엔 전부 "기존 부품"으로 본다 (전량이 신규로 잡히면
+    # 알파벳 뒤쪽만 뽑혀 한 카테고리에 쏠림)
+    fresh = [] if first_run else [p["id"] for p in parts if p["id"] not in known]
+    if first_run:
+        ledger["order"] = [p["id"] for p in parts]
+    ledger["order"] += fresh
+    json.dump(ledger, open(ledger_path, "w", encoding="utf-8"), indent=0)
+
+    # ① 새로 생긴 부품(원장에 없던 것)은 무조건 포함 — 온라인 노출의 존재 이유.
+    # ② 남은 자리는 카테고리 라운드로빈으로 채워 대표성 확보 (id 알파벳순으로
+    #    자르면 한 카테고리에 쏠린다 — 첫 구현에서 실제로 1개 카테고리만 남음).
+    live_ids = set(fresh[-LIVE_LIMIT:])
+    by_cat = {}
+    for p in parts:
+        if p["id"] not in live_ids:
+            by_cat.setdefault(p.get("category") or "", []).append(p["id"])
+    cats_cycle = sorted(by_cat)
+    i = 0
+    while len(live_ids) < LIVE_LIMIT and any(by_cat.values()):
+        c = cats_cycle[i % len(cats_cycle)]
+        if by_cat[c]:
+            live_ids.add(by_cat[c].pop(0))
+        i += 1
+
+    parts = [p for p in parts if p["id"] in live_ids]
+    print(f"온라인 노출 {len(parts)} / 번들 {len(bundled)} (원장 {len(ledger['order'])})")
 
     if os.path.isdir(OUT):
         shutil.rmtree(OUT)

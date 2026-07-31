@@ -71,6 +71,49 @@ def top_symbols(lib_text):
     return [(name, blk) for _, _, name, blk in out]
 
 
+def _prop(name, value, y=0):
+    """KiCad 10 표준 property 블록 (숨김) — 공식 라이브러리와 동일 형식."""
+    v = str(value or "").replace("\\", "\\\\").replace('"', '\\"')
+    return (f'      (property "{name}" "{v}"\n'
+            f'        (at 0 {y} 0)\n'
+            f'        (show_name no)\n'
+            f'        (do_not_autoplace no)\n'
+            f'        (hide yes)\n'
+            f'        (effects (font (size 1.27 1.27)))\n'
+            f'      )')
+
+
+def enrich(blk, pid, meta):
+    """심볼에 Footprint/Datasheet/Description/ki_keywords 주입.
+
+    이걸 넣어야 로컬 라이브러리만으로 자립한다 — 선택창 검색(설명·키워드),
+    배치 시 풋프린트 자동 지정, 데이터시트 링크가 네트워크 없이 동작
+    (§18-A 3단계: KiCad의 전량 선주입 때문에 온라인 의존을 줄이는 방향).
+    """
+    props = [
+        _prop("Footprint", f"PartReel:{pid}"),
+        _prop("Datasheet", meta.get("datasheet")),
+        _prop("Description", meta.get("description")),
+        _prop("ki_keywords", " ".join(meta.get("keywords") or [])),
+        _prop("PartReel", f"https://partreel.com/p/{pid}/"),
+    ]
+    # 원본에 이미 있는 동명 property 제거 (중복이면 KiCad가 빈 쪽을 쓸 수 있음)
+    for name in ("Footprint", "Datasheet", "Description", "ki_keywords", "PartReel"):
+        while True:
+            m = re.search(r'\n[ \t]*\(property "' + re.escape(name) + r'"', blk)
+            if not m:
+                break
+            start = blk.index("(property", m.start())
+            end = start + len(balanced_block(blk, start) or "")
+            blk = blk[:m.start()] + blk[end:]
+    # Value property 블록 뒤에 삽입 (없으면 심볼 헤더 다음 줄)
+    m = re.search(r'^\s*\(property "Value".*?\)\)\)\s*$', blk, re.M)
+    if m:
+        return blk[:m.end()] + "\n" + "\n".join(props) + blk[m.end():]
+    head, _, rest = blk.partition("\n")
+    return head + "\n" + "\n".join(props) + "\n" + rest
+
+
 def merge_symbol(pid, sym_text):
     """부품 심볼 파일 → 최상위 심볼을 pid로 개명한 블록 (서브유닛 접두 포함)."""
     tops = top_symbols(sym_text)
@@ -110,6 +153,8 @@ def main():
             blk = merge_symbol(pid, open(sym_p, encoding="utf-8").read())
             if not blk:
                 skipped.append((pid, "no symbol block")); continue
+            meta = json.load(open(os.path.join(d, "meta.json"), encoding="utf-8"))
+            blk = enrich(blk, pid, meta)
             blocks.append("  " + blk.replace("\n", "\n  ").rstrip())
             z.write(mod_p, f"PartReel.pretty/{pid}.kicad_mod")
             included.append(pid)
