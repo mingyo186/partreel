@@ -389,6 +389,16 @@ KiCad 8+의 심볼 선택 패널에 파트릴 카탈로그가 라이브러리로
 - **배포물**: ①워커 라우트 ②assets/partreel.kicad_httplib (root_url=https://mcp.partreel.com/kicad, token "public") ③assets/PartReel.kicad_sym ④가이드 페이지 설치 섹션.
 - 검증: curl로 4엔드포인트 스펙 형태 검사 + 실제 KiCad에서 눈검증.
 
+**구축 완료 + 실물 검증 (2026-08-01, KiCad 10.0.5)**: 심볼 선택창에 PartReel_Live 카테고리·부품(RKJXM2E13004로 확인)·설명·플레이스홀더 미리보기까지 표시 확인. 과정에서 확정된 사실 2건:
+1. **root_url은 끝 슬래시 필수** (KiCad가 "v1/…"을 그대로 이어붙임 — 없으면 /kicadv1로 새서 조용히 실패). 워커는 /kicad/v1, /kicadv1, 이중슬래시 전부 허용하도록 관용 파싱 + 설정파일에 슬래시 명시.
+2. **KiCad 10은 선택창 첫 오픈 때 부품 상세를 1건씩 전량 선주입** (실측 1~2건/초, wrangler tail로 확인). 2.1만 전체 서빙 시 첫 로딩 4~6시간 → HTTP lib은 **엄선판(antmicro_/cern_ 제외 자체 제작 ~446개, 첫 동기화 4~7분)**만 노출. 풀 카탈로그는 사이트·API·MCP 담당. 가이드에 두 한계 정직 고지.
+
+**2단계 — 진짜 심볼·풋프린트 번들 (사용자 GO 2026-08-01 "플레이스홀더 이상하다 + 로컬 저장도")**: 플레이스홀더 대신,
+- `generators/build_kicad_bundle.py`가 엄선판 전 부품의 심볼을 **PartReel.kicad_sym 한 파일로 병합**(심볼명=부품 id로 개명, 서브유닛 접두 포함) + 풋프린트 446개를 **PartReel-pretty.zip**으로 묶음 + 포함 목록 `kicad-bundle-manifest.json` 생성.
+- 워커 상세 응답: manifest에 있는 부품은 `symbolIdStr="PartReel:<id>"` + `fields.Footprint="PartReel:<id>"` → 선택창 미리보기·배치·풋프린트 연결까지 실물. manifest 밖(번들보다 새 부품)은 PLACEHOLDER 폴백.
+- 번들 재생성을 deploy·generate-part 빌드 단계에 포함(온디맨드 신부품 반영). 3D는 용량상 번들 제외(다운로드 링크 유지).
+- 검증: kicad-cli sym export svg로 병합 파일 커널 검증 + KiCad 실물 눈검증.
+
 ## 18. 길목 배치 전략 (확정 2026-07)
 
 **원칙**: 우리가 만드는 것만큼, **부품이 필요한 흐름(시나리오)의 길목마다 PartReel이 서 있게** 배치한다. 다른 도구/프로젝트가 우리에게 붙기 쉽게.

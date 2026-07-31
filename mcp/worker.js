@@ -154,12 +154,23 @@ function kicadJson(obj, ttl) {
 }
 
 async function kicadRoute(url) {
-  const path = url.pathname.replace(/^\/kicad\/v1/, "") || "/";
+  // 관용 파싱: /kicad/v1/..., /kicadv1/... (root_url 끝 슬래시 유무),
+  // 이중 슬래시까지 허용 — 클라이언트별 URL 조합 방식 차이 흡수.
+  let rest = url.pathname.replace(/^\/kicad/, "").replace(/^\/+/, "");
+  rest = rest.replace(/^v1/, "").replace(/^\/+/, "");
+  const path = "/" + rest;
   if (path === "/") return kicadJson({ categories: "", parts: "" }, KICAD_TTL.categories);
+
+  // KiCad 10은 선택창을 열 때 부품 상세를 1건씩 전부 선주입한다 (실측 1-2건/초)
+  // — 2.1만 전체를 서빙하면 첫 로딩이 수 시간. HTTP lib에는 자체 제작·엄선
+  // 부품만 노출 (수입 물결 antmicro_/cern_ 제외, ~500개 = 첫 동기화 수 분).
+  // 풀 카탈로그 접근은 사이트 검색·API·MCP가 담당.
+  const curated = (parts) =>
+    parts.filter((p) => !/^(antmicro_|cern_)/.test(p.id || ""));
 
   if (path === "/categories.json") {
     const idx = await fetchIndex();
-    const cats = [...new Set(idx.parts.map((p) => p.category).filter(Boolean))].sort();
+    const cats = [...new Set(curated(idx.parts).map((p) => p.category).filter(Boolean))].sort();
     return kicadJson(
       cats.map((c) => ({ id: String(c), name: String(c) })),
       KICAD_TTL.categories
@@ -169,7 +180,7 @@ async function kicadRoute(url) {
   let m = path.match(/^\/parts\/category\/([a-z0-9_-]+)\.json$/);
   if (m) {
     const idx = await fetchIndex();
-    const items = idx.parts
+    const items = curated(idx.parts)
       .filter((p) => p.category === m[1])
       .map((p) => ({
         id: String(p.id),
@@ -345,8 +356,8 @@ export default {
 
     if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: CORS });
 
-    // KiCad HTTP 라이브러리 어댑터 (§18-A): GET /kicad/v1/...
-    if (url.pathname === "/kicad" || url.pathname.startsWith("/kicad/")) {
+    // KiCad HTTP 라이브러리 어댑터 (§18-A): GET /kicad/v1/... (/kicadv1/... 포함)
+    if (url.pathname.startsWith("/kicad")) {
       try {
         return await kicadRoute(url);
       } catch (e) {
