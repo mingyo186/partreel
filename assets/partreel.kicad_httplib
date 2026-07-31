@@ -1,0 +1,13 @@
+{
+  "meta": { "version": 1.0 },
+  "name": "PartReel",
+  "description": "PartReel - open, no-login KiCad parts registry (21,000+ verified parts). Metadata browser: real symbol/footprint/3D files download from the URLs in each part's fields (see https://partreel.com/guide/kicad/).",
+  "source": {
+    "type": "REST_API",
+    "api_version": "v1",
+    "root_url": "https://mcp.partreel.com/kicad",
+    "token": "public",
+    "timeout_parts_seconds": 600,
+    "timeout_categories_seconds": 3600
+  }
+}

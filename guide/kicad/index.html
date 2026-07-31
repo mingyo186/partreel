@@ -40,6 +40,15 @@
     <li>Point it at the downloaded <code>.step</code> file</li>
   </ol>
   <p>The web preview uses <code>.glb</code> (display only); use <code>.step</code> in KiCad.</p>
+  <h2>4. Browse PartReel inside KiCad (HTTP library)</h2>
+  <p>KiCad 8+ can show the whole PartReel catalog in the <strong>symbol chooser</strong> as a live library:</p>
+  <ol>
+    <li>Download <a href="../../assets/partreel.kicad_httplib" download>partreel.kicad_httplib</a> and <a href="../../assets/PartReel.kicad_sym" download>PartReel.kicad_sym</a></li>
+    <li><strong>Preferences → Manage Symbol Libraries</strong> → <strong>+</strong> → add <code>PartReel.kicad_sym</code> with nickname <code>PartReel</code></li>
+    <li><strong>+</strong> again → add <code>partreel.kicad_httplib</code></li>
+    <li>Open the symbol chooser — PartReel categories appear with 21,000+ parts, each carrying its datasheet, page and direct download URLs in the part fields</li>
+  </ol>
+  <p><em>Heads-up:</em> KiCad's HTTP libraries carry metadata only (that is the spec, not a PartReel limit) — placing a part inserts a placeholder symbol whose <code>PartReel</code> field links to the real symbol/footprint/3D downloads. Use it as an in-KiCad catalog browser.</p>
   <p><a href="../../">← Home</a></p>
 </main>
 <footer class="site-footer">

@@ -135,6 +135,86 @@ async function fetchIndex() {
   return r.json();
 }
 
+// === KiCad HTTP 라이브러리 어댑터 (REQUIREMENTS §18-A) ===
+// KiCad 8+ 심볼 선택 패널이 호출하는 REST 형태로 카탈로그를 번역.
+// 규칙(dev-docs): 모든 값은 문자열, HTTP 200만 처리, 불리언은 "True"/"False" 문자열.
+// 심볼 파일 자체는 스펙상 전달 불가(로컬 라이브러리 참조) → PartReel:PLACEHOLDER
+// + fields에 실파일 URL 노출 (assets/PartReel.kicad_sym 설치 가이드 참조).
+const KICAD_TTL = { categories: 3600, list: 1800, part: 600 };
+
+function kicadJson(obj, ttl) {
+  return new Response(JSON.stringify(obj), {
+    status: 200,
+    headers: {
+      "Content-Type": "application/json",
+      "Cache-Control": `public, max-age=${ttl}`,
+      ...CORS,
+    },
+  });
+}
+
+async function kicadRoute(url) {
+  const path = url.pathname.replace(/^\/kicad\/v1/, "") || "/";
+  if (path === "/") return kicadJson({ categories: "", parts: "" }, KICAD_TTL.categories);
+
+  if (path === "/categories.json") {
+    const idx = await fetchIndex();
+    const cats = [...new Set(idx.parts.map((p) => p.category).filter(Boolean))].sort();
+    return kicadJson(
+      cats.map((c) => ({ id: String(c), name: String(c) })),
+      KICAD_TTL.categories
+    );
+  }
+
+  let m = path.match(/^\/parts\/category\/([a-z0-9_-]+)\.json$/);
+  if (m) {
+    const idx = await fetchIndex();
+    const items = idx.parts
+      .filter((p) => p.category === m[1])
+      .map((p) => ({
+        id: String(p.id),
+        name: String(p.name || p.id),
+        description: String(p.family || ""),
+        keywords: (p.keywords || []).join(" "),
+      }));
+    return kicadJson(items, KICAD_TTL.list);
+  }
+
+  m = path.match(/^\/parts\/([a-z0-9_-]+)\.json$/);
+  if (m) {
+    const r = await fetch(`${API}/parts/${m[1]}.json`, {
+      cf: { cacheTtl: KICAD_TTL.part, cacheEverything: true },
+    });
+    if (!r.ok) return new Response("not found", { status: 404, headers: CORS });
+    const p = await r.json();
+    const files = p.files || {};
+    return kicadJson(
+      {
+        id: String(p.id),
+        name: String(p.name || p.id),
+        symbolIdStr: "PartReel:PLACEHOLDER",
+        description: String(p.description || ""),
+        keywords: (p.keywords || []).join(" "),
+        exclude_from_bom: "False",
+        exclude_from_board: "False",
+        exclude_from_sim: "True",
+        fields: {
+          Datasheet: { value: String(p.datasheet || ""), visible: "False" },
+          PartReel: { value: String(p.page || `https://partreel.com/p/${p.id}/`), visible: "False" },
+          Footprint_URL: { value: String(files.footprint || ""), visible: "False" },
+          Symbol_URL: { value: String(files.symbol || ""), visible: "False" },
+          Manufacturer: { value: String(p.manufacturer || ""), visible: "False" },
+          MPN: { value: String(p.mpn_pattern || p.name || ""), visible: "False" },
+          License: { value: String(p.license || ""), visible: "False" },
+          Tier: { value: String(p.tier || (p.verified ? "verified" : "")), visible: "False" },
+        },
+      },
+      KICAD_TTL.part
+    );
+  }
+  return new Response("not found", { status: 404, headers: CORS });
+}
+
 const ONDEMAND_FAMILIES = { pin_header_254: 40, pin_header_200: 40, pin_header_127: 40 };
 const VARIANT_FAMILIES = {
   ht73xx: { codes: ["7318", "7325", "7327", "7330", "7333", "7335", "7341", "7350"], id: (c) => `ht${c}` },
@@ -264,6 +344,15 @@ export default {
     const url = new URL(request.url);
 
     if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: CORS });
+
+    // KiCad HTTP 라이브러리 어댑터 (§18-A): GET /kicad/v1/...
+    if (url.pathname === "/kicad" || url.pathname.startsWith("/kicad/")) {
+      try {
+        return await kicadRoute(url);
+      } catch (e) {
+        return new Response(`error: ${e.message}`, { status: 500, headers: CORS });
+      }
+    }
 
     if (url.pathname === "/" || url.pathname === "") {
       return json({

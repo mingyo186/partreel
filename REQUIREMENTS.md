@@ -381,6 +381,14 @@ verified-2d 부품(1.8만+)에 외부가 STEP을 얹는 기여 = 우리가 가�
 - 2차(2026-07-24): 검색어 7개 조사 → **6개는 이미 보유**(정확 mpn_pattern 일치 — 검색 노출이 나온 이유), 갭 1개 = PESD15VS5UD-Q(Nexperia, 비-Q 버전과 핀배치 동일함을 양쪽 데이터시트 원문으로 확증). **범용화**: config에 `prefix`(기본 "ti_")·`vendor_note`(기본 TI 문구) 추가 — TI 하드코딩 제거. src에 3D가 있고 풋프린트 동일하면 `carry_3d: true`로 step/glb 복사·해시 기록(내용 동일=해시 동일, 파일명만 변경)·R2 업로드 후 tier 유지.
 - 부수 교정(조사 중 발견): cern_tca9406dcur case "TSSOP8"→"VSSOP-8 (US8)", cern_tps26600pwpt·ti_tps26602pwpt case "SSOP16"→"HTSSOP-16 PowerPAD", 데이터시트 플레이스홀더 3건(GitLab 링크)→제조사 제품 페이지(Renesas 5PB1102 / Molex 5040500391 / Microchip DSC1001).
 
+### 18-A. KiCad HTTP 라이브러리 어댑터 (사용자 GO 2026-07-31 "어댑터 만들어보자" — §18 시나리오 D의 1단계)
+
+KiCad 8+의 심볼 선택 패널에 파트릴 카탈로그가 라이브러리로 뜨게 하는 어댑터:
+- **구조**: 정적 파일 증설 없이 **기존 MCP 워커에 번역 라우트** `/kicad/v1/*` 추가 — categories.json(카테고리 목록), parts/category/<cat>.json(부품 목록), parts/<id>.json(상세)를 우리 index/api에서 실시간 변환. Cache API로 캐싱(index 30분, 응답 10-60분). KiCad 규칙: 모든 값 문자열, HTTP 200만 처리.
+- **한계(스펙 자체의 제약)**: HTTP lib은 메타데이터만 전달, 심볼은 로컬 라이브러리 참조(symbolIdStr) — InvenTree 연동도 동일. → **플레이스홀더 심볼 라이브러리**(PartReel.kicad_sym 1파일, "실파일은 PartReel 필드 링크에서" 안내 도형) 배포 + 상세 fields에 페이지·풋프린트·심볼·데이터시트 URL 노출. 진짜 파일 설치는 PCM 패키지(후속)로.
+- **배포물**: ①워커 라우트 ②assets/partreel.kicad_httplib (root_url=https://mcp.partreel.com/kicad, token "public") ③assets/PartReel.kicad_sym ④가이드 페이지 설치 섹션.
+- 검증: curl로 4엔드포인트 스펙 형태 검사 + 실제 KiCad에서 눈검증.
+
 ## 18. 길목 배치 전략 (확정 2026-07)
 
 **원칙**: 우리가 만드는 것만큼, **부품이 필요한 흐름(시나리오)의 길목마다 PartReel이 서 있게** 배치한다. 다른 도구/프로젝트가 우리에게 붙기 쉽게.
