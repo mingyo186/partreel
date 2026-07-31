@@ -1,0 +1,78 @@
+{
+  "id": "antmicro_lqm2hpn2r2mg0l",
+  "name": "LQM2HPN2R2MG0L",
+  "category": "passive",
+  "family": "Antmicro passive",
+  "manufacturer": "Murata",
+  "mpn_pattern": "LQM2HPN2R2MG0L",
+  "description": "Multilayer Inductor, 2.2 µH, 0.1 ohm, 40 MHz, 1008 [2520 Metric], LQM2HPN Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 2,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/passive/antmicro/antmicro_lqm2hpn2r2mg0l/antmicro_lqm2hpn2r2mg0l.kicad_mod",
+    "symbol": "https://partreel.com/library/passive/antmicro/antmicro_lqm2hpn2r2mg0l/antmicro_lqm2hpn2r2mg0l.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/passive/antmicro/antmicro_lqm2hpn2r2mg0l/antmicro_lqm2hpn2r2mg0l.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/passive/antmicro/antmicro_lqm2hpn2r2mg0l/antmicro_lqm2hpn2r2mg0l.symbol.svg",
+    "preview": "https://assets.partreel.com/library/passive/antmicro/antmicro_lqm2hpn2r2mg0l/antmicro_lqm2hpn2r2mg0l.glb"
+  },
+  "datasheet": "https://www.murata.com/en-global/products/productdetail?partno=LQM2HPN2R2MG0%23",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": null,
+  "dimensions_source": "antmicro/hardware-components@main (components/murata-lqm2hpn2r2mg0l); footprint land pattern: IPC-7351 density level B nominal (KEMET C1002 X7R SMD datasheet Table 3)",
+  "keywords": [
+    "antmicro",
+    "0805",
+    "smt",
+    "inductor",
+    "passive",
+    "rohs"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@main (components/murata-lqm2hpn2r2mg0l); footprint land pattern: IPC-7351 density level B nominal (KEMET C1002 X7R SMD datasheet Table 3)",
+    "datasheet": "https://www.murata.com/en-global/products/productdetail?partno=LQM2HPN2R2MG0%23",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "main",
+      "source_files": {
+        "component": "components/murata-lqm2hpn2r2mg0l"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview",
+        "footprint replaced: source used 'L_1008_2520Metric' (KiCad-official-derived, license-incompatible); PartReel generated its own IPC-7351 density-B nominal land pattern instead (values per KEMET C1002 X7R SMD datasheet Table 3)"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_lqm2hpn2r2mg0l/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_lqm2hpn2r2mg0l.json"
+}

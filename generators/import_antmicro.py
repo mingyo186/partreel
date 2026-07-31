@@ -18,6 +18,9 @@ import subprocess
 import sys
 import urllib.request
 
+sys_path_note = None  # pkg_land는 동일 디렉토리
+import pkg_land
+
 sys.stdout.reconfigure(encoding="utf-8")
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.normpath(os.path.join(HERE, ".."))
@@ -281,9 +284,14 @@ def import_loop(cfg, ref):
 
             mpn = data.get("mpn") or slug
             pid = "antmicro_" + slugify(mpn)
+            pkg_fp = pkg_land.build(fp_name, pid, slug)
             if replaced_fp:
                 # §21-C 대체 수입: 공식 카피 판정 풋프린트 → 자체 생성 랜드패턴
                 fp_text = chip_footprint(pid, FP_REPLACEMENTS[fp_name])
+            elif pkg_fp:
+                # §21-C 2차: 제조사 데이터시트 랜드패턴 대체 (pkg_land.PACKAGES)
+                replaced_fp = True
+                fp_text = pkg_fp
             else:
                 fp_text = fp.decode("utf-8")
             if '"F.CrtYd"' not in fp_text:

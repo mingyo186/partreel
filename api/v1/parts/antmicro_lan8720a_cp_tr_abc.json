@@ -1,0 +1,79 @@
+{
+  "id": "antmicro_lan8720a_cp_tr_abc",
+  "name": "LAN8720A-CP-TR-ABC",
+  "category": "ic",
+  "family": "Antmicro ic",
+  "manufacturer": "Microchip Technology",
+  "mpn_pattern": "LAN8720A-CP-TR-ABC",
+  "description": "Ethernet Controller, 100 Mbps, IEEE 802.3, IEEE 802.3u, 3 V, 3.6 V, SQFN, 24 Pins Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 25,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/ic/antmicro/antmicro_lan8720a_cp_tr_abc/antmicro_lan8720a_cp_tr_abc.kicad_mod",
+    "symbol": "https://partreel.com/library/ic/antmicro/antmicro_lan8720a_cp_tr_abc/antmicro_lan8720a_cp_tr_abc.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/ic/antmicro/antmicro_lan8720a_cp_tr_abc/antmicro_lan8720a_cp_tr_abc.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/ic/antmicro/antmicro_lan8720a_cp_tr_abc/antmicro_lan8720a_cp_tr_abc.symbol.svg",
+    "preview": "https://assets.partreel.com/library/ic/antmicro/antmicro_lan8720a_cp_tr_abc/antmicro_lan8720a_cp_tr_abc.glb"
+  },
+  "datasheet": "http://ww1.microchip.com/downloads/en/DeviceDoc/8720a.pdf",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": null,
+  "dimensions_source": "antmicro/hardware-components@main (components/microchip-technology-lan8720a-cp-tr-abc); footprint land pattern: IPC-7351 density level B nominal (KEMET C1002 X7R SMD datasheet Table 3)",
+  "keywords": [
+    "antmicro",
+    "smt",
+    "transceiver",
+    "ic",
+    "ethernet",
+    "phy",
+    "rohs"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@main (components/microchip-technology-lan8720a-cp-tr-abc); footprint land pattern: IPC-7351 density level B nominal (KEMET C1002 X7R SMD datasheet Table 3)",
+    "datasheet": "http://ww1.microchip.com/downloads/en/DeviceDoc/8720a.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "main",
+      "source_files": {
+        "component": "components/microchip-technology-lan8720a-cp-tr-abc"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview",
+        "footprint replaced: source used 'QFN-24-1EP_4x4mm_P0.5mm_EP2.6x2.6mm' (KiCad-official-derived, license-incompatible); PartReel generated its own IPC-7351 density-B nominal land pattern instead (values per KEMET C1002 X7R SMD datasheet Table 3)"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_lan8720a_cp_tr_abc/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_lan8720a_cp_tr_abc.json"
+}

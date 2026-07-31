@@ -1,0 +1,78 @@
+{
+  "id": "antmicro_pac1954t_e_4mx",
+  "name": "PAC1954T-E/4MX",
+  "category": "power",
+  "family": "Antmicro power",
+  "manufacturer": "Microchip Technology",
+  "mpn_pattern": "PAC1954T-E/4MX",
+  "description": "Current/Voltage Monitor Regulator High-Side 16-VQFN (3x3) Imported from Antmicro hardware-components (Apache-2.0, attribution: Antmicro); passed PartReel quality gates.",
+  "parameters": {
+    "contacts": 17,
+    "mounting": "SMD"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym",
+    "glb"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/power/antmicro/antmicro_pac1954t_e_4mx/antmicro_pac1954t_e_4mx.kicad_mod",
+    "symbol": "https://partreel.com/library/power/antmicro/antmicro_pac1954t_e_4mx/antmicro_pac1954t_e_4mx.kicad_sym",
+    "footprint_svg": "https://partreel.com/library/power/antmicro/antmicro_pac1954t_e_4mx/antmicro_pac1954t_e_4mx.footprint.svg",
+    "symbol_svg": "https://partreel.com/library/power/antmicro/antmicro_pac1954t_e_4mx/antmicro_pac1954t_e_4mx.symbol.svg",
+    "preview": "https://assets.partreel.com/library/power/antmicro/antmicro_pac1954t_e_4mx/antmicro_pac1954t_e_4mx.glb"
+  },
+  "datasheet": "https://ww1.microchip.com/downloads/aemDocuments/documents/MSLD/ProductDocuments/DataSheets/PAC195X-Family-Data-Sheet-DS20006539.pdf",
+  "license": "Apache-2.0",
+  "verified": true,
+  "tier": null,
+  "dimensions_source": "antmicro/hardware-components@main (components/microchip-technology-pac1954t-e-4mx); footprint land pattern: IPC-7351 density level B nominal (KEMET C1002 X7R SMD datasheet Table 3)",
+  "keywords": [
+    "antmicro",
+    "monitor",
+    "voltage",
+    "ic",
+    "smt",
+    "rohs"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "antmicro/hardware-components@main (components/microchip-technology-pac1954t-e-4mx); footprint land pattern: IPC-7351 density level B nominal (KEMET C1002 X7R SMD datasheet Table 3)",
+    "datasheet": "https://ww1.microchip.com/downloads/aemDocuments/documents/MSLD/ProductDocuments/DataSheets/PAC195X-Family-Data-Sheet-DS20006539.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/import_antmicro.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    },
+    "origin": "imported",
+    "import": {
+      "source_repo": "https://github.com/antmicro/hardware-components",
+      "source_commit": "main",
+      "source_files": {
+        "component": "components/microchip-technology-pac1954t-e-4mx"
+      },
+      "attribution": "Antmicro (Apache-2.0)",
+      "modifications": [
+        "converted glTF (LOD) to single-mesh GLB preview",
+        "footprint replaced: source used 'VQFN-16-1EP_3x3mm_P0.5mm_EP1.1x1.1mm' (KiCad-official-derived, license-incompatible); PartReel generated its own IPC-7351 density-B nominal land pattern instead (values per KEMET C1002 X7R SMD datasheet Table 3)"
+      ]
+    }
+  },
+  "page": "https://partreel.com/p/antmicro_pac1954t_e_4mx/",
+  "api": "https://partreel.com/api/v1/parts/antmicro_pac1954t_e_4mx.json"
+}
