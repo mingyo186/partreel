@@ -23,11 +23,15 @@ import urllib.request
 import zipfile
 
 sys.stdout.reconfigure(encoding="utf-8")
-BASE = "https://mcp.partreel.com/kicad/v1"
 SITE = "https://partreel.com"
+# 정적 API가 정본 (§18-A 3단계). KICAD_API_BASE로 워커 등 다른 구현도 검사 가능.
+BASE = os.environ.get("KICAD_API_BASE", f"{SITE}/kicad/v1")
 KICAD_CLI = os.environ.get(
     "KICAD_CLI", r"D:\Program Files\KiCad\10.0\bin\kicad-cli.exe")
 SAMPLE_PER_CAT = 3
+# KiCad는 상세를 순차·동기로 전량 요청 → (응답시간 × 부품수) = UI 프리즈.
+# 실측 회귀 게이트: 첫 동기화 추정 60초 초과면 실패 (사용자 제보 2026-08-01).
+MAX_SYNC_SECONDS = 60
 
 errs = []
 
@@ -123,6 +127,20 @@ def main():
             if fp_ref and fp_ref.split(":", 1)[-1] not in bundle_fps:
                 fail(f"{it['id']}: Footprint 필드가 zip에 없음: {fp_ref}")
     print(f"목록 합계 {total}개, 상세 표본 {SAMPLE_PER_CAT}/카테고리 검사 완료")
+
+    # B-2. 동기화 시간 실측 (회귀 게이트) — 새 URL 10건의 평균 × 부품수
+    import time
+    ids = [p for p in manifest.get("symbols", [])][:10]
+    t0 = time.time()
+    for pid in ids:
+        get(f"{BASE}/parts/{pid}.json?warm={os.getpid()}")
+    per = (time.time() - t0) / max(len(ids), 1)
+    est = per * len(manifest.get("symbols", []))
+    print(f"응답 {per * 1000:.0f}ms/건 → 첫 동기화 추정 {est:.0f}초 "
+          f"({len(manifest.get('symbols', []))}부품)")
+    if est > MAX_SYNC_SECONDS:
+        fail(f"첫 동기화 추정 {est:.0f}초 > 한도 {MAX_SYNC_SECONDS}초 "
+             "(KiCad UI가 그만큼 멈춘다)")
 
     # C. 커널 검증 (kicad-cli 있으면)
     if os.path.exists(KICAD_CLI):

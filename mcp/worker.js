@@ -140,7 +140,21 @@ async function fetchIndex() {
 // 규칙(dev-docs): 모든 값은 문자열, HTTP 200만 처리, 불리언은 "True"/"False" 문자열.
 // 심볼 파일 자체는 스펙상 전달 불가(로컬 라이브러리 참조) → PartReel:PLACEHOLDER
 // + fields에 실파일 URL 노출 (assets/PartReel.kicad_sym 설치 가이드 참조).
-const KICAD_TTL = { categories: 3600, list: 1800, part: 600 };
+const KICAD_TTL = { categories: 3600, list: 1800, part: 86400 };
+
+// 모듈 스코프 캐시 (아이솔레이트 수명 동안 유지) — KiCad는 부품 상세를 순차로
+// 전량 요청하므로 요청당 서브요청 1건도 곱하기 446이 된다 (§18-A 3단계).
+let MANIFEST_CACHE = null;
+
+async function bundleManifest() {
+  if (MANIFEST_CACHE) return MANIFEST_CACHE;
+  try {
+    const r = await fetch("https://partreel.com/assets/kicad-bundle-manifest.json",
+                          { cf: { cacheTtl: 3600, cacheEverything: true } });
+    if (r.ok) MANIFEST_CACHE = new Set((await r.json()).symbols || []);
+  } catch (e) { /* 폴백: 플레이스홀더 */ }
+  return MANIFEST_CACHE || new Set();
+}
 
 function kicadJson(obj, ttl) {
   return new Response(JSON.stringify(obj), {
@@ -193,20 +207,18 @@ async function kicadRoute(url) {
 
   m = path.match(/^\/parts\/([a-z0-9_-]+)\.json$/);
   if (m) {
-    const r = await fetch(`${API}/parts/${m[1]}.json`, {
-      cf: { cacheTtl: KICAD_TTL.part, cacheEverything: true },
-    });
+    // 부품 상세 + manifest를 병렬로 (직렬이면 왕복 2회가 곱해진다)
+    const [r, mset] = await Promise.all([
+      fetch(`${API}/parts/${m[1]}.json`,
+            { cf: { cacheTtl: KICAD_TTL.part, cacheEverything: true } }),
+      bundleManifest(),
+    ]);
     if (!r.ok) return new Response("not found", { status: 404, headers: CORS });
     const p = await r.json();
     const files = p.files || {};
     // 번들 manifest에 있으면 진짜 심볼/풋프린트(PartReel.kicad_sym /
     // PartReel.pretty)를 가리키고, 번들보다 새 부품이면 PLACEHOLDER 폴백.
-    let bundled = false;
-    try {
-      const mf = await fetch("https://partreel.com/assets/kicad-bundle-manifest.json",
-                             { cf: { cacheTtl: 1800, cacheEverything: true } });
-      if (mf.ok) bundled = ((await mf.json()).symbols || []).includes(p.id);
-    } catch (e) { /* manifest 불가 시 폴백 유지 */ }
+    const bundled = mset.has(p.id);
     return kicadJson(
       {
         id: String(p.id),
@@ -363,15 +375,25 @@ async function toolCall(name, args, env) {
 }
 
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const url = new URL(request.url);
 
     if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: CORS });
 
     // KiCad HTTP 라이브러리 어댑터 (§18-A): GET /kicad/v1/... (/kicadv1/... 포함)
+    // 엣지 캐시 명시 사용 — 워커 생성 응답은 자동 캐시되지 않아 매 요청이
+    // 서브요청+연산을 반복했다 (실측 440ms/건 × 446 = 첫 동기화 3~7분 프리즈).
     if (url.pathname.startsWith("/kicad")) {
+      const cache = caches.default;
+      const key = new Request(url.toString(), { method: "GET" });
+      const hit = await cache.match(key);
+      if (hit) return hit;
       try {
-        return await kicadRoute(url);
+        const resp = await kicadRoute(url);
+        if (resp.status === 200) {
+          ctx.waitUntil(cache.put(key, resp.clone()));
+        }
+        return resp;
       } catch (e) {
         return new Response(`error: ${e.message}`, { status: 500, headers: CORS });
       }
