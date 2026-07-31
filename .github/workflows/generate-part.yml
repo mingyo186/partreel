@@ -64,6 +64,9 @@ jobs:
           CLOUDFLARE_ACCOUNT_ID: 59c582799b858f66a23af4561c26c696
         run: ./fcenv/bin/python generators/generate_one.py
 
+      - name: Rebuild KiCad bundle (curated)
+        run: python3 generators/build_kicad_bundle.py
+
       - name: Commit to main
         run: |
           git config user.name "partreel-bot"

@@ -199,17 +199,29 @@ async function kicadRoute(url) {
     if (!r.ok) return new Response("not found", { status: 404, headers: CORS });
     const p = await r.json();
     const files = p.files || {};
+    // 번들 manifest에 있으면 진짜 심볼/풋프린트(PartReel.kicad_sym /
+    // PartReel.pretty)를 가리키고, 번들보다 새 부품이면 PLACEHOLDER 폴백.
+    let bundled = false;
+    try {
+      const mf = await fetch("https://partreel.com/assets/kicad-bundle-manifest.json",
+                             { cf: { cacheTtl: 1800, cacheEverything: true } });
+      if (mf.ok) bundled = ((await mf.json()).symbols || []).includes(p.id);
+    } catch (e) { /* manifest 불가 시 폴백 유지 */ }
     return kicadJson(
       {
         id: String(p.id),
         name: String(p.name || p.id),
-        symbolIdStr: "PartReel:PLACEHOLDER",
+        symbolIdStr: bundled ? `PartReel:${p.id}` : "PartReel:PLACEHOLDER",
         description: String(p.description || ""),
         keywords: (p.keywords || []).join(" "),
         exclude_from_bom: "False",
         exclude_from_board: "False",
         exclude_from_sim: "True",
         fields: {
+          Footprint: {
+            value: bundled ? `PartReel:${p.id}` : "",
+            visible: "False",
+          },
           Datasheet: { value: String(p.datasheet || ""), visible: "False" },
           PartReel: { value: String(p.page || `https://partreel.com/p/${p.id}/`), visible: "False" },
           Footprint_URL: { value: String(files.footprint || ""), visible: "False" },

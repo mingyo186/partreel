@@ -40,15 +40,16 @@
     <li>Point it at the downloaded <code>.step</code> file</li>
   </ol>
   <p>The web preview uses <code>.glb</code> (display only); use <code>.step</code> in KiCad.</p>
-  <h2>4. Browse PartReel inside KiCad (HTTP library)</h2>
-  <p>KiCad 8+ can show the whole PartReel catalog in the <strong>symbol chooser</strong> as a live library:</p>
+  <h2>4. Browse PartReel inside KiCad (live library, real symbols)</h2>
+  <p>KiCad 8+ can show PartReel's curated set in the <strong>symbol chooser</strong> as a live library — with real symbols and footprints:</p>
   <ol>
-    <li>Download <a href="../../assets/partreel.kicad_httplib" download>partreel.kicad_httplib</a> and <a href="../../assets/PartReel.kicad_sym" download>PartReel.kicad_sym</a></li>
+    <li>Download <a href="../../assets/partreel.kicad_httplib" download>partreel.kicad_httplib</a>, <a href="../../assets/PartReel.kicad_sym" download>PartReel.kicad_sym</a> (all curated symbols, one file) and <a href="../../assets/PartReel-pretty.zip" download>PartReel-pretty.zip</a> (footprints — unzip it somewhere permanent)</li>
     <li><strong>Preferences → Manage Symbol Libraries</strong> → <strong>+</strong> → add <code>PartReel.kicad_sym</code> with nickname <code>PartReel</code></li>
     <li><strong>+</strong> again → add <code>partreel.kicad_httplib</code></li>
-    <li>Open the symbol chooser — <code>PartReel_Live</code> categories appear (first open syncs for a few minutes), each part carrying its datasheet, page and direct download URLs in its fields</li>
+    <li><strong>Preferences → Manage Footprint Libraries</strong> → <strong>+</strong> → add the unzipped <code>PartReel.pretty</code> folder with nickname <code>PartReel</code></li>
+    <li>Open the symbol chooser — <code>PartReel_Live</code> categories appear (first open syncs a few minutes). Parts preview with their <strong>real symbols</strong>, come with the matching footprint pre-assigned, and carry datasheet/page/3D URLs in their fields</li>
   </ol>
-  <p><em>Heads-up:</em> two KiCad-side limits, honestly stated. ① HTTP libraries carry metadata only (spec, not a PartReel limit) — placing a part inserts a placeholder symbol whose <code>PartReel</code> field links to the real symbol/footprint/3D downloads. ② KiCad pre-fetches every part one-by-one when the chooser first opens, so this library serves PartReel's <strong>curated, self-generated set</strong> (~450 parts) rather than the full 21,000+ catalog — search the full catalog at <a href="../../">partreel.com</a> or via the MCP server.</p>
+  <p><em>Scope note:</em> KiCad pre-fetches every part one-by-one when the chooser first opens (client behavior), so the live library serves PartReel's <strong>curated, self-generated set</strong> (~450 parts) rather than the full 21,000+ catalog — search everything at <a href="../../">partreel.com</a> or via the MCP server. Re-download the two library files occasionally to pick up newly generated parts.</p>
   <p><a href="../../">← Home</a></p>
 </main>
 <footer class="site-footer">

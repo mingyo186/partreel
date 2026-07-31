@@ -510,7 +510,7 @@ def aht10():
 def aht30():
     fid, lib_path, fp, sym, meta = aht20()
     fp = fp.replace('"aht20"', '"aht30"').replace("AHT20", "AHT30")
-    sym = sym.replace('"aht20"', '"aht30"')
+    sym = sym.replace('"aht20', '"aht30')  # 접두 치환: 서브유닛 "aht20_1_1"까지 개명 (2026-08-01 번들 사건)
     meta = json.loads(json.dumps(meta).replace("aht20", "aht30").replace("AHT20", "AHT30"))
     meta["name"] = "AHT30 Humidity and Temperature Sensor"
     meta["mpn_pattern"] = "AHT30"

@@ -79,11 +79,17 @@ def merge_symbol(pid, sym_text):
     name, blk = tops[0]  # 우리 부품 파일은 심볼 1개 (멀티유닛 CERN은 엄선판 제외)
     if name != pid:
         blk = blk.replace(f'"{name}', f'"{pid}')
-    # 방어: 부모와 접두가 다른 서브유닛도 pid로 정규화 (aht30 사건 재발 대비 —
-    # 게이트가 소스에서 막지만 번들은 독립적으로도 안전해야 함)
-    blk = re.sub(r'\(symbol\s+"(?:[^"]+?)_(\d+)_(\d+)"',
-                 lambda m: f'(symbol "{pid}_{m.group(1)}_{m.group(2)}"', blk)
-    return blk
+    # 방어: 부모와 접두가 다른 "내부" 서브유닛만 pid로 정규화 (aht30 사건).
+    # 주의: 부품 id 자체가 _N_M로 끝날 수 있어(sparkfun_..._jps_3_1) 이름
+    # 패턴만으로 상위/서브를 구분하면 안 됨 — 첫 심볼 헤더(상위)는 제외하고
+    # 나머지 영역에만 적용 + 접두==pid면 그대로 둔다.
+    head, _, rest = blk.partition("\n")
+    rest = re.sub(
+        r'\(symbol\s+"([^"]+?)_(\d+)_(\d+)"',
+        lambda m: (m.group(0) if m.group(1) == pid
+                   else f'(symbol "{pid}_{m.group(2)}_{m.group(3)}"'),
+        rest)
+    return head + "\n" + rest
 
 
 def main():
@@ -112,4 +118,13 @@ def main():
            + PLACEHOLDER + "\n" + "\n".join(blocks) + "\n)\n")
     open(os.path.join(ASSETS, "PartReel.kicad_sym"), "w", encoding="utf-8",
          newline="\n").write(lib)
-    json.dump({"symbols": included, "count": len(
+    json.dump({"symbols": included, "count": len(included)},
+              open(os.path.join(ASSETS, "kicad-bundle-manifest.json"), "w",
+                   encoding="utf-8"), indent=1)
+    print(f"번들: 심볼 {len(included)} + 풋프린트 zip + manifest / 스킵 {len(skipped)}")
+    for s in skipped[:10]:
+        print("  skip:", s)
+
+
+if __name__ == "__main__":
+    main()

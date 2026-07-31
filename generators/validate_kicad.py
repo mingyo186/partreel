@@ -78,6 +78,32 @@ def check_symbol(text, pins):
         errs.append("괄호 불균형")
     if not re.match(r'\s*\(kicad_symbol_lib\b', text):
         errs.append("루트가 kicad_symbol_lib 아님")
+    # 서브유닛 접두 == 부모 심볼명 (2026-08-01 aht30 사건: 복제 생성기가
+    # "aht20_1_1" 서브유닛을 남겨 병합 라이브러리 전체가 KiCad 로드 실패).
+    # 부품 id 자체가 _N_M로 끝날 수 있으므로(sparkfun_..._jps_3_1) 이름
+    # 패턴이 아니라 괄호 깊이로 상위(깊이1)/서브(깊이2)를 구분한다.
+    depth, in_str, cur_top = 0, False, None
+    i = 0
+    while i < len(text):
+        ch = text[i]
+        if in_str:
+            if ch == '"' and text[i - 1] != "\\":
+                in_str = False
+        elif ch == '"':
+            in_str = True
+        elif ch == "(":
+            m = re.match(r'\(symbol\s+"([^"]+)"', text[i:])
+            if m:
+                if depth == 1:
+                    cur_top = m.group(1)
+                elif depth == 2 and cur_top:
+                    if not m.group(1).startswith(cur_top + "_"):
+                        errs.append(f"서브유닛 '{m.group(1)}' 접두가 부모 "
+                                    f"'{cur_top}'와 불일치")
+            depth += 1
+        elif ch == ")":
+            depth -= 1
+        i += 1
     npins = len(re.findall(r'\(pin\s+\w+\s+\w+\s+\(at', text))
     if pins and npins != pins:
         errs.append(f"핀 수 {npins} != 기대 {pins}")

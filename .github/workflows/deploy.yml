@@ -35,6 +35,7 @@ jobs:
           python3 generators/render_svg.py
           python3 generators/build_site.py
           python3 generators/build_api.py
+          python3 generators/build_kicad_bundle.py
 
       # 교차검증 게이트: KiCad 파일 구조가 깨졌으면 배포 중단 (REQUIREMENTS §5-1)
       - name: Validate KiCad files
