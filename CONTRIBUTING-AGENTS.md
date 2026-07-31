@@ -43,13 +43,29 @@ Required: `id`, `name`, `category`, `family`, `manufacturer`, `mpn_pattern`,
 `dimensions_source` (**must cite where dimensions came from**), `verified` (bool),
 `license` (`CC-BY-4.0`), `generated_by`, `keywords`.
 
-## Quality gates (run locally before PR: `python generators/qa.py`)
+## Check your part before the PR (works on YOUR machine, no infrastructure)
 
-1. `validate_kicad.py` — structure: pad count/numbering, pin1 at origin, pitch, layers F.Cu/F.SilkS/F.CrtYd/F.Fab
-2. `check_overlap.py` — no overlapping text in SVG previews
-3. `check_render.py` — files exist, SVG pad/outline counts match the kicad source, slots obround, part page/API present
-4. Drawing rules (KLC): silk 0.12mm (≥0.2mm clearance from pads), fab 0.10mm + 1mm pin1 chamfer, courtyard 0.05mm solid lines
-5. STEP must be a valid solid (`generators/validate_step.py`, FreeCAD)
+Two commands, both runnable anywhere:
+
+1. **Pre-flight** (zero dependencies, checks one part directory):
+   ```
+   python generators/check_part.py library/<category>/<vendor>/<part_id>
+   ```
+   Verifies: required files, meta fields + dimension sourcing, s-expression
+   structure/layers/pads/pins, 3D asset sha256, license sanity.
+2. **Real-KiCad proof** (KiCad 8+ ships `kicad-cli` — you already have it):
+   ```
+   kicad-cli fp export svg <id>.kicad_mod -o /tmp/fp_check
+   kicad-cli sym export svg <id>.kicad_sym -o /tmp/sym_check
+   ```
+   If these succeed, the files open in actual KiCad. Look at the SVGs.
+
+**CI has the final word** — on the PR it builds previews and runs the full
+gate suite (structure, KLC drawing rules: silk 0.12mm with ≥0.2mm pad
+clearance / fab 0.10mm + 1mm pin1 chamfer / courtyard 0.05mm; text overlap;
+render completeness; provenance anti-copy vs 15,447 official footprints;
+FreeCAD STEP kernel check). You don't need to reproduce those locally —
+iterate on the CI log (see below).
 
 ## Rules
 
@@ -72,7 +88,7 @@ an exception.
 
 ## PR checklist
 
-- [ ] `python generators/qa.py` passes locally
+- [ ] `python generators/check_part.py <part dir>` passes locally
 - [ ] `meta.json.dimensions_source` cites the datasheet
 - [ ] No files copied from CC-BY-SA libraries
 - [ ] One part (or one family) per PR
