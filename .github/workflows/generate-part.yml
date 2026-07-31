@@ -68,6 +68,7 @@ jobs:
         run: |
           python3 generators/build_kicad_bundle.py
           python3 generators/build_kicad_api.py
+          python3 generators/build_pcm.py
 
       - name: Commit to main
         run: |
@@ -101,7 +102,7 @@ jobs:
         run: |
           mkdir -p _site
           cp index.html index.json _site/
-          cp -r assets library p about guide agents api browse kicad _site/
+          cp -r assets library p about guide agents api browse kicad pcm _site/
           # 대용량 3D(step/glb)는 R2가 서빙 (§22) — deploy.yml과 동일하게 제거
           find _site/library -name "*.step" -delete
           find _site/library -name "*.glb" -delete

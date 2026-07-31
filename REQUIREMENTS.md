@@ -407,6 +407,14 @@ KiCad 8+의 심볼 선택 패널에 파트릴 카탈로그가 라이브러리로
 **4단계 — HTTP 라이브러리 권장 철회 (사용자 지적 2026-08-01 "기술적으로 문제 있는 거 같지?")**: 실측·구조 검토 결과 HTTP lib은 **오프라인 번들과 병용 시 순손실**. 근거: ①번들(446)과 온라인(120)이 겹쳐 **선택창에 부품 중복 표시** ②재시작마다 20초 선주입(캐시가 세션 메모리) ③스펙상 심볼 전달 불가라 번들이 어차피 필요 = 순수 덤 ④사이트 지연이 회로도 편집기 시작을 붙잡음 ⑤루트 검증이 index.html에 JSON을 넣는 편법(KiCad가 Content-Type 미검사에 의존).
 → **정본 배포 경로 = 오프라인 2파일**(PartReel.kicad_sym + PartReel-pretty.zip). HTTP lib은 기존 사용자 보호를 위해 엔드포인트만 유지하고 가이드에서 "실험적·비권장"으로 격하, 사유 4가지 명시. PCM 패키지(§18 시나리오 D)가 나오면 그쪽으로 흡수.
 
+### 18-B. PCM 패키지 (사용자 질문 2026-08-01 "다운로드 말곤 답이 없나?" → GO)
+
+KiCad 내장 **플러그인·콘텐츠 매니저** 저장소를 우리가 직접 호스팅해, 사용자는 **URL 한 번 등록 → Install**, 이후 갱신은 KiCad 안에서 버튼 한 번. PCM이 라이브러리 테이블에 자동 등록(KICAD_3RD_PARTY)하므로 수동 라이브러리 추가도 사라진다.
+- **산출물**(`generators/build_pcm.py`): `pcm/partreel-library-<ver>.zip`(metadata.json + symbols/PartReel.kicad_sym + footprints/PartReel.pretty/) + `pcm/repository.json` + `pcm/packages.json`. sha256·download_size·install_size 기록 필수.
+- identifier `com.partreel.library`, type `library`, license CC-BY-4.0, kicad_version 8.0.
+- 버전은 부품 수 기반(`1.<부품수>.0`)으로 자동 증가 — 새 부품이 늘면 PCM이 업데이트로 인식.
+- deploy에서 재생성·배포. 검증: zip 구조·해시 대조 + kicad-cli로 zip 내부 심볼/풋프린트 커널 렌더.
+
 ## 18. 길목 배치 전략 (확정 2026-07)
 
 **원칙**: 우리가 만드는 것만큼, **부품이 필요한 흐름(시나리오)의 길목마다 PartReel이 서 있게** 배치한다. 다른 도구/프로젝트가 우리에게 붙기 쉽게.

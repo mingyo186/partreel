@@ -41,7 +41,15 @@
   </ol>
   <p>The web preview uses <code>.glb</code> (display only); use <code>.step</code> in KiCad.</p>
   <h2>4. Install PartReel as a KiCad library (recommended)</h2>
-  <p>Two files give you PartReel's curated set (~450 self-generated, gate-verified parts) <strong>offline and instant</strong> — real symbols, footprints auto-assigned, datasheet links included:</p>
+  <p><strong>Easiest — KiCad's own Plugin and Content Manager.</strong> Register PartReel once and install/update from inside KiCad; it registers the symbol and footprint libraries for you:</p>
+  <ol>
+    <li>KiCad main window → <strong>Plugin and Content Manager</strong> → <strong>Manage…</strong> → <strong>+</strong></li>
+    <li>Paste this repository URL: <code>https://partreel.com/pcm/repository.json</code> → OK</li>
+    <li>Open the <strong>Libraries</strong> tab → <strong>PartReel Library</strong> → <strong>Install</strong> → <strong>Apply Pending Changes</strong></li>
+    <li>Done — the parts are in your symbol chooser. When PartReel adds parts, PCM shows an update; one click refreshes everything.</li>
+  </ol>
+  <h3>Manual alternative (same content, two files)</h3>
+  <p>If you prefer not to use PCM, these two files give you the same curated set (~450 gate-verified parts) offline:</p>
   <ol>
     <li>Download <a href="../../assets/PartReel.kicad_sym" download>PartReel.kicad_sym</a> (all symbols in one file) and <a href="../../assets/PartReel-pretty.zip" download>PartReel-pretty.zip</a> (footprints — unzip somewhere permanent)</li>
     <li><strong>Preferences → Manage Symbol Libraries</strong> → <strong>+</strong> → add <code>PartReel.kicad_sym</code>, nickname <code>PartReel</code></li>
