@@ -87,6 +87,17 @@ def library_content_hash(sym_path, zip_path):
     return h.hexdigest()
 
 
+def plugin_content_hash():
+    """플러그인 소스 해시 — 텍스트는 LF 정규화 후 판정."""
+    h = hashlib.sha256()
+    for rel in PLUGIN_FILES:
+        p = os.path.join(PLUGIN_SRC, rel)
+        h.update(rel.encode())
+        h.update(open(p, "rb").read() if rel.endswith(".png")
+                 else open(p, encoding="utf-8").read().encode("utf-8"))
+    return h.hexdigest()
+
+
 def build_plugin_package():
     """PartReel Fetch 액션 플러그인 패키지 (§18-C).
 
@@ -114,9 +125,7 @@ def build_plugin_package():
                       "Documentation": f"{SITE}/guide/kicad/"},
         "tags": ["plugin", "library", "search", "partreel"],
     }
-    ver = next_version("fetch", "1.0",
-                       content_hash([os.path.join(PLUGIN_SRC, f)
-                                     for f in PLUGIN_FILES]))
+    ver = next_version("fetch", "1.0", plugin_content_hash())
     name = f"partreel-fetch-{ver}.zip"
     path = os.path.join(OUT, name)
     install_size = 0
@@ -131,7 +140,9 @@ def build_plugin_package():
                     "partreel_fetch/__init__.py", "partreel_fetch/core.py",
                     "partreel_fetch/dialog.py"):
             src = os.path.join(PLUGIN_SRC, rel)
-            data = open(src, "rb").read()
+            # 텍스트는 LF로 정규화 (윈도우 CRLF ↔ CI LF 차이로 버전 churn)
+            data = (open(src, "rb").read() if rel.endswith(".png")
+                    else open(src, encoding="utf-8").read().encode("utf-8"))
             z.writestr(_zi(f"plugins/{rel}"), data)
             install_size += len(data)
         icon = open(os.path.join(PLUGIN_SRC, "resources", "icon.png"), "rb").read()

@@ -188,7 +188,10 @@ def main():
                                  date_time=(1980, 1, 1, 0, 0, 0))
             zi.compress_type = zipfile.ZIP_DEFLATED
             zi.external_attr = 0o644 << 16
-            z.writestr(zi, open(mod_p, "rb").read())
+            # 줄바꿈 정규화(LF): 윈도우 작업본은 CRLF, CI(리눅스)는 LF라
+            # 같은 내용도 바이트가 달라져 버전이 매 배포마다 올라갔다
+            # (2026-08-01, 446개 중 443개가 불일치했음)
+            z.writestr(zi, open(mod_p, encoding="utf-8").read().encode("utf-8"))
             included.append(pid)
 
     lib = ("(kicad_symbol_lib (version 20231120) (generator \"partreel-bundle\")\n"
