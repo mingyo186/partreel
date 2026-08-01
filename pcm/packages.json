@@ -30,9 +30,45 @@
      "status": "stable",
      "kicad_version": "8.0",
      "download_url": "https://partreel.com/pcm/partreel-library-1.446.0.zip",
-     "download_sha256": "095fdf384ef59da3dd7dad4b384c199ac1759e9182fe42af3a75fc06f4bcb761",
+     "download_sha256": "0c991b5d8726352f9b89a87cb214458408c432f451db20436254e8e2481401a0",
      "download_size": 883111,
      "install_size": 5886428
+    }
+   ]
+  },
+  {
+   "$schema": "https://go.kicad.org/pcm/schemas/v1",
+   "name": "PartReel Fetch",
+   "description": "Search PartReel and add just the parts you pick to the current project.",
+   "description_full": "Adds a PartReel search dialog to the PCB editor toolbar.\nSearch the full PartReel registry (21,000+ parts, no login), pick a part, and only that part's symbol and footprint are downloaded into the current project (PartReel.kicad_sym / PartReel.pretty) and registered in the project library tables.\nUse this instead of installing a whole library when you only need a few parts. Requires network access to partreel.com.",
+   "identifier": "com.partreel.fetch",
+   "type": "plugin",
+   "author": {
+    "name": "PartReel",
+    "contact": {
+     "web": "https://partreel.com"
+    }
+   },
+   "license": "MIT",
+   "resources": {
+    "Homepage": "https://partreel.com",
+    "Documentation": "https://partreel.com/guide/kicad/"
+   },
+   "tags": [
+    "plugin",
+    "library",
+    "search",
+    "partreel"
+   ],
+   "versions": [
+    {
+     "version": "1.0.0",
+     "status": "stable",
+     "kicad_version": "8.0",
+     "download_url": "https://partreel.com/pcm/partreel-fetch-1.0.0.zip",
+     "download_sha256": "7727657df19d678d749834c0be670d021b3543fd4a7611d39d523a31aeacefa0",
+     "download_size": 8399,
+     "install_size": 17073
     }
    ]
   }

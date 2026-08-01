@@ -105,14 +105,45 @@ def main():
     # B. 해시 연쇄
     if hashlib.sha256(pkgs_blob).hexdigest() != repo["packages"]["sha256"]:
         fail("repository → packages sha256 불일치")
-    pkg = pkgs["packages"][0]
+    # 모든 패키지의 해시·크기 대조 (라이브러리 + 플러그인)
+    zips = {}
+    for p in pkgs["packages"]:
+        for ver in p["versions"]:
+            b = read(os.path.basename(ver["download_url"]), binary=True)
+            zips[p["identifier"]] = b
+            if hashlib.sha256(b).hexdigest() != ver["download_sha256"]:
+                fail(f"{p['identifier']}: zip sha256 불일치")
+            if len(b) != ver["download_size"]:
+                fail(f"{p['identifier']}: download_size 불일치 "
+                     f"({len(b)} != {ver['download_size']})")
+            print(f"해시 연쇄 OK: {p['identifier']} "
+                  f"({len(b) / 1024:.0f} KB, v{ver['version']}, {p['type']})")
+
+    # 플러그인 패키지 구조 (공식 규격: plugins/ 직접 배치 + resources/icon.png)
+    for p in pkgs["packages"]:
+        if p["type"] != "plugin":
+            continue
+        with zipfile.ZipFile(io.BytesIO(zips[p["identifier"]])) as z:
+            n = z.namelist()
+            if "plugins/__init__.py" not in n:
+                fail(f"{p['identifier']}: plugins/__init__.py 없음")
+            if "resources/icon.png" not in n:
+                fail(f"{p['identifier']}: resources/icon.png 없음")
+            if "metadata.json" not in n:
+                fail(f"{p['identifier']}: metadata.json 없음")
+            import struct
+            for path, want in (("resources/icon.png", 64), ("plugins/icon.png", 24)):
+                if path in n:
+                    d = z.read(path)
+                    w, h = struct.unpack(">II", d[16:24])
+                    if (w, h) != (want, want):
+                        fail(f"{p['identifier']}: {path} 크기 {w}x{h} "
+                             f"(규격 {want}x{want})")
+            print(f"플러그인 구조 OK: {p['identifier']}")
+
+    pkg = next(p for p in pkgs["packages"] if p["type"] == "library")
     v = pkg["versions"][0]
-    zb = read(os.path.basename(v["download_url"]), binary=True)
-    if hashlib.sha256(zb).hexdigest() != v["download_sha256"]:
-        fail("packages → zip sha256 불일치")
-    if len(zb) != v["download_size"]:
-        fail(f"download_size 불일치: {len(zb)} != {v['download_size']}")
-    print(f"해시 연쇄 OK (zip {len(zb) / 1024:.0f} KB, 버전 {v['version']})")
+    zb = zips[pkg["identifier"]]
 
     # C. zip 구조 + 커널
     tmp = tempfile.mkdtemp()

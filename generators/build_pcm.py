@@ -32,6 +32,72 @@ SITE = "https://partreel.com"
 IDENT = "com.partreel.library"
 
 
+PLUGIN_SRC = os.path.normpath(os.path.join(ROOT, "plugin"))
+PLUGIN_VERSION = "1.0.0"
+
+
+def build_plugin_package():
+    """PartReel Fetch 액션 플러그인 패키지 (§18-C).
+
+    공식 구조: plugins/ 안에 소스 직접, resources/icon.png(64x64), metadata.json.
+    """
+    meta = {
+        "$schema": "https://go.kicad.org/pcm/schemas/v1",
+        "name": "PartReel Fetch",
+        "description": "Search PartReel and add just the parts you pick to the "
+                       "current project.",
+        "description_full": "\n".join([
+            "Adds a PartReel search dialog to the PCB editor toolbar.",
+            "Search the full PartReel registry (21,000+ parts, no login), pick a "
+            "part, and only that part's symbol and footprint are downloaded into "
+            "the current project (PartReel.kicad_sym / PartReel.pretty) and "
+            "registered in the project library tables.",
+            "Use this instead of installing a whole library when you only need a "
+            "few parts. Requires network access to partreel.com.",
+        ]),
+        "identifier": "com.partreel.fetch",
+        "type": "plugin",
+        "author": {"name": "PartReel", "contact": {"web": SITE}},
+        "license": "MIT",
+        "resources": {"Homepage": SITE,
+                      "Documentation": f"{SITE}/guide/kicad/"},
+        "tags": ["plugin", "library", "search", "partreel"],
+    }
+    name = f"partreel-fetch-{PLUGIN_VERSION}.zip"
+    path = os.path.join(OUT, name)
+    install_size = 0
+    with zipfile.ZipFile(path, "w", zipfile.ZIP_DEFLATED) as z:
+        pkg_meta = dict(meta)
+        pkg_meta["versions"] = [{"version": PLUGIN_VERSION, "status": "stable",
+                                 "kicad_version": "8.0"}]
+        body = json.dumps(pkg_meta, indent=2, ensure_ascii=False)
+        z.writestr("metadata.json", body)
+        install_size += len(body.encode("utf-8"))
+        for rel in ("__init__.py", "icon.png",
+                    "partreel_fetch/__init__.py", "partreel_fetch/core.py",
+                    "partreel_fetch/dialog.py"):
+            src = os.path.join(PLUGIN_SRC, rel)
+            data = open(src, "rb").read()
+            z.writestr(f"plugins/{rel}", data)
+            install_size += len(data)
+        icon = open(os.path.join(PLUGIN_SRC, "resources", "icon.png"), "rb").read()
+        z.writestr("resources/icon.png", icon)
+        install_size += len(icon)
+
+    blob = open(path, "rb").read()
+    meta["versions"] = [{
+        "version": PLUGIN_VERSION,
+        "status": "stable",
+        "kicad_version": "8.0",
+        "download_url": f"{SITE}/pcm/{name}",
+        "download_sha256": hashlib.sha256(blob).hexdigest(),
+        "download_size": len(blob),
+        "install_size": install_size,
+    }]
+    print(f"PCM: {name} ({len(blob) / 1024:.0f} KB) — 플러그인")
+    return meta
+
+
 def main():
     sym_path = os.path.join(ASSETS, "PartReel.kicad_sym")
     zip_path = os.path.join(ASSETS, "PartReel-pretty.zip")
@@ -117,7 +183,8 @@ def main():
         "install_size": install_size,
     }]
 
-    json.dump({"packages": [meta]},
+    packages = [meta, build_plugin_package()]
+    json.dump({"packages": packages},
               open(os.path.join(OUT, "packages.json"), "w", encoding="utf-8"),
               indent=1, ensure_ascii=False)
     pkgs_blob = open(os.path.join(OUT, "packages.json"), "rb").read()
