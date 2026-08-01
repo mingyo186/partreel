@@ -15,6 +15,7 @@ assets/PartReel-pretty.zip 이 최신이어야 한다.
 
 실행: python generators/build_pcm.py
 """
+import datetime
 import hashlib
 import io
 import json
@@ -49,7 +50,9 @@ def main():
         "name": "PartReel Library",
         "description": "Open, no-login KiCad parts: symbols + footprints, "
                        "gate-verified with datasheet provenance.",
-        "description_full": [
+        # 스키마상 **문자열**이어야 한다 (배열로 내면 패키지 전체가 거부되어
+        # 라이브러리 탭이 빈다 — 2026-08-01 check_pcm이 적발). 줄바꿈으로 문단 구분.
+        "description_full": "\n".join([
             "PartReel's curated library: self-generated, quality-gated symbols "
             "and footprints with datasheet-sourced dimensions.",
             "Every part passes automated gates (structure, KiCad Library "
@@ -59,13 +62,15 @@ def main():
             "search keywords, so placing a part brings its footprint along.",
             f"This package contains {count} parts. The full catalog "
             "(21,000+ parts, no login) lives at https://partreel.com",
-        ],
+        ]),
         "identifier": IDENT,
         "type": "library",
         "author": {"name": "PartReel",
                    "contact": {"web": SITE}},
         "license": "CC-BY-4.0",
-        "resources": {"homepage": SITE},
+        "resources": {"Homepage": SITE,
+                      "Documentation": f"{SITE}/guide/kicad/"},
+        "tags": ["library", "symbols", "footprints", "partreel"],
         "versions": [],
     }
 
@@ -117,14 +122,21 @@ def main():
               indent=1, ensure_ascii=False)
     pkgs_blob = open(os.path.join(OUT, "packages.json"), "rb").read()
 
+    # repository.json은 **v2 스키마**여야 한다 — KiCad 10은 v2를 요구하고,
+    # v1로 내면 저장소는 추가되지만 라이브러리 탭에 아무것도 안 뜬다
+    # (2026-08-01 사용자 제보로 발견, 공식 저장소와 필드 대조해 확정).
+    now = datetime.datetime.now(datetime.timezone.utc)
+    stamp = int(now.timestamp())
     repo = {
-        "$schema": "https://go.kicad.org/pcm/schemas/v1",
+        "$schema": "https://go.kicad.org/pcm/schemas/v2#/definitions/Repository",
+        "schema_version": 2,
         "name": "PartReel",
         "maintainer": {"name": "PartReel", "contact": {"web": SITE}},
         "packages": {
             "url": f"{SITE}/pcm/packages.json",
             "sha256": hashlib.sha256(pkgs_blob).hexdigest(),
-            "update_timestamp": count,  # 부품 수 = 단조 증가 갱신 신호
+            "update_time_utc": now.strftime("%Y-%m-%d %H:%M:%S"),
+            "update_timestamp": stamp,
         },
     }
     json.dump(repo, open(os.path.join(OUT, "repository.json"), "w",

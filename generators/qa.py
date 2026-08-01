@@ -15,7 +15,8 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 CHECKS = ["validate_kicad.py", "check_overlap.py", "check_render.py", "check_zfight.py",
           "check_asset_hashes.py", "check_r2.py", "check_visual.py",
-          "check_docs_integrity.py"]
+          "check_docs_integrity.py",
+          "check_pcm.py"]
 
 failed = []
 for c in CHECKS:
