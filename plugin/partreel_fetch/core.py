@@ -51,11 +51,21 @@ def load_index(force=False):
     return _INDEX_CACHE
 
 
+SEARCH_API = os.environ.get("PARTREEL_SEARCH", "https://mcp.partreel.com/search")
+
+
 def search(query, limit=50):
-    """모든 검색어가 포함된 부품 (id/이름/패밀리/제조사/키워드 대상)."""
-    toks = [t for t in str(query).lower().split() if t]
-    if not toks:
+    """부품 검색. 서버 검색 API를 먼저 쓰고(응답 수 KB), 실패 시 전체 색인으로
+    폴백한다 — 색인은 11MB라 매번 받으면 첫 검색이 느리다(2026-08-01)."""
+    q = str(query).strip()
+    if not q:
         return []
+    try:
+        url = f"{SEARCH_API}?q={urllib.parse.quote(q)}"
+        return json.loads(_get(url)).get("parts", [])[:limit]
+    except Exception:
+        pass  # 폴백: 전체 색인 내려받아 로컬 검색
+    toks = [t for t in q.lower().split() if t]
     out = []
     for p in load_index():
         hay = " ".join(str(p.get(k, "")) for k in

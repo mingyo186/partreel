@@ -399,6 +399,38 @@ export default {
       }
     }
 
+    // 가벼운 검색 API (§18-C 플러그인용): 색인 전체(11MB)를 클라이언트가 받지
+    // 않도록 서버에서 걸러 최대 50건만 돌려준다. 엣지 캐시로 재질의는 즉시.
+    if (url.pathname === "/search") {
+      const q = (url.searchParams.get("q") || "").trim().toLowerCase();
+      if (!q) return json({ count: 0, parts: [] });
+      const cache = caches.default;
+      const key = new Request(url.toString(), { method: "GET" });
+      const hit = await cache.match(key);
+      if (hit) return hit;
+      try {
+        const idx = await fetchIndex();
+        const toks = q.split(/\s+/).filter(Boolean);
+        const out = [];
+        for (const p of idx.parts) {
+          const hay = `${p.id} ${p.name || ""} ${p.family || ""} ${p.category || ""} ${p.manufacturer || ""} ${(p.keywords || []).join(" ")}`.toLowerCase();
+          if (toks.every((t) => hay.includes(t))) {
+            out.push({ id: p.id, name: p.name, family: p.family,
+                       category: p.category, manufacturer: p.manufacturer });
+            if (out.length >= 50) break;
+          }
+        }
+        const resp = new Response(JSON.stringify({ count: out.length, parts: out }), {
+          headers: { "Content-Type": "application/json",
+                     "Cache-Control": "public, max-age=600", ...CORS },
+        });
+        ctx.waitUntil(cache.put(key, resp.clone()));
+        return resp;
+      } catch (e) {
+        return json({ error: `search failed: ${e.message}` }, 502);
+      }
+    }
+
     if (url.pathname === "/" || url.pathname === "") {
       return json({
         service: "PartReel MCP server",

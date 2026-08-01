@@ -20,11 +20,13 @@ import os
 import subprocess
 import sys
 import tempfile
+import urllib.error
 import urllib.request
 import zipfile
 
 sys.stdout.reconfigure(encoding="utf-8")
 ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
+SITE = "https://partreel.com"
 BASE = os.environ.get("PCM_BASE", "")  # 비면 로컬 pcm/ 검사
 SCHEMA_URL = "https://go.kicad.org/pcm/schemas/v2"
 KICAD_CLI = os.environ.get(
@@ -118,6 +120,38 @@ def main():
                      f"({len(b)} != {ver['download_size']})")
             print(f"해시 연쇄 OK: {p['identifier']} "
                   f"({len(b) / 1024:.0f} KB, v{ver['version']}, {p['type']})")
+
+    # === 회귀 게이트: 이미 발행한 버전을 목록에서 떨어뜨리지 않았는가 ===
+    # PCM은 '설치된 버전'을 목록에서 찾아 상태를 계산한다. 옛 버전을 지우면
+    # 그 버전을 쓰던 사용자에게 "버전 패키지를 찾을 수 없습니다"가 뜬다
+    # (2026-08-01 사용자 제보). 라이브 목록과 대조해 유실을 막는다.
+    KEEP = 5
+    try:
+        req = urllib.request.Request(f"{SITE}/pcm/packages.json",
+                                     headers={"User-Agent": "partreel-pcm-check"})
+        with urllib.request.urlopen(req, timeout=30) as r:
+            live = json.loads(r.read().decode("utf-8"))
+    except (urllib.error.URLError, TimeoutError, ValueError) as e:
+        print(f"경고: 라이브 packages.json 대조 생략 (네트워크/파싱: {e})")
+        live = None
+    if live:
+        new_by_id = {p["identifier"]: {v["version"] for v in p["versions"]}
+                     for p in pkgs["packages"]}
+        for p in live.get("packages", []):
+            ident = p["identifier"]
+            if ident not in new_by_id:
+                fail(f"라이브에 있던 패키지가 사라짐: {ident}")
+                continue
+            gone = [v["version"] for v in p["versions"]
+                    if v["version"] not in new_by_id[ident]]
+            # 보관 한도(KEEP)에 도달해 가장 오래된 것만 밀려나는 건 정상
+            if gone and len(new_by_id[ident]) < KEEP:
+                fail(f"{ident}: 발행했던 버전이 목록에서 사라짐 {gone} "
+                     f"(현재 {len(new_by_id[ident])}개 < 보관한도 {KEEP}) — "
+                     "그 버전 사용자는 PCM에서 오류를 본다")
+            elif gone:
+                print(f"  이력 정리(정상): {ident} {gone} 밀려남 "
+                      f"(보관한도 {KEEP} 유지)")
 
     # 플러그인 패키지 구조 (공식 규격: plugins/ 직접 배치 + resources/icon.png)
     for p in pkgs["packages"]:
