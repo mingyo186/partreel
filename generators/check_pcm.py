@@ -112,7 +112,9 @@ def main():
     for p in pkgs["packages"]:
         for ver in p["versions"]:
             b = read(os.path.basename(ver["download_url"]), binary=True)
-            zips[p["identifier"]] = b
+            # 구조 검사는 **최신 버전**(versions[0]) 기준 — 덮어쓰면 마지막
+            # 순회분(가장 오래된 zip)이 검사돼 새 결함을 놓친다
+            zips.setdefault(p["identifier"], b)
             if hashlib.sha256(b).hexdigest() != ver["download_sha256"]:
                 fail(f"{p['identifier']}: zip sha256 불일치")
             if len(b) != ver["download_size"]:
@@ -165,6 +167,16 @@ def main():
                 fail(f"{p['identifier']}: resources/icon.png 없음")
             if "metadata.json" not in n:
                 fail(f"{p['identifier']}: metadata.json 없음")
+            # 배치 파일은 ASCII 전용 — cmd.exe는 OEM 코드페이지(한국어 cp949)로
+            # 파싱하므로 UTF-8 한글이 들어가면 파일 자체가 깨진다
+            # (2026-08-01 사용자 제보: 실행 시 '...은(는) 내부 또는 외부 명령...' 연발)
+            for path in n:
+                if path.lower().endswith((".cmd", ".bat")):
+                    raw = z.read(path)
+                    bad = [b for b in raw if b > 127]
+                    if bad:
+                        fail(f"{p['identifier']}: {path}에 비ASCII 바이트 "
+                             f"{len(bad)}개 — cp949 콘솔에서 배치 파싱이 깨진다")
             import struct
             for path, want in (("resources/icon.png", 64), ("plugins/icon.png", 24)):
                 if path in n:

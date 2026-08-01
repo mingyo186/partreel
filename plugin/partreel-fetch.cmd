@@ -1,10 +1,12 @@
 @echo off
-rem PartReel Fetch - PCB 편집기 없이 바로 실행 (회로도 그리는 중에 부품 가져오기)
-rem 이 파일이 있는 폴더 = 플러그인 설치 폴더. KiCad 동봉 파이썬으로 실행한다.
+rem PartReel Fetch - standalone launcher (no PCB editor needed).
+rem ASCII ONLY in this file: cmd.exe parses batch files in the OEM codepage
+rem (cp949 on Korean Windows), so UTF-8 Korean comments corrupt the parser
+rem (2026-08-01 user report: garbled "not recognized" errors).
 setlocal
 set "PLUGDIR=%~dp0"
 
-rem KiCad 파이썬 찾기 (설치 경로 후보 순회)
+rem Find KiCad's bundled Python (newest version dir wins).
 set "KIPY="
 for %%D in (
   "%ProgramFiles%\KiCad"
@@ -20,8 +22,8 @@ for %%D in (
 )
 
 if not defined KIPY (
-  echo KiCad 파이썬을 찾지 못했습니다. KiCad 설치 경로를 확인하세요.
-  echo 수동 실행: "＜KiCad＞\bin\pythonw.exe" -m partreel_fetch
+  echo KiCad Python not found. Please check your KiCad install path.
+  echo Manual run: "<KiCad>\bin\pythonw.exe" -m partreel_fetch
   pause
   exit /b 1
 )
