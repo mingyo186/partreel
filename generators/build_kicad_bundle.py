@@ -182,7 +182,13 @@ def main():
             meta = json.load(open(os.path.join(d, "meta.json"), encoding="utf-8"))
             blk = enrich(blk, pid, meta)
             blocks.append("  " + blk.replace("\n", "\n  ").rstrip())
-            z.write(mod_p, f"PartReel.pretty/{pid}.kicad_mod")
+            # 결정적 zip: 파일 시각을 고정해야 내용이 같을 때 바이트도 같다.
+            # (안 그러면 PCM 버전이 내용 변화 없이 매 배포마다 올라간다 — 2026-08-01)
+            zi = zipfile.ZipInfo(f"PartReel.pretty/{pid}.kicad_mod",
+                                 date_time=(1980, 1, 1, 0, 0, 0))
+            zi.compress_type = zipfile.ZIP_DEFLATED
+            zi.external_attr = 0o644 << 16
+            z.writestr(zi, open(mod_p, "rb").read())
             included.append(pid)
 
     lib = ("(kicad_symbol_lib (version 20231120) (generator \"partreel-bundle\")\n"

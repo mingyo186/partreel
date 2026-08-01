@@ -39,6 +39,14 @@ PLUGIN_FILES = ("__init__.py", "icon.png", "partreel_fetch/__init__.py",
 RELEASE_LEDGER = os.path.join(ROOT, "docs", "pcm-release.json")
 
 
+def _zi(name):
+    """고정 타임스탬프 ZipInfo — 결정적 패키지 (버전 churn 방지)."""
+    zi = zipfile.ZipInfo(name, date_time=(1980, 1, 1, 0, 0, 0))
+    zi.compress_type = zipfile.ZIP_DEFLATED
+    zi.external_attr = 0o644 << 16
+    return zi
+
+
 def content_hash(paths):
     """내용 해시 (zip은 타임스탬프 때문에 매번 달라져 기준으로 못 씀)."""
     h = hashlib.sha256()
@@ -65,6 +73,18 @@ def next_version(key, major_minor, digest):
     led[key] = {"major_minor": major_minor, "hash": digest, "version": ver}
     json.dump(led, open(RELEASE_LEDGER, "w", encoding="utf-8"), indent=1)
     return ver
+
+
+def library_content_hash(sym_path, zip_path):
+    """심볼 파일 + 풋프린트 zip **항목 내용** 기준 해시.
+    zip 파일 자체는 압축 메타 때문에 흔들릴 수 있어 항목으로 판정한다."""
+    h = hashlib.sha256()
+    h.update(open(sym_path, "rb").read())
+    with zipfile.ZipFile(zip_path) as z:
+        for n in sorted(z.namelist()):
+            h.update(n.encode())
+            h.update(z.read(n))
+    return h.hexdigest()
 
 
 def build_plugin_package():
@@ -105,17 +125,17 @@ def build_plugin_package():
         pkg_meta["versions"] = [{"version": ver, "status": "stable",
                                  "kicad_version": "8.0"}]
         body = json.dumps(pkg_meta, indent=2, ensure_ascii=False)
-        z.writestr("metadata.json", body)
+        z.writestr(_zi("metadata.json"), body)
         install_size += len(body.encode("utf-8"))
         for rel in ("__init__.py", "icon.png",
                     "partreel_fetch/__init__.py", "partreel_fetch/core.py",
                     "partreel_fetch/dialog.py"):
             src = os.path.join(PLUGIN_SRC, rel)
             data = open(src, "rb").read()
-            z.writestr(f"plugins/{rel}", data)
+            z.writestr(_zi(f"plugins/{rel}"), data)
             install_size += len(data)
         icon = open(os.path.join(PLUGIN_SRC, "resources", "icon.png"), "rb").read()
-        z.writestr("resources/icon.png", icon)
+        z.writestr(_zi("resources/icon.png"), icon)
         install_size += len(icon)
 
     blob = open(path, "rb").read()
@@ -145,7 +165,7 @@ def main():
     # 부품 수 = 마이너, 내용 변경 = 패치 (부품 수가 그대로여도 심볼/풋프린트
     # 내용이 바뀌면 버전이 올라가야 PCM이 업데이트를 제공한다)
     version = next_version("library", f"1.{count}",
-                           content_hash([sym_path, zip_path]))
+                           library_content_hash(sym_path, zip_path))
 
     meta = {
         "$schema": "https://go.kicad.org/pcm/schemas/v1",
@@ -191,11 +211,11 @@ def main():
             "kicad_version": "8.0",
         }]
         body = json.dumps(pkg_meta, indent=2, ensure_ascii=False)
-        z.writestr("metadata.json", body)
+        z.writestr(_zi("metadata.json"), body)
         install_size += len(body.encode("utf-8"))
 
         sym = open(sym_path, "rb").read()
-        z.writestr("symbols/PartReel.kicad_sym", sym)
+        z.writestr(_zi("symbols/PartReel.kicad_sym"), sym)
         install_size += len(sym)
 
         with zipfile.ZipFile(zip_path) as src:
@@ -204,8 +224,8 @@ def main():
                     continue
                 data = src.read(n)
                 # PartReel.pretty/<id>.kicad_mod → footprints/PartReel.pretty/...
-                z.writestr(f"footprints/{os.path.basename(os.path.dirname(n))}/"
-                           f"{os.path.basename(n)}", data)
+                z.writestr(_zi(f"footprints/{os.path.basename(os.path.dirname(n))}/"
+                               f"{os.path.basename(n)}"), data)
                 install_size += len(data)
 
     blob = open(pkg_path, "rb").read()
