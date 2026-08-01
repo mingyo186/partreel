@@ -257,6 +257,7 @@ def guide_page():
   </ol>
   <h3>Only need a few parts? Install the Fetch plugin instead</h3>
   <p>The library package installs ~450 parts at once. If you would rather pull parts one at a time from the <strong>full 21,000+ catalog</strong>, install <strong>PartReel Fetch</strong> from the same PCM repository (Plugins tab). It adds a search button to the PCB editor toolbar: search, pick a part, and only that part's symbol and footprint are downloaded into the current project and registered in the project library tables.</p>
+  <p><strong>Drawing the schematic first?</strong> You do not need the PCB editor. Run <code>partreel-fetch.cmd</code> from the plugin folder (Windows), or <code>python -m partreel_fetch</code> with KiCad's Python — it picks up your most recent KiCad project automatically, and the parts appear in the schematic symbol chooser under <code>PartReel</code>. (KiCad has no schematic-editor plugin API yet, so the toolbar button can only live in the PCB editor.)</p>
   <h3>Manual alternative (same content, two files)</h3>
   <p>If you prefer not to use PCM, these two files give you the same curated set (~450 gate-verified parts) offline:</p>
   <ol>

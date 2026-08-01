@@ -33,8 +33,9 @@ IDENT = "com.partreel.library"
 
 
 PLUGIN_SRC = os.path.normpath(os.path.join(ROOT, "plugin"))
-PLUGIN_FILES = ("__init__.py", "icon.png", "partreel_fetch/__init__.py",
-                "partreel_fetch/core.py", "partreel_fetch/dialog.py",
+PLUGIN_FILES = ("__init__.py", "icon.png", "partreel-fetch.cmd",
+                "partreel_fetch/__init__.py", "partreel_fetch/core.py",
+                "partreel_fetch/dialog.py", "partreel_fetch/__main__.py",
                 "resources/icon.png")
 RELEASE_LEDGER = os.path.join(ROOT, "docs", "pcm-release.json")
 
@@ -172,9 +173,10 @@ def build_plugin_package():
         body = json.dumps(pkg_meta, indent=2, ensure_ascii=False)
         z.writestr(_zi("metadata.json"), body)
         install_size += len(body.encode("utf-8"))
-        for rel in ("__init__.py", "icon.png",
+        for rel in ("__init__.py", "icon.png", "partreel-fetch.cmd",
                     "partreel_fetch/__init__.py", "partreel_fetch/core.py",
-                    "partreel_fetch/dialog.py"):
+                    "partreel_fetch/dialog.py",
+                    "partreel_fetch/__main__.py"):
             src = os.path.join(PLUGIN_SRC, rel)
             # 텍스트는 LF로 정규화 (윈도우 CRLF ↔ CI LF 차이로 버전 churn)
             data = (open(src, "rb").read() if rel.endswith(".png")
