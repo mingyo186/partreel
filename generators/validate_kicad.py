@@ -107,15 +107,16 @@ def check_symbol(text, pins):
     # 다이오드/LED(참조기호 D)는 도형으로 종류가 읽혀야 한다 — 사각형만 있는
     # 심볼은 회로도에서 오독된다. 또 2단자 극성 부품의 두 핀이 같은 쪽에 붙어
     # 있으면 안 된다. (2026-08-01 사용자 지적: ai03 LED 8종이 네모 + 핀 동일측)
+    # **2핀** 다이오드/LED(참조기호 D)가 도형 없이 사각형만이면 회로도에서
+    # 종류를 못 읽는다. 2핀으로 한정하는 이유(전수 대조로 확인): TVS 어레이 등
+    # 다핀 D 부품은 IC라 네모가 정상이고, 광섬유 수광 모듈처럼 하우징 외형에
+    # 두 다리가 한쪽으로 나오는 표기도 정상이다.
     ref = re.search(r'\(property "Reference" "([^"]*)"', text)
-    if ref and ref.group(1).strip() == "D":
+    npins_all = len(re.findall(r'\(pin\s+\w+\s+\w+\s+\(at', text))
+    if ref and ref.group(1).strip() == "D" and npins_all == 2:
         if "(polyline" not in text:
-            errs.append("참조기호 D인데 도형이 없음 (LED/다이오드는 삼각형+바 필요)")
-        pin_pos = re.findall(r'\(pin\s+\w+\s+\w+\s+\(at\s+([-\d.]+)\s+([-\d.]+)', text)
-        if len(pin_pos) == 2:
-            xs = [float(x) for x, _ in pin_pos]
-            if (xs[0] < 0) == (xs[1] < 0):
-                errs.append(f"2단자 극성 부품의 핀이 같은 쪽에 있음 (x={xs})")
+            errs.append("2핀 다이오드/LED인데 도형이 없음 "
+                        "(삼각형+캐소드 바 필요 — 네모는 오독을 부름)")
 
     npins = len(re.findall(r'\(pin\s+\w+\s+\w+\s+\(at', text))
     if pins and npins != pins:
