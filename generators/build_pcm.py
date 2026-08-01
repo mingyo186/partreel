@@ -56,13 +56,40 @@ def content_hash(paths):
     return h.hexdigest()
 
 
+KEEP_RELEASES = 5
+
+
+def load_ledger():
+    try:
+        return json.load(open(RELEASE_LEDGER, encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+
+
+def save_ledger(led):
+    json.dump(led, open(RELEASE_LEDGER, "w", encoding="utf-8"), indent=1)
+
+
+def record_release(key, entry):
+    """발행 이력 누적 — **옛 버전을 목록에서 지우면 안 된다.**
+
+    PCM은 설치된 버전을 저장소 목록에서 찾아 상태를 계산한다. 최신 하나만
+    올려두면 캐시가 옛 버전을 가리키는 사용자에게 '버전 패키지를 찾을 수
+    없습니다' 오류가 난다 (2026-08-01 사용자 제보). 공식 저장소도 버전
+    이력을 유지한다."""
+    led = load_ledger()
+    rel = led.setdefault(key, {}).setdefault("releases", [])
+    rel = [r for r in rel if r["version"] != entry["version"]]
+    rel.insert(0, entry)
+    led[key]["releases"] = rel[:KEEP_RELEASES]
+    save_ledger(led)
+    return led[key]["releases"]
+
+
 def next_version(key, major_minor, digest):
     """내용이 바뀌면 patch를 올린다 — 안 올리면 PCM이 '업데이트 없음'으로 보고
     업데이트 버튼이 비활성화된다 (2026-08-01 사용자 제보로 발견)."""
-    try:
-        led = json.load(open(RELEASE_LEDGER, encoding="utf-8"))
-    except (OSError, ValueError):
-        led = {}
+    led = load_ledger()
     prev = led.get(key, {})
     if prev.get("major_minor") == major_minor and prev.get("hash") == digest:
         ver = prev.get("version") or f"{major_minor}.0"
@@ -70,9 +97,18 @@ def next_version(key, major_minor, digest):
         ver = f"{major_minor}.{int(str(prev.get('version', '0.0.0')).split('.')[-1]) + 1}"
     else:
         ver = f"{major_minor}.0"
-    led[key] = {"major_minor": major_minor, "hash": digest, "version": ver}
-    json.dump(led, open(RELEASE_LEDGER, "w", encoding="utf-8"), indent=1)
+    # releases 이력은 보존하고 현재 상태만 갱신 (통째 대입하면 이력이 지워진다)
+    entry = led.setdefault(key, {})
+    entry.update({"major_minor": major_minor, "hash": digest, "version": ver})
+    save_ledger(led)
     return ver
+
+
+def prune_zips(prefix, keep_names):
+    """이력에서 밀려난 옛 zip 파일 정리 (목록에 있는 것은 반드시 남긴다)."""
+    for fn in os.listdir(OUT):
+        if fn.startswith(prefix) and fn.endswith(".zip") and fn not in keep_names:
+            os.remove(os.path.join(OUT, fn))
 
 
 def library_content_hash(sym_path, zip_path):
@@ -150,7 +186,7 @@ def build_plugin_package():
         install_size += len(icon)
 
     blob = open(path, "rb").read()
-    meta["versions"] = [{
+    entry = {
         "version": ver,
         "status": "stable",
         "kicad_version": "8.0",
@@ -158,8 +194,12 @@ def build_plugin_package():
         "download_sha256": hashlib.sha256(blob).hexdigest(),
         "download_size": len(blob),
         "install_size": install_size,
-    }]
-    print(f"PCM: {name} ({len(blob) / 1024:.0f} KB) — 플러그인 v{ver}")
+    }
+    meta["versions"] = record_release("fetch", entry)
+    prune_zips("partreel-fetch-", {os.path.basename(v["download_url"])
+                                   for v in meta["versions"]})
+    print(f"PCM: {name} ({len(blob) / 1024:.0f} KB) — 플러그인 v{ver} "
+          f"(이력 {len(meta['versions'])}개)")
     return meta
 
 
@@ -207,9 +247,7 @@ def main():
         "versions": [],
     }
 
-    if os.path.isdir(OUT):
-        shutil.rmtree(OUT)
-    os.makedirs(OUT, exist_ok=True)
+    os.makedirs(OUT, exist_ok=True)  # 옛 버전 zip 보존 (이력 유지)
     pkg_name = f"partreel-library-{version}.zip"
     pkg_path = os.path.join(OUT, pkg_name)
 
@@ -240,7 +278,7 @@ def main():
                 install_size += len(data)
 
     blob = open(pkg_path, "rb").read()
-    meta["versions"] = [{
+    lib_entry = {
         "version": version,
         "status": "stable",
         "kicad_version": "8.0",
@@ -248,7 +286,10 @@ def main():
         "download_sha256": hashlib.sha256(blob).hexdigest(),
         "download_size": len(blob),
         "install_size": install_size,
-    }]
+    }
+    meta["versions"] = record_release("library", lib_entry)
+    prune_zips("partreel-library-", {os.path.basename(v["download_url"])
+                                     for v in meta["versions"]})
 
     packages = [meta, build_plugin_package()]
     json.dump({"packages": packages},
