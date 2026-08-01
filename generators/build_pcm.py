@@ -33,7 +33,38 @@ IDENT = "com.partreel.library"
 
 
 PLUGIN_SRC = os.path.normpath(os.path.join(ROOT, "plugin"))
-PLUGIN_VERSION = "1.0.0"
+PLUGIN_FILES = ("__init__.py", "icon.png", "partreel_fetch/__init__.py",
+                "partreel_fetch/core.py", "partreel_fetch/dialog.py",
+                "resources/icon.png")
+RELEASE_LEDGER = os.path.join(ROOT, "docs", "pcm-release.json")
+
+
+def content_hash(paths):
+    """내용 해시 (zip은 타임스탬프 때문에 매번 달라져 기준으로 못 씀)."""
+    h = hashlib.sha256()
+    for p in paths:
+        h.update(os.path.basename(p).encode())
+        h.update(open(p, "rb").read())
+    return h.hexdigest()
+
+
+def next_version(key, major_minor, digest):
+    """내용이 바뀌면 patch를 올린다 — 안 올리면 PCM이 '업데이트 없음'으로 보고
+    업데이트 버튼이 비활성화된다 (2026-08-01 사용자 제보로 발견)."""
+    try:
+        led = json.load(open(RELEASE_LEDGER, encoding="utf-8"))
+    except (OSError, ValueError):
+        led = {}
+    prev = led.get(key, {})
+    if prev.get("major_minor") == major_minor and prev.get("hash") == digest:
+        ver = prev.get("version") or f"{major_minor}.0"
+    elif prev.get("major_minor") == major_minor:
+        ver = f"{major_minor}.{int(str(prev.get('version', '0.0.0')).split('.')[-1]) + 1}"
+    else:
+        ver = f"{major_minor}.0"
+    led[key] = {"major_minor": major_minor, "hash": digest, "version": ver}
+    json.dump(led, open(RELEASE_LEDGER, "w", encoding="utf-8"), indent=1)
+    return ver
 
 
 def build_plugin_package():
@@ -63,12 +94,15 @@ def build_plugin_package():
                       "Documentation": f"{SITE}/guide/kicad/"},
         "tags": ["plugin", "library", "search", "partreel"],
     }
-    name = f"partreel-fetch-{PLUGIN_VERSION}.zip"
+    ver = next_version("fetch", "1.0",
+                       content_hash([os.path.join(PLUGIN_SRC, f)
+                                     for f in PLUGIN_FILES]))
+    name = f"partreel-fetch-{ver}.zip"
     path = os.path.join(OUT, name)
     install_size = 0
     with zipfile.ZipFile(path, "w", zipfile.ZIP_DEFLATED) as z:
         pkg_meta = dict(meta)
-        pkg_meta["versions"] = [{"version": PLUGIN_VERSION, "status": "stable",
+        pkg_meta["versions"] = [{"version": ver, "status": "stable",
                                  "kicad_version": "8.0"}]
         body = json.dumps(pkg_meta, indent=2, ensure_ascii=False)
         z.writestr("metadata.json", body)
@@ -86,7 +120,7 @@ def build_plugin_package():
 
     blob = open(path, "rb").read()
     meta["versions"] = [{
-        "version": PLUGIN_VERSION,
+        "version": ver,
         "status": "stable",
         "kicad_version": "8.0",
         "download_url": f"{SITE}/pcm/{name}",
@@ -94,7 +128,7 @@ def build_plugin_package():
         "download_size": len(blob),
         "install_size": install_size,
     }]
-    print(f"PCM: {name} ({len(blob) / 1024:.0f} KB) — 플러그인")
+    print(f"PCM: {name} ({len(blob) / 1024:.0f} KB) — 플러그인 v{ver}")
     return meta
 
 
@@ -108,8 +142,10 @@ def main():
             return 1
     manifest = json.load(open(mf_path, encoding="utf-8"))
     count = manifest.get("count") or len(manifest.get("symbols", []))
-    # 부품 수를 마이너 버전으로 — 부품이 늘면 PCM이 자동으로 '업데이트 있음' 표시
-    version = f"1.{count}.0"
+    # 부품 수 = 마이너, 내용 변경 = 패치 (부품 수가 그대로여도 심볼/풋프린트
+    # 내용이 바뀌면 버전이 올라가야 PCM이 업데이트를 제공한다)
+    version = next_version("library", f"1.{count}",
+                           content_hash([sym_path, zip_path]))
 
     meta = {
         "$schema": "https://go.kicad.org/pcm/schemas/v1",
