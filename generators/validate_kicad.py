@@ -104,6 +104,19 @@ def check_symbol(text, pins):
         elif ch == ")":
             depth -= 1
         i += 1
+    # 다이오드/LED(참조기호 D)는 도형으로 종류가 읽혀야 한다 — 사각형만 있는
+    # 심볼은 회로도에서 오독된다. 또 2단자 극성 부품의 두 핀이 같은 쪽에 붙어
+    # 있으면 안 된다. (2026-08-01 사용자 지적: ai03 LED 8종이 네모 + 핀 동일측)
+    ref = re.search(r'\(property "Reference" "([^"]*)"', text)
+    if ref and ref.group(1).strip() == "D":
+        if "(polyline" not in text:
+            errs.append("참조기호 D인데 도형이 없음 (LED/다이오드는 삼각형+바 필요)")
+        pin_pos = re.findall(r'\(pin\s+\w+\s+\w+\s+\(at\s+([-\d.]+)\s+([-\d.]+)', text)
+        if len(pin_pos) == 2:
+            xs = [float(x) for x, _ in pin_pos]
+            if (xs[0] < 0) == (xs[1] < 0):
+                errs.append(f"2단자 극성 부품의 핀이 같은 쪽에 있음 (x={xs})")
+
     npins = len(re.findall(r'\(pin\s+\w+\s+\w+\s+\(at', text))
     if pins and npins != pins:
         errs.append(f"핀 수 {npins} != 기대 {pins}")

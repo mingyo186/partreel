@@ -143,30 +143,64 @@ def add_silk_pin1(fp_text, x, y, w, h):
     return fp_text.rstrip()[:i] + mark + ")\n"
 
 
+def _poly(points, width=0.254, fill="none"):
+    pts = " ".join(f"(xy {x} {y})" for x, y in points)
+    return (f'      (polyline (pts {pts})\n'
+            f'        (stroke (width {width}) (type solid)) (fill (type {fill})))\n')
+
+
+def _pin(name, num, x, y, angle, length=2.54):
+    return (f'      (pin passive line (at {x} {y} {angle}) (length {length})\n'
+            f'        (name "{name}" (effects (font (size 1.27 1.27))))\n'
+            f'        (number "{num}" (effects (font (size 1.27 1.27)))))\n')
+
+
+def _led_graphic():
+    """LED 표준 도형: 삼각형 + 캐소드 바 + 발광 화살표 2개.
+
+    (2026-08-01 사용자 지적: LED가 그냥 네모로 그려져 있었다. 회로도에서
+    부품 종류는 도형으로 읽는 것이라 네모는 오독을 부른다. 좌표는 IEC/ANSI
+    관례를 따라 자체 작성.)
+    """
+    g = _poly([(-1.27, 1.27), (-1.27, -1.27), (1.27, 0), (-1.27, 1.27)],
+              fill="none")
+    g += _poly([(1.27, 1.27), (1.27, -1.27)])          # 캐소드 바
+    for dx in (0.0, 1.27):                              # 발광 화살표 2개
+        g += _poly([(-0.2 + dx, 1.7), (0.9 + dx, 2.8)], width=0.152)
+        g += _poly([(0.35 + dx, 2.8), (0.9 + dx, 2.8), (0.9 + dx, 2.25)],
+                   width=0.152, fill="outline")
+    return g
+
+
+def _switch_graphic():
+    """SPST(누름) 스위치 표준 도형: 양 단자 원 + 비스듬한 가동 접점 + 액추에이터."""
+    g = ""
+    for cx in (-2.54, 2.54):
+        g += (f'      (circle (center {cx} 0) (radius 0.3)\n'
+              f'        (stroke (width 0.2) (type solid)) (fill (type none)))\n')
+    g += _poly([(-2.286, 0.254), (2.286, 1.524)])       # 가동 접점
+    g += _poly([(0, 1.9), (0, 2.8)], width=0.152)       # 액추에이터 축
+    g += _poly([(-1.016, 2.8), (1.016, 2.8)], width=0.152)  # 누름판
+    return g
+
+
 def make_symbol(pid, is_led, datasheet):
     if is_led:
-        pins = [("A", "1", 1.27), ("K", "2", -1.27)]
-        ref = "D"
+        ref, graphic = "D", _led_graphic()
+        pins = _pin("A", "1", -3.81, 0, 0) + _pin("K", "2", 3.81, 0, 180)
     else:
-        pins = [("1", "1", 1.27), ("2", "2", -1.27)]
-        ref = "SW"
-    pin_txt = ""
-    for name, num, py in pins:
-        pin_txt += (f'      (pin passive line (at -5.08 {py} 0) (length 2.54)\n'
-                    f'        (name "{name}" (effects (font (size 1.27 1.27))))\n'
-                    f'        (number "{num}" (effects (font (size 1.27 1.27)))))\n')
+        ref, graphic = "SW", _switch_graphic()
+        pins = _pin("1", "1", -5.08, 0, 0) + _pin("2", "2", 5.08, 0, 180)
     return f'''(kicad_symbol_lib (version 20211014) (generator partreel-import)
-  (symbol "{pid}" (in_bom yes) (on_board yes)
-    (property "Reference" "{ref}" (at 3.54 2.54 0)
-      (effects (font (size 1.27 1.27)) (justify left)))
-    (property "Value" "{pid}" (at 3.54 -2.54 0)
-      (effects (font (size 1.27 1.27)) (justify left)))
+  (symbol "{pid}" (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
+    (property "Reference" "{ref}" (at 0 3.81 0)
+      (effects (font (size 1.27 1.27))))
+    (property "Value" "{pid}" (at 0 -3.81 0)
+      (effects (font (size 1.27 1.27))))
     (property "Footprint" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
     (property "Datasheet" "{datasheet}" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
     (symbol "{pid}_1_1"
-      (rectangle (start -2.54 2.54) (end 2.54 -2.54)
-        (stroke (width 0.254) (type solid)) (fill (type background)))
-{pin_txt}    )
+{graphic}{pins}    )
   )
 )
 '''
