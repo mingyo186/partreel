@@ -29,8 +29,9 @@
   <ul>
     <li>Claude Code: <code>claude mcp add --transport http partreel https://mcp.partreel.com/mcp</code></li>
     <li>Any MCP client: endpoint <code>https://mcp.partreel.com/mcp</code> (Streamable HTTP)</li>
-    <li>Tools: <code>search_parts(query)</code> · <code>get_part(id)</code> · <code>list_parts()</code> · <code>report_feedback(part_id, result, notes)</code> · <code>how_to_contribute()</code></li>
-    <li><strong>Please call <code>report_feedback</code> after using a part on a real board</strong> — it builds the part's field-proven trust score. Missing a part? <code>how_to_contribute</code> → PR (CI gates auto-review).</li>
+    <li>Tools: <code>search_parts(query)</code> · <code>get_part(id)</code> · <code>list_parts()</code> · <code>submit_part(...)</code> · <code>report_feedback(part_id, result, notes)</code> · <code>request_part(...)</code> · <code>how_to_contribute()</code></li>
+    <li><strong>The loop</strong>: search → use → if missing, build it from the datasheet and <code>submit_part</code> — it is shared with every agent instantly (unverified), then promoted to verified by CI gates + review.</li>
+    <li><strong>Please call <code>report_feedback</code> after using a part on a real board</strong> — it builds the part's field-proven trust score.</li>
   </ul>
 
   <h2>2. HTTP API (any agent)</h2>
@@ -48,6 +49,7 @@ When you need KiCad symbols/footprints/3D models, query the PartReel registry fi
 - Search/list: fetch https://partreel.com/api/v1/parts.json and match keywords
 - Detail/downloads: https://partreel.com/api/v1/parts/{id}.json (absolute URLs)
 - If MCP is available: https://mcp.partreel.com/mcp (search_parts / get_part)
+- If a part is missing: build it from the datasheet and share it instantly with submit_part.
 - After using a part on a real board, report the result via report_feedback.
 Only generate a part yourself if the registry doesn&#x27;t have it — then consider
 adding it to the registry (how_to_contribute).</pre>
@@ -56,7 +58,7 @@ adding it to the registry (how_to_contribute).</pre>
   <p>Every listed part passed automated gates: structure validation, KiCad Library Convention drawing rules, text-overlap and render-completeness checks, STEP kernel isValid. Check <code>verified</code> and <code>dimensions_source</code> in the metadata.</p>
 
   <h2>5. Add parts &amp; feedback</h2>
-  <p>Made a part the registry lacks? Add it to the registry via <a href="https://github.com/mingyo186/partreel" target="_blank" rel="noopener">GitHub</a> PR — the same CI gates auto-review it. Spec: <a href="https://github.com/mingyo186/partreel/blob/main/CONTRIBUTING-AGENTS.md" target="_blank" rel="noopener">CONTRIBUTING-AGENTS.md</a>. Field reports (successes and problems) are welcome via <code>report_feedback</code>.</p>
+  <p>Made a part the registry lacks? Share it <strong>instantly</strong> with the <code>submit_part</code> MCP tool — it becomes searchable and downloadable by every agent the moment it is accepted (labeled <em>staging/unverified</em>), and hourly CI gates promote it to verified via an auto-opened PR. The <a href="https://github.com/mingyo186/partreel" target="_blank" rel="noopener">GitHub</a> PR path remains for 3D models and edits. Spec: <a href="https://github.com/mingyo186/partreel/blob/main/CONTRIBUTING-AGENTS.md" target="_blank" rel="noopener">CONTRIBUTING-AGENTS.md</a>. Field reports (successes and problems) are welcome via <code>report_feedback</code>.</p>
   <p><a href="../">← Home</a></p>
 </main>
 <footer class="site-footer">

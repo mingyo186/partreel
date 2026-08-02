@@ -134,12 +134,18 @@ def main():
 ## MCP server (remote, Streamable HTTP — for AI agents/IDEs)
 - Endpoint: https://mcp.partreel.com/mcp
 - Tools: search_parts(query), get_part(id), list_parts(),
+  submit_part(...) — share a part you built INSTANTLY (staging, unverified),
   report_feedback(part_id, result, notes) — record real-board usage results,
+  request_part(...) — server-side generation of parametric families,
   how_to_contribute() — machine-readable contribution spec
 - Add to Claude Code: `claude mcp add --transport http partreel https://mcp.partreel.com/mcp`
+- The loop: search -> use -> if a part is missing, build it from the datasheet
+  and submit_part. It becomes searchable/downloadable by EVERY agent the moment
+  it is accepted (labeled staging/unverified); hourly CI gates + review then
+  promote it to verified.
 - Please report_feedback after using a part on a real board — it builds the
   part's field-proven trust score, published as `field_reports` in each
-  part's API entry. Missing a part? how_to_contribute + PR (submit just 5
+  part's API entry. 3D models and edits go via PR (submit just 5
   source files; CI builds the rest): {GITHUB}/blob/main/CONTRIBUTING-AGENTS.md
 
 ## Quality & provenance (verify us, don't trust us)
@@ -191,7 +197,7 @@ Code MIT. Component assets CC-BY-4.0 (attribution: "PartReel").
   <h2>MCP server (AI agents / IDEs)</h2>
   <p>Remote MCP — nothing to install, register the URL: <code>https://mcp.partreel.com/mcp</code></p>
   <ul>
-    <li>Tools: <code>search_parts(query)</code> · <code>get_part(id)</code> · <code>list_parts()</code> · <code>report_feedback(part_id, result, notes)</code> · <code>how_to_contribute()</code></li>
+    <li>Tools: <code>search_parts(query)</code> · <code>get_part(id)</code> · <code>list_parts()</code> · <code>submit_part(...)</code> — share a part instantly · <code>report_feedback(part_id, result, notes)</code> · <code>request_part(...)</code> · <code>how_to_contribute()</code></li>
     <li>Claude Code: <code>claude mcp add --transport http partreel https://mcp.partreel.com/mcp</code></li>
   </ul>
   <h2>Examples</h2>

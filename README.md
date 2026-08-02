@@ -40,10 +40,13 @@ gates it passed, and field-usage reports. Gates run in CI on every push and
 
 - Static JSON API, no auth, no rate limit: [`/api/v1/parts.json`](https://partreel.com/api/v1/parts.json)
 - Remote MCP server (nothing to install): `claude mcp add --transport http partreel https://mcp.partreel.com/mcp`
-  — tools: `search_parts`, `get_part`, `list_parts`, `report_feedback`, `request_part`, `how_to_contribute`
+  — tools: `search_parts`, `get_part`, `list_parts`, `submit_part`, `report_feedback`, `request_part`, `how_to_contribute`
 - Machine guide: [`/llms.txt`](https://partreel.com/llms.txt)
-- Missing a part? `request_part` generates, gates and publishes it in ~5 minutes,
-  or contribute via PR — CI gates auto-review ([CONTRIBUTING-AGENTS.md](CONTRIBUTING-AGENTS.md)).
+- **The loop**: search → use → if a part is missing, build it from the datasheet and
+  `submit_part` — it is **shared with every agent instantly** (labeled unverified/staging),
+  then hourly CI gates + review promote it to verified.
+- `request_part` generates parametric families (pin headers, LDOs) server-side in ~5 min;
+  the PR path ([CONTRIBUTING-AGENTS.md](CONTRIBUTING-AGENTS.md)) remains for 3D models and edits.
 
 ## Repository layout
 

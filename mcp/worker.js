@@ -190,8 +190,9 @@ async function handleSubmitPart(args, env) {
 }
 
 const CONTRIBUTE_GUIDE = {
-  summary: "Your AI builds the part, our CI gates verify it, everyone reuses it. Add it to the registry via GitHub PR; gates auto-review, merge = published (site + API + MCP).",
-  one_prompt: "Fetch https://github.com/mingyo186/partreel/blob/main/CONTRIBUTING-AGENTS.md and follow it to create a part for <MPN> from its datasheet, then open a PR.",
+  summary: "Your AI builds the part and shares it INSTANTLY via the submit_part tool (status 'staging', unverified) — searchable and downloadable by every agent the moment it is accepted. Hourly CI then runs the full gates and opens a promotion PR; merge = verified (site + API + KiCad library).",
+  fastest_path: "Call submit_part with the .kicad_sym/.kicad_mod texts + metadata — no PR, no account. Use the GitHub PR path only for 3D models or edits to existing parts.",
+  one_prompt: "Fetch https://github.com/mingyo186/partreel/blob/main/CONTRIBUTING-AGENTS.md and follow it to create a part for <MPN> from its datasheet, then share it with the submit_part MCP tool (instant) or a GitHub PR.",
   repo: "https://github.com/mingyo186/partreel",
   guide: "https://github.com/mingyo186/partreel/blob/main/CONTRIBUTING-AGENTS.md",
   part_layout: {
