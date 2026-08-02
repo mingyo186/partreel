@@ -53,9 +53,9 @@ def main():
     start_time = (today - datetime.timedelta(days=days)).strftime("%Y-%m-%dT%H:%M:%SZ")
 
     # 1. 방문
-    v = gql("""query($a: String!, $s: Date!) { accounts(filter:{accountTag:$a}) {
+    v = gql("""query($a: String!, $s: Date!) { viewer { accounts(filter:{accountTag:$a}) {
         rumPageloadEventsAdaptiveGroups(limit: 40, filter:{date_geq:$s}, orderBy:[date_ASC])
-        { count sum { visits } dimensions { date } } } }""",
+        { count sum { visits } dimensions { date } } } } }""",
             {"a": ACCT, "s": start_date}, tok)["accounts"][0]["rumPageloadEventsAdaptiveGroups"]
     print(f"== 사이트 방문 (최근 {days}일) ==")
     print(f"  합계: 방문 {sum(r['sum']['visits'] for r in v)} / 뷰 {sum(r['count'] for r in v)}")
@@ -63,9 +63,9 @@ def main():
         print(f"  {r['dimensions']['date']}: 방문 {r['sum']['visits']:>4} / 뷰 {r['count']:>4}")
 
     # 2. MCP 워커
-    w = gql("""query($a: String!, $s: Time!) { accounts(filter:{accountTag:$a}) {
+    w = gql("""query($a: String!, $s: Time!) { viewer { accounts(filter:{accountTag:$a}) {
         workersInvocationsAdaptive(limit: 5000, filter:{datetime_geq:$s})
-        { sum { requests } dimensions { datetimeHour } } } }""",
+        { sum { requests } dimensions { datetimeHour } } } } }""",
             {"a": ACCT, "s": start_time}, tok)["accounts"][0]["workersInvocationsAdaptive"]
     daily = {}
     for r in w:
@@ -76,10 +76,10 @@ def main():
 
     # 3. 에셋 다운로드 (존 분석은 24시간 창 제한 — 최근 24h)
     s24 = (today - datetime.timedelta(hours=23)).strftime("%Y-%m-%dT%H:%M:%SZ")
-    a = gql("""query($z: String!, $s: Time!) { zones(filter:{zoneTag:$z}) {
+    a = gql("""query($z: String!, $s: Time!) { viewer { zones(filter:{zoneTag:$z}) {
         httpRequestsAdaptiveGroups(limit: 15, filter:{datetime_geq:$s,
           clientRequestHTTPHost:"assets.partreel.com"}, orderBy:[count_DESC])
-        { count dimensions { clientRequestPath } } } }""",
+        { count dimensions { clientRequestPath } } } } }""",
             {"z": ZONE, "s": s24}, tok)["zones"][0]["httpRequestsAdaptiveGroups"]
     dl = [r for r in a if r["dimensions"]["clientRequestPath"] not in ("/", "/robots.txt")]
     print("== 에셋 다운로드 상위 (최근 24시간, 3D+스테이징) ==")
