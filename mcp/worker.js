@@ -83,7 +83,111 @@ const TOOLS = [
       "(file layout, metadata schema, quality gates, PR process). Use when a part is missing.",
     inputSchema: { type: "object", properties: {} },
   },
+  {
+    name: "submit_part",
+    description:
+      "Upload a part you built so it is SHARED IMMEDIATELY (status 'staging', unverified). " +
+      "It becomes searchable and downloadable right away; hourly CI then runs the full quality " +
+      "gates and opens a PR to promote it to the verified registry. " +
+      "Provide the full text of the .kicad_sym and .kicad_mod files plus metadata. " +
+      "Cite real datasheet dimensions in dimensions_source — copies of the official KiCad " +
+      "(CC-BY-SA) library are auto-rejected at promotion.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        id: { type: "string", description: "part id: lowercase letters/digits/underscore, 3-64 chars, e.g. 'ti_sn74lvc1g08_sot23'" },
+        name: { type: "string", description: "human-readable name / MPN" },
+        description: { type: "string" },
+        category: { type: "string", description: "one of: connector, discrete, ic, passive, switch, module, etc" },
+        license: { type: "string", description: "CC-BY-4.0 for original work; MIT/Apache-2.0/CERN-OHL-P/CC-BY for imports" },
+        dimensions_source: { type: "string", description: "datasheet URL + page/figure the dimensions came from (min 20 chars)" },
+        symbol: { type: "string", description: "full .kicad_sym file text" },
+        footprint: { type: "string", description: "full .kicad_mod file text" },
+        datasheet: { type: "string", description: "datasheet URL (optional)" },
+      },
+      required: ["id", "name", "description", "category", "license", "dimensions_source", "symbol", "footprint"],
+    },
+  },
 ];
+
+const STAGING_LICENSES = ["CC-BY-4.0", "MIT", "Apache-2.0", "CERN-OHL-P-2.0", "CC-BY-3.0", "CC-BY-SA-NONE"];
+const STAGING_MAX_PARTS = 300;
+const STAGING_MAX_FILE = 512 * 1024;
+
+function sexprBalanced(text) {
+  let depth = 0, inStr = false, esc = false;
+  for (const ch of text) {
+    if (inStr) { if (esc) esc = false; else if (ch === "\\") esc = true; else if (ch === '"') inStr = false; continue; }
+    if (ch === '"') inStr = true;
+    else if (ch === "(") depth++;
+    else if (ch === ")") { depth--; if (depth < 0) return false; }
+  }
+  return depth === 0 && !inStr;
+}
+
+async function stagingIndex(env) {
+  try {
+    const obj = await env.STAGING.get("staging/index.json");
+    if (obj) return JSON.parse(await obj.text());
+  } catch (e) { /* fall through */ }
+  return { parts: [] };
+}
+
+async function handleSubmitPart(args, env) {
+  const id = String(args?.id ?? "").trim();
+  if (!/^[a-z][a-z0-9_]{2,63}$/.test(id))
+    return { error: "invalid id — lowercase letters/digits/underscore, 3-64 chars, starts with a letter" };
+  const meta = {};
+  for (const k of ["name", "description", "category", "license", "dimensions_source", "datasheet"]) {
+    meta[k] = String(args?.[k] ?? "").trim();
+  }
+  if (!meta.name || !meta.description || !meta.category) return { error: "name/description/category required" };
+  if (!STAGING_LICENSES.slice(0, 5).includes(meta.license))
+    return { error: `license must be one of: ${STAGING_LICENSES.slice(0, 5).join(", ")} (CC-BY-SA cannot be accepted)` };
+  if (meta.dimensions_source.length < 20)
+    return { error: "dimensions_source too vague — cite datasheet URL + page/figure" };
+  const sym = String(args?.symbol ?? ""), mod = String(args?.footprint ?? "");
+  if (sym.length > STAGING_MAX_FILE || mod.length > STAGING_MAX_FILE)
+    return { error: "file too large (max 512KB each)" };
+  if (!/^\s*\(kicad_symbol_lib\b/.test(sym) || !sexprBalanced(sym))
+    return { error: "symbol: must be a balanced s-expression with root (kicad_symbol_lib" };
+  if (!/^\s*\(footprint\b/.test(mod) || !sexprBalanced(mod))
+    return { error: "footprint: must be a balanced s-expression with root (footprint" };
+  if (!/\(pin\s/.test(sym)) return { error: "symbol has no pins" };
+  if (!/\(pad\s/.test(mod)) return { error: "footprint has no pads" };
+  // 정식 카탈로그와 id 충돌 금지
+  const reg = await fetch(`${API}/parts/${id}.json`, { cf: { cacheTtl: 300, cacheEverything: true } });
+  if (reg.ok) return { error: `id '${id}' already exists in the verified registry — pick a distinct id or use report_feedback to improve the existing part` };
+
+  const idx = await stagingIndex(env);
+  const existing = idx.parts.findIndex((p) => p.id === id);
+  if (existing < 0 && idx.parts.length >= STAGING_MAX_PARTS)
+    return { error: "staging area is full — try again after the next promotion cycle" };
+
+  const base = `staging/${id}`;
+  await env.STAGING.put(`${base}/${id}.kicad_sym`, sym, { httpMetadata: { contentType: "text/plain; charset=utf-8" } });
+  await env.STAGING.put(`${base}/${id}.kicad_mod`, mod, { httpMetadata: { contentType: "text/plain; charset=utf-8" } });
+  const metaFull = { id, ...meta, origin: "community-staged", status: "staging",
+                     submitted_at: new Date().toISOString(),
+                     files: { symbol: `${id}.kicad_sym`, footprint: `${id}.kicad_mod` } };
+  await env.STAGING.put(`${base}/meta.json`, JSON.stringify(metaFull, null, 1),
+                        { httpMetadata: { contentType: "application/json" } });
+  const entry = { id, name: meta.name, category: meta.category, license: meta.license,
+                  status: "staging", submitted_at: metaFull.submitted_at };
+  if (existing >= 0) idx.parts[existing] = entry; else idx.parts.push(entry);
+  await env.STAGING.put("staging/index.json", JSON.stringify(idx, null, 1),
+                        { httpMetadata: { contentType: "application/json" } });
+  const host = "https://assets.partreel.com";
+  return {
+    shared: true,
+    status: "staging (unverified) — searchable and downloadable NOW",
+    downloads: { symbol: `${host}/${base}/${id}.kicad_sym`,
+                 footprint: `${host}/${base}/${id}.kicad_mod`,
+                 meta: `${host}/${base}/meta.json` },
+    promotion: "hourly CI runs the full quality gates and opens a PR; on merge the part becomes verified and leaves staging",
+    note: "unverified parts are clearly labeled — verify dimensions before manufacturing",
+  };
+}
 
 const CONTRIBUTE_GUIDE = {
   summary: "Your AI builds the part, our CI gates verify it, everyone reuses it. Add it to the registry via GitHub PR; gates auto-review, merge = published (site + API + MCP).",
@@ -262,6 +366,9 @@ async function toolCall(name, args, env) {
   if (name === "how_to_contribute") {
     return CONTRIBUTE_GUIDE;
   }
+  if (name === "submit_part") {
+    return handleSubmitPart(args, env);
+  }
   if (name === "request_part") {
     const family = String(args?.family ?? "").trim();
     const vf = VARIANT_FAMILIES[family];
@@ -346,7 +453,17 @@ async function toolCall(name, args, env) {
       const hay = `${p.id} ${p.name} ${p.family} ${p.manufacturer} ${p.pins ?? ""} ${(p.keywords || []).join(" ")}`.toLowerCase();
       return terms.every((t) => hay.includes(t));
     });
-    return {
+    // 즉시 공유 스테이징(§23)도 검색 대상 — unverified 표시
+    let staged = [];
+    try {
+      const sIdx = await stagingIndex(env);
+      staged = sIdx.parts.filter((p) =>
+        terms.every((tk) => `${p.id} ${p.name} ${p.category}`.toLowerCase().includes(tk))
+      ).map((p) => ({ id: p.id, name: p.name, status: "staging (unverified)",
+                      symbol: `https://assets.partreel.com/staging/${p.id}/${p.id}.kicad_sym`,
+                      footprint: `https://assets.partreel.com/staging/${p.id}/${p.id}.kicad_mod` }));
+    } catch (e) { /* staging 조회 실패는 검색을 막지 않는다 */ }
+    const out = {
       count: hits.length,
       parts: hits.slice(0, 25).map((p) => ({
         id: p.id, name: p.name, family: p.family, pins: p.pins,
@@ -355,6 +472,17 @@ async function toolCall(name, args, env) {
       hint: hits.length ? "Call get_part with an id for download URLs." :
         "No match. Try broader terms (e.g. 'jst', 'usb'), or list_parts.",
     };
+    if (staged.length) out.staged_parts = staged;
+    if (!hits.length && !staged.length) {
+      // 검색 실패 = 생성 유도 지점 (§23): 빈 배열만 주면 AI는 떠난다
+      out.build_it_yourself = {
+        message: "This part is not in the registry yet — you can build it and share it IMMEDIATELY.",
+        step1: "Call how_to_contribute for the file layout and quality rules.",
+        step2: "Build the .kicad_sym and .kicad_mod from the manufacturer datasheet (cite dimensions_source).",
+        step3: "Call submit_part — the part becomes searchable and downloadable the moment it is accepted (status 'staging'); hourly CI then verifies and promotes it.",
+      };
+    }
+    return out;
   }
   if (name === "get_part") {
     const id = String(args?.id ?? "").trim();

@@ -1,0 +1,126 @@
+# §23 즉시 공유 스테이징 → 정식 등록 승격 파이프라인.
+#
+# AI가 MCP submit_part로 올린 부품은 R2 staging/에서 **즉시 공유**된다.
+# 이 워크플로가 매시간 스테이징을 수집해 게이트(check_part 수준)를 돌리고,
+# 통과분마다 자동으로 PR을 연다 (검토·머지는 사람이 — "검토받고 올라간다"는
+# 비전 §1-0 유지). 머지되어 정식 등록된 id는 스테이징에서 정리한다.
+name: Promote staged parts
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Collect staged parts and run gates
+        id: collect
+        run: |
+          set -o pipefail
+          mkdir -p /tmp/staged
+          curl -sf "https://assets.partreel.com/staging/index.json" -o /tmp/staged/index.json || {
+            echo "no staging index — nothing to do"; echo "count=0" >> "$GITHUB_OUTPUT"; exit 0; }
+          python - <<'PY'
+          import json, os, subprocess, urllib.request
+
+          HOST = "https://assets.partreel.com"
+          idx = json.load(open("/tmp/staged/index.json"))
+          promoted, cleaned, failed = [], [], []
+          for p in idx.get("parts", []):
+              pid = p["id"]
+              if not __import__("re").fullmatch(r"[a-z][a-z0-9_]{2,63}", pid):
+                  continue
+              # 이미 정식 등록됐으면 스테이징 정리 대상
+              hits = subprocess.run(["git", "ls-files", f"library/*/*/{pid}/meta.json"],
+                                    capture_output=True, text=True).stdout.strip()
+              if hits:
+                  cleaned.append(pid)
+                  continue
+              cat = p.get("category", "etc")
+              cat = cat if __import__("re").fullmatch(r"[a-z][a-z0-9_]{1,30}", cat or "") else "etc"
+              d = f"library/{cat}/community/{pid}"
+              os.makedirs(d, exist_ok=True)
+              try:
+                  for fn in (f"{pid}.kicad_sym", f"{pid}.kicad_mod", "meta.json"):
+                      urllib.request.urlretrieve(f"{HOST}/staging/{pid}/{fn}", f"{d}/{fn}")
+                  # 승격 시 formats 필수 필드 보강 (스테이징 meta는 최소형)
+                  m = json.load(open(f"{d}/meta.json"))
+                  m.setdefault("formats", ["kicad_mod", "kicad_sym"])
+                  m["origin"] = "community"
+                  m.pop("status", None)
+                  json.dump(m, open(f"{d}/meta.json", "w"), indent=1, ensure_ascii=False)
+                  r = subprocess.run(["python", "generators/check_part.py", d],
+                                     capture_output=True, text=True)
+                  if r.returncode == 0:
+                      promoted.append(pid)
+                  else:
+                      failed.append((pid, (r.stdout + r.stderr)[-400:]))
+                      subprocess.run(["git", "checkout", "--", d], capture_output=True)
+                      import shutil; shutil.rmtree(d, ignore_errors=True)
+              except Exception as e:
+                  failed.append((pid, str(e)[:200]))
+                  import shutil; shutil.rmtree(d, ignore_errors=True)
+          json.dump({"promoted": promoted, "cleaned": cleaned,
+                     "failed": [{"id": i, "reason": r} for i, r in failed]},
+                    open("/tmp/staged/result.json", "w"), indent=1)
+          print("promoted:", promoted, "| cleaned:", cleaned, "| failed:", [f[0] for f in failed])
+          PY
+          echo "count=$(python -c "import json;print(len(json.load(open('/tmp/staged/result.json'))['promoted']))")" >> "$GITHUB_OUTPUT"
+
+      - name: Open promotion PR
+        if: steps.collect.outputs.count != '0' && steps.collect.outputs.count != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -o pipefail
+          IDS=$(python -c "import json;print(' '.join(json.load(open('/tmp/staged/result.json'))['promoted']))")
+          BR="staging-promote-$(date -u +%Y%m%d%H%M)"
+          git config user.name "partreel-staging-bot"
+          git config user.email "actions@github.com"
+          git checkout -b "$BR"
+          git add library/
+          git commit -m "community: promote staged parts ($IDS)
+
+          Submitted via MCP submit_part (instant staging share, §23).
+          Passed check_part gates in CI; full gate suite runs on this PR."
+          git push origin "$BR"
+          gh pr create --title "Promote staged community parts: $IDS" \
+            --body "$(printf 'Auto-opened by staging-promote (§23).\n\nParts: %s\n\nSource: R2 staging/ (submitted via MCP submit_part). check_part passed for each; the PR gates run the full suite. Review and merge to make them verified.' "$IDS")" \
+            --base main --head "$BR"
+
+      - name: Clean staging entries already in registry
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.R2_WRANGLER_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: 59c582799b858f66a23af4561c26c696
+        run: |
+          set -o pipefail
+          [ -f /tmp/staged/result.json ] || exit 0
+          [ -z "$CLOUDFLARE_API_TOKEN" ] && { echo "no R2 secret, skip clean"; exit 0; }
+          CLEAN=$(python -c "import json;print(' '.join(json.load(open('/tmp/staged/result.json'))['cleaned']))")
+          [ -z "$CLEAN" ] && exit 0
+          npm -g install wrangler >/dev/null 2>&1
+          for pid in $CLEAN; do
+            for fn in "$pid.kicad_sym" "$pid.kicad_mod" "meta.json"; do
+              wrangler r2 object delete "partreel-assets/staging/$pid/$fn" --remote || true
+            done
+          done
+          # index.json 재작성 (정리된 항목 제외)
+          curl -sf "https://assets.partreel.com/staging/index.json" -o /tmp/staged/index.json || exit 0
+          python - <<'PY'
+          import json
+          clean = set(json.load(open("/tmp/staged/result.json"))["cleaned"])
+          idx = json.load(open("/tmp/staged/index.json"))
+          idx["parts"] = [p for p in idx.get("parts", []) if p["id"] not in clean]
+          json.dump(idx, open("/tmp/staged/index.json", "w"), indent=1)
+          PY
+          wrangler r2 object put "partreel-assets/staging/index.json" --file /tmp/staged/index.json --remote || true

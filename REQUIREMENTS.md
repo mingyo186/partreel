@@ -477,3 +477,36 @@ KiCad 내장 **플러그인·콘텐츠 매니저** 저장소를 우리가 직접
 - [x] 라이선스 (2026-06-20): **코드=MIT, 부품 자산=CC-BY-4.0**. (층별 분리: 소프트웨어 MIT / CAD 자산 CC-BY)
 - [ ] 심볼 핀리스트 자동 추출 방법 (데이터시트 비전LLM vs 수동, 2단계 이슈)
 - [ ] 수요신호 체계적 채굴(InstaPart 목록/포럼 스크랩)은 미실시 — 방향성 신호만 확보
+
+
+## §23. 생성 루프 완결: 즉시 공유 스테이징 (2026-08-02 사용자 결정)
+
+**결정**: "지들이 만든 부품도 파트릴로 올라가야 진짜 의미가 있다. 올라간 부품이
+바로 공유가 되어야 한다. 지금은 PR이 머지되어야 공유된다" — 이 마찰을 없앤다.
+
+**구조 — 2단 티어**:
+1. **staging (즉시 공유, unverified)**: AI가 MCP `submit_part` 도구로 부품을
+   올리면 워커가 구조 검증 후 R2 `staging/<id>/`에 저장. **그 순간부터**
+   `search_parts` 결과에 `status:"staging"`으로 노출되고 다운로드 URL이
+   유효하다 (assets.partreel.com/staging/<id>/...).
+2. **registry (verified)**: 시간별 GitHub Action(staging-promote.yml)이
+   스테이징 부품을 수집해 전체 게이트(check_part 수준)를 돌리고, 통과분은
+   자동으로 PR을 연다(Actions 기본 토큰 — 새 시크릿 불요). 머지되면 정식
+   등록·verified, 스테이징에서 제거. 게이트 실패분은 사유를 스테이징
+   메타에 기록해 제출자가 조회 가능.
+
+**검색 0건 = 생성 유도 지점**: `search_parts`/`/search`가 0건일 때 응답에
+생성·제출 안내(how_to_contribute + submit_part 사용법)를 구조화해 포함한다.
+빈 배열만 돌려주면 AI는 떠난다.
+
+**남용 방어** (워커에서 강제):
+- 텍스트 파일만: `<id>.kicad_sym` + `<id>.kicad_mod` + meta(JSON). 3D는 승격 후.
+- 크기 상한: sym/mod 각 512KB, meta 32KB. id는 `^[a-z][a-z0-9_]{2,63}$`.
+- 구조 검증: s-expr 괄호 균형 + 루트 토큰(kicad_symbol_lib/footprint) + 패드/핀 존재.
+- meta 필수: name, description, license(허용 목록), dimensions_source.
+- 정식 카탈로그와 id 충돌 시 거부. 같은 staging id 재제출은 덮어쓰기(갱신).
+- 스테이징 총량 상한 300 (초과 시 제출 거부 — 승격/정리로 비운다).
+- 표시 정직성: staging 부품은 모든 표면에서 unverified/staged 표기.
+
+**의도**: 부품이 없는 순간(검색 실패)이 곧 생성이 일어나는 순간이 되도록
+루프를 닫는다. 분산 생성 비전(§1-0)의 실행 형태.
