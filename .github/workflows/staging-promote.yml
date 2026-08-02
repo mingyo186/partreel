@@ -52,7 +52,10 @@ jobs:
               os.makedirs(d, exist_ok=True)
               try:
                   for fn in (f"{pid}.kicad_sym", f"{pid}.kicad_mod", "meta.json"):
-                      urllib.request.urlretrieve(f"{HOST}/staging/{pid}/{fn}", f"{d}/{fn}")
+                      req = urllib.request.Request(f"{HOST}/staging/{pid}/{fn}",
+                          headers={"User-Agent": "partreel-staging-promote"})
+                      with urllib.request.urlopen(req, timeout=60) as r:
+                          open(f"{d}/{fn}", "wb").write(r.read())
                   # 승격 시 formats 필수 필드 보강 (스테이징 meta는 최소형)
                   m = json.load(open(f"{d}/meta.json"))
                   m.setdefault("formats", ["kicad_mod", "kicad_sym"])
@@ -73,7 +76,9 @@ jobs:
           json.dump({"promoted": promoted, "cleaned": cleaned,
                      "failed": [{"id": i, "reason": r} for i, r in failed]},
                     open("/tmp/staged/result.json", "w"), indent=1)
-          print("promoted:", promoted, "| cleaned:", cleaned, "| failed:", [f[0] for f in failed])
+          print("promoted:", promoted, "| cleaned:", cleaned)
+          for pid, reason in failed:
+              print(f"FAILED {pid}: {reason}")
           PY
           echo "count=$(python -c "import json;print(len(json.load(open('/tmp/staged/result.json'))['promoted']))")" >> "$GITHUB_OUTPUT"
 
