@@ -187,6 +187,21 @@ def main():
                              f"(규격 {want}x{want})")
             print(f"플러그인 구조 OK: {p['identifier']}")
 
+    # 데이터시트 버튼이 코드 파일(.kicad_mod 등)을 열면 사용자에겐 '안 열림'과
+    # 같다 (2026-08-02 제보) — 번들 심볼의 Datasheet는 문서/부품페이지여야 한다
+    lib_pkg = next(p for p in pkgs["packages"] if p["type"] == "library")
+    with zipfile.ZipFile(io.BytesIO(zips[lib_pkg["identifier"]])) as z:
+        for nm in z.namelist():
+            if nm.endswith(".kicad_sym"):
+                txt = z.read(nm).decode("utf-8", "replace")
+                import re as _re
+                hits = _re.findall(
+                    r'\(property "Datasheet" "[^"]*\.(?:kicad_mod|kicad_sym|pretty)[^"]*"',
+                    txt)
+                if hits:
+                    fail(f"번들 {nm}: 소스 파일을 가리키는 Datasheet {len(hits)}건 "
+                         "— 부품 페이지 URL이어야 함")
+
     pkg = next(p for p in pkgs["packages"] if p["type"] == "library")
     v = pkg["versions"][0]
     zb = zips[pkg["identifier"]]

@@ -195,6 +195,13 @@ def install_part(part_id, project_dir, progress=None):
     if not blk:
         raise FetchError(f"{part_id} 심볼 블록을 찾지 못했습니다")
     blk = set_footprint(blk, f"{LIB_NICK}:{part_id}")
+    # 데이터시트가 소스 파일을 가리키면 부품 페이지로 (코드 파일이 열리는
+    # 것은 사용자에게 "안 열림"과 같다 — 2026-08-02 제보)
+    if re.search(r'\(property "Datasheet" "https?://(?:github|gitlab)\.com/'
+                 r'[^"]*\.(?:kicad_mod|kicad_sym|pretty)[^"]*"', blk):
+        blk = re.sub(r'(\(property "Datasheet" ")[^"]*(")',
+                     lambda m: m.group(1) + f"{SITE}/p/{part_id}/" + m.group(2),
+                     blk, count=1)
     sym_lib = os.path.join(project_dir, f"{LIB_NICK}.kicad_sym")
     if os.path.exists(sym_lib):
         cur = open(sym_lib, encoding="utf-8").read()

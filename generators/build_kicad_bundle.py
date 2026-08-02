@@ -116,9 +116,16 @@ def enrich(blk, pid, meta):
     # 표시 이름은 사람이 읽는 이름/MPN (수입 부품은 원본 Value가 내부 id라
     # 선택창에 슬러그가 그대로 보인다 — 2026-08-01 적발)
     blk = set_value(blk, meta.get("name") or meta.get("mpn_pattern") or pid)
+    # 수입품의 datasheet가 소스 라이브러리 파일(.kicad_mod 등)을 가리키면
+    # 데이터시트 버튼이 코드 파일을 연다 (2026-08-02 사용자 제보:
+    # "데이터시트 들어가지지도 않네"). 그런 경우 설명·출처·다운로드가 있는
+    # 부품 페이지로 연결한다 — 라벨 거짓말 금지 원칙의 KiCad판.
+    ds = str(meta.get("datasheet") or "")
+    if re.search(r"(github|gitlab)\.com/.*\.(kicad_mod|kicad_sym|pretty)", ds):
+        ds = f"https://partreel.com/p/{pid}/"
     props = [
         _prop("Footprint", f"PartReel:{pid}"),
-        _prop("Datasheet", meta.get("datasheet")),
+        _prop("Datasheet", ds),
         _prop("Description", clean_description(meta.get("description"))),
         _prop("ki_keywords", " ".join(meta.get("keywords") or [])),
         _prop("PartReel", f"https://partreel.com/p/{pid}/"),
