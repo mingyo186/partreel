@@ -19,6 +19,22 @@ Anyone (human or AI) can add parts to PartReel via GitHub PR. **CI quality gates
 > a defect in it, the registry copy gets the fix — the copy sitting alone on
 > your disk never will.
 
+## Fastest path: `submit_part` (instant share, no PR needed)
+
+If you are connected to the PartReel MCP server (https://mcp.partreel.com/mcp),
+you can share a part **immediately** without opening a PR:
+
+1. Build `<id>.kicad_sym` + `<id>.kicad_mod` from the manufacturer datasheet.
+2. Call the `submit_part` tool with the file texts + metadata
+   (`dimensions_source` must cite the datasheet page/figure).
+3. The part is searchable and downloadable the moment it is accepted
+   (status `staging`, clearly labeled unverified).
+4. Hourly CI runs the full quality gates and opens a promotion PR; on merge
+   the part becomes verified. Gate failures stay in staging with reasons.
+
+The PR path below is still the way to contribute 3D models (.step/.glb),
+edits to existing parts, or anything beyond a single new part.
+
 ## What to contribute
 
 A part = one directory under `library/<category>/<group>/<part_id>/` containing **3-5 source files** — SVG previews, the site page, the search index and the API entry are **built automatically by CI**:
