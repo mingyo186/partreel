@@ -1,0 +1,422 @@
+(kicad_sch
+	(version 20250114)
+	(generator "partreel-block")
+	(generator_version "1.0")
+	(uuid "88c20499-12c4-55db-87e1-1878c60b6e75")
+	(paper "A4")
+	(title_block
+		(title "I2C pull-up (3.3V, 1.8k)")
+		(company "PartReel block")
+		(comment 1 "I2C bus pull-up pair for 3.3V rail. 1.8k suits Fast-mode (400kHz) with typical bus capacitance; Rp(min)=(VDD-VOL)/IOL=(3.3-0.4)/0.003=967R, Rp(max) set by bus cap per spec. | source: NXP UM10204 (I2C-")
+	)
+	(lib_symbols
+		(symbol "PartReel:R_1k8_0402"
+					(pin_numbers
+						(hide yes)
+					)
+					(pin_names
+						(hide yes)
+					)
+					(exclude_from_sim no)
+					(in_bom yes)
+					(on_board yes)
+					(in_pos_files yes)
+					(duplicate_pin_numbers_are_jumpers no)
+					(property "Reference" "R"
+						(at 20.32 -5.08 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Value" "R_1k8_0402"
+						(at 20.32 -12.7 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Footprint" "R_1k8_0402"
+						(at 20.32 -15.24 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Datasheet" "https://www.vishay.com/docs/28773/crcwce3.pdf"
+						(at 20.32 -17.78 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Description" "SMD Chip Resistor, 1k8, ± 1%, 0.063W, 0402, Thick Film"
+						(at 20.32 -30.48 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "MPN" "CRCW04021K80FKEDC"
+						(at 20.32 -20.32 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Manufacturer" "Vishay"
+						(at 20.32 -22.86 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "License" "Apache-2.0"
+						(at 20.32 -25.4 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Author" "Antmicro"
+						(at 20.32 -27.94 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Val" "1k8"
+						(at 20.32 -7.62 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Tolerance" "1%"
+						(at 20.32 -10.16 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+							(justify left bottom)
+						)
+					)
+					(symbol "R_1k8_0402_0_1"
+						(rectangle
+							(start 0.635 0.889)
+							(end 4.445 -0.889)
+							(stroke
+								(width 0.254)
+								(type default)
+							)
+							(fill
+								(type none)
+							)
+						)
+					)
+					(symbol "R_1k8_0402_1_1"
+						(pin passive line
+							(at 0 0 0)
+							(length 0.635)
+							(name ""
+								(effects
+									(font
+										(size 1.27 1.27)
+									)
+								)
+							)
+							(number "1"
+								(effects
+									(font
+										(size 1.27 1.27)
+									)
+								)
+							)
+						)
+						(pin passive line
+							(at 5.08 0 180)
+							(length 0.635)
+							(name ""
+								(effects
+									(font
+										(size 1.27 1.27)
+									)
+								)
+							)
+							(number "2"
+								(effects
+									(font
+										(size 1.27 1.27)
+									)
+								)
+							)
+						)
+					)
+					(embedded_fonts no)
+				)
+	)
+	(wire
+		(pts
+			(xy 63.5 63.5) (xy 63.5 38.1)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "35817886-d9b0-5122-b4be-7c2b09e58810")
+	)
+	(wire
+		(pts
+			(xy 101.6 63.5) (xy 101.6 38.1)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "68875046-1778-50fd-9de4-cdb7b3639249")
+	)
+	(wire
+		(pts
+			(xy 63.5 38.1) (xy 101.6 38.1)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "21f7d0a8-4822-5f26-93e7-d9a5cc8930bb")
+	)
+	(hierarchical_label "+3V3"
+		(shape input)
+		(at 63.5 38.1 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "ce83fbf3-7463-51dd-ada2-4deccaf7696f")
+	)
+	(hierarchical_label "SCL"
+		(shape bidirectional)
+		(at 106.68 63.5 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "ded76acb-fab6-55ee-83a2-3337f06d0b1d")
+	)
+	(hierarchical_label "SDA"
+		(shape bidirectional)
+		(at 68.58 63.5 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "12d02924-e803-5fa1-be73-506de57fbc8f")
+	)
+
+	(symbol
+		(lib_id "PartReel:R_1k8_0402")
+		(at 63.5 63.5 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a412af7d-6743-50ec-8cec-866fb3f11f3d")
+		(property "Reference" "R1"
+			(at 63.5 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1.8k"
+			(at 63.5 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "PCM_PartReel:antmicro_crcw04021k80fkedc"
+			(at 63.5 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://partreel.com/p/antmicro_crcw04021k80fkedc/"
+			(at 63.5 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PartReel" "antmicro_crcw04021k80fkedc"
+			(at 63.5 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "aa45af9b-29e5-5686-8957-155f0c95fe62")
+		)
+		(pin "2"
+			(uuid "59dbaf68-5f59-5157-87cb-9c129e70717a")
+		)
+		(instances
+			(project "i2c_pullup"
+				(path "/88c20499-12c4-55db-87e1-1878c60b6e75"
+					(reference "R1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PartReel:R_1k8_0402")
+		(at 101.6 63.5 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "49ba458c-9e71-5de9-9687-65dead4f8cfe")
+		(property "Reference" "R2"
+			(at 101.6 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1.8k"
+			(at 101.6 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "PCM_PartReel:antmicro_crcw04021k80fkedc"
+			(at 101.6 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://partreel.com/p/antmicro_crcw04021k80fkedc/"
+			(at 101.6 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PartReel" "antmicro_crcw04021k80fkedc"
+			(at 101.6 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d2ea21f4-14e4-549d-beab-6428bc64e1f3")
+		)
+		(pin "2"
+			(uuid "97a8aeca-d58e-59f3-8bc6-69a127c36ae2")
+		)
+		(instances
+			(project "i2c_pullup"
+				(path "/88c20499-12c4-55db-87e1-1878c60b6e75"
+					(reference "R2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)
