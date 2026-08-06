@@ -12,6 +12,14 @@ R2 파일은 git 이력이 없으므로 meta의 sha256이 "이 커밋이 보증�
   - 기본은 **R2에 아직 없는 파일만** 올린다 (HEAD로 존재 확인, 10스레드).
   - PART_SCOPE / PART_SCOPE_FILE 로 부품 범위를 좁힐 수 있다 (게이트와 동일 규약).
   - --force-all 을 주면 존재 확인 없이 전량 재업로드 (버킷 재구축용).
+  - env MISSING_OK=1: 로컬 부재 파일의 개별 "MISSING" 경고를 합계 1줄로 대체.
+    CI 전량 스캔용(§22 2026-08-05 사건) — 체크아웃엔 git 추적 step/glb만 있고
+    R2 전용 부품의 3D 부재는 정상이므로 1.4만 줄 경고는 소음.
+  - env SKIP_VERIFIED=1: check_r2 검증 스냅샷(docs/r2-verified.json)에 같은 해시로
+    기록된 에셋은 HEAD 존재확인을 생략. 스냅샷은 check_r2 PASS(전부 200 검증) 시에만
+    기록되므로 "미업로드인데 스냅샷에 있음"은 불가능 — 배포 취소로 누락된 에셋은
+    반드시 필터를 통과해 업로드된다. 전량 HEAD가 ~9분(2026-08-06 실측)이라
+    deploy.yml 매 배포용 프리필터. 수동 전량 대조는 이 env 없이 실행.
 """
 import hashlib
 import json
@@ -64,12 +72,16 @@ def upload(job):
 def main():
     upload_mode = "--upload" in sys.argv
     force_all = "--force-all" in sys.argv
+    missing_ok = os.environ.get("MISSING_OK", "") == "1"
+    skip_verified = os.environ.get("SKIP_VERIFIED", "") == "1"
+    missing_local = 0
     index = json.load(open(os.path.join(ROOT, "index.json"), encoding="utf-8"))
     parts = scoped_parts(index["parts"])
     if len(parts) != len(index["parts"]):
         print(f"scope: {len(parts)}/{len(index['parts'])} parts")
     hashed = 0
     jobs = []
+    digests = {}  # key_path -> sha256 (SKIP_VERIFIED 스냅샷 대조용)
     for p in parts:
         d = os.path.join(ROOT, p["path"])
         mpath = os.path.join(d, "meta.json")
@@ -81,7 +93,9 @@ def main():
                 continue
             fpath = os.path.join(d, fn)
             if not os.path.exists(fpath):
-                print(f"MISSING {p['id']}: {fn}")
+                missing_local += 1
+                if not missing_ok:
+                    print(f"MISSING {p['id']}: {fn}")
                 continue
             digest = sha256(fpath)
             if hashes.get(fn) != digest:
@@ -89,15 +103,30 @@ def main():
                 changed = True
             hashed += 1
             if upload_mode:
-                jobs.append((f"{p['path']}/{fn}".replace("\\", "/"), fpath))
+                key = f"{p['path']}/{fn}".replace("\\", "/")
+                jobs.append((key, fpath))
+                digests[key] = digest
         if changed:
             meta["asset_sha256"] = hashes
             json.dump(meta, open(mpath, "w", encoding="utf-8"),
                       indent=2, ensure_ascii=False)
+    if missing_ok and missing_local:
+        print(f"not in checkout (R2-only, ok): {missing_local} assets")
     print(f"hashed {hashed} assets")
 
     if not upload_mode:
         return
+    if skip_verified and not force_all:
+        try:
+            snap = json.load(open(os.path.join(ROOT, "docs", "r2-verified.json"),
+                                  encoding="utf-8"))
+        except Exception:
+            snap = {}
+        before = len(jobs)
+        jobs = [j for j in jobs
+                if snap.get(f"{ASSET_HOST}/{j[0]}") != digests.get(j[0])]
+        print(f"verified-skip: {before - len(jobs)}/{before} already verified "
+              f"(docs/r2-verified.json)")
     if not force_all:
         print(f"checking R2 for {len(jobs)} assets...")
         with ThreadPoolExecutor(16) as ex:

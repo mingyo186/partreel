@@ -43,8 +43,12 @@ def main():
         snap = json.load(open(snap_path, encoding="utf-8"))
     except Exception:
         snap = {}
-    changed = [t for t in targets if snap.get(t[0]) != t[1]]
-    unchanged = [t for t in targets if snap.get(t[0]) == t[1]]
+    # 부재 센티널(2026-08-06): 해시 미기록(None) 에셋이 스냅샷 부재(None)와
+    # None==None으로 "변경 없음" 판정돼 표본 확률로만 검사되던 맹점 수정 —
+    # 스냅샷에 없는 에셋은 해시 기록 여부와 무관하게 전수 검사 대상.
+    _absent = object()
+    changed = [t for t in targets if snap.get(t[0], _absent) != t[1]]
+    unchanged = [t for t in targets if snap.get(t[0], _absent) == t[1]]
     rng0 = random.Random()
     sample = rng0.sample(unchanged, min(300, len(unchanged)))
     to_check = changed + sample
