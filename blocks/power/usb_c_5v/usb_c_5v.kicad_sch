@@ -1,0 +1,934 @@
+(kicad_sch
+	(version 20250114)
+	(generator "partreel-block")
+	(generator_version "1.0")
+	(uuid "1e7f6e26-aef5-5b5a-9b6b-7863eb96da55")
+	(paper "A4")
+	(title_block
+		(title "USB-C 5V power input (UFP sink)")
+		(company "PartReel block")
+		(comment 1 "USB Type-C receptacle wired as a 5V power sink: CC1/CC2 pulled down with Rd=5.1k (advertises UFP, enables VBUS from any source), VBUS to +5V rail, USB 2.0 D+/D- brought out on both A/B rows. SBU not u")
+	)
+	(lib_symbols
+		(symbol "PartReel:usb_c_16p" (in_bom yes) (on_board yes)
+		    (property "Reference" "J" (at 0 13.43 0) (effects (font (size 1.27 1.27))))
+		    (property "Value" "usb_c_16p" (at 0 -13.43 0) (effects (font (size 1.27 1.27))))
+		    (property "Footprint" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+		    (property "Datasheet" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+		    (symbol "usb_c_16p_1_1"
+		      (rectangle (start -6.35 11.43) (end 6.35 -11.43)
+		        (stroke (width 0.254) (type solid)) (fill (type background)))
+		      (pin passive line (at -8.89 8.89 0) (length 2.54)
+		        (name "GND" (effects (font (size 1.27 1.27))))
+		        (number "A1" (effects (font (size 1.27 1.27)))))
+		      (pin passive line (at -8.89 6.35 0) (length 2.54)
+		        (name "VBUS" (effects (font (size 1.27 1.27))))
+		        (number "A4" (effects (font (size 1.27 1.27)))))
+		      (pin passive line (at -8.89 3.81 0) (length 2.54)
+		        (name "CC1" (effects (font (size 1.27 1.27))))
+		        (number "A5" (effects (font (size 1.27 1.27)))))
+		      (pin passive line (at -8.89 1.27 0) (length 2.54)
+		        (name "D+" (effects (font (size 1.27 1.27))))
+		        (number "A6" (effects (font (size 1.27 1.27)))))
+		      (pin passive line (at -8.89 -1.27 0) (length 2.54)
+		        (name "D-" (effects (font (size 1.27 1.27))))
+		        (number "A7" (effects (font (size 1.27 1.27)))))
+		      (pin passive line (at -8.89 -3.81 0) (length 2.54)
+		        (name "SBU1" (effects (font (size 1.27 1.27))))
+		        (number "A8" (effects (font (size 1.27 1.27)))))
+		      (pin passive line (at -8.89 -6.35 0) (length 2.54)
+		        (name "VBUS" (effects (font (size 1.27 1.27))))
+		        (number "A9" (effects (font (size 1.27 1.27)))))
+		      (pin passive line (at -8.89 -8.89 0) (length 2.54)
+		        (name "GND" (effects (font (size 1.27 1.27))))
+		        (number "A12" (effects (font (size 1.27 1.27)))))
+		      (pin passive line (at 8.89 8.89 180) (length 2.54)
+		        (name "GND" (effects (font (size 1.27 1.27))))
+		        (number "B1" (effects (font (size 1.27 1.27)))))
+		      (pin passive line (at 8.89 6.35 180) (length 2.54)
+		        (name "VBUS" (effects (font (size 1.27 1.27))))
+		        (number "B4" (effects (font (size 1.27 1.27)))))
+		      (pin passive line (at 8.89 3.81 180) (length 2.54)
+		        (name "CC2" (effects (font (size 1.27 1.27))))
+		        (number "B5" (effects (font (size 1.27 1.27)))))
+		      (pin passive line (at 8.89 1.27 180) (length 2.54)
+		        (name "D+" (effects (font (size 1.27 1.27))))
+		        (number "B6" (effects (font (size 1.27 1.27)))))
+		      (pin passive line (at 8.89 -1.27 180) (length 2.54)
+		        (name "D-" (effects (font (size 1.27 1.27))))
+		        (number "B7" (effects (font (size 1.27 1.27)))))
+		      (pin passive line (at 8.89 -3.81 180) (length 2.54)
+		        (name "SBU2" (effects (font (size 1.27 1.27))))
+		        (number "B8" (effects (font (size 1.27 1.27)))))
+		      (pin passive line (at 8.89 -6.35 180) (length 2.54)
+		        (name "VBUS" (effects (font (size 1.27 1.27))))
+		        (number "B9" (effects (font (size 1.27 1.27)))))
+		      (pin passive line (at 8.89 -8.89 180) (length 2.54)
+		        (name "GND" (effects (font (size 1.27 1.27))))
+		        (number "B12" (effects (font (size 1.27 1.27)))))
+		      (pin passive line (at 0 -13.97 90) (length 2.54)
+		        (name "Shield" (effects (font (size 1.27 1.27))))
+		        (number "S1" (effects (font (size 1.27 1.27)))))
+		    )
+		  )
+		(symbol "PartReel:vishay_crcw04025k10fked" (pin_numbers hide) (pin_names (offset 0) hide) (in_bom yes) (on_board yes)
+		    (property "Reference" "R" (at 0 2.54 0) (effects (font (size 1.27 1.27))))
+		    (property "Value" "5.1k" (at 0 -2.54 0) (effects (font (size 1.27 1.27))))
+		    (symbol "vishay_crcw04025k10fked_1_1"
+		      (rectangle (start -2.54 1.016) (end 2.54 -1.016)
+		        (stroke (width 0.254) (type solid)) (fill (type none)))
+		      (pin passive line (at -3.81 0 0) (length 1.27)
+		        (name "~" (effects (font (size 1.27 1.27))))
+		        (number "1" (effects (font (size 1.27 1.27)))))
+		      (pin passive line (at 3.81 0 180) (length 1.27)
+		        (name "~" (effects (font (size 1.27 1.27))))
+		        (number "2" (effects (font (size 1.27 1.27)))))
+		    ))
+		(symbol "PartReelPwr:PR_P5V" (power) (pin_names (offset 0)) (in_bom no) (on_board yes)
+		  (property "Reference" "#PWR" (at 0 1.27 0) (effects (font (size 1.27 1.27)) (hide yes)))
+		  (property "Value" "+5V" (at 0 3.81 0) (effects (font (size 1.27 1.27))))
+		  (symbol "PR_P5V_1_1"
+		    (polyline (pts (xy 0 0) (xy 0 1.27)) (stroke (width 0.254) (type solid)) (fill (type none)))
+		    (polyline (pts (xy -0.762 1.27) (xy 0 2.54)) (stroke (width 0.254) (type solid)) (fill (type none)))
+		    (polyline (pts (xy 0 2.54) (xy 0.762 1.27)) (stroke (width 0.254) (type solid)) (fill (type none)))
+		    (polyline (pts (xy -0.762 1.27) (xy 0.762 1.27)) (stroke (width 0.254) (type solid)) (fill (type none)))
+		    (pin power_in line (at 0 0 270) (length 0) hide (name "+5V" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))
+		  ))
+		(symbol "PartReelPwr:PR_FLAG" (power) (pin_names (offset 0)) (in_bom no) (on_board yes)
+		  (property "Reference" "#PWR" (at 0 1.27 0) (effects (font (size 1.27 1.27)) (hide yes)))
+		  (property "Value" "FLAG" (at 0 3.81 0) (effects (font (size 1.27 1.27))))
+		  (symbol "PR_FLAG_1_1"
+		    (polyline (pts (xy 0 0) (xy 0 1.27)) (stroke (width 0.254) (type solid)) (fill (type none)))
+		    (polyline (pts (xy 0 1.27) (xy 1.524 1.905)) (stroke (width 0.254) (type solid)) (fill (type none)))
+		    (polyline (pts (xy 1.524 1.905) (xy 0 2.54)) (stroke (width 0.254) (type solid)) (fill (type none)))
+		    (polyline (pts (xy 0 2.54) (xy 0 1.27)) (stroke (width 0.254) (type solid)) (fill (type none)))
+		    (pin power_out line (at 0 0 270) (length 0) hide (name "flag" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))
+		  ))
+		(symbol "PartReelPwr:PR_GND" (power) (pin_names (offset 0)) (in_bom no) (on_board yes)
+		  (property "Reference" "#PWR" (at 0 -6.985 0) (effects (font (size 1.27 1.27)) (hide yes)))
+		  (property "Value" "GND" (at 0 -4.445 0) (effects (font (size 1.27 1.27))))
+		  (symbol "PR_GND_1_1"
+		    (polyline (pts (xy 0 0) (xy 0 -1.27)) (stroke (width 0.254) (type solid)) (fill (type none)))
+		    (polyline (pts (xy -1.27 -1.27) (xy 1.27 -1.27)) (stroke (width 0.254) (type solid)) (fill (type none)))
+		    (polyline (pts (xy -0.762 -1.778) (xy 0.762 -1.778)) (stroke (width 0.254) (type solid)) (fill (type none)))
+		    (polyline (pts (xy -0.254 -2.286) (xy 0.254 -2.286)) (stroke (width 0.254) (type solid)) (fill (type none)))
+		    (pin power_in line (at 0 0 270) (length 0) hide (name "GND" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))
+		  ))
+	)
+	(wire
+		(pts
+			(xy 46.99 48.26) (xy 80.01 48.26)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "e288cc26-e1dd-5dcb-aad9-85fa656635c6")
+	)
+	(wire
+		(pts
+			(xy 46.99 48.26) (xy 46.99 69.85)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "b4789cb6-11f4-58f3-b19b-29bda55c2042")
+	)
+	(wire
+		(pts
+			(xy 46.99 57.15) (xy 54.61 57.15)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "f0f4ed1d-833e-531a-a364-dcb6677a89be")
+	)
+	(wire
+		(pts
+			(xy 46.99 69.85) (xy 54.61 69.85)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "90945119-9092-528a-9247-2cea136cda45")
+	)
+	(wire
+		(pts
+			(xy 80.01 48.26) (xy 80.01 69.85)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "e0e4ee43-39a2-5b6d-a722-7c3193e59273")
+	)
+	(wire
+		(pts
+			(xy 72.39 57.15) (xy 80.01 57.15)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "0c781247-945f-5898-91ef-9a5e9cfe65e5")
+	)
+	(wire
+		(pts
+			(xy 72.39 69.85) (xy 80.01 69.85)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "bf95da77-9c6c-510a-aaa7-183f80691179")
+	)
+	(wire
+		(pts
+			(xy 43.18 54.61) (xy 54.61 54.61)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "da7eb11f-2e0b-5f67-93c3-5675606c8151")
+	)
+	(wire
+		(pts
+			(xy 43.18 54.61) (xy 43.18 80.01)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "8a425031-c461-5e87-a289-1f65ae8be353")
+	)
+	(wire
+		(pts
+			(xy 43.18 72.39) (xy 54.61 72.39)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "87a1b493-c9ca-5205-9ca0-70ba28137d74")
+	)
+	(wire
+		(pts
+			(xy 72.39 54.61) (xy 82.55 54.61)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "50f9315b-fb06-5419-a985-5aee30b33179")
+	)
+	(wire
+		(pts
+			(xy 82.55 54.61) (xy 82.55 80.01)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "dc553b1c-d760-5f01-adfc-9ace91388fec")
+	)
+	(wire
+		(pts
+			(xy 72.39 72.39) (xy 82.55 72.39)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "d628142d-5773-5411-b6da-f82b07a0f130")
+	)
+	(wire
+		(pts
+			(xy 43.18 80.01) (xy 87.63 80.01)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "5b6ba396-1f6d-52b9-8c08-d4f714adae14")
+	)
+	(wire
+		(pts
+			(xy 63.5 77.47) (xy 63.5 80.01)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "528333d3-eec7-5cf9-bcea-e340e98ea99c")
+	)
+	(wire
+		(pts
+			(xy 48.26 59.69) (xy 54.61 59.69)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "1d2238a3-d915-55f0-b0c1-729be7da9ee9")
+	)
+	(wire
+		(pts
+			(xy 48.26 59.69) (xy 48.26 64.77)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "0c2817ee-bec0-5171-8a3f-447e28eb3417")
+	)
+	(wire
+		(pts
+			(xy 72.39 59.69) (xy 87.63 59.69)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "1805890f-5b2a-5244-a92b-36038d42eff9")
+	)
+	(wire
+		(pts
+			(xy 87.63 59.69) (xy 87.63 67.31)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "0642cb6b-34ae-56a6-a906-bcf8472e8ee1")
+	)
+	(wire
+		(pts
+			(xy 87.63 74.93) (xy 87.63 80.01)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "efda397f-fc64-5f51-bcf9-b00bcbe811d8")
+	)
+	(wire
+		(pts
+			(xy 52.07 62.23) (xy 54.61 62.23)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "beb63d08-6ae4-552f-9eb0-2e48e48e9224")
+	)
+	(wire
+		(pts
+			(xy 52.07 62.23) (xy 52.07 50.8)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "42ead7dd-2199-5e11-8ea6-5125df722377")
+	)
+	(wire
+		(pts
+			(xy 52.07 50.8) (xy 93.98 50.8)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "5d7eba6f-03b3-5435-ad64-121eef5731bd")
+	)
+	(wire
+		(pts
+			(xy 93.98 50.8) (xy 93.98 62.23)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "9f36d846-b207-573c-90d0-4fc97609c92f")
+	)
+	(wire
+		(pts
+			(xy 72.39 62.23) (xy 99.06 62.23)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "b9067f36-91e8-537e-a33b-b6cdeeadb0ee")
+	)
+	(wire
+		(pts
+			(xy 53.34 64.77) (xy 54.61 64.77)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "f9cb7d51-1806-5845-81a9-d84ec87a9e92")
+	)
+	(wire
+		(pts
+			(xy 53.34 64.77) (xy 53.34 52.07)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "d3a8acee-c989-5338-814c-d5300b2d5500")
+	)
+	(wire
+		(pts
+			(xy 53.34 52.07) (xy 92.71 52.07)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "f98911e9-c296-5e51-a13c-8914ca9cea13")
+	)
+	(wire
+		(pts
+			(xy 92.71 52.07) (xy 92.71 64.77)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "2242ec8b-9489-5ef2-9168-eb29450f12e3")
+	)
+	(wire
+		(pts
+			(xy 72.39 64.77) (xy 99.06 64.77)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "20ef8976-ef05-5d0e-9e29-043abedafebe")
+	)
+	(junction
+		(at 82.55 72.39)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a2218fa7-53a4-5e20-bc79-a9ee2081b8af")
+	)
+	(junction
+		(at 92.71 64.77)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6dba2249-ab9d-5848-be06-8083d9b652bf")
+	)
+	(junction
+		(at 43.18 72.39)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "378e1f0c-a2c6-563d-8c5d-8415843c924a")
+	)
+	(junction
+		(at 45.72 80.01)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b556b9ed-6fb9-58f9-904f-248e69aa6f50")
+	)
+	(junction
+		(at 93.98 62.23)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "fb81b91b-5a07-5991-a5ae-a0a7aac0317b")
+	)
+	(junction
+		(at 48.26 72.39)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "111be35b-ef81-507d-9054-47d00cfa9b36")
+	)
+	(junction
+		(at 76.2 48.26)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "68f14524-571d-5dd0-b3f1-fae84195e15d")
+	)
+	(junction
+		(at 63.5 48.26)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0f1431bc-c352-5a19-93a6-c75b506fce84")
+	)
+	(junction
+		(at 82.55 80.01)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "03186fd5-7ae1-5f9e-a6b6-d88882f69d02")
+	)
+	(junction
+		(at 80.01 57.15)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b6f4d2ba-5326-5d6b-925b-8f2f47392942")
+	)
+	(junction
+		(at 46.99 57.15)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4e0fa473-3eb2-582e-b5f3-818d69d51ddb")
+	)
+	(junction
+		(at 63.5 80.01)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c272b61d-08ca-5421-8eaa-0e59824a7f93")
+	)
+	(junction
+		(at 60.96 80.01)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "bd888ae6-76e4-5b14-aa01-85147ee76a09")
+	)
+	(hierarchical_label "USB_DP"
+		(shape bidirectional)
+		(at 99.06 62.23 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "51f3a2a3-590b-50fa-87d1-ef1c91585770")
+	)
+	(hierarchical_label "USB_DM"
+		(shape bidirectional)
+		(at 99.06 64.77 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "9b717a0d-9967-53a4-baaa-8c5a499e7b6b")
+	)
+	(no_connect
+		(at 54.61 67.31)
+		(uuid "a9b060df-f834-5ebb-a496-b6447d0db615")
+	)
+	(no_connect
+		(at 72.39 67.31)
+		(uuid "405cea41-1104-5f17-92c1-e0d81a073b74")
+	)
+	(symbol
+		(lib_id "PartReel:usb_c_16p")
+		(at 63.5 63.5 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "320d5006-145e-52ec-8fae-6773a5db16c8")
+		(property "Reference" "J1"
+			(at 63.5 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "USB Type-C Receptacle 16-pin (USB 2.0)"
+			(at 63.5 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "PCM_PartReel:usb_c_16p"
+			(at 63.5 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://partreel.com/p/usb_c_16p/"
+			(at 63.5 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PartReel" "usb_c_16p"
+			(at 63.5 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "A1"
+			(uuid "5bbb877a-69e3-502b-8390-f957aad77728")
+		)
+		(pin "A4"
+			(uuid "d114ae7f-e7f9-510c-afce-13a0d8f6b423")
+		)
+		(pin "A5"
+			(uuid "c0998a92-ae7c-54e4-b8bf-59c2d76c1182")
+		)
+		(pin "A6"
+			(uuid "d549e007-7f88-5387-9d46-ef65f5d9d8af")
+		)
+		(pin "A7"
+			(uuid "142890a0-3230-575e-bbb5-402cc5f0e037")
+		)
+		(pin "A8"
+			(uuid "f4a0a836-89b1-5250-82f8-b117e879f926")
+		)
+		(pin "A9"
+			(uuid "7dae3bc5-1f34-5285-8eb7-7a186fc67e2b")
+		)
+		(pin "A12"
+			(uuid "78cfb243-35eb-5f15-abe5-122ce7bda702")
+		)
+		(pin "B1"
+			(uuid "dc76830e-603a-54b7-a53c-1cc46bd30f58")
+		)
+		(pin "B4"
+			(uuid "f4ada502-13d9-5a75-b5fb-1f05f527575b")
+		)
+		(pin "B5"
+			(uuid "28301b91-3f47-5120-9877-dfcb458a43c8")
+		)
+		(pin "B6"
+			(uuid "80630140-2921-5d0e-9dd8-c4cd530864b4")
+		)
+		(pin "B7"
+			(uuid "297af493-482d-5117-abbd-e7c1edb7c357")
+		)
+		(pin "B8"
+			(uuid "2e77ce24-d4bb-527b-a8e4-683b0a249333")
+		)
+		(pin "B9"
+			(uuid "05a90048-5b26-512d-bb81-0ef182959d82")
+		)
+		(pin "B12"
+			(uuid "1bcc97fa-10cd-5a3b-b935-9a5c98dafc3f")
+		)
+		(pin "S1"
+			(uuid "ccb24541-ad13-5654-ba76-215ea0575157")
+		)
+		(instances
+			(project "usb_c_5v"
+				(path "/1e7f6e26-aef5-5b5a-9b6b-7863eb96da55"
+					(reference "J1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PartReel:vishay_crcw04025k10fked")
+		(at 48.26 68.58 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a9cae11f-225b-53e6-a1c6-b8e8a1b89fea")
+		(property "Reference" "R1"
+			(at 48.26 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "5.1k"
+			(at 48.26 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "PCM_PartReel:vishay_crcw04025k10fked"
+			(at 48.26 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://partreel.com/p/vishay_crcw04025k10fked/"
+			(at 48.26 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PartReel" "vishay_crcw04025k10fked"
+			(at 48.26 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9ffd3233-3396-5cb5-93e1-8be4da1ab6e2")
+		)
+		(pin "2"
+			(uuid "69a4146f-d5a2-58e1-8471-1889630b5f39")
+		)
+		(instances
+			(project "usb_c_5v"
+				(path "/1e7f6e26-aef5-5b5a-9b6b-7863eb96da55"
+					(reference "R1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PartReel:vishay_crcw04025k10fked")
+		(at 87.63 71.12 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "386e0592-39b6-5e97-8861-5675e9ecd052")
+		(property "Reference" "R2"
+			(at 87.63 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "5.1k"
+			(at 87.63 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "PCM_PartReel:vishay_crcw04025k10fked"
+			(at 87.63 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://partreel.com/p/vishay_crcw04025k10fked/"
+			(at 87.63 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PartReel" "vishay_crcw04025k10fked"
+			(at 87.63 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "99a583a8-3ee4-5ff6-970d-cfda88523dcb")
+		)
+		(pin "2"
+			(uuid "a14a1bd2-77b1-5081-abb7-1639bfc984c6")
+		)
+		(instances
+			(project "usb_c_5v"
+				(path "/1e7f6e26-aef5-5b5a-9b6b-7863eb96da55"
+					(reference "R2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PartReelPwr:PR_P5V")
+		(at 63.5 48.26 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "f55e3a84-e322-538c-ad11-09a946369fc9")
+		(property "Reference" "#PWR01"
+			(at 63.5 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 63.5 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "57695964-e86b-56f7-ac27-f037a5b7c2c5")
+		)
+		(instances
+			(project "usb_c_5v"
+				(path "/1e7f6e26-aef5-5b5a-9b6b-7863eb96da55"
+					(reference "#PWR01")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PartReelPwr:PR_FLAG")
+		(at 76.2 48.26 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "ab660091-720a-5b86-af86-de6c24214346")
+		(property "Reference" "#FLG02"
+			(at 76.2 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 76.2 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d0803bec-2efb-5c0e-8897-4e30ed744ea5")
+		)
+		(instances
+			(project "usb_c_5v"
+				(path "/1e7f6e26-aef5-5b5a-9b6b-7863eb96da55"
+					(reference "#FLG02")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PartReelPwr:PR_GND")
+		(at 60.96 80.01 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "68b12f5c-68e3-5c6f-9df5-317c3390a09f")
+		(property "Reference" "#PWR03"
+			(at 60.96 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 60.96 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "103d0bdb-bac5-5376-838a-997beef95ec3")
+		)
+		(instances
+			(project "usb_c_5v"
+				(path "/1e7f6e26-aef5-5b5a-9b6b-7863eb96da55"
+					(reference "#PWR03")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PartReelPwr:PR_FLAG")
+		(at 45.72 80.01 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "269d7fe4-e98a-5dcc-b223-4b1499d2f0e4")
+		(property "Reference" "#FLG04"
+			(at 45.72 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 45.72 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ec08a012-25ff-55a4-88e4-a3aa84727e5e")
+		)
+		(instances
+			(project "usb_c_5v"
+				(path "/1e7f6e26-aef5-5b5a-9b6b-7863eb96da55"
+					(reference "#FLG04")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)

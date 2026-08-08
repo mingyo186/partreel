@@ -112,6 +112,15 @@ def build(block_dir):
 
     lib_entries, inst_blocks, labels, noconnects = {}, [], [], []
     pin_pos, wires = {}, []
+    layout = b.get("layout") or {}
+    lay_parts = layout.get("parts") or {}
+
+    def rot_xy(px, py, rot):
+        """심볼 좌표(Y위) -> 인스턴스 회전(CCW) 후 회로도 오프셋(Y아래)."""
+        c, s = {0: (1, 0), 90: (0, 1), 180: (-1, 0), 270: (0, -1)}[rot % 360]
+        rx, ry = px * c - py * s, px * s + py * c
+        return rx, -ry
+
     for i, part in enumerate(b["parts"]):
         ref, pid = part["ref"], part["part"]
         sym_name, sym_blk, pins, meta = load_symbol(pid)
@@ -119,14 +128,19 @@ def build(block_dir):
             cached = sym_blk.replace(f'(symbol "{sym_name}"',
                                      f'(symbol "PartReel:{sym_name}"', 1)
             lib_entries[sym_name] = "\t\t" + cached.replace("\n", "\n\t\t")
-        X = GRID_X0 + (i % GRID_COLS) * GRID_DX
-        Y = GRID_Y0 + (i // GRID_COLS) * GRID_DY
+        lp = lay_parts.get(ref) or {}
+        rot = int(lp.get("rot", 0))
+        if "at" in lp:
+            X, Y = float(lp["at"][0]), float(lp["at"][1])
+        else:
+            X = GRID_X0 + (i % GRID_COLS) * GRID_DX
+            Y = GRID_Y0 + (i // GRID_COLS) * GRID_DY
         pin_uuid_lines = "\n".join(
             f'\t\t(pin "{n}"\n\t\t\t(uuid "{uid(bid, ref, "pin", n)}")\n\t\t)'
             for n, _, _ in pins)
         inst_blocks.append(f'''\t(symbol
 \t\t(lib_id "PartReel:{sym_name}")
-\t\t(at {X:g} {Y:g} 0)
+\t\t(at {X:g} {Y:g} {rot})
 \t\t(unit 1)
 \t\t(exclude_from_sim no)
 \t\t(in_bom yes)
@@ -150,7 +164,8 @@ def build(block_dir):
 \t)''')
         # 핀 절대좌표 기록 + 미접속 표시. (라벨/배선은 전체 배치 후 일괄)
         for num, px, py in pins:
-            ax, ay = X + px, Y - py
+            dx, dy = rot_xy(px, py, rot)
+            ax, ay = round(X + dx, 4), round(Y + dy, 4)
             key = f"{ref}.{num}"
             if key not in pin_net:
                 noconnects.append(
@@ -185,8 +200,97 @@ def build(block_dir):
                 f'\t\t\t(justify left bottom)\n\t\t)\n'
                 f'\t\t(uuid "{uid(bid, net, "llabel")}")\n\t)')
 
+    # === 명시 배치 모드 (§24 가독 규칙): layout이 있으면 자동 버스 대신
+    #     선언된 배선·라벨·전원 심볼을 그대로 그린다 ===
+    if layout:
+        import block_power
+        for pts in layout.get("wires", []):
+            for (x1, y1), (x2, y2) in zip(pts, pts[1:]):
+                w(x1, y1, x2, y2, f"{x1}_{y1}_{x2}_{y2}")
+        for lab in layout.get("labels", []):
+            net, (x, y) = lab["net"], lab["at"]
+            if lab.get("kind") == "local":
+                labels.append(llabel(net, x, y))
+            else:
+                labels.append(hlabel(net, x, y))
+        pwr_defs, pwr_insts = {}, []
+        for j, pw in enumerate(layout.get("power", [])):
+            kind, (x, y) = pw["symbol"], pw["at"]
+            if kind == "gnd":
+                name, text = "PR_GND", block_power.gnd_symbol()
+            elif kind == "flag":
+                name, text = "PR_FLAG", block_power.flag_symbol()
+            else:
+                name, text = block_power.rail_symbol(pw["net"])
+            pwr_defs.setdefault(name, "\t\t" + text.replace("\n", "\n\t\t"))
+            ref = f"#PWR{j + 1:02d}" if kind != "flag" else f"#FLG{j + 1:02d}"
+            pwr_insts.append(f'''\t(symbol
+\t\t(lib_id "PartReelPwr:{name}")
+\t\t(at {x:g} {y:g} 0)
+\t\t(unit 1)
+\t\t(exclude_from_sim no)
+\t\t(in_bom no)
+\t\t(on_board yes)
+\t\t(dnp no)
+\t\t(uuid "{uid(bid, "pwr", str(j))}")
+{prop("Reference", ref, x, y + 5.08, hide=True)}
+{prop("Value", pw.get("net", "flag"), x, y + 3.81, hide=True)}
+\t\t(pin "1"
+\t\t\t(uuid "{uid(bid, "pwrpin", str(j))}")
+\t\t)
+\t\t(instances
+\t\t\t(project "{bid}"
+\t\t\t\t(path "/{root_uuid}"
+\t\t\t\t\t(reference "{ref}")
+\t\t\t\t\t(unit 1)
+\t\t\t\t)
+\t\t\t)
+\t\t)
+\t)''')
+        for name, textdef in pwr_defs.items():
+            lib_entries[name] = textdef.replace(f'(symbol "{name}"',
+                                                f'(symbol "PartReelPwr:{name}"', 1)
+        inst_blocks.extend(pwr_insts)
+
+        # 자동 junction (커널 규칙, 2026-08-08 ERC로 확정): 배선 '끝점'끼리는
+        # 암묵 연결되지만, 끝점/핀/전원심볼이 다른 배선의 **중간**에 닿는
+        # T자 접합은 (junction) 요소가 있어야 전기적으로 연결된다 —
+        # 편집기가 자동으로 찍는 점이 파일 포맷에서는 필수 요소다.
+        segs = []
+        for pts in layout.get("wires", []):
+            for (x1, y1), (x2, y2) in zip(pts, pts[1:]):
+                segs.append((x1, y1, x2, y2))
+
+        def interior(px, py, seg):
+            x1, y1, x2, y2 = seg
+            if (px, py) in ((x1, y1), (x2, y2)):
+                return False
+            if x1 == x2 == px:
+                return min(y1, y2) < py < max(y1, y2)
+            if y1 == y2 == py:
+                return min(x1, x2) < px < max(x1, x2)
+            return False
+
+        touch_pts = set()
+        for x1, y1, x2, y2 in segs:
+            touch_pts.add((x1, y1)); touch_pts.add((x2, y2))
+        touch_pts.update(pin_pos.values())
+        for pw in layout.get("power", []):
+            touch_pts.add(tuple(pw["at"]))
+        junctions = []
+        seen_j = set()
+        for px, py in touch_pts:
+            if any(interior(px, py, s) for s in segs) and (px, py) not in seen_j:
+                seen_j.add((px, py))
+                junctions.append(
+                    f'\t(junction\n\t\t(at {px:g} {py:g})\n\t\t(diameter 0)\n'
+                    f'\t\t(color 0 0 0 0)\n\t\t(uuid "{uid(bid, "junc", f"{px}_{py}")}")\n\t)')
+        wires.extend(junctions)
+
     BUS_Y0 = GRID_Y0 - 25.4
     for k, (net, members) in enumerate(sorted(b["nets"].items())):
+        if layout:
+            break  # 명시 배치 모드에서는 자동 버스/라벨 생략
         pts = [pin_pos[m] for m in members if m in pin_pos]
         if len(pts) == 1:
             x, y = pts[0]
