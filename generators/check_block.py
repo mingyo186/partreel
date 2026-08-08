@@ -198,6 +198,29 @@ def check(block_dir):
             fail(f"{bid}: SVG 렌더 실패 — {(r.stdout + r.stderr)[-200:]}")
         else:
             shutil.copy(svgs[-1], os.path.join(block_dir, "preview.svg"))
+
+        # D. 가독 규칙 (rules/schematic-readability.md — 사용자 확정 2026-08-08)
+        layout = b.get("layout")
+        if layout:
+            import block_readability as BR
+            sys.path.insert(0, os.path.join(ROOT, "generators"))
+            import build_block as BB
+            for msg in BR.wire_wire_overlaps(layout):
+                fail(f"{bid}: R2 {msg}")
+            geo = []
+            for part in b["parts"]:
+                lp = (layout.get("parts") or {}).get(part["ref"]) or {}
+                if "at" not in lp:
+                    continue
+                _, blk, _, _ = BB.load_symbol(part["part"])
+                geo.append((part["ref"], lp["at"][0], lp["at"][1],
+                            int(lp.get("rot", 0)), BR._body_bbox(blk)))
+            for msg in BR.wire_body_hits(layout, geo):
+                fail(f"{bid}: R3 {msg}")
+            svg_text = open(os.path.join(block_dir, "preview.svg"),
+                            encoding="utf-8", errors="replace").read()
+            for msg in BR.text_overlaps(svg_text, layout):
+                fail(f"{bid}: {msg}")
     finally:
         shutil.rmtree(tmp, ignore_errors=True)
 

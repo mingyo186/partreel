@@ -147,8 +147,8 @@ def build(block_dir):
 \t\t(on_board yes)
 \t\t(dnp no)
 \t\t(uuid "{uid(bid, ref)}")
-{prop("Reference", ref, X, Y - 7.62)}
-{prop("Value", part.get("value") or meta.get("name") or pid, X, Y + 7.62)}
+{prop("Reference", ref, *(lp.get("ref_at") or [X, Y - 7.62]))}
+{prop("Value", part.get("value") or meta.get("name") or pid, *(lp.get("value_at") or [X, Y + 7.62]))}
 {prop("Footprint", f"{fp_lib}:{pid}", X, Y, hide=True)}
 {prop("Datasheet", f"https://partreel.com/p/{pid}/", X, Y, hide=True)}
 {prop("PartReel", pid, X, Y, hide=True)}
@@ -234,7 +234,8 @@ def build(block_dir):
 \t\t(dnp no)
 \t\t(uuid "{uid(bid, "pwr", str(j))}")
 {prop("Reference", ref, x, y + 5.08, hide=True)}
-{prop("Value", pw.get("net", "flag"), x, y + 3.81, hide=True)}
+{prop("Value", pw.get("net", "flag"), x,
+      y + 4.445 if kind == "gnd" else y - 3.81, hide=(kind == "flag"))}
 \t\t(pin "1"
 \t\t\t(uuid "{uid(bid, "pwrpin", str(j))}")
 \t\t)
