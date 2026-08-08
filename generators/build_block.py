@@ -172,10 +172,13 @@ def build(block_dir):
                                   (part.get("value") or "", lp.get("value_at") or lp["ref_at"])):
                 if not txt:
                     continue
+                # 색 고정: 자유 텍스트는 기본 테마에서 파란 '노트' 색이 되므로
+                # 부품 필드 관례색(진홍 #840000)으로 지정 (2026-08-09 지적)
                 labels.append(
                     f'\t(text "{txt}"\n\t\t(exclude_from_sim no)\n'
                     f"\t\t(at {tx:g} {ty:g} 0)\n"
-                    f"\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n"
+                    f"\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n"
+                    f"\t\t\t\t(color 132 0 0 1)\n\t\t\t)\n"
                     f"\t\t\t(justify left)\n\t\t)\n"
                     f'\t\t(uuid "{uid(bid, ref, "fx", txt)}")\n\t)')
 
