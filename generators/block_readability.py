@@ -206,3 +206,44 @@ def text_overlaps(svg_text, layout):
                 bad.append(f"R6 텍스트-배선 겹침: '{label}' @ "
                            f"배선 ({sx1:g},{sy1:g})-({sx2:g},{sy2:g})")
     return bad
+
+
+def shunt_symmetry(layout, parts_geo):
+    """R11: 수직 2핀 부품의 위/아래 배선 길이 차 ≤ 2.54 (상하 라인 중간 배치)."""
+    segs = _segments(layout)
+    bad = []
+    for ref, X, Y, rot, bb in parts_geo:
+        if rot % 180 != 90:
+            continue
+        vert = [s for s in segs if s[0] == s[2] == X]
+        ups = [s[3] - s[1] for s in vert if s[3] <= Y - 2.5]
+        downs = [s[3] - s[1] for s in vert if s[1] >= Y - 0.1]
+        if ups and downs and abs(ups[0] - downs[0]) > 2.54 + EPS:
+            bad.append(f"R11 {ref}: 위 배선 {ups[0]:g} vs 아래 {downs[0]:g} — 중간 배치 아님")
+    return bad
+
+
+def ref_value_row(b):
+    """R12: 회전(수직) 수동소자의 ref/value가 같은 줄(y)인가."""
+    bad = []
+    lay = (b.get("layout") or {}).get("parts") or {}
+    for part in b["parts"]:
+        lp = lay.get(part["ref"]) or {}
+        if lp.get("rot") in (90, 270) and "ref_at" in lp and "value_at" in lp:
+            if abs(lp["ref_at"][1] - lp["value_at"][1]) > EPS:
+                bad.append(f"R12 {part['ref']}: 참조기호와 값이 같은 줄이 아님")
+    return bad
+
+
+def gnd_rail_proximity(layout, parts_geo):
+    """R13: 최하단 수평 배선(레일)이 최하단 부품 몸체에서 ≤ 7.62."""
+    segs = [s for s in _segments(layout) if s[1] == s[3]]
+    boxes = [rot_corners(bb, X, Y, rot) for _, X, Y, rot, bb in parts_geo if bb]
+    if not segs or not boxes:
+        return []
+    rail_y = max(s[1] for s in segs)
+    body_bot = max(bx[3] for bx in boxes)
+    if rail_y - body_bot > 7.62 + EPS:
+        return [f"R13 GND 레일 y={rail_y:g}가 최하단 부품({body_bot:.1f})에서 "
+                f"{rail_y - body_bot:.1f}mm — 3그리드 초과"]
+    return []

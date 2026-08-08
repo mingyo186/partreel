@@ -321,49 +321,75 @@
 	)
 	(wire
 		(pts
-			(xy 52.07 59.69) (xy 52.07 72.39)
+			(xy 52.07 59.69) (xy 52.07 69.85)
 		)
 		(stroke
 			(width 0)
 			(type solid)
 		)
-		(uuid "42c1d75e-661e-5455-ad35-c4b06505e350")
+		(uuid "1b316404-d175-5959-b437-436569d1f968")
 	)
 	(wire
 		(pts
-			(xy 48.26 62.23) (xy 48.26 72.39)
+			(xy 48.26 57.15) (xy 48.26 60.96)
 		)
 		(stroke
 			(width 0)
 			(type solid)
 		)
-		(uuid "41213b8c-31bb-531e-975f-2e0f6cfc9cf3")
+		(uuid "78e0e0c1-90ce-5ccf-8932-f58d4c9d726b")
 	)
 	(wire
 		(pts
-			(xy 78.74 62.23) (xy 78.74 72.39)
+			(xy 48.26 66.04) (xy 48.26 69.85)
 		)
 		(stroke
 			(width 0)
 			(type solid)
 		)
-		(uuid "8462c797-b3aa-51e3-be33-09ef5cc2b20d")
+		(uuid "6f334e12-7f68-5d8e-aa53-baf7423ee1b9")
 	)
 	(wire
 		(pts
-			(xy 48.26 72.39) (xy 78.74 72.39)
+			(xy 78.74 57.15) (xy 78.74 60.96)
 		)
 		(stroke
 			(width 0)
 			(type solid)
 		)
-		(uuid "70546deb-5278-544b-9159-b8b7f7a9cc81")
+		(uuid "e786424f-edf2-5e52-a385-c368e7eab9b5")
+	)
+	(wire
+		(pts
+			(xy 78.74 66.04) (xy 78.74 69.85)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "c1a03b61-4acc-536d-a44b-8c05e3e34379")
+	)
+	(wire
+		(pts
+			(xy 48.26 69.85) (xy 78.74 69.85)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "c493eb0e-6eed-5b0a-ac95-5d207d5b7f0f")
 	)
 	(junction
-		(at 52.07 72.39)
+		(at 52.07 69.85)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "ac7b1a37-4223-526e-8dd3-2ae2b178668d")
+		(uuid "3e98bd6b-264e-5a14-92e7-34a4c54e0021")
+	)
+	(junction
+		(at 63.5 69.85)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e14707f4-e625-5b07-b566-e2cb4f4a24c3")
 	)
 	(junction
 		(at 48.26 57.15)
@@ -372,22 +398,16 @@
 		(uuid "eed47d62-599a-546e-80d8-1e64707046b8")
 	)
 	(junction
-		(at 63.5 72.39)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "4485f9b3-cebc-5a3f-a352-0e17034a191a")
-	)
-	(junction
 		(at 78.74 57.15)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "93c504b8-69bd-533d-8d89-4787bb7fc8ac")
 	)
 	(junction
-		(at 82.55 57.15)
+		(at 76.2 57.15)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "372f7c79-8190-5d30-b52b-6a816d5f6a56")
+		(uuid "abbd0638-c40a-5842-9e4a-68226cc49cdf")
 	)
 
 
@@ -463,7 +483,7 @@
 	)
 	(symbol
 		(lib_id "PartReel:C_10u_50V_X7R_1206")
-		(at 48.26 62.23 90)
+		(at 48.26 66.04 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -471,7 +491,7 @@
 		(dnp no)
 		(uuid "32bd9330-d04a-57eb-ae04-ac4ecc3c40df")
 		(property "Reference" "C1"
-			(at 43.18 60.96 0)
+			(at 40.64 66.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -479,7 +499,7 @@
 			)
 		)
 		(property "Value" "10µF"
-			(at 43.18 63.5 0)
+			(at 44.45 66.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -487,7 +507,7 @@
 			)
 		)
 		(property "Footprint" "PCM_PartReel:antmicro_c3216x7r1h106k160ae"
-			(at 48.26 62.23 0)
+			(at 48.26 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -496,7 +516,7 @@
 			)
 		)
 		(property "Datasheet" "https://partreel.com/p/antmicro_c3216x7r1h106k160ae/"
-			(at 48.26 62.23 0)
+			(at 48.26 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -505,7 +525,7 @@
 			)
 		)
 		(property "PartReel" "antmicro_c3216x7r1h106k160ae"
-			(at 48.26 62.23 0)
+			(at 48.26 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -530,7 +550,7 @@
 	)
 	(symbol
 		(lib_id "PartReel:C_10u_50V_X7R_1206")
-		(at 78.74 62.23 90)
+		(at 78.74 66.04 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -538,7 +558,7 @@
 		(dnp no)
 		(uuid "47fc14a0-783f-55f2-b3d5-75eff3b6311c")
 		(property "Reference" "C2"
-			(at 82.55 60.96 0)
+			(at 81.28 66.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -546,7 +566,7 @@
 			)
 		)
 		(property "Value" "10µF"
-			(at 82.55 63.5 0)
+			(at 85.09 66.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -554,7 +574,7 @@
 			)
 		)
 		(property "Footprint" "PCM_PartReel:antmicro_c3216x7r1h106k160ae"
-			(at 78.74 62.23 0)
+			(at 78.74 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -563,7 +583,7 @@
 			)
 		)
 		(property "Datasheet" "https://partreel.com/p/antmicro_c3216x7r1h106k160ae/"
-			(at 78.74 62.23 0)
+			(at 78.74 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -572,7 +592,7 @@
 			)
 		)
 		(property "PartReel" "antmicro_c3216x7r1h106k160ae"
-			(at 78.74 62.23 0)
+			(at 78.74 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -673,7 +693,7 @@
 	)
 	(symbol
 		(lib_id "PartReelPwr:PR_FLAG")
-		(at 82.55 57.15 0)
+		(at 76.2 57.15 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -681,7 +701,7 @@
 		(dnp no)
 		(uuid "3de6c668-348c-5dc4-9b12-77d6976615de")
 		(property "Reference" "#FLG03"
-			(at 82.55 62.23 0)
+			(at 76.2 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -690,7 +710,7 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 82.55 53.34 0)
+			(at 76.2 53.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -712,7 +732,7 @@
 	)
 	(symbol
 		(lib_id "PartReelPwr:PR_GND")
-		(at 63.5 72.39 0)
+		(at 63.5 69.85 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -720,7 +740,7 @@
 		(dnp no)
 		(uuid "dadfb4dc-7150-55ec-a012-74d94cad2a01")
 		(property "Reference" "#PWR04"
-			(at 63.5 77.47 0)
+			(at 63.5 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -729,7 +749,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 63.5 76.835 0)
+			(at 63.5 74.295 0)
 			(effects
 				(font
 					(size 1.27 1.27)
