@@ -86,11 +86,13 @@ def load_symbol(part_id):
     return name, blk, pins, part
 
 
-def prop(name, value, x, y, hide=False):
+def prop(name, value, x, y, hide=False, left=False):
     h = "\n\t\t\t\t(hide yes)" if hide else ""
+    # 왼쪽 정렬 (R12): 짝의 왼쪽 끝을 맞춰 긴 값이 삐져나오지 않게
+    j = "\n\t\t\t\t(justify left)" if left else ""
     return (f'\t\t(property "{name}" "{value}"\n'
             f"\t\t\t(at {x:g} {y:g} 0)\n"
-            f"\t\t\t(effects\n\t\t\t\t(font\n\t\t\t\t\t(size 1.27 1.27)\n\t\t\t\t){h}\n\t\t\t)\n\t\t)")
+            f"\t\t\t(effects\n\t\t\t\t(font\n\t\t\t\t\t(size 1.27 1.27)\n\t\t\t\t){j}{h}\n\t\t\t)\n\t\t)")
 
 
 def build(block_dir):
@@ -147,8 +149,8 @@ def build(block_dir):
 \t\t(on_board yes)
 \t\t(dnp no)
 \t\t(uuid "{uid(bid, ref)}")
-{prop("Reference", ref, *(lp.get("ref_at") or [X, Y - 7.62]))}
-{prop("Value", part.get("value") or meta.get("name") or pid, *(lp.get("value_at") or [X, Y + 7.62]))}
+{prop("Reference", ref, *(lp.get("ref_at") or [X, Y - 7.62]), hide=bool(lp.get("ref_at")))}
+{prop("Value", part.get("value") or meta.get("name") or pid, *(lp.get("value_at") or [X, Y + 7.62]), hide=bool(lp.get("value_at")))}
 {prop("Footprint", f"{fp_lib}:{pid}", X, Y, hide=True)}
 {prop("Datasheet", f"https://partreel.com/p/{pid}/", X, Y, hide=True)}
 {prop("PartReel", pid, X, Y, hide=True)}
@@ -162,6 +164,21 @@ def build(block_dir):
 \t\t\t)
 \t\t)
 \t)''')
+        # 표기(R12): 회전 심볼의 속성 텍스트는 커널이 정렬·위치를 재계산해
+        # 예측 불가 (2026-08-09 실측) — 속성은 숨기고 자유 텍스트로 그린다.
+        # 왼쪽 정렬 고정: 짝의 왼쪽 끝이 맞아 긴 값이 삐져나오지 않는다.
+        if lp.get("ref_at"):
+            for txt, (tx, ty) in ((ref, lp["ref_at"]),
+                                  (part.get("value") or "", lp.get("value_at") or lp["ref_at"])):
+                if not txt:
+                    continue
+                labels.append(
+                    f'\t(text "{txt}"\n\t\t(exclude_from_sim no)\n'
+                    f"\t\t(at {tx:g} {ty:g} 0)\n"
+                    f"\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n"
+                    f"\t\t\t(justify left)\n\t\t)\n"
+                    f'\t\t(uuid "{uid(bid, ref, "fx", txt)}")\n\t)')
+
         # 핀 절대좌표 기록 + 미접속 표시. (라벨/배선은 전체 배치 후 일괄)
         for num, px, py in pins:
             dx, dy = rot_xy(px, py, rot)

@@ -494,6 +494,72 @@
 		(color 0 0 0 0)
 		(uuid "d908342a-aa6b-5dff-8676-b70a8a4bbf0d")
 	)
+	(text "J1"
+		(exclude_from_sim no)
+		(at 53.34 49.02 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "0d3ab75c-b95d-5260-a6c3-7309d028c7d9")
+	)
+	(text "USB-C 16P"
+		(exclude_from_sim no)
+		(at 53.34 51.05 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "87ea3d19-5a30-5147-b70c-55d8ba5cad04")
+	)
+	(text "R1"
+		(exclude_from_sim no)
+		(at 27.94 70.49 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "41ded327-be35-5eb9-88f9-5596b39ebf2d")
+	)
+	(text "5.1kΩ"
+		(exclude_from_sim no)
+		(at 27.94 72.52 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "e613beb9-d175-5889-b1bf-e037e405e6cf")
+	)
+	(text "R2"
+		(exclude_from_sim no)
+		(at 88.67 70.49 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "dbab1b1d-b194-5de7-aaea-1ec0c417f0dc")
+	)
+	(text "5.1kΩ"
+		(exclude_from_sim no)
+		(at 88.67 72.52 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "436e7d5a-0a42-519a-b960-681f7e227338")
+	)
 	(hierarchical_label "USB_DP"
 		(shape bidirectional)
 		(at 96.52 62.23 0)
@@ -534,19 +600,21 @@
 		(dnp no)
 		(uuid "320d5006-145e-52ec-8fae-6773a5db16c8")
 		(property "Reference" "J1"
-			(at 63.5 49.02 0)
+			(at 53.34 49.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Value" "USB-C 16P"
-			(at 63.5 51.05 0)
+			(at 53.34 51.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "PCM_PartReel:usb_c_16p"
@@ -646,19 +714,21 @@
 		(dnp no)
 		(uuid "a9cae11f-225b-53e6-a1c6-b8e8a1b89fea")
 		(property "Reference" "R1"
-			(at 26.67 70.49 0)
+			(at 27.94 70.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Value" "5.1kΩ"
-			(at 26.67 72.52 0)
+			(at 27.94 72.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "PCM_PartReel:vishay_crcw04025k10fked"
@@ -713,19 +783,21 @@
 		(dnp no)
 		(uuid "386e0592-39b6-5e97-8861-5675e9ecd052")
 		(property "Reference" "R2"
-			(at 90.8 70.49 0)
+			(at 88.67 70.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Value" "5.1kΩ"
-			(at 90.8 72.52 0)
+			(at 88.67 72.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "PCM_PartReel:vishay_crcw04025k10fked"

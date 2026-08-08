@@ -409,7 +409,72 @@
 		(color 0 0 0 0)
 		(uuid "abbd0638-c40a-5842-9e4a-68226cc49cdf")
 	)
-
+	(text "U1"
+		(exclude_from_sim no)
+		(at 54.61 51.31 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "b8926b27-f964-59a5-be78-cf395ec2d5b6")
+	)
+	(text "HT7333 3.3V"
+		(exclude_from_sim no)
+		(at 54.61 53.34 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "9112d001-b5b8-59cf-a4c7-94cdb16b5fb8")
+	)
+	(text "C1"
+		(exclude_from_sim no)
+		(at 40.64 66.68 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "87a5546f-a289-566a-b35a-2541b7d3484c")
+	)
+	(text "10µF"
+		(exclude_from_sim no)
+		(at 40.64 68.71 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "bf4b921f-1366-5a28-aef9-f483e9f828d6")
+	)
+	(text "C2"
+		(exclude_from_sim no)
+		(at 81.53 66.68 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "0b3e5def-d947-53a6-9d06-67659ea0bc43")
+	)
+	(text "10µF"
+		(exclude_from_sim no)
+		(at 81.53 68.71 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "938aa5bd-04c6-5432-85b7-abc834a8b8f9")
+	)
 
 	(symbol
 		(lib_id "PartReel:ht7333")
@@ -421,19 +486,21 @@
 		(dnp no)
 		(uuid "84abc9fd-e7eb-55e1-b632-979dfb48f899")
 		(property "Reference" "U1"
-			(at 57.15 51.31 0)
+			(at 54.61 51.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Value" "HT7333 3.3V"
-			(at 57.15 53.34 0)
+			(at 54.61 53.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "PCM_PartReel:ht7333"
@@ -496,6 +563,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Value" "10µF"
@@ -504,6 +572,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "PCM_PartReel:antmicro_c3216x7r1h106k160ae"
@@ -558,19 +627,21 @@
 		(dnp no)
 		(uuid "47fc14a0-783f-55f2-b3d5-75eff3b6311c")
 		(property "Reference" "C2"
-			(at 82.3 66.68 0)
+			(at 81.53 66.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Value" "10µF"
-			(at 82.3 68.71 0)
+			(at 81.53 68.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "PCM_PartReel:antmicro_c3216x7r1h106k160ae"
