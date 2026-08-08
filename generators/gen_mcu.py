@@ -57,7 +57,9 @@ def build(xml_name, pid):
     span = (per - 1) * PITCH
     start = span / 2
     longest = max(len(nm) for nm, _ in pins.values())
-    body = max(span / 2 + 6.35, round((longest * 0.95 + 6.0) / 1.27) * 1.27)
+    # 몸체: 모서리에서 가로 긴이름 x 세로 긴이름 충돌을 피하는 하한 —
+    # G431 실측으로 확정한 계수 (13자 'PC14-OSC32_IN' 기준 22.86 필요)
+    body = max(span / 2 + 6.35, round((longest * 1.05 + 9.0) / 1.27) * 1.27)
     conn = body + PIN_LEN
 
     out = []
