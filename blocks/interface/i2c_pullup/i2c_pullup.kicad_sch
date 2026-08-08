@@ -3,11 +3,11 @@
 	(generator "partreel-block")
 	(generator_version "1.0")
 	(uuid "88c20499-12c4-55db-87e1-1878c60b6e75")
-	(paper "A4")
+	(paper "A5")
 	(title_block
 		(title "I2C pull-up (3.3V, 1.8k)")
 		(company "PartReel block")
-		(comment 1 "I2C bus pull-up pair for 3.3V rail. 1.8k suits Fast-mode (400kHz) with typical bus capacitance; Rp(min)=(VDD-VOL)/IOL=(3.3-0.4)/0.003=967R, Rp(max) set by bus cap per spec. | source: NXP UM10204 (I2C-")
+		(rev "A")
 	)
 	(lib_symbols
 		(symbol "PartReel:R_1k8_0402"

@@ -337,18 +337,49 @@ def build(block_dir):
     if ghost:
         raise SystemExit(f"FAIL: nets가 존재하지 않는 핀을 참조: {ghost}")
 
+    # 특성표 (R15): 긴 설명을 제목칸에 넣으면 시트 밖으로 삐져나온다 —
+    # 빈 공간의 표에 특성·리비전·근거를 적는다 (문법: 공식 데모에서 추출)
+    if b.get("specs") and layout.get("table_at"):
+        tx0, ty0 = layout["table_at"]
+        rows = [["Block", b["name"]], ["Rev", b.get("revision", "A")]]
+        rows += [[str(k), str(v)] for k, v in b["specs"]]
+        w1 = max(len(r[0]) for r in rows) * 1.1 + 2.5
+        w2 = max(len(r[1]) for r in rows) * 1.05 + 2.5
+        rh = 4.45
+        cells = []
+        for ri, (c1, c2) in enumerate(rows):
+            for ci, (cx, cw, txt) in enumerate(((tx0, w1, c1), (tx0 + w1, w2, c2))):
+                cells.append(
+                    f'\t\t\t(table_cell "{txt}"\n\t\t\t\t(exclude_from_sim no)\n'
+                    f"\t\t\t\t(at {cx:g} {ty0 + ri * rh:g} 0)\n"
+                    f"\t\t\t\t(size {cw:g} {rh:g})\n"
+                    f"\t\t\t\t(margins 0.9525 0.9525 0.9525 0.9525)\n"
+                    f"\t\t\t\t(span 1 1)\n\t\t\t\t(fill\n\t\t\t\t\t(type none)\n\t\t\t\t)\n"
+                    f"\t\t\t\t(effects\n\t\t\t\t\t(font\n\t\t\t\t\t\t(size 1.27 1.27)\n\t\t\t\t\t)\n"
+                    f"\t\t\t\t\t(justify left top)\n\t\t\t\t)\n"
+                    f'\t\t\t\t(uuid "{uid(bid, "tc", str(ri), str(ci))}")\n\t\t\t)')
+        labels.append(
+            "\t(table\n\t\t(column_count 2)\n"
+            "\t\t(border\n\t\t\t(external yes)\n\t\t\t(header yes)\n"
+            "\t\t\t(stroke\n\t\t\t\t(width 0)\n\t\t\t\t(type solid)\n\t\t\t)\n\t\t)\n"
+            "\t\t(separators\n\t\t\t(rows yes)\n\t\t\t(cols yes)\n"
+            "\t\t\t(stroke\n\t\t\t\t(width 0)\n\t\t\t\t(type solid)\n\t\t\t)\n\t\t)\n"
+            f"\t\t(column_widths {w1:g} {w2:g})\n"
+            f"\t\t(row_heights {' '.join(f'{rh:g}' for _ in rows)})\n"
+            "\t\t(cells\n" + "\n".join(cells) + "\n\t\t)\n\t)")
+
     title = b["name"].replace('"', "'")
-    doc = (f'{b["description"]} | source: {b["circuit_source"]}').replace('"', "'")
+    paper = b.get("paper", "A5")
     out = f'''(kicad_sch
 \t(version 20250114)
 \t(generator "partreel-block")
 \t(generator_version "1.0")
 \t(uuid "{root_uuid}")
-\t(paper "A4")
+\t(paper "{paper}")
 \t(title_block
 \t\t(title "{title}")
 \t\t(company "PartReel block")
-\t\t(comment 1 "{doc[:200]}")
+\t\t(rev "{b.get("revision", "A")}")
 \t)
 \t(lib_symbols
 {chr(10).join(lib_entries.values())}

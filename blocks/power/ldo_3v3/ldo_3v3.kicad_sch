@@ -3,11 +3,11 @@
 	(generator "partreel-block")
 	(generator_version "1.0")
 	(uuid "9c99d662-b61e-5ebd-9e13-1bae23c96d36")
-	(paper "A4")
+	(paper "A5")
 	(title_block
 		(title "3.3V LDO regulator (HT7333)")
 		(company "PartReel block")
-		(comment 1 "5V to 3.3V linear regulator. HT7333-A (250mA, SOT-89) with 10uF ceramic input and output capacitors per datasheet application circuit. +5V in, +3V3 out, both as global power rails. | source: Holtek HT")
+		(rev "A")
 	)
 	(lib_symbols
 		(symbol "PartReel:ht7333" (in_bom yes) (on_board yes)
@@ -480,6 +480,267 @@
 			(justify left)
 		)
 		(uuid "938aa5bd-04c6-5432-85b7-abc834a8b8f9")
+	)
+	(table
+		(column_count 2)
+		(border
+			(external yes)
+			(header yes)
+			(stroke
+				(width 0)
+				(type solid)
+			)
+		)
+		(separators
+			(rows yes)
+			(cols yes)
+			(stroke
+				(width 0)
+				(type solid)
+			)
+		)
+		(column_widths 11.3 30.85)
+		(row_heights 4.45 4.45 4.45 4.45 4.45 4.45 4.45)
+		(cells
+			(table_cell "Block"
+				(exclude_from_sim no)
+				(at 104.14 44.45 0)
+				(size 11.3 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "22d69f25-5d89-56d6-8dbf-77142816f65b")
+			)
+			(table_cell "3.3V LDO regulator (HT7333)"
+				(exclude_from_sim no)
+				(at 115.44 44.45 0)
+				(size 30.85 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "1fbd7d70-26fa-5c60-ab9b-238cd512e730")
+			)
+			(table_cell "Rev"
+				(exclude_from_sim no)
+				(at 104.14 48.9 0)
+				(size 11.3 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "f731f5ee-05ae-5311-990b-3dc4aaee81d5")
+			)
+			(table_cell "A"
+				(exclude_from_sim no)
+				(at 115.44 48.9 0)
+				(size 30.85 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "d7c2dc4e-7fb6-593e-8d97-3839c0e6dbac")
+			)
+			(table_cell "Input"
+				(exclude_from_sim no)
+				(at 104.14 53.35 0)
+				(size 11.3 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "95c83a62-6381-52c9-8fa2-fdc3939130f9")
+			)
+			(table_cell "+5V"
+				(exclude_from_sim no)
+				(at 115.44 53.35 0)
+				(size 30.85 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "6b3e6f21-4f82-5685-a8fb-77ffd097f167")
+			)
+			(table_cell "Output"
+				(exclude_from_sim no)
+				(at 104.14 57.8 0)
+				(size 11.3 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "13a4b90c-7410-54a8-baa0-726aee1c3b40")
+			)
+			(table_cell "+3V3 (300mV dropout)"
+				(exclude_from_sim no)
+				(at 115.44 57.8 0)
+				(size 30.85 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "1c901335-7102-50ed-bf86-4324e67a2def")
+			)
+			(table_cell "Current"
+				(exclude_from_sim no)
+				(at 104.14 62.25 0)
+				(size 11.3 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "6de6b618-d327-5312-bc60-cb64717f60a8")
+			)
+			(table_cell "250mA max"
+				(exclude_from_sim no)
+				(at 115.44 62.25 0)
+				(size 30.85 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "850deb61-a755-5af1-b418-a9ba564c9654")
+			)
+			(table_cell "Cin/Cout"
+				(exclude_from_sim no)
+				(at 104.14 66.7 0)
+				(size 11.3 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "0a843b32-c2a1-5c6e-acc6-bc58cb826c28")
+			)
+			(table_cell "10uF X7R 1206"
+				(exclude_from_sim no)
+				(at 115.44 66.7 0)
+				(size 30.85 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "ab67b78c-c54b-5537-8ab7-2545328bdfb7")
+			)
+			(table_cell "Source"
+				(exclude_from_sim no)
+				(at 104.14 71.15 0)
+				(size 11.3 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "f2951cb6-3d37-5441-ab09-22bdc2711e83")
+			)
+			(table_cell "Holtek HT73xx DS v1.80"
+				(exclude_from_sim no)
+				(at 115.44 71.15 0)
+				(size 30.85 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "134768aa-6ad8-55b0-9794-91fe0f92d87b")
+			)
+		)
 	)
 
 	(symbol

@@ -3,11 +3,11 @@
 	(generator "partreel-block")
 	(generator_version "1.0")
 	(uuid "1e7f6e26-aef5-5b5a-9b6b-7863eb96da55")
-	(paper "A4")
+	(paper "A5")
 	(title_block
 		(title "USB-C 5V power input (UFP sink)")
 		(company "PartReel block")
-		(comment 1 "USB Type-C receptacle wired as a 5V power sink: CC1/CC2 pulled down with Rd=5.1k (advertises UFP, enables VBUS from any source), VBUS to +5V rail, USB 2.0 D+/D- brought out on both A/B rows. SBU not u")
+		(rev "A")
 	)
 	(lib_symbols
 		(symbol "PartReel:usb_c_16p" (in_bom yes) (on_board yes)
@@ -587,6 +587,267 @@
 			(justify left)
 		)
 		(uuid "9b717a0d-9967-53a4-baaa-8c5a499e7b6b")
+	)
+	(table
+		(column_count 2)
+		(border
+			(external yes)
+			(header yes)
+			(stroke
+				(width 0)
+				(type solid)
+			)
+		)
+		(separators
+			(rows yes)
+			(cols yes)
+			(stroke
+				(width 0)
+				(type solid)
+			)
+		)
+		(column_widths 13.5 35.05)
+		(row_heights 4.45 4.45 4.45 4.45 4.45 4.45 4.45)
+		(cells
+			(table_cell "Block"
+				(exclude_from_sim no)
+				(at 104.14 66.04 0)
+				(size 13.5 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "03e5b0b6-6aaa-5a74-93b2-0d1804f05949")
+			)
+			(table_cell "USB-C 5V power input (UFP sink)"
+				(exclude_from_sim no)
+				(at 117.64 66.04 0)
+				(size 35.05 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "0a373ffd-764c-5e18-9766-14a5059deea0")
+			)
+			(table_cell "Rev"
+				(exclude_from_sim no)
+				(at 104.14 70.49 0)
+				(size 13.5 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "7ab32b68-cc2f-5c0f-a0cb-58de5bdaa48e")
+			)
+			(table_cell "A"
+				(exclude_from_sim no)
+				(at 117.64 70.49 0)
+				(size 35.05 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "d67c0f75-ad3e-5594-b697-b3b41276c74d")
+			)
+			(table_cell "Input"
+				(exclude_from_sim no)
+				(at 104.14 74.94 0)
+				(size 13.5 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "14c1f754-f65e-520c-87c8-22860ab61efb")
+			)
+			(table_cell "USB-C VBUS 5V"
+				(exclude_from_sim no)
+				(at 117.64 74.94 0)
+				(size 35.05 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "94ebccdd-48b3-57f5-a406-f8bd491d80fd")
+			)
+			(table_cell "Role"
+				(exclude_from_sim no)
+				(at 104.14 79.39 0)
+				(size 13.5 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "f0fd5c15-e611-5e7c-be01-4ed8e4834643")
+			)
+			(table_cell "UFP sink (Rd 5.1k)"
+				(exclude_from_sim no)
+				(at 117.64 79.39 0)
+				(size 35.05 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "0aa5714d-32ed-5c8a-968e-e8e70c3bc89e")
+			)
+			(table_cell "Data"
+				(exclude_from_sim no)
+				(at 104.14 83.84 0)
+				(size 13.5 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "36ab6a00-bd6c-5510-8629-e207fab82d7a")
+			)
+			(table_cell "USB 2.0 D+/D- pass-through"
+				(exclude_from_sim no)
+				(at 117.64 83.84 0)
+				(size 35.05 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "b65e182d-b452-5652-8871-c6682d7092b1")
+			)
+			(table_cell "TODO rev B"
+				(exclude_from_sim no)
+				(at 104.14 88.29 0)
+				(size 13.5 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "c6940e06-0082-51b9-8c5c-b129d1e61fe5")
+			)
+			(table_cell "ESD array + polyfuse"
+				(exclude_from_sim no)
+				(at 117.64 88.29 0)
+				(size 35.05 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "ae5c7ad2-72f0-57b3-ba64-be696213325f")
+			)
+			(table_cell "Source"
+				(exclude_from_sim no)
+				(at 104.14 92.74 0)
+				(size 13.5 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "39afa339-a60e-55aa-bdcd-e4a57471bf42")
+			)
+			(table_cell "USB Type-C spec R2.2 4.5.1.2.3"
+				(exclude_from_sim no)
+				(at 117.64 92.74 0)
+				(size 35.05 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "38accd6b-8b12-5049-b5b6-ecd4fe9c6ff2")
+			)
+		)
 	)
 	(no_connect
 		(at 48.26 67.31)
