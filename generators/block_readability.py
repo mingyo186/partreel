@@ -229,9 +229,12 @@ def ref_value_row(b):
     lay = (b.get("layout") or {}).get("parts") or {}
     for part in b["parts"]:
         lp = lay.get(part["ref"]) or {}
-        if lp.get("rot") in (90, 270) and "ref_at" in lp and "value_at" in lp:
-            if abs(lp["ref_at"][1] - lp["value_at"][1]) > EPS:
-                bad.append(f"R12 {part['ref']}: 참조기호와 값이 같은 줄이 아님")
+        if "ref_at" in lp and "value_at" in lp:
+            dx = abs(lp["ref_at"][0] - lp["value_at"][0])
+            dy = lp["value_at"][1] - lp["ref_at"][1]
+            if dx > EPS or not (0 < dy <= 2.54 + EPS):
+                bad.append(f"R12 {part['ref']}: 참조기호 아래 좁은 행간으로 값이 오지 않음 "
+                           f"(dx={dx:g}, dy={dy:g})")
     return bad
 
 
