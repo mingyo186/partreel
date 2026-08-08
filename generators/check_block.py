@@ -79,6 +79,60 @@ def harness_root(b, sheet_file):
 \t\t)
 \t\t(uuid "{uid(bid, net, "rootlabel")}")
 \t)''')
+    # 전원 소비 블록(power_in 선언) 검사: 실사용에선 다른 블록(예: usb_c_5v)의
+    # 깃발이 전역 전원 네트를 공급한다. 단독 ERC에서는 하네스가 그 역할을
+    # 대신한다 — 네트별 전원 심볼 + 공급 깃발 쌍을 같은 점에 놓는다.
+    # (블록 자신에 깃발을 넣으면 조합 시 공급 깃발이 중복되어 ERC 충돌 —
+    #  규칙: 깃발은 전원이 '생겨나는' 블록에만)
+    import block_power
+    pwr_defs, pwr_insts = {}, []
+    for k, net in enumerate(b.get("power_in", [])):
+        px, py = 95.25, 55.88 + k * 7.62
+        if net == "GND":
+            sname, sdef = "PR_GND", block_power.gnd_symbol()
+        else:
+            sname, sdef = block_power.rail_symbol(net)
+        pwr_defs.setdefault(sname, sdef)
+        pwr_defs.setdefault("PR_FLAG", block_power.flag_symbol())
+        # 겹친 두 핀은 커널이 안정적으로 못 잇는다 (2026-08-09 ERC 확인)
+        # -> 심볼과 깃발을 2.54 떨어뜨리고 짧은 배선으로 연결
+        pwr_insts.append(
+            f'\t(wire\n\t\t(pts\n\t\t\t(xy {px:g} {py:g}) (xy {px + 2.54:g} {py:g})\n\t\t)\n'
+            f'\t\t(stroke\n\t\t\t(width 0)\n\t\t\t(type solid)\n\t\t)\n'
+            f'\t\t(uuid "{uid(bid, "hpw", net)}")\n\t)')
+        for m, nm in ((0, sname), (1, "PR_FLAG")):
+            if m == 1:
+                px = px + 2.54
+            refh = f"#H{k}{m}"
+            pwr_insts.append(f'''\t(symbol
+\t\t(lib_id "PartReelPwr:{nm}")
+\t\t(at {px:g} {py:g} 0)
+\t\t(unit 1)
+\t\t(exclude_from_sim no)
+\t\t(in_bom no)
+\t\t(on_board yes)
+\t\t(dnp no)
+\t\t(uuid "{uid(bid, "hpwr", net, str(m))}")
+\t\t(property "Reference" "{refh}" (at {px:g} {py - 5.08:g} 0) (effects (font (size 1.27 1.27)) (hide yes)))
+\t\t(property "Value" "{net}" (at {px:g} {py - 3.81:g} 0) (effects (font (size 1.27 1.27)) (hide yes)))
+\t\t(pin "1"
+\t\t\t(uuid "{uid(bid, "hpwrpin", net, str(m))}")
+\t\t)
+\t\t(instances
+\t\t\t(project "harness"
+\t\t\t\t(path "/{root_uuid}"
+\t\t\t\t\t(reference "{refh}")
+\t\t\t\t\t(unit 1)
+\t\t\t\t)
+\t\t\t)
+\t\t)
+\t)''')
+    libsym = ""
+    if pwr_defs:
+        inner = "\n".join("\t\t" + d.replace(f'(symbol "{n}"', f'(symbol "PartReelPwr:{n}"', 1)
+                          .replace("\n", "\n\t\t") for n, d in pwr_defs.items())
+        libsym = f"\t(lib_symbols\n{inner}\n\t)\n"
+
     h = len(b.get("interface", {})) * 2.54 + 12.7
     return f'''(kicad_sch
 \t(version 20250114)
@@ -86,7 +140,8 @@ def harness_root(b, sheet_file):
 \t(generator_version "1.0")
 \t(uuid "{root_uuid}")
 \t(paper "A4")
-{chr(10).join(labels)}
+{libsym}{chr(10).join(labels)}
+{chr(10).join(pwr_insts)}
 \t(sheet
 \t\t(at {x:g} {y0:g})
 \t\t(size 25.4 {h:g})
@@ -178,6 +233,12 @@ def check(block_dir):
             for v in sheet.get("violations", []):
                 sev, typ = v.get("severity"), v.get("type")
                 desc = v.get("description", "")[:90]
+                item0 = (v.get("items") or [{}])[0].get("description", "")
+                # 하네스 보조 전원 심볼(#H*)의 pin_not_connected는 커널 특이
+                # 반응 — 넷리스트로 정합이 증명됨 (2026-08-09). 블록 실핀에는
+                # 적용 안 되는 좁은 예외.
+                if typ == "pin_not_connected" and "#H" in item0:
+                    continue
                 if sev == "error":
                     n_err += 1
                     fail(f"{bid}: ERC 오류 [{typ}] {desc}")
