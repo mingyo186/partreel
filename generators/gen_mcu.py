@@ -56,10 +56,38 @@ def build(xml_name, pid):
     # 변 길이: 핀 스팬 + 여유. 이름 최장 길이에 맞춰 몸체 확장 (겹침 방지)
     span = (per - 1) * PITCH
     start = span / 2
-    longest = max(len(nm) for nm, _ in pins.values())
-    # 몸체: 모서리에서 가로 긴이름 x 세로 긴이름 충돌을 피하는 하한 —
-    # G431 실측으로 확정한 계수 (13자 'PC14-OSC32_IN' 기준 22.86 필요)
-    body = max(span / 2 + 6.35, round((longest * 1.05 + 9.0) / 1.27) * 1.27)
+    # 몸체 크기: 모서리에서 '가로 긴 이름(좌/우변) x 세로 긴 이름(상/하변)'
+    # 충돌이 없어질 때까지 증분 — 핀 배열이 형번마다 달라 상수로는 안 된다
+    # (G431 CBTx는 22.86에서 해소, RBTx는 더 필요함을 실측으로 확인)
+    CW = 1.26   # 이름 글자 폭 (렌더 실측: 3자=3.77mm -> 1.257/자)
+    GAP = 1.0   # 이름 간 최소 시각 여유
+
+    def name_collision(body):
+        inner = body - 1.016  # pin_names offset
+        h_names, v_names = [], []
+        for k in range(1, n + 1):
+            L = len(pins[k][0]) * CW
+            if k <= per:                      # 좌변: 행 y, 안쪽으로 +x
+                y = start - (k - 1) * PITCH
+                h_names.append((y, -inner, -inner + L))
+            elif k <= 2 * per:                # 하변: 열 x, 안쪽으로 +y
+                x = -start + (k - per - 1) * PITCH
+                v_names.append((x, -inner, -inner + L))
+            elif k <= 3 * per:                # 우변
+                y = -start + (k - 2 * per - 1) * PITCH
+                h_names.append((y, inner - L, inner))
+            else:                             # 상변
+                x = start - (k - 3 * per - 1) * PITCH
+                v_names.append((x, inner - L, inner))
+        for hy, hx1, hx2 in h_names:
+            for vx, vy1, vy2 in v_names:
+                if (hx1 - GAP < vx < hx2 + GAP) and (vy1 - GAP < hy < vy2 + GAP):
+                    return True
+        return False
+
+    body = max(span / 2 + 6.35, 12.7)
+    while name_collision(body) and body < 76.2:
+        body += 1.27
     conn = body + PIN_LEN
 
     out = []
