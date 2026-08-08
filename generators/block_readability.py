@@ -247,3 +247,24 @@ def gnd_rail_proximity(layout, parts_geo):
         return [f"R13 GND 레일 y={rail_y:g}가 최하단 부품({body_bot:.1f})에서 "
                 f"{rail_y - body_bot:.1f}mm — 3그리드 초과"]
     return []
+
+
+def ref_value_gap(b, svg_text):
+    """R12 강화: 모든 부품의 참조기호-값 박스 간 거리 ≤ 2.54 (인접)."""
+    boxes = _text_boxes(svg_text)
+    bad = []
+    for part in b["parts"]:
+        rb = next((x for x in boxes if x[4] == part["ref"]), None)
+        val = part.get("value")
+        vbs = [x for x in boxes if val and x[4] == val]
+        if not rb or not vbs:
+            continue
+        # 같은 값 문자열이 여러 부품에 있으므로 참조기호와 가장 가까운 상자와 짝
+        def gap_of(vb):
+            dx = max(0, max(rb[0], vb[0]) - min(rb[2], vb[2]))
+            dy = max(0, max(rb[1], vb[1]) - min(rb[3], vb[3]))
+            return (dx * dx + dy * dy) ** 0.5
+        gap = min(gap_of(vb) for vb in vbs)
+        if gap > 2.54 + EPS:
+            bad.append(f"R12 {part['ref']}: 참조기호-값 간격 {gap:.1f}mm > 2.54 (인접 아님)")
+    return bad

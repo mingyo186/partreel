@@ -284,6 +284,8 @@ def check(block_dir):
                 fail(f"{bid}: {msg}")
             for msg in BR.ref_value_row(b):
                 fail(f"{bid}: {msg}")
+            for msg in BR.ref_value_gap(b, open(os.path.join(block_dir, "preview.svg"), encoding="utf-8", errors="replace").read()):
+                fail(f"{bid}: {msg}")
             for msg in BR.gnd_rail_proximity(layout, geo):
                 fail(f"{bid}: {msg}")
             svg_text = open(os.path.join(block_dir, "preview.svg"),
