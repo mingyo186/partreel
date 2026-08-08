@@ -341,7 +341,7 @@ def build(block_dir):
     # 빈 공간의 표에 특성·리비전·근거를 적는다 (문법: 공식 데모에서 추출)
     if b.get("specs") and layout.get("table_at"):
         tx0, ty0 = layout["table_at"]
-        rows = [["Block", b["name"]], ["Rev", b.get("revision", "A")]]
+        rows = [["Block", b["name"]], ["Rev", b.get("revision", "0.1")]]
         rows += [[str(k), str(v)] for k, v in b["specs"]]
         w1 = max(len(r[0]) for r in rows) * 1.1 + 2.5
         w2 = max(len(r[1]) for r in rows) * 1.05 + 2.5
@@ -379,7 +379,7 @@ def build(block_dir):
 \t(title_block
 \t\t(title "{title}")
 \t\t(company "PartReel block")
-\t\t(rev "{b.get("revision", "A")}")
+\t\t(rev "{b.get("revision", "0.1")}")
 \t)
 \t(lib_symbols
 {chr(10).join(lib_entries.values())}

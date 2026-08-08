@@ -5,17 +5,33 @@
  "circuit_source": "NXP UM10204 (I2C-bus specification) Rev 7.0, section 7.1 'Pull-up resistor sizing', Fig 42-43 + Eq 1-2. https://www.nxp.com/docs/en/user-guide/UM10204.pdf",
  "fp_lib": "PCM_PartReel",
  "parts": [
-  {"ref": "R1", "part": "antmicro_crcw04021k80fkedc", "value": "1.8k"},
-  {"ref": "R2", "part": "antmicro_crcw04021k80fkedc", "value": "1.8k"}
+  {
+   "ref": "R1",
+   "part": "antmicro_crcw04021k80fkedc",
+   "value": "1.8k"
+  },
+  {
+   "ref": "R2",
+   "part": "antmicro_crcw04021k80fkedc",
+   "value": "1.8k"
+  }
  ],
  "nets": {
-  "+3V3": ["R1.1", "R2.1"],
-  "SDA": ["R1.2"],
-  "SCL": ["R2.2"]
+  "+3V3": [
+   "R1.1",
+   "R2.1"
+  ],
+  "SDA": [
+   "R1.2"
+  ],
+  "SCL": [
+   "R2.2"
+  ]
  },
  "interface": {
   "+3V3": "input",
   "SDA": "bidirectional",
   "SCL": "bidirectional"
- }
+ },
+ "revision": "0.1"
 }
