@@ -216,10 +216,14 @@ def check(block_dir):
                 geo.append((part["ref"], lp["at"][0], lp["at"][1],
                             int(lp.get("rot", 0)), BR._body_bbox(blk)))
             for msg in BR.wire_body_hits(layout, geo):
-                fail(f"{bid}: R3 {msg}")
+                fail(f"{bid}: R3/R8 {msg}")
+            for msg in BR.parallel_too_close(layout):
+                fail(f"{bid}: R9 {msg}")
             svg_text = open(os.path.join(block_dir, "preview.svg"),
                             encoding="utf-8", errors="replace").read()
             for msg in BR.text_overlaps(svg_text, layout):
+                fail(f"{bid}: {msg}")
+            for msg in BR.text_outline_overlaps(svg_text, geo):
                 fail(f"{bid}: {msg}")
     finally:
         shutil.rmtree(tmp, ignore_errors=True)
