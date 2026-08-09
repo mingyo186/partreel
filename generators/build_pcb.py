@@ -15,6 +15,7 @@ KiCad 동봉 파이썬(pcbnew)으로 실행해야 한다:
 unconnected_items만 허용).
 """
 
+import glob as globmod
 import json
 import os
 import shutil
@@ -333,14 +334,103 @@ def build(board_dir):
             if id(fp) not in edge_ids:
                 orient_toward(fp, want)
 
+    # === P13: place 지시 (block.json parts[].place) — "이 부품의 역할과
+    # 자리"를 선언이 말해준다. near가 "<로컬ref>.<핀>"이면 그 핀 옆에 고정
+    # 배치 (ref_map으로 보드 참조로 번역). near가 부품만("J1")이면 군집
+    # 근접으로 충분해 통상 배치. ===
+    ref_map = {}
+    rmp = os.path.join(board_dir, "ref_map.json")
+    if os.path.exists(rmp):
+        ref_map = json.load(open(rmp, encoding="utf-8"))
+    place_dir = {}  # 보드ref -> (대상 보드ref, 핀번호, 역할)
+    for inst in bd.get("blocks", []):
+        bref, blk_id = inst["ref"], inst["block"]
+        hits = globmod.glob(os.path.join(ROOT, "blocks", "*", blk_id, "block.json"))
+        if not hits:
+            continue
+        bj = json.load(open(hits[0], encoding="utf-8"))
+        for part in bj.get("parts", []):
+            pl = part.get("place")
+            if not pl or "." not in str(pl.get("near", "")):
+                continue
+            tgt_local, pad_no = pl["near"].split(".", 1)
+            my = ref_map.get(f"{bref}.{part['ref']}", part["ref"])
+            tgt = ref_map.get(f"{bref}.{tgt_local}", tgt_local)
+            place_dir[my] = (tgt, pad_no, pl.get("role", ""))
+
+    def near_local_pos(fp_part, pad_no, taken):
+        """MCU 핀 pad_no 옆 로컬 좌표 (MCU 몸체중심=원점). 연결 패드가 핀을
+        향하게 회전, 겹치면 법선 방향으로 밀어냄. 반환 (cx, cy)."""
+        tb = body_bb(mcu_fp)
+        tcx, tcy = (tb[0] + tb[2]) / 2, (tb[1] + tb[3]) / 2
+        tpad = next(p for p in mcu_fp.Pads() if p.GetNumber() == pad_no)
+        px = pcbnew.ToMM(tpad.GetPosition().x) - tcx
+        py = pcbnew.ToMM(tpad.GetPosition().y) - tcy
+        if abs(px) > abs(py):
+            n = (-1, 0) if px < 0 else (1, 0)
+            angles = (0, 180)
+        else:
+            n = (0, -1) if py < 0 else (0, 1)
+            angles = (90, 270)
+        tnet = tpad.GetNetname()
+        # 연결 패드(같은 네트)가 MCU 쪽(-n)으로 가는 각 선택
+        pick = angles[0]
+        for a in angles:
+            fp_part.SetOrientationDegrees(a)
+            b = body_bb(fp_part)
+            ccx, ccy = (b[0] + b[2]) / 2, (b[1] + b[3]) / 2
+            for pad in fp_part.Pads():
+                if pad.GetNetname() == tnet:
+                    ox = pcbnew.ToMM(pad.GetPosition().x) - ccx
+                    oy = pcbnew.ToMM(pad.GetPosition().y) - ccy
+                    if ox * n[0] + oy * n[1] < 0:
+                        pick = a
+                    break
+        fp_part.SetOrientationDegrees(pick)
+        b = body_bb(fp_part)
+        w, h = b[2] - b[0], b[3] - b[1]
+        half = w / 2 if n[0] else h / 2
+        sz = tpad.GetSize()
+        phalf = pcbnew.ToMM(sz.x if n[0] else sz.y) / 2
+        # 후보: 바깥(k_out) x 옆줄(k_lat) — 인접 핀 캡들은 변을 따라 나란히
+        # 퍼진다 (바깥으로만 밀면 후보 소진 시 겹침 — 2026-08-10 C7/C8).
+        tv = (-n[1], n[0])
+        out_step = (h if n[1] else w) + MARGIN
+        lat_step = (w if n[1] else h) + MARGIN
+        base = phalf + half + 0.5
+        for k_out in range(4):
+            dist = base + k_out * out_step
+            for k_lat in (0, -1, 1, -2, 2, -3, 3):
+                cx = px + n[0] * dist + tv[0] * k_lat * lat_step
+                cy = py + n[1] * dist + tv[1] * k_lat * lat_step
+                box = (cx - w / 2 - MARGIN, cy - h / 2 - MARGIN,
+                       cx + w / 2 + MARGIN, cy + h / 2 + MARGIN)
+                if not any(box[0] < t[2] and box[2] > t[0] and
+                           box[1] < t[3] and box[3] > t[1] for t in taken):
+                    taken.append(box)
+                    return cx, cy
+        taken.append(box)
+        return cx, cy
+
     # 군집 내부 배치 (로컬 좌표) — 회전 반영된 크기로.
     # 가장자리 부품은 자기 변의 최외곽 열에: 오른변이면 마지막 열(오른쪽),
     # 왼변이면 첫 열 — 아니면 소형 부품이 부품 뒤(보드 밖)로 감긴다
     # (2026-08-10 USB CC 저항 이탈로 확인).
     edge_set = {id(fp) for _, fp in edge_fps}
     placed_local = {}
+    near_taken = []
     for blk in order:
-        items = sorted(((ref, fp, f_w(fp), f_h(fp)) for ref, _, fp in blocks[blk]),
+        # P13 고정 배치 대상 분리 (대상이 메인 IC(mcu_fp)인 경우만 —
+        # 다른 대상은 아직 미지원, 통상 배치로 폴백)
+        fixed = []
+        rest_items = []
+        for ref, _, fp in blocks[blk]:
+            tgt = place_dir.get(ref)
+            if tgt and blk == main_block and fp is not mcu_fp:
+                fixed.append((ref, fp, tgt[1]))
+            else:
+                rest_items.append((ref, fp))
+        items = sorted(((ref, fp, f_w(fp), f_h(fp)) for ref, fp in rest_items),
                        key=lambda t: -(t[2] * t[3]))
         eside = sides.get(blk)
         edge_items = [it for it in items if id(it[1]) in edge_set]
@@ -348,6 +438,21 @@ def build(board_dir):
             items = [it for it in items if id(it[1]) not in edge_set] + edge_items
         elif edge_items:
             items = edge_items + [it for it in items if id(it[1]) not in edge_set]
+        if fixed and blk == main_block:
+            pos = []
+            for ref, fp, pad_no in fixed:
+                cx, cy = near_local_pos(fp, pad_no, near_taken)
+                pos.append((fp, cx, cy))
+            hints = {}
+            for ref, _, fp in blocks[blk]:
+                if fp is mcu_fp or any(f[1] is fp for f in fixed):
+                    continue
+                avg = net_pad_avg(fp)
+                if avg:
+                    hints[ref] = (1 if avg[0] >= mcx else -1, avg[1])
+            placed_local[blk] = pack_main_ic(items, hints) + pos if items else \
+                [(mcu_fp, 0.0, 0.0)] + pos
+            continue
         if blk == main_block and len(items) >= 4:
             # P10: 신호 부품(C7 NRST, R1 BOOT0 등)은 물린 핀의 변·순서대로
             hints = {}
@@ -451,22 +556,44 @@ def build(board_dir):
         fp.SetPosition(pcbnew.VECTOR2I(p.x + mm(dx), p.y + mm(dy)))
     x1, x2, y1, y2 = x1 + dx, x2 + dx, y1 + dy, y2 + dy
 
-    # P5: 실크 REF 배치 — 소형 부품은 옆(보드 중심에서 바깥쪽), 대형은 몸체 위
+    # P5: 실크 REF 배치 — 후보 위치(옆/위/아래) 중 다른 부품과 안 겹치는
+    # 첫 자리. 밀집 배치(P13)에선 고정 방향이 반드시 어딘가와 부딪힌다.
     bcx = (x1 + x2) / 2
+    obstacles = [(id(f), body_bb(f)) for f in all_fp]
+
+    def ref_pos(fp):
+        bx1, by1, bx2, by2 = body_bb(fp)
+        tw = 0.55 * len(fp.GetReference()) + 0.3
+        small = (by2 - by1) < 4.0 and len(list(fp.Pads())) < 10
+        outw = 1 if (bx1 + bx2) / 2 >= bcx else -1
+        if small:
+            cands = [((bx2 + 0.4 + tw / 2) if outw > 0 else (bx1 - 0.4 - tw / 2),
+                      (by1 + by2) / 2),
+                     ((bx1 - 0.4 - tw / 2) if outw > 0 else (bx2 + 0.4 + tw / 2),
+                      (by1 + by2) / 2),
+                     ((bx1 + bx2) / 2, by1 - 0.75),
+                     ((bx1 + bx2) / 2, by2 + 0.75)]
+        else:
+            cands = [((bx1 + bx2) / 2, by1 - 0.9),
+                     (bx1 - 0.4 - tw / 2, (by1 + by2) / 2),
+                     (bx2 + 0.4 + tw / 2, (by1 + by2) / 2),
+                     ((bx1 + bx2) / 2, by2 + 0.9),
+                     ((bx1 + bx2) / 2, (by1 + by2) / 2)]  # 최후: 몸체 중앙(LQFP 내부)
+        for cx, cy in cands:
+            tb = (cx - tw / 2 - 0.15, cy - 0.55, cx + tw / 2 + 0.15, cy + 0.55)
+            hit = any(oid != id(fp) and tb[0] < o[2] and tb[2] > o[0] and
+                      tb[1] < o[3] and tb[3] > o[1] for oid, o in obstacles)
+            if not hit:
+                return cx, cy
+        return cands[0]
+
     for fp in all_fp:
         r = fp.Reference()
         r.SetLayer(pcbnew.F_SilkS)
         r.SetTextSize(pcbnew.VECTOR2I(mm(0.8), mm(0.8)))
         r.SetTextThickness(mm(0.12))
         r.SetTextAngleDegrees(0)
-        bx1, by1, bx2, by2 = body_bb(fp)
-        if (by2 - by1) < 4.0 and len(list(fp.Pads())) < 10:
-            tw = 0.55 * len(fp.GetReference()) + 0.3
-            outw = 1 if (bx1 + bx2) / 2 >= bcx else -1
-            cx = (bx2 + 0.4 + tw / 2) if outw > 0 else (bx1 - 0.4 - tw / 2)
-            cy = (by1 + by2) / 2
-        else:
-            cx, cy = (bx1 + bx2) / 2, by1 - 0.9
+        cx, cy = ref_pos(fp)
         r.SetPosition(pcbnew.VECTOR2I(mm(cx), mm(cy)))
 
     rect = pcbnew.PCB_SHAPE(board)
