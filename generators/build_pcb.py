@@ -1,24 +1,22 @@
 """
-PCB 초기화 (REQUIREMENTS §25 2단계 첫 걸음) — 보드 회로도 → .kicad_pcb.
+PCB 초기화 (REQUIREMENTS §25 2단계) — 보드 회로도 → .kicad_pcb.
 
 KiCad 동봉 파이썬(pcbnew)으로 실행해야 한다:
   "D:/Program Files/KiCad/10.0/bin/python.exe" generators/build_pcb.py boards/<id>
 
-하는 일:
-  1. kicad-cli로 회로도 넷리스트(kicadxml) 추출
-  2. 부품마다 파트릴 풋프린트를 불러와 **블록(시트) 단위로 묶어** 격자 배치
-     (§25: "블록 단위 배치 보조 — 전원부 모아두기")
-  3. 네트 생성 + 패드 연결 (넷리스트 그대로)
-  4. Edge.Cuts 외곽 사각형 + 저장
+배치 규칙은 rules/pcb-layout.md (P1~P7, 사용자와 확정):
+  P1 외곽 = 부품+배선 여유 최소, 용지 중앙 / P2 커넥터 가장자리, 삽입구 밖
+  P3 디버그는 MCU 근처 / P4 층수 board.json 선언
+  P6 가장자리 접면은 부품 meta(parameters.edge_face)가 근거, 실크=외곽 일치
+  P7 기능 군집: 메인 IC 군집 중앙(IC 가운데+수동 사이드), 블록 군집 사방
+     밀착, 빈공간 최소화
 
-배선은 하지 않는다 — 초기화 산출물은 "부품이 올라가고 랫츠네스트가 걸린
-보드"다. 게이트는 check_board.py의 E 단계(kicad-cli pcb drc,
-unconnected_items만 허용)가 판정한다.
+배선은 하지 않는다 — 게이트는 check_board.py E (kicad-cli pcb drc,
+unconnected_items만 허용).
 """
 
 import json
 import os
-import re
 import shutil
 import subprocess
 import sys
@@ -32,12 +30,11 @@ KICAD_CLI = os.environ.get(
 
 import pcbnew  # noqa: E402  (KiCad 파이썬 전용)
 
-# P1 (2026-08-10 사용자 교정): 외곽 미지정 시 "부품과 선 넓이에 맞춰
-# 최소화" — 널찍한 격자가 아니라 부품이 다 들어갈 최소 크기 + 배선 여유.
-MARGIN = 1.0       # 부품 간 여백 (mm)
-BLOCK_GAP = 2.5    # 블록 묶음 간 여백
-EDGE = 2.5         # 외곽선-부품 여백 (배선 지나갈 폭)
-COL_H = 32.0       # 블록 안 세로 채움 한계 — 넘으면 옆 줄로 감아 정사각형에 가깝게
+MARGIN = 1.0     # 부품 간 여백 (mm)
+GAP = 2.0        # 군집 간 여백 (배선 지나갈 폭)
+EDGE = 2.0       # 외곽선-부품 여백
+# KiCad 회전(화면 반시계) — 삽입구 방향을 -x(왼쪽 밖)로 보내는 각 (실측 검증)
+FACE_TO_LEFT = {"+y": 270, "-y": 90, "+x": 180, "-x": 0}
 
 
 def mm(v):
@@ -55,120 +52,232 @@ def netlist(board_dir, bid):
     return ET.parse(out).getroot()
 
 
-def part_dirs():
+def catalog():
     idx = json.load(open(os.path.join(ROOT, "index.json"), encoding="utf-8"))
     return {p["id"]: os.path.join(ROOT, p["path"]) for p in idx["parts"]}
+
+
+def body_bb(fp):
+    bb = fp.GetBoundingBox(False, False)
+    return (pcbnew.ToMM(bb.GetLeft()), pcbnew.ToMM(bb.GetTop()),
+            pcbnew.ToMM(bb.GetRight()), pcbnew.ToMM(bb.GetBottom()))
+
+
+def move_center(fp, cx, cy):
+    """몸체(글자 제외) 중심을 (cx, cy)로."""
+    x1, y1, x2, y2 = body_bb(fp)
+    p = fp.GetPosition()
+    fp.SetPosition(pcbnew.VECTOR2I(p.x + mm(cx - (x1 + x2) / 2),
+                                   p.y + mm(cy - (y1 + y2) / 2)))
+
+
+def silk_min_x(fp):
+    """실크 그래픽의 왼쪽 끝 (P6: 실크=외곽 일치 스냅용). 없으면 몸체."""
+    xs = []
+    for g in fp.GraphicalItems():
+        if g.GetLayer() == pcbnew.F_SilkS:
+            xs.append(pcbnew.ToMM(g.GetBoundingBox().GetLeft()))
+    return min(xs) if xs else body_bb(fp)[0]
+
+
+def pack_main_ic(items):
+    """P7: 메인 IC 가운데 + 수동소자를 좌우 열로 번갈아. items=(ref,fp,w,h)
+    면적 내림차순. 반환: [(fp, cx, cy)] 로컬 중심좌표."""
+    main = items[0]
+    out = [(main[1], 0.0, 0.0)]
+    mw, mh = main[2], main[3]
+    state = {1: {"x": mw / 2 + MARGIN, "y": -mh / 2, "w": 0.0},
+             -1: {"x": -mw / 2 - MARGIN, "y": -mh / 2, "w": 0.0}}
+    side = 1
+    for ref, fp, w, h in items[1:]:
+        s = state[side]
+        if s["y"] + h > mh / 2 + 0.1:
+            o = state[-side]
+            if o["y"] + h <= mh / 2 + 0.1:
+                side = -side
+                s = o
+            else:  # 양쪽 다 참 — 이 변에 새 열
+                s["x"] += (s["w"] + MARGIN) * side
+                s["y"], s["w"] = -mh / 2, 0.0
+        out.append((fp, s["x"] + (w / 2) * side, s["y"] + h / 2))
+        s["y"] += h + MARGIN
+        s["w"] = max(s["w"], w)
+        side = -side
+    return out
+
+
+def pack_wrap(items, hmax):
+    """단순 세로 감기 배치. 반환 [(fp, cx, cy)] (좌상 기준 0,0)."""
+    out = []
+    x0 = y = colw = 0.0
+    for ref, fp, w, h in items:
+        if y > 0 and y + h > hmax:
+            x0 += colw + MARGIN
+            y, colw = 0.0, 0.0
+        out.append((fp, x0 + w / 2, y + h / 2))
+        y += h + MARGIN
+        colw = max(colw, w)
+    return out
+
+
+def cluster_bbox(pos):
+    xs1 = [c - f_w(fp) / 2 for fp, c, _ in pos]
+    xs2 = [c + f_w(fp) / 2 for fp, c, _ in pos]
+    ys1 = [c - f_h(fp) / 2 for fp, _, c in pos]
+    ys2 = [c + f_h(fp) / 2 for fp, _, c in pos]
+    return min(xs1), min(ys1), max(xs2), max(ys2)
+
+
+def f_w(fp):
+    x1, _, x2, _ = body_bb(fp)
+    return x2 - x1
+
+
+def f_h(fp):
+    _, y1, _, y2 = body_bb(fp)
+    return y2 - y1
 
 
 def build(board_dir):
     bid = os.path.basename(os.path.normpath(board_dir))
     root = netlist(board_dir, bid)
-    dirs = part_dirs()
+    dirs = catalog()
+    bd = json.load(open(os.path.join(board_dir, "board.json"), encoding="utf-8"))
 
-    comps = []  # (ref, pid, block_name)
+    comps = []  # (ref, pid, block)
     for c in root.iter("comp"):
         ref = c.get("ref")
-        fp = (c.findtext("footprint") or "")
-        pid = fp.split(":", 1)[-1]
+        pid = (c.findtext("footprint") or "").split(":", 1)[-1]
         sheet = c.find("sheetpath")
         block = (sheet.get("names", "/") if sheet is not None else "/").strip("/") or "root"
         comps.append((ref, pid, block))
     comps.sort(key=lambda t: (t[2], t[0]))
 
-    # 풋프린트는 .pretty 폴더에서만 로드된다 — 임시 라이브러리로 모아 복사
     pretty = os.path.join(tempfile.mkdtemp(prefix="pcblib_"), "PartReel.pretty")
     os.makedirs(pretty)
+    metas = {}
     for _, pid, _ in comps:
         if pid not in dirs:
             raise SystemExit(f"FAIL: 풋프린트 '{pid}' 카탈로그에 없음")
         shutil.copy(os.path.join(dirs[pid], f"{pid}.kicad_mod"),
                     os.path.join(pretty, f"{pid}.kicad_mod"))
+        if pid not in metas:
+            metas[pid] = json.load(open(os.path.join(dirs[pid], "meta.json"),
+                                        encoding="utf-8"))
 
-    bd = json.load(open(os.path.join(board_dir, "board.json"), encoding="utf-8"))
     board = pcbnew.CreateEmptyBoard()
-    # P4 (rules/pcb-layout.md): 층수는 board.json 선언 — 기본 2층
-    board.SetCopperLayerCount(int(bd.get("layers", 2)))
+    board.SetCopperLayerCount(int(bd.get("layers", 2)))  # P4
 
-    # 네트 등록
     nets = {}
     for net in root.iter("net"):
-        name = net.get("name")
-        item = pcbnew.NETINFO_ITEM(board, name)
+        item = pcbnew.NETINFO_ITEM(board, net.get("name"))
         board.Add(item)
-        nets[name] = item
+        nets[net.get("name")] = item
     pad_net = {}
     for net in root.iter("net"):
         for node in net.findall("node"):
             pad_net[(node.get("ref"), node.get("pin"))] = net.get("name")
 
-    # 블록 단위 격자 배치: 블록 = 열, 부품 = 열 안에서 아래로.
-    # 블록 열 순서 = board.json blocks 순서 — 디버그 블록을 MCU 블록 바로
-    # 뒤에 선언하면 P3(디버그는 MCU 근처)이 자연 충족된다.
-    placed = []  # (ref, pid, fp)
-    x_cursor = 0.0
-    max_y = 0.0
-    cur_block, col_w, y_cursor, x0 = None, 0.0, 0.0, 0.0
+    # 풋프린트 로드 + 회전(P6) + 블록별 군집 구성
+    blocks = {}   # block -> [(ref, fp, w, h)]
+    edge_fps = []  # (block, fp) — 실크=외곽 스냅 대상
+    order = []
     for ref, pid, block in comps:
         fp = pcbnew.FootprintLoad(pretty, pid)
         if fp is None:
             raise SystemExit(f"FAIL: FootprintLoad 실패 '{pid}'")
-        # P2: 삽입식 USB 리셉터클은 입(패드 반대편)이 왼쪽 밖을 향하게 회전.
-        # KiCad 양수 회전 = 화면 반시계 — 270도가 패드를 +x(보드 안쪽)로
-        # 보낸다 (2026-08-10 실측 교정: 90도는 정반대였음).
-        edge_conn = "usb_c" in pid
-        if edge_conn:
-            fp.SetOrientationDegrees(270)
-        if block != cur_block:
-            x_cursor += (col_w + BLOCK_GAP) if cur_block else 0.0
-            cur_block, col_w, y_cursor, x0 = block, 0.0, 0.0, x_cursor
-        bb = fp.GetBoundingBox(False, False)  # 글자 제외 실몸체
-        w = pcbnew.ToMM(bb.GetWidth())
-        h = pcbnew.ToMM(bb.GetHeight())
-        # 블록 안 세로 감기: 열이 COL_H를 넘으면 옆 줄로 (외곽 최소화)
-        if y_cursor > 0 and y_cursor + h > COL_H:
-            x0 += col_w + MARGIN
-            x_cursor = max(x_cursor, x0)
-            y_cursor, col_w = 0.0, 0.0
+        face = (metas[pid].get("parameters") or {}).get("edge_face")
+        if face:
+            fp.SetOrientationDegrees(FACE_TO_LEFT[face])
+            edge_fps.append((block, fp))
         fp.SetReference(ref)
-        fp.SetPosition(pcbnew.VECTOR2I(mm(x0 + w / 2), mm(y_cursor + h / 2)))
-        # SetPosition은 몸체 중심이 아니라 원점 기준 — 몸체 중심을 맞춘다
-        bb2 = fp.GetBoundingBox(False, False)
-        fp.SetPosition(pcbnew.VECTOR2I(
-            fp.GetPosition().x + mm(x0 + w / 2) - (bb2.GetLeft() + bb2.GetRight()) // 2,
-            fp.GetPosition().y + mm(y_cursor + h / 2) - (bb2.GetTop() + bb2.GetBottom()) // 2))
+        fp.Reference().SetLayer(pcbnew.F_Fab)  # P5 후보: 초기화 REF는 Fab
         for pad in fp.Pads():
             key = (ref, pad.GetNumber())
             if key in pad_net:
                 pad.SetNet(nets[pad_net[key]])
-        # 초기화 단계의 ref 글자는 F.Fab으로 — 최소 외곽 밀집 배치에서 실크
-        # ref가 이웃 패드를 물어 DRC silk_over_copper 19건 (2026-08-10).
-        # 실크 ref는 배치 확정 후 사람이 올린다 (rules/pcb-layout.md P5 후보).
-        fp.Reference().SetLayer(pcbnew.F_Fab)
         board.Add(fp)
-        placed.append((ref, pid, fp))
-        y_cursor += h + MARGIN
-        col_w = max(col_w, w)
-        max_y = max(max_y, y_cursor)
-    x_end = x_cursor + col_w
+        if block not in blocks:
+            blocks[block] = []
+            order.append(block)
+        blocks[block].append((ref, fp, f_w(fp), f_h(fp)))
 
-    # P1: 외곽은 잠정 산정(부품 점유 + 여백)하고 **용지(A4 297x210) 중앙**에
-    # 오게 전체를 평행이동 — 틀 밖 외곽은 검토가 불편하다 (사용자 확정).
-    bw, bh = x_end + 2 * EDGE, max_y + 2 * EDGE
-    ox = (297 - bw) / 2 + EDGE
-    oy = (210 - bh) / 2 + EDGE
-    for _, _, fp in placed:
+    # 메인 군집 = 가장 핀 많은 부품이 속한 블록 (MCU)
+    def max_pads(blk):
+        return max(fp.Pads().size() if hasattr(fp.Pads(), "size") else len(list(fp.Pads()))
+                   for _, fp, _, _ in blocks[blk])
+    main_block = max(order, key=max_pads)
+
+    # 군집 내부 배치 (로컬 좌표)
+    placed_local = {}  # block -> [(fp, cx, cy)]
+    for blk in order:
+        items = sorted(blocks[blk], key=lambda t: -(t[2] * t[3]))
+        if blk == main_block and len(items) >= 4:
+            placed_local[blk] = pack_main_ic(items)
+        else:
+            hmax = max(12.0, max(h for _, _, _, h in items))
+            placed_local[blk] = pack_wrap(items, hmax)
+
+    def local_bbox(blk):
+        pos = placed_local[blk]
+        x1 = min(c - f_w(fp) / 2 for fp, c, _ in pos)
+        x2 = max(c + f_w(fp) / 2 for fp, c, _ in pos)
+        y1 = min(cy - f_h(fp) / 2 for fp, _, cy in pos)
+        y2 = max(cy + f_h(fp) / 2 for fp, _, cy in pos)
+        return x1, y1, x2, y2
+
+    # 군집 배치: 메인 중앙, 가장자리 군집은 왼쪽/오른쪽 변, 나머지 사방 (P7)
+    CX, CY = 148.5, 105.0  # A4 중앙
+    offsets = {main_block: (0.0, 0.0)}
+    edge_blocks = [b for b, _ in edge_fps]
+    others = [b for b in order if b != main_block]
+    sides = {}
+    side_seq = ["left", "right", "bottom", "top"]
+    for b in others:
+        if b in edge_blocks and "left" not in sides.values():
+            sides[b] = "left"
+        else:
+            for s in side_seq:
+                if s not in sides.values():
+                    sides[b] = s
+                    break
+            else:
+                sides[b] = "bottom"
+    mx1, my1, mx2, my2 = local_bbox(main_block)
+    for b in others:
+        x1, y1, x2, y2 = local_bbox(b)
+        s = sides[b]
+        if s == "left":
+            offsets[b] = (mx1 - GAP - x2, (my1 + my2) / 2 - (y1 + y2) / 2)
+        elif s == "right":
+            offsets[b] = (mx2 + GAP - x1, (my1 + my2) / 2 - (y1 + y2) / 2)
+        elif s == "bottom":
+            offsets[b] = ((mx1 + mx2) / 2 - (x1 + x2) / 2, my2 + GAP - y1)
+        else:
+            offsets[b] = ((mx1 + mx2) / 2 - (x1 + x2) / 2, my1 - GAP - y2)
+
+    # 절대 배치 (일단 원점 기준) 후 전체 범위 산출
+    for blk in order:
+        ox, oy = offsets[blk]
+        for fp, cx, cy in placed_local[blk]:
+            move_center(fp, ox + cx, oy + cy)
+    all_fp = [fp for blk in order for fp, _, _ in placed_local[blk]]
+    ex1 = min(body_bb(fp)[0] for fp in all_fp)
+    ey1 = min(body_bb(fp)[1] for fp in all_fp)
+    ex2 = max(body_bb(fp)[2] for fp in all_fp)
+    ey2 = max(body_bb(fp)[3] for fp in all_fp)
+
+    # P6: 가장자리 부품의 실크 왼끝 = 외곽 왼변 (그 변은 여백 0)
+    flush_x = min((silk_min_x(fp) for _, fp in edge_fps), default=None)
+    x1 = flush_x if flush_x is not None else ex1 - EDGE
+    y1, x2, y2 = ey1 - EDGE, ex2 + EDGE, ey2 + EDGE
+
+    # 용지 중앙으로 평행이동 (P1)
+    dx, dy = CX - (x1 + x2) / 2, CY - (y1 + y2) / 2
+    for fp in all_fp:
         p = fp.GetPosition()
-        fp.SetPosition(pcbnew.VECTOR2I(p.x + mm(ox), p.y + mm(oy)))
-
-    x1, y1 = ox - EDGE, oy - EDGE
-    x2, y2 = x1 + bw, y1 + bh
-    # P2: USB 리셉터클을 외곽 왼변에 스냅 (입이 보드 밖)
-    for ref, pid, fp in placed:
-        if "usb_c" in pid:
-            bb = fp.GetBoundingBox()
-            dx = mm(x1) - bb.GetLeft()
-            p = fp.GetPosition()
-            fp.SetPosition(pcbnew.VECTOR2I(p.x + dx, p.y))
+        fp.SetPosition(pcbnew.VECTOR2I(p.x + mm(dx), p.y + mm(dy)))
+    x1, x2, y1, y2 = x1 + dx, x2 + dx, y1 + dy, y2 + dy
 
     rect = pcbnew.PCB_SHAPE(board)
     rect.SetShape(pcbnew.SHAPE_T_RECT)
@@ -180,8 +289,9 @@ def build(board_dir):
 
     out = os.path.join(board_dir, f"{bid}.kicad_pcb")
     board.Save(out)
-    print(f"OK  {bid}: 부품 {len(comps)} / 네트 {len(nets)} / {bd.get('layers', 2)}층 / "
-          f"외곽 {bw:.0f}x{bh:.0f}mm (용지 중앙) -> {out}")
+    print(f"OK  {bid}: 부품 {len(comps)} / 네트 {len(nets)} / "
+          f"{bd.get('layers', 2)}층 / 외곽 {x2 - x1:.0f}x{y2 - y1:.0f}mm "
+          f"(메인 군집: {main_block.split()[0]}) -> {out}")
     return out
 
 
