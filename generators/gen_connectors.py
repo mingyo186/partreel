@@ -213,7 +213,15 @@ def generate(cfg, n, fid):
     with open(os.path.join(part_dir, f"{fid}.kicad_sym"), "w", encoding="utf-8") as f:
         f.write(gen_symbol(cfg, n, fid))
     meta = gen_meta(cfg, n, fid)
-    with open(os.path.join(part_dir, "meta.json"), "w", encoding="utf-8") as f:
+    # 기존 meta의 3D 자산 필드는 보존 — 전체 재생성이 asset_sha256을 날려
+    # check_render 게이트가 CI에서 배포를 막은 사고 (2026-08-10, JST 37종)
+    mp = os.path.join(part_dir, "meta.json")
+    if os.path.exists(mp):
+        old_meta = json.load(open(mp, encoding="utf-8"))
+        for k in ("asset_sha256", "tier", "formats", "files"):
+            if k in old_meta:
+                meta[k] = old_meta[k]
+    with open(mp, "w", encoding="utf-8") as f:
         json.dump(meta, f, indent=2, ensure_ascii=False)
     return meta
 
