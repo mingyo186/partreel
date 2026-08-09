@@ -2,7 +2,7 @@
  "id": "g431_devkit",
  "name": "STM32G431 devkit (USB-C + LDO + STDC14 + I2C)",
  "description": "STM32G431CBTx development board: USB-C 5V input -> 3.3V LDO, STDC14 debug (SWD + SWO + VCP UART on USART2 PA2/PA3), USB FS on PA11/PA12, I2C1 pull-ups on PB7/PA15. Built from PartReel blocks via board.json (REQUIREMENTS S25).",
- "revision": "0.2",
+ "revision": "0.3",
  "blocks": [
   {
    "ref": "B1",
@@ -67,5 +67,8 @@
    "B3.PA15"
   ]
  },
- "layers": 2
+ "layers": 2,
+ "orient": {
+  "B3.U1": 90
+ }
 }

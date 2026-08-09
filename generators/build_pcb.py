@@ -233,6 +233,19 @@ def build(board_dir):
     main_block = max(order, key=lambda b: max(pad_count(fp) for _, _, fp in blocks[b]))
     mcu_fp = max((fp for _, _, fp in blocks[main_block]), key=pad_count)
 
+    # P15: 메인 IC 방향은 보드 선언 (orient: {"B3.U1": 90}) — 회전 후 핀
+    # 변을 다시 계산하므로 군집 투표(P8)·근접 배치(P13)가 전부 따라온다.
+    ref_map_pre = {}
+    rmp0 = os.path.join(board_dir, "ref_map.json")
+    if os.path.exists(rmp0):
+        ref_map_pre = json.load(open(rmp0, encoding="utf-8"))
+    for key, deg in (bd.get("orient") or {}).items():
+        board_ref = ref_map_pre.get(key, key.split(".", 1)[-1])
+        for blk in order:
+            for ref, _, fp in blocks[blk]:
+                if ref == board_ref:
+                    fp.SetOrientationDegrees(int(deg))
+
     # P8: MCU 패드의 변(좌/우/상/하) — 네트별로 기록 (전원 네트 제외)
     def is_power(name):
         return name.startswith("+") or name == "GND"
@@ -282,8 +295,36 @@ def build(board_dir):
     sides = {}
     for b in others:
         sides[b] = vote_side(b)
+    # P14: 전원 사슬 — 변환기(신호 연고 없음)는 자기 입력 전원의 공급원
+    # 군집 옆에. 블록 선언으로 판단: 깃발(layout.power flag) = 공급원,
+    # power_in = 소비.
+    producers = {}  # 전원넷 -> block key
+    consumers = {}  # block key -> [전원넷]
+    bref_of = {}
+    for inst in bd.get("blocks", []):
+        hits = globmod.glob(os.path.join(ROOT, "blocks", "*", inst["block"], "block.json"))
+        if not hits:
+            continue
+        bj = json.load(open(hits[0], encoding="utf-8"))
+        blk_key = next((k for k in order if k.split()[0] == inst["ref"]), None)
+        if blk_key is None:
+            continue
+        bref_of[blk_key] = inst["ref"]
+        for pw in (bj.get("layout") or {}).get("power", []):
+            if pw.get("symbol") == "flag":
+                producers.setdefault(pw.get("net"), blk_key)
+        consumers[blk_key] = bj.get("power_in", [])
+    chain_avg = {}
+    for b in others:
+        if sides[b] is None:
+            for net in consumers.get(b, []):
+                src = producers.get(net)
+                if src and src != b and sides.get(src):
+                    sides[b] = sides[src]
+                    chain_avg[b] = src  # 옆에 서도록 정렬 키 공유
+                    break
     used = [s for s in sides.values() if s]
-    for b in others:  # 신호 연고 없는 군집(전원 등)은 빈 변부터
+    for b in others:  # 그래도 못 정한 군집은 빈 변부터
         if sides[b] is None:
             sides[b] = next((s for s in TIE if s not in used), "left")
             used.append(sides[b])
@@ -390,8 +431,9 @@ def build(board_dir):
         b = body_bb(fp_part)
         w, h = b[2] - b[0], b[3] - b[1]
         half = w / 2 if n[0] else h / 2
-        sz = tpad.GetSize()
-        phalf = pcbnew.ToMM(sz.x if n[0] else sz.y) / 2
+        # 패드 크기는 회전을 안 따라온다(GetSize는 로컬) — bbox로 실측
+        pbb = tpad.GetBoundingBox()
+        phalf = pcbnew.ToMM(pbb.GetWidth() if n[0] else pbb.GetHeight()) / 2
         # 후보: 바깥(k_out) x 옆줄(k_lat) — 인접 핀 캡들은 변을 따라 나란히
         # 퍼진다 (바깥으로만 밀면 후보 소진 시 겹침 — 2026-08-10 C7/C8).
         tv = (-n[1], n[0])
@@ -488,6 +530,8 @@ def build(board_dir):
             continue
         # P10: 같은 변의 군집은 물린 MCU 핀 좌표 순서로 (꼬임 방지)
         def blk_avg(b, axis):
+            if b in chain_avg:   # P14: 전원 사슬은 공급원 옆 정렬
+                b = chain_avg[b]
             pts = [net_pad_avg(fp) for _, _, fp in blocks[b]]
             pts = [p for p in pts if p]
             if not pts:
@@ -495,18 +539,45 @@ def build(board_dir):
             return sum(p[axis] for p in pts) / len(pts)
         blks.sort(key=lambda b: blk_avg(b, 0 if s in ("top", "bottom") else 1))
         sizes = [local_bbox(b) for b in blks]
+        # 가장자리 군집이 있는 변: 벽(외곽선) 기준 정렬 — 깊은 이웃 군집이
+        # 있으면 벽을 그만큼 안쪽으로 내려 띠 폭을 확보한다 (이웃이 메인과
+        # 겹쳐 옆으로 튕겨나가던 문제의 기하적 해법, 2026-08-10 LDO 사건).
+        edge_ids2 = {id(e) for _, e in edge_fps}
+        edge_here = [b for b in blks
+                     if any(id(f) in edge_ids2 for _, _, f in blocks[b])]
+        depth = (lambda sz: (sz[3] - sz[1]) if s in ("top", "bottom")
+                 else (sz[2] - sz[0]))
+        d_extra = 0.0
+        if edge_here:
+            h_edge = max(depth(local_bbox(b)) for b in edge_here)
+            non = [depth(local_bbox(b)) for b in blks if b not in edge_here]
+            d_extra = max(0.0, (max(non) + EDGE - h_edge) if non else 0.0)
         if s in ("left", "right"):
             total = sum(y2 - y1 for _, y1, _, y2 in sizes) + GAP * (len(blks) - 1)
             cur = (my1 + my2) / 2 - total / 2
             for b, (x1, y1, x2, y2) in zip(blks, sizes):
-                ox = (mx1 - GAP - x2) if s == "left" else (mx2 + GAP - x1)
+                if s == "left":
+                    ox = mx1 - GAP - x2 - (d_extra if b in edge_here else 0.0)
+                    if edge_here and b not in edge_here:
+                        ox = (mx1 - GAP - h_edge - d_extra) + EDGE - x1
+                else:
+                    ox = mx2 + GAP - x1 + (d_extra if b in edge_here else 0.0)
+                    if edge_here and b not in edge_here:
+                        ox = (mx2 + GAP + h_edge + d_extra) - EDGE - x2
                 offsets[b] = (ox, cur - y1)
                 cur += (y2 - y1) + GAP
         else:
             total = sum(x2 - x1 for x1, _, x2, _ in sizes) + GAP * (len(blks) - 1)
             cur = (mx1 + mx2) / 2 - total / 2
             for b, (x1, y1, x2, y2) in zip(blks, sizes):
-                oy = (my1 - GAP - y2) if s == "top" else (my2 + GAP - y1)
+                if s == "top":
+                    oy = my1 - GAP - y2 - (d_extra if b in edge_here else 0.0)
+                    if edge_here and b not in edge_here:
+                        oy = (my1 - GAP - h_edge - d_extra) + EDGE - y1
+                else:
+                    oy = my2 + GAP - y1 + (d_extra if b in edge_here else 0.0)
+                    if edge_here and b not in edge_here:
+                        oy = (my2 + GAP + h_edge + d_extra) - EDGE - y2
                 offsets[b] = (cur - x1, oy)
                 cur += (x2 - x1) + GAP
 
@@ -516,10 +587,64 @@ def build(board_dir):
         for fp, cx, cy in placed_local[blk]:
             move_center(fp, ox + cx, oy + cy)
     all_fp = [fp for blk in order for fp, _, _ in placed_local[blk]]
-    ex1 = min(body_bb(fp)[0] for fp in all_fp)
-    ey1 = min(body_bb(fp)[1] for fp in all_fp)
-    ex2 = max(body_bb(fp)[2] for fp in all_fp)
-    ey2 = max(body_bb(fp)[3] for fp in all_fp)
+
+    # === 마감 정렬: 군집 분리(옆으로 밀기) ↔ 플러시 클램프를 수렴까지 ===
+    # 분리는 항상 '자기 변의 접선 방향'으로만 민다 — 플러시 벽(외곽선)을
+    # 다시 넘는 되밀림(진동)이 원리적으로 없다 (2026-08-10: 클램프가 분리
+    # 뒤에 돌면서 서로 되물리던 사건의 구조적 해법).
+    edge_side_of = {}
+    for s, efp in edge_fps:
+        for blk in order:
+            if any(f is efp for _, _, f in blocks[blk]):
+                edge_side_of[blk] = s
+    LAT = {"top": "x", "bottom": "x", "left": "y", "right": "y"}
+
+    def blk_box(blk):
+        fps = [fp for fp, _, _ in placed_local[blk]]
+        return (min(body_bb(f)[0] for f in fps), min(body_bb(f)[1] for f in fps),
+                max(body_bb(f)[2] for f in fps), max(body_bb(f)[3] for f in fps))
+
+    def shift_blk(blk, dx, dy):
+        if blk in edge_side_of:  # 가장자리 군집은 벽에 수직 이동 금지
+            if LAT[edge_side_of[blk]] == "x":
+                dy = 0.0
+            else:
+                dx = 0.0
+        if dx == 0.0 and dy == 0.0:
+            return
+        ox, oy = offsets[blk]
+        offsets[blk] = (ox + dx, oy + dy)
+        for f, _, _ in placed_local[blk]:
+            p = f.GetPosition()
+            f.SetPosition(pcbnew.VECTOR2I(p.x + mm(dx), p.y + mm(dy)))
+
+    def separation():
+        for _ in range(24):
+            moved = False
+            for i, a in enumerate(order):
+                for b2 in order[i + 1:]:
+                    ba, bb_ = blk_box(a), blk_box(b2)
+                    # 판정 여유는 GAP(이상적 간격)이 아니라 실겹침 기준 —
+                    # 밴드 정렬이 만든 1.7mm 간격을 '겹침'으로 오판해 LDO를
+                    # 옆으로 튕겨내던 사건 (2026-08-10). 0.6 = courtyard
+                    # 여유(0.25x2) + 선 1가닥 최소.
+                    ovx = min(ba[2], bb_[2]) - max(ba[0], bb_[0]) + 0.6
+                    ovy = min(ba[3], bb_[3]) - max(ba[1], bb_[1]) + 0.6
+                    if ovx <= 0 or ovy <= 0:
+                        continue
+                    mv = b2 if a == main_block else a if b2 == main_block else b2
+                    ot = a if mv is b2 else b2
+                    mb, ob = blk_box(mv), blk_box(ot)
+                    axis = LAT.get(sides.get(mv) or edge_side_of.get(mv), "x")
+                    if axis == "x":
+                        sgn = 1 if (mb[0] + mb[2]) >= (ob[0] + ob[2]) else -1
+                        shift_blk(mv, sgn * ovx, 0)
+                    else:
+                        sgn = 1 if (mb[1] + mb[3]) >= (ob[1] + ob[3]) else -1
+                        shift_blk(mv, 0, sgn * ovy)
+                    moved = True
+            if not moved:
+                return
 
     # P6: 가장자리 부품의 실크 = 그 변의 외곽선 (그 변은 여백 0)
     def silk_extreme(fp, side):
@@ -536,18 +661,67 @@ def build(board_dir):
             return {"left": b[0], "right": b[2], "top": b[1], "bottom": b[3]}[side]
         return min(vals) if side in ("left", "top") else max(vals)
 
-    x1, y1, x2, y2 = ex1 - EDGE, ey1 - EDGE, ex2 + EDGE, ey2 + EDGE
-    for side, fp in edge_fps:
-        v = silk_extreme(fp, side)
-        if side == "left":
-            x1 = min(x1 + 0, v)  # 실크선이 곧 외곽
-            x1 = v
-        elif side == "right":
-            x2 = v
-        elif side == "top":
-            y1 = v
-        else:
-            y2 = v
+    def inward_need(box, side, v):
+        """box가 플러시 벽 v를 넘은 양 (안쪽 이동 필요량, 부호 포함 dx/dy)."""
+        if side == "top" and box[1] < v + EDGE:
+            return 0.0, (v + EDGE) - box[1]
+        if side == "bottom" and box[3] > v - EDGE:
+            return 0.0, -(box[3] - (v - EDGE))
+        if side == "left" and box[0] < v + EDGE:
+            return (v + EDGE) - box[0], 0.0
+        if side == "right" and box[2] > v - EDGE:
+            return -(box[2] - (v - EDGE)), 0.0
+        return 0.0, 0.0
+
+    def clamp_flush():
+        flush = {}
+        for side, efp in edge_fps:
+            v = silk_extreme(efp, side)
+            eb = edge_side_of and next((b for b in order
+                                        if any(f is efp for _, _, f in blocks[b])), None)
+            # 가장자리 군집 안의 비가장자리 부품: 최대 필요량만큼 '일괄' 이동
+            # (부품별로 밀면 같은 자리에 포개진다 — CC 저항 사건)
+            needs = []
+            inner = [f for f, _, _ in placed_local[eb] if f is not efp]
+            for f in inner:
+                needs.append(inward_need(body_bb(f), side, v))
+            dxs = [d[0] for d in needs if d[0]] + [0.0]
+            dys = [d[1] for d in needs if d[1]] + [0.0]
+            dx = max(dxs) if side == "left" else min(dxs) if side == "right" else 0.0
+            dy = max(dys) if side == "top" else min(dys) if side == "bottom" else 0.0
+            if dx or dy:
+                for f in inner:
+                    p = f.GetPosition()
+                    f.SetPosition(pcbnew.VECTOR2I(p.x + mm(dx), p.y + mm(dy)))
+            # 같은 변의 다른 군집: 군집째 클램프
+            for blk in order:
+                if blk == eb or sides.get(blk) != side:
+                    continue
+                dx2, dy2 = inward_need(blk_box(blk), side, v)
+                if dx2 or dy2:
+                    ox, oy = offsets[blk]
+                    offsets[blk] = (ox + dx2, oy + dy2)
+                    for f, _, _ in placed_local[blk]:
+                        p = f.GetPosition()
+                        f.SetPosition(pcbnew.VECTOR2I(p.x + mm(dx2), p.y + mm(dy2)))
+            flush[side] = v
+        return flush
+
+    separation()
+    flush = {}
+    for _ in range(3):
+        flush = clamp_flush()
+        separation()
+    flush = clamp_flush()
+
+    ex1 = min(body_bb(fp)[0] for fp in all_fp)
+    ey1 = min(body_bb(fp)[1] for fp in all_fp)
+    ex2 = max(body_bb(fp)[2] for fp in all_fp)
+    ey2 = max(body_bb(fp)[3] for fp in all_fp)
+    x1 = flush.get("left", ex1 - EDGE)
+    x2 = flush.get("right", ex2 + EDGE)
+    y1 = flush.get("top", ey1 - EDGE)
+    y2 = flush.get("bottom", ey2 + EDGE)
 
     # 용지 중앙으로 평행이동 (P1)
     dx, dy = CX - (x1 + x2) / 2, CY - (y1 + y2) / 2
@@ -563,7 +737,9 @@ def build(board_dir):
 
     def ref_pos(fp):
         bx1, by1, bx2, by2 = body_bb(fp)
-        tw = 0.55 * len(fp.GetReference()) + 0.3
+        # 글자폭은 실측 보정치 (0.55/자는 과소 — R4 참조가 자기 패드 마스크에
+        # 0.02mm 걸린 사건, 2026-08-10)
+        tw = 0.85 * len(fp.GetReference()) + 0.5
         small = (by2 - by1) < 4.0 and len(list(fp.Pads())) < 10
         outw = 1 if (bx1 + bx2) / 2 >= bcx else -1
         if small:
@@ -579,13 +755,25 @@ def build(board_dir):
                      (bx2 + 0.4 + tw / 2, (by1 + by2) / 2),
                      ((bx1 + bx2) / 2, by2 + 0.9),
                      ((bx1 + bx2) / 2, (by1 + by2) / 2)]  # 최후: 몸체 중앙(LQFP 내부)
+        best, best_ov = None, None
         for cx, cy in cands:
             tb = (cx - tw / 2 - 0.15, cy - 0.55, cx + tw / 2 + 0.15, cy + 0.55)
-            hit = any(oid != id(fp) and tb[0] < o[2] and tb[2] > o[0] and
-                      tb[1] < o[3] and tb[3] > o[1] for oid, o in obstacles)
-            if not hit:
+            ov = 0.0
+            for oid, o in obstacles:
+                if oid == id(fp):
+                    continue
+                w_ = min(tb[2], o[2]) - max(tb[0], o[0])
+                h_ = min(tb[3], o[3]) - max(tb[1], o[1])
+                if w_ > 0 and h_ > 0:
+                    ov += w_ * h_
+            if ov == 0.0:
+                obstacles.append((0, tb))  # 놓인 REF도 장애물 (REF끼리 겹침 방지)
                 return cx, cy
-        return cands[0]
+            if best_ov is None or ov < best_ov:
+                best, best_ov = (cx, cy, tb), ov
+        # 전 후보가 걸리면 겹침 최소 후보 (1번 고정 폴백은 하필 최악일 수 있음)
+        obstacles.append((0, best[2]))
+        return best[0], best[1]
 
     for fp in all_fp:
         r = fp.Reference()
