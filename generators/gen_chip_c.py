@@ -62,25 +62,26 @@ def main():
 
     meta = {
         "id": pid,
-        "name": f"{value} 1% {size} (Vishay {mpn})",
+        # Samsung CL 코드: CL05 A 105 K A5: A=X5R, K=±10%, A5=25V
+        "name": f"{value} 10% {size} MLCC (Samsung {mpn})",
         "category": "passive",
-        "family": f"chip_resistor_{size}",
+        "family": f"chip_capacitor_{size}",
         "manufacturer": "Samsung Electro-Mechanics",
         "mpn_pattern": mpn,
-        "description": f"MLCC ceramic capacitor {value} +-1% {size} "
-                       f"({'/'.join(size_key)}mm metric), X5R 25V. "
+        "description": f"MLCC ceramic capacitor {value} +-10% {size} "
+                       f"({size_key} metric), X5R 25V. "
                        f"Generated for PartReel circuit blocks.",
         "keywords": ["capacitor", value, size, "chip", "smd"],
         "parameters": {"pins": 2, "mounting": "smd"},
         "formats": ["kicad_mod", "kicad_sym"],
         "tier": "verified-2d",
         "license": "CC-BY-4.0",
-        "datasheet": "https://weblib.samsungsem.com/mlcc/mlcc-ec-data-sheet.do?partNumber=CL05A105KA5NNNC",
+        "datasheet": f"https://weblib.samsungsem.com/mlcc/mlcc-ec-data-sheet.do?partNumber={mpn}",
         "dimensions_source": "Land: IPC-7351 density B nominal for chip "
                              f"{size_key} metric (KEMET recommended land, see "
                              "generators/import_antmicro.CHIP_LAND, §21-C). Body "
-                             "1.0x0.5mm per Vishay CRCW e3 datasheet (doc 20035) "
-                             "Dimensions table, 0402 row.",
+                             "1.0x0.5mm per Samsung CL series datasheet "
+                             f"({mpn} dimensions table, {size}/{size_key} metric).",
         "files": {
             "footprint": f"{pid}.kicad_mod",
             "symbol": f"{pid}.kicad_sym",
