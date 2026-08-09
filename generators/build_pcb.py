@@ -32,9 +32,12 @@ KICAD_CLI = os.environ.get(
 
 import pcbnew  # noqa: E402  (KiCad 파이썬 전용)
 
-MARGIN = 3.0       # 부품 간 여백 (mm)
-BLOCK_GAP = 6.0    # 블록 묶음 간 여백
-EDGE = 4.0         # 외곽선 여백
+# P1 (2026-08-10 사용자 교정): 외곽 미지정 시 "부품과 선 넓이에 맞춰
+# 최소화" — 널찍한 격자가 아니라 부품이 다 들어갈 최소 크기 + 배선 여유.
+MARGIN = 1.0       # 부품 간 여백 (mm)
+BLOCK_GAP = 2.5    # 블록 묶음 간 여백
+EDGE = 2.5         # 외곽선-부품 여백 (배선 지나갈 폭)
+COL_H = 32.0       # 블록 안 세로 채움 한계 — 넘으면 옆 줄로 감아 정사각형에 가깝게
 
 
 def mm(v):
@@ -109,23 +112,38 @@ def build(board_dir):
         fp = pcbnew.FootprintLoad(pretty, pid)
         if fp is None:
             raise SystemExit(f"FAIL: FootprintLoad 실패 '{pid}'")
-        # P2: 삽입식 USB 리셉터클은 입(패드 반대편)이 왼쪽 밖을 향하게 90도
-        # 회전 — 배치 후 외곽 왼변에 스냅한다.
+        # P2: 삽입식 USB 리셉터클은 입(패드 반대편)이 왼쪽 밖을 향하게 회전.
+        # KiCad 양수 회전 = 화면 반시계 — 270도가 패드를 +x(보드 안쪽)로
+        # 보낸다 (2026-08-10 실측 교정: 90도는 정반대였음).
         edge_conn = "usb_c" in pid
         if edge_conn:
-            fp.SetOrientationDegrees(90)
+            fp.SetOrientationDegrees(270)
         if block != cur_block:
             x_cursor += (col_w + BLOCK_GAP) if cur_block else 0.0
             cur_block, col_w, y_cursor, x0 = block, 0.0, 0.0, x_cursor
-        bb = fp.GetBoundingBox()
+        bb = fp.GetBoundingBox(False, False)  # 글자 제외 실몸체
         w = pcbnew.ToMM(bb.GetWidth())
         h = pcbnew.ToMM(bb.GetHeight())
+        # 블록 안 세로 감기: 열이 COL_H를 넘으면 옆 줄로 (외곽 최소화)
+        if y_cursor > 0 and y_cursor + h > COL_H:
+            x0 += col_w + MARGIN
+            x_cursor = max(x_cursor, x0)
+            y_cursor, col_w = 0.0, 0.0
         fp.SetReference(ref)
         fp.SetPosition(pcbnew.VECTOR2I(mm(x0 + w / 2), mm(y_cursor + h / 2)))
+        # SetPosition은 몸체 중심이 아니라 원점 기준 — 몸체 중심을 맞춘다
+        bb2 = fp.GetBoundingBox(False, False)
+        fp.SetPosition(pcbnew.VECTOR2I(
+            fp.GetPosition().x + mm(x0 + w / 2) - (bb2.GetLeft() + bb2.GetRight()) // 2,
+            fp.GetPosition().y + mm(y_cursor + h / 2) - (bb2.GetTop() + bb2.GetBottom()) // 2))
         for pad in fp.Pads():
             key = (ref, pad.GetNumber())
             if key in pad_net:
                 pad.SetNet(nets[pad_net[key]])
+        # 초기화 단계의 ref 글자는 F.Fab으로 — 최소 외곽 밀집 배치에서 실크
+        # ref가 이웃 패드를 물어 DRC silk_over_copper 19건 (2026-08-10).
+        # 실크 ref는 배치 확정 후 사람이 올린다 (rules/pcb-layout.md P5 후보).
+        fp.Reference().SetLayer(pcbnew.F_Fab)
         board.Add(fp)
         placed.append((ref, pid, fp))
         y_cursor += h + MARGIN
