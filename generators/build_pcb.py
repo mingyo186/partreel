@@ -33,8 +33,20 @@ import pcbnew  # noqa: E402  (KiCad 파이썬 전용)
 MARGIN = 1.0     # 부품 간 여백 (mm)
 GAP = 2.0        # 군집 간 여백 (배선 지나갈 폭)
 EDGE = 2.0       # 외곽선-부품 여백
-# KiCad 회전(화면 반시계) — 삽입구 방향을 -x(왼쪽 밖)로 보내는 각 (실측 검증)
-FACE_TO_LEFT = {"+y": 270, "-y": 90, "+x": 180, "-x": 0}
+# KiCad 회전각 a의 좌표 변환 (실측 검증: 270이 -y를 +x로 보냄)
+ROT = {0: lambda x, y: (x, y), 90: lambda x, y: (y, -x),
+       180: lambda x, y: (-x, -y), 270: lambda x, y: (-y, x)}
+FACE_VEC = {"+x": (1, 0), "-x": (-1, 0), "+y": (0, 1), "-y": (0, -1)}
+OUTWARD = {"left": (-1, 0), "right": (1, 0), "top": (0, -1), "bottom": (0, 1)}
+
+
+def face_rotation(face, side):
+    """edge_face 방향을 side의 바깥 방향으로 보내는 KiCad 회전각 (P6+P8)."""
+    fx, fy = FACE_VEC[face]
+    for a, f in ROT.items():
+        if f(fx, fy) == OUTWARD[side]:
+            return a
+    return 0
 
 
 def mm(v):
@@ -178,18 +190,13 @@ def build(board_dir):
         for node in net.findall("node"):
             pad_net[(node.get("ref"), node.get("pin"))] = net.get("name")
 
-    # 풋프린트 로드 + 회전(P6) + 블록별 군집 구성
-    blocks = {}   # block -> [(ref, fp, w, h)]
-    edge_fps = []  # (block, fp) — 실크=외곽 스냅 대상
+    # 풋프린트 로드 + 블록별 군집 구성 (회전은 변 결정 후 — P8)
+    blocks = {}   # block -> [(ref, pid, fp)]
     order = []
     for ref, pid, block in comps:
         fp = pcbnew.FootprintLoad(pretty, pid)
         if fp is None:
             raise SystemExit(f"FAIL: FootprintLoad 실패 '{pid}'")
-        face = (metas[pid].get("parameters") or {}).get("edge_face")
-        if face:
-            fp.SetOrientationDegrees(FACE_TO_LEFT[face])
-            edge_fps.append((block, fp))
         fp.SetReference(ref)
         fp.Reference().SetLayer(pcbnew.F_Fab)  # P5 후보: 초기화 REF는 Fab
         for pad in fp.Pads():
@@ -200,18 +207,78 @@ def build(board_dir):
         if block not in blocks:
             blocks[block] = []
             order.append(block)
-        blocks[block].append((ref, fp, f_w(fp), f_h(fp)))
+        blocks[block].append((ref, pid, fp))
 
-    # 메인 군집 = 가장 핀 많은 부품이 속한 블록 (MCU)
-    def max_pads(blk):
-        return max(fp.Pads().size() if hasattr(fp.Pads(), "size") else len(list(fp.Pads()))
-                   for _, fp, _, _ in blocks[blk])
-    main_block = max(order, key=max_pads)
+    # 메인 군집 = 가장 핀 많은 부품(MCU)이 속한 블록
+    def pad_count(fp):
+        return len(list(fp.Pads()))
+    main_block = max(order, key=lambda b: max(pad_count(fp) for _, _, fp in blocks[b]))
+    mcu_fp = max((fp for _, _, fp in blocks[main_block]), key=pad_count)
 
-    # 군집 내부 배치 (로컬 좌표)
-    placed_local = {}  # block -> [(fp, cx, cy)]
+    # P8: MCU 패드의 변(좌/우/상/하) — 네트별로 기록 (전원 네트 제외)
+    def is_power(name):
+        return name.startswith("+") or name == "GND"
+    mx1b, my1b, mx2b, my2b = body_bb(mcu_fp)
+    mcx, mcy = (mx1b + mx2b) / 2, (my1b + my2b) / 2
+    net_side = {}
+    for pad in mcu_fp.Pads():
+        name = pad.GetNetname()
+        if not name or is_power(name):
+            continue
+        px, py = pcbnew.ToMM(pad.GetPosition().x), pcbnew.ToMM(pad.GetPosition().y)
+        dx, dy = px - mcx, py - mcy
+        side = ("left" if dx < 0 else "right") if abs(dx) > abs(dy) else \
+               ("top" if dy < 0 else "bottom")
+        net_side[name] = side
+    TIE = ["right", "top", "left", "bottom"]
+
+    def vote_side(blk):
+        votes = {}
+        for _, _, fp in blocks[blk]:
+            for pad in fp.Pads():
+                s = net_side.get(pad.GetNetname())
+                if s:
+                    votes[s] = votes.get(s, 0) + 1
+        if not votes:
+            return None
+        best = max(votes.values())
+        return next(s for s in TIE if votes.get(s, 0) == best)
+
+    others = [b for b in order if b != main_block]
+    sides = {}
+    for b in others:
+        sides[b] = vote_side(b)
+    used = [s for s in sides.values() if s]
+    for b in others:  # 신호 연고 없는 군집(전원 등)은 빈 변부터
+        if sides[b] is None:
+            sides[b] = next((s for s in TIE if s not in used), "left")
+            used.append(sides[b])
+
+    # P6+P8: 가장자리 부품은 자기 군집 변의 바깥으로 삽입구 회전
+    edge_fps = []  # (side, fp)
     for blk in order:
-        items = sorted(blocks[blk], key=lambda t: -(t[2] * t[3]))
+        for _, pid, fp in blocks[blk]:
+            face = (metas[pid].get("parameters") or {}).get("edge_face")
+            if face:
+                side = sides.get(blk) or "left"
+                fp.SetOrientationDegrees(face_rotation(face, side))
+                edge_fps.append((side, fp))
+
+    # 군집 내부 배치 (로컬 좌표) — 회전 반영된 크기로.
+    # 가장자리 부품은 자기 변의 최외곽 열에: 오른변이면 마지막 열(오른쪽),
+    # 왼변이면 첫 열 — 아니면 소형 부품이 부품 뒤(보드 밖)로 감긴다
+    # (2026-08-10 USB CC 저항 이탈로 확인).
+    edge_set = {id(fp) for _, fp in edge_fps}
+    placed_local = {}
+    for blk in order:
+        items = sorted(((ref, fp, f_w(fp), f_h(fp)) for ref, _, fp in blocks[blk]),
+                       key=lambda t: -(t[2] * t[3]))
+        eside = sides.get(blk)
+        edge_items = [it for it in items if id(it[1]) in edge_set]
+        if edge_items and eside in ("right", "bottom"):
+            items = [it for it in items if id(it[1]) not in edge_set] + edge_items
+        elif edge_items:
+            items = edge_items + [it for it in items if id(it[1]) not in edge_set]
         if blk == main_block and len(items) >= 4:
             placed_local[blk] = pack_main_ic(items)
         else:
@@ -226,37 +293,34 @@ def build(board_dir):
         y2 = max(cy + f_h(fp) / 2 for fp, _, cy in pos)
         return x1, y1, x2, y2
 
-    # 군집 배치: 메인 중앙, 가장자리 군집은 왼쪽/오른쪽 변, 나머지 사방 (P7)
+    # 군집 배치 (P7+P8): 메인 중앙, 각 군집은 투표된 변에 — 같은 변 여러
+    # 군집은 그 변을 따라 차례로
     CX, CY = 148.5, 105.0  # A4 중앙
     offsets = {main_block: (0.0, 0.0)}
-    edge_blocks = [b for b, _ in edge_fps]
-    others = [b for b in order if b != main_block]
-    sides = {}
-    side_seq = ["left", "right", "bottom", "top"]
-    for b in others:
-        if b in edge_blocks and "left" not in sides.values():
-            sides[b] = "left"
-        else:
-            for s in side_seq:
-                if s not in sides.values():
-                    sides[b] = s
-                    break
-            else:
-                sides[b] = "bottom"
     mx1, my1, mx2, my2 = local_bbox(main_block)
+    lateral = {s: [] for s in TIE}
     for b in others:
-        x1, y1, x2, y2 = local_bbox(b)
-        s = sides[b]
-        if s == "left":
-            offsets[b] = (mx1 - GAP - x2, (my1 + my2) / 2 - (y1 + y2) / 2)
-        elif s == "right":
-            offsets[b] = (mx2 + GAP - x1, (my1 + my2) / 2 - (y1 + y2) / 2)
-        elif s == "bottom":
-            offsets[b] = ((mx1 + mx2) / 2 - (x1 + x2) / 2, my2 + GAP - y1)
+        lateral[sides[b]].append(b)
+    for s, blks in lateral.items():
+        if not blks:
+            continue
+        sizes = [local_bbox(b) for b in blks]
+        if s in ("left", "right"):
+            total = sum(y2 - y1 for _, y1, _, y2 in sizes) + GAP * (len(blks) - 1)
+            cur = (my1 + my2) / 2 - total / 2
+            for b, (x1, y1, x2, y2) in zip(blks, sizes):
+                ox = (mx1 - GAP - x2) if s == "left" else (mx2 + GAP - x1)
+                offsets[b] = (ox, cur - y1)
+                cur += (y2 - y1) + GAP
         else:
-            offsets[b] = ((mx1 + mx2) / 2 - (x1 + x2) / 2, my1 - GAP - y2)
+            total = sum(x2 - x1 for x1, _, x2, _ in sizes) + GAP * (len(blks) - 1)
+            cur = (mx1 + mx2) / 2 - total / 2
+            for b, (x1, y1, x2, y2) in zip(blks, sizes):
+                oy = (my1 - GAP - y2) if s == "top" else (my2 + GAP - y1)
+                offsets[b] = (cur - x1, oy)
+                cur += (x2 - x1) + GAP
 
-    # 절대 배치 (일단 원점 기준) 후 전체 범위 산출
+    # 절대 배치 후 전체 범위 산출
     for blk in order:
         ox, oy = offsets[blk]
         for fp, cx, cy in placed_local[blk]:
@@ -267,10 +331,33 @@ def build(board_dir):
     ex2 = max(body_bb(fp)[2] for fp in all_fp)
     ey2 = max(body_bb(fp)[3] for fp in all_fp)
 
-    # P6: 가장자리 부품의 실크 왼끝 = 외곽 왼변 (그 변은 여백 0)
-    flush_x = min((silk_min_x(fp) for _, fp in edge_fps), default=None)
-    x1 = flush_x if flush_x is not None else ex1 - EDGE
-    y1, x2, y2 = ey1 - EDGE, ex2 + EDGE, ey2 + EDGE
+    # P6: 가장자리 부품의 실크 = 그 변의 외곽선 (그 변은 여백 0)
+    def silk_extreme(fp, side):
+        vals = []
+        for g in fp.GraphicalItems():
+            if g.GetLayer() == pcbnew.F_SilkS:
+                bb = g.GetBoundingBox()
+                vals.append({"left": pcbnew.ToMM(bb.GetLeft()),
+                             "right": pcbnew.ToMM(bb.GetRight()),
+                             "top": pcbnew.ToMM(bb.GetTop()),
+                             "bottom": pcbnew.ToMM(bb.GetBottom())}[side])
+        if not vals:
+            b = body_bb(fp)
+            return {"left": b[0], "right": b[2], "top": b[1], "bottom": b[3]}[side]
+        return min(vals) if side in ("left", "top") else max(vals)
+
+    x1, y1, x2, y2 = ex1 - EDGE, ey1 - EDGE, ex2 + EDGE, ey2 + EDGE
+    for side, fp in edge_fps:
+        v = silk_extreme(fp, side)
+        if side == "left":
+            x1 = min(x1 + 0, v)  # 실크선이 곧 외곽
+            x1 = v
+        elif side == "right":
+            x2 = v
+        elif side == "top":
+            y1 = v
+        else:
+            y2 = v
 
     # 용지 중앙으로 평행이동 (P1)
     dx, dy = CX - (x1 + x2) / 2, CY - (y1 + y2) / 2
