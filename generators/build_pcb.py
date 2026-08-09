@@ -33,6 +33,7 @@ import pcbnew  # noqa: E402  (KiCad 파이썬 전용)
 MARGIN = 0.6     # 부품 간 여백 — 선 1가닥 + 클리어런스 (P11)
 GAP = 2.0        # 군집 간 여백 (배선 지나갈 폭)
 EDGE = 2.0       # 외곽선-부품 여백
+REF_W = 2.6      # P5: 소형 부품 옆 실크 REF 자리 (열 폭에 예약)
 # KiCad 회전각 a의 좌표 변환 (실측 검증: 270이 -y를 +x로 보냄)
 ROT = {0: lambda x, y: (x, y), 90: lambda x, y: (y, -x),
        180: lambda x, y: (-x, -y), 270: lambda x, y: (-y, x)}
@@ -116,7 +117,7 @@ def pack_main_ic(items, hints=None):
                 s["y"], s["w"] = -mh / 2, 0.0
         out.append((fp, s["x"] + (w / 2) * side, s["y"] + h / 2))
         s["y"] += h + MARGIN
-        s["w"] = max(s["w"], w)
+        s["w"] = max(s["w"], w + REF_W)  # P5: 옆 REF 자리 예약
 
     rest = items[1:]
     # 1) 신호 부품: 물린 핀의 변에, 핀 y 순서대로 (P10 꼬임 방지)
@@ -144,7 +145,8 @@ def pack_wrap(items, hmax):
             y, colw = 0.0, 0.0
         out.append((fp, x0 + w / 2, y + h / 2))
         y += h + MARGIN
-        colw = max(colw, w)
+        # 소형 부품은 옆 REF 자리 예약 (P5); 대형은 몸체 위 REF라 불필요
+        colw = max(colw, w + (REF_W if h < 4.0 else 0.0))
     return out
 
 
@@ -214,7 +216,6 @@ def build(board_dir):
         if fp is None:
             raise SystemExit(f"FAIL: FootprintLoad 실패 '{pid}'")
         fp.SetReference(ref)
-        fp.Reference().SetLayer(pcbnew.F_Fab)  # P5 후보: 초기화 REF는 Fab
         for pad in fp.Pads():
             key = (ref, pad.GetNumber())
             if key in pad_net:
@@ -413,6 +414,24 @@ def build(board_dir):
         p = fp.GetPosition()
         fp.SetPosition(pcbnew.VECTOR2I(p.x + mm(dx), p.y + mm(dy)))
     x1, x2, y1, y2 = x1 + dx, x2 + dx, y1 + dy, y2 + dy
+
+    # P5: 실크 REF 배치 — 소형 부품은 옆(보드 중심에서 바깥쪽), 대형은 몸체 위
+    bcx = (x1 + x2) / 2
+    for fp in all_fp:
+        r = fp.Reference()
+        r.SetLayer(pcbnew.F_SilkS)
+        r.SetTextSize(pcbnew.VECTOR2I(mm(0.8), mm(0.8)))
+        r.SetTextThickness(mm(0.12))
+        r.SetTextAngleDegrees(0)
+        bx1, by1, bx2, by2 = body_bb(fp)
+        if (by2 - by1) < 4.0 and len(list(fp.Pads())) < 10:
+            tw = 0.55 * len(fp.GetReference()) + 0.3
+            outw = 1 if (bx1 + bx2) / 2 >= bcx else -1
+            cx = (bx2 + 0.4 + tw / 2) if outw > 0 else (bx1 - 0.4 - tw / 2)
+            cy = (by1 + by2) / 2
+        else:
+            cx, cy = (bx1 + bx2) / 2, by1 - 0.9
+        r.SetPosition(pcbnew.VECTOR2I(mm(cx), mm(cy)))
 
     rect = pcbnew.PCB_SHAPE(board)
     rect.SetShape(pcbnew.SHAPE_T_RECT)
