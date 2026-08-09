@@ -81,7 +81,10 @@ def build(board_dir):
         shutil.copy(os.path.join(dirs[pid], f"{pid}.kicad_mod"),
                     os.path.join(pretty, f"{pid}.kicad_mod"))
 
+    bd = json.load(open(os.path.join(board_dir, "board.json"), encoding="utf-8"))
     board = pcbnew.CreateEmptyBoard()
+    # P4 (rules/pcb-layout.md): 층수는 board.json 선언 — 기본 2층
+    board.SetCopperLayerCount(int(bd.get("layers", 2)))
 
     # 네트 등록
     nets = {}
@@ -95,17 +98,25 @@ def build(board_dir):
         for node in net.findall("node"):
             pad_net[(node.get("ref"), node.get("pin"))] = net.get("name")
 
-    # 블록 단위 격자 배치: 블록 = 열, 부품 = 열 안에서 아래로
-    x_cursor = EDGE + 8.0
+    # 블록 단위 격자 배치: 블록 = 열, 부품 = 열 안에서 아래로.
+    # 블록 열 순서 = board.json blocks 순서 — 디버그 블록을 MCU 블록 바로
+    # 뒤에 선언하면 P3(디버그는 MCU 근처)이 자연 충족된다.
+    placed = []  # (ref, pid, fp)
+    x_cursor = 0.0
     max_y = 0.0
     cur_block, col_w, y_cursor, x0 = None, 0.0, 0.0, 0.0
     for ref, pid, block in comps:
         fp = pcbnew.FootprintLoad(pretty, pid)
         if fp is None:
             raise SystemExit(f"FAIL: FootprintLoad 실패 '{pid}'")
+        # P2: 삽입식 USB 리셉터클은 입(패드 반대편)이 왼쪽 밖을 향하게 90도
+        # 회전 — 배치 후 외곽 왼변에 스냅한다.
+        edge_conn = "usb_c" in pid
+        if edge_conn:
+            fp.SetOrientationDegrees(90)
         if block != cur_block:
             x_cursor += (col_w + BLOCK_GAP) if cur_block else 0.0
-            cur_block, col_w, y_cursor, x0 = block, 0.0, EDGE + 8.0, x_cursor
+            cur_block, col_w, y_cursor, x0 = block, 0.0, 0.0, x_cursor
         bb = fp.GetBoundingBox()
         w = pcbnew.ToMM(bb.GetWidth())
         h = pcbnew.ToMM(bb.GetHeight())
@@ -116,24 +127,43 @@ def build(board_dir):
             if key in pad_net:
                 pad.SetNet(nets[pad_net[key]])
         board.Add(fp)
+        placed.append((ref, pid, fp))
         y_cursor += h + MARGIN
         col_w = max(col_w, w)
         max_y = max(max_y, y_cursor)
     x_end = x_cursor + col_w
 
-    # Edge.Cuts 외곽 (DRC는 외곽 없는 보드를 거부한다)
+    # P1: 외곽은 잠정 산정(부품 점유 + 여백)하고 **용지(A4 297x210) 중앙**에
+    # 오게 전체를 평행이동 — 틀 밖 외곽은 검토가 불편하다 (사용자 확정).
+    bw, bh = x_end + 2 * EDGE, max_y + 2 * EDGE
+    ox = (297 - bw) / 2 + EDGE
+    oy = (210 - bh) / 2 + EDGE
+    for _, _, fp in placed:
+        p = fp.GetPosition()
+        fp.SetPosition(pcbnew.VECTOR2I(p.x + mm(ox), p.y + mm(oy)))
+
+    x1, y1 = ox - EDGE, oy - EDGE
+    x2, y2 = x1 + bw, y1 + bh
+    # P2: USB 리셉터클을 외곽 왼변에 스냅 (입이 보드 밖)
+    for ref, pid, fp in placed:
+        if "usb_c" in pid:
+            bb = fp.GetBoundingBox()
+            dx = mm(x1) - bb.GetLeft()
+            p = fp.GetPosition()
+            fp.SetPosition(pcbnew.VECTOR2I(p.x + dx, p.y))
+
     rect = pcbnew.PCB_SHAPE(board)
     rect.SetShape(pcbnew.SHAPE_T_RECT)
-    rect.SetStart(pcbnew.VECTOR2I(mm(EDGE), mm(EDGE)))
-    rect.SetEnd(pcbnew.VECTOR2I(mm(x_end + EDGE), mm(max_y + EDGE)))
+    rect.SetStart(pcbnew.VECTOR2I(mm(x1), mm(y1)))
+    rect.SetEnd(pcbnew.VECTOR2I(mm(x2), mm(y2)))
     rect.SetLayer(pcbnew.Edge_Cuts)
     rect.SetWidth(mm(0.1))
     board.Add(rect)
 
     out = os.path.join(board_dir, f"{bid}.kicad_pcb")
     board.Save(out)
-    print(f"OK  {bid}: 부품 {len(comps)} / 네트 {len(nets)} / "
-          f"외곽 {x_end + EDGE:.0f}x{max_y + EDGE:.0f}mm -> {out}")
+    print(f"OK  {bid}: 부품 {len(comps)} / 네트 {len(nets)} / {bd.get('layers', 2)}층 / "
+          f"외곽 {bw:.0f}x{bh:.0f}mm (용지 중앙) -> {out}")
     return out
 
 
