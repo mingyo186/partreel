@@ -35,16 +35,31 @@ jobs:
 
           HOST = "https://assets.partreel.com"
           idx = json.load(open("/tmp/staged/index.json"))
-          promoted, cleaned, failed = [], [], []
+          promoted, cleaned, held, failed = [], [], [], []
           for p in idx.get("parts", []):
               pid = p["id"]
               if not __import__("re").fullmatch(r"[a-z][a-z0-9_]{2,63}", pid):
                   continue
-              # 이미 정식 등록됐으면 스테이징 정리 대상
+              # 배포(서빙)까지 끝났으면 스테이징 정리 대상.
+              # 커밋만 되고 배포 전이면 '보류' — 지우지도 PR하지도 않는다.
+              # 스테이징이 커밋~배치 배포 사이의 공백을 메우는 게 §23 병행
+              # 등록의 목적이라, git 기준으로 바로 지우면 공백이 되살아난다
+              # (2026-08-10 배치 배포 결정과 함께 도입).
+              try:
+                  req = urllib.request.Request(
+                      f"https://partreel.com/api/v1/parts/{pid}.json",
+                      headers={"User-Agent": "partreel-staging-promote"})
+                  with urllib.request.urlopen(req, timeout=30) as r:
+                      deployed = r.status == 200
+              except Exception:
+                  deployed = False
+              if deployed:
+                  cleaned.append(pid)
+                  continue
               hits = subprocess.run(["git", "ls-files", f"library/*/*/{pid}/meta.json"],
                                     capture_output=True, text=True).stdout.strip()
               if hits:
-                  cleaned.append(pid)
+                  held.append(pid)
                   continue
               cat = p.get("category", "etc")
               cat = cat if __import__("re").fullmatch(r"[a-z][a-z0-9_]{1,30}", cat or "") else "etc"
@@ -73,10 +88,10 @@ jobs:
               except Exception as e:
                   failed.append((pid, str(e)[:200]))
                   import shutil; shutil.rmtree(d, ignore_errors=True)
-          json.dump({"promoted": promoted, "cleaned": cleaned,
+          json.dump({"promoted": promoted, "cleaned": cleaned, "held": held,
                      "failed": [{"id": i, "reason": r} for i, r in failed]},
                     open("/tmp/staged/result.json", "w"), indent=1)
-          print("promoted:", promoted, "| cleaned:", cleaned)
+          print("promoted:", promoted, "| cleaned:", cleaned, "| held(배포 대기):", held)
           for pid, reason in failed:
               print(f"FAILED {pid}: {reason}")
           PY
