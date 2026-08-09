@@ -586,7 +586,19 @@ KiCad 내장 **플러그인·콘텐츠 매니저** 저장소를 우리가 직접
 3. ldo_3v3 — 5V→3.3V LDO (+ 입출력 캐패시터) ✅ (rev 0.1)
 4. mcu 최소 회로 ✅ **g431_min** (STM32G431CBTx, rev 0.1, 2026-08-10) —
    ESP32 대신 R16 4면 심볼을 확립한 G431로 선행. ESP32는 후속.
-5. swd_debug — SWD 디버그 헤더
+5. swd_debug — SWD 디버그 헤더 → **3종으로 확장** (2026-08-10 사용자 결정:
+   ST-LINK V3SET 기준, 확장보드로 UART까지 사용):
+   ① swd_uart_hdr254 (2.54 1x8, SWD+UART+전원 — 점퍼선용, 핀 순서는 파트릴
+     규약으로 특성표에 명기) ✅ rev 0.1
+   ② stdc14 (ST 정식 14핀 1.27) — **대기**: 핀표 1차 사료 UM2448이 st.com
+     차단으로 미확보 (curl 000·브라우저 다운로드 대화상자). FTSH-107 부품
+     생성도 함께 필요.
+   ③ cortex_debug_10 (ARM 표준 10핀 1.27, FTSH-105-01-L-DV-007-K) ✅ rev 0.1
+     — 핀표 근거: Arm ULINKplus UG 101636 'JTAG/SWD Interface' 그림
+     (1 VCC/2 SWDIO/3 GND/4 SWCLK/5 GND/6 SWO/7 KEY/8 NC/9 GNDDetect/10 nRESET)
+   부수 수리: pin_header 패밀리 심볼 pin_names hide (Pin_N이 외곽선 침범 —
+   R7), R7 침범 판정 0.25mm 캘리브레이션 (0.04mm 스침 오탐 제거),
+   gen_connectors의 루트 index.json 덮어쓰기 제거 (21,664→37 사고 재발 방지).
 6. rs485_iface — RS-485 트랜시버 (산업 계측용)
 7. sensor_4_20ma — 4-20mA 수신 프론트엔드 (산업 계측용)
 

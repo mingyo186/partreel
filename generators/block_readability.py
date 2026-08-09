@@ -119,23 +119,38 @@ def rot_corners(bb, X, Y, rot):
             max(c[0] for c in corners), max(c[1] for c in corners))
 
 
+PEN = 0.25  # R7: 외곽선을 이만큼 이상 '침범'해야 겹침 (스침은 허용 —
+#             2026-08-10 FTSH 핀번호 '10'이 0.04mm 걸치는 오탐으로 캘리브레이션)
+
+
+def _cross_depth(t1, t2, e):
+    """구간 [t1,t2]가 선 e를 가로지르는 깊이 (얕은 쪽 기준)."""
+    if t1 < e < t2:
+        return min(t2 - e, e - t1)
+    return 0.0
+
+
 def text_outline_overlaps(svg_text, parts_geo):
-    """R7: 글자가 심볼 외곽선(몸체 상자 4변)과 겹치는가."""
+    """R7: 글자가 심볼 외곽선(몸체 상자 4변)을 침범하는가."""
     boxes = _text_boxes(svg_text)
     bad = []
     for ref, X, Y, rot, bb in parts_geo:
         if not bb:
             continue
         x1, y1, x2, y2 = rot_corners(bb, X, Y, rot)
-        edges = [(x1, y1, x2, y1), (x1, y2, x2, y2),
-                 (x1, y1, x1, y2), (x2, y1, x2, y2)]
         for tx1, ty1, tx2, ty2, label in boxes:
-            for ex1, ey1, ex2, ey2 in edges:
-                ox = min(tx2, ex2 + EPS) - max(tx1, ex1 - EPS)
-                oy = min(ty2, ey2 + EPS) - max(ty1, ey1 - EPS)
-                if ox > EPS and oy > EPS:
-                    bad.append(f"R7 '{label}'가 {ref} 외곽선과 겹침")
-                    break
+            hit = False
+            # 세로 변 (x1, x2): 글자상자가 y범위에서 겹치고 선을 깊이 관통
+            for ex in (x1, x2):
+                if min(ty2, y2) - max(ty1, y1) > EPS and \
+                        _cross_depth(tx1, tx2, ex) > PEN:
+                    hit = True
+            for ey in (y1, y2):
+                if min(tx2, x2) - max(tx1, x1) > EPS and \
+                        _cross_depth(ty1, ty2, ey) > PEN:
+                    hit = True
+            if hit:
+                bad.append(f"R7 '{label}'가 {ref} 외곽선과 겹침")
     return sorted(set(bad))
 
 

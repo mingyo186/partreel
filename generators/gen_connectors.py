@@ -154,8 +154,11 @@ def gen_symbol(cfg, n, fid):
     span = (n - 1) * GRID
     top = span / 2.0
     bt, bb = top + 1.27, -top - 1.27
+    # pin_names hide: 범용 헤더의 핀 이름(Pin_N)은 정보가 없고 몸체 폭(5.08)보다
+    # 길어 외곽선을 침범한다(R7, 2026-08-10 swd 블록에서 확인) — KiCad 표준
+    # Conn_01xN 심볼도 이름을 숨기는 관례.
     out = ['(kicad_symbol_lib (version 20211014) (generator opencad-lib)',
-           f'  (symbol "{fid}" (in_bom yes) (on_board yes)',
+           f'  (symbol "{fid}" (pin_names hide) (in_bom yes) (on_board yes)',
            f'    (property "Reference" "J" (at {br + 1.0:.2f} {bt:.2f} 0)'
            '\n      (effects (font (size 1.27 1.27)) (justify left)))',
            f'    (property "Value" "{fid}" (at {br + 1.0:.2f} {bb:.2f} 0)'
@@ -238,8 +241,10 @@ def main():
             meta = generate(cfg, n, fid)
             rows.append((cfg, n, fid, meta))
         print(f"  {cfg['name']}: {len(cfg['pins'])} parts")
-    build_index(rows)
-    print("Done.")
+    # 루트 index.json은 build_index.py가 전 카탈로그를 스캔해 만든다 —
+    # 여기서 37개짜리로 덮어쓰면 카탈로그가 증발한다 (2026-08-10 사고:
+    # 21,664 -> 37. 파생 파일이라 재빌드로 복구했지만 재발 금지).
+    print("Done. (index.json은 build_index.py로 재생성할 것)")
 
 
 if __name__ == "__main__":
