@@ -269,14 +269,22 @@ def check(block_dir):
             for msg in BR.wire_wire_overlaps(layout):
                 fail(f"{bid}: R2 {msg}")
             geo = []
+            pin_map = {}
             for part in b["parts"]:
                 lp = (layout.get("parts") or {}).get(part["ref"]) or {}
                 if "at" not in lp:
                     continue
-                _, blk, _, _ = BB.load_symbol(part["part"])
+                _, blk, pins, _ = BB.load_symbol(part["part"])
+                rot = int(lp.get("rot", 0))
                 geo.append((part["ref"], lp["at"][0], lp["at"][1],
-                            int(lp.get("rot", 0)), BR._body_bbox(blk)))
-            for msg in BR.wire_body_hits(layout, geo):
+                            rot, BR._body_bbox(blk)))
+                # 자기 핀 절대좌표 (R8 자기-스텁 면제 판정용)
+                c, s = {0: (1, 0), 90: (0, 1), 180: (-1, 0), 270: (0, -1)}[rot % 360]
+                pin_map[part["ref"]] = {
+                    (round(lp["at"][0] + px * c - py * s, 3),
+                     round(lp["at"][1] - (px * s + py * c), 3))
+                    for _, px, py in pins}
+            for msg in BR.wire_body_hits(layout, geo, pin_map):
                 fail(f"{bid}: R3/R8 {msg}")
             for msg in BR.parallel_too_close(layout):
                 fail(f"{bid}: R9 {msg}")

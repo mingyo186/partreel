@@ -139,20 +139,31 @@ def text_outline_overlaps(svg_text, parts_geo):
     return sorted(set(bad))
 
 
-def wire_body_hits(layout, parts_geo):
+def wire_body_hits(layout, parts_geo, pin_map=None):
     """R3: 배선이 심볼 몸체 내부를 지나는가.
-    parts_geo: [(ref, X, Y, rot, bbox_lib)]"""
+    parts_geo: [(ref, X, Y, rot, bbox_lib)]
+    pin_map: {ref: {(x, y), ...}} — 그 부품 핀의 절대좌표. 자기 핀에 끝점이
+    닿는 배선(스텁)은 여백(R8) 면제 — 몸체-핀 간격이 1.27보다 짧은 소형
+    수동소자(0402 등)에서 자기 스텁이 여백을 무는 구조적 오탐 방지
+    (2026-08-10 i2c_pullup 소급 때 확인). 몸체 통과(R3)는 그대로 잡는다."""
     segs = _segments(layout)
     bad = []
     for ref, X, Y, rot, bb in parts_geo:
         if not bb:
             continue
         bx1, by1, bx2, by2 = rot_corners(bb, X, Y, rot)
-        # R8: 몸체 + 여백까지 금지 영역 (자기 핀 배선은 핀 길이만큼 밖에서
-        # 끝나므로 여백 경계에 '닿기만' 하고 EPS 판정으로 통과)
-        x1, y1 = bx1 - MARGIN + EPS, by1 - MARGIN + EPS
-        x2, y2 = bx2 + MARGIN - EPS, by2 + MARGIN - EPS
+        own = (pin_map or {}).get(ref, set())
+        # R8: 몸체 + 여백까지 금지 영역 (남의 배선 기준)
+        mx1, my1 = bx1 - MARGIN + EPS, by1 - MARGIN + EPS
+        mx2, my2 = bx2 + MARGIN - EPS, by2 + MARGIN - EPS
         for sx1, sy1, sx2, sy2 in segs:
+            own_stub = any(abs(px - ex) < EPS and abs(py - ey) < EPS
+                           for px, py in own
+                           for ex, ey in ((sx1, sy1), (sx2, sy2)))
+            if own_stub:  # 자기 핀 스텁: 몸체 자체(EPS)만 금지
+                x1, y1, x2, y2 = bx1 + EPS, by1 + EPS, bx2 - EPS, by2 - EPS
+            else:
+                x1, y1, x2, y2 = mx1, my1, mx2, my2
             if sx1 < x2 and sx2 > x1 and sy1 < y2 and sy2 > y1:
                 bad.append(f"{ref} 몸체({x1:.1f},{y1:.1f})~({x2:.1f},{y2:.1f})를 "
                            f"배선 ({sx1:g},{sy1:g})-({sx2:g},{sy2:g})가 통과")
