@@ -1,0 +1,60 @@
+{
+  "id": "vishay_crcw040210k0fked",
+  "name": "10kΩ 1% 0402 (Vishay CRCW040210K0FKED)",
+  "category": "passive",
+  "family": "chip_resistor_0402",
+  "manufacturer": "Vishay",
+  "mpn_pattern": "CRCW040210K0FKED",
+  "description": "Thick film chip resistor 10kΩ +-1% 0402 (1/0/0/5mm metric), 0.063W. Generated for PartReel circuit blocks.",
+  "parameters": {
+    "pins": 2,
+    "mounting": "smd"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/passive/vishay/vishay_crcw040210k0fked/vishay_crcw040210k0fked.kicad_mod",
+    "symbol": "https://partreel.com/library/passive/vishay/vishay_crcw040210k0fked/vishay_crcw040210k0fked.kicad_sym"
+  },
+  "datasheet": "https://www.vishay.com/docs/20035/dcrcwe3.pdf",
+  "license": "CC-BY-4.0",
+  "verified": false,
+  "tier": "verified-2d",
+  "dimensions_source": "Land: IPC-7351 density B nominal for chip 1005 metric (KEMET recommended land, see generators/import_antmicro.CHIP_LAND, §21-C). Body 1.0x0.5mm per Vishay CRCW e3 datasheet (doc 20035) Dimensions table, 0402 row.",
+  "keywords": [
+    "resistor",
+    "10kΩ",
+    "0402",
+    "chip",
+    "smd"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "Land: IPC-7351 density B nominal for chip 1005 metric (KEMET recommended land, see generators/import_antmicro.CHIP_LAND, §21-C). Body 1.0x0.5mm per Vishay CRCW e3 datasheet (doc 20035) Dimensions table, 0402 row.",
+    "datasheet": "https://www.vishay.com/docs/20035/dcrcwe3.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    }
+  },
+  "page": "https://partreel.com/p/vishay_crcw040210k0fked/",
+  "api": "https://partreel.com/api/v1/parts/vishay_crcw040210k0fked.json"
+}

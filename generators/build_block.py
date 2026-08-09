@@ -206,18 +206,22 @@ def build(block_dir):
                      f'\n\t\t(stroke\n\t\t\t(width 0)\n\t\t\t(type solid)\n\t\t)'
                      f'\n\t\t(uuid "{uid(bid, "w", *k)}")\n\t)')
 
-    def hlabel(net, x, y):
+    # 라벨 방향(스핀): 0=오른쪽, 90=위, 180=왼쪽, 270=아래로 뻗는다.
+    # justify는 커널 관례대로 0/90=left, 180/270=right (공식 데모와 동일).
+    def hlabel(net, x, y, rot=0):
         shape = {"input": "input", "output": "output", "bidirectional": "bidirectional",
                  "passive": "passive"}.get(iface.get(net), "bidirectional")
+        j = "left" if rot in (0, 90) else "right"
         return (f'\t(hierarchical_label "{net}"\n\t\t(shape {shape})\n'
-                f'\t\t(at {x:g} {y:g} 0)\n\t\t(effects\n\t\t\t(font\n'
-                f'\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t\t(justify left)\n\t\t)\n'
+                f'\t\t(at {x:g} {y:g} {rot})\n\t\t(effects\n\t\t\t(font\n'
+                f'\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t\t(justify {j})\n\t\t)\n'
                 f'\t\t(uuid "{uid(bid, net, "hlabel")}")\n\t)')
 
-    def llabel(net, x, y):
-        return (f'\t(label "{net}"\n\t\t(at {x:g} {y:g} 0)\n\t\t(effects\n'
+    def llabel(net, x, y, rot=0):
+        j = "left" if rot in (0, 90) else "right"
+        return (f'\t(label "{net}"\n\t\t(at {x:g} {y:g} {rot})\n\t\t(effects\n'
                 f'\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n'
-                f'\t\t\t(justify left bottom)\n\t\t)\n'
+                f'\t\t\t(justify {j} bottom)\n\t\t)\n'
                 f'\t\t(uuid "{uid(bid, net, "llabel")}")\n\t)')
 
     # === 명시 배치 모드 (§24 가독 규칙): layout이 있으면 자동 버스 대신
@@ -229,13 +233,15 @@ def build(block_dir):
                 w(x1, y1, x2, y2, f"{x1}_{y1}_{x2}_{y2}")
         for lab in layout.get("labels", []):
             net, (x, y) = lab["net"], lab["at"]
+            lrot = int(lab.get("rot", 0))
             if lab.get("kind") == "local":
-                labels.append(llabel(net, x, y))
+                labels.append(llabel(net, x, y, lrot))
             else:
-                labels.append(hlabel(net, x, y))
+                labels.append(hlabel(net, x, y, lrot))
         pwr_defs, pwr_insts = {}, []
         for j, pw in enumerate(layout.get("power", [])):
             kind, (x, y) = pw["symbol"], pw["at"]
+            prot = int(pw.get("rot", 0))  # 180 = 뒤집힘 (윗변 GND, 아랫변 레일)
             if kind == "gnd":
                 name, text = "PR_GND", block_power.gnd_symbol()
             elif kind == "flag":
@@ -244,9 +250,13 @@ def build(block_dir):
                 name, text = block_power.rail_symbol(pw["net"])
             pwr_defs.setdefault(name, "\t\t" + text.replace("\n", "\n\t\t"))
             ref = f"#PWR{j + 1:02d}" if kind != "flag" else f"#FLG{j + 1:02d}"
+            # 값 텍스트는 도형 반대편: 정방향 gnd는 아래(+), 뒤집힘(180)은 위(-);
+            # 레일은 정방향 위(-), 뒤집힘 아래(+). 속성 각도는 0 유지 (가로 글자).
+            flip = -1 if prot == 180 else 1
+            val_y = y + 4.445 * flip if kind == "gnd" else y - 3.81 * flip
             pwr_insts.append(f'''\t(symbol
 \t\t(lib_id "PartReelPwr:{name}")
-\t\t(at {x:g} {y:g} 0)
+\t\t(at {x:g} {y:g} {prot})
 \t\t(unit 1)
 \t\t(exclude_from_sim no)
 \t\t(in_bom no)
@@ -254,8 +264,7 @@ def build(block_dir):
 \t\t(dnp no)
 \t\t(uuid "{uid(bid, "pwr", str(j))}")
 {prop("Reference", ref, x, y + 5.08, hide=True)}
-{prop("Value", pw.get("net", "flag"), x,
-      y + 4.445 if kind == "gnd" else y - 3.81, hide=(kind == "flag"))}
+{prop("Value", pw.get("net", "flag"), x, val_y, hide=(kind == "flag"))}
 \t\t(pin "1"
 \t\t\t(uuid "{uid(bid, "pwrpin", str(j))}")
 \t\t)

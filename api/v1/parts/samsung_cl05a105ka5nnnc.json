@@ -1,0 +1,60 @@
+{
+  "id": "samsung_cl05a105ka5nnnc",
+  "name": "1µF 1% 0402 (Vishay CL05A105KA5NNNC)",
+  "category": "passive",
+  "family": "chip_resistor_0402",
+  "manufacturer": "Samsung Electro-Mechanics",
+  "mpn_pattern": "CL05A105KA5NNNC",
+  "description": "MLCC ceramic capacitor 1µF +-1% 0402 (1/0/0/5mm metric), X5R 25V. Generated for PartReel circuit blocks.",
+  "parameters": {
+    "pins": 2,
+    "mounting": "smd"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/passive/samsung/samsung_cl05a105ka5nnnc/samsung_cl05a105ka5nnnc.kicad_mod",
+    "symbol": "https://partreel.com/library/passive/samsung/samsung_cl05a105ka5nnnc/samsung_cl05a105ka5nnnc.kicad_sym"
+  },
+  "datasheet": "https://weblib.samsungsem.com/mlcc/mlcc-ec-data-sheet.do?partNumber=CL05A105KA5NNNC",
+  "license": "CC-BY-4.0",
+  "verified": false,
+  "tier": "verified-2d",
+  "dimensions_source": "Land: IPC-7351 density B nominal for chip 1005 metric (KEMET recommended land, see generators/import_antmicro.CHIP_LAND, §21-C). Body 1.0x0.5mm per Vishay CRCW e3 datasheet (doc 20035) Dimensions table, 0402 row.",
+  "keywords": [
+    "capacitor",
+    "1µF",
+    "0402",
+    "chip",
+    "smd"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "Land: IPC-7351 density B nominal for chip 1005 metric (KEMET recommended land, see generators/import_antmicro.CHIP_LAND, §21-C). Body 1.0x0.5mm per Vishay CRCW e3 datasheet (doc 20035) Dimensions table, 0402 row.",
+    "datasheet": "https://weblib.samsungsem.com/mlcc/mlcc-ec-data-sheet.do?partNumber=CL05A105KA5NNNC",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    }
+  },
+  "page": "https://partreel.com/p/samsung_cl05a105ka5nnnc/",
+  "api": "https://partreel.com/api/v1/parts/samsung_cl05a105ka5nnnc.json"
+}

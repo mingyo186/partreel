@@ -36,8 +36,11 @@ def fetch_xml(name):
     return base64.b64decode(r.stdout.strip()).decode("utf-8", "replace")
 
 
-def pin_type(t):
-    if t == "Power":
+def pin_type(t, name=""):
+    # VREF+/-는 XML Type이 MonoIO지만 전기적으로 기준전압 입력 —
+    # bidirectional로 두면 전원 깃발과 pin_to_pin ERC 경고가 난다
+    # (2026-08-10 g431_min 블록 하네스 ERC에서 확인)
+    if t == "Power" or name.startswith("VREF"):
         return "power_in"
     if t in ("Reset", "Boot"):
         return "input"
@@ -102,7 +105,7 @@ def build(xml_name, pid):
         else:
             x, y, a = start - (k - 3 * per - 1) * PITCH, conn, 270
         out.append(
-            f'''      (pin {pin_type(t)} line (at {x:g} {y:g} {a}) (length {PIN_LEN:g})
+            f'''      (pin {pin_type(t, name)} line (at {x:g} {y:g} {a}) (length {PIN_LEN:g})
         (name "{name}" (effects (font (size 1.27 1.27))))
         (number "{k}" (effects (font (size 1.27 1.27)))))''')
 

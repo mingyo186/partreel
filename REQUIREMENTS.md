@@ -559,13 +559,30 @@ KiCad 내장 **플러그인·콘텐츠 매니저** 저장소를 우리가 직접
 - 현 i2c_pullup(격자 배치판)은 파이프라인 증명용 — 규칙 확정 후 재배치.
 
 **초기 블록 로드맵** (범용 → 산업 계측 순):
-1. i2c_pullup — I2C 풀업 (파이프라인 증명용 최소 블록)
-2. power_usbc_5v — USB-C 5V 입력 + ESD/퓨즈
-3. ldo_3v3 — 5V→3.3V LDO (+ 입출력 캐패시터)
-4. mcu_esp32_min — ESP32-WROOM 최소 회로 (스트래핑/디커플링/EN-RC)
+1. i2c_pullup — I2C 풀업 (파이프라인 증명용 최소 블록) ✅
+2. power_usbc_5v — USB-C 5V 입력 + ESD/퓨즈 ✅ (usb_c_5v, rev 0.1)
+3. ldo_3v3 — 5V→3.3V LDO (+ 입출력 캐패시터) ✅ (rev 0.1)
+4. mcu 최소 회로 ✅ **g431_min** (STM32G431CBTx, rev 0.1, 2026-08-10) —
+   ESP32 대신 R16 4면 심볼을 확립한 G431로 선행. ESP32는 후속.
 5. swd_debug — SWD 디버그 헤더
 6. rs485_iface — RS-485 트랜시버 (산업 계측용)
 7. sensor_4_20ma — 4-20mA 수신 프론트엔드 (산업 계측용)
+
+**g431_min에서 확정된 규칙·기반 (2026-08-10)**:
+- 생성기: 계층/로컬 라벨과 전원 심볼에 **회전 지원** (라벨 스핀 0/90/180/270 =
+  우/상/좌/하, justify는 커널 관례 0·90=left/180·270=right; 전원 rot 180 =
+  뒤집힘 — 윗변 GND·아랫변 레일용, 값 텍스트는 도형 반대편으로 자동 이동).
+- 가독 검사기: SVG 회전 글자(<g transform="rotate(A CX CY)">) 실측 편입 —
+  MCU 4면 라벨·핀이름의 R1/R6/R7 검사가 정확해짐. 전 블록 무회귀 확인.
+- 심볼 규칙: **VREF+/-는 power_in** (XML Type이 MonoIO여도 기준전압 입력 —
+  bidirectional이면 전원 깃발과 pin_to_pin ERC 경고. gen_mcu에 반영).
+- MCU 블록 형태: 전원 핀은 각 변에서 스텁+전원 심볼로 즉시 종단, 디커플링은
+  몸체 아래 별도 클러스터(레일 쌍), 미사용 IO는 전부 계층 라벨로 노출,
+  BOOT0는 10k 풀다운 고정(SWD로 플래시 — 라벨 미노출), NRST는 100nF+라벨.
+- 교차검증: 하네스 ERC와 **독립적으로** 커널 넷리스트(kicadxml)를 뽑아
+  block.json nets 선언과 구성원 전수 대조 (g431_min 40/40 일치).
+- 부품 등록: 10kΩ 0402(vishay_crcw040210k0fked), 1µF 0402
+  (samsung_cl05a105ka5nnnc, gen_chip_c 신설 — 벤더 폴더 samsung/).
 
 
 ## §25. 한 몸 개발 기획: 보드 정의서 → 회로도·PCB·펌웨어 (2026-08-08 사용자 요청)

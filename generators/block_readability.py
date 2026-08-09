@@ -160,12 +160,17 @@ def wire_body_hits(layout, parts_geo):
 
 
 def _text_boxes(svg_text):
+    """SVG 투명 <text> 실측 상자. 회전 글자는 부모 <g transform="rotate(A CX CY)">
+    로 나온다 (2026-08-10 kicad-cli 렌더에서 확인) — 상자 모서리를 같은 식으로
+    돌려 축정렬 bbox로 만든다 (±90도 회전이라 bbox가 정확)."""
+    import math
     boxes = []
     for m in re.finditer(
+            r'(?:<g transform="rotate\(([-\d.]+)\s+([-\d.]+)\s+([-\d.]+)\)">\s*)?'
             r'<text x="([-\d.]+)" y="([-\d.]+)"\s*[^>]*?textLength="([-\d.]+)"'
             r'[^>]*?font-size="([-\d.]+)"[^>]*?>([^<]*)</text>', svg_text):
-        x, y, w, fs = (float(m.group(i)) for i in range(1, 5))
-        label = m.group(5)
+        x, y, w, fs = (float(m.group(i)) for i in range(4, 8))
+        label = m.group(8)
         anchor = "start"
         am = re.search(r'text-anchor="(\w+)"', m.group(0))
         if am:
@@ -178,7 +183,17 @@ def _text_boxes(svg_text):
             x1, x2 = x, x + w
         # 글자 상자: 기준선(y) 위로 폰트 높이만큼 — 커널 렌더에서 핀 번호가
         # 배선 위쪽에 살짝 떠 있는 정상 표기를 오탐하지 않도록 실측형 모델
-        boxes.append((x1, y - fs, x2, y, label.strip()))
+        y1, y2 = y - fs, y
+        if m.group(1):
+            a = math.radians(float(m.group(1)))
+            cx, cy = float(m.group(2)), float(m.group(3))
+            ca, sa = math.cos(a), math.sin(a)
+            pts = [(cx + (px - cx) * ca - (py - cy) * sa,
+                    cy + (px - cx) * sa + (py - cy) * ca)
+                   for px, py in ((x1, y1), (x1, y2), (x2, y1), (x2, y2))]
+            x1, y1 = min(p[0] for p in pts), min(p[1] for p in pts)
+            x2, y2 = max(p[0] for p in pts), max(p[1] for p in pts)
+        boxes.append((x1, y1, x2, y2, label.strip()))
     return boxes
 
 
