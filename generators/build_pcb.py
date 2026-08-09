@@ -794,6 +794,31 @@ def build(board_dir):
 
     out = os.path.join(board_dir, f"{bid}.kicad_pcb")
     board.Save(out)
+
+    # PW1/PW2 (rules/pcb-study-kicad-demos.md — StickHub 2층 실측 기준):
+    # 신호 0.15 / 전원 0.3 / 비아 0.5x0.3 / 클리어런스 0.15. 넷클래스는
+    # 프로젝트(.kicad_pro)에 산다 — 저장 후 JSON을 보강한다.
+    pro = os.path.join(board_dir, f"{bid}.kicad_pro")
+    if os.path.exists(pro):
+        pj = json.load(open(pro, encoding="utf-8"))
+        ns = pj.setdefault("net_settings", {})
+        base = {"bus_width": 12, "diff_pair_gap": 0.15, "diff_pair_via_gap": 0.25,
+                "diff_pair_width": 0.15, "line_style": 0, "microvia_diameter": 0.3,
+                "microvia_drill": 0.1, "pcb_color": "rgba(0, 0, 0, 0.000)",
+                "schematic_color": "rgba(0, 0, 0, 0.000)", "tuning_profile": "",
+                "wire_width": 6}
+        ns["classes"] = [
+            dict(base, name="Default", clearance=0.15, track_width=0.15,
+                 via_diameter=0.5, via_drill=0.3, priority=2147483647),
+            dict(base, name="Power", clearance=0.15, track_width=0.3,
+                 via_diameter=0.5, via_drill=0.3, priority=0),
+        ]
+        ns["netclass_patterns"] = [
+            {"netclass": "Power", "pattern": "+*"},
+            {"netclass": "Power", "pattern": "GND"},
+        ]
+        with open(pro, "w", encoding="utf-8", newline="\n") as f:
+            json.dump(pj, f, indent=2, ensure_ascii=False)
     print(f"OK  {bid}: 부품 {len(comps)} / 네트 {len(nets)} / "
           f"{bd.get('layers', 2)}층 / 외곽 {x2 - x1:.0f}x{y2 - y1:.0f}mm "
           f"(메인 군집: {main_block.split()[0]}) -> {out}")
