@@ -42,8 +42,50 @@ def load_block(block_id):
     if len(hits) != 1:
         raise SystemExit(f"FAIL: 블록 '{block_id}' 탐색 결과 {len(hits)}건")
     b = json.load(open(hits[0], encoding="utf-8"))
-    rel = os.path.relpath(os.path.dirname(hits[0]), ROOT).replace(os.sep, "/")
-    return b, f"{rel}/{block_id}.kicad_sch"
+    sch = os.path.join(os.path.dirname(hits[0]), f"{block_id}.kicad_sch")
+    return b, sch
+
+
+import re  # noqa: E402
+
+
+def annotate_copy(sch_text, bid, root_uuid, sheet_uuid, counters, ref_map, bref):
+    """블록 sch 사본에 보드 전역 고유 번호를 주석(annotate)한다.
+
+    KiCad 계층 주석 방식 그대로 — 심볼의 (instances) 블록을 보드
+    프로젝트/경로/새 참조로 교체한다. 블록 원본은 불변(공유 라이브러리),
+    보드 폴더의 사본만 보드 소유 (재생성 결정적 → A게이트 유지).
+    R12 자유 텍스트 참조표기도 같이 바꾼다 (시각-주석 불일치 방지)."""
+    local_map = {}
+
+    def new_ref(old):
+        if old in local_map:
+            return local_map[old]
+        m = re.match(r"(#?[A-Za-z]+)", old)
+        prefix = m.group(1) if m else "X"
+        counters[prefix] = counters.get(prefix, 0) + 1
+        nr = f"{prefix}{counters[prefix]}"
+        local_map[old] = nr
+        ref_map[f"{bref}.{old}"] = nr
+        return nr
+
+    pat = re.compile(
+        r'\(instances\s+\(project "[^"]+"\s+\(path "[^"]+"\s+'
+        r'\(reference "([^"]+)"\)\s+\(unit 1\)\s+\)\s+\)\s+\)', re.S)
+
+    def sub(m):
+        nr = new_ref(m.group(1))
+        return (f'(instances\n\t\t\t(project "{bid}"\n'
+                f'\t\t\t\t(path "/{root_uuid}/{sheet_uuid}"\n'
+                f'\t\t\t\t\t(reference "{nr}")\n\t\t\t\t\t(unit 1)\n'
+                f"\t\t\t\t)\n\t\t\t)\n\t\t)")
+
+    out = pat.sub(sub, sch_text)
+    # 자유 텍스트 참조표기(R12) 갱신 — 정확히 따옴표 일치만
+    for old, nr in local_map.items():
+        if not old.startswith("#"):
+            out = out.replace(f'(text "{old}"', f'(text "{nr}"')
+    return out
 
 
 def build(board_dir):
@@ -62,9 +104,21 @@ def build(board_dir):
 
     sheets, labels, ncs = [], [], []
     seen_pins = set()
+    counters, ref_map = {}, {}
     for i, inst in enumerate(bd["blocks"]):
         ref, blk_id = inst["ref"], inst["block"]
-        b, sheet_file = load_block(blk_id)
+        b, blk_sch = load_block(blk_id)
+        # 인스턴스별 자립 사본 + 보드 전역 주석 (annotate) — 보드 폴더가
+        # 자립형이 되고, U1/J1 중복(블록 조합의 숙명)이 여기서 해소된다.
+        sheet_uuid = uid(bid, ref, "sheet")
+        copy_name = f"{ref}_{blk_id}.kicad_sch"
+        sch_text = open(blk_sch, encoding="utf-8").read()
+        sch_text = annotate_copy(sch_text, bid, root_uuid, sheet_uuid,
+                                 counters, ref_map, ref)
+        with open(os.path.join(board_dir, copy_name), "w", encoding="utf-8",
+                  newline="\n") as f:
+            f.write(sch_text)
+        sheet_file = copy_name
         iface = sorted(b.get("interface", {}).items())
         x = COL_X0 + i * COL_DX
         y0 = ROW_Y0
@@ -125,7 +179,7 @@ def build(board_dir):
 \t\t\t\t(justify left bottom)
 \t\t\t)
 \t\t)
-\t\t(property "Sheetfile" "{'../../' + sheet_file}"
+\t\t(property "Sheetfile" "{sheet_file}"
 \t\t\t(at {x:g} {y0 + h + 0.8:g} 0)
 \t\t\t(effects
 \t\t\t\t(font
@@ -174,6 +228,11 @@ def build(board_dir):
     out_path = os.path.join(board_dir, f"{bid}.kicad_sch")
     with open(out_path, "w", encoding="utf-8", newline="\n") as f:
         f.write(out)
+
+    # 참조 재부여 지도 (블록로컬 -> 보드전역) — check_board 넷 대조가 쓴다
+    with open(os.path.join(board_dir, "ref_map.json"), "w", encoding="utf-8",
+              newline="\n") as f:
+        json.dump(ref_map, f, ensure_ascii=False, indent=1)
 
     # pins.h (§25 1단계 후반): 보드 네트의 MCU 쪽 끝점이 PXn 형태면 STM32
     # HAL 스타일 #define을 낸다. SWDIO 같은 별칭 핀의 원 포트 역추적과

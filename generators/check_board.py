@@ -98,11 +98,18 @@ def check(board_dir):
         if mem:
             kn[net.get("name").lstrip("/")] = mem
     blk_of = {inst["ref"]: inst["block"] for inst in bd["blocks"]}
+    # 재부여 지도: 블록로컬 참조(U1) -> 보드전역(U2) — build_board 산출물
+    ref_map = {}
+    rm_path = os.path.join(board_dir, "ref_map.json")
+    if os.path.exists(rm_path):
+        ref_map = json.load(open(rm_path, encoding="utf-8"))
     for net, ends in bd["nets"].items():
         expected = set()
         for e in ends:
             bref, pin_name = e.split(".", 1)
-            expected |= set(block_nets(blk_of[bref]).get(pin_name, []))
+            for m in block_nets(blk_of[bref]).get(pin_name, []):
+                lref, pin = m.split(".", 1)
+                expected.add(f"{ref_map.get(f'{bref}.{lref}', lref)}.{pin}")
         got = kn.get(net)
         if got is None:
             fail(f"{bid}: 커널에 네트 '{net}' 없음")
