@@ -532,6 +532,13 @@ KiCad 내장 **플러그인·콘텐츠 매니저** 저장소를 우리가 직접
   커밋~배포 공백을 서빙) / **둘 다 아님→게이트 후 승격 PR**.
 - 제출은 워커 submit_part 경로만 사용 (R2 직접 쓰기 금지 — 스테이징
   index.json은 워커가 관리하므로 직접 쓰면 어긋난다).
+- **운영자 verified 스테이징**: 로컬 전체 게이트를 통과한 부품은 스테이징에
+  unverified가 아니라 **verified**로 표시된다 — submit 시 운영자 토큰
+  (Cloudflare 시크릿 SUBMIT_TOKEN ↔ 로컬 ~/.partreel/submit_token, 레포에
+  절대 커밋 금지)을 동봉하면 워커가 status:"verified"/origin:
+  "partreel-operator"로 기록. 외부 제출은 종전대로 staging(unverified).
+  전 구간 실증: 시험 부품 제출→검색 staged_parts에 "verified (staged,
+  pre-deploy)" 노출→청소 (2026-08-10).
 - 후속 후보: build_site 증분화(PART_SCOPE)로 배치 배포 자체도 단축.
 
 

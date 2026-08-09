@@ -164,23 +164,33 @@ async function handleSubmitPart(args, env) {
   if (existing < 0 && idx.parts.length >= STAGING_MAX_PARTS)
     return { error: "staging area is full — try again after the next promotion cycle" };
 
+  // §23-B: 운영자 제출은 로컬 전체 게이트를 이미 통과한 부품 — verified로
+  // 표시해 배치 배포 전에도 정식 품질임을 알린다. 토큰은 Cloudflare 시크릿
+  // (SUBMIT_TOKEN)과 대조하며 공개 도구 스키마에는 싣지 않는다.
+  const operator = !!env.SUBMIT_TOKEN &&
+    String(args?.operator_token ?? "") === env.SUBMIT_TOKEN;
+  const status = operator ? "verified" : "staging";
   const base = `staging/${id}`;
   await env.STAGING.put(`${base}/${id}.kicad_sym`, sym, { httpMetadata: { contentType: "text/plain; charset=utf-8" } });
   await env.STAGING.put(`${base}/${id}.kicad_mod`, mod, { httpMetadata: { contentType: "text/plain; charset=utf-8" } });
-  const metaFull = { id, ...meta, origin: "community-staged", status: "staging",
+  const metaFull = { id, ...meta,
+                     origin: operator ? "partreel-operator" : "community-staged",
+                     status,
                      submitted_at: new Date().toISOString(),
                      files: { symbol: `${id}.kicad_sym`, footprint: `${id}.kicad_mod` } };
   await env.STAGING.put(`${base}/meta.json`, JSON.stringify(metaFull, null, 1),
                         { httpMetadata: { contentType: "application/json" } });
   const entry = { id, name: meta.name, category: meta.category, license: meta.license,
-                  status: "staging", submitted_at: metaFull.submitted_at };
+                  status, submitted_at: metaFull.submitted_at };
   if (existing >= 0) idx.parts[existing] = entry; else idx.parts.push(entry);
   await env.STAGING.put("staging/index.json", JSON.stringify(idx, null, 1),
                         { httpMetadata: { contentType: "application/json" } });
   const host = "https://assets.partreel.com";
   return {
     shared: true,
-    status: "staging (unverified) — searchable and downloadable NOW",
+    status: operator
+      ? "verified (staged, pre-deploy) — searchable and downloadable NOW"
+      : "staging (unverified) — searchable and downloadable NOW",
     downloads: { symbol: `${host}/${base}/${id}.kicad_sym`,
                  footprint: `${host}/${base}/${id}.kicad_mod`,
                  meta: `${host}/${base}/meta.json` },
@@ -460,7 +470,9 @@ async function toolCall(name, args, env) {
       const sIdx = await stagingIndex(env);
       staged = sIdx.parts.filter((p) =>
         terms.every((tk) => `${p.id} ${p.name} ${p.category}`.toLowerCase().includes(tk))
-      ).map((p) => ({ id: p.id, name: p.name, status: "staging (unverified)",
+      ).map((p) => ({ id: p.id, name: p.name,
+                      status: p.status === "verified"
+                        ? "verified (staged, pre-deploy)" : "staging (unverified)",
                       symbol: `https://assets.partreel.com/staging/${p.id}/${p.id}.kicad_sym`,
                       footprint: `https://assets.partreel.com/staging/${p.id}/${p.id}.kicad_mod` }));
     } catch (e) { /* staging 조회 실패는 검색을 막지 않는다 */ }

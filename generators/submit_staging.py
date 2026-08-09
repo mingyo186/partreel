@@ -20,6 +20,19 @@ import urllib.request
 sys.stdout.reconfigure(encoding="utf-8")
 ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 MCP = "https://mcp.partreel.com/mcp"
+# 운영자 토큰 (§23-B): 있으면 verified로 스테이징. 레포 밖 로컬 파일/환경변수
+# 에만 존재 — 절대 커밋하지 않는다. Cloudflare 시크릿(SUBMIT_TOKEN)과 쌍.
+TOKEN_FILE = os.path.join(os.path.expanduser("~"), ".partreel", "submit_token")
+
+
+def operator_token():
+    t = os.environ.get("PARTREEL_SUBMIT_TOKEN", "").strip()
+    if t:
+        return t
+    try:
+        return open(TOKEN_FILE, encoding="utf-8").read().strip()
+    except OSError:
+        return ""
 
 
 def submit(part_dir):
@@ -37,6 +50,9 @@ def submit(part_dir):
         "symbol": open(os.path.join(part_dir, f"{pid}.kicad_sym"), encoding="utf-8").read(),
         "footprint": open(os.path.join(part_dir, f"{pid}.kicad_mod"), encoding="utf-8").read(),
     }
+    tok = operator_token()
+    if tok:
+        args["operator_token"] = tok
     payload = {"jsonrpc": "2.0", "id": 1, "method": "tools/call",
                "params": {"name": "submit_part", "arguments": args}}
     req = urllib.request.Request(
