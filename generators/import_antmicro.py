@@ -61,14 +61,24 @@ def gh_api_file(path, ref):
 
 
 def raw_file(path, ref, dest):
-    url = f"https://raw.githubusercontent.com/{REPO}/{ref}/{path}"
-    req = urllib.request.Request(url, headers={"User-Agent": "partreel-import"})
-    try:
-        with urllib.request.urlopen(req, timeout=120) as resp, open(dest, "wb") as f:
-            f.write(resp.read())
+    """raw 다운로드. 응답이 심링크 텍스트('../..' 상대경로 한 줄)면 해석해 따라감
+    (§21-C 2026-08-09 — Windows 체크아웃/업스트림 심링크가 실파일 대신 경로 텍스트)."""
+    for _ in range(3):
+        url = f"https://raw.githubusercontent.com/{REPO}/{ref}/{path}"
+        req = urllib.request.Request(url, headers={"User-Agent": "partreel-import"})
+        try:
+            with urllib.request.urlopen(req, timeout=120) as resp:
+                raw = resp.read()
+        except Exception:
+            return False
+        if len(raw) < 300 and b"\n" not in raw.strip() and \
+                (b"../" in raw or raw[:2] == b".."):
+            path = os.path.normpath(os.path.join(
+                os.path.dirname(path), raw.decode("utf-8").strip())).replace(os.sep, "/")
+            continue
+        open(dest, "wb").write(raw)
         return True
-    except Exception:
-        return False
+    return False
 
 
 def balanced_block(text, start):
@@ -143,7 +153,7 @@ def gltf_to_glb(gltf_path, glb_path):
     out = trimesh.Scene()
     out.add_geometry(m, node_name="imported", geom_name="imported")
     out.export(glb_path)
-    return os.path.getsize(glb_path)
+    return os.path.getsize(glb_path), len(m.faces)
 
 
 def guess_category(data, fp_name):
@@ -299,23 +309,23 @@ def import_loop(cfg, ref):
             d = os.path.join(LIB_ROOT, category, "antmicro", pid)
             os.makedirs(d, exist_ok=True)
 
-            # glTF: LOD2 → LOD1 → 원본 (경량판 우선, 웹 프리뷰 용도)
-            glb_size = None
+            # glTF: 원본(비LOD)만 변환 (§21-C 2026-08-09 — LOD2 데시메이션이
+            # 소형 부품 단자를 뭉갬. c3216: LOD2 28면 vs 원본 136면)
+            glb_size = glb_faces = None
             gname = data.get("gltf_model")
             if gname:
                 # gltf-models 디렉토리명은 부품 슬러그가 아니라 "모델명 슬러그"
                 gdir = re.sub(r"[^a-z0-9]+", "-", gname.lower()).strip("-")
-                for lod in ("LOD2/", "LOD1/", ""):
-                    gp = f"gltf-models/{gdir}/{lod}{gname}"
-                    g_local = os.path.join(tmp, f"{pid}.gltf")
-                    b_local = os.path.join(tmp, f"{gname}.bin")
-                    if raw_file(gp + ".gltf", ref, g_local) and \
-                       raw_file(gp + ".bin", ref, b_local):
-                        try:
-                            glb_size = gltf_to_glb(g_local, os.path.join(d, f"{pid}.glb"))
-                            break
-                        except Exception:
-                            continue
+                gp = f"gltf-models/{gdir}/{gname}"
+                g_local = os.path.join(tmp, f"{pid}.gltf")
+                b_local = os.path.join(tmp, f"{gname}.bin")
+                if raw_file(gp + ".gltf", ref, g_local) and \
+                   raw_file(gp + ".bin", ref, b_local):
+                    try:
+                        glb_size, glb_faces = \
+                            gltf_to_glb(g_local, os.path.join(d, f"{pid}.glb"))
+                    except Exception:
+                        pass
 
             # 3D 모델 경로 제거 (glb만 제공, step 없음)
             fp_text = re.sub(r'\(model\s+"[^"]*"', '(model "%s.glb"' % pid, fp_text)
@@ -367,6 +377,9 @@ def import_loop(cfg, ref):
                     "attribution": ATTR, "modifications": mods,
                 },
             }
+            if glb_faces:
+                # check_glb_faces 게이트 기준값 — 업스트림 원본 면 수 (§21-C)
+                meta["import"]["source_faces"] = glb_faces
             if not glb_size:
                 meta["tier"] = "verified-2d"
             json.dump(meta, open(os.path.join(d, "meta.json"), "w", encoding="utf-8"),

@@ -54,7 +54,10 @@ def check_footprint(text, pins, pitch):
     for layer in ('"F.Cu"', '"F.SilkS"', '"F.CrtYd"', '"F.Fab"'):
         if layer not in text:
             errs.append(f"레이어 {layer} 없음")
-    # 일렬 커넥터(피치 있음)일 때만 행 검사: 패드 수/번호/1번핀 원점/피치
+    # 피치 있는 부품: 패드 수/번호는 항상 검사. **1번핀 원점+X등피치**는
+    # 일렬 커넥터에만 적용한다 — 모든 패드가 같은 Y(일직선)일 때만.
+    # QFP/QFN 등 4면 부품은 핀이 둘레를 돌아 X=0·X등피치가 성립하지 않는다
+    # (2026-08-10 STM32G431 등록 때 오탐 확인 → 일렬 조건으로 한정).
     if pitch is not None and pins:
         pads = re.findall(r'\(pad\s+"(\d+)"[^)]*?\(at\s+([-\d.]+)\s+([-\d.]+)', text)
         nums = sorted(int(n) for n, _, _ in pads)
@@ -62,13 +65,16 @@ def check_footprint(text, pins, pitch):
             errs.append(f"패드 수 {len(pads)} != 핀 수 {pins}")
         if nums != list(range(1, pins + 1)):
             errs.append(f"패드 번호 불연속: {nums}")
-        xs = {int(n): float(x) for n, x, _ in pads}
-        if xs.get(1) != 0.0:
-            errs.append(f"1번핀 X != 0 ({xs.get(1)})")
-        for n in nums:
-            if abs(xs.get(n, -999) - (n - 1) * pitch) > 1e-6:
-                errs.append(f"{n}번핀 X={xs.get(n)} != 기대 {(n-1)*pitch}")
-                break
+        ys = [float(y) for _, _, y in pads]
+        inline = len(ys) > 1 and max(ys) - min(ys) < 1e-6  # 모든 패드 같은 Y
+        if inline:
+            xs = {int(n): float(x) for n, x, _ in pads}
+            if xs.get(1) != 0.0:
+                errs.append(f"1번핀 X != 0 ({xs.get(1)})")
+            for n in nums:
+                if abs(xs.get(n, -999) - (n - 1) * pitch) > 1e-6:
+                    errs.append(f"{n}번핀 X={xs.get(n)} != 기대 {(n-1)*pitch}")
+                    break
     return errs
 
 

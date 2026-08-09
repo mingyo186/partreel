@@ -52,6 +52,10 @@ jobs:
           pip -q install trimesh numpy scipy
           python3 generators/check_zfight.py
 
+      # 수입 GLB 면 수 손실 검사 (§21-C 2026-08-09 LOD2 사건)
+      - name: Check imported GLB face loss
+        run: python3 generators/check_glb_faces.py
+
       # 3D 에셋 R2 동기화(§21-D/§22): 커밋 diff가 아니라 **누락 기반** 대조.
       # 사유(2026-08-05 사건): concurrency 취소로 어떤 커밋의 배포가 건너뛰어지면
       # diff 기반은 그 커밋의 step/glb를 영영 안 올림 (PR #19 yeonho 4개 R2 404).
