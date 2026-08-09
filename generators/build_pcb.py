@@ -289,6 +289,7 @@ def build(board_dir):
 
     # P6+P8: 가장자리 부품은 자기 군집 변의 바깥으로 삽입구 회전
     edge_fps = []  # (side, fp)
+    edge_ids = set()
     for blk in order:
         for _, pid, fp in blocks[blk]:
             face = (metas[pid].get("parameters") or {}).get("edge_face")
@@ -296,6 +297,41 @@ def build(board_dir):
                 side = sides.get(blk) or "left"
                 fp.SetOrientationDegrees(face_rotation(face, side))
                 edge_fps.append((side, fp))
+                edge_ids.add(id(fp))
+
+    # P12: 신호 패드가 메인 IC를 향하는 회전 선택 (가장자리 부품 제외 —
+    # 삽입구 방향(P6)이 우선). 0/90/180/270 중 신호 패드 무게중심 방향이
+    # IC 방향과 가장 일치하는 각.
+    TOWARD = {"top": (0, 1), "bottom": (0, -1), "left": (1, 0), "right": (-1, 0)}
+
+    def orient_toward(fp, want):
+        best, best_score = None, None
+        for a in (0, 90, 180, 270):
+            fp.SetOrientationDegrees(a)
+            bb = fp.GetBoundingBox(False, False)
+            cx = (bb.GetLeft() + bb.GetRight()) / 2
+            cy = (bb.GetTop() + bb.GetBottom()) / 2
+            pts = [(pad.GetPosition().x - cx, pad.GetPosition().y - cy)
+                   for pad in fp.Pads()
+                   if pad.GetNetname() and not is_power(pad.GetNetname())]
+            if not pts:
+                fp.SetOrientationDegrees(0)
+                return
+            dx = sum(p[0] for p in pts) / len(pts)
+            dy = sum(p[1] for p in pts) / len(pts)
+            norm = (dx * dx + dy * dy) ** 0.5 or 1.0
+            score = (dx * want[0] + dy * want[1]) / norm
+            if best_score is None or score > best_score:
+                best, best_score = a, score
+        fp.SetOrientationDegrees(best)
+
+    for blk in order:
+        if blk == main_block:
+            continue
+        want = TOWARD[sides[blk]]
+        for _, pid, fp in blocks[blk]:
+            if id(fp) not in edge_ids:
+                orient_toward(fp, want)
 
     # 군집 내부 배치 (로컬 좌표) — 회전 반영된 크기로.
     # 가장자리 부품은 자기 변의 최외곽 열에: 오른변이면 마지막 열(오른쪽),
