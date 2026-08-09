@@ -1,0 +1,23 @@
+{
+ "id": "demo_g431_devkit",
+ "name": "STM32G431 devkit demo (USB-C + LDO + SWD + I2C)",
+ "description": "Stage-1 pilot of the board definition flow (REQUIREMENTS §25): five PartReel blocks composed into one root schematic. USB D+/D- to PA12/PA11, Cortex debug to SWD + SWO on PB3, I2C1 pull-ups on PB7/PA15. Power rails (+5V/+3V3/GND) merge via global power symbols inside the blocks.",
+ "revision": "0.1",
+ "blocks": [
+  {"ref": "B1", "block": "usb_c_5v"},
+  {"ref": "B2", "block": "ldo_3v3"},
+  {"ref": "B3", "block": "g431_min"},
+  {"ref": "B4", "block": "cortex_debug_10"},
+  {"ref": "B5", "block": "i2c_pullup"}
+ ],
+ "nets": {
+  "USB_DM": ["B1.USB_DM", "B3.PA11"],
+  "USB_DP": ["B1.USB_DP", "B3.PA12"],
+  "SWDIO": ["B4.SWDIO", "B3.SWDIO"],
+  "SWCLK": ["B4.SWCLK", "B3.SWCLK"],
+  "NRST": ["B4.NRST", "B3.NRST"],
+  "SWO": ["B4.SWO", "B3.PB3"],
+  "SDA": ["B5.SDA", "B3.PB7"],
+  "SCL": ["B5.SCL", "B3.PA15"]
+ }
+}
