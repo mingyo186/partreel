@@ -30,7 +30,7 @@ KICAD_CLI = os.environ.get(
 
 import pcbnew  # noqa: E402  (KiCad 파이썬 전용)
 
-MARGIN = 1.0     # 부품 간 여백 (mm)
+MARGIN = 0.6     # 부품 간 여백 — 선 1가닥 + 클리어런스 (P11)
 GAP = 2.0        # 군집 간 여백 (배선 지나갈 폭)
 EDGE = 2.0       # 외곽선-부품 여백
 # KiCad 회전각 a의 좌표 변환 (실측 검증: 270이 -y를 +x로 보냄)
@@ -92,28 +92,44 @@ def silk_min_x(fp):
     return min(xs) if xs else body_bb(fp)[0]
 
 
-def pack_main_ic(items):
-    """P7: 메인 IC 가운데 + 수동소자를 좌우 열로 번갈아. items=(ref,fp,w,h)
-    면적 내림차순. 반환: [(fp, cx, cy)] 로컬 중심좌표."""
+def pack_main_ic(items, hints=None):
+    """P7+P10: 메인 IC 가운데 + 수동소자를 좌우 열로. items=(ref,fp,w,h)
+    면적 내림차순. hints[ref] = (선호변 ±1|None, 정렬 y) — 신호 부품은
+    물린 핀의 변·순서대로(P10), 전원 전용은 빈 쪽 채움(P9).
+    반환: [(fp, cx, cy)] 로컬 중심좌표."""
+    hints = hints or {}
     main = items[0]
     out = [(main[1], 0.0, 0.0)]
     mw, mh = main[2], main[3]
     state = {1: {"x": mw / 2 + MARGIN, "y": -mh / 2, "w": 0.0},
              -1: {"x": -mw / 2 - MARGIN, "y": -mh / 2, "w": 0.0}}
-    side = 1
-    for ref, fp, w, h in items[1:]:
+
+    def put(side, ref, fp, w, h):
         s = state[side]
         if s["y"] + h > mh / 2 + 0.1:
             o = state[-side]
-            if o["y"] + h <= mh / 2 + 0.1:
+            if hints.get(ref, (None,))[0] is None and o["y"] + h <= mh / 2 + 0.1:
                 side = -side
                 s = o
-            else:  # 양쪽 다 참 — 이 변에 새 열
+            else:
                 s["x"] += (s["w"] + MARGIN) * side
                 s["y"], s["w"] = -mh / 2, 0.0
         out.append((fp, s["x"] + (w / 2) * side, s["y"] + h / 2))
         s["y"] += h + MARGIN
         s["w"] = max(s["w"], w)
+
+    rest = items[1:]
+    # 1) 신호 부품: 물린 핀의 변에, 핀 y 순서대로 (P10 꼬임 방지)
+    sig = sorted((it for it in rest if hints.get(it[0], (None,))[0] is not None),
+                 key=lambda it: hints[it[0]][1])
+    for ref, fp, w, h in sig:
+        put(hints[ref][0], ref, fp, w, h)
+    # 2) 전원 전용: 양쪽 잔여 공간을 번갈아 채움 (P9)
+    side = 1
+    for ref, fp, w, h in (it for it in rest if hints.get(it[0], (None,))[0] is None):
+        if state[side]["y"] > state[-side]["y"]:
+            side = -side
+        put(side, ref, fp, w, h)
         side = -side
     return out
 
@@ -232,6 +248,22 @@ def build(board_dir):
         net_side[name] = side
     TIE = ["right", "top", "left", "bottom"]
 
+    def net_pad_avg(fp):
+        """이 부품의 신호 네트가 물린 MCU 패드들의 평균 좌표 (P10 정렬용)."""
+        pts = []
+        for pad in fp.Pads():
+            n = pad.GetNetname()
+            if not n or is_power(n):
+                continue
+            for mp in mcu_fp.Pads():
+                if mp.GetNetname() == n:
+                    pts.append((pcbnew.ToMM(mp.GetPosition().x),
+                                pcbnew.ToMM(mp.GetPosition().y)))
+        if not pts:
+            return None
+        return (sum(p[0] for p in pts) / len(pts),
+                sum(p[1] for p in pts) / len(pts))
+
     def vote_side(blk):
         votes = {}
         for _, _, fp in blocks[blk]:
@@ -280,7 +312,15 @@ def build(board_dir):
         elif edge_items:
             items = edge_items + [it for it in items if id(it[1]) not in edge_set]
         if blk == main_block and len(items) >= 4:
-            placed_local[blk] = pack_main_ic(items)
+            # P10: 신호 부품(C7 NRST, R1 BOOT0 등)은 물린 핀의 변·순서대로
+            hints = {}
+            for ref, _, fp in blocks[blk]:
+                if fp is mcu_fp:
+                    continue
+                avg = net_pad_avg(fp)
+                if avg:
+                    hints[ref] = (1 if avg[0] >= mcx else -1, avg[1])
+            placed_local[blk] = pack_main_ic(items, hints)
         else:
             hmax = max(12.0, max(h for _, _, _, h in items))
             placed_local[blk] = pack_wrap(items, hmax)
@@ -304,6 +344,14 @@ def build(board_dir):
     for s, blks in lateral.items():
         if not blks:
             continue
+        # P10: 같은 변의 군집은 물린 MCU 핀 좌표 순서로 (꼬임 방지)
+        def blk_avg(b, axis):
+            pts = [net_pad_avg(fp) for _, _, fp in blocks[b]]
+            pts = [p for p in pts if p]
+            if not pts:
+                return 0.0
+            return sum(p[axis] for p in pts) / len(pts)
+        blks.sort(key=lambda b: blk_avg(b, 0 if s in ("top", "bottom") else 1))
         sizes = [local_bbox(b) for b in blks]
         if s in ("left", "right"):
             total = sum(y2 - y1 for _, y1, _, y2 in sizes) + GAP * (len(blks) - 1)
