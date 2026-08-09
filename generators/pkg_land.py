@@ -15,6 +15,19 @@ Antmicro 물결에서 KiCad 공식 카피로 판정돼 제외된 IC/인덕터 �
 # QFN류는 핀1=좌상, 반시계(좌변 위→아래, 아랫변 좌→우, 우변 아래→위, 윗변 우→좌).
 
 PACKAGES = {
+    # === LQFP (ST MCU 정식 등록, 2026-08-10 — 재현 가능하게 상수 영구화) ===
+    # 출처: IPC-7351B density B nominal for JEDEC MS-026 (ST 도면 st.com 차단).
+    "LQFP-48_7x7_P0.5": {
+        "type": "qfn", "pads_per_side": 12, "pitch": 0.5, "span": 8.325,
+        "pad_w": 0.3, "pad_l": 1.475, "body": 7.0,
+        "source": "IPC-7351B density B for JEDEC MS-026 BBC (LQFP48 7x7 e=0.5)",
+    },
+    "LQFP-64_10x10_P0.5": {
+        "type": "qfn", "pads_per_side": 16, "pitch": 0.5, "span": 11.35,
+        "pad_w": 0.3, "pad_l": 1.475, "body": 10.0,
+        "source": "IPC-7351B density B for JEDEC MS-026 BFB (LQFP64 10x10 e=0.5)",
+    },
+
     # === 2520(1008) 파워 인덕터 — 제조사별 분리 ===
     # 원본 Antmicro는 KiCad 범용 L_1008 하나로 뭉갰지만, TDK TFM(단자 0.6mm 짧음:
     # 패드 0.7/갭 1.5)과 Bourns SRP2510(랩어라운드 단자: 패드 1.2/갭 0.5)은 권장
@@ -176,7 +189,11 @@ def qfn_footprint(pid, p, descr):
         L.append(f'  (fp_line (start {_fmt(sx * sk)} {_fmt(sy * sk)})'
                  f' (end {_fmt(sx * -ext)} {_fmt(sy * sk)})'
                  ' (stroke (width 0.12) (type solid)) (layer "F.SilkS"))')
-    d1 = half + l / 2 + 0.35
+    # 핀1 점: 중심 오프셋 0.35는 점의 외곽 반지름(0.2+0.15)과 같아 패드에
+    # 정확히 '접촉' — 마스크 확장에 물려 DRC silk_over_copper가 난다
+    # (2026-08-10 g431_devkit 보드 초기화에서 발견). 0.65 = 반지름 0.35 +
+    # 여유 0.30 (마스크 확장 0.1 이상 커버).
+    d1 = half + l / 2 + 0.65
     L.append(f'  (fp_circle (center {_fmt(-d1)} {_fmt(first)}) '
              f'(end {_fmt(-d1 + 0.2)} {_fmt(first)})'
              ' (stroke (width 0.3) (type solid)) (fill solid) (layer "F.SilkS"))')

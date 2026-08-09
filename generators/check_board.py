@@ -111,6 +111,33 @@ def check(board_dir):
                  f"vs 커널 {sorted(got)}")
     print(f"  {bid}: 넷 대조 {len(bd['nets'])}개")
 
+    # E. PCB 초기화 판정 (있을 때만): kicad-cli pcb drc — 미배선(unconnected_
+    # items)은 초기화 단계의 정의상 상태라 허용, 그 외 오류/경고는 실패
+    # (배치 겹침·외곽 문제를 여기서 잡는다). §25 2단계.
+    pcb = os.path.join(board_dir, f"{bid}.kicad_pcb")
+    if os.path.exists(pcb):
+        drc = os.path.join(tmp, "drc.json")
+        r = subprocess.run([KICAD_CLI, "pcb", "drc", "--severity-all",
+                            "--format", "json", "--output", drc, pcb],
+                           capture_output=True, text=True, encoding="utf-8",
+                           errors="replace")
+        if not os.path.exists(drc):
+            fail(f"{bid}: PCB DRC 실행 실패 — {(r.stdout + r.stderr)[-200:]}")
+        else:
+            rep = json.load(open(drc, encoding="utf-8"))
+            n_unrouted = len(rep.get("unconnected_items", []))
+            # text_height: 안트미크로 수입 풋프린트의 참조 글자 0.7mm(<0.8
+            # 기본 최소) — 수입품 고유 스타일의 경고급 지적이라 허용
+            allowed_drc = {"text_height"}
+            bad = 0
+            for v in rep.get("violations", []):
+                if v.get("severity") in ("error", "warning") and \
+                        v.get("type") not in allowed_drc:
+                    bad += 1
+                    fail(f"{bid}: DRC [{v.get('type')}] "
+                         f"{v.get('description', '')[:90]}")
+            print(f"  {bid}: PCB DRC 위반 {bad} / 미배선(허용) {n_unrouted}")
+
     # D. 렌더 (루트 페이지)
     outdir = os.path.join(tmp, "svg")
     subprocess.run([KICAD_CLI, "sch", "export", "svg", "--exclude-drawing-sheet",

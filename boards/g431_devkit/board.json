@@ -1,0 +1,70 @@
+{
+ "id": "g431_devkit",
+ "name": "STM32G431 devkit (USB-C + LDO + STDC14 + I2C)",
+ "description": "STM32G431CBTx development board: USB-C 5V input -> 3.3V LDO, STDC14 debug (SWD + SWO + VCP UART on USART2 PA2/PA3), USB FS on PA11/PA12, I2C1 pull-ups on PB7/PA15. Built from PartReel blocks via board.json (REQUIREMENTS S25).",
+ "revision": "0.1",
+ "blocks": [
+  {
+   "ref": "B1",
+   "block": "usb_c_5v"
+  },
+  {
+   "ref": "B2",
+   "block": "ldo_3v3"
+  },
+  {
+   "ref": "B3",
+   "block": "g431_min"
+  },
+  {
+   "ref": "B4",
+   "block": "stdc14"
+  },
+  {
+   "ref": "B5",
+   "block": "i2c_pullup"
+  }
+ ],
+ "nets": {
+  "USB_DM": [
+   "B1.USB_DM",
+   "B3.PA11"
+  ],
+  "USB_DP": [
+   "B1.USB_DP",
+   "B3.PA12"
+  ],
+  "SWDIO": [
+   "B4.SWDIO",
+   "B3.SWDIO"
+  ],
+  "SWCLK": [
+   "B4.SWCLK",
+   "B3.SWCLK"
+  ],
+  "NRST": [
+   "B4.NRST",
+   "B3.NRST"
+  ],
+  "SWO": [
+   "B4.SWO",
+   "B3.PB3"
+  ],
+  "UART_TX": [
+   "B4.UART_TX",
+   "B3.PA2"
+  ],
+  "UART_RX": [
+   "B4.UART_RX",
+   "B3.PA3"
+  ],
+  "SDA": [
+   "B5.SDA",
+   "B3.PB7"
+  ],
+  "SCL": [
+   "B5.SCL",
+   "B3.PA15"
+  ]
+ }
+}
