@@ -1,0 +1,235 @@
+{
+ "id": "stdc14",
+ "name": "STDC14 debug connector (ST-LINK V3)",
+ "description": "ST STDC14 debug connector (Samtec FTSH-107-01-L-DV-K-A, 1.27mm 2x7): ARM10 SWD subset + VCP UART. Pins 1-2 reserved (do not connect), 9-10 JTAG-only (NC for SWD), 11 GNDDetect tied to GND.",
+ "circuit_source": "ST UM2448 Rev 9 (STLINK-V3SET user manual) section 8.1.2 Table 6: STDC14 pinout + connector MPN. SWD signal roles: Arm ULINKplus UG 101636.",
+ "fp_lib": "PCM_PartReel",
+ "paper": "A5",
+ "power_in": [
+  "+3V3",
+  "GND"
+ ],
+ "parts": [
+  {
+   "ref": "J1",
+   "part": "samtec_ftsh_107_01_l_dv_k",
+   "value": "STDC14"
+  }
+ ],
+ "nets": {
+  "+3V3": [
+   "J1.3"
+  ],
+  "GND": [
+   "J1.5",
+   "J1.7",
+   "J1.11"
+  ],
+  "SWDIO": [
+   "J1.4"
+  ],
+  "SWCLK": [
+   "J1.6"
+  ],
+  "SWO": [
+   "J1.8"
+  ],
+  "NRST": [
+   "J1.12"
+  ],
+  "UART_RX": [
+   "J1.13"
+  ],
+  "UART_TX": [
+   "J1.14"
+  ]
+ },
+ "interface": {
+  "SWDIO": "bidirectional",
+  "SWCLK": "output",
+  "SWO": "input",
+  "NRST": "output",
+  "UART_TX": "input",
+  "UART_RX": "output"
+ },
+ "layout": {
+  "parts": {
+   "J1": {
+    "at": [
+     106.68,
+     73.66
+    ],
+    "rot": 0,
+    "ref_at": [
+     109.22,
+     69.09
+    ],
+    "value_at": [
+     109.22,
+     71.12
+    ]
+   }
+  },
+  "wires": [
+   [
+    [
+     106.68,
+     76.2
+    ],
+    [
+     100.33,
+     76.2
+    ]
+   ],
+   [
+    [
+     106.68,
+     78.74
+    ],
+    [
+     102.87,
+     78.74
+    ]
+   ],
+   [
+    [
+     106.68,
+     81.28
+    ],
+    [
+     102.87,
+     81.28
+    ]
+   ],
+   [
+    [
+     106.68,
+     86.36
+    ],
+    [
+     102.87,
+     86.36
+    ]
+   ],
+   [
+    [
+     102.87,
+     78.74
+    ],
+    [
+     102.87,
+     91.44
+    ]
+   ],
+   [
+    [
+     106.68,
+     88.89999999999999
+    ],
+    [
+     106.68,
+     93.98
+    ]
+   ]
+  ],
+  "labels": [
+   {
+    "net": "SWDIO",
+    "at": [
+     116.84,
+     76.2
+    ],
+    "rot": 0
+   },
+   {
+    "net": "SWCLK",
+    "at": [
+     116.84,
+     78.74
+    ],
+    "rot": 0
+   },
+   {
+    "net": "SWO",
+    "at": [
+     116.84,
+     81.28
+    ],
+    "rot": 0
+   },
+   {
+    "net": "NRST",
+    "at": [
+     116.84,
+     86.36
+    ],
+    "rot": 0
+   },
+   {
+    "net": "UART_TX",
+    "at": [
+     116.84,
+     88.89999999999999
+    ],
+    "rot": 0
+   },
+   {
+    "net": "UART_RX",
+    "at": [
+     106.68,
+     93.98
+    ],
+    "rot": 270
+   }
+  ],
+  "power": [
+   {
+    "symbol": "rail",
+    "net": "+3V3",
+    "at": [
+     100.33,
+     76.2
+    ]
+   },
+   {
+    "symbol": "gnd",
+    "net": "GND",
+    "at": [
+     102.87,
+     91.44
+    ]
+   }
+  ],
+  "table_at": [
+   133.35,
+   71.12
+  ]
+ },
+ "revision": "0.1",
+ "specs": [
+  [
+   "Connector",
+   "FTSH-107-01-L-DV-K-A"
+  ],
+  [
+   "Std",
+   "STDC14 (ARM10 + VCP UART)"
+  ],
+  [
+   "Pin 1-2",
+   "Reserved - do not connect"
+  ],
+  [
+   "Pin 9-10",
+   "JTAG only - NC for SWD"
+  ],
+  [
+   "Pin 11",
+   "GNDDetect - GND"
+  ],
+  [
+   "Source",
+   "ST UM2448 Rev 9 Table 6"
+  ]
+ ]
+}

@@ -590,9 +590,13 @@ KiCad 내장 **플러그인·콘텐츠 매니저** 저장소를 우리가 직접
    ST-LINK V3SET 기준, 확장보드로 UART까지 사용):
    ① swd_uart_hdr254 (2.54 1x8, SWD+UART+전원 — 점퍼선용, 핀 순서는 파트릴
      규약으로 특성표에 명기) ✅ rev 0.1
-   ② stdc14 (ST 정식 14핀 1.27) — **대기**: 핀표 1차 사료 UM2448이 st.com
-     차단으로 미확보 (curl 000·브라우저 다운로드 대화상자). FTSH-107 부품
-     생성도 함께 필요.
+   ② stdc14 (ST 정식 14핀 1.27) ✅ rev 0.1 — 사용자가 UM2448 PDF 제공
+     (2026-08-10). 핀표 = UM2448 Rev 9 §8.1.2 Table 6 (1-2 Reserved 연결금지 /
+     3 T_VCC / 4 SWDIO / 5·7 GND / 6 SWCLK / 8 SWO / 9-10 JTAG전용 NC /
+     11 GNDDetect→GND / 12 NRST / 13 VCP_RX / 14 VCP_TX). 커넥터 =
+     Samtec FTSH-107-01-L-DV-K-A (문서 명기) → gen_ftsh.py로 부품 생성
+     (치수: 피치 1.27 계열 + Arm UG 101636의 105 몸체 6.35x4.78 파라메트릭 +
+     antmicro 105 양산 랜드 0.76x2.4; Samtec 공식 print 403 — 확보 시 대조).
    ③ cortex_debug_10 (ARM 표준 10핀 1.27, FTSH-105-01-L-DV-007-K) ✅ rev 0.1
      — 핀표 근거: Arm ULINKplus UG 101636 'JTAG/SWD Interface' 그림
      (1 VCC/2 SWDIO/3 GND/4 SWCLK/5 GND/6 SWO/7 KEY/8 NC/9 GNDDetect/10 nRESET)

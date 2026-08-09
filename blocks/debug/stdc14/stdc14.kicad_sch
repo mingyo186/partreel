@@ -1,0 +1,749 @@
+(kicad_sch
+	(version 20250114)
+	(generator "partreel-block")
+	(generator_version "1.0")
+	(uuid "e2ba4e20-90bc-5b7d-9e69-1d924dd998f9")
+	(paper "A5")
+	(title_block
+		(title "STDC14 debug connector (ST-LINK V3)")
+		(company "PartReel block")
+		(rev "0.1")
+	)
+	(lib_symbols
+		(symbol "PartReel:samtec_ftsh_107_01_l_dv_k" (pin_names hide) (in_bom yes) (on_board yes)
+		    (property "Reference" "J" (at 2.54 2.54 0) (effects (font (size 1.27 1.27)) (justify left)))
+		    (property "Value" "samtec_ftsh_107_01_l_dv_k" (at 2.54 -18.41 0) (effects (font (size 1.27 1.27)) (justify left)))
+		    (symbol "samtec_ftsh_107_01_l_dv_k_1_1"
+		      (rectangle (start 2.54 1.27) (end 7.62 -16.51)
+		        (stroke (width 0.254) (type solid)) (fill (type background)))
+		      (pin passive line (at 0 -0 0) (length 2.54)
+		        (name "Pin_1" (effects (font (size 1.27 1.27))))
+		        (number "1" (effects (font (size 1.27 1.27)))))
+		      (pin passive line (at 10.16 -0 180) (length 2.54)
+		        (name "Pin_2" (effects (font (size 1.27 1.27))))
+		        (number "2" (effects (font (size 1.27 1.27)))))
+		      (pin passive line (at 0 -2.54 0) (length 2.54)
+		        (name "Pin_3" (effects (font (size 1.27 1.27))))
+		        (number "3" (effects (font (size 1.27 1.27)))))
+		      (pin passive line (at 10.16 -2.54 180) (length 2.54)
+		        (name "Pin_4" (effects (font (size 1.27 1.27))))
+		        (number "4" (effects (font (size 1.27 1.27)))))
+		      (pin passive line (at 0 -5.08 0) (length 2.54)
+		        (name "Pin_5" (effects (font (size 1.27 1.27))))
+		        (number "5" (effects (font (size 1.27 1.27)))))
+		      (pin passive line (at 10.16 -5.08 180) (length 2.54)
+		        (name "Pin_6" (effects (font (size 1.27 1.27))))
+		        (number "6" (effects (font (size 1.27 1.27)))))
+		      (pin passive line (at 0 -7.62 0) (length 2.54)
+		        (name "Pin_7" (effects (font (size 1.27 1.27))))
+		        (number "7" (effects (font (size 1.27 1.27)))))
+		      (pin passive line (at 10.16 -7.62 180) (length 2.54)
+		        (name "Pin_8" (effects (font (size 1.27 1.27))))
+		        (number "8" (effects (font (size 1.27 1.27)))))
+		      (pin passive line (at 0 -10.16 0) (length 2.54)
+		        (name "Pin_9" (effects (font (size 1.27 1.27))))
+		        (number "9" (effects (font (size 1.27 1.27)))))
+		      (pin passive line (at 10.16 -10.16 180) (length 2.54)
+		        (name "Pin_10" (effects (font (size 1.27 1.27))))
+		        (number "10" (effects (font (size 1.27 1.27)))))
+		      (pin passive line (at 0 -12.7 0) (length 2.54)
+		        (name "Pin_11" (effects (font (size 1.27 1.27))))
+		        (number "11" (effects (font (size 1.27 1.27)))))
+		      (pin passive line (at 10.16 -12.7 180) (length 2.54)
+		        (name "Pin_12" (effects (font (size 1.27 1.27))))
+		        (number "12" (effects (font (size 1.27 1.27)))))
+		      (pin passive line (at 0 -15.24 0) (length 2.54)
+		        (name "Pin_13" (effects (font (size 1.27 1.27))))
+		        (number "13" (effects (font (size 1.27 1.27)))))
+		      (pin passive line (at 10.16 -15.24 180) (length 2.54)
+		        (name "Pin_14" (effects (font (size 1.27 1.27))))
+		        (number "14" (effects (font (size 1.27 1.27)))))
+		    ))
+		(symbol "PartReelPwr:PR_P3V3" (power) (pin_names (offset 0)) (in_bom no) (on_board yes)
+		  (property "Reference" "#PWR" (at 0 1.27 0) (effects (font (size 1.27 1.27)) (hide yes)))
+		  (property "Value" "+3V3" (at 0 3.81 0) (effects (font (size 1.27 1.27))))
+		  (symbol "PR_P3V3_1_1"
+		    (polyline (pts (xy 0 0) (xy 0 1.27)) (stroke (width 0.254) (type solid)) (fill (type none)))
+		    (polyline (pts (xy -0.762 1.27) (xy 0 2.54)) (stroke (width 0.254) (type solid)) (fill (type none)))
+		    (polyline (pts (xy 0 2.54) (xy 0.762 1.27)) (stroke (width 0.254) (type solid)) (fill (type none)))
+		    (polyline (pts (xy -0.762 1.27) (xy 0.762 1.27)) (stroke (width 0.254) (type solid)) (fill (type none)))
+		    (pin power_in line (at 0 0 270) (length 0) hide (name "+3V3" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))
+		  ))
+		(symbol "PartReelPwr:PR_GND" (power) (pin_names (offset 0)) (in_bom no) (on_board yes)
+		  (property "Reference" "#PWR" (at 0 -6.985 0) (effects (font (size 1.27 1.27)) (hide yes)))
+		  (property "Value" "GND" (at 0 -4.445 0) (effects (font (size 1.27 1.27))))
+		  (symbol "PR_GND_1_1"
+		    (polyline (pts (xy 0 0) (xy 0 -1.27)) (stroke (width 0.254) (type solid)) (fill (type none)))
+		    (polyline (pts (xy -1.27 -1.27) (xy 1.27 -1.27)) (stroke (width 0.254) (type solid)) (fill (type none)))
+		    (polyline (pts (xy -0.762 -1.778) (xy 0.762 -1.778)) (stroke (width 0.254) (type solid)) (fill (type none)))
+		    (polyline (pts (xy -0.254 -2.286) (xy 0.254 -2.286)) (stroke (width 0.254) (type solid)) (fill (type none)))
+		    (pin power_in line (at 0 0 270) (length 0) hide (name "GND" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))
+		  ))
+	)
+	(wire
+		(pts
+			(xy 106.68 76.2) (xy 100.33 76.2)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "0d4173a8-53f7-56ac-aea2-6b8f19bfb7fc")
+	)
+	(wire
+		(pts
+			(xy 106.68 78.74) (xy 102.87 78.74)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "21248023-d8c3-5c9b-9a38-c7c54593ff64")
+	)
+	(wire
+		(pts
+			(xy 106.68 81.28) (xy 102.87 81.28)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "10790103-c5ca-5afb-8818-40e299bad089")
+	)
+	(wire
+		(pts
+			(xy 106.68 86.36) (xy 102.87 86.36)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "103cac90-e789-53b9-a622-51ffe389c2a7")
+	)
+	(wire
+		(pts
+			(xy 102.87 78.74) (xy 102.87 91.44)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "3b11c77e-3535-5c34-a3b9-41c3524b6d60")
+	)
+	(wire
+		(pts
+			(xy 106.68 88.9) (xy 106.68 93.98)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "81b85d9f-05d3-5db0-a08b-d2158470808a")
+	)
+	(junction
+		(at 102.87 81.28)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d5c94631-e135-5f05-8ff2-c2132b3fde96")
+	)
+	(junction
+		(at 102.87 86.36)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1d114dd6-835f-59f5-99f5-887e108e67f1")
+	)
+	(junction
+		(at 106.68 88.9)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9ccc18bb-036c-58b0-a238-f1af617af4b8")
+	)
+	(text "J1"
+		(exclude_from_sim no)
+		(at 109.22 69.09 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 132 0 0 1)
+			)
+			(justify left)
+		)
+		(uuid "831b81a4-94d0-5933-b6c1-28bd19a7e397")
+	)
+	(text "STDC14"
+		(exclude_from_sim no)
+		(at 109.22 71.12 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 132 0 0 1)
+			)
+			(justify left)
+		)
+		(uuid "ef0430da-adb0-53df-b774-3018b7563cd2")
+	)
+	(hierarchical_label "SWDIO"
+		(shape bidirectional)
+		(at 116.84 76.2 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "5304f2ad-e412-50e5-93e0-07a6c819b637")
+	)
+	(hierarchical_label "SWCLK"
+		(shape output)
+		(at 116.84 78.74 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "142920e9-510a-5cb3-8c33-7f112dd6178a")
+	)
+	(hierarchical_label "SWO"
+		(shape input)
+		(at 116.84 81.28 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "5dbf80e2-928e-5f8b-af0f-6185f2754638")
+	)
+	(hierarchical_label "NRST"
+		(shape output)
+		(at 116.84 86.36 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "fbf8c50e-aa23-5b59-abc8-c2321c4661e9")
+	)
+	(hierarchical_label "UART_TX"
+		(shape input)
+		(at 116.84 88.9 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "74943695-7607-5c2e-a2d4-1ab39ee0ba1a")
+	)
+	(hierarchical_label "UART_RX"
+		(shape output)
+		(at 106.68 93.98 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "981c4d7a-659a-51d0-803a-ca4b39caccfb")
+	)
+	(table
+		(column_count 2)
+		(border
+			(external yes)
+			(header yes)
+			(stroke
+				(width 0)
+				(type solid)
+			)
+		)
+		(separators
+			(rows yes)
+			(cols yes)
+			(stroke
+				(width 0)
+				(type solid)
+			)
+		)
+		(column_widths 12.4 39.25)
+		(row_heights 4.45 4.45 4.45 4.45 4.45 4.45 4.45 4.45)
+		(cells
+			(table_cell "Block"
+				(exclude_from_sim no)
+				(at 133.35 71.12 0)
+				(size 12.4 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "2cf0806d-1b6e-5f4c-9d70-1a59e4da17ab")
+			)
+			(table_cell "STDC14 debug connector (ST-LINK V3)"
+				(exclude_from_sim no)
+				(at 145.75 71.12 0)
+				(size 39.25 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "ff1f000a-4f91-59af-90c5-28d850c73cbe")
+			)
+			(table_cell "Rev"
+				(exclude_from_sim no)
+				(at 133.35 75.57 0)
+				(size 12.4 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "b10d42bf-3b79-5117-b645-b97499963b30")
+			)
+			(table_cell "0.1"
+				(exclude_from_sim no)
+				(at 145.75 75.57 0)
+				(size 39.25 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "8975cdd0-5586-5e2b-8815-504e9bce8d8f")
+			)
+			(table_cell "Connector"
+				(exclude_from_sim no)
+				(at 133.35 80.02 0)
+				(size 12.4 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "1f2c6968-95f8-5dfe-b09b-c3697c8a587d")
+			)
+			(table_cell "FTSH-107-01-L-DV-K-A"
+				(exclude_from_sim no)
+				(at 145.75 80.02 0)
+				(size 39.25 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "93ffb8e6-1098-5445-a796-55a77046d1fa")
+			)
+			(table_cell "Std"
+				(exclude_from_sim no)
+				(at 133.35 84.47 0)
+				(size 12.4 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "d8e33403-98e7-57fe-a713-3f395f9ff46d")
+			)
+			(table_cell "STDC14 (ARM10 + VCP UART)"
+				(exclude_from_sim no)
+				(at 145.75 84.47 0)
+				(size 39.25 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "d38e1e81-c6cc-589f-9957-4588f779cb15")
+			)
+			(table_cell "Pin 1-2"
+				(exclude_from_sim no)
+				(at 133.35 88.92 0)
+				(size 12.4 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "0cdd93ba-fbc9-5aa8-8d7a-a413c4ce89f0")
+			)
+			(table_cell "Reserved - do not connect"
+				(exclude_from_sim no)
+				(at 145.75 88.92 0)
+				(size 39.25 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "4732d173-c69d-5c36-af89-f3c4d17294bf")
+			)
+			(table_cell "Pin 9-10"
+				(exclude_from_sim no)
+				(at 133.35 93.37 0)
+				(size 12.4 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "a3737ff1-19be-511a-98cd-c17f69f620a5")
+			)
+			(table_cell "JTAG only - NC for SWD"
+				(exclude_from_sim no)
+				(at 145.75 93.37 0)
+				(size 39.25 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "a3ed0a58-dbdf-5054-b8b1-0005491ba0ab")
+			)
+			(table_cell "Pin 11"
+				(exclude_from_sim no)
+				(at 133.35 97.82 0)
+				(size 12.4 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "6aebc5e6-4f02-5d8b-a0f1-845e834cffa4")
+			)
+			(table_cell "GNDDetect - GND"
+				(exclude_from_sim no)
+				(at 145.75 97.82 0)
+				(size 39.25 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "0e6d79a1-7d49-5570-b665-327dac7e5630")
+			)
+			(table_cell "Source"
+				(exclude_from_sim no)
+				(at 133.35 102.27 0)
+				(size 12.4 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "0dce15f1-92ca-52e6-8a7f-5feb6d32f49b")
+			)
+			(table_cell "ST UM2448 Rev 9 Table 6"
+				(exclude_from_sim no)
+				(at 145.75 102.27 0)
+				(size 39.25 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "a642d346-73e2-5dec-a026-eba4c936c055")
+			)
+		)
+	)
+	(no_connect
+		(at 106.68 73.66)
+		(uuid "9477422e-d16f-5e9e-99ec-908fc3867c76")
+	)
+	(no_connect
+		(at 116.84 73.66)
+		(uuid "87f4b120-b58e-5da9-abfc-3e2da1192bce")
+	)
+	(no_connect
+		(at 106.68 83.82)
+		(uuid "1169d141-f5d3-5a44-98fa-0c8ce32cbad6")
+	)
+	(no_connect
+		(at 116.84 83.82)
+		(uuid "3aef25c6-f9bf-5f21-ab69-8d39ad5a79db")
+	)
+	(symbol
+		(lib_id "PartReel:samtec_ftsh_107_01_l_dv_k")
+		(at 106.68 73.66 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "dbdcf36d-6a7d-51d3-aee2-5a3a45aae4c9")
+		(property "Reference" "J1"
+			(at 109.22 69.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "STDC14"
+			(at 109.22 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "PCM_PartReel:samtec_ftsh_107_01_l_dv_k"
+			(at 106.68 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://partreel.com/p/samtec_ftsh_107_01_l_dv_k/"
+			(at 106.68 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PartReel" "samtec_ftsh_107_01_l_dv_k"
+			(at 106.68 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "371151ce-03a0-51c9-a084-059bd2a9251d")
+		)
+		(pin "2"
+			(uuid "e46de046-4468-5744-be14-b8606541f826")
+		)
+		(pin "3"
+			(uuid "53e45a75-6cc1-5abe-b9bc-9ecd490b9687")
+		)
+		(pin "4"
+			(uuid "4a6a60d2-2355-5992-9442-547f1c73ff0e")
+		)
+		(pin "5"
+			(uuid "b55a59da-0021-55cb-8c44-62864259ab10")
+		)
+		(pin "6"
+			(uuid "a4a45f8d-929b-5106-81fb-af0d3323b2a1")
+		)
+		(pin "7"
+			(uuid "30ee5749-38e8-55ca-a611-19529b7b0361")
+		)
+		(pin "8"
+			(uuid "1bcabcb8-32bc-55e9-9499-82f7846bca65")
+		)
+		(pin "9"
+			(uuid "7ace8089-73a2-5782-ade3-34a339d4131a")
+		)
+		(pin "10"
+			(uuid "4afc3700-9126-5995-bbe8-cf576b0c19f9")
+		)
+		(pin "11"
+			(uuid "c4540914-7ed6-5be9-92f9-2551a59f081b")
+		)
+		(pin "12"
+			(uuid "bd129f7e-6adb-5c51-829b-5e3a83203953")
+		)
+		(pin "13"
+			(uuid "fbc79d66-9df2-5b7b-b9cf-2d5ee3503e48")
+		)
+		(pin "14"
+			(uuid "65814c08-1618-5e34-8d0c-ce6f6ce09d58")
+		)
+		(instances
+			(project "stdc14"
+				(path "/e2ba4e20-90bc-5b7d-9e69-1d924dd998f9"
+					(reference "J1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PartReelPwr:PR_P3V3")
+		(at 100.33 76.2 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "b183a8e1-8ea2-5c68-ab84-d026d791bcd7")
+		(property "Reference" "#PWR01"
+			(at 100.33 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 100.33 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "23d87771-a056-5602-99b2-bc0ae7683862")
+		)
+		(instances
+			(project "stdc14"
+				(path "/e2ba4e20-90bc-5b7d-9e69-1d924dd998f9"
+					(reference "#PWR01")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PartReelPwr:PR_GND")
+		(at 102.87 91.44 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "e7608c4f-795a-51f4-8061-275fb2f8ffbd")
+		(property "Reference" "#PWR02"
+			(at 102.87 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 102.87 95.885 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1dc0dd2a-6e5b-5d13-abaf-faea1788ca71")
+		)
+		(instances
+			(project "stdc14"
+				(path "/e2ba4e20-90bc-5b7d-9e69-1d924dd998f9"
+					(reference "#PWR02")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)

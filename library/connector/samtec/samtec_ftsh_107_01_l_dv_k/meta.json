@@ -1,0 +1,33 @@
+{
+ "id": "samtec_ftsh_107_01_l_dv_k",
+ "name": "FTSH-107-01-L-DV-K 1.27mm 2x7 SMD header (Samtec)",
+ "category": "connector",
+ "family": "ftsh_127_2x7",
+ "manufacturer": "Samtec",
+ "mpn_pattern": "FTSH-107-01-L-DV-K",
+ "description": "Samtec FTSH series 1.27mm dual-row SMD header, 2x7 (14 pins). FTSH-107 is the STDC14 debug connector (ST UM2448).",
+ "keywords": [
+  "connector",
+  "header",
+  "1.27mm",
+  "samtec",
+  "ftsh",
+  "stdc14"
+ ],
+ "parameters": {
+  "pins": 14,
+  "mounting": "smd"
+ },
+ "formats": [
+  "kicad_mod",
+  "kicad_sym"
+ ],
+ "tier": "verified-2d",
+ "license": "CC-BY-4.0",
+ "datasheet": "https://www.samtec.com/products/ftsh-107-01-l-dv-k",
+ "dimensions_source": "Pitch 1.27 dual-row per Samtec FTSH series (MPN named in ST UM2448 Rev 9 sec 8.1.2). Body L=(pos+1)*1.27, W=4.78 from FTSH-105 = 6.35x4.78mm (Arm ULINKplus UG 101636). Land 0.76x2.4 rows +-1.95 from antmicro/hardware-components samtec-ftsh-105 production reference. Samtec official print PDF blocked (HTTP 403) - to be cross-checked when obtainable.",
+ "files": {
+  "footprint": "samtec_ftsh_107_01_l_dv_k.kicad_mod",
+  "symbol": "samtec_ftsh_107_01_l_dv_k.kicad_sym"
+ }
+}
