@@ -750,6 +750,30 @@ pins.h가 자동 재생성되고 펌웨어가 다시 빌드-검증된다. 펌웨
 | 4단계 역방향 | 펌웨어 핀 요구→회로 검증 | 🔴 미착수 | 주변장치 초기화 생성 |
 
 검증 깊이 정직 표기: 🟢도 보드 1장 1회 실증 — 반복·조합 실증은 고도화측.
+
+**D 착수 결정 (2026-08-11, 사용자 "진행해")**: 핀 능력 기계 검증 기본형.
+- 1차 사료 = **ST 공식 STM32_open_pin_data XML** (BSD-3, boardworks/tools/
+  st_pin_data/ 에 대상 MCU 파일만 동봉 — CI 자립 위해 git 포함, 실측:
+  PB7=I2C1_SDA·PA15=I2C1_SCL·PA2/3=USART2_TX/RX·PB3=SYS_JTDO-SWO·
+  PA11/12=USB_DM/DP 확인).
+- **요구는 블록이 선언**: block.json `pin_requires` = {포트: 신호 글롭}
+  (예 i2c_pullup: SDA→"I2C*_SDA"). 블록에 한 번 적으면 그 블록을 쓰는
+  모든 보드가 검사를 공짜로 받는다. 어느 보드 넷이 그 포트를 MCU PXn에
+  연결하면, 그 핀의 XML 신호 목록에 글롭 일치가 있어야 PASS.
+- **인스턴스 정합**: 같은 블록의 포트들이 같은 주변장치 계열(I2C/USART...)
+  이면 공통 인스턴스(I2C1 등) 교집합이 비면 FAIL — SDA는 I2C1인데 SCL이
+  I2C3뿐인 배선을 잡는다.
+- 게이트 = check_pin_caps.py (MCU 프로파일은 build_firmware.PROFILES 공유,
+  pin_xml 키 추가). SWDIO/SWCLK 등 고정 명명 핀(PXn 아님)은 기본형에선
+  검사 대상 외. 음성 시험 2종(패턴 불일치·인스턴스 불일치) 필수.
+
+  **D 기본형 완료 (2026-08-11 같은 날)**: pin_requires 3블록 선언
+  (usb_c_5v 0.3 / stdc14 0.2 / i2c_pullup 0.3), g431_devkit 실증 —
+  대조 7건 전부 공식표 확증(USB_DM/DP, SWO, USART2_TX/RX, I2C1_SDA/SCL)
+  + 인스턴스 정합 USART2·I2C1. **음성 2종 통과**: ①SCL→PB9 = 패턴
+  불일치 적발(보유 신호 목록 제시) ②SCL→PA8 = I2C3_SCL 존재해도
+  SDA(I2C1)와 교집합 없음 적발. 전 게이트 회귀 초록. 시나리오 D
+  기본 = 🟢. 고도화 백로그: 타이머/ADC 능력, ESP32 헤더, 고정 명명 핀.
 - **4단계 — 왕복 정합**: 회로 변경 → 펌웨어 diff 자동 제시 / 펌웨어의
   핀 요구 → 회로 능력 검증. AI(Claude)가 중재자.
 
