@@ -370,7 +370,7 @@
 			)
 		)
 		(column_widths 10.2 27.7)
-		(row_heights 4.45 4.45 4.45 4.45 4.45 4.45)
+		(row_heights 4.45 4.45 4.45 4.45 4.45 4.45 4.45 4.45)
 		(cells
 			(table_cell "Block"
 				(exclude_from_sim no)
@@ -440,7 +440,7 @@
 				)
 				(uuid "8e1c88fd-2f4e-53a5-b8f5-e5b9bd3a1de4")
 			)
-			(table_cell "Bus"
+			(table_cell "PWR In"
 				(exclude_from_sim no)
 				(at 95.25 54.62 0)
 				(size 10.2 4.45)
@@ -457,7 +457,7 @@
 				)
 				(uuid "ac8342a4-1a17-580f-9fc1-248d29e4a1bb")
 			)
-			(table_cell "I2C Fast-mode 400kHz"
+			(table_cell "+3V3"
 				(exclude_from_sim no)
 				(at 105.45 54.62 0)
 				(size 27.7 4.45)
@@ -474,7 +474,7 @@
 				)
 				(uuid "809255bd-2d5b-5c69-b5e2-8245adf92c06")
 			)
-			(table_cell "Pull-up"
+			(table_cell "I/O"
 				(exclude_from_sim no)
 				(at 95.25 59.07 0)
 				(size 10.2 4.45)
@@ -491,7 +491,7 @@
 				)
 				(uuid "e1832450-70cc-59fc-9ab9-5efef5c5a33b")
 			)
-			(table_cell "1.8kΩ to +3V3"
+			(table_cell "SCL, SDA"
 				(exclude_from_sim no)
 				(at 105.45 59.07 0)
 				(size 27.7 4.45)
@@ -508,7 +508,7 @@
 				)
 				(uuid "3b8224c8-569d-5ead-9c13-15b874491fdd")
 			)
-			(table_cell "Rp(min)"
+			(table_cell "Bus"
 				(exclude_from_sim no)
 				(at 95.25 63.52 0)
 				(size 10.2 4.45)
@@ -525,7 +525,7 @@
 				)
 				(uuid "dde78bae-97c3-54eb-b00b-9e89ec10041f")
 			)
-			(table_cell "967Ω @ 3mA IOL"
+			(table_cell "I2C Fast-mode 400kHz"
 				(exclude_from_sim no)
 				(at 105.45 63.52 0)
 				(size 27.7 4.45)
@@ -542,7 +542,7 @@
 				)
 				(uuid "946cc4c7-dcb6-543e-9d1c-68138104b5cc")
 			)
-			(table_cell "Source"
+			(table_cell "Pull-up"
 				(exclude_from_sim no)
 				(at 95.25 67.97 0)
 				(size 10.2 4.45)
@@ -559,7 +559,7 @@
 				)
 				(uuid "885da339-1667-5404-af8f-5cd6be4598ff")
 			)
-			(table_cell "NXP UM10204 Rev 7.0 §7.1"
+			(table_cell "1.8kΩ to +3V3"
 				(exclude_from_sim no)
 				(at 105.45 67.97 0)
 				(size 27.7 4.45)
@@ -575,6 +575,74 @@
 					(justify left top)
 				)
 				(uuid "74214b63-041d-53e6-ae1a-567f79e81fe8")
+			)
+			(table_cell "Rp(min)"
+				(exclude_from_sim no)
+				(at 95.25 72.42 0)
+				(size 10.2 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "cd841beb-d8cd-5ba8-8997-7372b56669d8")
+			)
+			(table_cell "967Ω @ 3mA IOL"
+				(exclude_from_sim no)
+				(at 105.45 72.42 0)
+				(size 27.7 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "555a8077-1a7f-5a19-b671-fad2341b2ed6")
+			)
+			(table_cell "Source"
+				(exclude_from_sim no)
+				(at 95.25 76.87 0)
+				(size 10.2 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "2ea28701-c5ce-58ae-a3b5-cc8e74b83ce5")
+			)
+			(table_cell "NXP UM10204 Rev 7.0 §7.1"
+				(exclude_from_sim no)
+				(at 105.45 76.87 0)
+				(size 27.7 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "867222a9-d053-5c97-9a59-317821dbf7d2")
 			)
 		)
 	)

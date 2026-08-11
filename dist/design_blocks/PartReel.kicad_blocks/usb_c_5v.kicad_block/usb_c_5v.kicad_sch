@@ -1194,7 +1194,7 @@
 			)
 		)
 		(column_widths 13.5 35.05)
-		(row_heights 4.45 4.45 4.45 4.45 4.45 4.45 4.45 4.45)
+		(row_heights 4.45 4.45 4.45 4.45 4.45 4.45 4.45 4.45 4.45 4.45)
 		(cells
 			(table_cell "Block"
 				(exclude_from_sim no)
@@ -1264,7 +1264,7 @@
 				)
 				(uuid "d67c0f75-ad3e-5594-b697-b3b41276c74d")
 			)
-			(table_cell "Input"
+			(table_cell "PWR Out"
 				(exclude_from_sim no)
 				(at 46.99 95.26 0)
 				(size 13.5 4.45)
@@ -1281,7 +1281,7 @@
 				)
 				(uuid "14c1f754-f65e-520c-87c8-22860ab61efb")
 			)
-			(table_cell "USB-C VBUS 5V"
+			(table_cell "+5V, GND"
 				(exclude_from_sim no)
 				(at 60.49 95.26 0)
 				(size 35.05 4.45)
@@ -1298,7 +1298,7 @@
 				)
 				(uuid "94ebccdd-48b3-57f5-a406-f8bd491d80fd")
 			)
-			(table_cell "Role"
+			(table_cell "I/O"
 				(exclude_from_sim no)
 				(at 46.99 99.71 0)
 				(size 13.5 4.45)
@@ -1315,7 +1315,7 @@
 				)
 				(uuid "f0fd5c15-e611-5e7c-be01-4ed8e4834643")
 			)
-			(table_cell "UFP sink (Rd 5.1k)"
+			(table_cell "USB_DM, USB_DP"
 				(exclude_from_sim no)
 				(at 60.49 99.71 0)
 				(size 35.05 4.45)
@@ -1332,7 +1332,7 @@
 				)
 				(uuid "0aa5714d-32ed-5c8a-968e-e8e70c3bc89e")
 			)
-			(table_cell "Data"
+			(table_cell "Input"
 				(exclude_from_sim no)
 				(at 46.99 104.16 0)
 				(size 13.5 4.45)
@@ -1349,7 +1349,7 @@
 				)
 				(uuid "36ab6a00-bd6c-5510-8629-e207fab82d7a")
 			)
-			(table_cell "USB 2.0 D+/D- pass-through"
+			(table_cell "USB-C VBUS 5V"
 				(exclude_from_sim no)
 				(at 60.49 104.16 0)
 				(size 35.05 4.45)
@@ -1366,7 +1366,7 @@
 				)
 				(uuid "b65e182d-b452-5652-8871-c6682d7092b1")
 			)
-			(table_cell "ESD"
+			(table_cell "Role"
 				(exclude_from_sim no)
 				(at 46.99 108.61 0)
 				(size 13.5 4.45)
@@ -1383,7 +1383,7 @@
 				)
 				(uuid "c6940e06-0082-51b9-8c5c-b129d1e61fe5")
 			)
-			(table_cell "USBLC6-2P6 flow-through (CV2)"
+			(table_cell "UFP sink (Rd 5.1k)"
 				(exclude_from_sim no)
 				(at 60.49 108.61 0)
 				(size 35.05 4.45)
@@ -1400,7 +1400,7 @@
 				)
 				(uuid "ae5c7ad2-72f0-57b3-ba64-be696213325f")
 			)
-			(table_cell "TODO rev B"
+			(table_cell "Data"
 				(exclude_from_sim no)
 				(at 46.99 113.06 0)
 				(size 13.5 4.45)
@@ -1417,7 +1417,7 @@
 				)
 				(uuid "39afa339-a60e-55aa-bdcd-e4a57471bf42")
 			)
-			(table_cell "ESD array + polyfuse"
+			(table_cell "USB 2.0 D+/D- pass-through"
 				(exclude_from_sim no)
 				(at 60.49 113.06 0)
 				(size 35.05 4.45)
@@ -1434,7 +1434,7 @@
 				)
 				(uuid "38accd6b-8b12-5049-b5b6-ecd4fe9c6ff2")
 			)
-			(table_cell "Source"
+			(table_cell "ESD"
 				(exclude_from_sim no)
 				(at 46.99 117.51 0)
 				(size 13.5 4.45)
@@ -1451,7 +1451,7 @@
 				)
 				(uuid "93345c58-fa64-52be-8cf2-c8fd2dae0347")
 			)
-			(table_cell "USB Type-C spec R2.2 4.5.1.2.3"
+			(table_cell "USBLC6-2P6 flow-through (CV2)"
 				(exclude_from_sim no)
 				(at 60.49 117.51 0)
 				(size 35.05 4.45)
@@ -1467,6 +1467,74 @@
 					(justify left top)
 				)
 				(uuid "879060f4-4f9c-5bc8-b6d6-a46133011ca4")
+			)
+			(table_cell "TODO rev B"
+				(exclude_from_sim no)
+				(at 46.99 121.96 0)
+				(size 13.5 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "f0855b8c-99d8-53c0-af5f-d2b53af7b1f7")
+			)
+			(table_cell "ESD array + polyfuse"
+				(exclude_from_sim no)
+				(at 60.49 121.96 0)
+				(size 35.05 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "dda62b75-dffc-591a-8dc8-c0c51daf0544")
+			)
+			(table_cell "Source"
+				(exclude_from_sim no)
+				(at 46.99 126.41 0)
+				(size 13.5 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "b8aea6ec-b487-5d55-a865-18d6398fb12a")
+			)
+			(table_cell "USB Type-C spec R2.2 4.5.1.2.3"
+				(exclude_from_sim no)
+				(at 60.49 126.41 0)
+				(size 35.05 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "0f83b990-1be8-556e-a254-e9fd0368cc2f")
 			)
 		)
 	)

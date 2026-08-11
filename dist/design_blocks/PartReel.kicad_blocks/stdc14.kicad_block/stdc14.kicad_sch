@@ -267,7 +267,7 @@
 			)
 		)
 		(column_widths 12.4 39.25)
-		(row_heights 4.45 4.45 4.45 4.45 4.45 4.45 4.45 4.45)
+		(row_heights 4.45 4.45 4.45 4.45 4.45 4.45 4.45 4.45 4.45 4.45 4.45 4.45)
 		(cells
 			(table_cell "Block"
 				(exclude_from_sim no)
@@ -337,7 +337,7 @@
 				)
 				(uuid "8975cdd0-5586-5e2b-8815-504e9bce8d8f")
 			)
-			(table_cell "Connector"
+			(table_cell "PWR In"
 				(exclude_from_sim no)
 				(at 133.35 80.02 0)
 				(size 12.4 4.45)
@@ -354,7 +354,7 @@
 				)
 				(uuid "1f2c6968-95f8-5dfe-b09b-c3697c8a587d")
 			)
-			(table_cell "FTSH-107-01-L-DV-K-A"
+			(table_cell "+3V3, GND"
 				(exclude_from_sim no)
 				(at 145.75 80.02 0)
 				(size 39.25 4.45)
@@ -371,7 +371,7 @@
 				)
 				(uuid "93ffb8e6-1098-5445-a796-55a77046d1fa")
 			)
-			(table_cell "Std"
+			(table_cell "In"
 				(exclude_from_sim no)
 				(at 133.35 84.47 0)
 				(size 12.4 4.45)
@@ -388,7 +388,7 @@
 				)
 				(uuid "d8e33403-98e7-57fe-a713-3f395f9ff46d")
 			)
-			(table_cell "STDC14 (ARM10 + VCP UART)"
+			(table_cell "SWO, UART_TX"
 				(exclude_from_sim no)
 				(at 145.75 84.47 0)
 				(size 39.25 4.45)
@@ -405,7 +405,7 @@
 				)
 				(uuid "d38e1e81-c6cc-589f-9957-4588f779cb15")
 			)
-			(table_cell "Pin 1-2"
+			(table_cell "Out"
 				(exclude_from_sim no)
 				(at 133.35 88.92 0)
 				(size 12.4 4.45)
@@ -422,7 +422,7 @@
 				)
 				(uuid "0cdd93ba-fbc9-5aa8-8d7a-a413c4ce89f0")
 			)
-			(table_cell "Reserved - do not connect"
+			(table_cell "NRST, SWCLK, UART_RX"
 				(exclude_from_sim no)
 				(at 145.75 88.92 0)
 				(size 39.25 4.45)
@@ -439,7 +439,7 @@
 				)
 				(uuid "4732d173-c69d-5c36-af89-f3c4d17294bf")
 			)
-			(table_cell "Pin 9-10"
+			(table_cell "I/O"
 				(exclude_from_sim no)
 				(at 133.35 93.37 0)
 				(size 12.4 4.45)
@@ -456,7 +456,7 @@
 				)
 				(uuid "a3737ff1-19be-511a-98cd-c17f69f620a5")
 			)
-			(table_cell "JTAG only - NC for SWD"
+			(table_cell "SWDIO"
 				(exclude_from_sim no)
 				(at 145.75 93.37 0)
 				(size 39.25 4.45)
@@ -473,7 +473,7 @@
 				)
 				(uuid "a3ed0a58-dbdf-5054-b8b1-0005491ba0ab")
 			)
-			(table_cell "Pin 11"
+			(table_cell "Connector"
 				(exclude_from_sim no)
 				(at 133.35 97.82 0)
 				(size 12.4 4.45)
@@ -490,7 +490,7 @@
 				)
 				(uuid "6aebc5e6-4f02-5d8b-a0f1-845e834cffa4")
 			)
-			(table_cell "GNDDetect - GND"
+			(table_cell "FTSH-107-01-L-DV-K-A"
 				(exclude_from_sim no)
 				(at 145.75 97.82 0)
 				(size 39.25 4.45)
@@ -507,7 +507,7 @@
 				)
 				(uuid "0e6d79a1-7d49-5570-b665-327dac7e5630")
 			)
-			(table_cell "Source"
+			(table_cell "Std"
 				(exclude_from_sim no)
 				(at 133.35 102.27 0)
 				(size 12.4 4.45)
@@ -524,7 +524,7 @@
 				)
 				(uuid "0dce15f1-92ca-52e6-8a7f-5feb6d32f49b")
 			)
-			(table_cell "ST UM2448 Rev 9 Table 6"
+			(table_cell "STDC14 (ARM10 + VCP UART)"
 				(exclude_from_sim no)
 				(at 145.75 102.27 0)
 				(size 39.25 4.45)
@@ -540,6 +540,142 @@
 					(justify left top)
 				)
 				(uuid "a642d346-73e2-5dec-a026-eba4c936c055")
+			)
+			(table_cell "Pin 1-2"
+				(exclude_from_sim no)
+				(at 133.35 106.72 0)
+				(size 12.4 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "74fe9192-e69d-58d4-b639-00f702e2d660")
+			)
+			(table_cell "Reserved - do not connect"
+				(exclude_from_sim no)
+				(at 145.75 106.72 0)
+				(size 39.25 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "653295b5-567e-5deb-8df3-752cd4068d54")
+			)
+			(table_cell "Pin 9-10"
+				(exclude_from_sim no)
+				(at 133.35 111.17 0)
+				(size 12.4 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "42f2df62-6e31-55ff-840a-d6030f4ed232")
+			)
+			(table_cell "JTAG only - NC for SWD"
+				(exclude_from_sim no)
+				(at 145.75 111.17 0)
+				(size 39.25 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "9ae4dd44-75df-51f1-b8a2-d8c313017fb4")
+			)
+			(table_cell "Pin 11"
+				(exclude_from_sim no)
+				(at 133.35 115.62 0)
+				(size 12.4 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "768906f6-bc72-5765-900f-96f51263ae7d")
+			)
+			(table_cell "GNDDetect - GND"
+				(exclude_from_sim no)
+				(at 145.75 115.62 0)
+				(size 39.25 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "a2043aa5-d798-5768-8a92-911e369c4415")
+			)
+			(table_cell "Source"
+				(exclude_from_sim no)
+				(at 133.35 120.07 0)
+				(size 12.4 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "e07f4274-247b-55e7-a816-4446aa08d009")
+			)
+			(table_cell "ST UM2448 Rev 9 Table 6"
+				(exclude_from_sim no)
+				(at 145.75 120.07 0)
+				(size 39.25 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "cd0f8c05-502b-5d98-a8fb-b793b5d8d689")
 			)
 		)
 	)

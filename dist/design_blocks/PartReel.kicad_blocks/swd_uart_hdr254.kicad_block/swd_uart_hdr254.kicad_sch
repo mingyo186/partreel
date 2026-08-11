@@ -196,7 +196,7 @@
 			)
 		)
 		(column_widths 10.2 38.2)
-		(row_heights 4.45 4.45 4.45 4.45 4.45 4.45 4.45)
+		(row_heights 4.45 4.45 4.45 4.45 4.45 4.45 4.45 4.45 4.45 4.45 4.45)
 		(cells
 			(table_cell "Block"
 				(exclude_from_sim no)
@@ -266,7 +266,7 @@
 				)
 				(uuid "26f5f3d4-3b32-5edc-84fe-f81d33360a8c")
 			)
-			(table_cell "Pin 1-4"
+			(table_cell "PWR In"
 				(exclude_from_sim no)
 				(at 111.76 80.02 0)
 				(size 10.2 4.45)
@@ -283,7 +283,7 @@
 				)
 				(uuid "194f9f95-8b90-5d2e-bcd6-ff1e88e132e3")
 			)
-			(table_cell "3V3 / SWDIO / SWCLK / NRST"
+			(table_cell "+3V3, GND"
 				(exclude_from_sim no)
 				(at 121.96 80.02 0)
 				(size 38.2 4.45)
@@ -300,7 +300,7 @@
 				)
 				(uuid "4b6a3aa6-be8a-5ffb-8204-665a60ec304c")
 			)
-			(table_cell "Pin 5-8"
+			(table_cell "In"
 				(exclude_from_sim no)
 				(at 111.76 84.47 0)
 				(size 10.2 4.45)
@@ -317,7 +317,7 @@
 				)
 				(uuid "357c8eea-efd4-5698-8b68-669662d22a79")
 			)
-			(table_cell "SWO / UART_TX / UART_RX / GND"
+			(table_cell "SWO, UART_TX"
 				(exclude_from_sim no)
 				(at 121.96 84.47 0)
 				(size 38.2 4.45)
@@ -334,7 +334,7 @@
 				)
 				(uuid "8b74e086-ac08-53a2-a96d-51db5b10771d")
 			)
-			(table_cell "Use"
+			(table_cell "Out"
 				(exclude_from_sim no)
 				(at 111.76 88.92 0)
 				(size 10.2 4.45)
@@ -351,7 +351,7 @@
 				)
 				(uuid "80431dc6-a2a7-5505-bd37-5af8cb498169")
 			)
-			(table_cell "ST-LINK V3 adapter jumpers"
+			(table_cell "NRST, SWCLK, UART_RX"
 				(exclude_from_sim no)
 				(at 121.96 88.92 0)
 				(size 38.2 4.45)
@@ -368,7 +368,7 @@
 				)
 				(uuid "812b9ca8-f93f-5a94-b1df-e890905632d0")
 			)
-			(table_cell "Order"
+			(table_cell "I/O"
 				(exclude_from_sim no)
 				(at 111.76 93.37 0)
 				(size 10.2 4.45)
@@ -385,7 +385,7 @@
 				)
 				(uuid "aef72c2f-efac-51d0-bc97-8903386642ef")
 			)
-			(table_cell "PartReel convention"
+			(table_cell "SWDIO"
 				(exclude_from_sim no)
 				(at 121.96 93.37 0)
 				(size 38.2 4.45)
@@ -402,7 +402,7 @@
 				)
 				(uuid "2a5fecd3-6ead-5758-bc4d-12e264585fe6")
 			)
-			(table_cell "Signals"
+			(table_cell "Pin 1-4"
 				(exclude_from_sim no)
 				(at 111.76 97.82 0)
 				(size 10.2 4.45)
@@ -419,7 +419,7 @@
 				)
 				(uuid "35184956-059e-5b36-aa9f-eab0865d6c2b")
 			)
-			(table_cell "Arm UG 101636 (SWD)"
+			(table_cell "3V3 / SWDIO / SWCLK / NRST"
 				(exclude_from_sim no)
 				(at 121.96 97.82 0)
 				(size 38.2 4.45)
@@ -435,6 +435,142 @@
 					(justify left top)
 				)
 				(uuid "0fe22768-c93c-5e92-91f0-3d29080abfb9")
+			)
+			(table_cell "Pin 5-8"
+				(exclude_from_sim no)
+				(at 111.76 102.27 0)
+				(size 10.2 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "82162246-2cb8-5f05-a074-41d16b3c601a")
+			)
+			(table_cell "SWO / UART_TX / UART_RX / GND"
+				(exclude_from_sim no)
+				(at 121.96 102.27 0)
+				(size 38.2 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "cfe36f8c-b9ef-5417-af3f-386417efb3b1")
+			)
+			(table_cell "Use"
+				(exclude_from_sim no)
+				(at 111.76 106.72 0)
+				(size 10.2 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "f712788d-0ac0-558e-91fc-ff03e410aa29")
+			)
+			(table_cell "ST-LINK V3 adapter jumpers"
+				(exclude_from_sim no)
+				(at 121.96 106.72 0)
+				(size 38.2 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "6cb0c722-9173-537b-9168-044b75f494ee")
+			)
+			(table_cell "Order"
+				(exclude_from_sim no)
+				(at 111.76 111.17 0)
+				(size 10.2 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "f0fae9fd-de76-5f8b-b72c-b5bba5218360")
+			)
+			(table_cell "PartReel convention"
+				(exclude_from_sim no)
+				(at 121.96 111.17 0)
+				(size 38.2 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "69f2f029-71d6-5c38-910e-81315f8eedb3")
+			)
+			(table_cell "Signals"
+				(exclude_from_sim no)
+				(at 111.76 115.62 0)
+				(size 10.2 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "d977bd08-068d-58e8-8c0c-8187dca17c9b")
+			)
+			(table_cell "Arm UG 101636 (SWD)"
+				(exclude_from_sim no)
+				(at 121.96 115.62 0)
+				(size 38.2 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "d39b16ac-1359-5e5f-94ae-b6e4ba2502e5")
 			)
 		)
 	)

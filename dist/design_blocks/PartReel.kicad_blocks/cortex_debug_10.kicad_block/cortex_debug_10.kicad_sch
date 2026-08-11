@@ -620,7 +620,7 @@
 			)
 		)
 		(column_widths 12.4 42.4)
-		(row_heights 4.45 4.45 4.45 4.45 4.45 4.45 4.45)
+		(row_heights 4.45 4.45 4.45 4.45 4.45 4.45 4.45 4.45 4.45 4.45 4.45)
 		(cells
 			(table_cell "Block"
 				(exclude_from_sim no)
@@ -690,7 +690,7 @@
 				)
 				(uuid "c1c31c2c-bd01-56da-81b1-14e015c872ce")
 			)
-			(table_cell "Connector"
+			(table_cell "PWR In"
 				(exclude_from_sim no)
 				(at 133.35 77.48 0)
 				(size 12.4 4.45)
@@ -707,7 +707,7 @@
 				)
 				(uuid "81b6d8d4-ee52-5b79-9b31-289ad410bc8c")
 			)
-			(table_cell "FTSH-105-01-L-DV-007-K"
+			(table_cell "+3V3, GND"
 				(exclude_from_sim no)
 				(at 145.75 77.48 0)
 				(size 42.4 4.45)
@@ -724,7 +724,7 @@
 				)
 				(uuid "c25e3b51-cc7f-531f-988e-c2f823293199")
 			)
-			(table_cell "Pitch"
+			(table_cell "In"
 				(exclude_from_sim no)
 				(at 133.35 81.93 0)
 				(size 12.4 4.45)
@@ -741,7 +741,7 @@
 				)
 				(uuid "e8cbbd2b-afb6-5f89-9d75-29322da22825")
 			)
-			(table_cell "1.27mm 2x5"
+			(table_cell "SWO"
 				(exclude_from_sim no)
 				(at 145.75 81.93 0)
 				(size 42.4 4.45)
@@ -758,7 +758,7 @@
 				)
 				(uuid "9a6635ca-39a7-594d-b2ec-ca0ad35a96dc")
 			)
-			(table_cell "Pin 7"
+			(table_cell "Out"
 				(exclude_from_sim no)
 				(at 133.35 86.38 0)
 				(size 12.4 4.45)
@@ -775,7 +775,7 @@
 				)
 				(uuid "314e4514-3d42-5b56-ba1b-873689f7c815")
 			)
-			(table_cell "KEY (no pin) - NC"
+			(table_cell "NRST, SWCLK"
 				(exclude_from_sim no)
 				(at 145.75 86.38 0)
 				(size 42.4 4.45)
@@ -792,7 +792,7 @@
 				)
 				(uuid "74541fe1-98c9-5652-aaff-0adad4c52140")
 			)
-			(table_cell "Pin 9"
+			(table_cell "I/O"
 				(exclude_from_sim no)
 				(at 133.35 90.83 0)
 				(size 12.4 4.45)
@@ -809,7 +809,7 @@
 				)
 				(uuid "08fd8be1-826d-540c-9aed-5686d1754112")
 			)
-			(table_cell "GNDDetect - tied to GND"
+			(table_cell "SWDIO"
 				(exclude_from_sim no)
 				(at 145.75 90.83 0)
 				(size 42.4 4.45)
@@ -826,7 +826,7 @@
 				)
 				(uuid "39710c66-5a5f-54c3-bf8a-d4fcb1bd261b")
 			)
-			(table_cell "Source"
+			(table_cell "Connector"
 				(exclude_from_sim no)
 				(at 133.35 95.28 0)
 				(size 12.4 4.45)
@@ -843,7 +843,7 @@
 				)
 				(uuid "48383bd5-d26e-5acd-a25f-3f6e1a746c77")
 			)
-			(table_cell "Arm UG 101636"
+			(table_cell "FTSH-105-01-L-DV-007-K"
 				(exclude_from_sim no)
 				(at 145.75 95.28 0)
 				(size 42.4 4.45)
@@ -859,6 +859,142 @@
 					(justify left top)
 				)
 				(uuid "7c8f3c7d-4eee-5cbe-acd9-5265438bf430")
+			)
+			(table_cell "Pitch"
+				(exclude_from_sim no)
+				(at 133.35 99.73 0)
+				(size 12.4 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "2f94c39c-6565-5b81-b9bd-28efe4ff43d0")
+			)
+			(table_cell "1.27mm 2x5"
+				(exclude_from_sim no)
+				(at 145.75 99.73 0)
+				(size 42.4 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "1a9cd845-6a3b-5e5f-bbf2-f6b59128c93a")
+			)
+			(table_cell "Pin 7"
+				(exclude_from_sim no)
+				(at 133.35 104.18 0)
+				(size 12.4 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "3ff7431e-4fca-5d24-a734-fb8324e069e5")
+			)
+			(table_cell "KEY (no pin) - NC"
+				(exclude_from_sim no)
+				(at 145.75 104.18 0)
+				(size 42.4 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "56b901df-38ed-564d-a372-108d7b125963")
+			)
+			(table_cell "Pin 9"
+				(exclude_from_sim no)
+				(at 133.35 108.63 0)
+				(size 12.4 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "c1b231da-1cdf-576c-949a-0795a6147d78")
+			)
+			(table_cell "GNDDetect - tied to GND"
+				(exclude_from_sim no)
+				(at 145.75 108.63 0)
+				(size 42.4 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "8a4f1ccb-b827-5f12-a030-9df5d42dc4bb")
+			)
+			(table_cell "Source"
+				(exclude_from_sim no)
+				(at 133.35 113.08 0)
+				(size 12.4 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "e610630d-cb8d-53df-8ba4-522bd1c489ec")
+			)
+			(table_cell "Arm UG 101636"
+				(exclude_from_sim no)
+				(at 145.75 113.08 0)
+				(size 42.4 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "e0de13e1-d459-5442-8cdf-c66e94c2d386")
 			)
 		)
 	)
