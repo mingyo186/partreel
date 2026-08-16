@@ -1012,7 +1012,19 @@ KiCanvas 뷰어로 사장님이 에디터 안에서 회로·PCB 확인, KiCad는
 | S7 배선 | S6 | router/profiles (R0) | .kicad_pcb(배선), routing_report | check_board H (PW1~9) | 진행 중 (R1 완료·R2 착수) |
 | S8 출력 | S7 | 제조사 프로파일(층·최소치·파일 형식) | fab/ (거버·드릴·BOM·POS) | fab_report 숫자 대조 | ✅ (제조사 프로파일은 미분리) |
 
-**갭 (다음 작업 후보)**: ①S1 requirements.json 스키마 ②S2/S3 부품 탐색·확인
+**S1 완료 (2026-08-16)**: schemas/requirements.schema.json + check_requirements
+(스키마·미결 비어야·자기모순 3종·S2 역할 출력). g431_devkit 소급 작성.
+**S2 완료 (2026-08-16, 사용자 "S2 부품 탐색 진행해")**: 블록에 `provides`
+(채우는 역할, S1 역할 어휘) 소급 8종 → find_parts.py가 역할마다 ①블록 후보
+(provides 매칭) ②부품 후보(params/s2_search_rules.json: 카테고리+키워드
+any/all/none, MPN·패밀리 매칭, 정렬 verified>3D>패밀리>이름, 상한 8) →
+candidates.json. 게이트: 역할당 후보 ≥1, 없으면 "파트릴 등록 절차"(음성:
+ethernet/poe 적발). g431_devkit 6역할 전부 기존 블록 5종과 정확 매칭.
+규칙 정밀화 사례: ESD에 대전력 TVS·I2C에 01005가 상위 → keywords_none.
+값·전압 필터(LDO 3.3V, 풀업 1.8~4.7k)는 S3 몫.
+
+**갭 (다음 작업 후보)**: ①S3 부품 확인(수급 API + 데이터시트 항목 검증 + S1
+값 필터) ②S2/S3 부품 탐색·확인 고도화
 파이프라인(파트릴 API + 공급처 조회 + 데이터시트 항목 검증) ③S6 배치 규칙
 파라미터화(P 규칙을 R0 방식으로) ④S8 제조사 프로파일 분리 ⑤단계별
 파라미터 폴더 통일 (`boards/<id>/params/s1..s8.json` 또는 단계별 파일).
