@@ -1023,8 +1023,17 @@ ethernet/poe 적발). g431_devkit 6역할 전부 기존 블록 5종과 정확 �
 규칙 정밀화 사례: ESD에 대전력 TVS·I2C에 01005가 상위 → keywords_none.
 값·전압 필터(LDO 3.3V, 풀업 1.8~4.7k)는 S3 몫.
 
-**갭 (다음 작업 후보)**: ①S3 부품 확인(수급 API + 데이터시트 항목 검증 + S1
-값 필터) ②S2/S3 부품 탐색·확인 고도화
+**S3 완료 (2026-08-16, 사용자 "S3 진행해, 수급은 API 없이 검색만으로")**:
+verify_parts.py — ①S1 수치 필터(meta.parameters → 이름 정규식/저항 코드 →
+unknown 정직 표기; 채택은 전부 pass만) ②역할별 데이터시트 확인 항목표
+③수급 3단계(confirmed/unverified/suspect_eol) — supply.json에 웹 검색 근거
+URL 기록(AI/사람), 수량은 참고값·발주 직전 재확인. 블록 부품 우선 채택 → 실제
+블록 부품 6종 전부 채택·검증, MCU·HT7333·USBLC6 confirmed. 게이트: 필터·
+데이터시트 URL·비단종. **S1→S2→S3 사슬이 g431_devkit에서 닫힘.**
+S2 후속: 블록 매칭에 S1 connector 힌트 반영(SWD=STDC14인데 cortex10이 첫
+매칭). 파트릴 후속: 저항·캡 meta.parameters에 값 필드(현재 이름에만).
+
+**갭 (다음 작업 후보)**: ①S2 connector 힌트 ②파트릴 수치 파라미터 보강
 파이프라인(파트릴 API + 공급처 조회 + 데이터시트 항목 검증) ③S6 배치 규칙
 파라미터화(P 규칙을 R0 방식으로) ④S8 제조사 프로파일 분리 ⑤단계별
 파라미터 폴더 통일 (`boards/<id>/params/s1..s8.json` 또는 단계별 파일).
