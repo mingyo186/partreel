@@ -1,0 +1,72 @@
+{
+  "id": "diodes_dmp6023le",
+  "name": "DMP6023LE-13 60V P-channel MOSFET (SOT-223)",
+  "category": "discrete",
+  "family": "mosfet_sot223",
+  "manufacturer": "Diodes Incorporated",
+  "mpn_pattern": "DMP6023LE-13",
+  "description": "60V P채널 증가형 파워 MOSFET, RDS(on) 28mΩ @VGS=-10V, ID -7A(TA=25°C), VGS ±20V, PD 2W, AEC-Q101. SOT-223. 24V 산업 전원의 역극성 보호·하이사이드 스위치용 (게이트 RC로 돌입전류 제한 겸용).",
+  "parameters": {
+    "pins": 3,
+    "mounting": "smd",
+    "case": "SOT-223",
+    "vds": "-60V",
+    "vgs_max": "±20V",
+    "id_max": "-7A",
+    "rds_on": "28mΩ @ VGS=-10V",
+    "pd": "2W",
+    "qualification": "AEC-Q101"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/discrete/diodes/diodes_dmp6023le/diodes_dmp6023le.kicad_mod",
+    "symbol": "https://partreel.com/library/discrete/diodes/diodes_dmp6023le/diodes_dmp6023le.kicad_sym"
+  },
+  "datasheet": "https://www.diodes.com/assets/Datasheets/DMP6023LE.pdf",
+  "license": "CC-BY-4.0",
+  "verified": false,
+  "tier": "verified-2d",
+  "dimensions_source": "Diodes DMP6023LE datasheet DS37199 Rev.3-2 (January 2015) p.6: Suggested Pad Layout C=2.30, C1=6.40, X=1.20, X1=3.30, Y=1.60, Y1=1.60, Y2=8.00 (mm) — 랜드 수치를 그대로 사용. 몸통 외곽은 같은 페이지 SOT223 치수표 D=6.50, E=3.50 (typ). 핀 번호 1=G / 2=D(탭 공통) / 3=S — 같은 문서 p.1 'Pin Out - Top View'(위에서 S/D/G)와 SOT-223 표준 번호, 독립 대조: CERN KiCad 라이브러리 SOT-223 P-MOSFET 3종 동일 번호.",
+  "keywords": [
+    "dmp6023le",
+    "diodes",
+    "mosfet",
+    "p-channel",
+    "pmos",
+    "60v",
+    "sot-223",
+    "sot223",
+    "reverse polarity",
+    "power"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "Diodes DMP6023LE datasheet DS37199 Rev.3-2 (January 2015) p.6: Suggested Pad Layout C=2.30, C1=6.40, X=1.20, X1=3.30, Y=1.60, Y1=1.60, Y2=8.00 (mm) — 랜드 수치를 그대로 사용. 몸통 외곽은 같은 페이지 SOT223 치수표 D=6.50, E=3.50 (typ). 핀 번호 1=G / 2=D(탭 공통) / 3=S — 같은 문서 p.1 'Pin Out - Top View'(위에서 S/D/G)와 SOT-223 표준 번호, 독립 대조: CERN KiCad 라이브러리 SOT-223 P-MOSFET 3종 동일 번호.",
+    "datasheet": "https://www.diodes.com/assets/Datasheets/DMP6023LE.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/generators/gen_mosfets.py",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    }
+  },
+  "page": "https://partreel.com/p/diodes_dmp6023le/",
+  "api": "https://partreel.com/api/v1/parts/diodes_dmp6023le.json"
+}

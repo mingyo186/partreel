@@ -1,0 +1,62 @@
+{
+  "id": "samtec_ftsh_107_01_l_dv_k",
+  "name": "FTSH-107-01-L-DV-K 1.27mm 2x7 SMD header (Samtec)",
+  "category": "connector",
+  "family": "ftsh_127_2x7",
+  "manufacturer": "Samtec",
+  "mpn_pattern": "FTSH-107-01-L-DV-K",
+  "description": "Samtec FTSH series 1.27mm dual-row SMD header, 2x7 (14 pins). FTSH-107 is the STDC14 debug connector (ST UM2448).",
+  "parameters": {
+    "pins": 14,
+    "mounting": "smd",
+    "cable": "ribbon"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/connector/samtec/samtec_ftsh_107_01_l_dv_k/samtec_ftsh_107_01_l_dv_k.kicad_mod",
+    "symbol": "https://partreel.com/library/connector/samtec/samtec_ftsh_107_01_l_dv_k/samtec_ftsh_107_01_l_dv_k.kicad_sym"
+  },
+  "datasheet": "https://www.samtec.com/products/ftsh-107-01-l-dv-k",
+  "license": "CC-BY-4.0",
+  "verified": false,
+  "tier": "verified-2d",
+  "dimensions_source": "Pitch 1.27 dual-row per Samtec FTSH series (MPN named in ST UM2448 Rev 9 sec 8.1.2). Body L=(pos+1)*1.27, W=4.78 from FTSH-105 = 6.35x4.78mm (Arm ULINKplus UG 101636). Land 0.76x2.4 rows +-1.95 from antmicro/hardware-components samtec-ftsh-105 production reference. Samtec official print PDF blocked (HTTP 403) - to be cross-checked when obtainable.",
+  "keywords": [
+    "connector",
+    "header",
+    "1.27mm",
+    "samtec",
+    "ftsh",
+    "stdc14"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "Pitch 1.27 dual-row per Samtec FTSH series (MPN named in ST UM2448 Rev 9 sec 8.1.2). Body L=(pos+1)*1.27, W=4.78 from FTSH-105 = 6.35x4.78mm (Arm ULINKplus UG 101636). Land 0.76x2.4 rows +-1.95 from antmicro/hardware-components samtec-ftsh-105 production reference. Samtec official print PDF blocked (HTTP 403) - to be cross-checked when obtainable.",
+    "datasheet": "https://www.samtec.com/products/ftsh-107-01-l-dv-k",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    }
+  },
+  "page": "https://partreel.com/p/samtec_ftsh_107_01_l_dv_k/",
+  "api": "https://partreel.com/api/v1/parts/samtec_ftsh_107_01_l_dv_k.json"
+}

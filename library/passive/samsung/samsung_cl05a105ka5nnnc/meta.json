@@ -11,7 +11,9 @@
   "1µF",
   "0402",
   "chip",
-  "smd"
+  "smd",
+  "x5r",
+  "25v"
  ],
  "parameters": {
   "pins": 2,
@@ -24,7 +26,7 @@
  "tier": "verified-2d",
  "license": "CC-BY-4.0",
  "datasheet": "https://weblib.samsungsem.com/mlcc/mlcc-ec-data-sheet.do?partNumber=CL05A105KA5NNNC",
- "dimensions_source": "Land: IPC-7351 density B nominal for chip 1005 metric (KEMET recommended land, see generators/import_antmicro.CHIP_LAND, §21-C). Body 1.0x0.5mm per Samsung CL series datasheet (CL05A105KA5NNNC dimensions table, 0402/1005 metric).",
+ "dimensions_source": "Land: IPC-7351 density B nominal for chip 1005 metric (KEMET C1002 X7R SMD Table 3, see generators/import_antmicro.CHIP_LAND, §21-C). Body 1.0x0.5mm per the same catalog Dimensions table (0402/1005 metric); part CL05A105KA5NNNC = 1µF X5R 25V.",
  "files": {
   "footprint": "samsung_cl05a105ka5nnnc.kicad_mod",
   "symbol": "samsung_cl05a105ka5nnnc.kicad_sym"

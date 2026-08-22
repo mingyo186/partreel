@@ -1,0 +1,62 @@
+{
+  "id": "kemet_c0805c222k1ractu",
+  "name": "2.2nF 10% 0805 MLCC (KEMET C0805C222K1RACTU)",
+  "category": "passive",
+  "family": "chip_capacitor_0805",
+  "manufacturer": "KEMET",
+  "mpn_pattern": "C0805C222K1RACTU",
+  "description": "MLCC ceramic capacitor 2.2nF +-10% 0805 (2012 metric), X7R 100V. Generated for PartReel circuit blocks.",
+  "parameters": {
+    "pins": 2,
+    "mounting": "smd"
+  },
+  "formats": [
+    "kicad_mod",
+    "kicad_sym"
+  ],
+  "files": {
+    "footprint": "https://partreel.com/library/passive/kemet/kemet_c0805c222k1ractu/kemet_c0805c222k1ractu.kicad_mod",
+    "symbol": "https://partreel.com/library/passive/kemet/kemet_c0805c222k1ractu/kemet_c0805c222k1ractu.kicad_sym"
+  },
+  "datasheet": "https://content.kemet.com/datasheets/KEM_C1002_X7R_SMD.pdf",
+  "license": "CC-BY-4.0",
+  "verified": false,
+  "tier": "verified-2d",
+  "dimensions_source": "Land: IPC-7351 density B nominal for chip 2012 metric (KEMET C1002 X7R SMD Table 3, see generators/import_antmicro.CHIP_LAND, §21-C). Body 2.0x1.25mm per the same catalog Dimensions table (0805/2012 metric); part C0805C222K1RACTU = 2.2nF X7R 100V.",
+  "keywords": [
+    "capacitor",
+    "2.2nF",
+    "0805",
+    "chip",
+    "smd",
+    "x7r",
+    "100v"
+  ],
+  "field_reports": {
+    "worked": 0,
+    "problem": 0
+  },
+  "provenance": {
+    "dimensions_source": "Land: IPC-7351 density B nominal for chip 2012 metric (KEMET C1002 X7R SMD Table 3, see generators/import_antmicro.CHIP_LAND, §21-C). Body 2.0x1.25mm per the same catalog Dimensions table (0805/2012 metric); part C0805C222K1RACTU = 2.2nF X7R 100V.",
+    "datasheet": "https://content.kemet.com/datasheets/KEM_C1002_X7R_SMD.pdf",
+    "generator_source": "https://github.com/mingyo186/partreel/blob/main/",
+    "quality_gates": {
+      "gates": [
+        "validate_kicad (structure/pads/layers)",
+        "KLC drawing rules (silk/fab/courtyard/pin1)",
+        "check_overlap (text collisions)",
+        "check_render (files/SVG-vs-source/meta completeness)",
+        "check_zfight (3D coplanar faces, merged pins)",
+        "validate_step (FreeCAD kernel isValid)"
+      ],
+      "enforcement": "CI runs all gates on every push and blocks deployment on any failure",
+      "ci_config": "https://github.com/mingyo186/partreel/blob/main/.github/workflows/deploy.yml"
+    },
+    "field_reports": {
+      "worked": 0,
+      "problem": 0
+    }
+  },
+  "page": "https://partreel.com/p/kemet_c0805c222k1ractu/",
+  "api": "https://partreel.com/api/v1/parts/kemet_c0805c222k1ractu.json"
+}

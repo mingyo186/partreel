@@ -22,20 +22,22 @@
   "license": "CC-BY-4.0",
   "verified": false,
   "tier": "verified-2d",
-  "dimensions_source": "Land: IPC-7351 density B nominal for chip 1005 metric (KEMET recommended land, see generators/import_antmicro.CHIP_LAND, §21-C). Body 1.0x0.5mm per Samsung CL series datasheet (CL05A105KA5NNNC dimensions table, 0402/1005 metric).",
+  "dimensions_source": "Land: IPC-7351 density B nominal for chip 1005 metric (KEMET C1002 X7R SMD Table 3, see generators/import_antmicro.CHIP_LAND, §21-C). Body 1.0x0.5mm per the same catalog Dimensions table (0402/1005 metric); part CL05A105KA5NNNC = 1µF X5R 25V.",
   "keywords": [
     "capacitor",
     "1µF",
     "0402",
     "chip",
-    "smd"
+    "smd",
+    "x5r",
+    "25v"
   ],
   "field_reports": {
     "worked": 0,
     "problem": 0
   },
   "provenance": {
-    "dimensions_source": "Land: IPC-7351 density B nominal for chip 1005 metric (KEMET recommended land, see generators/import_antmicro.CHIP_LAND, §21-C). Body 1.0x0.5mm per Samsung CL series datasheet (CL05A105KA5NNNC dimensions table, 0402/1005 metric).",
+    "dimensions_source": "Land: IPC-7351 density B nominal for chip 1005 metric (KEMET C1002 X7R SMD Table 3, see generators/import_antmicro.CHIP_LAND, §21-C). Body 1.0x0.5mm per the same catalog Dimensions table (0402/1005 metric); part CL05A105KA5NNNC = 1µF X5R 25V.",
     "datasheet": "https://weblib.samsungsem.com/mlcc/mlcc-ec-data-sheet.do?partNumber=CL05A105KA5NNNC",
     "generator_source": "https://github.com/mingyo186/partreel/blob/main/",
     "quality_gates": {
