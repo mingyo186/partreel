@@ -1,0 +1,4778 @@
+(kicad_sch
+	(version 20250114)
+	(generator "partreel-block")
+	(generator_version "1.0")
+	(uuid "2a1ae48a-ac3a-5ebc-a3da-429956a7afe7")
+	(paper "A4")
+	(title_block
+		(title "emi_power_in")
+		(company "PartReel block")
+		(rev "0.1")
+	)
+	(lib_symbols
+		(symbol "PartReel:Terminal Block_2 Positions_Screw Connection"
+		  		(pin_names
+		  			(offset 1.27)
+		  			(hide yes)
+		  		)
+		  		(exclude_from_sim no)
+		  		(in_bom yes)
+		  		(on_board yes)
+		  		(property "Reference" "J"
+		  			(at 3.81 1.27 0)
+		  			(effects
+		  				(font
+		  					(size 1.524 1.524)
+		  				)
+		  			)
+		  		)
+		  		(property "Value" "${FAMILY}"
+		  			(at 3.81 -0.762 0)
+		  			(effects
+		  				(font
+		  					(size 1.524 1.524)
+		  				)
+		  				(hide yes)
+		  			)
+		  		)
+		  		(property "Footprint" ""
+		  			(at 0 0 0)
+		  			(effects
+		  				(font
+		  					(size 1.27 1.27)
+		  				)
+		  				(hide yes)
+		  			)
+		  		)
+		  		(property "Datasheet" ""
+		  			(at 0 0 0)
+		  			(effects
+		  				(font
+		  					(size 1.27 1.27)
+		  				)
+		  				(hide yes)
+		  			)
+		  		)
+		  		(property "Description" "Terminal Block, 2 Positions, Screw Connection"
+		  			(at 0 0 0)
+		  			(effects
+		  				(font
+		  					(size 1.27 1.27)
+		  				)
+		  				(hide yes)
+		  			)
+		  		)
+		  		(symbol "Terminal Block_2 Positions_Screw Connection_1_0"
+		  			(polyline
+		  				(pts
+		  					(xy 0 -2.54) (xy 3.048 -2.54)
+		  				)
+		  				(stroke
+		  					(width 0)
+		  					(type solid)
+		  				)
+		  				(fill
+		  					(type none)
+		  				)
+		  			)
+		  			(polyline
+		  				(pts
+		  					(xy 0 -5.08) (xy 3.048 -5.08)
+		  				)
+		  				(stroke
+		  					(width 0)
+		  					(type solid)
+		  				)
+		  				(fill
+		  					(type none)
+		  				)
+		  			)
+		  			(polyline
+		  				(pts
+		  					(xy 3.175 -2.921) (xy 4.191 -1.905)
+		  				)
+		  				(stroke
+		  					(width 0)
+		  					(type solid)
+		  				)
+		  				(fill
+		  					(type none)
+		  				)
+		  			)
+		  			(polyline
+		  				(pts
+		  					(xy 3.175 -5.461) (xy 4.191 -4.445)
+		  				)
+		  				(stroke
+		  					(width 0)
+		  					(type solid)
+		  				)
+		  				(fill
+		  					(type none)
+		  				)
+		  			)
+		  			(polyline
+		  				(pts
+		  					(xy 3.429 -3.175) (xy 4.445 -2.159)
+		  				)
+		  				(stroke
+		  					(width 0)
+		  					(type solid)
+		  				)
+		  				(fill
+		  					(type none)
+		  				)
+		  			)
+		  			(polyline
+		  				(pts
+		  					(xy 3.429 -5.715) (xy 4.445 -4.699)
+		  				)
+		  				(stroke
+		  					(width 0)
+		  					(type solid)
+		  				)
+		  				(fill
+		  					(type none)
+		  				)
+		  			)
+		  			(circle
+		  				(center 3.81 -2.54)
+		  				(radius 0.762)
+		  				(stroke
+		  					(width 0)
+		  					(type solid)
+		  				)
+		  				(fill
+		  					(type none)
+		  				)
+		  			)
+		  			(circle
+		  				(center 3.81 -5.08)
+		  				(radius 0.762)
+		  				(stroke
+		  					(width 0)
+		  					(type solid)
+		  				)
+		  				(fill
+		  					(type none)
+		  				)
+		  			)
+		  			(rectangle
+		  				(start 7.62 0)
+		  				(end 0 -7.62)
+		  				(stroke
+		  					(width 0.0254)
+		  					(type solid)
+		  					(color 128 0 0 1)
+		  				)
+		  				(fill
+		  					(type background)
+		  				)
+		  			)
+		  			(pin bidirectional line
+		  				(at -5.08 -2.54 0)
+		  				(length 5.08)
+		  				(name "1"
+		  					(effects
+		  						(font
+		  							(size 1.27 1.27)
+		  						)
+		  					)
+		  				)
+		  				(number "1"
+		  					(effects
+		  						(font
+		  							(size 1.27 1.27)
+		  						)
+		  					)
+		  				)
+		  			)
+		  			(pin bidirectional line
+		  				(at -5.08 -5.08 0)
+		  				(length 5.08)
+		  				(name "2"
+		  					(effects
+		  						(font
+		  							(size 1.27 1.27)
+		  						)
+		  					)
+		  				)
+		  				(number "2"
+		  					(effects
+		  						(font
+		  							(size 1.27 1.27)
+		  						)
+		  					)
+		  				)
+		  			)
+		  		)
+		  		(embedded_fonts no)
+		  	)
+		(symbol "PartReel:Fuse"
+		  		(pin_numbers
+		  			(hide yes)
+		  		)
+		  		(pin_names
+		  			(offset 1.27)
+		  			(hide yes)
+		  		)
+		  		(exclude_from_sim no)
+		  		(in_bom yes)
+		  		(on_board yes)
+		  		(property "Reference" "F"
+		  			(at 3.81 1.778 0)
+		  			(effects
+		  				(font
+		  					(size 1.524 1.524)
+		  				)
+		  			)
+		  		)
+		  		(property "Value" "${VALUE}"
+		  			(at 3.81 -2.032 0)
+		  			(effects
+		  				(font
+		  					(size 1.524 1.524)
+		  				)
+		  			)
+		  		)
+		  		(property "Footprint" ""
+		  			(at 0 0 0)
+		  			(effects
+		  				(font
+		  					(size 1.27 1.27)
+		  				)
+		  				(hide yes)
+		  			)
+		  		)
+		  		(property "Datasheet" ""
+		  			(at 0 0 0)
+		  			(effects
+		  				(font
+		  					(size 1.27 1.27)
+		  				)
+		  				(hide yes)
+		  			)
+		  		)
+		  		(property "Description" "Fuse"
+		  			(at 0 0 0)
+		  			(effects
+		  				(font
+		  					(size 1.27 1.27)
+		  				)
+		  				(hide yes)
+		  			)
+		  		)
+		  		(symbol "Fuse_1_0"
+		  			(polyline
+		  				(pts
+		  					(xy 1.524 0) (xy 6.096 0)
+		  				)
+		  				(stroke
+		  					(width 0)
+		  					(type solid)
+		  				)
+		  				(fill
+		  					(type none)
+		  				)
+		  			)
+		  			(polyline
+		  				(pts
+		  					(xy 1.524 -0.762) (xy 1.524 0.762) (xy 6.096 0.762)
+		  				)
+		  				(stroke
+		  					(width 0)
+		  					(type solid)
+		  				)
+		  				(fill
+		  					(type none)
+		  				)
+		  			)
+		  			(polyline
+		  				(pts
+		  					(xy 1.524 -0.762) (xy 6.096 -0.762) (xy 6.096 0.762)
+		  				)
+		  				(stroke
+		  					(width 0)
+		  					(type solid)
+		  				)
+		  				(fill
+		  					(type none)
+		  				)
+		  			)
+		  			(pin passive line
+		  				(at 0 0 0)
+		  				(length 1.524)
+		  				(name "1"
+		  					(effects
+		  						(font
+		  							(size 1.27 1.27)
+		  						)
+		  					)
+		  				)
+		  				(number "1"
+		  					(effects
+		  						(font
+		  							(size 1.27 1.27)
+		  						)
+		  					)
+		  				)
+		  			)
+		  			(pin passive line
+		  				(at 7.62 0 180)
+		  				(length 1.524)
+		  				(name "2"
+		  					(effects
+		  						(font
+		  							(size 1.27 1.27)
+		  						)
+		  					)
+		  				)
+		  				(number "2"
+		  					(effects
+		  						(font
+		  							(size 1.27 1.27)
+		  						)
+		  					)
+		  				)
+		  			)
+		  		)
+		  		(embedded_fonts no)
+		  	)
+		(symbol "PartReel:SMBJ33A"
+					(pin_numbers
+						(hide yes)
+					)
+					(pin_names
+						(hide yes)
+					)
+					(exclude_from_sim no)
+					(in_bom yes)
+					(on_board yes)
+					(in_pos_files yes)
+					(duplicate_pin_numbers_are_jumpers no)
+					(property "Reference" "D"
+						(at 21.59 -2.54 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Value" "SMBJ33A"
+						(at 21.59 -15.24 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Footprint" "SMBJ33A"
+						(at 21.59 -7.62 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Datasheet" "https://www.littelfuse.com/media?resourcetype=datasheets&itemid=09a6ae9a-73cb-4ac4-acac-e6dab92ab953&filename=littelfuse-tvs-diode-smbj-datasheet"
+						(at 21.59 -10.16 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Description" "Unidirectional TVS, 30 kV,  SMB, 33 V, 1200 pF"
+						(at 21.59 -22.86 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Author" "Antmicro"
+						(at 21.59 -17.78 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "License" "Apache-2.0"
+						(at 21.59 -20.32 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "ki_keywords" "DIODE, SEMICONDUCTOR, TVS, ESD, No-RoHS"
+						(at 0 0 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(symbol "SMBJ33A_0_1"
+						(polyline
+							(pts
+								(xy 1.905 0) (xy 0.635 0)
+							)
+							(stroke
+								(width 0)
+								(type default)
+							)
+							(fill
+								(type none)
+							)
+						)
+						(polyline
+							(pts
+								(xy 4.445 0) (xy 3.175 0)
+							)
+							(stroke
+								(width 0)
+								(type default)
+							)
+							(fill
+								(type none)
+							)
+						)
+					)
+					(symbol "SMBJ33A_1_1"
+						(polyline
+							(pts
+								(xy 1.778 1.016) (xy 1.397 1.016)
+							)
+							(stroke
+								(width 0.254)
+								(type default)
+							)
+							(fill
+								(type none)
+							)
+						)
+						(polyline
+							(pts
+								(xy 1.778 1.016) (xy 1.778 -1.016)
+							)
+							(stroke
+								(width 0.254)
+								(type default)
+							)
+							(fill
+								(type none)
+							)
+						)
+						(polyline
+							(pts
+								(xy 2.159 -1.016) (xy 1.778 -1.016)
+							)
+							(stroke
+								(width 0.254)
+								(type default)
+							)
+							(fill
+								(type none)
+							)
+						)
+						(polyline
+							(pts
+								(xy 3.302 1.016) (xy 3.302 -1.016) (xy 1.778 0) (xy 3.302 1.016)
+							)
+							(stroke
+								(width 0.254)
+								(type default)
+							)
+							(fill
+								(type outline)
+							)
+						)
+						(pin passive line
+							(at 0 0 0)
+							(length 0.635)
+							(name "C"
+								(effects
+									(font
+										(size 1.27 1.27)
+									)
+								)
+							)
+							(number "1"
+								(effects
+									(font
+										(size 1.27 1.27)
+									)
+								)
+							)
+						)
+						(pin passive line
+							(at 5.08 0 180)
+							(length 0.635)
+							(name "A"
+								(effects
+									(font
+										(size 1.27 1.27)
+									)
+								)
+							)
+							(number "2"
+								(effects
+									(font
+										(size 1.27 1.27)
+									)
+								)
+							)
+						)
+					)
+					(embedded_fonts no)
+				)
+		(symbol "PartReel:diodes_dmp6023le" (pin_numbers hide) (pin_names (offset 0) hide) (in_bom yes) (on_board yes)
+		    (property "Reference" "Q" (at -3.81 6.35 0) (effects (font (size 1.27 1.27)) (justify right)))
+		    (property "Value" "DMP6023LE" (at -3.81 -6.35 0) (effects (font (size 1.27 1.27)) (justify right)))
+		    (symbol "diodes_dmp6023le_1_1"
+		      (polyline (pts (xy -5.08 0) (xy -2.54 0)) (stroke (width 0) (type solid)) (fill (type none)))
+		      (polyline (pts (xy -2.54 -2.54) (xy -2.54 2.54)) (stroke (width 0) (type solid)) (fill (type none)))
+		      (polyline (pts (xy -1.27 1.27) (xy -1.27 2.54)) (stroke (width 0) (type solid)) (fill (type none)))
+		      (polyline (pts (xy -1.27 -0.635) (xy -1.27 0.635)) (stroke (width 0) (type solid)) (fill (type none)))
+		      (polyline (pts (xy -1.27 -2.54) (xy -1.27 -1.27)) (stroke (width 0) (type solid)) (fill (type none)))
+		      (polyline (pts (xy -1.27 1.905) (xy 0 1.905)) (stroke (width 0) (type solid)) (fill (type none)))
+		      (polyline (pts (xy 0 1.905) (xy 0 5.08)) (stroke (width 0) (type solid)) (fill (type none)))
+		      (polyline (pts (xy -1.27 -1.905) (xy 0 -1.905)) (stroke (width 0) (type solid)) (fill (type none)))
+		      (polyline (pts (xy 0 -1.905) (xy 0 -5.08)) (stroke (width 0) (type solid)) (fill (type none)))
+		      (polyline (pts (xy -1.27 0) (xy 0 0)) (stroke (width 0) (type solid)) (fill (type none)))
+		      (polyline (pts (xy 0 0) (xy 0 -1.905)) (stroke (width 0) (type solid)) (fill (type none)))
+		      (polyline (pts (xy -0.254 0) (xy -1.016 0.381) (xy -1.016 -0.381) (xy -0.254 0)) (stroke (width 0) (type solid)) (fill (type outline)))
+		      (polyline (pts (xy 0 3.81) (xy 2.54 3.81)) (stroke (width 0) (type solid)) (fill (type none)))
+		      (polyline (pts (xy 2.54 3.81) (xy 2.54 1.27)) (stroke (width 0) (type solid)) (fill (type none)))
+		      (polyline (pts (xy 0 -3.81) (xy 2.54 -3.81)) (stroke (width 0) (type solid)) (fill (type none)))
+		      (polyline (pts (xy 2.54 -3.81) (xy 2.54 0.254)) (stroke (width 0) (type solid)) (fill (type none)))
+		      (polyline (pts (xy 1.905 1.27) (xy 3.175 1.27) (xy 2.54 0.254) (xy 1.905 1.27)) (stroke (width 0) (type solid)) (fill (type outline)))
+		      (polyline (pts (xy 1.905 0.254) (xy 3.175 0.254)) (stroke (width 0) (type solid)) (fill (type none)))
+		      (text "G" (at -4.826 0.381 0) (effects (font (size 0.762 0.762)) (justify left bottom)))
+		      (text "D" (at 0.635 5.588 0) (effects (font (size 0.762 0.762)) (justify left bottom)))
+		      (text "S" (at 0.635 -6.858 0) (effects (font (size 0.762 0.762)) (justify left bottom)))
+		      (pin passive line (at -7.62 0 0) (length 2.54)
+		        (name "G" (effects (font (size 1.27 1.27))))
+		        (number "1" (effects (font (size 1.27 1.27)))))
+		      (pin passive line (at 0 7.62 270) (length 2.54)
+		        (name "D" (effects (font (size 1.27 1.27))))
+		        (number "2" (effects (font (size 1.27 1.27)))))
+		      (pin passive line (at 0 -7.62 90) (length 2.54)
+		        (name "S" (effects (font (size 1.27 1.27))))
+		        (number "3" (effects (font (size 1.27 1.27)))))
+		    ))
+		(symbol "PartReel:R_100k_0603"
+					(pin_numbers
+						(hide yes)
+					)
+					(pin_names
+						(hide yes)
+					)
+					(exclude_from_sim no)
+					(in_bom yes)
+					(on_board yes)
+					(in_pos_files yes)
+					(duplicate_pin_numbers_are_jumpers no)
+					(property "Reference" "R"
+						(at 20.32 -5.08 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Value" "R_100k_0603"
+						(at 20.32 -12.7 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Footprint" "R_100k_0603"
+						(at 20.32 -15.24 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Datasheet" "https://www.bourns.com/docs/product-datasheets/cr.pdf"
+						(at 20.32 -17.78 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Description" "SMD Chip Resistor, 100 kohm, ± 1%, 100 mW, 0603 [1608 Metric], Thick Film, General Purpose"
+						(at 20.32 -30.48 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "MPN" "CR0603-FX-1003ELF"
+						(at 20.32 -20.32 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Manufacturer" "Bourns"
+						(at 20.32 -22.86 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "License" "Apache-2.0"
+						(at 20.32 -25.4 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Author" "Antmicro"
+						(at 20.32 -27.94 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Val" "100k"
+						(at 20.32 -7.62 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Tolerance" "1%"
+						(at 20.32 -10.16 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+							(justify left bottom)
+						)
+					)
+					(symbol "R_100k_0603_0_1"
+						(rectangle
+							(start 0.635 0.889)
+							(end 4.445 -0.889)
+							(stroke
+								(width 0.254)
+								(type default)
+							)
+							(fill
+								(type none)
+							)
+						)
+					)
+					(symbol "R_100k_0603_1_1"
+						(pin passive line
+							(at 0 0 0)
+							(length 0.635)
+							(name ""
+								(effects
+									(font
+										(size 1.27 1.27)
+									)
+								)
+							)
+							(number "1"
+								(effects
+									(font
+										(size 1.27 1.27)
+									)
+								)
+							)
+						)
+						(pin passive line
+							(at 5.08 0 180)
+							(length 0.635)
+							(name ""
+								(effects
+									(font
+										(size 1.27 1.27)
+									)
+								)
+							)
+							(number "2"
+								(effects
+									(font
+										(size 1.27 1.27)
+									)
+								)
+							)
+						)
+					)
+					(embedded_fonts no)
+				)
+		(symbol "PartReel:BZT52C15-7-F"
+					(pin_numbers
+						(hide yes)
+					)
+					(pin_names
+						(hide yes)
+					)
+					(exclude_from_sim no)
+					(in_bom yes)
+					(on_board yes)
+					(in_pos_files yes)
+					(duplicate_pin_numbers_are_jumpers no)
+					(property "Reference" "D"
+						(at 22.86 -5.08 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Value" "BZT52C15-7-F"
+						(at 22.86 -10.16 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Footprint" "BZT52C15-7-F"
+						(at 22.86 -12.7 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Datasheet" "https://www.diodes.com/assets/Datasheets/ds18004.pdf"
+						(at 22.86 -15.24 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Description" "Zener Single Diode, AEC-Q101, 15 V, 500 mW, SOD-123, 2 Pins, 150 °C, Surface Mount"
+						(at 22.86 -25.4 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Author" "Antmicro"
+						(at 22.86 -20.32 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "License" "Apache-2.0"
+						(at 22.86 -22.86 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "ki_keywords" "SMT, DIODE, SEMICONDUCTOR, ZENER, RoHS"
+						(at 0 0 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(symbol "BZT52C15-7-F_0_1"
+						(polyline
+							(pts
+								(xy 1.905 0) (xy 0.635 0)
+							)
+							(stroke
+								(width 0)
+								(type default)
+							)
+							(fill
+								(type none)
+							)
+						)
+						(polyline
+							(pts
+								(xy 4.445 0) (xy 3.175 0)
+							)
+							(stroke
+								(width 0)
+								(type default)
+							)
+							(fill
+								(type none)
+							)
+						)
+					)
+					(symbol "BZT52C15-7-F_1_1"
+						(polyline
+							(pts
+								(xy 1.778 -1.016) (xy 1.778 1.016)
+							)
+							(stroke
+								(width 0.254)
+								(type default)
+							)
+							(fill
+								(type none)
+							)
+						)
+						(polyline
+							(pts
+								(xy 2.159 1.016) (xy 1.778 1.016)
+							)
+							(stroke
+								(width 0.254)
+								(type default)
+							)
+							(fill
+								(type none)
+							)
+						)
+						(polyline
+							(pts
+								(xy 3.302 -1.016) (xy 3.302 1.016) (xy 1.778 0) (xy 3.302 -1.016)
+							)
+							(stroke
+								(width 0.254)
+								(type default)
+							)
+							(fill
+								(type outline)
+							)
+						)
+						(pin passive line
+							(at 0 0 0)
+							(length 0.635)
+							(name "C"
+								(effects
+									(font
+										(size 1.27 1.27)
+									)
+								)
+							)
+							(number "1"
+								(effects
+									(font
+										(size 1.27 1.27)
+									)
+								)
+							)
+						)
+						(pin passive line
+							(at 5.08 0 180)
+							(length 0.635)
+							(name "A"
+								(effects
+									(font
+										(size 1.27 1.27)
+									)
+								)
+							)
+							(number "2"
+								(effects
+									(font
+										(size 1.27 1.27)
+									)
+								)
+							)
+						)
+					)
+					(embedded_fonts no)
+				)
+		(symbol "PartReel:C_100n_100V_0805"
+					(pin_numbers
+						(hide yes)
+					)
+					(pin_names
+						(hide yes)
+					)
+					(exclude_from_sim no)
+					(in_bom yes)
+					(on_board yes)
+					(in_pos_files yes)
+					(duplicate_pin_numbers_are_jumpers no)
+					(property "Reference" "C"
+						(at 20.32 -5.08 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Value" "C_100n_100V_0805"
+						(at 20.32 -10.16 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Footprint" "C_100n_100V_0805"
+						(at 20.32 -12.7 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Datasheet" "https://product.samsungsem.com/mlcc/CL21B104KCFNNN.do"
+						(at 20.32 -15.24 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Description" "SMT Multilayer Ceramic Capacitor, 0.1 µF, 100 V, 0805 [2012 Metric], ± 10%, X7R, CL"
+						(at 20.32 -33.02 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "MPN" "CL21B104KCFNNNE"
+						(at 20.32 -17.78 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Manufacturer" "Samsung Electro-Mechanics"
+						(at 20.32 -20.32 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "License" "Apache-2.0"
+						(at 20.32 -22.86 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Author" "Antmicro"
+						(at 20.32 -25.4 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Val" "100n"
+						(at 20.32 -7.62 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Voltage" "100V"
+						(at 20.32 -27.94 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Dielectric" "X7R"
+						(at 20.32 -30.48 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+							(justify left bottom)
+						)
+					)
+					(symbol "C_100n_100V_0805_0_1"
+						(polyline
+							(pts
+								(xy 2.032 -1.524) (xy 2.032 1.524)
+							)
+							(stroke
+								(width 0.3048)
+								(type default)
+							)
+							(fill
+								(type none)
+							)
+						)
+						(polyline
+							(pts
+								(xy 3.048 -1.524) (xy 3.048 1.524)
+							)
+							(stroke
+								(width 0.3302)
+								(type default)
+							)
+							(fill
+								(type none)
+							)
+						)
+					)
+					(symbol "C_100n_100V_0805_1_1"
+						(pin passive line
+							(at 0 0 0)
+							(length 2.032)
+							(name ""
+								(effects
+									(font
+										(size 1.27 1.27)
+									)
+								)
+							)
+							(number "1"
+								(effects
+									(font
+										(size 1.27 1.27)
+									)
+								)
+							)
+						)
+						(pin passive line
+							(at 5.08 0 180)
+							(length 2.032)
+							(name ""
+								(effects
+									(font
+										(size 1.27 1.27)
+									)
+								)
+							)
+							(number "2"
+								(effects
+									(font
+										(size 1.27 1.27)
+									)
+								)
+							)
+						)
+					)
+					(embedded_fonts no)
+				)
+		(symbol "PartReel:Choke_ACM9070-701-2PL-TL01"
+					(pin_names
+						(hide yes)
+					)
+					(exclude_from_sim no)
+					(in_bom yes)
+					(on_board yes)
+					(in_pos_files yes)
+					(duplicate_pin_numbers_are_jumpers no)
+					(property "Reference" "T"
+						(at 15.24 -5.08 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Value" "Choke_ACM9070-701-2PL-TL01"
+						(at 15.24 -10.16 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Footprint" "Choke_ACM9070-701-2PL-TL01"
+						(at 15.24 -12.7 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Datasheet" "https://product.tdk.com/system/files/dam/doc/product/emc/emc/cmf_cmc/catalog/cmf_commercial_power_acm9070_en.pdf"
+						(at 15.24 -15.24 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Description" "2 Line Common Mode Choke Surface Mount 700 Ohms @ 100 MHz 5A DCR 10mOhm"
+						(at 15.24 -27.94 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Manufacturer" "TDK"
+						(at 15.24 -17.78 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "MPN" "ACM9070-701-2PL-TL01"
+						(at 15.24 -7.62 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "IMax" "5 A"
+						(at 15.24 -20.32 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Author" "Antmicro"
+						(at 15.24 -22.86 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "License" "Apache-2.0"
+						(at 15.24 -25.4 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "ki_keywords" "CHOKE, PASSIVE, RoHS"
+						(at 0 0 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(property "ki_fp_filters" "IND_ACM9070_TDK"
+						(at 0 0 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(symbol "Choke_ACM9070-701-2PL-TL01_1_1"
+						(circle
+							(center 2.032 -1.016)
+							(radius 0.254)
+							(stroke
+								(width 0.254)
+								(type default)
+							)
+							(fill
+								(type outline)
+							)
+						)
+						(circle
+							(center 2.032 -3.81)
+							(radius 0.254)
+							(stroke
+								(width 0.254)
+								(type default)
+							)
+							(fill
+								(type outline)
+							)
+						)
+						(polyline
+							(pts
+								(xy 2.54 -0.508) (xy 2.54 0)
+							)
+							(stroke
+								(width 0)
+								(type default)
+							)
+							(fill
+								(type none)
+							)
+						)
+						(polyline
+							(pts
+								(xy 2.54 -2.032) (xy 7.62 -2.032)
+							)
+							(stroke
+								(width 0.254)
+								(type default)
+							)
+							(fill
+								(type none)
+							)
+						)
+						(polyline
+							(pts
+								(xy 2.54 -4.572) (xy 2.54 -5.08)
+							)
+							(stroke
+								(width 0)
+								(type default)
+							)
+							(fill
+								(type none)
+							)
+						)
+						(arc
+							(start 3.556 -0.508)
+							(mid 3.048 -1.0138)
+							(end 2.54 -0.508)
+							(stroke
+								(width 0)
+								(type default)
+							)
+							(fill
+								(type none)
+							)
+						)
+						(arc
+							(start 2.54 -4.572)
+							(mid 3.048 -4.0662)
+							(end 3.556 -4.572)
+							(stroke
+								(width 0)
+								(type default)
+							)
+							(fill
+								(type none)
+							)
+						)
+						(arc
+							(start 4.572 -0.508)
+							(mid 4.064 -1.0138)
+							(end 3.556 -0.508)
+							(stroke
+								(width 0)
+								(type default)
+							)
+							(fill
+								(type none)
+							)
+						)
+						(arc
+							(start 3.556 -4.572)
+							(mid 4.064 -4.0662)
+							(end 4.572 -4.572)
+							(stroke
+								(width 0)
+								(type default)
+							)
+							(fill
+								(type none)
+							)
+						)
+						(arc
+							(start 5.588 -0.508)
+							(mid 5.08 -1.0138)
+							(end 4.572 -0.508)
+							(stroke
+								(width 0)
+								(type default)
+							)
+							(fill
+								(type none)
+							)
+						)
+						(arc
+							(start 4.572 -4.572)
+							(mid 5.08 -4.0662)
+							(end 5.588 -4.572)
+							(stroke
+								(width 0)
+								(type default)
+							)
+							(fill
+								(type none)
+							)
+						)
+						(arc
+							(start 6.604 -0.508)
+							(mid 6.096 -1.0138)
+							(end 5.588 -0.508)
+							(stroke
+								(width 0)
+								(type default)
+							)
+							(fill
+								(type none)
+							)
+						)
+						(arc
+							(start 5.588 -4.572)
+							(mid 6.096 -4.0662)
+							(end 6.604 -4.572)
+							(stroke
+								(width 0)
+								(type default)
+							)
+							(fill
+								(type none)
+							)
+						)
+						(arc
+							(start 7.62 -0.508)
+							(mid 7.112 -1.0138)
+							(end 6.604 -0.508)
+							(stroke
+								(width 0)
+								(type default)
+							)
+							(fill
+								(type none)
+							)
+						)
+						(arc
+							(start 6.604 -4.572)
+							(mid 7.112 -4.0662)
+							(end 7.62 -4.572)
+							(stroke
+								(width 0)
+								(type default)
+							)
+							(fill
+								(type none)
+							)
+						)
+						(polyline
+							(pts
+								(xy 7.62 0) (xy 7.62 -0.508)
+							)
+							(stroke
+								(width 0)
+								(type default)
+							)
+							(fill
+								(type none)
+							)
+						)
+						(polyline
+							(pts
+								(xy 7.62 -3.048) (xy 2.54 -3.048)
+							)
+							(stroke
+								(width 0.254)
+								(type default)
+							)
+							(fill
+								(type none)
+							)
+						)
+						(polyline
+							(pts
+								(xy 7.62 -4.572) (xy 7.62 -5.08)
+							)
+							(stroke
+								(width 0)
+								(type default)
+							)
+							(fill
+								(type none)
+							)
+						)
+						(pin passive line
+							(at 0 0 0)
+							(length 2.54)
+							(name "1"
+								(effects
+									(font
+										(size 1.27 1.27)
+									)
+								)
+							)
+							(number "1"
+								(effects
+									(font
+										(size 1.27 1.27)
+									)
+								)
+							)
+						)
+						(pin passive line
+							(at 10.16 0 180)
+							(length 2.54)
+							(name "2"
+								(effects
+									(font
+										(size 1.27 1.27)
+									)
+								)
+							)
+							(number "2"
+								(effects
+									(font
+										(size 1.27 1.27)
+									)
+								)
+							)
+						)
+						(pin passive line
+							(at 10.16 -5.08 180)
+							(length 2.54)
+							(name "3"
+								(effects
+									(font
+										(size 1.27 1.27)
+									)
+								)
+							)
+							(number "3"
+								(effects
+									(font
+										(size 1.27 1.27)
+									)
+								)
+							)
+						)
+						(pin passive line
+							(at 0 -5.08 0)
+							(length 2.54)
+							(name "4"
+								(effects
+									(font
+										(size 1.27 1.27)
+									)
+								)
+							)
+							(number "4"
+								(effects
+									(font
+										(size 1.27 1.27)
+									)
+								)
+							)
+						)
+					)
+					(embedded_fonts no)
+				)
+		(symbol "PartReel:C_Pol_47u_100V_KYOCERA-AVX-APZ-D10mm-H12.5mm"
+					(pin_numbers
+						(hide yes)
+					)
+					(pin_names
+						(hide yes)
+					)
+					(exclude_from_sim no)
+					(in_bom yes)
+					(on_board yes)
+					(in_pos_files yes)
+					(duplicate_pin_numbers_are_jumpers no)
+					(property "Reference" "C"
+						(at 13.97 0 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Value" "C_Pol_47u_100V_KYOCERA-AVX-APZ-D10mm-H12.5mm"
+						(at 13.97 -2.54 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Footprint" "C_Pol_47u_100V_KYOCERA-AVX-APZ-D10mm-H12.5mm"
+						(at 13.97 -7.62 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Datasheet" "https://datasheets.kyocera-avx.com/apz-series.pdf"
+						(at 13.97 -10.16 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Description" "Aluminium Organic Polymer Capacitors 100V 47uF 900mA 940uA Life2000Hrs ESR=50mOhms 20% +105C Can"
+						(at 13.97 -25.4 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "MPN" "APZ1012470M100R"
+						(at 13.97 -12.7 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Manufacturer" "KYOCERA AVX"
+						(at 13.97 -15.24 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "License" "Apache-2.0"
+						(at 13.97 -17.78 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Author" "Antmicro"
+						(at 13.97 -20.32 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Val" "47u"
+						(at 13.97 -5.08 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Voltage" "100V"
+						(at 13.97 -22.86 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Dielectric" "template_dielectric"
+						(at 13.97 -27.94 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+							(justify left bottom)
+						)
+					)
+					(symbol "C_Pol_47u_100V_KYOCERA-AVX-APZ-D10mm-H12.5mm_0_1"
+						(polyline
+							(pts
+								(xy 0.9652 1.27) (xy 0.9652 1.778)
+							)
+							(stroke
+								(width 0)
+								(type default)
+							)
+							(fill
+								(type none)
+							)
+						)
+						(polyline
+							(pts
+								(xy 1.2192 1.524) (xy 0.7112 1.524)
+							)
+							(stroke
+								(width 0)
+								(type default)
+							)
+							(fill
+								(type none)
+							)
+						)
+						(rectangle
+							(start 1.905 -1.524)
+							(end 2.286 1.524)
+							(stroke
+								(width 0)
+								(type default)
+							)
+							(fill
+								(type none)
+							)
+						)
+						(rectangle
+							(start 2.921 -1.524)
+							(end 3.302 1.524)
+							(stroke
+								(width 0)
+								(type default)
+							)
+							(fill
+								(type outline)
+							)
+						)
+					)
+					(symbol "C_Pol_47u_100V_KYOCERA-AVX-APZ-D10mm-H12.5mm_1_1"
+						(pin passive line
+							(at 0 0 0)
+							(length 1.8542)
+							(name ""
+								(effects
+									(font
+										(size 1.27 1.27)
+									)
+								)
+							)
+							(number "1"
+								(effects
+									(font
+										(size 1.27 1.27)
+									)
+								)
+							)
+						)
+						(pin passive line
+							(at 5.08 0 180)
+							(length 1.8542)
+							(name ""
+								(effects
+									(font
+										(size 1.27 1.27)
+									)
+								)
+							)
+							(number "2"
+								(effects
+									(font
+										(size 1.27 1.27)
+									)
+								)
+							)
+						)
+					)
+					(embedded_fonts no)
+				)
+		(symbol "PartReel:C_1u_100V_1210"
+					(pin_numbers
+						(hide yes)
+					)
+					(pin_names
+						(hide yes)
+					)
+					(exclude_from_sim no)
+					(in_bom yes)
+					(on_board yes)
+					(in_pos_files yes)
+					(duplicate_pin_numbers_are_jumpers no)
+					(property "Reference" "C"
+						(at 20.32 -5.08 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Value" "C_1u_100V_1210"
+						(at 20.32 -10.16 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Footprint" "C_1u_100V_1210"
+						(at 20.32 -12.7 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Datasheet" "https://spicat.kyocera-avx.com/product/mlcc/chartview/12101C105K4Z2A/"
+						(at 20.32 -15.24 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Description" "SMT Multilayer Ceramic Capacitor, 1 µF, 100 V, 1210 [3225 Metric], ± 10%, X7R, AVX 1210 MLCC"
+						(at 20.32 -33.02 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "MPN" "12101C105K4Z2A"
+						(at 20.32 -17.78 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Manufacturer" "AVX"
+						(at 20.32 -20.32 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "License" "Apache-2.0"
+						(at 20.32 -22.86 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Author" "Antmicro"
+						(at 20.32 -25.4 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Val" "1u"
+						(at 20.32 -7.62 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Voltage" "100V"
+						(at 20.32 -27.94 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Dielectric" ""
+						(at 20.32 -30.48 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+							(justify left bottom)
+						)
+					)
+					(symbol "C_1u_100V_1210_0_1"
+						(polyline
+							(pts
+								(xy 2.032 -1.524) (xy 2.032 1.524)
+							)
+							(stroke
+								(width 0.3048)
+								(type default)
+							)
+							(fill
+								(type none)
+							)
+						)
+						(polyline
+							(pts
+								(xy 3.048 -1.524) (xy 3.048 1.524)
+							)
+							(stroke
+								(width 0.3302)
+								(type default)
+							)
+							(fill
+								(type none)
+							)
+						)
+					)
+					(symbol "C_1u_100V_1210_1_1"
+						(pin passive line
+							(at 0 0 0)
+							(length 2.032)
+							(name ""
+								(effects
+									(font
+										(size 1.27 1.27)
+									)
+								)
+							)
+							(number "1"
+								(effects
+									(font
+										(size 1.27 1.27)
+									)
+								)
+							)
+						)
+						(pin passive line
+							(at 5.08 0 180)
+							(length 2.032)
+							(name ""
+								(effects
+									(font
+										(size 1.27 1.27)
+									)
+								)
+							)
+							(number "2"
+								(effects
+									(font
+										(size 1.27 1.27)
+									)
+								)
+							)
+						)
+					)
+					(embedded_fonts no)
+				)
+		(symbol "PartReel:kemet_c0805c222k1ractu" (pin_numbers hide) (pin_names (offset 0) hide) (in_bom yes) (on_board yes)
+		    (property "Reference" "C" (at 0 2.54 0) (effects (font (size 1.27 1.27))))
+		    (property "Value" "2.2nF" (at 0 -2.54 0) (effects (font (size 1.27 1.27))))
+		    (symbol "kemet_c0805c222k1ractu_1_1"
+		      (polyline (pts (xy -0.508 1.524) (xy -0.508 -1.524))
+		        (stroke (width 0.3048) (type solid)) (fill (type none)))
+		      (polyline (pts (xy 0.508 1.524) (xy 0.508 -1.524))
+		        (stroke (width 0.3048) (type solid)) (fill (type none)))
+		      (pin passive line (at -3.81 0 0) (length 3.302)
+		        (name "~" (effects (font (size 1.27 1.27))))
+		        (number "1" (effects (font (size 1.27 1.27)))))
+		      (pin passive line (at 3.81 0 180) (length 3.302)
+		        (name "~" (effects (font (size 1.27 1.27))))
+		        (number "2" (effects (font (size 1.27 1.27)))))
+		    ))
+		(symbol "PartReelPwr:PR_P24V" (power) (pin_names (offset 0)) (in_bom no) (on_board yes)
+		  (property "Reference" "#PWR" (at 0 1.27 0) (effects (font (size 1.27 1.27)) (hide yes)))
+		  (property "Value" "+24V" (at 0 3.81 0) (effects (font (size 1.27 1.27))))
+		  (symbol "PR_P24V_1_1"
+		    (polyline (pts (xy 0 0) (xy 0 1.27)) (stroke (width 0.254) (type solid)) (fill (type none)))
+		    (polyline (pts (xy -0.762 1.27) (xy 0 2.54)) (stroke (width 0.254) (type solid)) (fill (type none)))
+		    (polyline (pts (xy 0 2.54) (xy 0.762 1.27)) (stroke (width 0.254) (type solid)) (fill (type none)))
+		    (polyline (pts (xy -0.762 1.27) (xy 0.762 1.27)) (stroke (width 0.254) (type solid)) (fill (type none)))
+		    (pin power_in line (at 0 0 270) (length 0) hide (name "+24V" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))
+		  ))
+		(symbol "PartReelPwr:PR_FLAG" (power) (pin_names (offset 0)) (in_bom no) (on_board yes)
+		  (property "Reference" "#PWR" (at 0 1.27 0) (effects (font (size 1.27 1.27)) (hide yes)))
+		  (property "Value" "FLAG" (at 0 3.81 0) (effects (font (size 1.27 1.27))))
+		  (symbol "PR_FLAG_1_1"
+		    (polyline (pts (xy 0 0) (xy 0 1.27)) (stroke (width 0.254) (type solid)) (fill (type none)))
+		    (polyline (pts (xy 0 1.27) (xy 1.524 1.905)) (stroke (width 0.254) (type solid)) (fill (type none)))
+		    (polyline (pts (xy 1.524 1.905) (xy 0 2.54)) (stroke (width 0.254) (type solid)) (fill (type none)))
+		    (polyline (pts (xy 0 2.54) (xy 0 1.27)) (stroke (width 0.254) (type solid)) (fill (type none)))
+		    (pin power_out line (at 0 0 270) (length 0) hide (name "flag" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))
+		  ))
+		(symbol "PartReelPwr:PR_GND" (power) (pin_names (offset 0)) (in_bom no) (on_board yes)
+		  (property "Reference" "#PWR" (at 0 -6.985 0) (effects (font (size 1.27 1.27)) (hide yes)))
+		  (property "Value" "GND" (at 0 -4.445 0) (effects (font (size 1.27 1.27))))
+		  (symbol "PR_GND_1_1"
+		    (polyline (pts (xy 0 0) (xy 0 -1.27)) (stroke (width 0.254) (type solid)) (fill (type none)))
+		    (polyline (pts (xy -1.27 -1.27) (xy 1.27 -1.27)) (stroke (width 0.254) (type solid)) (fill (type none)))
+		    (polyline (pts (xy -0.762 -1.778) (xy 0.762 -1.778)) (stroke (width 0.254) (type solid)) (fill (type none)))
+		    (polyline (pts (xy -0.254 -2.286) (xy 0.254 -2.286)) (stroke (width 0.254) (type solid)) (fill (type none)))
+		    (pin power_in line (at 0 0 270) (length 0) hide (name "GND" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))
+		  ))
+		(symbol "PartReelPwr:PR_EARTH" (power) (pin_names (offset 0)) (in_bom no) (on_board yes)
+		  (property "Reference" "#PWR" (at 0 -6.985 0) (effects (font (size 1.27 1.27)) (hide yes)))
+		  (property "Value" "EARTH" (at 0 -4.445 0) (effects (font (size 1.27 1.27))))
+		  (symbol "PR_EARTH_1_1"
+		    (polyline (pts (xy 0 0) (xy 0 -1.27)) (stroke (width 0.254) (type solid)) (fill (type none)))
+		    (polyline (pts (xy -1.27 -1.27) (xy 1.27 -1.27)) (stroke (width 0.254) (type solid)) (fill (type none)))
+		    (polyline (pts (xy -1.27 -1.27) (xy -1.905 -2.286)) (stroke (width 0.254) (type solid)) (fill (type none)))
+		    (polyline (pts (xy 0 -1.27) (xy -0.635 -2.286)) (stroke (width 0.254) (type solid)) (fill (type none)))
+		    (polyline (pts (xy 1.27 -1.27) (xy 0.635 -2.286)) (stroke (width 0.254) (type solid)) (fill (type none)))
+		    (pin power_in line (at 0 0 270) (length 0) hide (name "EARTH" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))
+		  ))
+	)
+	(wire
+		(pts
+			(xy 30.48 80.01) (xy 38.1 80.01)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "42a31bc9-6223-5108-a1e2-51e4b9e0d138")
+	)
+	(wire
+		(pts
+			(xy 38.1 80.01) (xy 38.1 63.5)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "8abb00a4-1006-5097-9ebc-d31a86a56e71")
+	)
+	(wire
+		(pts
+			(xy 38.1 63.5) (xy 50.8 63.5)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "96e40f63-fe39-517f-be37-f3e03429a9e9")
+	)
+	(wire
+		(pts
+			(xy 58.42 63.5) (xy 83.82 63.5)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "4e77cf8f-7820-5f39-a08a-09ede4b03a63")
+	)
+	(wire
+		(pts
+			(xy 99.06 63.5) (xy 121.92 63.5)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "d5552a24-945d-5e5e-b39a-2c50baed701c")
+	)
+	(wire
+		(pts
+			(xy 132.08 63.5) (xy 195.58 63.5)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "0233c787-327c-50c2-8541-b2971c657518")
+	)
+	(wire
+		(pts
+			(xy 30.48 82.55) (xy 35.56 82.55)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "19d54bc1-fc37-5d49-a173-a58ec7229217")
+	)
+	(wire
+		(pts
+			(xy 35.56 82.55) (xy 35.56 99.06)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "cf9f5326-aa24-56e7-abae-30eed9f89238")
+	)
+	(wire
+		(pts
+			(xy 35.56 99.06) (xy 116.84 99.06)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "41d3b3f0-0df2-5b92-b2cb-6cb3692ebf88")
+	)
+	(wire
+		(pts
+			(xy 116.84 99.06) (xy 116.84 68.58)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "cfba5436-3445-5311-8e27-2b7c66fb6ee9")
+	)
+	(wire
+		(pts
+			(xy 116.84 68.58) (xy 121.92 68.58)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "f483fac6-ed5d-5e3e-b545-1e43a45616d9")
+	)
+	(wire
+		(pts
+			(xy 132.08 68.58) (xy 137.16 68.58)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "56cf308c-a744-59bc-a37b-f7abe31d5c15")
+	)
+	(wire
+		(pts
+			(xy 137.16 68.58) (xy 137.16 99.06)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "bca8777e-4552-5322-a9dd-5dc041e036af")
+	)
+	(wire
+		(pts
+			(xy 137.16 99.06) (xy 205.74 99.06)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "37d3a7d3-d036-5def-8b05-b17fa31d0a9f")
+	)
+	(wire
+		(pts
+			(xy 71.12 63.5) (xy 71.12 78.74)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "b48ced6e-b5d0-5376-acd7-838eced22dcd")
+	)
+	(wire
+		(pts
+			(xy 71.12 83.82) (xy 71.12 99.06)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "3d19577b-c834-55c7-a41e-c8a248d13df4")
+	)
+	(wire
+		(pts
+			(xy 91.44 71.12) (xy 91.44 82.55)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "ceea3859-d3eb-5496-b0c1-5e25874379b8")
+	)
+	(wire
+		(pts
+			(xy 91.44 78.74) (xy 109.22 78.74)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "a219d043-3ee3-527a-a1c4-c29a7ff2c642")
+	)
+	(wire
+		(pts
+			(xy 101.6 73.66) (xy 101.6 78.74)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "4a803455-a8ae-5c69-a4cb-ce1f76cbfdca")
+	)
+	(wire
+		(pts
+			(xy 109.22 73.66) (xy 109.22 78.74)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "88e1258a-160b-5f4e-81b7-cd063b7c9ab5")
+	)
+	(wire
+		(pts
+			(xy 91.44 87.63) (xy 91.44 99.06)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "627b58ab-9847-5836-86f9-be791248be0e")
+	)
+	(wire
+		(pts
+			(xy 101.6 63.5) (xy 101.6 68.58)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "442d65c2-8ce5-5d55-9426-95e8603c7540")
+	)
+	(wire
+		(pts
+			(xy 109.22 63.5) (xy 109.22 68.58)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "0cfc41ea-228c-5be7-a890-f431f2ca1b78")
+	)
+	(wire
+		(pts
+			(xy 149.86 63.5) (xy 149.86 78.74)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "53e46a43-61e3-5ca6-8e2c-aff3882f233c")
+	)
+	(wire
+		(pts
+			(xy 149.86 83.82) (xy 149.86 99.06)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "a5c6e0f9-b591-51b4-8cc4-2580e59195f8")
+	)
+	(wire
+		(pts
+			(xy 162.56 63.5) (xy 162.56 78.74)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "c125eecd-60fc-5da4-8f8c-003016ac8d10")
+	)
+	(wire
+		(pts
+			(xy 162.56 83.82) (xy 162.56 99.06)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "5dd35bc7-abbf-5e5b-9eec-d05468525e89")
+	)
+	(wire
+		(pts
+			(xy 175.26 63.5) (xy 175.26 78.74)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "5fd51c0e-c7b3-5fdb-b520-f382a2d1b6ca")
+	)
+	(wire
+		(pts
+			(xy 175.26 83.82) (xy 175.26 99.06)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "0d0fba86-7220-5257-9342-0dafebda9c45")
+	)
+	(wire
+		(pts
+			(xy 187.96 63.5) (xy 187.96 69.85)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "a934ce4d-1ffe-5165-8aaf-91a5eceea173")
+	)
+	(wire
+		(pts
+			(xy 187.96 77.47) (xy 187.96 83.82)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "50aa1e37-1286-5f6c-ad30-7208c7ac5979")
+	)
+	(wire
+		(pts
+			(xy 187.96 83.82) (xy 200.66 83.82)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "977c3ea5-2990-58e8-a4fb-4bb86153eb7f")
+	)
+	(wire
+		(pts
+			(xy 200.66 87.63) (xy 200.66 83.82)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "ab22357c-6582-5df3-b787-0bfb79e699bb")
+	)
+	(wire
+		(pts
+			(xy 200.66 95.25) (xy 200.66 99.06)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "18a36e51-bf04-5518-8a5c-f23be0eb0ad3")
+	)
+	(junction
+		(at 91.44 99.06)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "fcc06519-f3d1-509f-a956-0592a0b52ed6")
+	)
+	(junction
+		(at 109.22 63.5)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c304b3d4-3de3-57e0-a07f-44f2bb067156")
+	)
+	(junction
+		(at 101.6 63.5)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e43edd15-ad97-51db-916f-f53b38344860")
+	)
+	(junction
+		(at 200.66 99.06)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "eef3608d-1f11-58da-855e-1df1a9a77be8")
+	)
+	(junction
+		(at 71.12 99.06)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "42ea5453-b638-554f-a6e5-82a033cbe3c3")
+	)
+	(junction
+		(at 175.26 99.06)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "64a20137-80f1-535b-9415-16ca4665ec0b")
+	)
+	(junction
+		(at 101.6 78.74)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "77ec991a-e199-5255-8754-4bd505e76f88")
+	)
+	(junction
+		(at 149.86 63.5)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f9101595-3144-52f1-a16b-e5b6deaae8a3")
+	)
+	(junction
+		(at 193.04 83.82)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9124c5ed-d086-5c8a-b1ff-220d1a624dd3")
+	)
+	(junction
+		(at 144.78 63.5)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8a7f3c01-3a92-5887-a087-5be08837a47e")
+	)
+	(junction
+		(at 195.58 83.82)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "fc580b34-cc8a-5300-b9a3-2cc4a865b26d")
+	)
+	(junction
+		(at 187.96 63.5)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7521caa1-3c53-5f84-9149-d75bd8c7a059")
+	)
+	(junction
+		(at 149.86 99.06)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a6d244b6-9a31-5de9-bb83-c40e3b8c2178")
+	)
+	(junction
+		(at 162.56 63.5)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "920e61e0-4fe2-5966-aeca-5c20b87ef2fc")
+	)
+	(junction
+		(at 144.78 99.06)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5ed5096e-07dd-5280-9ab2-21135d8cf719")
+	)
+	(junction
+		(at 91.44 78.74)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "60617393-f593-58a5-897b-d6d55de08e4f")
+	)
+	(junction
+		(at 71.12 63.5)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4270d00d-5c33-5f96-9fea-20cc2b1590af")
+	)
+	(junction
+		(at 162.56 99.06)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9e1da7b6-20a2-5647-9a60-dfda112ff75e")
+	)
+	(junction
+		(at 175.26 63.5)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "bfb20301-750f-5321-98bf-dc5fc196bd96")
+	)
+	(text "J1"
+		(exclude_from_sim no)
+		(at 17.78 73.66 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 132 0 0 1)
+			)
+			(justify left)
+		)
+		(uuid "5a7c6e80-ca7c-55c8-afa5-b998a964a8d2")
+	)
+	(text "24V IN 5.08mm"
+		(exclude_from_sim no)
+		(at 17.78 75.69 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 132 0 0 1)
+			)
+			(justify left)
+		)
+		(uuid "457689ef-a3e3-51b9-8722-10fca3ae039a")
+	)
+	(text "F1"
+		(exclude_from_sim no)
+		(at 50.8 57.15 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 132 0 0 1)
+			)
+			(justify left)
+		)
+		(uuid "e3b40abc-4f5d-5347-a93d-689ba8271ec2")
+	)
+	(text "0.75A 60V PTC"
+		(exclude_from_sim no)
+		(at 50.8 59.18 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 132 0 0 1)
+			)
+			(justify left)
+		)
+		(uuid "9cb94b2d-3842-5048-9627-5ff3d4dd02c7")
+	)
+	(text "D1"
+		(exclude_from_sim no)
+		(at 73.66 78.74 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 132 0 0 1)
+			)
+			(justify left)
+		)
+		(uuid "a99c2131-97d9-58c1-9a26-889e020ac342")
+	)
+	(text "SMBJ33A"
+		(exclude_from_sim no)
+		(at 73.66 80.77 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 132 0 0 1)
+			)
+			(justify left)
+		)
+		(uuid "4083b343-4fbf-5b04-b114-162427db5d11")
+	)
+	(text "Q1"
+		(exclude_from_sim no)
+		(at 83.82 55.88 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 132 0 0 1)
+			)
+			(justify left)
+		)
+		(uuid "84890717-a440-525f-882f-097fcd722dea")
+	)
+	(text "DMP6023LE"
+		(exclude_from_sim no)
+		(at 83.82 57.91 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 132 0 0 1)
+			)
+			(justify left)
+		)
+		(uuid "cac6d7dc-b3fb-5d66-8769-e231b38ba227")
+	)
+	(text "R1"
+		(exclude_from_sim no)
+		(at 93.98 83.82 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 132 0 0 1)
+			)
+			(justify left)
+		)
+		(uuid "1e67671c-f39c-50bd-bbf7-d93918fcb761")
+	)
+	(text "100kΩ"
+		(exclude_from_sim no)
+		(at 93.98 85.85 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 132 0 0 1)
+			)
+			(justify left)
+		)
+		(uuid "49d1a6c2-0972-5da8-bf48-3daa80326dcb")
+	)
+	(text "D2"
+		(exclude_from_sim no)
+		(at 102.87 82.55 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 132 0 0 1)
+			)
+			(justify left)
+		)
+		(uuid "9f725c60-37b7-53bd-ad6f-c3dd886c4d87")
+	)
+	(text "15V"
+		(exclude_from_sim no)
+		(at 102.87 84.58 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 132 0 0 1)
+			)
+			(justify left)
+		)
+		(uuid "541f4901-ef9d-5a9a-86c0-931fe88d2ea1")
+	)
+	(text "C1"
+		(exclude_from_sim no)
+		(at 109.22 82.55 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 132 0 0 1)
+			)
+			(justify left)
+		)
+		(uuid "b391cf13-7078-51f8-bf34-4608dcb2d8db")
+	)
+	(text "100nF"
+		(exclude_from_sim no)
+		(at 109.22 84.58 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 132 0 0 1)
+			)
+			(justify left)
+		)
+		(uuid "6564aac7-04a1-526a-964c-1670fd6b6210")
+	)
+	(text "L1"
+		(exclude_from_sim no)
+		(at 121.92 57.15 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 132 0 0 1)
+			)
+			(justify left)
+		)
+		(uuid "a06313c2-bd41-5a7c-adb8-74e873715b6c")
+	)
+	(text "700Ω@100MHz"
+		(exclude_from_sim no)
+		(at 121.92 59.18 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 132 0 0 1)
+			)
+			(justify left)
+		)
+		(uuid "c87d2750-fe98-5270-807e-faf95398faab")
+	)
+	(text "C3"
+		(exclude_from_sim no)
+		(at 152.4 78.74 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 132 0 0 1)
+			)
+			(justify left)
+		)
+		(uuid "e2463ccb-36b4-5f16-97fc-8d1bfe791cf4")
+	)
+	(text "47µF"
+		(exclude_from_sim no)
+		(at 152.4 80.77 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 132 0 0 1)
+			)
+			(justify left)
+		)
+		(uuid "cede06ed-1751-54c9-a00e-8986cc061b2e")
+	)
+	(text "C2"
+		(exclude_from_sim no)
+		(at 165.1 78.74 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 132 0 0 1)
+			)
+			(justify left)
+		)
+		(uuid "299a45d1-2b44-55cf-998e-6aab8f6e03b0")
+	)
+	(text "1µF"
+		(exclude_from_sim no)
+		(at 165.1 80.77 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 132 0 0 1)
+			)
+			(justify left)
+		)
+		(uuid "66abf15a-d54a-5ee0-8663-3c08a8bc2383")
+	)
+	(text "C4"
+		(exclude_from_sim no)
+		(at 177.8 78.74 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 132 0 0 1)
+			)
+			(justify left)
+		)
+		(uuid "ed0eda26-e196-5706-a625-fdd07bcd4e69")
+	)
+	(text "100nF"
+		(exclude_from_sim no)
+		(at 177.8 80.77 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 132 0 0 1)
+			)
+			(justify left)
+		)
+		(uuid "e254e1f3-0582-5886-a170-02a627a8270d")
+	)
+	(text "C5"
+		(exclude_from_sim no)
+		(at 190.5 71.12 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 132 0 0 1)
+			)
+			(justify left)
+		)
+		(uuid "a0d64e70-df60-58d1-a13b-92d807d01e54")
+	)
+	(text "2.2nF"
+		(exclude_from_sim no)
+		(at 190.5 73.15 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 132 0 0 1)
+			)
+			(justify left)
+		)
+		(uuid "f9c4c194-abaf-5913-adf4-2b627eff211b")
+	)
+	(text "C6"
+		(exclude_from_sim no)
+		(at 203.2 89.41 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 132 0 0 1)
+			)
+			(justify left)
+		)
+		(uuid "cb79d976-e267-5eb6-9d7f-9debfbd313de")
+	)
+	(text "2.2nF"
+		(exclude_from_sim no)
+		(at 203.2 91.44 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 132 0 0 1)
+			)
+			(justify left)
+		)
+		(uuid "dc7b0c31-584e-54a9-8948-1cd57fb11e26")
+	)
+	(table
+		(column_count 2)
+		(border
+			(external yes)
+			(header yes)
+			(stroke
+				(width 0)
+				(type solid)
+			)
+		)
+		(separators
+			(rows yes)
+			(cols yes)
+			(stroke
+				(width 0)
+				(type solid)
+			)
+		)
+		(column_widths 13.3 50.5)
+		(row_heights 4.45 4.45 4.45 4.45 4.45 4.45 4.45 4.45 4.45 4.45 4.45 4.45 4.45 4.45 4.45 4.45 4.45 4.45)
+		(cells
+			(table_cell "Block"
+				(exclude_from_sim no)
+				(at 215.9 58.42 0)
+				(size 13.3 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "095a00f6-c80b-534a-8bc5-9db9fee9254a")
+			)
+			(table_cell "24V industrial DC input: fuse + surge +"
+				(exclude_from_sim no)
+				(at 229.2 58.42 0)
+				(size 50.5 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "7e47a4a5-c798-5a17-b3f7-3e008aac6ef5")
+			)
+			(table_cell ""
+				(exclude_from_sim no)
+				(at 215.9 62.87 0)
+				(size 13.3 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "79876314-7680-553f-8bdf-c588b8b8c6a4")
+			)
+			(table_cell "reverse polarity + CM filter"
+				(exclude_from_sim no)
+				(at 229.2 62.87 0)
+				(size 50.5 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "1666ba56-0a42-5661-be12-ac4fe0937024")
+			)
+			(table_cell "Rev"
+				(exclude_from_sim no)
+				(at 215.9 67.32 0)
+				(size 13.3 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "f673785b-6681-5a4e-9600-ed895680d8e9")
+			)
+			(table_cell "0.1"
+				(exclude_from_sim no)
+				(at 229.2 67.32 0)
+				(size 50.5 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "b40c5323-95c6-5ee0-b00e-5b214888ddec")
+			)
+			(table_cell "PWR In"
+				(exclude_from_sim no)
+				(at 215.9 71.77 0)
+				(size 13.3 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "848fb778-be36-56e4-9082-7bb955926886")
+			)
+			(table_cell "+24V_IN, 0V"
+				(exclude_from_sim no)
+				(at 229.2 71.77 0)
+				(size 50.5 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "6430ddb7-9ab2-52e0-b761-abf3f4540636")
+			)
+			(table_cell "PWR Out"
+				(exclude_from_sim no)
+				(at 215.9 76.22 0)
+				(size 13.3 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "26b44f1c-3d52-5978-9a21-f12771bcff44")
+			)
+			(table_cell "+24V, EARTH, GND"
+				(exclude_from_sim no)
+				(at 229.2 76.22 0)
+				(size 50.5 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "e73de232-868a-5e02-8709-cffae1109f89")
+			)
+			(table_cell "Input"
+				(exclude_from_sim no)
+				(at 215.9 80.67 0)
+				(size 13.3 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "3b820471-a4dd-5407-b096-51516c3f9142")
+			)
+			(table_cell "+24V DC field (12~36V), J1.2 = +, J1.1 ="
+				(exclude_from_sim no)
+				(at 229.2 80.67 0)
+				(size 50.5 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "89cabbe8-d0f8-5efa-9785-0d08f7e73bef")
+			)
+			(table_cell ""
+				(exclude_from_sim no)
+				(at 215.9 85.12 0)
+				(size 13.3 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "c69cce9f-e056-5f75-a44c-9bc7aa2f2bb0")
+			)
+			(table_cell "0V"
+				(exclude_from_sim no)
+				(at 229.2 85.12 0)
+				(size 50.5 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "dbd83895-d83e-5d71-8e69-fc9f18b571e1")
+			)
+			(table_cell "Output"
+				(exclude_from_sim no)
+				(at 215.9 89.57 0)
+				(size 13.3 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "06ca6f02-a065-5539-940a-52256e1305a2")
+			)
+			(table_cell "+24V filtered, 0.75A max (PTC hold)"
+				(exclude_from_sim no)
+				(at 229.2 89.57 0)
+				(size 50.5 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "5f4b662b-a583-5be6-a767-abbb8c09d271")
+			)
+			(table_cell "Fuse"
+				(exclude_from_sim no)
+				(at 215.9 94.02 0)
+				(size 13.3 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "73d4a27a-db36-5b4d-b862-b6347a865496")
+			)
+			(table_cell "MF-SM075/60 PTC 0.75A hold / 60V"
+				(exclude_from_sim no)
+				(at 229.2 94.02 0)
+				(size 50.5 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "8ad4223a-5c37-5d4c-a5ba-ce8848ea0220")
+			)
+			(table_cell "Surge"
+				(exclude_from_sim no)
+				(at 215.9 98.47 0)
+				(size 13.3 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "587cdf41-90c2-5245-b61d-88dbe41fd56c")
+			)
+			(table_cell "SMBJ33A 600W, clamp 53.3V max"
+				(exclude_from_sim no)
+				(at 229.2 98.47 0)
+				(size 50.5 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "0874202b-b766-53b3-83ef-d2c50d9606cb")
+			)
+			(table_cell "Reverse"
+				(exclude_from_sim no)
+				(at 215.9 102.92 0)
+				(size 13.3 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "9515bf98-d579-5428-885d-c4028609b9aa")
+			)
+			(table_cell "DMP6023LE P-FET -60V / 28mΩ (SLVA139"
+				(exclude_from_sim no)
+				(at 229.2 102.92 0)
+				(size 50.5 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "8a8f7817-f084-58b9-8d3a-c60834a3454b")
+			)
+			(table_cell ""
+				(exclude_from_sim no)
+				(at 215.9 107.37 0)
+				(size 13.3 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "4b0873db-e662-5c66-a022-104eee41368d")
+			)
+			(table_cell "Fig.3)"
+				(exclude_from_sim no)
+				(at 229.2 107.37 0)
+				(size 50.5 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "66220291-09ee-55db-8086-46887de4a3c0")
+			)
+			(table_cell "Inrush"
+				(exclude_from_sim no)
+				(at 215.9 111.82 0)
+				(size 13.3 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "d480c95e-ee72-50e7-ac16-1b948f51449f")
+			)
+			(table_cell "gate RC 100kΩ × 100nF ≈ 10ms soft start"
+				(exclude_from_sim no)
+				(at 229.2 111.82 0)
+				(size 50.5 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "28bd12fc-16a4-589c-8017-c30f6f8451a8")
+			)
+			(table_cell "VGS clamp"
+				(exclude_from_sim no)
+				(at 215.9 116.27 0)
+				(size 13.3 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "717cf9e8-912d-5d76-ae4f-c2918db7f62e")
+			)
+			(table_cell "BZT52C15 15V (FET limit ±20V)"
+				(exclude_from_sim no)
+				(at 229.2 116.27 0)
+				(size 50.5 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "48b3e8d6-161b-53ad-9022-035e38abd425")
+			)
+			(table_cell "CM filter"
+				(exclude_from_sim no)
+				(at 215.9 120.72 0)
+				(size 13.3 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "e9ce262c-4a7a-5f61-9eeb-ff05245f342d")
+			)
+			(table_cell "ACM9070 700Ω@100MHz, 80V/5A + Y caps"
+				(exclude_from_sim no)
+				(at 229.2 120.72 0)
+				(size 50.5 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "83a07b30-9dd2-5461-9724-ff27a81a82bf")
+			)
+			(table_cell "Y cap"
+				(exclude_from_sim no)
+				(at 215.9 125.17 0)
+				(size 13.3 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "497d9a25-61c9-580d-80bc-e52b60409873")
+			)
+			(table_cell "2.2nF 100V ×2 (line/GND → chassis)"
+				(exclude_from_sim no)
+				(at 229.2 125.17 0)
+				(size 50.5 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "1e47152a-4fee-5c26-9077-0be78c6e84de")
+			)
+			(table_cell "Bulk"
+				(exclude_from_sim no)
+				(at 215.9 129.62 0)
+				(size 13.3 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "fb358341-89ff-53c8-9a45-b42e4f0ae753")
+			)
+			(table_cell "47µF/100V polymer + 1µF + 100nF"
+				(exclude_from_sim no)
+				(at 229.2 129.62 0)
+				(size 50.5 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "5407934e-323f-53c1-b7e4-d7a42be6be7c")
+			)
+			(table_cell "Chassis"
+				(exclude_from_sim no)
+				(at 215.9 134.07 0)
+				(size 13.3 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "d0986858-8c63-5850-bebf-1e19a5e43462")
+			)
+			(table_cell "EARTH net required on the board (Y caps)"
+				(exclude_from_sim no)
+				(at 229.2 134.07 0)
+				(size 50.5 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "3e056530-a086-5c90-998c-ef18f4997a5c")
+			)
+		)
+	)
+
+	(symbol
+		(lib_id "PartReel:Terminal Block_2 Positions_Screw Connection")
+		(at 25.4 85.09 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "1c0491d8-a51e-519c-b166-db1e334e9638")
+		(property "Reference" "J1"
+			(at 17.78 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "24V IN 5.08mm"
+			(at 17.78 75.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "PCM_PartReel:cern_phoenix_1715721"
+			(at 25.4 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://partreel.com/p/cern_phoenix_1715721/"
+			(at 25.4 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PartReel" "cern_phoenix_1715721"
+			(at 25.4 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "0e6baa31-38b5-5957-b49e-a8e207fc7c2f")
+		)
+		(pin "2"
+			(uuid "60be2612-8f8b-5776-8b98-3bb7af18625c")
+		)
+		(instances
+			(project "emi_power_in"
+				(path "/2a1ae48a-ac3a-5ebc-a3da-429956a7afe7"
+					(reference "J1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PartReel:Fuse")
+		(at 50.8 63.5 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6a758e27-617f-55a9-8639-eb00ec155c92")
+		(property "Reference" "F1"
+			(at 50.8 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "0.75A 60V PTC"
+			(at 50.8 59.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "PCM_PartReel:cern_fusr_bourns_mf_sm075_60"
+			(at 50.8 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://partreel.com/p/cern_fusr_bourns_mf_sm075_60/"
+			(at 50.8 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PartReel" "cern_fusr_bourns_mf_sm075_60"
+			(at 50.8 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "676aaaff-6fa5-5138-9db3-5586fc7e83f0")
+		)
+		(pin "2"
+			(uuid "7fd48b0d-689c-54f8-9d52-68704e1c90bf")
+		)
+		(instances
+			(project "emi_power_in"
+				(path "/2a1ae48a-ac3a-5ebc-a3da-429956a7afe7"
+					(reference "F1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PartReel:SMBJ33A")
+		(at 71.12 78.74 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "7190d64b-3e7a-59aa-b308-d53b99cdaccd")
+		(property "Reference" "D1"
+			(at 73.66 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "SMBJ33A"
+			(at 73.66 80.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "PCM_PartReel:antmicro_smbj33a"
+			(at 71.12 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://partreel.com/p/antmicro_smbj33a/"
+			(at 71.12 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PartReel" "antmicro_smbj33a"
+			(at 71.12 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "870d8b73-c14b-5371-b260-14c03c234f62")
+		)
+		(pin "2"
+			(uuid "60caf75e-2a60-5b57-ad84-858d1e3a292f")
+		)
+		(instances
+			(project "emi_power_in"
+				(path "/2a1ae48a-ac3a-5ebc-a3da-429956a7afe7"
+					(reference "D1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PartReel:diodes_dmp6023le")
+		(at 91.44 63.5 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d93561d0-76d3-54d0-acd4-ef263970e2f6")
+		(property "Reference" "Q1"
+			(at 83.82 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "DMP6023LE"
+			(at 83.82 57.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "PCM_PartReel:diodes_dmp6023le"
+			(at 91.44 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://partreel.com/p/diodes_dmp6023le/"
+			(at 91.44 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PartReel" "diodes_dmp6023le"
+			(at 91.44 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ff7d89d5-9cc6-5636-8b5e-585a92df7972")
+		)
+		(pin "2"
+			(uuid "f3e10b7e-9432-5d06-8795-d038872ad6ec")
+		)
+		(pin "3"
+			(uuid "7839b6b6-ffb1-5dcb-b850-226f6d5373f2")
+		)
+		(instances
+			(project "emi_power_in"
+				(path "/2a1ae48a-ac3a-5ebc-a3da-429956a7afe7"
+					(reference "Q1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PartReel:R_100k_0603")
+		(at 91.44 87.63 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "7bc8d6b3-8f5a-500e-a700-576b6e708ac7")
+		(property "Reference" "R1"
+			(at 93.98 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "100kΩ"
+			(at 93.98 85.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "PCM_PartReel:antmicro_cr0603_fx_1003elf"
+			(at 91.44 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://partreel.com/p/antmicro_cr0603_fx_1003elf/"
+			(at 91.44 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PartReel" "antmicro_cr0603_fx_1003elf"
+			(at 91.44 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4fc4284c-f902-5fbb-83db-3314a3bd2866")
+		)
+		(pin "2"
+			(uuid "f0d8bc23-c48f-5eda-8f58-e94be1643ac4")
+		)
+		(instances
+			(project "emi_power_in"
+				(path "/2a1ae48a-ac3a-5ebc-a3da-429956a7afe7"
+					(reference "R1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PartReel:BZT52C15-7-F")
+		(at 101.6 68.58 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "7735dbfd-2993-50c6-a908-8820ab8f36d4")
+		(property "Reference" "D2"
+			(at 102.87 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "15V"
+			(at 102.87 84.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "PCM_PartReel:antmicro_bzt52c15_7_f"
+			(at 101.6 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://partreel.com/p/antmicro_bzt52c15_7_f/"
+			(at 101.6 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PartReel" "antmicro_bzt52c15_7_f"
+			(at 101.6 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "84aa9d13-9449-5838-be2e-2fec23e60cc7")
+		)
+		(pin "2"
+			(uuid "b6b35ab8-acb9-5ea8-b4a5-d1655e0865cd")
+		)
+		(instances
+			(project "emi_power_in"
+				(path "/2a1ae48a-ac3a-5ebc-a3da-429956a7afe7"
+					(reference "D2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PartReel:C_100n_100V_0805")
+		(at 109.22 68.58 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "2535ea3c-af92-543e-b617-2bf4f6823651")
+		(property "Reference" "C1"
+			(at 109.22 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "100nF"
+			(at 109.22 84.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "PCM_PartReel:antmicro_cl21b104kcfnnne"
+			(at 109.22 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://partreel.com/p/antmicro_cl21b104kcfnnne/"
+			(at 109.22 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PartReel" "antmicro_cl21b104kcfnnne"
+			(at 109.22 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3ccc1982-f457-5558-a424-c37d0d448360")
+		)
+		(pin "2"
+			(uuid "987e1495-c938-5729-8116-ba62e6c0136c")
+		)
+		(instances
+			(project "emi_power_in"
+				(path "/2a1ae48a-ac3a-5ebc-a3da-429956a7afe7"
+					(reference "C1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PartReel:Choke_ACM9070-701-2PL-TL01")
+		(at 121.92 63.5 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "1fddca5f-523b-5372-b582-4967db5218e1")
+		(property "Reference" "L1"
+			(at 121.92 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "700Ω@100MHz"
+			(at 121.92 59.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "PCM_PartReel:antmicro_acm9070_701_2pl_tl01"
+			(at 121.92 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://partreel.com/p/antmicro_acm9070_701_2pl_tl01/"
+			(at 121.92 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PartReel" "antmicro_acm9070_701_2pl_tl01"
+			(at 121.92 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "974cdffa-40b6-5199-8c5f-d338eaa49673")
+		)
+		(pin "2"
+			(uuid "1c740219-1636-51a2-9434-c0820046f68e")
+		)
+		(pin "3"
+			(uuid "4d818921-39bc-51f3-88f3-a56af5a9ef46")
+		)
+		(pin "4"
+			(uuid "3a570f1f-c719-511a-b6dd-fe596c3c0b0d")
+		)
+		(instances
+			(project "emi_power_in"
+				(path "/2a1ae48a-ac3a-5ebc-a3da-429956a7afe7"
+					(reference "L1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PartReel:C_Pol_47u_100V_KYOCERA-AVX-APZ-D10mm-H12.5mm")
+		(at 149.86 78.74 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "36d4d510-7535-56ab-8235-3a84069dbd66")
+		(property "Reference" "C3"
+			(at 152.4 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "47µF"
+			(at 152.4 80.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "PCM_PartReel:antmicro_apz1012470m100r"
+			(at 149.86 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://partreel.com/p/antmicro_apz1012470m100r/"
+			(at 149.86 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PartReel" "antmicro_apz1012470m100r"
+			(at 149.86 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ea8f16a6-1cd4-5b87-897c-e7abe67a8df8")
+		)
+		(pin "2"
+			(uuid "f41bf92c-67d7-51c9-a2f6-d76f703ed30e")
+		)
+		(instances
+			(project "emi_power_in"
+				(path "/2a1ae48a-ac3a-5ebc-a3da-429956a7afe7"
+					(reference "C3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PartReel:C_1u_100V_1210")
+		(at 162.56 78.74 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "20202979-3929-5114-8e43-94c4d1927bde")
+		(property "Reference" "C2"
+			(at 165.1 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "1µF"
+			(at 165.1 80.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "PCM_PartReel:antmicro_12101c105k4z2a"
+			(at 162.56 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://partreel.com/p/antmicro_12101c105k4z2a/"
+			(at 162.56 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PartReel" "antmicro_12101c105k4z2a"
+			(at 162.56 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f27939df-02f0-597e-b87c-81ccc6da7ed0")
+		)
+		(pin "2"
+			(uuid "34d5a1f7-3cb2-597e-b80b-9b28379b3535")
+		)
+		(instances
+			(project "emi_power_in"
+				(path "/2a1ae48a-ac3a-5ebc-a3da-429956a7afe7"
+					(reference "C2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PartReel:C_100n_100V_0805")
+		(at 175.26 78.74 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5d69dd03-dfff-5621-badd-328291ebb189")
+		(property "Reference" "C4"
+			(at 177.8 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "100nF"
+			(at 177.8 80.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "PCM_PartReel:antmicro_cl21b104kcfnnne"
+			(at 175.26 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://partreel.com/p/antmicro_cl21b104kcfnnne/"
+			(at 175.26 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PartReel" "antmicro_cl21b104kcfnnne"
+			(at 175.26 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "820b1243-535a-5f49-98f6-c47730d0ad6c")
+		)
+		(pin "2"
+			(uuid "abd0adcb-1bb9-5c0b-88e1-b1f5189ea9a1")
+		)
+		(instances
+			(project "emi_power_in"
+				(path "/2a1ae48a-ac3a-5ebc-a3da-429956a7afe7"
+					(reference "C4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PartReel:kemet_c0805c222k1ractu")
+		(at 187.96 73.66 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ff7dced1-9e72-5b45-808d-bbe42f22da39")
+		(property "Reference" "C5"
+			(at 190.5 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "2.2nF"
+			(at 190.5 73.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "PCM_PartReel:kemet_c0805c222k1ractu"
+			(at 187.96 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://partreel.com/p/kemet_c0805c222k1ractu/"
+			(at 187.96 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PartReel" "kemet_c0805c222k1ractu"
+			(at 187.96 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "0c80dd01-f415-5155-b988-298e90bfa69a")
+		)
+		(pin "2"
+			(uuid "25825d40-bf69-566c-a63b-06a5c6ba73b3")
+		)
+		(instances
+			(project "emi_power_in"
+				(path "/2a1ae48a-ac3a-5ebc-a3da-429956a7afe7"
+					(reference "C5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PartReel:kemet_c0805c222k1ractu")
+		(at 200.66 91.44 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "53b0b1bf-16bb-5d48-b6ae-82d5cbb8b8e5")
+		(property "Reference" "C6"
+			(at 203.2 89.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "2.2nF"
+			(at 203.2 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "PCM_PartReel:kemet_c0805c222k1ractu"
+			(at 200.66 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://partreel.com/p/kemet_c0805c222k1ractu/"
+			(at 200.66 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PartReel" "kemet_c0805c222k1ractu"
+			(at 200.66 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6a742db4-fbf7-5d16-9bb3-624a52f10ffc")
+		)
+		(pin "2"
+			(uuid "07a083c1-cdab-511d-ae2e-c9bc5f2c72a5")
+		)
+		(instances
+			(project "emi_power_in"
+				(path "/2a1ae48a-ac3a-5ebc-a3da-429956a7afe7"
+					(reference "C6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PartReelPwr:PR_P24V")
+		(at 195.58 63.5 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "613b6780-855d-5217-815c-a29a0a170c8d")
+		(property "Reference" "#PWR01"
+			(at 195.58 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+24V"
+			(at 195.58 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c05a6504-b629-5b39-8439-d402836eb567")
+		)
+		(instances
+			(project "emi_power_in"
+				(path "/2a1ae48a-ac3a-5ebc-a3da-429956a7afe7"
+					(reference "#PWR01")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PartReelPwr:PR_FLAG")
+		(at 144.78 63.5 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "3f53541e-8cd3-514c-b745-ff5a2c0e6212")
+		(property "Reference" "#FLG02"
+			(at 144.78 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+24V"
+			(at 144.78 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "da421313-505f-5632-aa32-368ab64ee602")
+		)
+		(instances
+			(project "emi_power_in"
+				(path "/2a1ae48a-ac3a-5ebc-a3da-429956a7afe7"
+					(reference "#FLG02")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PartReelPwr:PR_GND")
+		(at 205.74 99.06 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "c12c5c1d-8f1c-5e24-a7bb-3da77bc96526")
+		(property "Reference" "#PWR03"
+			(at 205.74 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 205.74 103.505 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "afee38e5-e9c8-5623-a81a-fa8a6d4c5434")
+		)
+		(instances
+			(project "emi_power_in"
+				(path "/2a1ae48a-ac3a-5ebc-a3da-429956a7afe7"
+					(reference "#PWR03")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PartReelPwr:PR_FLAG")
+		(at 144.78 99.06 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "edc06919-8d49-5839-a6ba-9fc4c6342003")
+		(property "Reference" "#FLG04"
+			(at 144.78 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 144.78 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6d3416a1-bf38-548a-b0ce-f0b883058c87")
+		)
+		(instances
+			(project "emi_power_in"
+				(path "/2a1ae48a-ac3a-5ebc-a3da-429956a7afe7"
+					(reference "#FLG04")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PartReelPwr:PR_EARTH")
+		(at 193.04 83.82 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "4173b5f9-b143-59bd-ac77-4d1efad19967")
+		(property "Reference" "#PWR05"
+			(at 193.04 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "EARTH"
+			(at 193.04 88.265 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "0f446884-722e-58d3-be14-c04136175a9b")
+		)
+		(instances
+			(project "emi_power_in"
+				(path "/2a1ae48a-ac3a-5ebc-a3da-429956a7afe7"
+					(reference "#PWR05")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PartReelPwr:PR_FLAG")
+		(at 195.58 83.82 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "ee801331-1400-5ba5-93b8-ffdc37fdde97")
+		(property "Reference" "#FLG06"
+			(at 195.58 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "EARTH"
+			(at 195.58 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "fd2c587a-0993-5124-a15e-f7b5189465b6")
+		)
+		(instances
+			(project "emi_power_in"
+				(path "/2a1ae48a-ac3a-5ebc-a3da-429956a7afe7"
+					(reference "#FLG06")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)

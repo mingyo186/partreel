@@ -2,34 +2,255 @@
 	(version 20250114)
 	(generator "partreel-block")
 	(generator_version "1.0")
-	(uuid "9c99d662-b61e-5ebd-9e13-1bae23c96d36")
+	(uuid "583b2d5f-8d7e-5170-8812-81b9341277d8")
 	(paper "A5")
 	(title_block
-		(title "ldo_3v3")
+		(title "vdda_split")
 		(company "PartReel block")
 		(rev "0.1")
 	)
 	(lib_symbols
-		(symbol "PartReel:ht7333" (in_bom yes) (on_board yes)
-		    (property "Reference" "U" (at 0 5.81 0) (effects (font (size 1.27 1.27))))
-		    (property "Value" "ht7333" (at 0 -5.81 0) (effects (font (size 1.27 1.27))))
-		    (property "Footprint" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
-		    (property "Datasheet" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
-		    (symbol "ht7333_1_1"
-		      (rectangle (start -8.89 3.81) (end 8.89 -3.81)
-		        (stroke (width 0.254) (type solid)) (fill (type background)))
-		      (pin passive line (at -11.43 1.27 0) (length 2.54)
-		        (name "VIN" (effects (font (size 1.27 1.27))))
-		        (number "2" (effects (font (size 1.27 1.27)))))
-		      (pin passive line (at -11.43 -1.27 0) (length 2.54)
-		        (name "GND" (effects (font (size 1.27 1.27))))
-		        (number "1" (effects (font (size 1.27 1.27)))))
-		      (pin passive line (at 11.43 1.27 180) (length 2.54)
-		        (name "VOUT" (effects (font (size 1.27 1.27))))
-		        (number "3" (effects (font (size 1.27 1.27)))))
-		    )
-		  )
-		(symbol "PartReel:C_10u_50V_X7R_1206"
+		(symbol "PartReel:FB_600Z_0.5A_Murata-BLM18AG_0603"
+					(pin_numbers
+						(hide yes)
+					)
+					(pin_names
+						(hide yes)
+					)
+					(exclude_from_sim no)
+					(in_bom yes)
+					(on_board yes)
+					(in_pos_files yes)
+					(duplicate_pin_numbers_are_jumpers no)
+					(property "Reference" "FB"
+						(at 15.24 0 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Value" "FB_600Z_0.5A_Murata-BLM18AG_0603"
+						(at 15.24 -2.54 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Footprint" "FB_600Z_0.5A_Murata-BLM18AG_0603"
+						(at 15.24 -7.62 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Datasheet" "https://www.murata.com/en-us/products/productdata/8796738650142/ENFA0003.pdf"
+						(at 15.24 -10.16 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Description" "Ferrite Bead, 0603 [1608 Metric], 600 ohm, 500 mA, BLM18A, 0.38 ohm, ± 25%, General use"
+						(at 15.24 -22.86 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "MPN" "BLM18AG601SN1D"
+						(at 15.24 -12.7 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Manufacturer" "Murata"
+						(at 15.24 -15.24 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Val" "600Z/0.5A"
+						(at 15.24 -5.08 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Current" ""
+						(at 20.32 -22.86 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "Author" "Antmicro"
+						(at 15.24 -17.78 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "License" "Apache-2.0"
+						(at 15.24 -20.32 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+								(thickness 0.15)
+							)
+							(justify left bottom)
+						)
+					)
+					(property "ki_keywords" "0603, SMT, FERRITE BEAD, PASSIVE, RoHS"
+						(at 0 0 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(symbol "FB_600Z_0.5A_Murata-BLM18AG_0603_0_1"
+						(polyline
+							(pts
+								(xy 1.651 0) (xy 1.2446 0)
+							)
+							(stroke
+								(width 0)
+								(type default)
+							)
+							(fill
+								(type none)
+							)
+						)
+						(polyline
+							(pts
+								(xy 2.2606 -1.8288) (xy 1.0414 -1.1176) (xy 2.7432 1.8288) (xy 3.9624 1.1176) (xy 2.2606 -1.8288)
+							)
+							(stroke
+								(width 0)
+								(type default)
+							)
+							(fill
+								(type none)
+							)
+						)
+						(polyline
+							(pts
+								(xy 3.81 0) (xy 3.3274 0)
+							)
+							(stroke
+								(width 0)
+								(type default)
+							)
+							(fill
+								(type none)
+							)
+						)
+					)
+					(symbol "FB_600Z_0.5A_Murata-BLM18AG_0603_1_1"
+						(pin passive line
+							(at 0 0 0)
+							(length 1.27)
+							(name ""
+								(effects
+									(font
+										(size 1.27 1.27)
+									)
+								)
+							)
+							(number "1"
+								(effects
+									(font
+										(size 1.27 1.27)
+									)
+								)
+							)
+						)
+						(pin passive line
+							(at 5.08 0 180)
+							(length 1.27)
+							(name ""
+								(effects
+									(font
+										(size 1.27 1.27)
+									)
+								)
+							)
+							(number "2"
+								(effects
+									(font
+										(size 1.27 1.27)
+									)
+								)
+							)
+						)
+					)
+					(embedded_fonts no)
+				)
+		(symbol "PartReel:C_100n_25V_0402"
 					(pin_numbers
 						(hide yes)
 					)
@@ -53,7 +274,7 @@
 							(justify left bottom)
 						)
 					)
-					(property "Value" "C_10u_50V_X7R_1206"
+					(property "Value" "C_100n_25V_0402"
 						(at 20.32 -10.16 0)
 						(show_name no)
 						(do_not_autoplace no)
@@ -66,7 +287,7 @@
 							(justify left bottom)
 						)
 					)
-					(property "Footprint" "C_10u_50V_X7R_1206"
+					(property "Footprint" "C_100n_25V_0402"
 						(at 20.32 -12.7 0)
 						(show_name no)
 						(do_not_autoplace no)
@@ -79,7 +300,7 @@
 							(justify left bottom)
 						)
 					)
-					(property "Datasheet" "https://product.tdk.com/en/search/capacitor/ceramic/mlcc/info?part_no=C3216X7R1H106K160AE"
+					(property "Datasheet" "https://product.samsungsem.com/mlcc/CL05A104KA5NNN.do"
 						(at 20.32 -15.24 0)
 						(show_name no)
 						(do_not_autoplace no)
@@ -92,7 +313,7 @@
 							(justify left bottom)
 						)
 					)
-					(property "Description" "SMD Multilayer Ceramic Capacitor, 10 µF, 50 V, 1206 [3216 Metric], ± 10%, X7R, C"
+					(property "Description" "Multilayer Ceramic Capacitors MLCC - SMD/SMT 100nF+/-10% 25V X5R 0402"
 						(at 20.32 -33.02 0)
 						(show_name no)
 						(do_not_autoplace no)
@@ -104,7 +325,7 @@
 							(justify left bottom)
 						)
 					)
-					(property "MPN" "C3216X7R1H106K160AE"
+					(property "MPN" "CL05A104KA5NNNC"
 						(at 20.32 -17.78 0)
 						(show_name no)
 						(do_not_autoplace no)
@@ -117,7 +338,7 @@
 							(justify left bottom)
 						)
 					)
-					(property "Manufacturer" "TDK"
+					(property "Manufacturer" "Samsung Electro-Mechanics"
 						(at 20.32 -20.32 0)
 						(show_name no)
 						(do_not_autoplace no)
@@ -156,7 +377,7 @@
 							(justify left bottom)
 						)
 					)
-					(property "Val" "10u"
+					(property "Val" "100n"
 						(at 20.32 -7.62 0)
 						(show_name no)
 						(do_not_autoplace no)
@@ -168,7 +389,7 @@
 							(justify left bottom)
 						)
 					)
-					(property "Voltage" "50V"
+					(property "Voltage" "25V"
 						(at 20.32 -27.94 0)
 						(show_name no)
 						(do_not_autoplace no)
@@ -180,7 +401,7 @@
 							(justify left bottom)
 						)
 					)
-					(property "Dielectric" ""
+					(property "Dielectric" "X5R"
 						(at 20.32 -30.48 0)
 						(show_name no)
 						(do_not_autoplace no)
@@ -192,7 +413,7 @@
 							(justify left bottom)
 						)
 					)
-					(symbol "C_10u_50V_X7R_1206_0_1"
+					(symbol "C_100n_25V_0402_0_1"
 						(polyline
 							(pts
 								(xy 2.032 -1.524) (xy 2.032 1.524)
@@ -218,7 +439,7 @@
 							)
 						)
 					)
-					(symbol "C_10u_50V_X7R_1206_1_1"
+					(symbol "C_100n_25V_0402_1_1"
 						(pin passive line
 							(at 0 0 0)
 							(length 2.032)
@@ -258,16 +479,21 @@
 					)
 					(embedded_fonts no)
 				)
-		(symbol "PartReelPwr:PR_P5V" (power) (pin_names (offset 0)) (in_bom no) (on_board yes)
-		  (property "Reference" "#PWR" (at 0 1.27 0) (effects (font (size 1.27 1.27)) (hide yes)))
-		  (property "Value" "+5V" (at 0 3.81 0) (effects (font (size 1.27 1.27))))
-		  (symbol "PR_P5V_1_1"
-		    (polyline (pts (xy 0 0) (xy 0 1.27)) (stroke (width 0.254) (type solid)) (fill (type none)))
-		    (polyline (pts (xy -0.762 1.27) (xy 0 2.54)) (stroke (width 0.254) (type solid)) (fill (type none)))
-		    (polyline (pts (xy 0 2.54) (xy 0.762 1.27)) (stroke (width 0.254) (type solid)) (fill (type none)))
-		    (polyline (pts (xy -0.762 1.27) (xy 0.762 1.27)) (stroke (width 0.254) (type solid)) (fill (type none)))
-		    (pin power_in line (at 0 0 270) (length 0) hide (name "+5V" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))
-		  ))
+		(symbol "PartReel:samsung_cl05a105ka5nnnc" (pin_numbers hide) (pin_names (offset 0) hide) (in_bom yes) (on_board yes)
+		    (property "Reference" "C" (at 0 2.54 0) (effects (font (size 1.27 1.27))))
+		    (property "Value" "1µF" (at 0 -2.54 0) (effects (font (size 1.27 1.27))))
+		    (symbol "samsung_cl05a105ka5nnnc_1_1"
+		      (polyline (pts (xy -0.508 1.524) (xy -0.508 -1.524))
+		        (stroke (width 0.3048) (type solid)) (fill (type none)))
+		      (polyline (pts (xy 0.508 1.524) (xy 0.508 -1.524))
+		        (stroke (width 0.3048) (type solid)) (fill (type none)))
+		      (pin passive line (at -3.81 0 0) (length 3.302)
+		        (name "~" (effects (font (size 1.27 1.27))))
+		        (number "1" (effects (font (size 1.27 1.27)))))
+		      (pin passive line (at 3.81 0 180) (length 3.302)
+		        (name "~" (effects (font (size 1.27 1.27))))
+		        (number "2" (effects (font (size 1.27 1.27)))))
+		    ))
 		(symbol "PartReelPwr:PR_P3V3" (power) (pin_names (offset 0)) (in_bom no) (on_board yes)
 		  (property "Reference" "#PWR" (at 0 1.27 0) (effects (font (size 1.27 1.27)) (hide yes)))
 		  (property "Value" "+3V3" (at 0 3.81 0) (effects (font (size 1.27 1.27))))
@@ -277,6 +503,16 @@
 		    (polyline (pts (xy 0 2.54) (xy 0.762 1.27)) (stroke (width 0.254) (type solid)) (fill (type none)))
 		    (polyline (pts (xy -0.762 1.27) (xy 0.762 1.27)) (stroke (width 0.254) (type solid)) (fill (type none)))
 		    (pin power_in line (at 0 0 270) (length 0) hide (name "+3V3" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))
+		  ))
+		(symbol "PartReelPwr:PR_P3V3A" (power) (pin_names (offset 0)) (in_bom no) (on_board yes)
+		  (property "Reference" "#PWR" (at 0 1.27 0) (effects (font (size 1.27 1.27)) (hide yes)))
+		  (property "Value" "+3V3A" (at 0 3.81 0) (effects (font (size 1.27 1.27))))
+		  (symbol "PR_P3V3A_1_1"
+		    (polyline (pts (xy 0 0) (xy 0 1.27)) (stroke (width 0.254) (type solid)) (fill (type none)))
+		    (polyline (pts (xy -0.762 1.27) (xy 0 2.54)) (stroke (width 0.254) (type solid)) (fill (type none)))
+		    (polyline (pts (xy 0 2.54) (xy 0.762 1.27)) (stroke (width 0.254) (type solid)) (fill (type none)))
+		    (polyline (pts (xy -0.762 1.27) (xy 0.762 1.27)) (stroke (width 0.254) (type solid)) (fill (type none)))
+		    (pin power_in line (at 0 0 270) (length 0) hide (name "+3V3A" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))
 		  ))
 		(symbol "PartReelPwr:PR_FLAG" (power) (pin_names (offset 0)) (in_bom no) (on_board yes)
 		  (property "Reference" "#PWR" (at 0 1.27 0) (effects (font (size 1.27 1.27)) (hide yes)))
@@ -301,117 +537,91 @@
 	)
 	(wire
 		(pts
-			(xy 44.45 57.15) (xy 52.07 57.15)
+			(xy 44.45 57.15) (xy 59.69 57.15)
 		)
 		(stroke
 			(width 0)
 			(type solid)
 		)
-		(uuid "4a3a98ae-599b-5939-a445-5273e70ff30e")
+		(uuid "4073d530-7758-5ac1-b46b-0d23cb7a2355")
 	)
 	(wire
 		(pts
-			(xy 74.93 57.15) (xy 85.09 57.15)
+			(xy 64.77 57.15) (xy 85.09 57.15)
 		)
 		(stroke
 			(width 0)
 			(type solid)
 		)
-		(uuid "ce7fd874-ebb3-5648-ae90-cac17d837fda")
+		(uuid "374f17c6-205f-55c1-bf56-66e4cb1184a7")
 	)
 	(wire
 		(pts
-			(xy 52.07 59.69) (xy 52.07 69.85)
+			(xy 69.85 57.15) (xy 69.85 60.96)
 		)
 		(stroke
 			(width 0)
 			(type solid)
 		)
-		(uuid "1b316404-d175-5959-b437-436569d1f968")
+		(uuid "f4ffb6b8-3e94-5ca3-9909-886f7cc50e78")
 	)
 	(wire
 		(pts
-			(xy 48.26 57.15) (xy 48.26 60.96)
+			(xy 69.85 66.04) (xy 69.85 69.85)
 		)
 		(stroke
 			(width 0)
 			(type solid)
 		)
-		(uuid "78e0e0c1-90ce-5ccf-8932-f58d4c9d726b")
+		(uuid "4642743b-63e7-5fae-a877-8b5694cb6f50")
 	)
 	(wire
 		(pts
-			(xy 48.26 66.04) (xy 48.26 69.85)
+			(xy 78.74 57.15) (xy 78.74 62.23)
 		)
 		(stroke
 			(width 0)
 			(type solid)
 		)
-		(uuid "6f334e12-7f68-5d8e-aa53-baf7423ee1b9")
+		(uuid "9c8b0828-85fc-53b3-97e0-a90891a2c8d7")
 	)
 	(wire
 		(pts
-			(xy 78.74 57.15) (xy 78.74 60.96)
+			(xy 69.85 69.85) (xy 78.74 69.85)
 		)
 		(stroke
 			(width 0)
 			(type solid)
 		)
-		(uuid "e786424f-edf2-5e52-a385-c368e7eab9b5")
-	)
-	(wire
-		(pts
-			(xy 78.74 66.04) (xy 78.74 69.85)
-		)
-		(stroke
-			(width 0)
-			(type solid)
-		)
-		(uuid "c1a03b61-4acc-536d-a44b-8c05e3e34379")
-	)
-	(wire
-		(pts
-			(xy 48.26 69.85) (xy 78.74 69.85)
-		)
-		(stroke
-			(width 0)
-			(type solid)
-		)
-		(uuid "c493eb0e-6eed-5b0a-ac95-5d207d5b7f0f")
-	)
-	(junction
-		(at 52.07 69.85)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "3e98bd6b-264e-5a14-92e7-34a4c54e0021")
-	)
-	(junction
-		(at 63.5 69.85)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "e14707f4-e625-5b07-b566-e2cb4f4a24c3")
-	)
-	(junction
-		(at 48.26 57.15)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "eed47d62-599a-546e-80d8-1e64707046b8")
-	)
-	(junction
-		(at 78.74 57.15)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "93c504b8-69bd-533d-8d89-4787bb7fc8ac")
+		(uuid "147db951-3891-5ee6-adbe-b020348c03ca")
 	)
 	(junction
 		(at 76.2 57.15)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "abbd0638-c40a-5842-9e4a-68226cc49cdf")
+		(uuid "b6479dac-76ec-551e-8995-d74fc4f24eee")
 	)
-	(text "U1"
+	(junction
+		(at 69.85 57.15)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "95076ab6-387d-5995-ac28-a197cacc319c")
+	)
+	(junction
+		(at 74.93 69.85)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0dd29ec2-1789-5a0f-943e-7a3a030b3c2c")
+	)
+	(junction
+		(at 78.74 57.15)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f6381790-d40b-56d0-92cc-e2d2c1d9a5f8")
+	)
+	(text "FB1"
 		(exclude_from_sim no)
-		(at 54.61 51.31 0)
+		(at 60.96 52.07 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -419,11 +629,11 @@
 			)
 			(justify left)
 		)
-		(uuid "b8926b27-f964-59a5-be78-cf395ec2d5b6")
+		(uuid "d2020ff8-d5d8-5bba-8bf3-7f41441a3b38")
 	)
-	(text "HT7333 3.3V"
+	(text "600Ω@100MHz"
 		(exclude_from_sim no)
-		(at 54.61 53.34 0)
+		(at 60.96 54.1 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -431,11 +641,11 @@
 			)
 			(justify left)
 		)
-		(uuid "9112d001-b5b8-59cf-a4c7-94cdb16b5fb8")
+		(uuid "ee382fd2-6641-57e6-829d-4b68332880c5")
 	)
 	(text "C1"
 		(exclude_from_sim no)
-		(at 40.64 62.48 0)
+		(at 72.64 62.48 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -443,11 +653,11 @@
 			)
 			(justify left)
 		)
-		(uuid "87a5546f-a289-566a-b35a-2541b7d3484c")
+		(uuid "0d5e9e4f-88ac-5491-b1c4-0b5e58ce469f")
 	)
-	(text "10µF"
+	(text "100nF"
 		(exclude_from_sim no)
-		(at 40.64 64.51 0)
+		(at 72.64 64.51 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -455,7 +665,7 @@
 			)
 			(justify left)
 		)
-		(uuid "bf4b921f-1366-5a28-aef9-f483e9f828d6")
+		(uuid "debadcfb-5352-577a-93f8-766653d967ae")
 	)
 	(text "C2"
 		(exclude_from_sim no)
@@ -467,9 +677,9 @@
 			)
 			(justify left)
 		)
-		(uuid "0b3e5def-d947-53a6-9d06-67659ea0bc43")
+		(uuid "48e3fdf8-8321-5f19-a659-2b751117d4cc")
 	)
-	(text "10µF"
+	(text "1µF"
 		(exclude_from_sim no)
 		(at 81.53 64.51 0)
 		(effects
@@ -479,7 +689,7 @@
 			)
 			(justify left)
 		)
-		(uuid "938aa5bd-04c6-5432-85b7-abc834a8b8f9")
+		(uuid "e1dfc3e5-974e-5584-bf15-0ba71abc6115")
 	)
 	(table
 		(column_count 2)
@@ -499,13 +709,13 @@
 				(type solid)
 			)
 		)
-		(column_widths 12.1 34.9)
-		(row_heights 4.45 4.45 4.45 4.45 4.45 4.45 4.45 4.45 4.45)
+		(column_widths 14.5 42.1)
+		(row_heights 4.45 4.45 4.45 4.45 4.45 4.45 4.45 4.45 4.45 4.45)
 		(cells
 			(table_cell "Block"
 				(exclude_from_sim no)
 				(at 96.52 50.8 0)
-				(size 12.1 4.45)
+				(size 14.5 4.45)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
 				(fill
@@ -517,12 +727,12 @@
 					)
 					(justify left top)
 				)
-				(uuid "22d69f25-5d89-56d6-8dbf-77142816f65b")
+				(uuid "6ec55cb1-7bb0-5001-b06b-32873618535d")
 			)
-			(table_cell "3.3V LDO regulator (HT7333)"
+			(table_cell "VDDA analog rail split (ferrite +"
 				(exclude_from_sim no)
-				(at 108.62 50.8 0)
-				(size 34.9 4.45)
+				(at 111.02 50.8 0)
+				(size 42.1 4.45)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
 				(fill
@@ -534,12 +744,46 @@
 					)
 					(justify left top)
 				)
-				(uuid "1fbd7d70-26fa-5c60-ab9b-238cd512e730")
+				(uuid "366b7cd9-eba1-5c21-a38f-6231016b62eb")
+			)
+			(table_cell ""
+				(exclude_from_sim no)
+				(at 96.52 55.25 0)
+				(size 14.5 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "884d61c6-3c63-54af-ad2f-aa613254af7b")
+			)
+			(table_cell "decoupling)"
+				(exclude_from_sim no)
+				(at 111.02 55.25 0)
+				(size 42.1 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "4bfbeef7-f487-59ea-a876-d16bc8fc4d2f")
 			)
 			(table_cell "Rev"
 				(exclude_from_sim no)
-				(at 96.52 55.25 0)
-				(size 12.1 4.45)
+				(at 96.52 59.7 0)
+				(size 14.5 4.45)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
 				(fill
@@ -551,12 +795,12 @@
 					)
 					(justify left top)
 				)
-				(uuid "f731f5ee-05ae-5311-990b-3dc4aaee81d5")
+				(uuid "0c43ccfe-0ada-5ba2-8358-41cc03cd9736")
 			)
 			(table_cell "0.1"
 				(exclude_from_sim no)
-				(at 108.62 55.25 0)
-				(size 34.9 4.45)
+				(at 111.02 59.7 0)
+				(size 42.1 4.45)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
 				(fill
@@ -568,12 +812,12 @@
 					)
 					(justify left top)
 				)
-				(uuid "d7c2dc4e-7fb6-593e-8d97-3839c0e6dbac")
+				(uuid "00f7f15d-657d-577b-90f9-705738332b8c")
 			)
 			(table_cell "PWR In"
 				(exclude_from_sim no)
-				(at 96.52 59.7 0)
-				(size 12.1 4.45)
+				(at 96.52 64.15 0)
+				(size 14.5 4.45)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
 				(fill
@@ -585,12 +829,12 @@
 					)
 					(justify left top)
 				)
-				(uuid "95c83a62-6381-52c9-8fa2-fdc3939130f9")
+				(uuid "00214bf2-dc7c-521d-b2a8-396e26fd5902")
 			)
-			(table_cell "+5V, GND"
+			(table_cell "+3V3, GND"
 				(exclude_from_sim no)
-				(at 108.62 59.7 0)
-				(size 34.9 4.45)
+				(at 111.02 64.15 0)
+				(size 42.1 4.45)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
 				(fill
@@ -602,12 +846,12 @@
 					)
 					(justify left top)
 				)
-				(uuid "6b3e6f21-4f82-5685-a8fb-77ffd097f167")
+				(uuid "ca13864f-59a3-572b-a556-1ab4294951cf")
 			)
 			(table_cell "PWR Out"
 				(exclude_from_sim no)
-				(at 96.52 64.15 0)
-				(size 12.1 4.45)
+				(at 96.52 68.6 0)
+				(size 14.5 4.45)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
 				(fill
@@ -619,12 +863,12 @@
 					)
 					(justify left top)
 				)
-				(uuid "13a4b90c-7410-54a8-baa0-726aee1c3b40")
+				(uuid "6ecc633d-49d4-5968-ac05-e7e040481a84")
 			)
-			(table_cell "+3V3"
+			(table_cell "+3V3A"
 				(exclude_from_sim no)
-				(at 108.62 64.15 0)
-				(size 34.9 4.45)
+				(at 111.02 68.6 0)
+				(size 42.1 4.45)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
 				(fill
@@ -636,12 +880,12 @@
 					)
 					(justify left top)
 				)
-				(uuid "1c901335-7102-50ed-bf86-4324e67a2def")
+				(uuid "ffa44f5b-8320-51ed-a235-32152da3fb75")
 			)
 			(table_cell "Input"
 				(exclude_from_sim no)
-				(at 96.52 68.6 0)
-				(size 12.1 4.45)
+				(at 96.52 73.05 0)
+				(size 14.5 4.45)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
 				(fill
@@ -653,12 +897,12 @@
 					)
 					(justify left top)
 				)
-				(uuid "6de6b618-d327-5312-bc60-cb64717f60a8")
+				(uuid "4660cecb-1fb9-55fe-a810-6328edd5ca24")
 			)
-			(table_cell "+5V"
+			(table_cell "+3V3 (digital rail)"
 				(exclude_from_sim no)
-				(at 108.62 68.6 0)
-				(size 34.9 4.45)
+				(at 111.02 73.05 0)
+				(size 42.1 4.45)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
 				(fill
@@ -670,46 +914,12 @@
 					)
 					(justify left top)
 				)
-				(uuid "850deb61-a755-5af1-b418-a9ba564c9654")
+				(uuid "1be4aa4c-2825-5684-a71b-f1b5f12eda8a")
 			)
 			(table_cell "Output"
 				(exclude_from_sim no)
-				(at 96.52 73.05 0)
-				(size 12.1 4.45)
-				(margins 0.9525 0.9525 0.9525 0.9525)
-				(span 1 1)
-				(fill
-					(type none)
-				)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-				)
-				(uuid "0a843b32-c2a1-5c6e-acc6-bc58cb826c28")
-			)
-			(table_cell "+3V3 (300mV dropout)"
-				(exclude_from_sim no)
-				(at 108.62 73.05 0)
-				(size 34.9 4.45)
-				(margins 0.9525 0.9525 0.9525 0.9525)
-				(span 1 1)
-				(fill
-					(type none)
-				)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-				)
-				(uuid "ab67b78c-c54b-5537-8ab7-2545328bdfb7")
-			)
-			(table_cell "Current"
-				(exclude_from_sim no)
 				(at 96.52 77.5 0)
-				(size 12.1 4.45)
+				(size 14.5 4.45)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
 				(fill
@@ -721,12 +931,12 @@
 					)
 					(justify left top)
 				)
-				(uuid "f2951cb6-3d37-5441-ab09-22bdc2711e83")
+				(uuid "fc23c8c7-643b-56b5-bb74-cea84927afa9")
 			)
-			(table_cell "250mA max"
+			(table_cell "+3V3A (analog rail)"
 				(exclude_from_sim no)
-				(at 108.62 77.5 0)
-				(size 34.9 4.45)
+				(at 111.02 77.5 0)
+				(size 42.1 4.45)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
 				(fill
@@ -738,12 +948,12 @@
 					)
 					(justify left top)
 				)
-				(uuid "134768aa-6ad8-55b0-9794-91fe0f92d87b")
+				(uuid "f05625bf-a680-5f02-acc4-be7cf0e9f4d0")
 			)
-			(table_cell "Cin/Cout"
+			(table_cell "Bead"
 				(exclude_from_sim no)
 				(at 96.52 81.95 0)
-				(size 12.1 4.45)
+				(size 14.5 4.45)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
 				(fill
@@ -755,12 +965,12 @@
 					)
 					(justify left top)
 				)
-				(uuid "596c52ea-1d58-596a-8482-11c7a3fc443d")
+				(uuid "506f45ac-438b-5336-964d-49002601a27f")
 			)
-			(table_cell "10uF X7R 1206"
+			(table_cell "600Ω@100MHz 0603 (BLM18AG601)"
 				(exclude_from_sim no)
-				(at 108.62 81.95 0)
-				(size 34.9 4.45)
+				(at 111.02 81.95 0)
+				(size 42.1 4.45)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
 				(fill
@@ -772,12 +982,46 @@
 					)
 					(justify left top)
 				)
-				(uuid "4325e685-f9fe-5705-a83a-f0cdc672d499")
+				(uuid "5be20eda-accb-5ab7-9267-51a09e53b689")
+			)
+			(table_cell "Decoupling"
+				(exclude_from_sim no)
+				(at 96.52 86.4 0)
+				(size 14.5 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "dd4542be-c358-51b1-a2e4-6826b17728ef")
+			)
+			(table_cell "100nF + 1µF (DS12589 Fig.16)"
+				(exclude_from_sim no)
+				(at 111.02 86.4 0)
+				(size 42.1 4.45)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "ec3354c8-827a-5fb7-9338-9f3568445cc8")
 			)
 			(table_cell "Source"
 				(exclude_from_sim no)
-				(at 96.52 86.4 0)
-				(size 12.1 4.45)
+				(at 96.52 90.85 0)
+				(size 14.5 4.45)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
 				(fill
@@ -789,12 +1033,12 @@
 					)
 					(justify left top)
 				)
-				(uuid "f5118be0-4ea6-5c8e-8404-7004963c873d")
+				(uuid "9f6e0a11-e356-5295-98dc-6c6480f112fb")
 			)
-			(table_cell "Holtek HT73xx DS v1.80"
+			(table_cell "DS12589 p.68 / CV8"
 				(exclude_from_sim no)
-				(at 108.62 86.4 0)
-				(size 34.9 4.45)
+				(at 111.02 90.85 0)
+				(size 42.1 4.45)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
 				(fill
@@ -806,22 +1050,22 @@
 					)
 					(justify left top)
 				)
-				(uuid "100ffc89-22ed-5962-8bd5-987ee03caef5")
+				(uuid "b6aa39d3-d653-52a2-9bad-518daa92cf7f")
 			)
 		)
 	)
 
 	(symbol
-		(lib_id "PartReel:ht7333")
-		(at 63.5 58.42 0)
+		(lib_id "PartReel:FB_600Z_0.5A_Murata-BLM18AG_0603")
+		(at 59.69 57.15 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "84abc9fd-e7eb-55e1-b632-979dfb48f899")
-		(property "Reference" "U1"
-			(at 54.61 51.31 0)
+		(uuid "7f348394-281a-5174-b956-f832b24ba326")
+		(property "Reference" "FB1"
+			(at 60.96 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -829,8 +1073,8 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "HT7333 3.3V"
-			(at 54.61 53.34 0)
+		(property "Value" "600Ω@100MHz"
+			(at 60.96 54.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -838,8 +1082,8 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "PCM_PartReel:ht7333"
-			(at 63.5 58.42 0)
+		(property "Footprint" "PCM_PartReel:antmicro_blm18ag601sn1d"
+			(at 59.69 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -847,8 +1091,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://partreel.com/p/ht7333/"
-			(at 63.5 58.42 0)
+		(property "Datasheet" "https://partreel.com/p/antmicro_blm18ag601sn1d/"
+			(at 59.69 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -856,44 +1100,41 @@
 				(hide yes)
 			)
 		)
-		(property "PartReel" "ht7333"
-			(at 63.5 58.42 0)
+		(property "PartReel" "antmicro_blm18ag601sn1d"
+			(at 59.69 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
 			)
-		)
-		(pin "2"
-			(uuid "dc2b9495-1cd7-5046-bc65-fa6d70933131")
 		)
 		(pin "1"
-			(uuid "1c0c4945-3fbc-555c-a9e0-2153b703d1b2")
+			(uuid "06dd27ec-8c1c-5eac-8c40-4b689deb97af")
 		)
-		(pin "3"
-			(uuid "17393227-7e7b-55d7-82b3-fa4611831af5")
+		(pin "2"
+			(uuid "eda68177-a8c0-5642-af39-23e648a1ed2b")
 		)
 		(instances
-			(project "ldo_3v3"
-				(path "/9c99d662-b61e-5ebd-9e13-1bae23c96d36"
-					(reference "U1")
+			(project "vdda_split"
+				(path "/583b2d5f-8d7e-5170-8812-81b9341277d8"
+					(reference "FB1")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "PartReel:C_10u_50V_X7R_1206")
-		(at 48.26 66.04 90)
+		(lib_id "PartReel:C_100n_25V_0402")
+		(at 69.85 66.04 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "32bd9330-d04a-57eb-ae04-ac4ecc3c40df")
+		(uuid "c277d611-4099-5e23-a08a-62db244f35c1")
 		(property "Reference" "C1"
-			(at 40.64 62.48 0)
+			(at 72.64 62.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -901,8 +1142,8 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "10µF"
-			(at 40.64 64.51 0)
+		(property "Value" "100nF"
+			(at 72.64 64.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -910,8 +1151,8 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "PCM_PartReel:antmicro_c3216x7r1h106k160ae"
-			(at 48.26 66.04 0)
+		(property "Footprint" "PCM_PartReel:antmicro_cl05a104ka5nnnc"
+			(at 69.85 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -919,8 +1160,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://partreel.com/p/antmicro_c3216x7r1h106k160ae/"
-			(at 48.26 66.04 0)
+		(property "Datasheet" "https://partreel.com/p/antmicro_cl05a104ka5nnnc/"
+			(at 69.85 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -928,8 +1169,8 @@
 				(hide yes)
 			)
 		)
-		(property "PartReel" "antmicro_c3216x7r1h106k160ae"
-			(at 48.26 66.04 0)
+		(property "PartReel" "antmicro_cl05a104ka5nnnc"
+			(at 69.85 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -938,14 +1179,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "e269ddea-fbda-5b0e-9468-0e58faeec0b1")
+			(uuid "2d5c3ae5-3373-58c3-9f1d-d232608e2b04")
 		)
 		(pin "2"
-			(uuid "cb6652da-6987-59b1-b5b7-27d877daea9b")
+			(uuid "ea9c3c7a-1890-562a-9126-eca3e244d645")
 		)
 		(instances
-			(project "ldo_3v3"
-				(path "/9c99d662-b61e-5ebd-9e13-1bae23c96d36"
+			(project "vdda_split"
+				(path "/583b2d5f-8d7e-5170-8812-81b9341277d8"
 					(reference "C1")
 					(unit 1)
 				)
@@ -953,14 +1194,14 @@
 		)
 	)
 	(symbol
-		(lib_id "PartReel:C_10u_50V_X7R_1206")
+		(lib_id "PartReel:samsung_cl05a105ka5nnnc")
 		(at 78.74 66.04 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "47fc14a0-783f-55f2-b3d5-75eff3b6311c")
+		(uuid "affc24aa-1b87-52b7-a934-e0930a27d318")
 		(property "Reference" "C2"
 			(at 81.53 62.48 0)
 			(effects
@@ -970,7 +1211,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "10µF"
+		(property "Value" "1µF"
 			(at 81.53 64.51 0)
 			(effects
 				(font
@@ -979,7 +1220,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "PCM_PartReel:antmicro_c3216x7r1h106k160ae"
+		(property "Footprint" "PCM_PartReel:samsung_cl05a105ka5nnnc"
 			(at 78.74 66.04 0)
 			(effects
 				(font
@@ -988,7 +1229,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://partreel.com/p/antmicro_c3216x7r1h106k160ae/"
+		(property "Datasheet" "https://partreel.com/p/samsung_cl05a105ka5nnnc/"
 			(at 78.74 66.04 0)
 			(effects
 				(font
@@ -997,7 +1238,7 @@
 				(hide yes)
 			)
 		)
-		(property "PartReel" "antmicro_c3216x7r1h106k160ae"
+		(property "PartReel" "samsung_cl05a105ka5nnnc"
 			(at 78.74 66.04 0)
 			(effects
 				(font
@@ -1007,14 +1248,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "94f17af6-6e30-5b21-9f56-14d1da69ee10")
+			(uuid "3a3483bd-22ed-5aa5-a1fd-2ae9c40e9f99")
 		)
 		(pin "2"
-			(uuid "7170aba2-0f98-52c8-becf-6666a602428c")
+			(uuid "c9965f9b-66a0-5911-afc0-b2e6b2702633")
 		)
 		(instances
-			(project "ldo_3v3"
-				(path "/9c99d662-b61e-5ebd-9e13-1bae23c96d36"
+			(project "vdda_split"
+				(path "/583b2d5f-8d7e-5170-8812-81b9341277d8"
 					(reference "C2")
 					(unit 1)
 				)
@@ -1022,14 +1263,14 @@
 		)
 	)
 	(symbol
-		(lib_id "PartReelPwr:PR_P5V")
+		(lib_id "PartReelPwr:PR_P3V3")
 		(at 44.45 57.15 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "03351123-ca36-5855-aa4f-aee4e0310c8e")
+		(uuid "82c189cc-5a6c-5551-b49c-ff7e0f8d4023")
 		(property "Reference" "#PWR01"
 			(at 44.45 62.23 0)
 			(effects
@@ -1039,7 +1280,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "+5V"
+		(property "Value" "+3V3"
 			(at 44.45 53.34 0)
 			(effects
 				(font
@@ -1048,11 +1289,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "7a23a9c2-cdc7-526f-bbcd-cf27f7bb61b9")
+			(uuid "6393e000-88f5-51a0-a0e5-3fb9a71ae6d7")
 		)
 		(instances
-			(project "ldo_3v3"
-				(path "/9c99d662-b61e-5ebd-9e13-1bae23c96d36"
+			(project "vdda_split"
+				(path "/583b2d5f-8d7e-5170-8812-81b9341277d8"
 					(reference "#PWR01")
 					(unit 1)
 				)
@@ -1060,14 +1301,14 @@
 		)
 	)
 	(symbol
-		(lib_id "PartReelPwr:PR_P3V3")
+		(lib_id "PartReelPwr:PR_P3V3A")
 		(at 85.09 57.15 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "c63a1bf7-4161-53ad-af39-b9b72f06c12a")
+		(uuid "2c55c3a4-32bb-5bce-8afd-6ce3b9396657")
 		(property "Reference" "#PWR02"
 			(at 85.09 62.23 0)
 			(effects
@@ -1077,7 +1318,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "+3V3"
+		(property "Value" "+3V3A"
 			(at 85.09 53.34 0)
 			(effects
 				(font
@@ -1086,11 +1327,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "64d686a4-fa79-5455-8262-367dead0f19b")
+			(uuid "c8c6a0a3-69c7-5921-9dd6-d4ebf537ca48")
 		)
 		(instances
-			(project "ldo_3v3"
-				(path "/9c99d662-b61e-5ebd-9e13-1bae23c96d36"
+			(project "vdda_split"
+				(path "/583b2d5f-8d7e-5170-8812-81b9341277d8"
 					(reference "#PWR02")
 					(unit 1)
 				)
@@ -1105,7 +1346,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "3de6c668-348c-5dc4-9b12-77d6976615de")
+		(uuid "627c95a6-a8d3-550b-b3b0-e11e807cae13")
 		(property "Reference" "#FLG03"
 			(at 76.2 62.23 0)
 			(effects
@@ -1115,7 +1356,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "+3V3"
+		(property "Value" "+3V3A"
 			(at 76.2 53.34 0)
 			(effects
 				(font
@@ -1125,11 +1366,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "7b16123d-7408-5a01-a872-949f433f9f4c")
+			(uuid "14a993f9-2d87-5cd7-8f55-ffd0f8665510")
 		)
 		(instances
-			(project "ldo_3v3"
-				(path "/9c99d662-b61e-5ebd-9e13-1bae23c96d36"
+			(project "vdda_split"
+				(path "/583b2d5f-8d7e-5170-8812-81b9341277d8"
 					(reference "#FLG03")
 					(unit 1)
 				)
@@ -1138,15 +1379,15 @@
 	)
 	(symbol
 		(lib_id "PartReelPwr:PR_GND")
-		(at 63.5 69.85 0)
+		(at 74.93 69.85 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "dadfb4dc-7150-55ec-a012-74d94cad2a01")
+		(uuid "7ec60794-f8ce-5e2f-9c36-80720b84ca22")
 		(property "Reference" "#PWR04"
-			(at 63.5 74.93 0)
+			(at 74.93 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1155,7 +1396,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 63.5 74.295 0)
+			(at 74.93 74.295 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1163,11 +1404,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "35700e6c-c0ba-56bd-bd81-7c407f0f0ef4")
+			(uuid "53dcb9cc-06a5-5dfd-8447-f73b6fabff6c")
 		)
 		(instances
-			(project "ldo_3v3"
-				(path "/9c99d662-b61e-5ebd-9e13-1bae23c96d36"
+			(project "vdda_split"
+				(path "/583b2d5f-8d7e-5170-8812-81b9341277d8"
 					(reference "#PWR04")
 					(unit 1)
 				)

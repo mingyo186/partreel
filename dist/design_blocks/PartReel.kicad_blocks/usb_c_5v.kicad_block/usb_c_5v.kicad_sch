@@ -3,11 +3,11 @@
 	(generator "partreel-block")
 	(generator_version "1.0")
 	(uuid "1e7f6e26-aef5-5b5a-9b6b-7863eb96da55")
-	(paper "A5")
+	(paper "A4")
 	(title_block
-		(title "USB-C 5V power input (UFP sink)")
+		(title "usb_c_5v")
 		(company "PartReel block")
-		(rev "0.2")
+		(rev "0.4")
 	)
 	(lib_symbols
 		(symbol "PartReel:usb_c_16p" (in_bom yes) (on_board yes)
@@ -1193,13 +1193,13 @@
 				(type solid)
 			)
 		)
-		(column_widths 13.5 35.05)
+		(column_widths 14.5 39.7)
 		(row_heights 4.45 4.45 4.45 4.45 4.45 4.45 4.45 4.45 4.45 4.45)
 		(cells
 			(table_cell "Block"
 				(exclude_from_sim no)
-				(at 46.99 86.36 0)
-				(size 13.5 4.45)
+				(at 152.4 35.56 0)
+				(size 14.5 4.45)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
 				(fill
@@ -1215,8 +1215,8 @@
 			)
 			(table_cell "USB-C 5V power input (UFP sink)"
 				(exclude_from_sim no)
-				(at 60.49 86.36 0)
-				(size 35.05 4.45)
+				(at 166.9 35.56 0)
+				(size 39.7 4.45)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
 				(fill
@@ -1232,8 +1232,8 @@
 			)
 			(table_cell "Rev"
 				(exclude_from_sim no)
-				(at 46.99 90.81 0)
-				(size 13.5 4.45)
+				(at 152.4 40.01 0)
+				(size 14.5 4.45)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
 				(fill
@@ -1247,10 +1247,10 @@
 				)
 				(uuid "7ab32b68-cc2f-5c0f-a0cb-58de5bdaa48e")
 			)
-			(table_cell "0.2"
+			(table_cell "0.4"
 				(exclude_from_sim no)
-				(at 60.49 90.81 0)
-				(size 35.05 4.45)
+				(at 166.9 40.01 0)
+				(size 39.7 4.45)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
 				(fill
@@ -1266,8 +1266,8 @@
 			)
 			(table_cell "PWR Out"
 				(exclude_from_sim no)
-				(at 46.99 95.26 0)
-				(size 13.5 4.45)
+				(at 152.4 44.46 0)
+				(size 14.5 4.45)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
 				(fill
@@ -1283,8 +1283,8 @@
 			)
 			(table_cell "+5V, GND"
 				(exclude_from_sim no)
-				(at 60.49 95.26 0)
-				(size 35.05 4.45)
+				(at 166.9 44.46 0)
+				(size 39.7 4.45)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
 				(fill
@@ -1300,8 +1300,8 @@
 			)
 			(table_cell "I/O"
 				(exclude_from_sim no)
-				(at 46.99 99.71 0)
-				(size 13.5 4.45)
+				(at 152.4 48.91 0)
+				(size 14.5 4.45)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
 				(fill
@@ -1317,8 +1317,8 @@
 			)
 			(table_cell "USB_DM, USB_DP"
 				(exclude_from_sim no)
-				(at 60.49 99.71 0)
-				(size 35.05 4.45)
+				(at 166.9 48.91 0)
+				(size 39.7 4.45)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
 				(fill
@@ -1334,8 +1334,8 @@
 			)
 			(table_cell "Input"
 				(exclude_from_sim no)
-				(at 46.99 104.16 0)
-				(size 13.5 4.45)
+				(at 152.4 53.36 0)
+				(size 14.5 4.45)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
 				(fill
@@ -1351,8 +1351,8 @@
 			)
 			(table_cell "USB-C VBUS 5V"
 				(exclude_from_sim no)
-				(at 60.49 104.16 0)
-				(size 35.05 4.45)
+				(at 166.9 53.36 0)
+				(size 39.7 4.45)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
 				(fill
@@ -1368,8 +1368,8 @@
 			)
 			(table_cell "Role"
 				(exclude_from_sim no)
-				(at 46.99 108.61 0)
-				(size 13.5 4.45)
+				(at 152.4 57.81 0)
+				(size 14.5 4.45)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
 				(fill
@@ -1385,8 +1385,8 @@
 			)
 			(table_cell "UFP sink (Rd 5.1k)"
 				(exclude_from_sim no)
-				(at 60.49 108.61 0)
-				(size 35.05 4.45)
+				(at 166.9 57.81 0)
+				(size 39.7 4.45)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
 				(fill
@@ -1402,8 +1402,8 @@
 			)
 			(table_cell "Data"
 				(exclude_from_sim no)
-				(at 46.99 113.06 0)
-				(size 13.5 4.45)
+				(at 152.4 62.26 0)
+				(size 14.5 4.45)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
 				(fill
@@ -1419,8 +1419,8 @@
 			)
 			(table_cell "USB 2.0 D+/D- pass-through"
 				(exclude_from_sim no)
-				(at 60.49 113.06 0)
-				(size 35.05 4.45)
+				(at 166.9 62.26 0)
+				(size 39.7 4.45)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
 				(fill
@@ -1436,8 +1436,8 @@
 			)
 			(table_cell "ESD"
 				(exclude_from_sim no)
-				(at 46.99 117.51 0)
-				(size 13.5 4.45)
+				(at 152.4 66.71 0)
+				(size 14.5 4.45)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
 				(fill
@@ -1453,8 +1453,8 @@
 			)
 			(table_cell "USBLC6-2P6 flow-through (CV2)"
 				(exclude_from_sim no)
-				(at 60.49 117.51 0)
-				(size 35.05 4.45)
+				(at 166.9 66.71 0)
+				(size 39.7 4.45)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
 				(fill
@@ -1470,8 +1470,8 @@
 			)
 			(table_cell "TODO rev B"
 				(exclude_from_sim no)
-				(at 46.99 121.96 0)
-				(size 13.5 4.45)
+				(at 152.4 71.16 0)
+				(size 14.5 4.45)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
 				(fill
@@ -1487,8 +1487,8 @@
 			)
 			(table_cell "ESD array + polyfuse"
 				(exclude_from_sim no)
-				(at 60.49 121.96 0)
-				(size 35.05 4.45)
+				(at 166.9 71.16 0)
+				(size 39.7 4.45)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
 				(fill
@@ -1504,8 +1504,8 @@
 			)
 			(table_cell "Source"
 				(exclude_from_sim no)
-				(at 46.99 126.41 0)
-				(size 13.5 4.45)
+				(at 152.4 75.61 0)
+				(size 14.5 4.45)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
 				(fill
@@ -1521,8 +1521,8 @@
 			)
 			(table_cell "USB Type-C spec R2.2 4.5.1.2.3"
 				(exclude_from_sim no)
-				(at 60.49 126.41 0)
-				(size 35.05 4.45)
+				(at 166.9 75.61 0)
+				(size 39.7 4.45)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
 				(fill

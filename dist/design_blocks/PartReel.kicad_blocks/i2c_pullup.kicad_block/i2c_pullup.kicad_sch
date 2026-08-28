@@ -5,9 +5,9 @@
 	(uuid "88c20499-12c4-55db-87e1-1878c60b6e75")
 	(paper "A5")
 	(title_block
-		(title "I2C pull-up (3.3V, 1.8k)")
+		(title "i2c_pullup")
 		(company "PartReel block")
-		(rev "0.2")
+		(rev "0.3")
 	)
 	(lib_symbols
 		(symbol "PartReel:R_1k8_0402"
@@ -369,13 +369,13 @@
 				(type solid)
 			)
 		)
-		(column_widths 10.2 27.7)
+		(column_widths 10.9 31.3)
 		(row_heights 4.45 4.45 4.45 4.45 4.45 4.45 4.45 4.45)
 		(cells
 			(table_cell "Block"
 				(exclude_from_sim no)
-				(at 95.25 45.72 0)
-				(size 10.2 4.45)
+				(at 93.98 45.72 0)
+				(size 10.9 4.45)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
 				(fill
@@ -391,8 +391,8 @@
 			)
 			(table_cell "I2C pull-up (3.3V, 1.8k)"
 				(exclude_from_sim no)
-				(at 105.45 45.72 0)
-				(size 27.7 4.45)
+				(at 104.88 45.72 0)
+				(size 31.3 4.45)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
 				(fill
@@ -408,8 +408,8 @@
 			)
 			(table_cell "Rev"
 				(exclude_from_sim no)
-				(at 95.25 50.17 0)
-				(size 10.2 4.45)
+				(at 93.98 50.17 0)
+				(size 10.9 4.45)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
 				(fill
@@ -423,10 +423,10 @@
 				)
 				(uuid "386cd577-b8f3-530d-b365-095e0a29553e")
 			)
-			(table_cell "0.2"
+			(table_cell "0.3"
 				(exclude_from_sim no)
-				(at 105.45 50.17 0)
-				(size 27.7 4.45)
+				(at 104.88 50.17 0)
+				(size 31.3 4.45)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
 				(fill
@@ -442,8 +442,8 @@
 			)
 			(table_cell "PWR In"
 				(exclude_from_sim no)
-				(at 95.25 54.62 0)
-				(size 10.2 4.45)
+				(at 93.98 54.62 0)
+				(size 10.9 4.45)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
 				(fill
@@ -459,8 +459,8 @@
 			)
 			(table_cell "+3V3"
 				(exclude_from_sim no)
-				(at 105.45 54.62 0)
-				(size 27.7 4.45)
+				(at 104.88 54.62 0)
+				(size 31.3 4.45)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
 				(fill
@@ -476,8 +476,8 @@
 			)
 			(table_cell "I/O"
 				(exclude_from_sim no)
-				(at 95.25 59.07 0)
-				(size 10.2 4.45)
+				(at 93.98 59.07 0)
+				(size 10.9 4.45)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
 				(fill
@@ -493,8 +493,8 @@
 			)
 			(table_cell "SCL, SDA"
 				(exclude_from_sim no)
-				(at 105.45 59.07 0)
-				(size 27.7 4.45)
+				(at 104.88 59.07 0)
+				(size 31.3 4.45)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
 				(fill
@@ -510,8 +510,8 @@
 			)
 			(table_cell "Bus"
 				(exclude_from_sim no)
-				(at 95.25 63.52 0)
-				(size 10.2 4.45)
+				(at 93.98 63.52 0)
+				(size 10.9 4.45)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
 				(fill
@@ -527,8 +527,8 @@
 			)
 			(table_cell "I2C Fast-mode 400kHz"
 				(exclude_from_sim no)
-				(at 105.45 63.52 0)
-				(size 27.7 4.45)
+				(at 104.88 63.52 0)
+				(size 31.3 4.45)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
 				(fill
@@ -544,8 +544,8 @@
 			)
 			(table_cell "Pull-up"
 				(exclude_from_sim no)
-				(at 95.25 67.97 0)
-				(size 10.2 4.45)
+				(at 93.98 67.97 0)
+				(size 10.9 4.45)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
 				(fill
@@ -561,8 +561,8 @@
 			)
 			(table_cell "1.8kΩ to +3V3"
 				(exclude_from_sim no)
-				(at 105.45 67.97 0)
-				(size 27.7 4.45)
+				(at 104.88 67.97 0)
+				(size 31.3 4.45)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
 				(fill
@@ -578,8 +578,8 @@
 			)
 			(table_cell "Rp(min)"
 				(exclude_from_sim no)
-				(at 95.25 72.42 0)
-				(size 10.2 4.45)
+				(at 93.98 72.42 0)
+				(size 10.9 4.45)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
 				(fill
@@ -595,8 +595,8 @@
 			)
 			(table_cell "967Ω @ 3mA IOL"
 				(exclude_from_sim no)
-				(at 105.45 72.42 0)
-				(size 27.7 4.45)
+				(at 104.88 72.42 0)
+				(size 31.3 4.45)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
 				(fill
@@ -612,8 +612,8 @@
 			)
 			(table_cell "Source"
 				(exclude_from_sim no)
-				(at 95.25 76.87 0)
-				(size 10.2 4.45)
+				(at 93.98 76.87 0)
+				(size 10.9 4.45)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
 				(fill
@@ -629,8 +629,8 @@
 			)
 			(table_cell "NXP UM10204 Rev 7.0 §7.1"
 				(exclude_from_sim no)
-				(at 105.45 76.87 0)
-				(size 27.7 4.45)
+				(at 104.88 76.87 0)
+				(size 31.3 4.45)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
 				(fill
