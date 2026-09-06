@@ -1869,24 +1869,38 @@ def vs1053b():
 def icm42688():
     fid, lib = "icm42688", "sensor/tdk/icm42688"
     # LGA-14 2.5(x)x3.0(y): 좌열 4 (x-0.9125), 하행 3 (y+1.1625), 우열 4, 상행 3
+    # 2026-09-06 (boardworks hdg_sensor 실사용): 종전 0.3x0.6을 단자 중심에 **대칭**으로 키워 모서리 패드끼리(1-14, 4-5,
+    # 7-8, 11-12) 0.0375 mm 겹쳤다(커널 DRC shorting_items). 단자 1:1(0.25x0.475, DS-000347 §10.2 W/L NOM) + 토우 0.1은
+    # **바깥쪽으로만** → 0.25x0.575, 중심을 바깥으로 0.05 이동(열 ±0.9625, 행 ±1.2125). 모서리 대각 간격 0.07(단자 자체와 동일).
     pads = []
     for i in range(4):
-        pads.append((str(i + 1), -0.9125, -0.75 + i * 0.5, 0.6, 0.3))
+        pads.append((str(i + 1), -0.9625, -0.75 + i * 0.5, 0.575, 0.25))
     for i in range(3):
-        pads.append((str(5 + i), -0.5 + i * 0.5, 1.1625, 0.3, 0.6))
+        pads.append((str(5 + i), -0.5 + i * 0.5, 1.2125, 0.25, 0.575))
     for i in range(4):
-        pads.append((str(8 + i), 0.9125, 0.75 - i * 0.5, 0.6, 0.3))
+        pads.append((str(8 + i), 0.9625, 0.75 - i * 0.5, 0.575, 0.25))
     for i in range(3):
-        pads.append((str(12 + i), 0.5 - i * 0.5, -1.1625, 0.3, 0.6))
+        pads.append((str(12 + i), 0.5 - i * 0.5, -1.2125, 0.25, 0.575))
     out = _fp_open(fid, "TDK InvenSense ICM-42688-P 6-axis IMU, LGA-14 2.5x3.0x0.91 "
-                        "(pitch 0.5). Pads 1:1 with package terminals +0.1 toe "
-                        "(0.3x0.6). The standard FPV flight-controller IMU.",
+                        "(pitch 0.5). Pads 1:1 with package terminals (0.25x0.475) +0.1 toe "
+                        "outward only (0.25x0.575). The standard FPV flight-controller IMU.",
                    "ICM-42688-P IMU 6-axis gyro accel SPI", -2.6, 2.6)
     out += _fab_body(-1.25, -1.5, 1.25, 1.5, 0.6)
     out += _silk_box((1.51, 1.76), -1.0, -0.5, -1.85)
     out += _court(-1.5, -1.75, 1.5, 1.75)
+    # 모서리 패드 8개의 **안쪽** 모서리 챔퍼 0.1(ratio 0.4): 단자 간격 0.07 그대로면 커널 clearance(0.15) 위반 → 대각 ≈0.21.
+    chamfer = {"1": "top_right", "14": "bottom_left", "4": "bottom_right", "5": "top_left",
+               "7": "top_right", "8": "bottom_left", "11": "top_left", "12": "bottom_right"}
+    def _n(v):   # .4g는 -1.2125 → -1.212로 잘린다(0.5 µm) — 소수 4자리 고정 후 0 제거
+        return f"{v:.4f}".rstrip("0").rstrip(".")
     for name, x, y, w, h in pads:
-        out.append(_smd(name, x, y, w, h))
+        extra = ""
+        shape = "rect"
+        if name in chamfer:
+            shape = "roundrect"
+            extra = f" (roundrect_rratio 0) (chamfer_ratio 0.4) (chamfer {chamfer[name]})"
+        out.append(f'  (pad "{name}" smd {shape} (at {_n(x)} {_n(y)}) (size {w} {h}) '
+                   f'(layers "F.Cu" "F.Paste" "F.Mask"){extra})')
     out.append(')')
     fp = "\n".join(out) + "\n"
     nm = ["AP_SDO/AD0", "RESV", "RESV", "INT1", "VDDIO", "GND", "RESV(GND!)",
@@ -1906,8 +1920,9 @@ def icm42688():
                  "https://www.cdiweb.com/datasheets/invensense/ds-000347-icm-42688-p-v1.2.pdf",
                  "TDK DS-000347 v1.2: LGA-14 2.5x3.0x0.91, terminals 0.25x0.475 pitch "
                  "0.5, 4-pin columns centers +/-0.9125, 3-pin rows +/-1.1625 "
-                 "(cross-checked vs body/edge-gap arithmetic). Pads 1:1 +0.1 toe. "
-                 "Pinout Table 9.",
+                 "(cross-checked vs body/edge-gap arithmetic). Pads 1:1 (0.25x0.475) "
+                 "+0.1 toe outward only (0.25x0.575); 8 corner pads chamfered 0.1 on the inner "
+                 "corner so the diagonal gap is ~0.21 (>=0.15 DRC). Pinout Table 9.",
                  ["icm-42688", "icm42688", "imu", "gyroscope", "accelerometer", "fpv",
                   "betaflight", "spi", "tdk"])
     return fid, lib, fp, sym, meta
