@@ -5,6 +5,7 @@
 인덱스는 build_index.py가 통합 생성.
 """
 import json
+import math
 import os
 from gen_connectors import _line, LIB_ROOT  # 공통 헬퍼/루트 재사용
 
@@ -281,7 +282,11 @@ def _lr_symbol(fid, left, right, bottom=None):
     top = (n - 1) * GRID / 2.0
     _ml = max((len(nm) for _, nm in left), default=0)
     _mr = max((len(nm) for _, nm in right), default=0)
-    w = max(8.89, round(0.45 * (_ml + _mr) + 1.6, 2))
+    # 글자폭 0.6 mm/자(KiCad 1.27 폰트 실측 ~1.0~1.2, 반폭 기준 0.6) + 여백 2.0, 그리고 **1.27(50 mil) 격자 스냅** —
+    # 2026-09-06 boardworks imu_icm42688: 0.45 계수로는 'RESV(GND!)'와 'AP_SDA/SDIO/SDI'가 겹치고(가독 R1),
+    # w=13.30이라 핀 끝(±15.84)이 격자 밖 → KiCad ERC endpoint_off_grid 경고 6건. 스냅하면 핀 끝(w+2.54)도 격자 위.
+    w = max(8.89, 0.6 * (_ml + _mr) + 2.0)
+    w = round(math.ceil(w / 1.27) * 1.27, 2)
     bl, br = -w, w
     bt = top + 2.54
     bb = -top - (2.54 + (2.54 * len(bottom) if bottom else 0))
