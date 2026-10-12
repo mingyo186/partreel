@@ -207,6 +207,7 @@
 - **형상 사실성(2026-07 추가, 스크류터미널 제네릭 사건)**: 게이트는 "유효한 솔리드"만 잡고 "그 부품답게 생겼나"는 못 잡음 → **새 패밀리/새 3D 스타일은 대표 1개를 반드시 시각 확인.** 스타일: gen_connectors_3d의 style 필드(shrouded 기본/header/terminal).
 - **3D 완결 기준(2026-07-04 사용자 확정 — "디테일 무한 손질은 독")**: 3D는 ①외곽 치수 도면 정확(간섭체크) ②한눈 식별 ③렌더 결함 없음(z-fighting 등) 이 셋이면 **완결**. 그 이상 리얼리즘은 백로그. **근본 개선(백로그)**: 프리미티브 눈대중 조립 대신 **데이터시트 측면도 프로파일 폴리곤을 좌표 그대로 압출**하는 방식으로 재작성(도면=모델 1:1, KiCad 공식 방식) — 런칭 후.
 - **공면(z-fighting) 금지 — 자동 게이트화(2026-07-04, "microSD 또 z-fight" 사건)**: `generators/check_zfight.py`가 모든 GLB의 메시 쌍에서 같은 축·같은 법선·같은 평면의 겹치는 면을 기하학적으로 검출 (qa.py + deploy/pr-gates CI 포함 — **사람이 눈으로 찾지 않음**). 해소 패턴: standoff 띄우기 / XY 비겹침 / 0.02 관통 랩.
+  - **증분 캐시 `docs/zfight-verified.json` (2026-10-12, 10-04 순찰 발견)**: 범위 실행(PART_SCOPE)이 캐시 전체를 범위 안 부품만으로 덮어써, 08-22 범위 실행 뒤 로컬 캐시가 빈 `{}`가 됐다(커밋 전 발견 — 그대로 커밋됐으면 전수 재검사 수 시간, CI 주문형 생성의 `git add -A`도 CI가 쓴 캐시를 커밋해 덮었음 — 07-29·07-30 봇 커밋). 규칙: **범위 실행은 기존 캐시에 합치고, 전수 실행만 새 목록으로 바꾼다**(지운 부품 정리). **CI(GITHUB_ACTIONS)에서는 캐시를 쓰지 않는다**(체크아웃 mtime이 매번 달라 적중 불가). 키는 레포 기준 상대경로(옛 Windows 절대경로 키는 읽을 때 변환 — 공개 레포에 로컬 경로 노출 중단), 한 줄 한 항목·정렬(diff 가독).
 - **시각검수는 반드시 실제 뷰어로(2026-07, "떠있는 띠" 사건)**: matplotlib 기반 `render_check.py`는 **깊이(가림) 처리를 못 해 형상 결함을 가릴 수 있음** → 퀵룩 용도로만. **정식 검수 = 로컬 서버 띄워 부품 페이지 3D 탭을 실제 브라우저(three.js)로 렌더**해서 확인 (사용자가 보는 그 화면). 겸: 특징 지오메트리는 프로그래매틱 교차확인(예: trimesh split으로 핀 개수, 부피 비교).
 
 ### D. SVG 미리보기
@@ -285,7 +286,7 @@ KiCad 기본에 없거나 빈약 + 검색 수요 큰 것. 각각 §14 품질기�
 
 **AI 발견(discovery) 전략** (2026-07 확정): 만들어도 에이전트가 저절로 오지 않음 — 두 갈래.
 1. **온사이트(봇용 가이드)**: robots.txt에 AI 크롤러 명시 환영 + llms.txt 위치 주석 · **/agents/ 에이전트 가이드 페이지**(MCP/API 사용법 + **복붙용 가이드 프롬프트**: 사용자가 자기 CLAUDE.md/.cursorrules에 붙여넣으면 그 에이전트가 부품 필요시 PartReel을 조회하게 됨 = 배포형 성장 루프) · **부품 페이지마다 "AI로 사용" 힌트**(크롤러가 부품 페이지에 왔다가 API/MCP 존재를 학습).
-2. **외부 등록**: ✅공식 MCP 레지스트리(io.github.mingyo186/partreel v1.0.0 active) · ✅awesome-mcp-servers PR #9156(머지 대기, 안 돼도 무방) · 잔여: Smithery/mcp.so/PulseMCP.
+2. **외부 등록**: ✅공식 MCP 레지스트리(io.github.mingyo186/partreel v1.0.0 active) · ~~awesome-mcp-servers PR #9156~~(08-29 병합 없이 닫힘 — Glama 배지 미완) → ✅**awesome-remote-mcp-servers PR #15 병합(09-08)** · ✅Glama(레지스트리 자동 동기화, Healthy) · ✅PulseMCP(자동 수집 등재 확인, 10-04 순찰) · 잔여: Smithery/mcp.so(미등재).
 
 **생태계 루프 (2026-07 확정)** — 남의 목록 의존 대신 우리가 허브가 된다. 핵심 = AI가 읽기만 하는 곳이 아니라 **남기고 가는 곳**(피드백/기여 쓰기 경로 = 재방문 이유 = 네트워크 효과 = 복제 불가 해자):
 - **③ MCP 쓰기 도구**: `report_feedback(part_id, result, notes)` — 워커가 GitHub 이슈로 기록(이슈 전용 fine-grained PAT를 CF 워커 시크릿 `GITHUB_TOKEN`으로; 라벨 `field-report`). `how_to_contribute` 도구 — 기여 방법을 기계용 포맷으로 반환.
@@ -449,6 +450,9 @@ KiCad 내장 **플러그인·콘텐츠 매니저** 저장소를 우리가 직접
 실행 순서: ①✅**영어화**(전 페이지 EN, 한글 0 검증) → ②✅kicad-mcp 통합 제안 — **mixelpixx/KiCAD-MCP-Server#297 이슈 제출**(1435★, "생성 전 레지스트리 조회" 제안 + PR 의사 표명. 반응 오면 PR 여부 결정) → ③Smithery/디렉터리 → ④KiCad PCM 플러그인 → ⑤PyPI CLI.
 
 **폴백/확장 방침(2026-07, 사용자 확정)**: 타 프로젝트 통합이 거절/무반응이어도 무방 — **우리식으로 직접 구성**한다(우리 MCP를 나란히 등록하면 도구 수정 없이 같은 효과 + 복붙 프롬프트 배포). 그리고 **PartReel은 KiCad 전용이 아니다** — 레지스트리·API·MCP·게이트 구조는 포맷 중립이며, §8의 중립 스키마 전략대로 향후 다른 EDA 포맷(Eagle 등)·기구(STEP 중심) 도메인으로 확장 가능. KiCad는 1차 시장일 뿐.
+
+**하류 연동 감시 (2026-08-07 도입 `generators/check_integrations.py`, 순찰마다 실행)**: 우리가 API를 바꾸면 하류가 한꺼번에 깨진다 → A. 라이브 계약(parts.json·parts/<id>.json files URL·MCP 도구·search) B. 하류 저장소의 연동 파일 SHA 변화 감시(상태 `docs/integration-watch.json`).
+- 하류 목록: mixelpixx/KiCAD-MCP-Server · salitronic/eda-agent · Seeed-Studio/kicad-mcp-server · **danilka-revin/linux_pcb_app (2026-10-12 추가)** — 10-04 순찰에서 발견한 새 채택자(09-26 PR #19, AI 코딩 에이전트가 붙임). parts.json을 캐시해 로컬 검색, 상세는 parts/<id>.json, 풋프린트는 `files.footprint`가 가리키는 **https://partreel.com/library/…/*.kicad_mod** 만 받는다(경로 정규식 고정) → 계약 A에 "files.footprint = partreel.com/library/… .kicad_mod, 실제 200" 추가. parts.json 경로·스키마와 풋프린트 경로 규약은 하위 호환 유지 대상.
 
 ## 22. 대용량 에셋 = Cloudflare R2 (사용자 확정 2026-07-05 "R2로 옮기자")
 
@@ -899,6 +903,21 @@ neck-down) ③설계 의도 입력 채널 없음 ④막히면 포기(배치 되�
   파라미터 목록 6군(fab/net_roles/cost/targets/layers/profiles, 각 항목
   why·range 동반), AI 활용 지점 4개, KiCad 통합 3경로(CLI→액션 플러그인→
   PCM), 지표·단계 R0~R4, 미결(언어·곡선·참고 소스 범위). 승인 대기.
+
+  **방향 개정 v0.3 (2026-08-16, 사용자 "b로 가고 a는 실험실에서 계속해")**:
+  실험실 L4 3보드 매트릭스에서 freerouting(미배선 0~1/DRC 0~1)이 합성 v1
+  (2~3/43~87)을 압도 → **생산 경로 = freerouting 엔진 + 우리 강점**(의미
+  배선·N회 최선 채택·채택본 고정 replay·손잡이·후처리·게이트), **자체 라우터
+  = 실험실 트랙 계속**(승격 조건 결함 ≤ freerouting). 상세 boardworks/docs/
+  autorouter-design.md §12.
+  → **2026-09-29 다시 개정 (boardworks PW14, 사용자 "KRT는 완전 제외하자 진행해")**: 생산
+  기본 엔진 = **자체 배선기 v1**(router/own). KRT·freerouting은 기본 경로에서 빠지고 비교용으로만
+  남음 — 위 v0.3의 "생산 = freerouting"은 더 이상 현행이 아님. 상세 autorouter-design.md §12.123.
+
+  **규격 게이트 (2026-08-17, 사용자 "규격 게이트는 좋네 다른 규격들도 찾아서 종합" / "무료로
+  구할 수 있는 건 최대한")**: 판정자를 문서 조항으로 — ECSS-Q-ST-70-12C(무료) 조항표+검사기
+  (check_standards, S7 마지막), ST AN5093/AN4879/AN1709는 사용자 다운로드 대기, IPC는 공개
+  계산식으로 대체. 상세 boardworks/docs/autorouter-design.md §13, boardworks/docs/standards/README.md.
 
 **boardworks 공개 여부 (2026-08-16, 사용자)**: "공개할지 말지 아직 안
 정했어. 제대로 동작되는지 확인되면 그때 해야겠지." — **비공개 유지**.

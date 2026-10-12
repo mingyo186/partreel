@@ -4,10 +4,12 @@
 문제가 생길 수도 있잖아").
 
 두 방향을 본다:
-  A. **우리 쪽 계약**: 하류 3곳(mixelpixx / eda-agent / Seeed)이 실제로
-     의존하는 엔드포인트·필드가 라이브에서 그대로인지.
+  A. **우리 쪽 계약**: 하류 4곳(mixelpixx / eda-agent / Seeed / linux_pcb_app)이
+     실제로 의존하는 엔드포인트·필드가 라이브에서 그대로인지.
        - /api/v1/parts.json          : parts[] + id/name
        - /api/v1/parts/<id>.json     : files.symbol/footprint 절대 URL (https)
+       - files.footprint             : https://partreel.com/library/…/*.kicad_mod, 실제 200
+                                       (linux_pcb_app가 이 경로 정규식만 받는다 — 2026-10-12)
        - mcp.partreel.com /mcp       : tools/list에 search_parts/get_part
        - mcp.partreel.com /search?q= : parts[] + id
   B. **상류 변경 감지**: 그쪽 저장소의 연동 파일 SHA가 바뀌면 알림
@@ -19,8 +21,10 @@
 
 import json
 import os
+import re
 import subprocess
 import sys
+import urllib.parse
 import urllib.request
 
 sys.stdout.reconfigure(encoding="utf-8")
@@ -33,7 +37,10 @@ UPSTREAM = {
     "salitronic/eda-agent": ["src/eda_agent/libimport/providers/partreel.py"],
     "Seeed-Studio/kicad-mcp-server": ["src/kicad_mcp_server/utils/parts_registry.py",
                                       "src/kicad_mcp_server/tools/parts_registry.py"],
+    # 2026-10-12: 10-04 순찰에서 발견한 새 채택자 (09-26 PR #19, PartReel 카탈로그 탑재)
+    "danilka-revin/linux_pcb_app": ["scripts/server.mjs", "scripts/partreel-search.mjs"],
 }
+FP_PATH = re.compile(r"^/library/([A-Za-z0-9._~-]+/)*[A-Za-z0-9._~-]+\.kicad_mod$")
 
 errs = []
 
@@ -64,6 +71,14 @@ def check_contract():
     for k in ("symbol", "footprint"):
         if not str(files.get(k, "")).startswith("https://"):
             fail(f"parts/{pid}.json: files.{k} 절대 https URL 아님 — eda-agent fetch가 깨짐")
+    fp = urllib.parse.urlparse(str(files.get("footprint", "")))
+    if fp.netloc != "partreel.com" or not FP_PATH.match(fp.path):
+        fail(f"parts/{pid}.json: files.footprint가 partreel.com/library/…/*.kicad_mod 아님 — linux_pcb_app 받기가 깨짐")
+    else:
+        req = urllib.request.Request(fp.geturl(), headers=UA)
+        with urllib.request.urlopen(req, timeout=30) as r:
+            if not r.read(64).lstrip().startswith(b"(footprint"):
+                fail(f"{fp.path}: .kicad_mod 내용이 (footprint 로 시작하지 않음")
     # MCP tools
     t = get("https://mcp.partreel.com/mcp",
             json.dumps({"jsonrpc": "2.0", "id": 1, "method": "tools/list"}).encode())
@@ -75,7 +90,7 @@ def check_contract():
     s = get("https://mcp.partreel.com/search?q=usb")
     if "parts" not in s:
         fail("/search 응답에 parts 없음")
-    print(f"계약 OK: parts.json({len(parts)}) / 상세 files URL / MCP 도구 / search")
+    print(f"계약 OK: parts.json({len(parts)}) / 상세 files URL / 풋프린트 경로 / MCP 도구 / search")
 
 
 def check_upstream():

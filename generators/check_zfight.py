@@ -90,7 +90,8 @@ def check_merged_pins(glb_path, expected):
 
 def main():
     index = json.load(open(os.path.join(ROOT, "index.json"), encoding="utf-8"))
-    from scope import scoped_parts
+    from scope import scope_ids, scoped_parts
+    scoped = scope_ids() is not None
     index["parts"] = scoped_parts(index["parts"])  # PART_SCOPE 증분 (§19-A)
     meta_pins = {}
     for p in index["parts"]:
@@ -103,11 +104,20 @@ def main():
             v = None  # 문자열/결측(수입 메타) — 핀수 검사 스킵
         meta_pins[p["id"]] = v
     # 증분(2026-07-12): 지난 PASS와 mtime+size 동일한 GLB는 스킵 (7k 전수=수시간 병목)
+    # 2026-10-12 (§14-C 증분 캐시): 키 = 레포 기준 상대경로(옛 절대경로 키는 읽을 때 변환), 범위 실행은 기존 캐시에 합친다.
     snap_path = os.path.join(ROOT, "docs", "zfight-verified.json")
+
+    def rel(path):
+        try:
+            return os.path.relpath(path, ROOT).replace(os.sep, "/")
+        except ValueError:  # 다른 드라이브의 옛 키
+            return path
+
     try:
-        snap = json.load(open(snap_path, encoding="utf-8"))
+        raw = json.load(open(snap_path, encoding="utf-8"))
     except Exception:
-        snap = {}
+        raw = {}
+    snap = {(rel(k) if os.path.isabs(k) else k): v for k, v in raw.items()}
     newsnap = {}
     checked = 0
     total = 0
@@ -117,8 +127,9 @@ def main():
             continue
         st = os.stat(glb)
         sig = f"{st.st_mtime_ns}:{st.st_size}"
-        newsnap[glb] = sig
-        if snap.get(glb) == sig:
+        key = rel(glb)
+        newsnap[key] = sig
+        if snap.get(key) == sig:
             continue
         checked += 1
         issues = check_part(glb)
@@ -130,8 +141,12 @@ def main():
             print(f"FAIL {p['id']}:")
             for i in issues:
                 print(f"   - {i}")
-    if total == 0:
-        json.dump(newsnap, open(snap_path, "w", encoding="utf-8"))
+    # CI 체크아웃은 mtime이 매번 달라 캐시가 적중하지 않는데, 주문형 생성(generate-part.yml)의 `git add -A`가 CI가 쓴 캐시를
+    # 커밋해 로컬 캐시를 덮던 경로(07-29·07-30 봇 커밋) — CI에서는 쓰지 않는다.
+    if total == 0 and not os.environ.get("GITHUB_ACTIONS"):
+        # 범위 실행이 캐시 전체를 범위 안 부품만으로 덮어쓰면 캐시가 빈다(08-22 사건) — 전수 실행만 새 목록으로 바꾼다.
+        out = {**snap, **newsnap} if scoped else newsnap
+        json.dump(out, open(snap_path, "w", encoding="utf-8"), indent=0, sort_keys=True)
     print(f"\n{'PASS' if total == 0 else 'FAIL'}: {len(index['parts'])} parts "
           f"(checked {checked}), {total} 3D issues (coplanar/merged-pins)")
     sys.exit(1 if total else 0)
